@@ -19,7 +19,7 @@
     --line-strong:rgba(11,34,57,0.28);
     --ok:#2E7D4F;
     --btn-text:#FFFFFF;
-    --max:1000px;
+    --max:1060px;
     --measure:680px;
   }
   [data-theme="dark"]{
@@ -75,11 +75,10 @@
 
   /* ============ hero ============ */
   .hero{padding:64px 0 8px}
-  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:start}
+  .hero-grid{display:grid;grid-template-columns:360px minmax(0,1fr);gap:64px;align-items:start}
   @media (max-width:900px){
     .hero{padding:36px 0 8px}
     .hero-grid{grid-template-columns:1fr;gap:44px}
-    .profile-card{order:-1}
   }
 
   .sec-label{font-size:11px;color:var(--blue);margin-bottom:28px;display:block}
@@ -130,8 +129,7 @@
   .hero + section, .manifesto + section{border-top:1px solid var(--line)}
 
   /* in sintesi */
-  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-  @media (max-width:760px){.proof-grid{grid-template-columns:1fr;gap:28px}}
+  .proof-grid{display:flex;flex-direction:column;gap:26px}
   .pitem{display:flex;flex-direction:column;gap:6px;padding-left:18px;border-left:2px solid var(--blue)}
   .pitem .k{font-size:10.5px;color:var(--muted)}
   .pitem .v{font-size:20px;font-weight:600;color:var(--ink);line-height:1.35}
@@ -170,6 +168,15 @@
 
   /* oltre */
   #oltre p{color:var(--muted);max-width:var(--measure);font-size:16px}
+
+
+  /* desktop: rail sinistro coerente per identità ed etichette */
+  @media (min-width:901px){
+    .profile-card{position:sticky;top:88px}
+    section{display:grid;grid-template-columns:360px minmax(0,1fr);column-gap:64px;grid-auto-rows:min-content}
+    section > .sec-label{grid-column:1;grid-row:1}
+    section > *:not(.sec-label){grid-column:2}
+  }
 
   /* ============ footer ============ */
   footer{border-top:1px solid var(--line);padding:40px 0 60px}
@@ -227,11 +234,6 @@
 
   <div class="hero">
     <div class="hero-grid">
-      <div class="hero-text">
-        <span class="sec-label label" data-i18n="sec_bio">Bio</span>
-        <div class="lead" data-i18n="lead"><p>Vengo dall'affidabilità, non dalle mode: prima in Assicurazioni Generali, dove ho imparato che la fiducia vale più della velocità, poi in InfoCamere, dove ancora oggi collaboro a vari livelli con figure senior e manager per implementare e integrare soluzioni enterprise basate sull'AI.</p><p>Il risultato: <b>sistemi in produzione, in ambienti regolamentati, fatti per durare</b>. Perché la differenza non la fa il modello. La fa chi integra.</p></div>
-      </div>
-
       <aside class="profile-card">
         <img class="pc-photo" src="photo.jpg" alt="Nicolò Forcolin" width="124" height="124">
         <p class="pc-name">Nicolò Forcolin</p>
@@ -254,6 +256,11 @@
           <button class="pc-btn ghost" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
         </div>
       </aside>
+
+      <div class="hero-text">
+        <span class="sec-label label" data-i18n="sec_bio">Bio</span>
+        <div class="lead" data-i18n="lead"><p>Vengo dall'affidabilità, non dalle mode: prima in Assicurazioni Generali, dove ho imparato che la fiducia vale più della velocità, poi in InfoCamere, dove ancora oggi collaboro a vari livelli con figure senior e manager per implementare e integrare soluzioni enterprise basate sull'AI.</p><p>Il risultato: <b>sistemi in produzione, in ambienti regolamentati, fatti per durare</b>. Perché la differenza non la fa il modello. La fa chi integra.</p></div>
+      </div>
     </div>
   </div>
 
@@ -362,187 +369,4 @@
       <span class="cm-v"><a href="tel:+393479081966">+39 347 908 1966</a></span>
     </div>
     <div class="cm-row">
-      <span class="cm-k" data-i18n="cm_sites">Siti web</span>
-      <span class="cm-v">
-        <a href="https://template-marketplace-psi.vercel.app/" target="_blank" rel="noopener">Forma</a><span class="sep">·</span><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills</a><span class="sep">·</span><a href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener">Spotify</a>
-      </span>
-    </div>
-    <div class="cm-row">
-      <span class="cm-k" data-i18n="cm_loc">Sede</span>
-      <span class="cm-v">Padova ⇄ Bruxelles</span>
-    </div>
-  </div>
-</div>
-
-<script>
-(function(){
-  var i18n = {
-    it: {
-      sec_bio:"Bio",
-      lead:"<p>Vengo dall\u0027affidabilità, non dalle mode: prima in Assicurazioni Generali, dove ho imparato che la fiducia vale più della velocità, poi in InfoCamere, dove ancora oggi collaboro a vari livelli con figure senior e manager per implementare e integrare soluzioni enterprise basate sull\u0027AI.</p><p>Il risultato: <b>sistemi in produzione, in ambienti regolamentati, fatti per durare</b>. Perché la differenza non la fa il modello. La fa chi integra.</p>",
-      pc_follow:"1.300+ follower · 500+ collegamenti",
-      cm_title:"Informazioni di contatto", cm_profile:"Profilo LinkedIn", cm_phone:"Telefono", cm_sites:"Siti web", cm_loc:"Sede",
-      manifesto:"In un ambiente regolamentato il successo non si misura in benchmark: si misura in <b>fiducia</b>.",
-      proof_label:"In sintesi",
-      p1k:"Advisory", p1v:"2 Business Unit + 1 CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
-      p2k:"Formazione", p2v:"5 sessioni · 25+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
-      p3k:"Certificazioni", p3v:"13 · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
-      sec_lavori:"Lavori — casi studio",
-      c1t:"Enterprise Knowledge Retrieval — due sistemi RAG",
-      c1p:"Il problema: la conoscenza operativa esisteva, ma era sepolta in più repository aziendali. La risposta: due sistemi RAG che la rendono interrogabile da manager e decision-maker — meno tempo di ricerca, documentazione complessa finalmente accessibile, validazione human-in-the-loop.",
-      st_prod:"In produzione", st_prod2:"In produzione", st_cont:"Continuativo",
-      c1m1:"Ambito — <b>InfoCamere · catalogo servizi IT</b>",
-      c1m2:"Vincoli — <b>dati interni, governance presidiata</b>",
-      c2t:"Modelli locali per ambienti a dati sensibili",
-      c2p:"La domanda del vertice: l'AI può entrare dove i dati non possono uscire? La risposta: fine-tuning di modelli open (Gemma, Qwen, Llama) su procedure interne, deploy interamente on-premise. Zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti.",
-      c2m1:"Approccio — <b>fine-tuning · deploy on-premise</b>",
-      c2m2:"Output — <b>sessioni dimostrative per il vertice</b>",
-      c3t:"Strategia AI a livello direzionale",
-      c3p:"Dove le slide finiscono e le decisioni cominciano: proposte di architettura, valutazioni di fattibilità, sessioni dimostrative per stakeholder senior. Il criterio non è il benchmark: è integrazione, governance, affidabilità, adozione, fiducia.",
-      c3m1:"Ambito — <b>leadership · business unit</b>",
-      sec_percorso:"Percorso",
-      t1:"2022 — oggi", t3:"Prima",
-      pr1:"Il capitolo in corso. Dalle infrastrutture mission-critical del sistema camerale alla strategia Gen AI: prima ho imparato a far funzionare i sistemi, poi a farli evolvere. Social Ambassador dal 2025 — perché la tecnologia che non sai raccontare non viene adottata.",
-      pr2:"Il capitolo che mi ha formato. Un settore dove fiducia, compliance e affidabilità pesano più della velocità: è lì che ho capito come si costruisce valore dentro le regole, non aggirandole.",
-      pr3:"Il punto di partenza. Infrastruttura, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana) come biglietto d'ingresso.",
-      sec_oltre:"Oltre il lavoro",
-      oltre_p:"Fuori orario smonto sistemi per capire come funzionano — lo stesso istinto del lavoro, su scala più piccola. Forma, nato come laboratorio personale, oggi è un e-commerce di template e strumenti digitali: il posto dove le idee si misurano con l'esecuzione. E poi c'è la musica, ascoltata da audiofilo: prog, fusion e tutto ciò che sta nel mezzo — perché anche l'ascolto, fatto bene, è una questione di sistemi."
-    },
-    en: {
-      sec_bio:"Bio",
-      lead:"<p>I come from reliability, not from trends: first at Assicurazioni Generali, where I learned that trust matters more than speed, then at InfoCamere, where I still work today alongside senior figures and managers at various levels to implement and integrate enterprise AI solutions.</p><p>The result: <b>systems in production, in regulated environments, built to last</b>. Because the model doesn\u0027t make the difference. Integration does.</p>",
-      pc_follow:"1,300+ followers · 500+ connections",
-      cm_title:"Contact information", cm_profile:"LinkedIn profile", cm_phone:"Phone", cm_sites:"Websites", cm_loc:"Based in",
-      manifesto:"In a regulated environment, success is not measured in benchmarks: it is measured in <b>trust</b>.",
-      proof_label:"At a glance",
-      p1k:"Advisory", p1v:"2 business units + 1 external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
-      p2k:"Training", p2v:"5 sessions · 25+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
-      p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
-      sec_lavori:"Work — case studies",
-      c1t:"Enterprise Knowledge Retrieval — two RAG systems",
-      c1p:"The problem: operational knowledge existed, but it was buried across multiple enterprise repositories. The answer: two RAG systems that make it queryable by managers and decision-makers — less retrieval time, complex documentation finally accessible, human-in-the-loop validation.",
-      st_prod:"In production", st_prod2:"In production", st_cont:"Ongoing",
-      c1m1:"Scope — <b>InfoCamere · IT service catalog</b>",
-      c1m2:"Constraints — <b>internal data, governed environment</b>",
-      c2t:"Local models for sensitive-data environments",
-      c2p:"The question from leadership: can AI go where data cannot leave? The answer: fine-tuning open models (Gemma, Qwen, Llama) on internal procedures, deployed fully on-premise. Zero data leaving the perimeter, reduced dependency on external providers, lower operational costs.",
-      c2m1:"Approach — <b>fine-tuning · on-premise deployment</b>",
-      c2m2:"Output — <b>demonstration sessions for senior leadership</b>",
-      c3t:"AI strategy at leadership level",
-      c3p:"Where the slides end and the decisions begin: architecture proposals, feasibility assessments, demonstration sessions for senior stakeholders. The criterion is not the benchmark: it's integration, governance, reliability, adoption, trust.",
-      c3m1:"Scope — <b>leadership · business units</b>",
-      sec_percorso:"Path",
-      t1:"2022 — today", t3:"Earlier",
-      pr1:"The current chapter. From the mission-critical infrastructure of the Italian Chambers of Commerce system to Gen AI strategy: first I learned to keep systems running, then to make them evolve. Social Ambassador since 2025 — because technology you can't explain doesn't get adopted.",
-      pr2:"The chapter that shaped me. An industry where trust, compliance and reliability outweigh speed: that's where I learned how value is built within the rules, not around them.",
-      pr3:"The starting point. Infrastructure, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition) as the ticket in.",
-      sec_oltre:"Beyond work",
-      oltre_p:"After hours I take systems apart to understand how they work — the same instinct as my day job, on a smaller scale. Forma, born as a personal laboratory, is now an e-commerce of templates and digital tools: the place where ideas meet execution. And then there's music, listened to as an audiophile: prog, fusion and everything in between — because listening, done properly, is a matter of systems too."
-    },
-    fr: {
-      sec_bio:"Bio",
-      lead:"<p>Je viens de la fiabilité, pas des effets de mode : d\u0027abord chez Assicurazioni Generali, où j\u0027ai appris que la confiance compte plus que la vitesse, puis chez InfoCamere, où je collabore aujourd\u0027hui encore, à différents niveaux, avec des cadres et des managers pour implémenter et intégrer des solutions d\u0027entreprise basées sur l\u0027IA.</p><p>Le résultat : des <b>systèmes en production, dans des environnements réglementés, faits pour durer</b>. Parce que la différence ne vient pas du modèle. Elle vient de l\u0027intégration.</p>",
-      pc_follow:"1 300+ abonnés · 500+ relations",
-      cm_title:"Coordonnées", cm_profile:"Profil LinkedIn", cm_phone:"Téléphone", cm_sites:"Sites web", cm_loc:"Basé à",
-      manifesto:"Dans un environnement réglementé, le succès ne se mesure pas en benchmarks : il se mesure en <b>confiance</b>.",
-      proof_label:"En bref",
-      p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l\u0027Italie et la Chine.",
-      p2k:"Formation", p2v:"5 sessions · 25+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
-      p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
-      sec_lavori:"Travaux — études de cas",
-      c1t:"Enterprise Knowledge Retrieval — deux systèmes RAG",
-      c1p:"Le problème : la connaissance opérationnelle existait, mais restait enfouie dans plusieurs référentiels d'entreprise. La réponse : deux systèmes RAG qui la rendent interrogeable par les managers et les décideurs — moins de temps de recherche, une documentation complexe enfin accessible, une validation human-in-the-loop.",
-      st_prod:"En production", st_prod2:"En production", st_cont:"En continu",
-      c1m1:"Périmètre — <b>InfoCamere · catalogue des services IT</b>",
-      c1m2:"Contraintes — <b>données internes, gouvernance maîtrisée</b>",
-      c2t:"Modèles locaux pour environnements à données sensibles",
-      c2p:"La question de la direction : l'IA peut-elle entrer là où les données ne peuvent pas sortir ? La réponse : fine-tuning de modèles open (Gemma, Qwen, Llama) sur des procédures internes, déployés entièrement on-premise. Aucune donnée hors du périmètre, moins de dépendance aux fournisseurs externes, des coûts opérationnels réduits.",
-      c2m1:"Approche — <b>fine-tuning · déploiement on-premise</b>",
-      c2m2:"Résultat — <b>sessions de démonstration pour la direction</b>",
-      c3t:"Stratégie IA au niveau de la direction",
-      c3p:"Là où les slides s'arrêtent et où les décisions commencent : propositions d'architecture, études de faisabilité, sessions de démonstration pour les décideurs. Le critère n'est pas le benchmark : c'est l'intégration, la gouvernance, la fiabilité, l'adoption, la confiance.",
-      c3m1:"Périmètre — <b>direction · business units</b>",
-      sec_percorso:"Parcours",
-      t1:"2022 — aujourd'hui", t3:"Avant",
-      pr1:"Le chapitre en cours. Des infrastructures critiques du système des Chambres de commerce italiennes à la stratégie Gen AI : j'ai d'abord appris à faire fonctionner les systèmes, puis à les faire évoluer. Social Ambassador depuis 2025 — parce qu'une technologie qu'on ne sait pas raconter n'est pas adoptée.",
-      pr2:"Le chapitre qui m'a formé. Un secteur où la confiance, la conformité et la fiabilité comptent plus que la vitesse : c'est là que j'ai compris comment créer de la valeur dans les règles, et non en les contournant.",
-      pr3:"Le point de départ. Infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne) comme ticket d'entrée.",
-      sec_oltre:"Au-delà du travail",
-      oltre_p:"En dehors des heures de travail, je démonte des systèmes pour comprendre comment ils fonctionnent — le même instinct qu'au bureau, à plus petite échelle. Forma, né comme laboratoire personnel, est aujourd'hui un e-commerce de templates et d'outils numériques : l'endroit où les idées se confrontent à l'exécution. Et puis il y a la musique, écoutée en audiophile : prog, fusion et tout ce qui se trouve entre les deux — parce que l'écoute aussi, bien faite, est une affaire de systèmes."
-    }
-  };
-
-  var lang = "it";
-  var theme = "light";
-
-  function applyLang(){
-    document.documentElement.lang = lang;
-    var dict = i18n[lang];
-    document.querySelectorAll("[data-i18n]").forEach(function(el){
-      var k = el.getAttribute("data-i18n");
-      if(dict[k] !== undefined){ el.innerHTML = dict[k]; }
-    });
-    document.querySelectorAll(".lang-btn").forEach(function(b){
-      b.classList.toggle("active", b.getAttribute("data-lang") === lang);
-    });
-  }
-
-  function applyTheme(){
-    if(theme === "dark"){ document.documentElement.setAttribute("data-theme","dark"); }
-    else{ document.documentElement.removeAttribute("data-theme"); }
-    document.getElementById("themeToggle").textContent = theme === "dark" ? "Light" : "Dark";
-  }
-
-  document.querySelectorAll(".lang-btn").forEach(function(b){
-    b.addEventListener("click", function(){
-      lang = b.getAttribute("data-lang");
-      applyLang();
-    });
-  });
-  document.getElementById("themeToggle").addEventListener("click", function(){
-    theme = theme === "dark" ? "light" : "dark";
-    applyTheme();
-  });
-
-  applyLang();
-
-  if(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){
-    theme = "dark"; applyTheme();
-  }
-
-  // --- modal contatti ---
-  var modal = document.getElementById("contactModal");
-  function openModal(){
-    modal.hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-  function closeModal(){
-    modal.hidden = true;
-    document.body.style.overflow = "";
-  }
-  document.querySelectorAll("[data-open-contacts]").forEach(function(el){
-    el.addEventListener("click", openModal);
-  });
-  modal.querySelectorAll("[data-close]").forEach(function(el){
-    el.addEventListener("click", closeModal);
-  });
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape" && !modal.hidden) closeModal();
-  });
-
-  // --- reveal allo scroll ---
-  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window){
-    var toReveal = document.querySelectorAll("section, .case, .path-row, .manifesto");
-    toReveal.forEach(function(el){ el.classList.add("will-reveal"); });
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add("revealed"); io.unobserve(en.target); }
-      });
-    }, {threshold:0.08});
-    toReveal.forEach(function(el){ io.observe(el); });
-  }
-})();
-</script>
-
-</body>
-</html>
+      <span class=
