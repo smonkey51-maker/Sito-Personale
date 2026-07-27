@@ -88,6 +88,10 @@
   }
   .lead b{color:var(--ink);font-weight:600}
   .lead p + p{margin-top:1.1em}
+  .lead ul{list-style:none;margin:1.1em 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .lead ul + p{margin-top:1.1em}
+  .lead li{position:relative;padding-left:20px}
+  .lead li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--blue)}
 
   /* ============ card profilo ============ */
   .profile-card{padding:8px 0;text-align:center}
@@ -115,18 +119,10 @@
   .pc-btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
   .pc-btn.ghost:hover{color:var(--blue);border-color:var(--blue);background:transparent}
 
-  /* ============ manifesto ============ */
-  .manifesto{
-    padding:72px 0 12px;max-width:23em;margin:0 auto;text-align:center;
-    font-style:italic;font-weight:300;font-size:clamp(21px,2.6vw,27px);
-    line-height:1.6;color:var(--ink);
-  }
-  .manifesto b{color:var(--blue);font-weight:300;font-style:italic}
-
   /* ============ sezioni ============ */
   main{padding-bottom:24px}
   section{padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:72px}
-  .hero + section, .manifesto + section{border-top:1px solid var(--line)}
+  .hero + section{border-top:1px solid var(--line)}
 
   /* in sintesi */
   .proof-grid{display:flex;flex-direction:column;gap:26px}
@@ -255,13 +251,11 @@
       </aside>
 
       <div class="hero-text">
-        <span class="sec-label label" data-i18n="sec_bio">Bio</span>
-        <div class="lead" data-i18n="lead"><p>Vengo dall'affidabilità, non dalle mode: prima in Assicurazioni Generali, dove ho imparato che la fiducia vale più della velocità, poi in InfoCamere, dove ancora oggi collaboro a vari livelli con figure senior e manager per implementare e integrare soluzioni enterprise basate sull'AI.</p><p>Il risultato: <b>sistemi in produzione, in ambienti regolamentati, fatti per durare</b>. Perché la differenza non la fa il modello. La fa chi integra.</p></div>
+        <span class="sec-label label" data-i18n="sec_bio">Informazioni</span>
+        <div class="lead" data-i18n="lead"><p>Ho iniziato il mio percorso in Generali come assicuratore — un'esperienza che mi ha insegnato a fondo il valore dell'affidabilità, della responsabilità e della fiducia.</p><p>Spinto dalla passione per la tecnologia, ho vinto una borsa di studio Google per partecipare alla prima edizione italiana di WorkInTech. Oggi unisco una genuina mentalità da tech-enthusiast a solide competenze IT, supportate da esperienza pratica e certificazioni di settore.</p><p>Se c'è una cosa che l'esperienza sul campo mi ha insegnato, è che <b>competenza e costanza sono le chiavi per generare vero valore di business</b>.</p><p><b>Cosa porto:</b></p><ul><li>Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando valore di business.</li><li>Progettato e sottoposto a fine-tuning modelli open-weight (Gemma, Qwen, Llama) su misura per dati e procedure interne. Distribuiti al 100% on-premise, garantendo zero fuga di dati, minore dipendenza dai fornitori esterni e costi operativi ridotti.</li><li><b>Upskilling &amp; Enablement:</b> guidato 5 programmi di formazione interni ed esterni, formando oltre 25 colleghi e il CEO di Dabo (azienda tech italiana attiva tra Italia e Cina).</li></ul><p>Ha generato risparmi di tempo stimati in mesi di lavoro e un invito a partecipare a un contest tech a Singapore.</p></div>
       </div>
     </div>
   </div>
-
-  <p class="manifesto" data-i18n="manifesto">In un ambiente regolamentato il successo non si misura in benchmark: si misura in <b>fiducia</b>.</p>
 
   <section id="sintesi">
     <span class="sec-label label" data-i18n="proof_label">In sintesi</span>
@@ -382,11 +376,10 @@
 (function(){
   var i18n = {
     it: {
-      sec_bio:"Bio",
-      lead:"<p>Vengo dall\u0027affidabilità, non dalle mode: prima in Assicurazioni Generali, dove ho imparato che la fiducia vale più della velocità, poi in InfoCamere, dove ancora oggi collaboro a vari livelli con figure senior e manager per implementare e integrare soluzioni enterprise basate sull\u0027AI.</p><p>Il risultato: <b>sistemi in produzione, in ambienti regolamentati, fatti per durare</b>. Perché la differenza non la fa il modello. La fa chi integra.</p>",
+      sec_bio:"Informazioni",
+      lead:"<p>Ho iniziato il mio percorso in Generali come assicuratore — un\u0027esperienza che mi ha insegnato a fondo il valore dell\u0027affidabilità, della responsabilità e della fiducia.</p><p>Spinto dalla passione per la tecnologia, ho vinto una borsa di studio Google per partecipare alla prima edizione italiana di WorkInTech. Oggi unisco una genuina mentalità da tech-enthusiast a solide competenze IT, supportate da esperienza pratica e certificazioni di settore.</p><p>Se c\u0027è una cosa che l\u0027esperienza sul campo mi ha insegnato, è che <b>competenza e costanza sono le chiavi per generare vero valore di business</b>.</p><p><b>Cosa porto:</b></p><ul><li>Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando valore di business.</li><li>Progettato e sottoposto a fine-tuning modelli open-weight (Gemma, Qwen, Llama) su misura per dati e procedure interne. Distribuiti al 100% on-premise, garantendo zero fuga di dati, minore dipendenza dai fornitori esterni e costi operativi ridotti.</li><li><b>Upskilling &amp; Enablement:</b> guidato 5 programmi di formazione interni ed esterni, formando oltre 25 colleghi e il CEO di Dabo (azienda tech italiana attiva tra Italia e Cina).</li></ul><p>Ha generato risparmi di tempo stimati in mesi di lavoro e un invito a partecipare a un contest tech a Singapore.</p>",
       pc_follow:"1.500+ follower · 500+ collegamenti",
       cm_title:"Informazioni di contatto", cm_profile:"Profilo LinkedIn", cm_phone:"Telefono", cm_sites:"Siti web", cm_loc:"Sede",
-      manifesto:"In un ambiente regolamentato il successo non si misura in benchmark: si misura in <b>fiducia</b>.",
       proof_label:"In sintesi",
       p1k:"Advisory", p1v:"2 Business Unit + 1 CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
       p2k:"Formazione", p2v:"5 sessioni · 25+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
@@ -413,11 +406,10 @@
       oltre_p:"Fuori orario smonto sistemi per capire come funzionano — lo stesso istinto del lavoro, su scala più piccola. Alcuni di questi esperimenti personali diventano progetti veri, il posto dove le idee si misurano con l'esecuzione. E poi c'è la musica, ascoltata da audiofilo: prog, fusion e tutto ciò che sta nel mezzo — perché anche l'ascolto, fatto bene, è una questione di sistemi."
     },
     en: {
-      sec_bio:"Bio",
-      lead:"<p>I come from reliability, not from trends: first at Assicurazioni Generali, where I learned that trust matters more than speed, then at InfoCamere, where I still work today alongside senior figures and managers at various levels to implement and integrate enterprise AI solutions.</p><p>The result: <b>systems in production, in regulated environments, built to last</b>. Because the model doesn\u0027t make the difference. Integration does.</p>",
+      sec_bio:"About",
+      lead:"<p>I started my journey at Generali as an insurance broker — an experience that deeply taught me the value of reliability, accountability, and trust.</p><p>Driven by a passion for technology, I won a Google scholarship to participate in the first Italian edition of WorkInTech. Today, I combine a genuine tech-enthusiast mindset with solid IT expertise, backed by hands-on experience and industry certifications.</p><p>If there\u0027s one thing hands-on experience has taught me, it\u0027s that <b>expertise and consistency are keys to driving real business value</b>.</p><p><b>What I bring:</b></p><ul><li>Designed and successfully deployed AI-powered service-catalog assistants into production, giving managers instant access to operational knowledge and generating business value.</li><li>Engineered and fine-tuned open-weight models (Gemma, Qwen, Llama) tailored to internal data and procedures. Deployed 100% on-premise, ensuring zero data leakage, reduced vendor lock-in, and lower operational costs.</li><li><b>Upskilling &amp; Enablement:</b> Led 5 internal and external training programs, upskilling 25+ colleagues and the CEO of Dabo (Italian tech company operating from Italy to China).</li></ul><p>Generating estimated time savings worth months of work and an offer to participate in a tech contest in Singapore.</p>",
       pc_follow:"1,500+ followers · 500+ connections",
       cm_title:"Contact information", cm_profile:"LinkedIn profile", cm_phone:"Phone", cm_sites:"Websites", cm_loc:"Based in",
-      manifesto:"In a regulated environment, success is not measured in benchmarks: it is measured in <b>trust</b>.",
       proof_label:"At a glance",
       p1k:"Advisory", p1v:"2 business units + 1 external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
       p2k:"Training", p2v:"5 sessions · 25+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
@@ -444,11 +436,10 @@
       oltre_p:"After hours I take systems apart to understand how they work — the same instinct as my day job, on a smaller scale. Some of these personal experiments turn into real projects, the place where ideas meet execution. And then there's music, listened to as an audiophile: prog, fusion and everything in between — because listening, done properly, is a matter of systems too."
     },
     fr: {
-      sec_bio:"Bio",
-      lead:"<p>Je viens de la fiabilité, pas des effets de mode : d\u0027abord chez Assicurazioni Generali, où j\u0027ai appris que la confiance compte plus que la vitesse, puis chez InfoCamere, où je collabore aujourd\u0027hui encore, à différents niveaux, avec des cadres et des managers pour implémenter et intégrer des solutions d\u0027entreprise basées sur l\u0027IA.</p><p>Le résultat : des <b>systèmes en production, dans des environnements réglementés, faits pour durer</b>. Parce que la différence ne vient pas du modèle. Elle vient de l\u0027intégration.</p>",
+      sec_bio:"À propos",
+      lead:"<p>J\u0027ai commencé mon parcours chez Generali comme courtier en assurance — une expérience qui m\u0027a profondément appris la valeur de la fiabilité, de la responsabilité et de la confiance.</p><p>Porté par la passion pour la technologie, j\u0027ai remporté une bourse Google pour participer à la première édition italienne de WorkInTech. Aujourd\u0027hui, j\u0027allie un véritable esprit tech-enthusiast à une solide expertise IT, soutenue par une expérience pratique et des certifications du secteur.</p><p>S\u0027il y a une chose que l\u0027expérience pratique m\u0027a apprise, c\u0027est que <b>l\u0027expertise et la constance sont les clés pour générer une réelle valeur business</b>.</p><p><b>Ce que j\u0027apporte :</b></p><ul><li>Conçu et déployé avec succès en production des assistants IA pour le catalogue de services, donnant aux managers un accès instantané aux connaissances opérationnelles et générant de la valeur business.</li><li>Conçu et affiné (fine-tuning) des modèles open-weight (Gemma, Qwen, Llama) adaptés aux données et procédures internes. Déployés à 100 % on-premise, garantissant zéro fuite de données, une dépendance réduite aux fournisseurs externes et des coûts opérationnels plus bas.</li><li><b>Upskilling &amp; Enablement :</b> animé 5 programmes de formation internes et externes, formant plus de 25 collègues et le CEO de Dabo (entreprise tech italienne active entre l\u0027Italie et la Chine).</li></ul><p>Générant des gains de temps estimés à plusieurs mois de travail et une invitation à participer à un concours tech à Singapour.</p>",
       pc_follow:"1 500+ abonnés · 500+ relations",
       cm_title:"Coordonnées", cm_profile:"Profil LinkedIn", cm_phone:"Téléphone", cm_sites:"Sites web", cm_loc:"Basé à",
-      manifesto:"Dans un environnement réglementé, le succès ne se mesure pas en benchmarks : il se mesure en <b>confiance</b>.",
       proof_label:"En bref",
       p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l\u0027Italie et la Chine.",
       p2k:"Formation", p2v:"5 sessions · 25+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
@@ -536,7 +527,7 @@
 
   // --- reveal allo scroll ---
   if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window){
-    var toReveal = document.querySelectorAll("section, .case, .path-row, .manifesto");
+    var toReveal = document.querySelectorAll("section, .case, .path-row");
     toReveal.forEach(function(el){ el.classList.add("will-reveal"); });
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
