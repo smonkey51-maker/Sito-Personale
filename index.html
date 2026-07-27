@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicolò Forcolin — AI enterprise in ambienti regolamentati</title>
-<meta name="description" content="Dalla sperimentazione alla produzione: strategia e sistemi AI in un contesto IT pubblico e regolamentato.">
+<meta name="description" content="Strategia, sistemi e progetti AI in un contesto IT pubblico e regolamentato.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,300&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
@@ -75,44 +75,33 @@
 
   /* ============ hero ============ */
   .hero{padding:64px 0 8px}
-  .hero-grid{display:grid;grid-template-columns:360px minmax(0,1fr);gap:64px;align-items:start}
+  .hero-grid{display:flex;justify-content:center}
   @media (max-width:900px){
     .hero{padding:36px 0 8px}
-    .hero-grid{grid-template-columns:1fr;gap:44px}
   }
 
   .sec-label{font-size:11px;color:var(--blue);margin-bottom:28px;display:block}
-  .lead{
-    color:var(--ink);max-width:var(--measure);
-    font-size:clamp(18px,2.1vw,21px);line-height:1.8;font-weight:300;
-  }
-  .lead b{color:var(--ink);font-weight:600}
-  .lead p + p{margin-top:1.1em}
-  .lead ul{list-style:none;margin:1.1em 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
-  .lead ul + p{margin-top:1.1em}
-  .lead li{position:relative;padding-left:20px}
-  .lead li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--blue)}
 
   /* ============ card profilo ============ */
-  .profile-card{padding:8px 0;text-align:center}
-  .pc-photo{width:124px;height:124px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 20px}
-  .pc-name{font-weight:600;font-size:22px;letter-spacing:-.005em}
-  .pc-head{font-style:italic;font-size:15px;color:var(--muted);line-height:1.5;margin-top:6px}
-  .pc-org{font-size:10.5px;color:var(--muted);margin-top:12px}
+  .profile-card{padding:8px 0;text-align:center;max-width:480px;margin:0 auto}
+  .pc-photo{width:172px;height:172px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 28px}
+  .pc-name{font-weight:600;font-size:32px;letter-spacing:-.005em}
+  .pc-head{font-style:italic;font-size:19px;color:var(--muted);line-height:1.5;margin-top:8px}
+  .pc-org{font-size:12.5px;color:var(--muted);margin-top:16px}
   .pc-follow{
-    display:inline-block;margin-top:10px;border:none;
-    font-family:"Libre Franklin",sans-serif;font-weight:500;font-size:12px;
+    display:inline-block;margin-top:12px;border:none;
+    font-family:"Libre Franklin",sans-serif;font-weight:500;font-size:14px;
     letter-spacing:.04em;color:var(--blue);
   }
-  .pc-icons{display:flex;justify-content:center;gap:32px;margin-top:20px}
+  .pc-icons{display:flex;justify-content:center;gap:36px;margin-top:26px}
   .pc-icons a{border:none;color:var(--muted);transition:color .2s}
-  .pc-icons a svg{display:block;height:24px;width:auto}
+  .pc-icons a svg{display:block;height:28px;width:auto}
   .pc-icons a:hover{color:var(--blue)}
-  .pc-actions{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .pc-actions{margin-top:28px;display:flex;flex-direction:column;gap:12px}
   .pc-btn{
     font-family:"Libre Franklin",sans-serif;font-weight:500;
-    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-    padding:12px 16px;border-radius:2px;cursor:pointer;border:1px solid var(--blue);
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    padding:14px 18px;border-radius:2px;cursor:pointer;border:1px solid var(--blue);
     background:var(--blue);color:var(--btn-text);text-align:center;transition:background .2s,color .2s,border-color .2s;
   }
   .pc-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -132,9 +121,8 @@
   .pitem .d{font-size:14.5px;color:var(--muted);line-height:1.55}
 
   /* casi studio */
-  .case{padding:30px 0;border-top:1px solid var(--line)}
-  .case:first-of-type{border-top:none;padding-top:0}
-  .case:last-of-type{padding-bottom:0}
+  .case-grid{display:flex;flex-direction:column;gap:32px}
+  .case{padding-left:18px;border-left:2px solid var(--blue)}
   .case h3{font-weight:600;font-size:21px;letter-spacing:-.008em;line-height:1.3}
   .case h3 a{border:none}
   .case p{color:var(--muted);margin-top:10px;max-width:var(--measure);font-size:16px}
@@ -147,20 +135,15 @@
   .dot{width:6px;height:6px;border-radius:50%;background:var(--ok)}
 
   /* percorso */
-  .path-row{display:flex;gap:32px;padding:18px 0;border-top:1px solid var(--line);align-items:baseline}
-  .path-row:first-of-type{border-top:none;padding-top:0}
-  .path-row:last-of-type{padding-bottom:0}
+  .path-grid{display:flex;flex-direction:column;gap:26px}
+  .path-row{padding-left:18px;border-left:2px solid var(--blue)}
+  .path-row b{display:block;font-weight:600;font-size:17.5px}
   .path-row time{
-    font-family:"Libre Franklin",sans-serif;font-weight:500;
+    display:block;font-family:"Libre Franklin",sans-serif;font-weight:500;
     font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);white-space:nowrap;min-width:9em;
+    color:var(--muted);margin-top:4px;
   }
-  .path-row div b{font-weight:600;font-size:17.5px}
-  .path-row div span{color:var(--muted);display:block;font-size:15.5px;margin-top:2px;max-width:var(--measure)}
-  @media (max-width:600px){
-    .path-row{flex-direction:column;gap:4px}
-    .path-row time{min-width:0}
-  }
+  .path-row span{color:var(--muted);display:block;font-size:15.5px;margin-top:8px;max-width:var(--measure)}
 
   /* oltre */
   #oltre p{color:var(--muted);max-width:var(--measure);font-size:16px}
@@ -234,7 +217,7 @@
         <img class="pc-photo" src="photo.jpg" alt="Nicolò Forcolin" width="124" height="124">
         <p class="pc-name">Nicolò Forcolin</p>
         <p class="pc-head">People &amp; Enterprise Reliability</p>
-        <p class="pc-org label">InfoCamere · Padova ⇄ Bruxelles</p>
+        <p class="pc-org label">InfoCamere · Padova</p>
         <a class="pc-follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.300+ follower · 500+ collegamenti</a>
         <div class="pc-icons">
           <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
@@ -249,11 +232,6 @@
           <button class="pc-btn ghost" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
         </div>
       </aside>
-
-      <div class="hero-text">
-        <span class="sec-label label" data-i18n="sec_bio">Informazioni</span>
-        <div class="lead" data-i18n="lead"><p>Ho iniziato il mio percorso in Generali come assicuratore — un'esperienza che mi ha insegnato a fondo il valore dell'affidabilità, della responsabilità e della fiducia.</p><p>Spinto dalla passione per la tecnologia, ho vinto una borsa di studio Google per partecipare alla prima edizione italiana di WorkInTech. Oggi unisco una genuina mentalità da tech-enthusiast a solide competenze IT, supportate da esperienza pratica e certificazioni di settore.</p><p>Se c'è una cosa che l'esperienza sul campo mi ha insegnato, è che <b>competenza e costanza sono le chiavi per generare vero valore di business</b>.</p><p><b>Cosa porto:</b></p><ul><li>Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando valore di business.</li><li>Progettato e sottoposto a fine-tuning modelli open-weight (Gemma, Qwen, Llama) su misura per dati e procedure interne. Distribuiti al 100% on-premise, garantendo zero fuga di dati, minore dipendenza dai fornitori esterni e costi operativi ridotti.</li><li><b>Upskilling &amp; Enablement:</b> guidato 5 programmi di formazione interni ed esterni, formando oltre 25 colleghi e il CEO di Dabo (azienda tech italiana attiva tra Italia e Cina).</li></ul><p>Ha generato risparmi di tempo stimati in mesi di lavoro e un invito a partecipare a un contest tech a Singapore.</p></div>
-      </div>
     </div>
   </div>
 
@@ -278,58 +256,56 @@
     </div>
   </section>
 
-  <section id="lavori">
-    <span class="sec-label label" data-i18n="sec_lavori">Lavori — casi studio</span>
-
-    <article class="case">
-      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h3>
-      <p data-i18n="c1p">Il problema: la conoscenza operativa esisteva, ma era sepolta in più repository aziendali. La risposta: due sistemi RAG che la rendono interrogabile da manager e decision-maker — meno tempo di ricerca, documentazione complessa finalmente accessibile, validazione human-in-the-loop.</p>
-      <div class="meta">
-        <span class="status"><span class="dot"></span><span data-i18n="st_prod">In produzione</span></span>
-        <span data-i18n="c1m1">Ambito — <b>InfoCamere · catalogo servizi IT</b></span>
-        <span data-i18n="c1m2">Vincoli — <b>dati interni, governance presidiata</b></span>
-      </div>
-    </article>
-
-    <article class="case">
-      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h3>
-      <p data-i18n="c2p">La domanda del vertice: l'AI può entrare dove i dati non possono uscire? La risposta: fine-tuning di modelli open (Gemma, Qwen, Llama) su procedure interne, deploy interamente on-premise. Zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti.</p>
-      <div class="meta">
-        <span class="status"><span class="dot"></span><span data-i18n="st_prod2">In produzione</span></span>
-        <span data-i18n="c2m1">Approccio — <b>fine-tuning · deploy on-premise</b></span>
-        <span data-i18n="c2m2">Output — <b>sessioni dimostrative per il vertice</b></span>
-      </div>
-    </article>
-
-    <article class="case">
-      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c3t">Strategia AI a livello direzionale</a></h3>
-      <p data-i18n="c3p">Dove le slide finiscono e le decisioni cominciano: proposte di architettura, valutazioni di fattibilità, sessioni dimostrative per stakeholder senior. Il criterio non è il benchmark: è integrazione, governance, affidabilità, adozione, fiducia.</p>
-      <div class="meta">
-        <span class="status"><span class="dot"></span><span data-i18n="st_cont">Continuativo</span></span>
-        <span data-i18n="c3m1">Ambito — <b>leadership · business unit</b></span>
-      </div>
-    </article>
-  </section>
-
   <section id="percorso">
     <span class="sec-label label" data-i18n="sec_percorso">Percorso</span>
-    <div class="path-row">
-      <time data-i18n="t1">2022 — oggi</time>
-      <div><b>InfoCamere</b><span data-i18n="pr1">Il capitolo in corso. Dalle infrastrutture mission-critical del sistema camerale alla strategia Gen AI: prima ho imparato a far funzionare i sistemi, poi a farli evolvere. Social Ambassador dal 2025 — perché la tecnologia che non sai raccontare non viene adottata.</span></div>
+    <div class="path-grid">
+      <div class="path-row">
+        <b>InfoCamere</b>
+        <time data-i18n="t1">Set 2022 — oggi</time>
+        <span data-i18n="pr1">SysAdmin. Infrastruttura mission-critical per il sistema camerale, con un focus crescente sull'integrazione dell'AI nei processi operativi: affidabilità, data foundation, adozione AI, automazione. Social Ambassador dal 2025, per raccontare dentro e fuori l'azienda la strategia tech e AI.</span>
+      </div>
+      <div class="path-row">
+        <b>IdeaGrip</b>
+        <time data-i18n="t2">Feb 2022 — Set 2022</time>
+        <span data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</span>
+      </div>
+      <div class="path-row">
+        <b>Generali</b>
+        <time data-i18n="t3">Ott 2020 — Feb 2022</time>
+        <span data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</span>
+      </div>
     </div>
-    <div class="path-row">
-      <time>2020 — 2022</time>
-      <div><b>Generali</b><span data-i18n="pr2">Il capitolo che mi ha formato. Un settore dove fiducia, compliance e affidabilità pesano più della velocità: è lì che ho capito come si costruisce valore dentro le regole, non aggirandole.</span></div>
-    </div>
-    <div class="path-row">
-      <time data-i18n="t3">Prima</time>
-      <div><b>IT operations</b><span data-i18n="pr3">Il punto di partenza. Infrastruttura, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana) come biglietto d'ingresso.</span></div>
+  </section>
+
+  <section id="casi-studio">
+    <span class="sec-label label" data-i18n="sec_lavori">Casi studio</span>
+
+    <div class="case-grid">
+      <article class="case">
+        <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h3>
+        <p data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
+        <div class="meta">
+          <span class="status"><span class="dot"></span><span data-i18n="st_prod">In produzione</span></span>
+          <span data-i18n="c1m1">Ambito — <b>InfoCamere · catalogo servizi IT</b></span>
+          <span data-i18n="c1m2">Vincoli — <b>dati interni, governance presidiata</b></span>
+        </div>
+      </article>
+
+      <article class="case">
+        <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h3>
+        <p data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise: zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti, controllo pieno sugli asset informativi strategici.</p>
+        <div class="meta">
+          <span class="status"><span class="dot"></span><span data-i18n="st_prod2">In produzione</span></span>
+          <span data-i18n="c2m1">Approccio — <b>fine-tuning · deploy on-premise</b></span>
+          <span data-i18n="c2m2">Output — <b>sessioni dimostrative per il vertice</b></span>
+        </div>
+      </article>
     </div>
   </section>
 
   <section id="oltre">
     <span class="sec-label label" data-i18n="sec_oltre">Oltre il lavoro</span>
-    <p data-i18n="oltre_p">Fuori orario smonto sistemi per capire come funzionano — lo stesso istinto del lavoro, su scala più piccola. Alcuni di questi esperimenti personali diventano progetti veri, il posto dove le idee si misurano con l'esecuzione. E poi c'è la musica, ascoltata da audiofilo: prog, fusion e tutto ciò che sta nel mezzo — perché anche l'ascolto, fatto bene, è una questione di sistemi.</p>
+    <p data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
   </section>
 
 </main>
@@ -348,10 +324,6 @@
       <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
     </div>
     <div class="cm-row">
-      <span class="cm-k" data-i18n="cm_profile">Profilo LinkedIn</span>
-      <span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener">linkedin.com/in/nicoloforcolin</a></span>
-    </div>
-    <div class="cm-row">
       <span class="cm-k">Email</span>
       <span class="cm-v"><a href="mailto:nicolo.forcolin@infocamere.it">nicolo.forcolin@infocamere.it</a></span>
     </div>
@@ -360,14 +332,8 @@
       <span class="cm-v"><a href="tel:+393479081966">+39 347 908 1966</a></span>
     </div>
     <div class="cm-row">
-      <span class="cm-k" data-i18n="cm_sites">Siti web</span>
-      <span class="cm-v">
-        <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills</a><span class="sep">·</span><a href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener">Spotify</a>
-      </span>
-    </div>
-    <div class="cm-row">
-      <span class="cm-k" data-i18n="cm_loc">Sede</span>
-      <span class="cm-v">Padova ⇄ Bruxelles</span>
+      <span class="cm-k" data-i18n="cm_cert">Certificazioni</span>
+      <span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a></span>
     </div>
   </div>
 </div>
@@ -376,94 +342,79 @@
 (function(){
   var i18n = {
     it: {
-      sec_bio:"Informazioni",
-      lead:"<p>Ho iniziato il mio percorso in Generali come assicuratore — un\u0027esperienza che mi ha insegnato a fondo il valore dell\u0027affidabilità, della responsabilità e della fiducia.</p><p>Spinto dalla passione per la tecnologia, ho vinto una borsa di studio Google per partecipare alla prima edizione italiana di WorkInTech. Oggi unisco una genuina mentalità da tech-enthusiast a solide competenze IT, supportate da esperienza pratica e certificazioni di settore.</p><p>Se c\u0027è una cosa che l\u0027esperienza sul campo mi ha insegnato, è che <b>competenza e costanza sono le chiavi per generare vero valore di business</b>.</p><p><b>Cosa porto:</b></p><ul><li>Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando valore di business.</li><li>Progettato e sottoposto a fine-tuning modelli open-weight (Gemma, Qwen, Llama) su misura per dati e procedure interne. Distribuiti al 100% on-premise, garantendo zero fuga di dati, minore dipendenza dai fornitori esterni e costi operativi ridotti.</li><li><b>Upskilling &amp; Enablement:</b> guidato 5 programmi di formazione interni ed esterni, formando oltre 25 colleghi e il CEO di Dabo (azienda tech italiana attiva tra Italia e Cina).</li></ul><p>Ha generato risparmi di tempo stimati in mesi di lavoro e un invito a partecipare a un contest tech a Singapore.</p>",
       pc_follow:"1.500+ follower · 500+ collegamenti",
-      cm_title:"Informazioni di contatto", cm_profile:"Profilo LinkedIn", cm_phone:"Telefono", cm_sites:"Siti web", cm_loc:"Sede",
+      cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
       proof_label:"In sintesi",
       p1k:"Advisory", p1v:"2 Business Unit + 1 CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
       p2k:"Formazione", p2v:"5 sessioni · 25+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
-      p3k:"Certificazioni", p3v:"13 · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
-      sec_lavori:"Lavori — casi studio",
+      p3k:"Certificazioni", p3v:"15 · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
+      sec_lavori:"Casi studio",
       c1t:"Enterprise Knowledge Retrieval — due sistemi RAG",
-      c1p:"Il problema: la conoscenza operativa esisteva, ma era sepolta in più repository aziendali. La risposta: due sistemi RAG che la rendono interrogabile da manager e decision-maker — meno tempo di ricerca, documentazione complessa finalmente accessibile, validazione human-in-the-loop.",
-      st_prod:"In produzione", st_prod2:"In produzione", st_cont:"Continuativo",
+      c1p:"Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.",
+      st_prod:"In produzione", st_prod2:"In produzione",
       c1m1:"Ambito — <b>InfoCamere · catalogo servizi IT</b>",
       c1m2:"Vincoli — <b>dati interni, governance presidiata</b>",
       c2t:"Modelli locali per ambienti a dati sensibili",
-      c2p:"La domanda del vertice: l'AI può entrare dove i dati non possono uscire? La risposta: fine-tuning di modelli open (Gemma, Qwen, Llama) su procedure interne, deploy interamente on-premise. Zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti.",
+      c2p:"Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise: zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti, controllo pieno sugli asset informativi strategici.",
       c2m1:"Approccio — <b>fine-tuning · deploy on-premise</b>",
       c2m2:"Output — <b>sessioni dimostrative per il vertice</b>",
-      c3t:"Strategia AI a livello direzionale",
-      c3p:"Dove le slide finiscono e le decisioni cominciano: proposte di architettura, valutazioni di fattibilità, sessioni dimostrative per stakeholder senior. Il criterio non è il benchmark: è integrazione, governance, affidabilità, adozione, fiducia.",
-      c3m1:"Ambito — <b>leadership · business unit</b>",
       sec_percorso:"Percorso",
-      t1:"2022 — oggi", t3:"Prima",
-      pr1:"Il capitolo in corso. Dalle infrastrutture mission-critical del sistema camerale alla strategia Gen AI: prima ho imparato a far funzionare i sistemi, poi a farli evolvere. Social Ambassador dal 2025 — perché la tecnologia che non sai raccontare non viene adottata.",
-      pr2:"Il capitolo che mi ha formato. Un settore dove fiducia, compliance e affidabilità pesano più della velocità: è lì che ho capito come si costruisce valore dentro le regole, non aggirandole.",
-      pr3:"Il punto di partenza. Infrastruttura, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana) come biglietto d'ingresso.",
+      t1:"Set 2022 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
+      pr1:"SysAdmin. Infrastruttura mission-critical per il sistema camerale, con un focus crescente sull'integrazione dell'AI nei processi operativi: affidabilità, data foundation, adozione AI, automazione. Social Ambassador dal 2025, per raccontare dentro e fuori l'azienda la strategia tech e AI.",
+      pr2:"Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).",
+      pr3:"Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.",
       sec_oltre:"Oltre il lavoro",
-      oltre_p:"Fuori orario smonto sistemi per capire come funzionano — lo stesso istinto del lavoro, su scala più piccola. Alcuni di questi esperimenti personali diventano progetti veri, il posto dove le idee si misurano con l'esecuzione. E poi c'è la musica, ascoltata da audiofilo: prog, fusion e tutto ciò che sta nel mezzo — perché anche l'ascolto, fatto bene, è una questione di sistemi."
+      oltre_p:"Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock."
     },
     en: {
-      sec_bio:"About",
-      lead:"<p>I started my journey at Generali as an insurance broker — an experience that deeply taught me the value of reliability, accountability, and trust.</p><p>Driven by a passion for technology, I won a Google scholarship to participate in the first Italian edition of WorkInTech. Today, I combine a genuine tech-enthusiast mindset with solid IT expertise, backed by hands-on experience and industry certifications.</p><p>If there\u0027s one thing hands-on experience has taught me, it\u0027s that <b>expertise and consistency are keys to driving real business value</b>.</p><p><b>What I bring:</b></p><ul><li>Designed and successfully deployed AI-powered service-catalog assistants into production, giving managers instant access to operational knowledge and generating business value.</li><li>Engineered and fine-tuned open-weight models (Gemma, Qwen, Llama) tailored to internal data and procedures. Deployed 100% on-premise, ensuring zero data leakage, reduced vendor lock-in, and lower operational costs.</li><li><b>Upskilling &amp; Enablement:</b> Led 5 internal and external training programs, upskilling 25+ colleagues and the CEO of Dabo (Italian tech company operating from Italy to China).</li></ul><p>Generating estimated time savings worth months of work and an offer to participate in a tech contest in Singapore.</p>",
       pc_follow:"1,500+ followers · 500+ connections",
-      cm_title:"Contact information", cm_profile:"LinkedIn profile", cm_phone:"Phone", cm_sites:"Websites", cm_loc:"Based in",
+      cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
       proof_label:"At a glance",
       p1k:"Advisory", p1v:"2 business units + 1 external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
       p2k:"Training", p2v:"5 sessions · 25+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
-      p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
-      sec_lavori:"Work — case studies",
+      p3k:"Certifications", p3v:"15 · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
+      sec_lavori:"Case studies",
       c1t:"Enterprise Knowledge Retrieval — two RAG systems",
-      c1p:"The problem: operational knowledge existed, but it was buried across multiple enterprise repositories. The answer: two RAG systems that make it queryable by managers and decision-makers — less retrieval time, complex documentation finally accessible, human-in-the-loop validation.",
-      st_prod:"In production", st_prod2:"In production", st_cont:"Ongoing",
+      c1p:"Two RAG agents (Retrieval-Augmented Generation) that make operational knowledge — previously buried across multiple enterprise repositories — queryable by managers and decision-makers: less retrieval time, access to complex and structured documentation, human-in-the-loop validation.",
+      st_prod:"In production", st_prod2:"In production",
       c1m1:"Scope — <b>InfoCamere · IT service catalog</b>",
       c1m2:"Constraints — <b>internal data, governed environment</b>",
       c2t:"Local models for sensitive-data environments",
-      c2p:"The question from leadership: can AI go where data cannot leave? The answer: fine-tuning open models (Gemma, Qwen, Llama) on internal procedures, deployed fully on-premise. Zero data leaving the perimeter, reduced dependency on external providers, lower operational costs.",
+      c2p:"Local models (Gemma, Qwen, Ollama-based architectures) trained on internal procedures, to assess the feasibility of AI adoption in sensitive-data environments where data cannot leave the perimeter. Deployed fully on-premise: zero data leaving the perimeter, reduced dependency on external providers, lower operational costs, full control over strategic information assets.",
       c2m1:"Approach — <b>fine-tuning · on-premise deployment</b>",
       c2m2:"Output — <b>demonstration sessions for senior leadership</b>",
-      c3t:"AI strategy at leadership level",
-      c3p:"Where the slides end and the decisions begin: architecture proposals, feasibility assessments, demonstration sessions for senior stakeholders. The criterion is not the benchmark: it's integration, governance, reliability, adoption, trust.",
-      c3m1:"Scope — <b>leadership · business units</b>",
       sec_percorso:"Path",
-      t1:"2022 — today", t3:"Earlier",
-      pr1:"The current chapter. From the mission-critical infrastructure of the Italian Chambers of Commerce system to Gen AI strategy: first I learned to keep systems running, then to make them evolve. Social Ambassador since 2025 — because technology you can't explain doesn't get adopted.",
-      pr2:"The chapter that shaped me. An industry where trust, compliance and reliability outweigh speed: that's where I learned how value is built within the rules, not around them.",
-      pr3:"The starting point. Infrastructure, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition) as the ticket in.",
+      t1:"Sep 2022 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
+      pr1:"SysAdmin. Mission-critical infrastructure for the Italian Chambers of Commerce system, with a growing focus on integrating AI into operational processes: reliability, data foundations, AI adoption, automation. Social Ambassador since 2025, translating tech and AI strategy into narratives inside and outside the company.",
+      pr2:"IT Specialist (internship). First hands-on IT role: infrastructure support, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition).",
+      pr3:"Insurance consultant. Client-facing role in a highly regulated industry, where trust, compliance and reliability matter as much as the business itself.",
       sec_oltre:"Beyond work",
-      oltre_p:"After hours I take systems apart to understand how they work — the same instinct as my day job, on a smaller scale. Some of these personal experiments turn into real projects, the place where ideas meet execution. And then there's music, listened to as an audiophile: prog, fusion and everything in between — because listening, done properly, is a matter of systems too."
+      oltre_p:"After hours I listen to music as an audiophile — mostly YES and Black Sabbath, between progressive rock and hard rock."
     },
     fr: {
-      sec_bio:"À propos",
-      lead:"<p>J\u0027ai commencé mon parcours chez Generali comme courtier en assurance — une expérience qui m\u0027a profondément appris la valeur de la fiabilité, de la responsabilité et de la confiance.</p><p>Porté par la passion pour la technologie, j\u0027ai remporté une bourse Google pour participer à la première édition italienne de WorkInTech. Aujourd\u0027hui, j\u0027allie un véritable esprit tech-enthusiast à une solide expertise IT, soutenue par une expérience pratique et des certifications du secteur.</p><p>S\u0027il y a une chose que l\u0027expérience pratique m\u0027a apprise, c\u0027est que <b>l\u0027expertise et la constance sont les clés pour générer une réelle valeur business</b>.</p><p><b>Ce que j\u0027apporte :</b></p><ul><li>Conçu et déployé avec succès en production des assistants IA pour le catalogue de services, donnant aux managers un accès instantané aux connaissances opérationnelles et générant de la valeur business.</li><li>Conçu et affiné (fine-tuning) des modèles open-weight (Gemma, Qwen, Llama) adaptés aux données et procédures internes. Déployés à 100 % on-premise, garantissant zéro fuite de données, une dépendance réduite aux fournisseurs externes et des coûts opérationnels plus bas.</li><li><b>Upskilling &amp; Enablement :</b> animé 5 programmes de formation internes et externes, formant plus de 25 collègues et le CEO de Dabo (entreprise tech italienne active entre l\u0027Italie et la Chine).</li></ul><p>Générant des gains de temps estimés à plusieurs mois de travail et une invitation à participer à un concours tech à Singapour.</p>",
       pc_follow:"1 500+ abonnés · 500+ relations",
-      cm_title:"Coordonnées", cm_profile:"Profil LinkedIn", cm_phone:"Téléphone", cm_sites:"Sites web", cm_loc:"Basé à",
+      cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
       proof_label:"En bref",
       p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l\u0027Italie et la Chine.",
       p2k:"Formation", p2v:"5 sessions · 25+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
-      p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
-      sec_lavori:"Travaux — études de cas",
+      p3k:"Certifications", p3v:"15 · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
+      sec_lavori:"Études de cas",
       c1t:"Enterprise Knowledge Retrieval — deux systèmes RAG",
-      c1p:"Le problème : la connaissance opérationnelle existait, mais restait enfouie dans plusieurs référentiels d'entreprise. La réponse : deux systèmes RAG qui la rendent interrogeable par les managers et les décideurs — moins de temps de recherche, une documentation complexe enfin accessible, une validation human-in-the-loop.",
-      st_prod:"En production", st_prod2:"En production", st_cont:"En continu",
+      c1p:"Deux agents RAG (Retrieval-Augmented Generation) qui rendent interrogeable par les managers et les décideurs la connaissance opérationnelle, auparavant enfouie dans plusieurs référentiels d'entreprise : moins de temps de recherche, accès à une documentation complexe et structurée, validation human-in-the-loop.",
+      st_prod:"En production", st_prod2:"En production",
       c1m1:"Périmètre — <b>InfoCamere · catalogue des services IT</b>",
       c1m2:"Contraintes — <b>données internes, gouvernance maîtrisée</b>",
       c2t:"Modèles locaux pour environnements à données sensibles",
-      c2p:"La question de la direction : l'IA peut-elle entrer là où les données ne peuvent pas sortir ? La réponse : fine-tuning de modèles open (Gemma, Qwen, Llama) sur des procédures internes, déployés entièrement on-premise. Aucune donnée hors du périmètre, moins de dépendance aux fournisseurs externes, des coûts opérationnels réduits.",
+      c2p:"Des modèles locaux (Gemma, Qwen, architectures Ollama-based) entraînés sur des procédures internes, pour évaluer la faisabilité de l'adoption de l'IA dans des environnements à données sensibles où les données ne peuvent pas sortir du périmètre. Déployés entièrement on-premise : aucune donnée hors du périmètre, moins de dépendance aux fournisseurs externes, des coûts opérationnels réduits, un contrôle total sur les actifs informationnels stratégiques.",
       c2m1:"Approche — <b>fine-tuning · déploiement on-premise</b>",
       c2m2:"Résultat — <b>sessions de démonstration pour la direction</b>",
-      c3t:"Stratégie IA au niveau de la direction",
-      c3p:"Là où les slides s'arrêtent et où les décisions commencent : propositions d'architecture, études de faisabilité, sessions de démonstration pour les décideurs. Le critère n'est pas le benchmark : c'est l'intégration, la gouvernance, la fiabilité, l'adoption, la confiance.",
-      c3m1:"Périmètre — <b>direction · business units</b>",
       sec_percorso:"Parcours",
-      t1:"2022 — aujourd'hui", t3:"Avant",
-      pr1:"Le chapitre en cours. Des infrastructures critiques du système des Chambres de commerce italiennes à la stratégie Gen AI : j'ai d'abord appris à faire fonctionner les systèmes, puis à les faire évoluer. Social Ambassador depuis 2025 — parce qu'une technologie qu'on ne sait pas raconter n'est pas adoptée.",
-      pr2:"Le chapitre qui m'a formé. Un secteur où la confiance, la conformité et la fiabilité comptent plus que la vitesse : c'est là que j'ai compris comment créer de la valeur dans les règles, et non en les contournant.",
-      pr3:"Le point de départ. Infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne) comme ticket d'entrée.",
+      t1:"Sept. 2022 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
+      pr1:"SysAdmin. Infrastructure critique pour le système des Chambres de commerce italiennes, avec un accent croissant sur l'intégration de l'IA dans les processus opérationnels : fiabilité, fondations des données, adoption de l'IA, automatisation. Social Ambassador depuis 2025, pour traduire la stratégie tech et IA en récits, en interne comme en externe.",
+      pr2:"Spécialiste IT (stage). Premier rôle IT concret : support infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne).",
+      pr3:"Consultant assurance. Rôle au contact du client dans un secteur fortement réglementé, où la confiance, la conformité et la fiabilité comptent autant que le business lui-même.",
       sec_oltre:"Au-delà du travail",
-      oltre_p:"En dehors des heures de travail, je démonte des systèmes pour comprendre comment ils fonctionnent — le même instinct qu'au bureau, à plus petite échelle. Certaines de ces expérimentations personnelles deviennent de vrais projets, l'endroit où les idées se confrontent à l'exécution. Et puis il y a la musique, écoutée en audiophile : prog, fusion et tout ce qui se trouve entre les deux — parce que l'écoute aussi, bien faite, est une affaire de systèmes."
+      oltre_p:"En dehors des heures de travail, j'écoute de la musique en audiophile — surtout YES et Black Sabbath, entre rock progressif et hard rock."
     }
   };
 
