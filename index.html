@@ -121,7 +121,7 @@
   .pitem .d{font-size:14.5px;color:var(--muted);line-height:1.55}
 
   /* casi studio */
-  .case{padding:30px 0;border-top:1px solid var(--line)}
+  .case{padding:30px 0 30px 18px;border-top:1px solid var(--line);border-left:2px solid var(--blue)}
   .case:first-of-type{border-top:none;padding-top:0}
   .case:last-of-type{padding-bottom:0}
   .case h3{font-weight:600;font-size:21px;letter-spacing:-.008em;line-height:1.3}
@@ -136,20 +136,16 @@
   .dot{width:6px;height:6px;border-radius:50%;background:var(--ok)}
 
   /* percorso */
-  .path-row{display:flex;gap:32px;padding:18px 0;border-top:1px solid var(--line);align-items:baseline}
+  .path-row{padding:18px 0 18px 18px;border-top:1px solid var(--line);border-left:2px solid var(--blue)}
   .path-row:first-of-type{border-top:none;padding-top:0}
   .path-row:last-of-type{padding-bottom:0}
+  .path-row b{display:block;font-weight:600;font-size:17.5px}
   .path-row time{
-    font-family:"Libre Franklin",sans-serif;font-weight:500;
+    display:block;font-family:"Libre Franklin",sans-serif;font-weight:500;
     font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);white-space:nowrap;min-width:9em;
+    color:var(--muted);margin-top:4px;
   }
-  .path-row div b{font-weight:600;font-size:17.5px}
-  .path-row div span{color:var(--muted);display:block;font-size:15.5px;margin-top:2px;max-width:var(--measure)}
-  @media (max-width:600px){
-    .path-row{flex-direction:column;gap:4px}
-    .path-row time{min-width:0}
-  }
+  .path-row span{color:var(--muted);display:block;font-size:15.5px;margin-top:8px;max-width:var(--measure)}
 
   /* oltre */
   #oltre p{color:var(--muted);max-width:var(--measure);font-size:16px}
@@ -259,16 +255,6 @@
         <span class="v" data-i18n="p3v">13 · IBM, Google</span>
         <span class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo.</span>
       </div>
-      <div class="pitem">
-        <span class="k label" data-i18n="p4k">AI in produzione</span>
-        <span class="v" data-i18n="p4v">Assistenti AI · catalogo servizi</span>
-        <span class="d" data-i18n="p4d">Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando business value.</span>
-      </div>
-      <div class="pitem">
-        <span class="k label" data-i18n="p5k">Modelli on-premise</span>
-        <span class="v" data-i18n="p5v">Gemma · Qwen · Llama</span>
-        <span class="d" data-i18n="p5d">Progettato e sottoposto a fine-tuning modelli open-weight su misura per dati e procedure interne. Distribuiti al 100% on-premise: zero fuga di dati, minore dipendenza dai fornitori esterni, costi operativi ridotti.</span>
-      </div>
     </div>
   </section>
 
@@ -294,30 +280,24 @@
         <span data-i18n="c2m2">Output — <b>sessioni dimostrative per il vertice</b></span>
       </div>
     </article>
-
-    <article class="case">
-      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c3t">Strategia AI a livello direzionale</a></h3>
-      <p data-i18n="c3p">Dove le slide finiscono e le decisioni cominciano: proposte di architettura, valutazioni di fattibilità, sessioni dimostrative per stakeholder senior. Il criterio non è il benchmark: è integrazione, governance, affidabilità, adozione, fiducia.</p>
-      <div class="meta">
-        <span class="status"><span class="dot"></span><span data-i18n="st_cont">Continuativo</span></span>
-        <span data-i18n="c3m1">Ambito — <b>leadership · business unit</b></span>
-      </div>
-    </article>
   </section>
 
   <section id="percorso">
     <span class="sec-label label" data-i18n="sec_percorso">Percorso</span>
     <div class="path-row">
+      <b>InfoCamere</b>
       <time data-i18n="t1">2022 — oggi</time>
-      <div><b>InfoCamere</b><span data-i18n="pr1">Il capitolo in corso. Dalle infrastrutture mission-critical del sistema camerale alla strategia Gen AI: prima ho imparato a far funzionare i sistemi, poi a farli evolvere. Social Ambassador dal 2025 — perché la tecnologia che non sai raccontare non viene adottata.</span></div>
+      <span data-i18n="pr1">Il capitolo in corso. Dalle infrastrutture mission-critical del sistema camerale alla strategia Gen AI: prima ho imparato a far funzionare i sistemi, poi a farli evolvere. Social Ambassador dal 2025 — perché la tecnologia che non sai raccontare non viene adottata.</span>
     </div>
     <div class="path-row">
+      <b>Generali</b>
       <time>2020 — 2022</time>
-      <div><b>Generali</b><span data-i18n="pr2">Il capitolo che mi ha formato. Un settore dove fiducia, compliance e affidabilità pesano più della velocità: è lì che ho capito come si costruisce valore dentro le regole, non aggirandole.</span></div>
+      <span data-i18n="pr2">Il capitolo che mi ha formato. Un settore dove fiducia, compliance e affidabilità pesano più della velocità: è lì che ho capito come si costruisce valore dentro le regole, non aggirandole.</span>
     </div>
     <div class="path-row">
-      <time data-i18n="t3">Prima</time>
-      <div><b>IT operations</b><span data-i18n="pr3">Il punto di partenza. Infrastruttura, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana) come biglietto d'ingresso.</span></div>
+      <b>IT operations</b>
+      <time>2022</time>
+      <span data-i18n="pr3">Il punto di partenza. Infrastruttura, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana) come biglietto d'ingresso.</span>
     </div>
   </section>
 
@@ -376,23 +356,18 @@
       p1k:"Advisory", p1v:"2 Business Unit + 1 CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
       p2k:"Formazione", p2v:"5 sessioni · 25+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
       p3k:"Certificazioni", p3v:"13 · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
-      p4k:"AI in produzione", p4v:"Assistenti AI · catalogo servizi", p4d:"Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando business value.",
-      p5k:"Modelli on-premise", p5v:"Gemma · Qwen · Llama", p5d:"Progettato e sottoposto a fine-tuning modelli open-weight su misura per dati e procedure interne. Distribuiti al 100% on-premise: zero fuga di dati, minore dipendenza dai fornitori esterni, costi operativi ridotti.",
       sec_lavori:"Lavori — casi studio",
       c1t:"Enterprise Knowledge Retrieval — due sistemi RAG",
       c1p:"Il problema: la conoscenza operativa esisteva, ma era sepolta in più repository aziendali. La risposta: due sistemi RAG che la rendono interrogabile da manager e decision-maker — meno tempo di ricerca, documentazione complessa finalmente accessibile, validazione human-in-the-loop.",
-      st_prod:"In produzione", st_prod2:"In produzione", st_cont:"Continuativo",
+      st_prod:"In produzione", st_prod2:"In produzione",
       c1m1:"Ambito — <b>InfoCamere · catalogo servizi IT</b>",
       c1m2:"Vincoli — <b>dati interni, governance presidiata</b>",
       c2t:"Modelli locali per ambienti a dati sensibili",
       c2p:"La domanda del vertice: l'AI può entrare dove i dati non possono uscire? La risposta: fine-tuning di modelli open (Gemma, Qwen, Llama) su procedure interne, deploy interamente on-premise. Zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti.",
       c2m1:"Approccio — <b>fine-tuning · deploy on-premise</b>",
       c2m2:"Output — <b>sessioni dimostrative per il vertice</b>",
-      c3t:"Strategia AI a livello direzionale",
-      c3p:"Dove le slide finiscono e le decisioni cominciano: proposte di architettura, valutazioni di fattibilità, sessioni dimostrative per stakeholder senior. Il criterio non è il benchmark: è integrazione, governance, affidabilità, adozione, fiducia.",
-      c3m1:"Ambito — <b>leadership · business unit</b>",
       sec_percorso:"Percorso",
-      t1:"2022 — oggi", t3:"Prima",
+      t1:"2022 — oggi",
       pr1:"Il capitolo in corso. Dalle infrastrutture mission-critical del sistema camerale alla strategia Gen AI: prima ho imparato a far funzionare i sistemi, poi a farli evolvere. Social Ambassador dal 2025 — perché la tecnologia che non sai raccontare non viene adottata.",
       pr2:"Il capitolo che mi ha formato. Un settore dove fiducia, compliance e affidabilità pesano più della velocità: è lì che ho capito come si costruisce valore dentro le regole, non aggirandole.",
       pr3:"Il punto di partenza. Infrastruttura, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana) come biglietto d'ingresso.",
@@ -406,23 +381,18 @@
       p1k:"Advisory", p1v:"2 business units + 1 external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
       p2k:"Training", p2v:"5 sessions · 25+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
       p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
-      p4k:"AI in production", p4v:"AI assistants · service catalog", p4d:"Designed and successfully deployed AI-powered service-catalog assistants into production, giving managers instant access to operational knowledge and generating business value.",
-      p5k:"On-premise models", p5v:"Gemma · Qwen · Llama", p5d:"Engineered and fine-tuned open-weight models tailored to internal data and procedures. Deployed 100% on-premise: zero data leakage, reduced vendor lock-in, lower operational costs.",
       sec_lavori:"Work — case studies",
       c1t:"Enterprise Knowledge Retrieval — two RAG systems",
       c1p:"The problem: operational knowledge existed, but it was buried across multiple enterprise repositories. The answer: two RAG systems that make it queryable by managers and decision-makers — less retrieval time, complex documentation finally accessible, human-in-the-loop validation.",
-      st_prod:"In production", st_prod2:"In production", st_cont:"Ongoing",
+      st_prod:"In production", st_prod2:"In production",
       c1m1:"Scope — <b>InfoCamere · IT service catalog</b>",
       c1m2:"Constraints — <b>internal data, governed environment</b>",
       c2t:"Local models for sensitive-data environments",
       c2p:"The question from leadership: can AI go where data cannot leave? The answer: fine-tuning open models (Gemma, Qwen, Llama) on internal procedures, deployed fully on-premise. Zero data leaving the perimeter, reduced dependency on external providers, lower operational costs.",
       c2m1:"Approach — <b>fine-tuning · on-premise deployment</b>",
       c2m2:"Output — <b>demonstration sessions for senior leadership</b>",
-      c3t:"AI strategy at leadership level",
-      c3p:"Where the slides end and the decisions begin: architecture proposals, feasibility assessments, demonstration sessions for senior stakeholders. The criterion is not the benchmark: it's integration, governance, reliability, adoption, trust.",
-      c3m1:"Scope — <b>leadership · business units</b>",
       sec_percorso:"Path",
-      t1:"2022 — today", t3:"Earlier",
+      t1:"2022 — today",
       pr1:"The current chapter. From the mission-critical infrastructure of the Italian Chambers of Commerce system to Gen AI strategy: first I learned to keep systems running, then to make them evolve. Social Ambassador since 2025 — because technology you can't explain doesn't get adopted.",
       pr2:"The chapter that shaped me. An industry where trust, compliance and reliability outweigh speed: that's where I learned how value is built within the rules, not around them.",
       pr3:"The starting point. Infrastructure, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition) as the ticket in.",
@@ -436,23 +406,18 @@
       p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l\u0027Italie et la Chine.",
       p2k:"Formation", p2v:"5 sessions · 25+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
       p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
-      p4k:"IA en production", p4v:"Assistants IA · catalogue de services", p4d:"Conçu et déployé avec succès en production des assistants IA pour le catalogue de services, donnant aux managers un accès instantané aux connaissances opérationnelles et générant de la valeur commerciale.",
-      p5k:"Modèles on-premise", p5v:"Gemma · Qwen · Llama", p5d:"Conçu et affiné (fine-tuning) des modèles open-weight adaptés aux données et procédures internes. Déployés à 100 % on-premise : zéro fuite de données, dépendance réduite aux fournisseurs externes, coûts opérationnels réduits.",
       sec_lavori:"Travaux — études de cas",
       c1t:"Enterprise Knowledge Retrieval — deux systèmes RAG",
       c1p:"Le problème : la connaissance opérationnelle existait, mais restait enfouie dans plusieurs référentiels d'entreprise. La réponse : deux systèmes RAG qui la rendent interrogeable par les managers et les décideurs — moins de temps de recherche, une documentation complexe enfin accessible, une validation human-in-the-loop.",
-      st_prod:"En production", st_prod2:"En production", st_cont:"En continu",
+      st_prod:"En production", st_prod2:"En production",
       c1m1:"Périmètre — <b>InfoCamere · catalogue des services IT</b>",
       c1m2:"Contraintes — <b>données internes, gouvernance maîtrisée</b>",
       c2t:"Modèles locaux pour environnements à données sensibles",
       c2p:"La question de la direction : l'IA peut-elle entrer là où les données ne peuvent pas sortir ? La réponse : fine-tuning de modèles open (Gemma, Qwen, Llama) sur des procédures internes, déployés entièrement on-premise. Aucune donnée hors du périmètre, moins de dépendance aux fournisseurs externes, des coûts opérationnels réduits.",
       c2m1:"Approche — <b>fine-tuning · déploiement on-premise</b>",
       c2m2:"Résultat — <b>sessions de démonstration pour la direction</b>",
-      c3t:"Stratégie IA au niveau de la direction",
-      c3p:"Là où les slides s'arrêtent et où les décisions commencent : propositions d'architecture, études de faisabilité, sessions de démonstration pour les décideurs. Le critère n'est pas le benchmark : c'est l'intégration, la gouvernance, la fiabilité, l'adoption, la confiance.",
-      c3m1:"Périmètre — <b>direction · business units</b>",
       sec_percorso:"Parcours",
-      t1:"2022 — aujourd'hui", t3:"Avant",
+      t1:"2022 — aujourd'hui",
       pr1:"Le chapitre en cours. Des infrastructures critiques du système des Chambres de commerce italiennes à la stratégie Gen AI : j'ai d'abord appris à faire fonctionner les systèmes, puis à les faire évoluer. Social Ambassador depuis 2025 — parce qu'une technologie qu'on ne sait pas raconter n'est pas adoptée.",
       pr2:"Le chapitre qui m'a formé. Un secteur où la confiance, la conformité et la fiabilité comptent plus que la vitesse : c'est là que j'ai compris comment créer de la valeur dans les règles, et non en les contournant.",
       pr3:"Le point de départ. Infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne) comme ticket d'entrée.",
