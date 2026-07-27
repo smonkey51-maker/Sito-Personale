@@ -75,44 +75,33 @@
 
   /* ============ hero ============ */
   .hero{padding:64px 0 8px}
-  .hero-grid{display:grid;grid-template-columns:360px minmax(0,1fr);gap:64px;align-items:start}
+  .hero-grid{display:flex;justify-content:center}
   @media (max-width:900px){
     .hero{padding:36px 0 8px}
-    .hero-grid{grid-template-columns:1fr;gap:44px}
   }
 
   .sec-label{font-size:11px;color:var(--blue);margin-bottom:28px;display:block}
-  .lead{
-    color:var(--ink);max-width:var(--measure);
-    font-size:clamp(18px,2.1vw,21px);line-height:1.8;font-weight:300;
-  }
-  .lead b{color:var(--ink);font-weight:600}
-  .lead p + p{margin-top:1.1em}
-  .lead ul{list-style:none;margin:1.1em 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
-  .lead ul + p{margin-top:1.1em}
-  .lead li{position:relative;padding-left:20px}
-  .lead li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--blue)}
 
   /* ============ card profilo ============ */
-  .profile-card{padding:8px 0;text-align:center}
-  .pc-photo{width:124px;height:124px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 20px}
-  .pc-name{font-weight:600;font-size:22px;letter-spacing:-.005em}
-  .pc-head{font-style:italic;font-size:15px;color:var(--muted);line-height:1.5;margin-top:6px}
-  .pc-org{font-size:10.5px;color:var(--muted);margin-top:12px}
+  .profile-card{padding:8px 0;text-align:center;max-width:480px;margin:0 auto}
+  .pc-photo{width:172px;height:172px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 28px}
+  .pc-name{font-weight:600;font-size:32px;letter-spacing:-.005em}
+  .pc-head{font-style:italic;font-size:19px;color:var(--muted);line-height:1.5;margin-top:8px}
+  .pc-org{font-size:12.5px;color:var(--muted);margin-top:16px}
   .pc-follow{
-    display:inline-block;margin-top:10px;border:none;
-    font-family:"Libre Franklin",sans-serif;font-weight:500;font-size:12px;
+    display:inline-block;margin-top:12px;border:none;
+    font-family:"Libre Franklin",sans-serif;font-weight:500;font-size:14px;
     letter-spacing:.04em;color:var(--blue);
   }
-  .pc-icons{display:flex;justify-content:center;gap:32px;margin-top:20px}
+  .pc-icons{display:flex;justify-content:center;gap:36px;margin-top:26px}
   .pc-icons a{border:none;color:var(--muted);transition:color .2s}
-  .pc-icons a svg{display:block;height:24px;width:auto}
+  .pc-icons a svg{display:block;height:28px;width:auto}
   .pc-icons a:hover{color:var(--blue)}
-  .pc-actions{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .pc-actions{margin-top:28px;display:flex;flex-direction:column;gap:12px}
   .pc-btn{
     font-family:"Libre Franklin",sans-serif;font-weight:500;
-    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-    padding:12px 16px;border-radius:2px;cursor:pointer;border:1px solid var(--blue);
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    padding:14px 18px;border-radius:2px;cursor:pointer;border:1px solid var(--blue);
     background:var(--blue);color:var(--btn-text);text-align:center;transition:background .2s,color .2s,border-color .2s;
   }
   .pc-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -249,11 +238,6 @@
           <button class="pc-btn ghost" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
         </div>
       </aside>
-
-      <div class="hero-text">
-        <span class="sec-label label" data-i18n="sec_bio">Informazioni</span>
-        <div class="lead" data-i18n="lead"><p>Ho iniziato il mio percorso in Generali come assicuratore — un'esperienza che mi ha insegnato a fondo il valore dell'affidabilità, della responsabilità e della fiducia.</p><p>Spinto dalla passione per la tecnologia, ho vinto una borsa di studio Google per partecipare alla prima edizione italiana di WorkInTech. Oggi unisco una genuina mentalità da tech-enthusiast a solide competenze IT, supportate da esperienza pratica e certificazioni di settore.</p><p>Se c'è una cosa che l'esperienza sul campo mi ha insegnato, è che <b>competenza e costanza sono le chiavi per generare vero valore di business</b>.</p><p><b>Cosa porto:</b></p><ul><li>Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando valore di business.</li><li>Progettato e sottoposto a fine-tuning modelli open-weight (Gemma, Qwen, Llama) su misura per dati e procedure interne. Distribuiti al 100% on-premise, garantendo zero fuga di dati, minore dipendenza dai fornitori esterni e costi operativi ridotti.</li><li><b>Upskilling &amp; Enablement:</b> guidato 5 programmi di formazione interni ed esterni, formando oltre 25 colleghi e il CEO di Dabo (azienda tech italiana attiva tra Italia e Cina).</li></ul><p>Ha generato risparmi di tempo stimati in mesi di lavoro e un invito a partecipare a un contest tech a Singapore.</p></div>
-      </div>
     </div>
   </div>
 
@@ -274,6 +258,16 @@
         <span class="k label" data-i18n="p3k">Certificazioni</span>
         <span class="v" data-i18n="p3v">13 · IBM, Google</span>
         <span class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo.</span>
+      </div>
+      <div class="pitem">
+        <span class="k label" data-i18n="p4k">AI in produzione</span>
+        <span class="v" data-i18n="p4v">Assistenti AI · catalogo servizi</span>
+        <span class="d" data-i18n="p4d">Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando business value.</span>
+      </div>
+      <div class="pitem">
+        <span class="k label" data-i18n="p5k">Modelli on-premise</span>
+        <span class="v" data-i18n="p5v">Gemma · Qwen · Llama</span>
+        <span class="d" data-i18n="p5d">Progettato e sottoposto a fine-tuning modelli open-weight su misura per dati e procedure interne. Distribuiti al 100% on-premise: zero fuga di dati, minore dipendenza dai fornitori esterni, costi operativi ridotti.</span>
       </div>
     </div>
   </section>
@@ -376,14 +370,14 @@
 (function(){
   var i18n = {
     it: {
-      sec_bio:"Informazioni",
-      lead:"<p>Ho iniziato il mio percorso in Generali come assicuratore — un\u0027esperienza che mi ha insegnato a fondo il valore dell\u0027affidabilità, della responsabilità e della fiducia.</p><p>Spinto dalla passione per la tecnologia, ho vinto una borsa di studio Google per partecipare alla prima edizione italiana di WorkInTech. Oggi unisco una genuina mentalità da tech-enthusiast a solide competenze IT, supportate da esperienza pratica e certificazioni di settore.</p><p>Se c\u0027è una cosa che l\u0027esperienza sul campo mi ha insegnato, è che <b>competenza e costanza sono le chiavi per generare vero valore di business</b>.</p><p><b>Cosa porto:</b></p><ul><li>Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando valore di business.</li><li>Progettato e sottoposto a fine-tuning modelli open-weight (Gemma, Qwen, Llama) su misura per dati e procedure interne. Distribuiti al 100% on-premise, garantendo zero fuga di dati, minore dipendenza dai fornitori esterni e costi operativi ridotti.</li><li><b>Upskilling &amp; Enablement:</b> guidato 5 programmi di formazione interni ed esterni, formando oltre 25 colleghi e il CEO di Dabo (azienda tech italiana attiva tra Italia e Cina).</li></ul><p>Ha generato risparmi di tempo stimati in mesi di lavoro e un invito a partecipare a un contest tech a Singapore.</p>",
       pc_follow:"1.500+ follower · 500+ collegamenti",
       cm_title:"Informazioni di contatto", cm_profile:"Profilo LinkedIn", cm_phone:"Telefono", cm_sites:"Siti web", cm_loc:"Sede",
       proof_label:"In sintesi",
       p1k:"Advisory", p1v:"2 Business Unit + 1 CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
       p2k:"Formazione", p2v:"5 sessioni · 25+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
       p3k:"Certificazioni", p3v:"13 · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
+      p4k:"AI in produzione", p4v:"Assistenti AI · catalogo servizi", p4d:"Progettato e distribuito con successo in produzione assistenti AI per il catalogo servizi, dando ai manager accesso immediato alla conoscenza operativa e generando business value.",
+      p5k:"Modelli on-premise", p5v:"Gemma · Qwen · Llama", p5d:"Progettato e sottoposto a fine-tuning modelli open-weight su misura per dati e procedure interne. Distribuiti al 100% on-premise: zero fuga di dati, minore dipendenza dai fornitori esterni, costi operativi ridotti.",
       sec_lavori:"Lavori — casi studio",
       c1t:"Enterprise Knowledge Retrieval — due sistemi RAG",
       c1p:"Il problema: la conoscenza operativa esisteva, ma era sepolta in più repository aziendali. La risposta: due sistemi RAG che la rendono interrogabile da manager e decision-maker — meno tempo di ricerca, documentazione complessa finalmente accessibile, validazione human-in-the-loop.",
@@ -406,14 +400,14 @@
       oltre_p:"Fuori orario smonto sistemi per capire come funzionano — lo stesso istinto del lavoro, su scala più piccola. Alcuni di questi esperimenti personali diventano progetti veri, il posto dove le idee si misurano con l'esecuzione. E poi c'è la musica, ascoltata da audiofilo: prog, fusion e tutto ciò che sta nel mezzo — perché anche l'ascolto, fatto bene, è una questione di sistemi."
     },
     en: {
-      sec_bio:"About",
-      lead:"<p>I started my journey at Generali as an insurance broker — an experience that deeply taught me the value of reliability, accountability, and trust.</p><p>Driven by a passion for technology, I won a Google scholarship to participate in the first Italian edition of WorkInTech. Today, I combine a genuine tech-enthusiast mindset with solid IT expertise, backed by hands-on experience and industry certifications.</p><p>If there\u0027s one thing hands-on experience has taught me, it\u0027s that <b>expertise and consistency are keys to driving real business value</b>.</p><p><b>What I bring:</b></p><ul><li>Designed and successfully deployed AI-powered service-catalog assistants into production, giving managers instant access to operational knowledge and generating business value.</li><li>Engineered and fine-tuned open-weight models (Gemma, Qwen, Llama) tailored to internal data and procedures. Deployed 100% on-premise, ensuring zero data leakage, reduced vendor lock-in, and lower operational costs.</li><li><b>Upskilling &amp; Enablement:</b> Led 5 internal and external training programs, upskilling 25+ colleagues and the CEO of Dabo (Italian tech company operating from Italy to China).</li></ul><p>Generating estimated time savings worth months of work and an offer to participate in a tech contest in Singapore.</p>",
       pc_follow:"1,500+ followers · 500+ connections",
       cm_title:"Contact information", cm_profile:"LinkedIn profile", cm_phone:"Phone", cm_sites:"Websites", cm_loc:"Based in",
       proof_label:"At a glance",
       p1k:"Advisory", p1v:"2 business units + 1 external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
       p2k:"Training", p2v:"5 sessions · 25+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
       p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
+      p4k:"AI in production", p4v:"AI assistants · service catalog", p4d:"Designed and successfully deployed AI-powered service-catalog assistants into production, giving managers instant access to operational knowledge and generating business value.",
+      p5k:"On-premise models", p5v:"Gemma · Qwen · Llama", p5d:"Engineered and fine-tuned open-weight models tailored to internal data and procedures. Deployed 100% on-premise: zero data leakage, reduced vendor lock-in, lower operational costs.",
       sec_lavori:"Work — case studies",
       c1t:"Enterprise Knowledge Retrieval — two RAG systems",
       c1p:"The problem: operational knowledge existed, but it was buried across multiple enterprise repositories. The answer: two RAG systems that make it queryable by managers and decision-makers — less retrieval time, complex documentation finally accessible, human-in-the-loop validation.",
@@ -436,14 +430,14 @@
       oltre_p:"After hours I take systems apart to understand how they work — the same instinct as my day job, on a smaller scale. Some of these personal experiments turn into real projects, the place where ideas meet execution. And then there's music, listened to as an audiophile: prog, fusion and everything in between — because listening, done properly, is a matter of systems too."
     },
     fr: {
-      sec_bio:"À propos",
-      lead:"<p>J\u0027ai commencé mon parcours chez Generali comme courtier en assurance — une expérience qui m\u0027a profondément appris la valeur de la fiabilité, de la responsabilité et de la confiance.</p><p>Porté par la passion pour la technologie, j\u0027ai remporté une bourse Google pour participer à la première édition italienne de WorkInTech. Aujourd\u0027hui, j\u0027allie un véritable esprit tech-enthusiast à une solide expertise IT, soutenue par une expérience pratique et des certifications du secteur.</p><p>S\u0027il y a une chose que l\u0027expérience pratique m\u0027a apprise, c\u0027est que <b>l\u0027expertise et la constance sont les clés pour générer une réelle valeur business</b>.</p><p><b>Ce que j\u0027apporte :</b></p><ul><li>Conçu et déployé avec succès en production des assistants IA pour le catalogue de services, donnant aux managers un accès instantané aux connaissances opérationnelles et générant de la valeur business.</li><li>Conçu et affiné (fine-tuning) des modèles open-weight (Gemma, Qwen, Llama) adaptés aux données et procédures internes. Déployés à 100 % on-premise, garantissant zéro fuite de données, une dépendance réduite aux fournisseurs externes et des coûts opérationnels plus bas.</li><li><b>Upskilling &amp; Enablement :</b> animé 5 programmes de formation internes et externes, formant plus de 25 collègues et le CEO de Dabo (entreprise tech italienne active entre l\u0027Italie et la Chine).</li></ul><p>Générant des gains de temps estimés à plusieurs mois de travail et une invitation à participer à un concours tech à Singapour.</p>",
       pc_follow:"1 500+ abonnés · 500+ relations",
       cm_title:"Coordonnées", cm_profile:"Profil LinkedIn", cm_phone:"Téléphone", cm_sites:"Sites web", cm_loc:"Basé à",
       proof_label:"En bref",
       p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l\u0027Italie et la Chine.",
       p2k:"Formation", p2v:"5 sessions · 25+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
       p3k:"Certifications", p3v:"13 · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
+      p4k:"IA en production", p4v:"Assistants IA · catalogue de services", p4d:"Conçu et déployé avec succès en production des assistants IA pour le catalogue de services, donnant aux managers un accès instantané aux connaissances opérationnelles et générant de la valeur commerciale.",
+      p5k:"Modèles on-premise", p5v:"Gemma · Qwen · Llama", p5d:"Conçu et affiné (fine-tuning) des modèles open-weight adaptés aux données et procédures internes. Déployés à 100 % on-premise : zéro fuite de données, dépendance réduite aux fournisseurs externes, coûts opérationnels réduits.",
       sec_lavori:"Travaux — études de cas",
       c1t:"Enterprise Knowledge Retrieval — deux systèmes RAG",
       c1p:"Le problème : la connaissance opérationnelle existait, mais restait enfouie dans plusieurs référentiels d'entreprise. La réponse : deux systèmes RAG qui la rendent interrogeable par les managers et les décideurs — moins de temps de recherche, une documentation complexe enfin accessible, une validation human-in-the-loop.",
