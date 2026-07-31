@@ -111,6 +111,12 @@
     letter-spacing:-.012em;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(130% 120% at 50% 42%,transparent 55%,var(--bg-deep) 130%);
   }
   .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
   a{color:inherit;text-decoration:none}
