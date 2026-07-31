@@ -176,35 +176,35 @@
 
   /* ============ hero: la card profilo dell'originale ============ */
   .hero{
-    padding:112px 0 60px;text-align:center;scroll-margin-top:0;
+    padding:clamp(112px,10vw,132px) 0 clamp(60px,6vw,72px);text-align:center;scroll-margin-top:0;
     background:radial-gradient(120% 100% at 50% -12%,var(--bg-deep) 0%,var(--bg) 60%);
   }
   .pc-photo{
-    width:clamp(160px,17vw,208px);height:clamp(160px,17vw,208px);
+    width:clamp(160px,17vw,240px);height:clamp(160px,17vw,240px);
     border-radius:50%;object-fit:cover;object-position:center 40%;
-    display:block;margin:0 auto 30px;border:1px solid var(--hair);
+    display:block;margin:0 auto 34px;border:1px solid var(--hair);
     box-shadow:0 18px 44px -22px rgba(11,34,57,.45);
   }
   :root[data-theme="dark"] .pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
   @media (prefers-color-scheme:dark){.pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}}
   :root[data-theme="light"] .pc-photo{box-shadow:0 18px 44px -22px rgba(11,34,57,.45)}
-  .pc-name{font-size:clamp(36px,5.8vw,58px);font-weight:660;letter-spacing:-.04em;line-height:1.05}
+  .pc-name{font-size:clamp(36px,5.8vw,66px);font-weight:660;letter-spacing:-.04em;line-height:1.05}
   .pc-head{
-    margin-top:14px;font-size:clamp(18px,2.2vw,22px);font-weight:400;
+    margin-top:16px;font-size:clamp(18px,2.2vw,25px);font-weight:400;
     color:var(--muted);letter-spacing:-.014em;
   }
   .pc-org{
-    display:inline-flex;align-items:center;margin-top:20px;
-    font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted);
-    border:1px solid var(--hair);border-radius:999px;padding:5px 13px;
+    display:inline-flex;align-items:center;margin-top:24px;
+    font-family:var(--mono);font-size:clamp(11.5px,1vw,12.5px);letter-spacing:.06em;color:var(--muted);
+    border:1px solid var(--hair);border-radius:999px;padding:6px 15px;
   }
-  .pc-follow{display:block;margin-top:16px;font-size:14.5px;color:var(--blue);font-weight:450}
+  .pc-follow{display:block;margin-top:18px;font-size:clamp(14.5px,1.1vw,15.5px);color:var(--blue);font-weight:450}
   .pc-follow:hover{text-decoration:underline;text-underline-offset:3px}
-  .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    font-size:15px;font-weight:500;letter-spacing:-.01em;
-    padding:11px 22px;border-radius:999px;cursor:pointer;border:1px solid transparent;
+    font-size:clamp(15px,1.15vw,16px);font-weight:500;letter-spacing:-.01em;
+    padding:clamp(11px,1vw,13px) clamp(22px,2vw,27px);border-radius:999px;cursor:pointer;border:1px solid transparent;
     font-family:var(--sans);
     background:var(--blue);color:var(--btn-text);
     transition:transform .2s cubic-bezier(.32,.72,0,1),filter .2s,background .2s;
@@ -213,15 +213,15 @@
   .btn:active{transform:scale(.96);transition-duration:.12s}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
   .btn.ghost:hover{background:var(--tile);filter:none}
-  .pc-icons{display:flex;gap:8px;justify-content:center;margin-top:24px}
+  .pc-icons{display:flex;gap:8px;justify-content:center;margin-top:28px}
   .iconlink{
-    width:38px;height:38px;border-radius:50%;border:1px solid var(--hair);
+    width:clamp(38px,3vw,44px);height:clamp(38px,3vw,44px);border-radius:50%;border:1px solid var(--hair);
     display:grid;place-items:center;color:var(--muted);
     transition:color .2s,border-color .2s,background .2s,transform .15s cubic-bezier(.32,.72,0,1);
   }
   .iconlink:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-soft)}
   .iconlink:active{transform:scale(.9)}
-  .iconlink svg{width:18px;height:18px;display:block}
+  .iconlink svg{width:clamp(18px,1.4vw,21px);height:clamp(18px,1.4vw,21px);display:block}
 
   /* ============ bento ============ */
   .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
@@ -437,7 +437,7 @@
     <span class="pc-org">InfoCamere · Padova</span>
     <a class="pc-follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
     <div class="cta">
-      <a class="btn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
       <button class="btn ghost" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
     </div>
     <div class="pc-icons">
