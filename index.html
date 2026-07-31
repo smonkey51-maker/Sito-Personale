@@ -768,13 +768,6 @@
     var handle = modal.querySelector(".modal-handle");
     var dragging = false, startY = 0, deltaY = 0;
     function isSheet(){ return window.matchMedia("(max-width:640px)").matches; }
-    function onDown(e){
-      if(!isSheet()) return;
-      dragging = true;
-      startY = e.clientY;
-      modalPanel.style.transition = "none";
-      if(handle.setPointerCapture) handle.setPointerCapture(e.pointerId);
-    }
     function onMove(e){
       if(!dragging) return;
       deltaY = Math.max(0, e.clientY - startY);
@@ -787,11 +780,20 @@
       if(deltaY > 110){ closeModal(); }
       modalPanel.style.transform = "";
       deltaY = 0;
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
+    }
+    function onDown(e){
+      if(!isSheet()) return;
+      dragging = true;
+      startY = e.clientY;
+      modalPanel.style.transition = "none";
+      window.addEventListener("pointermove", onMove);
+      window.addEventListener("pointerup", onUp);
+      window.addEventListener("pointercancel", onUp);
     }
     handle.addEventListener("pointerdown", onDown);
-    handle.addEventListener("pointermove", onMove);
-    handle.addEventListener("pointerup", onUp);
-    handle.addEventListener("pointercancel", onUp);
   })();
 
   /* ---- tile: tilt 3D leggero al passaggio del mouse ---- */
