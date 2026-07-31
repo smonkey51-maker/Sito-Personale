@@ -253,6 +253,7 @@
   .t-proof{background:linear-gradient(162deg,var(--tile-2),var(--tile) 58%)}
   .t-proof .k{margin-bottom:16px}
   .t-proof .v{font-size:23px;font-weight:600;letter-spacing:-.024em;line-height:1.25;text-wrap:balance}
+  .num{font-variant-numeric:tabular-nums}
   .t-proof .d{margin-top:12px}
 
   /* percorso */
@@ -458,19 +459,19 @@
 
     <section class="tile t-2 t-proof rv" aria-labelledby="p1k">
       <span class="eyebrow k" id="p1k" data-i18n="p1k">Advisory</span>
-      <p class="v" data-i18n="p1v">2 Business Unit + 1 CEO esterno</p>
+      <p class="v" data-i18n="p1v"><span class="num" data-count="2">0</span> Business Unit + <span class="num" data-count="1">0</span> CEO esterno</p>
       <p class="d" data-i18n="p1d">Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.</p>
     </section>
 
     <section class="tile t-2 t-proof rv" aria-labelledby="p2k">
       <span class="eyebrow k" id="p2k" data-i18n="p2k">Formazione</span>
-      <p class="v" data-i18n="p2v">5 sessioni · 25+ persone</p>
+      <p class="v" data-i18n="p2v"><span class="num" data-count="5">0</span> sessioni · <span class="num" data-count="25">0</span>+ persone</p>
       <p class="d" data-i18n="p2d">Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.</p>
     </section>
 
     <section class="tile t-2 t-proof rv" aria-labelledby="p3k">
       <span class="eyebrow k" id="p3k" data-i18n="p3k">Certificazioni</span>
-      <p class="v" data-i18n="p3v">15 · IBM, Google</p>
+      <p class="v" data-i18n="p3v"><span class="num" data-count="15">0</span> · IBM, Google</p>
       <p class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo.</p>
     </section>
 
@@ -574,9 +575,9 @@
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
       nav_profilo:"Profilo", nav_contatti:"Contatti",
       proof_label:"In sintesi",
-      p1k:"Advisory", p1v:"2 Business Unit + 1 CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
-      p2k:"Formazione", p2v:"5 sessioni · 25+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
-      p3k:"Certificazioni", p3v:"15 · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
+      p1k:"Advisory", p1v:"<span class=\"num\" data-count=\"2\">0</span> Business Unit + <span class=\"num\" data-count=\"1\">0</span> CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
+      p2k:"Formazione", p2v:"<span class=\"num\" data-count=\"5\">0</span> sessioni · <span class=\"num\" data-count=\"25\">0</span>+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
+      p3k:"Certificazioni", p3v:"<span class=\"num\" data-count=\"15\">0</span> · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
       sec_lavori:"Casi studio",
       c1t:"Enterprise Knowledge Retrieval — due sistemi RAG",
       c1p:"Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.",
@@ -600,9 +601,9 @@
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
       nav_profilo:"Profile", nav_contatti:"Contact",
       proof_label:"At a glance",
-      p1k:"Advisory", p1v:"2 business units + 1 external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
-      p2k:"Training", p2v:"5 sessions · 25+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
-      p3k:"Certifications", p3v:"15 · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
+      p1k:"Advisory", p1v:"<span class=\"num\" data-count=\"2\">0</span> business units + <span class=\"num\" data-count=\"1\">0</span> external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
+      p2k:"Training", p2v:"<span class=\"num\" data-count=\"5\">0</span> sessions · <span class=\"num\" data-count=\"25\">0</span>+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
+      p3k:"Certifications", p3v:"<span class=\"num\" data-count=\"15\">0</span> · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
       sec_lavori:"Case studies",
       c1t:"Enterprise Knowledge Retrieval — two RAG systems",
       c1p:"Two RAG agents (Retrieval-Augmented Generation) that make operational knowledge — previously buried across multiple enterprise repositories — queryable by managers and decision-makers: less retrieval time, access to complex and structured documentation, human-in-the-loop validation.",
@@ -626,9 +627,9 @@
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
       nav_profilo:"Profil", nav_contatti:"Contact",
       proof_label:"En bref",
-      p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l'Italie et la Chine.",
-      p2k:"Formation", p2v:"5 sessions · 25+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
-      p3k:"Certifications", p3v:"15 · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
+      p1k:"Conseil", p1v:"<span class=\"num\" data-count=\"2\">0</span> business units + <span class=\"num\" data-count=\"1\">0</span> CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l'Italie et la Chine.",
+      p2k:"Formation", p2v:"<span class=\"num\" data-count=\"5\">0</span> sessions · <span class=\"num\" data-count=\"25\">0</span>+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
+      p3k:"Certifications", p3v:"<span class=\"num\" data-count=\"15\">0</span> · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
       sec_lavori:"Études de cas",
       c1t:"Enterprise Knowledge Retrieval — deux systèmes RAG",
       c1p:"Deux agents RAG (Retrieval-Augmented Generation) qui rendent interrogeable par les managers et les décideurs la connaissance opérationnelle, auparavant enfouie dans plusieurs référentiels d'entreprise : moins de temps de recherche, accès à une documentation complexe et structurée, validation human-in-the-loop.",
@@ -676,6 +677,9 @@
     });
     document.querySelectorAll(".lang-btn").forEach(function(b){
       b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+    });
+    document.querySelectorAll(".rv.in .num").forEach(function(n){
+      n.textContent = n.getAttribute("data-count");
     });
     spy();
   }
@@ -831,6 +835,33 @@
     update();
   })();
 
+  /* ---- contatori animati (tile "In sintesi") ---- */
+  function setCountsFinal(scope){
+    scope.querySelectorAll(".num").forEach(function(n){
+      n.textContent = n.getAttribute("data-count");
+    });
+  }
+  function animateCounts(scope){
+    var nums = scope.querySelectorAll(".num");
+    if(!nums.length) return;
+    if(window.matchMedia("(prefers-reduced-motion:reduce)").matches){
+      setCountsFinal(scope);
+      return;
+    }
+    nums.forEach(function(n){
+      var target = parseFloat(n.getAttribute("data-count"));
+      var dur = 900, start = null;
+      function step(ts){
+        if(start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        n.textContent = Math.round(target * eased);
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
   /* ---- reveal ---- */
   var tiles = document.querySelectorAll(".rv");
   if("IntersectionObserver" in window){
@@ -838,15 +869,43 @@
       entries.forEach(function(en){
         if(en.isIntersecting){
           var d = (Array.prototype.indexOf.call(tiles, en.target) % 3) * 70;
-          setTimeout(function(){ en.target.classList.add("in"); }, d);
+          setTimeout(function(){
+            en.target.classList.add("in");
+            animateCounts(en.target);
+          }, d);
           io.unobserve(en.target);
         }
       });
     }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
     tiles.forEach(function(t){ io.observe(t); });
   }else{
-    tiles.forEach(function(t){ t.classList.add("in"); });
+    tiles.forEach(function(t){ t.classList.add("in"); setCountsFinal(t); });
   }
+
+  /* ---- scroll: leggero effetto inerziale sulla rotella, solo desktop ---- */
+  (function(){
+    if(!window.matchMedia("(pointer:fine)").matches ||
+       window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+    var current = window.scrollY, target = current, raf = null;
+    function clampTarget(){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      target = Math.max(0, Math.min(target, max));
+    }
+    function loop(){
+      current += (target - current) * 0.14;
+      if(Math.abs(target - current) < 0.5){ current = target; raf = null; }
+      window.scrollTo(0, current);
+      if(raf !== null) raf = requestAnimationFrame(loop);
+    }
+    window.addEventListener("wheel", function(e){
+      if(e.ctrlKey || document.body.style.overflow === "hidden") return;
+      e.preventDefault();
+      target += e.deltaY;
+      clampTarget();
+      if(raf === null){ current = window.scrollY; raf = requestAnimationFrame(loop); }
+    }, {passive:false});
+    window.addEventListener("resize", clampTarget);
+  })();
 
   applyLang();
 })();
