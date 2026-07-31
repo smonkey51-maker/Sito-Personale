@@ -535,11 +535,11 @@
     </div>
     <div class="cm-row">
       <span class="cm-k">Email</span>
-      <span class="cm-v"><a href="mailto:nicolo.forcolin@infocamere.it">nicolo.forcolin@infocamere.it</a></span>
+      <span class="cm-v" id="cmEmail"></span>
     </div>
     <div class="cm-row">
       <span class="cm-k" data-i18n="cm_phone">Telefono</span>
-      <span class="cm-v"><a href="tel:+393479081966">+39 347 908 1966</a></span>
+      <span class="cm-v" id="cmPhone"></span>
     </div>
     <div class="cm-row">
       <span class="cm-k" data-i18n="cm_cert">Certificazioni</span>
@@ -630,6 +630,20 @@
       oltre_p:"En dehors des heures de travail, j'écoute de la musique en audiophile — surtout YES et Black Sabbath, entre rock progressif et hard rock."
     }
   };
+
+  /* ---- contatti: costruiti a runtime per non esporli in chiaro nel sorgente ---- */
+  (function(){
+    var eu = "nicolo.forcolin", ed = "infocamere.it";
+    var email = eu + "@" + ed;
+    document.getElementById("cmEmail").innerHTML =
+      '<a href="mailto:' + email + '">' + email + "</a>";
+
+    var pn = ["+39", "347", "908", "1966"];
+    var phoneDisplay = pn.join(" ");
+    var phoneHref = "tel:" + pn.join("").replace(/\s/g, "");
+    document.getElementById("cmPhone").innerHTML =
+      '<a href="' + phoneHref + '">' + phoneDisplay + "</a>";
+  })();
 
   var root = document.documentElement;
   var lang = "it";
