@@ -5,315 +5,525 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicolò Forcolin — AI enterprise in ambienti regolamentati</title>
 <meta name="description" content="Strategia, sistemi e progetti AI in un contesto IT pubblico e regolamentato.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,300&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F3F5F8;
-    --panel:#FFFFFF;
+    color-scheme:light dark;
+    --bg:#F4F5F7;
+    --bg-deep:#EAECEF;
+    --tile:#FFFFFF;
+    --tile-2:#FBFBFD;
     --ink:#0B2239;
     --muted:#5A6E80;
     --blue:#005CA9;
-    --line:rgba(11,34,57,0.12);
-    --line-strong:rgba(11,34,57,0.28);
+    --blue-soft:rgba(0,92,169,.09);
+    --hair:rgba(11,34,57,.12);
+    --glass:rgba(255,255,255,.72);
+    --glass-line:rgba(11,34,57,.10);
+    --shadow:0 1px 2px rgba(11,34,57,.05),0 12px 32px -14px rgba(11,34,57,.20);
     --ok:#2E7D4F;
     --btn-text:#FFFFFF;
-    --max:1060px;
-    --measure:680px;
+    --grad-oltre:linear-gradient(150deg,rgba(0,92,169,.11) 0%,rgba(0,92,169,.035) 36%,var(--tile) 64%);
+    --r-lg:26px;
+    --r-md:18px;
+    --max:1120px;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Segoe UI,system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,"Roboto Mono",monospace;
   }
-  [data-theme="dark"]{
-    --paper:#081220;
-    --panel:#0E1C2E;
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#081220;
+      --bg-deep:#050C16;
+      --tile:#0E1C2E;
+      --tile-2:#122236;
+      --ink:#E9EEF4;
+      --muted:#8CA0B3;
+      --blue:#4AA3E8;
+      --blue-soft:rgba(74,163,232,.14);
+      --hair:rgba(233,238,244,.12);
+      --glass:rgba(14,28,46,.70);
+      --glass-line:rgba(233,238,244,.14);
+      --shadow:0 1px 2px rgba(0,0,0,.5),0 18px 40px -20px rgba(0,0,0,.85);
+      --ok:#5F9E6E;
+      --btn-text:#081220;
+      --grad-oltre:linear-gradient(150deg,rgba(74,163,232,.26) 0%,rgba(74,163,232,.085) 36%,var(--tile) 66%);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#081220;
+    --bg-deep:#050C16;
+    --tile:#0E1C2E;
+    --tile-2:#122236;
     --ink:#E9EEF4;
     --muted:#8CA0B3;
     --blue:#4AA3E8;
-    --line:rgba(233,238,244,0.12);
-    --line-strong:rgba(233,238,244,0.3);
-    --ok:#5f9e6e;
+    --blue-soft:rgba(74,163,232,.14);
+    --hair:rgba(233,238,244,.12);
+    --glass:rgba(14,28,46,.70);
+    --glass-line:rgba(233,238,244,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 18px 40px -20px rgba(0,0,0,.85);
+    --ok:#5F9E6E;
     --btn-text:#081220;
+    --grad-oltre:linear-gradient(150deg,rgba(74,163,232,.26) 0%,rgba(74,163,232,.085) 36%,var(--tile) 66%);
   }
+  :root[data-theme="light"]{
+    --bg:#F4F5F7;
+    --bg-deep:#EAECEF;
+    --tile:#FFFFFF;
+    --tile-2:#FBFBFD;
+    --ink:#0B2239;
+    --muted:#5A6E80;
+    --blue:#005CA9;
+    --blue-soft:rgba(0,92,169,.09);
+    --hair:rgba(11,34,57,.12);
+    --glass:rgba(255,255,255,.72);
+    --glass-line:rgba(11,34,57,.10);
+    --shadow:0 1px 2px rgba(11,34,57,.05),0 12px 32px -14px rgba(11,34,57,.20);
+    --ok:#2E7D4F;
+    --btn-text:#FFFFFF;
+    --grad-oltre:linear-gradient(150deg,rgba(0,92,169,.11) 0%,rgba(0,92,169,.035) 36%,var(--tile) 64%);
+  }
+
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:var(--paper);
+    background:var(--bg);
     color:var(--ink);
-    font-family:"Source Serif 4",Georgia,serif;
+    font-family:var(--sans);
     font-size:17px;
-    line-height:1.7;
+    line-height:1.55;
+    letter-spacing:-.012em;
     -webkit-font-smoothing:antialiased;
-    transition:background .3s ease,color .3s ease;
+    overflow-x:hidden;
   }
-  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong);transition:color .2s,border-color .2s}
-  a:hover{color:var(--blue);border-color:var(--blue)}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-  .label{
-    font-family:"Libre Franklin",sans-serif;font-weight:500;
-    letter-spacing:.16em;text-transform:uppercase;
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
   }
 
-  /* ============ header: solo controlli ============ */
-  header{
-    position:sticky;top:0;z-index:40;
-    background:color-mix(in srgb, var(--panel) 88%, transparent);
-    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-    transition:background .3s ease;
+  /* ============ navigation pill: solo mobile/tablet ============ */
+  .pillbar{
+    display:none;
+    position:fixed;left:0;right:0;bottom:16px;z-index:60;
+    justify-content:center;padding:0 14px;pointer-events:none;
   }
-  .hrow{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:14px 0}
-  .tg{
-    font-family:"Libre Franklin",sans-serif;font-weight:600;
-    font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--muted);background:none;border:1px solid var(--line);
-    border-radius:2px;padding:6px 11px;cursor:pointer;
-    transition:color .2s,border-color .2s;white-space:nowrap;
+  .pill{
+    pointer-events:auto;position:relative;
+    display:flex;align-items:stretch;gap:2px;
+    background:var(--glass);
+    border:1px solid var(--glass-line);
+    border-radius:999px;padding:8px;max-width:100%;
+    backdrop-filter:saturate(180%) blur(24px);
+    -webkit-backdrop-filter:saturate(180%) blur(24px);
+    box-shadow:0 2px 10px rgba(11,34,57,.08),0 18px 40px -22px rgba(11,34,57,.6);
   }
-  .tg:hover{color:var(--blue);border-color:var(--blue)}
-  .tg.active{color:var(--blue);border-color:var(--blue)}
-  .tg-sep{width:1px;height:18px;background:var(--line);margin:0 6px}
+  .pill-thumb{
+    position:absolute;z-index:0;left:0;top:8px;bottom:8px;opacity:0;
+    border-radius:999px;background:var(--blue-soft);
+    transition:transform .44s cubic-bezier(.32,.72,0,1),width .44s cubic-bezier(.32,.72,0,1),opacity .25s;
+  }
+  .pill-item{
+    position:relative;z-index:1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+    min-width:84px;padding:12px 16px 11px;border-radius:999px;
+    background:none;border:none;cursor:pointer;font-family:var(--sans);
+    color:var(--muted);transition:color .25s ease;
+  }
+  .pill-item svg{width:23px;height:23px;display:block;stroke-width:1.6}
+  .pill-item span{
+    font-size:12.5px;font-weight:550;letter-spacing:-.005em;white-space:nowrap;line-height:1;
+  }
+  .pill-item:hover{color:var(--ink)}
+  .pill-item.on{color:var(--blue)}
 
-  /* ============ hero ============ */
-  .hero{padding:64px 0 8px}
-  .hero-grid{display:flex;justify-content:center}
-  @media (max-width:900px){
-    .hero{padding:36px 0 8px}
+  /* utility pill: lingua + tema */
+  .utilbar{position:fixed;top:16px;right:16px;z-index:61;display:flex;pointer-events:none}
+  .util{
+    pointer-events:auto;display:flex;align-items:center;gap:1px;
+    background:var(--glass);border:1px solid var(--glass-line);
+    border-radius:999px;padding:5px;
+    backdrop-filter:saturate(180%) blur(24px);
+    -webkit-backdrop-filter:saturate(180%) blur(24px);
+    box-shadow:0 2px 10px rgba(11,34,57,.08),0 14px 30px -20px rgba(11,34,57,.5);
+  }
+  .util-btn{
+    background:none;border:none;cursor:pointer;color:var(--muted);
+    font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.04em;
+    padding:7px 9px;border-radius:999px;transition:color .2s,background .2s;
+  }
+  .util-btn:hover{color:var(--ink)}
+  .util-btn.on{color:var(--blue);background:var(--blue-soft)}
+  .util-div{width:1px;height:18px;background:var(--glass-line);margin:0 4px;flex:none}
+  .util-icon{padding:7px 8px;display:grid;place-items:center}
+  .util-icon svg{width:16px;height:16px;display:block}
+
+  /* la pill compare solo qui, in basso, a portata di pollice */
+  @media (max-width:860px){
+    .pillbar{display:flex}
+    .pill{padding:6px}
+    .pill-item{min-width:0;padding:10px 14px 9px;gap:6px}
+    .pill-item span{font-size:11px}
+  }
+  @media (max-width:600px){
+    .pill-item span{display:none}
+    .pill-item{padding:12px;gap:0;min-width:0}
   }
 
-  .sec-label{font-size:11px;color:var(--blue);margin-bottom:28px;display:block}
-
-  /* ============ card profilo ============ */
-  .profile-card{padding:8px 0;text-align:center;max-width:480px;margin:0 auto}
-  .pc-photo{width:172px;height:172px;border-radius:50%;object-fit:cover;object-position:center 40%;display:block;margin:0 auto 28px}
-  .pc-name{font-weight:600;font-size:32px;letter-spacing:-.005em}
-  .pc-head{font-style:italic;font-size:19px;color:var(--muted);line-height:1.5;margin-top:8px}
-  .pc-org{font-size:12.5px;color:var(--muted);margin-top:16px}
-  .pc-follow{
-    display:inline-block;margin-top:12px;border:none;
-    font-family:"Libre Franklin",sans-serif;font-weight:500;font-size:14px;
-    letter-spacing:.04em;color:var(--blue);
+  /* ============ hero: la card profilo dell'originale ============ */
+  .hero{
+    padding:112px 0 60px;text-align:center;scroll-margin-top:0;
+    background:radial-gradient(120% 100% at 50% -12%,var(--bg-deep) 0%,var(--bg) 60%);
   }
-  .pc-icons{display:flex;justify-content:center;gap:36px;margin-top:26px}
-  .pc-icons a{border:none;color:var(--muted);transition:color .2s}
-  .pc-icons a svg{display:block;height:28px;width:auto}
-  .pc-icons a:hover{color:var(--blue)}
-  .pc-actions{margin-top:28px;display:flex;flex-direction:column;gap:12px}
-  .pc-btn{
-    font-family:"Libre Franklin",sans-serif;font-weight:500;
-    font-size:12px;letter-spacing:.12em;text-transform:uppercase;
-    padding:14px 18px;border-radius:2px;cursor:pointer;border:1px solid var(--blue);
-    background:var(--blue);color:var(--btn-text);text-align:center;transition:background .2s,color .2s,border-color .2s;
+  .pc-photo{
+    width:clamp(160px,17vw,208px);height:clamp(160px,17vw,208px);
+    border-radius:50%;object-fit:cover;object-position:center 40%;
+    display:block;margin:0 auto 30px;border:1px solid var(--hair);
+    box-shadow:0 18px 44px -22px rgba(11,34,57,.45);
   }
-  .pc-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-  .pc-btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
-  .pc-btn.ghost:hover{color:var(--blue);border-color:var(--blue);background:transparent}
+  :root[data-theme="dark"] .pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
+  @media (prefers-color-scheme:dark){.pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}}
+  :root[data-theme="light"] .pc-photo{box-shadow:0 18px 44px -22px rgba(11,34,57,.45)}
+  .pc-name{font-size:clamp(34px,5.4vw,52px);font-weight:640;letter-spacing:-.032em;line-height:1.06}
+  .pc-head{
+    margin-top:12px;font-size:clamp(18px,2.2vw,22px);font-weight:400;
+    color:var(--muted);letter-spacing:-.016em;
+  }
+  .pc-org{
+    display:inline-flex;align-items:center;margin-top:20px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted);
+    border:1px solid var(--hair);border-radius:999px;padding:5px 13px;
+  }
+  .pc-follow{display:block;margin-top:16px;font-size:14.5px;color:var(--blue);font-weight:450}
+  .pc-follow:hover{text-decoration:underline;text-underline-offset:3px}
+  .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:15px;font-weight:500;letter-spacing:-.01em;
+    padding:11px 22px;border-radius:999px;cursor:pointer;border:1px solid transparent;
+    font-family:var(--sans);
+    background:var(--blue);color:var(--btn-text);
+    transition:transform .2s cubic-bezier(.32,.72,0,1),filter .2s,background .2s;
+  }
+  .btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
+  .btn.ghost:hover{background:var(--tile);filter:none}
+  .pc-icons{display:flex;gap:8px;justify-content:center;margin-top:24px}
+  .iconlink{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--hair);
+    display:grid;place-items:center;color:var(--muted);
+    transition:color .2s,border-color .2s,background .2s;
+  }
+  .iconlink:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-soft)}
+  .iconlink svg{width:18px;height:18px;display:block}
 
-  /* ============ sezioni ============ */
-  main{padding-bottom:24px}
-  section{padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:72px}
-  .hero + section{border-top:1px solid var(--line)}
+  /* ============ bento ============ */
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .band{
+    grid-column:1/-1;display:flex;align-items:baseline;gap:14px;
+    padding:34px 4px 2px;scroll-margin-top:86px;
+  }
+  .band::after{content:"";flex:1;height:1px;background:var(--hair)}
+  .band .eyebrow{color:var(--blue)}
+  .tile{
+    background:var(--tile);
+    border:1px solid var(--hair);
+    border-radius:var(--r-lg);
+    padding:28px;
+    box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+    position:relative;overflow:hidden;
+    transition:transform .45s cubic-bezier(.32,.72,0,1);
+  }
+  .tile:hover{transform:translateY(-3px)}
+  .t-2{grid-column:span 2}
+  .t-3{grid-column:span 3}
+  .t-6{grid-column:span 6}
+  .tile h2{font-size:22px;font-weight:600;letter-spacing:-.022em;line-height:1.22;text-wrap:balance}
+  .tile p{color:var(--muted);font-size:15.5px;line-height:1.52;letter-spacing:-.006em}
 
   /* in sintesi */
-  .proof-grid{display:flex;flex-direction:column;gap:26px}
-  .pitem{display:flex;flex-direction:column;gap:6px;padding-left:18px;border-left:2px solid var(--blue)}
-  .pitem .k{font-size:10.5px;color:var(--muted)}
-  .pitem .v{font-size:20px;font-weight:600;color:var(--ink);line-height:1.35}
-  .pitem .d{font-size:14.5px;color:var(--muted);line-height:1.55}
-
-  /* casi studio */
-  .case-grid{display:flex;flex-direction:column;gap:32px}
-  .case{padding-left:18px;border-left:2px solid var(--blue)}
-  .case h3{font-weight:600;font-size:21px;letter-spacing:-.008em;line-height:1.3}
-  .case h3 a{border:none}
-  .case p{color:var(--muted);margin-top:10px;max-width:var(--measure);font-size:16px}
-  .meta{
-    margin-top:16px;display:flex;gap:8px 30px;flex-wrap:wrap;
-    font-family:"Libre Franklin",sans-serif;font-size:11.5px;letter-spacing:.05em;color:var(--muted);
-  }
-  .meta span b{font-weight:600;color:var(--ink)}
-  .status{display:inline-flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:.12em;font-size:10px;font-weight:600;color:var(--ok)}
-  .dot{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+  .t-proof{background:linear-gradient(162deg,var(--tile-2),var(--tile) 58%)}
+  .t-proof .k{margin-bottom:16px}
+  .t-proof .v{font-size:23px;font-weight:600;letter-spacing:-.024em;line-height:1.25;text-wrap:balance}
+  .t-proof .d{margin-top:12px}
 
   /* percorso */
-  .path-grid{display:flex;flex-direction:column;gap:26px}
-  .path-row{padding-left:18px;border-left:2px solid var(--blue)}
-  .path-row b{display:block;font-weight:600;font-size:17.5px}
-  .path-row time{
-    display:block;font-family:"Libre Franklin",sans-serif;font-weight:500;
-    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);margin-top:4px;
+  .path-row{
+    display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 28px;
+    padding:22px 0;border-top:1px solid var(--hair);
   }
-  .path-row span{color:var(--muted);display:block;font-size:15.5px;margin-top:8px;max-width:var(--measure)}
+  .path-row:first-of-type{border-top:none;padding-top:6px}
+  .path-row:last-of-type{padding-bottom:0}
+  .path-row time{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--muted);padding-top:5px}
+  .path-row b{font-size:17.5px;font-weight:600;letter-spacing:-.018em}
+  .path-row p{margin-top:6px;max-width:66ch}
+  @media (max-width:640px){.path-row{grid-template-columns:1fr;gap:4px}}
+
+  /* casi studio */
+  .case-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
+  .status{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);
+    border:1px solid color-mix(in srgb,var(--ok) 34%,transparent);border-radius:999px;padding:3px 10px;
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 18%,transparent)}
+  .t-case p{margin-top:12px}
+  .meta{display:flex;flex-direction:column;gap:8px;margin-top:auto;padding-top:22px}
+  .meta span{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--muted);line-height:1.45}
+  .meta span b{font-weight:600;color:var(--ink)}
 
   /* oltre */
-  #oltre p{color:var(--muted);max-width:var(--measure);font-size:16px}
-
-
-  /* desktop: rail sinistro coerente per identità ed etichette */
-  @media (min-width:901px){
-    .profile-card{position:sticky;top:88px}
-    section{display:grid;grid-template-columns:360px minmax(0,1fr);column-gap:64px;grid-auto-rows:min-content}
-    section > .sec-label{grid-column:1;grid-row:1}
-    section > *:not(.sec-label){grid-column:2}
-  }
-
-  /* ============ footer ============ */
-  footer{border-top:1px solid var(--line);padding:40px 0 60px}
-  .colophon{font-family:"Libre Franklin",sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-
-  /* ============ modal ============ */
-  .modal[hidden]{display:none}
-  .modal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px}
-  .modal-backdrop{position:absolute;inset:0;background:rgba(6,18,30,.55);backdrop-filter:blur(2px)}
-  .modal-panel{
-    position:relative;background:var(--panel);border:1px solid var(--line-strong);
-    border-radius:6px;max-width:480px;width:100%;padding:36px 36px 28px;
-    max-height:86vh;overflow:auto;box-shadow:0 16px 48px rgba(6,18,30,.18);
-  }
-  .modal-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-  .modal-head h2{font-weight:600;font-size:21px;letter-spacing:-.008em}
-  .modal-x{background:none;border:none;cursor:pointer;color:var(--muted);font-size:22px;line-height:1;padding:4px 8px;font-family:"Source Serif 4",serif}
-  .modal-x:hover{color:var(--blue)}
-  .cm-row{padding:18px 0;border-top:1px solid var(--line)}
-  .cm-row:first-of-type{border-top:none}
-  .cm-k{font-family:"Libre Franklin",sans-serif;font-weight:500;display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
-  .cm-v{font-size:16px}
-  .cm-v a{border:none;color:var(--ink);font-weight:500}
-  .cm-v a:hover{color:var(--blue)}
-  .cm-v .sep{color:var(--muted);margin:0 8px}
-
-  /* ============ motion ============ */
-  .will-reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-  .revealed{opacity:1;transform:none}
+  .t-oltre{background:var(--grad-oltre)}
+  .t-oltre p{font-size:16.5px;max-width:62ch}
+  .bars{display:flex;align-items:flex-end;gap:4px;height:28px;margin-top:20px}
+  .bars i{width:4px;border-radius:2px;background:var(--blue);opacity:.5;height:30%}
   @media (prefers-reduced-motion:no-preference){
-    .hero-grid > *{opacity:0;transform:translateY(8px);animation:in .7s ease forwards}
-    .hero-grid > *:nth-child(2){animation-delay:.1s}
-    .modal-panel{animation:panelIn .28s ease}
-    @keyframes in{to{opacity:1;transform:none}}
-    @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    .bars i{animation:eq 1.6s ease-in-out infinite}
+    .bars i:nth-child(2){animation-delay:.18s}
+    .bars i:nth-child(3){animation-delay:.36s}
+    .bars i:nth-child(4){animation-delay:.1s}
+    .bars i:nth-child(5){animation-delay:.5s}
+    .bars i:nth-child(6){animation-delay:.28s}
+    .bars i:nth-child(7){animation-delay:.42s}
+    @keyframes eq{0%,100%{height:24%}50%{height:100%}}
   }
-  @media (prefers-reduced-motion:reduce){
-    .will-reveal{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .t-2,.t-3{grid-column:span 3}
+    .tile{padding:24px;border-radius:var(--r-md)}
   }
+  @media (max-width:860px){
+    /* la pill sta in basso: il fondo pagina le lascia spazio */
+    body{padding-bottom:96px}
+    .hero{padding:96px 0 52px}
+    .band{scroll-margin-top:22px}
+  }
+  @media (max-width:560px){
+    .t-2,.t-3,.t-6{grid-column:span 6}
+    .hero{padding:84px 0 44px}
+  }
+
+  footer{padding:56px 0 60px;text-align:center}
+  footer p{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+  /* ============ modal contatti ============ */
+  .modal[hidden]{display:none}
+  .modal{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px}
+  .modal-backdrop{position:absolute;inset:0;background:rgba(6,18,30,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .modal-panel{
+    position:relative;background:var(--tile);border:1px solid var(--hair);
+    border-radius:var(--r-lg);max-width:460px;width:100%;padding:30px;
+    max-height:86vh;overflow:auto;box-shadow:0 24px 60px -20px rgba(6,18,30,.45);
+  }
+  .modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:6px}
+  .modal-head h2{font-size:20px;font-weight:600;letter-spacing:-.022em}
+  .modal-x{
+    background:var(--bg-deep);border:none;cursor:pointer;color:var(--muted);
+    width:30px;height:30px;border-radius:50%;font-size:17px;line-height:1;flex:none;
+    font-family:var(--sans);transition:color .2s,background .2s;
+  }
+  .modal-x:hover{color:var(--ink)}
+  .cm-row{padding:15px 0;border-top:1px solid var(--hair);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+  .cm-row:first-of-type{border-top:none}
+  .cm-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);flex:none}
+  .cm-v{font-size:15.5px;font-weight:450;text-align:right;letter-spacing:-.01em}
+  .cm-v a:hover{color:var(--blue)}
+  @media (prefers-reduced-motion:no-preference){
+    .modal-panel{animation:panelIn .3s cubic-bezier(.32,.72,0,1)}
+    @keyframes panelIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+  }
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(18px) scale(.985)}
+  @media (prefers-reduced-motion:no-preference){
+    .rv{transition:opacity .7s cubic-bezier(.32,.72,0,1),transform .7s cubic-bezier(.32,.72,0,1)}
+  }
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap hrow">
-    <button class="tg" id="themeToggle" aria-label="Cambia tema">Dark</button>
-    <span class="tg-sep" aria-hidden="true"></span>
-    <button class="tg lang-btn active" data-lang="it" aria-label="Italiano">IT</button>
-    <button class="tg lang-btn" data-lang="en" aria-label="English">EN</button>
-    <button class="tg lang-btn" data-lang="fr" aria-label="Français">FR</button>
+<div class="pillbar">
+  <nav class="pill" id="pillNav" aria-label="Navigazione principale">
+    <span class="pill-thumb" id="pillThumb" aria-hidden="true"></span>
+
+    <a class="pill-item" href="#profilo" data-nav>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3.6 10.3 12 3.6l8.4 6.7V20a.9.9 0 0 1-.9.9h-4.7v-6.1H9.2v6.1H4.5a.9.9 0 0 1-.9-.9Z"/>
+      </svg>
+      <span data-i18n="nav_profilo">Profilo</span>
+    </a>
+
+    <a class="pill-item" href="#sintesi" data-nav>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3.6" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="3.6" width="7.2" height="7.2" rx="1.6"/>
+        <rect x="3.6" y="13.2" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="13.2" width="7.2" height="7.2" rx="1.6"/>
+      </svg>
+      <span data-i18n="proof_label">In sintesi</span>
+    </a>
+
+    <a class="pill-item" href="#percorso" data-nav>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="6.4" cy="5.8" r="2.2"/><circle cx="6.4" cy="18.2" r="2.2"/>
+        <path d="M6.4 8v8"/><path d="M11.2 5.8h9.2M11.2 12h6.4M11.2 18.2h9.2"/>
+      </svg>
+      <span data-i18n="sec_percorso">Percorso</span>
+    </a>
+
+    <a class="pill-item" href="#casi-studio" data-nav>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3.4 21 8l-9 4.6L3 8Z"/><path d="M3 12.4 12 17l9-4.6"/><path d="M3 16.8 12 21.4l9-4.6"/>
+      </svg>
+      <span data-i18n="sec_lavori">Casi studio</span>
+    </a>
+
+    <a class="pill-item" href="#oltre" data-nav>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9.4 17.6V5.6l9-1.8v11.4"/><circle cx="6.6" cy="17.6" r="2.8"/><circle cx="15.6" cy="15.2" r="2.8"/>
+      </svg>
+      <span data-i18n="sec_oltre">Oltre il lavoro</span>
+    </a>
+
+    <button class="pill-item" data-open-contacts>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2.9" y="4.8" width="18.2" height="14.4" rx="2.6"/><path d="m3.6 7.4 8.4 5.4 8.4-5.4"/>
+      </svg>
+      <span data-i18n="nav_contatti">Contatti</span>
+    </button>
+  </nav>
+</div>
+
+<div class="utilbar">
+  <div class="util">
+    <button class="util-btn lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
+    <button class="util-btn lang-btn" data-lang="en" aria-label="English">EN</button>
+    <button class="util-btn lang-btn" data-lang="fr" aria-label="Français">FR</button>
+    <span class="util-div" aria-hidden="true"></span>
+    <button class="util-btn util-icon" id="themeToggle" aria-label="Cambia tema">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<header class="hero" id="profilo">
+  <div class="wrap">
+    <img class="pc-photo" src="photo.jpg" alt="Nicolò Forcolin" width="132" height="132">
+    <h1 class="pc-name">Nicolò Forcolin</h1>
+    <p class="pc-head">People &amp; Enterprise Reliability</p>
+    <span class="pc-org">InfoCamere · Padova</span>
+    <a class="pc-follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
+    <div class="cta">
+      <a class="btn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
+      <button class="btn ghost" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
+    </div>
+    <div class="pc-icons">
+      <a class="iconlink" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
+      </a>
+      <a class="iconlink" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
+      </a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
+  <div class="bento">
 
-  <div class="hero">
-    <div class="hero-grid">
-      <aside class="profile-card">
-        <img class="pc-photo" src="photo.jpg" alt="Nicolò Forcolin" width="124" height="124">
-        <p class="pc-name">Nicolò Forcolin</p>
-        <p class="pc-head">People &amp; Enterprise Reliability</p>
-        <p class="pc-org label">InfoCamere · Padova</p>
-        <a class="pc-follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.300+ follower · 500+ collegamenti</a>
-        <div class="pc-icons">
-          <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
-          </a>
-          <a href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
-          </a>
-        </div>
-        <div class="pc-actions">
-          <a class="pc-btn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
-          <button class="pc-btn ghost" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
-        </div>
-      </aside>
-    </div>
-  </div>
+    <!-- ===== in sintesi ===== -->
+    <div class="band" id="sintesi"><span class="eyebrow" data-i18n="proof_label">In sintesi</span></div>
 
-  <section id="sintesi">
-    <span class="sec-label label" data-i18n="proof_label">In sintesi</span>
-    <div class="proof-grid">
-      <div class="pitem">
-        <span class="k label" data-i18n="p1k">Advisory</span>
-        <span class="v" data-i18n="p1v">2 Business Unit + 1 CEO esterno</span>
-        <span class="d" data-i18n="p1d">Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.</span>
-      </div>
-      <div class="pitem">
-        <span class="k label" data-i18n="p2k">Formazione</span>
-        <span class="v" data-i18n="p2v">5 sessioni · 25+ persone</span>
-        <span class="d" data-i18n="p2d">Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.</span>
-      </div>
-      <div class="pitem">
-        <span class="k label" data-i18n="p3k">Certificazioni</span>
-        <span class="v" data-i18n="p3v">13 · IBM, Google</span>
-        <span class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo.</span>
-      </div>
-    </div>
-  </section>
+    <section class="tile t-2 t-proof rv" aria-labelledby="p1k">
+      <span class="eyebrow k" id="p1k" data-i18n="p1k">Advisory</span>
+      <p class="v" data-i18n="p1v">2 Business Unit + 1 CEO esterno</p>
+      <p class="d" data-i18n="p1d">Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.</p>
+    </section>
 
-  <section id="percorso">
-    <span class="sec-label label" data-i18n="sec_percorso">Percorso</span>
-    <div class="path-grid">
+    <section class="tile t-2 t-proof rv" aria-labelledby="p2k">
+      <span class="eyebrow k" id="p2k" data-i18n="p2k">Formazione</span>
+      <p class="v" data-i18n="p2v">5 sessioni · 25+ persone</p>
+      <p class="d" data-i18n="p2d">Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.</p>
+    </section>
+
+    <section class="tile t-2 t-proof rv" aria-labelledby="p3k">
+      <span class="eyebrow k" id="p3k" data-i18n="p3k">Certificazioni</span>
+      <p class="v" data-i18n="p3v">15 · IBM, Google</p>
+      <p class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo.</p>
+    </section>
+
+    <!-- ===== percorso ===== -->
+    <div class="band" id="percorso"><span class="eyebrow" data-i18n="sec_percorso">Percorso</span></div>
+
+    <section class="tile t-6 rv" aria-label="Percorso">
       <div class="path-row">
-        <b>InfoCamere</b>
         <time data-i18n="t1">Set 2022 — oggi</time>
-        <span data-i18n="pr1">SysAdmin. Infrastruttura mission-critical per il sistema camerale, con un focus crescente sull'integrazione dell'AI nei processi operativi: affidabilità, data foundation, adozione AI, automazione. Social Ambassador dal 2025, per raccontare dentro e fuori l'azienda la strategia tech e AI.</span>
+        <div>
+          <b>InfoCamere</b>
+          <p data-i18n="pr1">SysAdmin. Infrastruttura mission-critical per il sistema camerale, con un focus crescente sull'integrazione dell'AI nei processi operativi: affidabilità, data foundation, adozione AI, automazione. Social Ambassador dal 2025, per raccontare dentro e fuori l'azienda la strategia tech e AI.</p>
+        </div>
       </div>
       <div class="path-row">
-        <b>IdeaGrip</b>
         <time data-i18n="t2">Feb 2022 — Set 2022</time>
-        <span data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</span>
+        <div>
+          <b>IdeaGrip</b>
+          <p data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</p>
+        </div>
       </div>
       <div class="path-row">
-        <b>Generali</b>
         <time data-i18n="t3">Ott 2020 — Feb 2022</time>
-        <span data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</span>
+        <div>
+          <b>Generali</b>
+          <p data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="casi-studio">
-    <span class="sec-label label" data-i18n="sec_lavori">Casi studio</span>
+    <!-- ===== casi studio ===== -->
+    <div class="band" id="casi-studio"><span class="eyebrow" data-i18n="sec_lavori">Casi studio</span></div>
 
-    <div class="case-grid">
-      <article class="case">
-        <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h3>
-        <p data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
-        <div class="meta">
-          <span class="status"><span class="dot"></span><span data-i18n="st_prod">In produzione</span></span>
-          <span data-i18n="c1m1">Ambito — <b>InfoCamere · catalogo servizi IT</b></span>
-          <span data-i18n="c1m2">Vincoli — <b>dati interni, governance presidiata</b></span>
-        </div>
-      </article>
+    <article class="tile t-3 t-case rv">
+      <div class="case-head">
+        <span class="status"><span class="dot"></span><span data-i18n="st_prod">In produzione</span></span>
+      </div>
+      <h2><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h2>
+      <p data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
+      <div class="meta">
+        <span data-i18n="c1m1">Ambito — <b>InfoCamere · catalogo servizi IT</b></span>
+        <span data-i18n="c1m2">Vincoli — <b>dati interni, governance presidiata</b></span>
+      </div>
+    </article>
 
-      <article class="case">
-        <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h3>
-        <p data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise: zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti, controllo pieno sugli asset informativi strategici.</p>
-        <div class="meta">
-          <span class="status"><span class="dot"></span><span data-i18n="st_prod2">In produzione</span></span>
-          <span data-i18n="c2m1">Approccio — <b>fine-tuning · deploy on-premise</b></span>
-          <span data-i18n="c2m2">Output — <b>sessioni dimostrative per il vertice</b></span>
-        </div>
-      </article>
-    </div>
-  </section>
+    <article class="tile t-3 t-case rv">
+      <div class="case-head">
+        <span class="status"><span class="dot"></span><span data-i18n="st_prod2">In produzione</span></span>
+      </div>
+      <h2><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h2>
+      <p data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise: zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti, controllo pieno sugli asset informativi strategici.</p>
+      <div class="meta">
+        <span data-i18n="c2m1">Approccio — <b>fine-tuning · deploy on-premise</b></span>
+        <span data-i18n="c2m2">Output — <b>sessioni dimostrative per il vertice</b></span>
+      </div>
+    </article>
 
-  <section id="oltre">
-    <span class="sec-label label" data-i18n="sec_oltre">Oltre il lavoro</span>
-    <p data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
-  </section>
+    <!-- ===== oltre il lavoro ===== -->
+    <div class="band" id="oltre"><span class="eyebrow" data-i18n="sec_oltre">Oltre il lavoro</span></div>
 
+    <section class="tile t-6 t-oltre rv" aria-label="Oltre il lavoro">
+      <p data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
+      <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+
+  </div>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p class="colophon">© 2026 Nicolò Forcolin</p>
-  </div>
+  <div class="wrap"><p>© 2026 Nicolò Forcolin</p></div>
 </footer>
 
 <div class="modal" id="contactModal" hidden>
@@ -344,6 +554,7 @@
     it: {
       pc_follow:"1.500+ follower · 500+ collegamenti",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
+      nav_profilo:"Profilo", nav_contatti:"Contatti",
       proof_label:"In sintesi",
       p1k:"Advisory", p1v:"2 Business Unit + 1 CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
       p2k:"Formazione", p2v:"5 sessioni · 25+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
@@ -369,6 +580,7 @@
     en: {
       pc_follow:"1,500+ followers · 500+ connections",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
+      nav_profilo:"Profile", nav_contatti:"Contact",
       proof_label:"At a glance",
       p1k:"Advisory", p1v:"2 business units + 1 external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
       p2k:"Training", p2v:"5 sessions · 25+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
@@ -394,8 +606,9 @@
     fr: {
       pc_follow:"1 500+ abonnés · 500+ relations",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
+      nav_profilo:"Profil", nav_contatti:"Contact",
       proof_label:"En bref",
-      p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l\u0027Italie et la Chine.",
+      p1k:"Conseil", p1v:"2 business units + 1 CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l'Italie et la Chine.",
       p2k:"Formation", p2v:"5 sessions · 25+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
       p3k:"Certifications", p3v:"15 · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
       sec_lavori:"Études de cas",
@@ -418,75 +631,113 @@
     }
   };
 
+  var root = document.documentElement;
   var lang = "it";
-  var theme = "light";
 
+  /* ---- lingua ---- */
   function applyLang(){
-    document.documentElement.lang = lang;
+    root.lang = lang;
     var dict = i18n[lang];
     document.querySelectorAll("[data-i18n]").forEach(function(el){
       var k = el.getAttribute("data-i18n");
       if(dict[k] !== undefined){ el.innerHTML = dict[k]; }
     });
     document.querySelectorAll(".lang-btn").forEach(function(b){
-      b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+      b.classList.toggle("on", b.getAttribute("data-lang") === lang);
     });
+    spy();
   }
-
-  function applyTheme(){
-    if(theme === "dark"){ document.documentElement.setAttribute("data-theme","dark"); }
-    else{ document.documentElement.removeAttribute("data-theme"); }
-    document.getElementById("themeToggle").textContent = theme === "dark" ? "Light" : "Dark";
-  }
-
   document.querySelectorAll(".lang-btn").forEach(function(b){
-    b.addEventListener("click", function(){
-      lang = b.getAttribute("data-lang");
-      applyLang();
-    });
-  });
-  document.getElementById("themeToggle").addEventListener("click", function(){
-    theme = theme === "dark" ? "light" : "dark";
-    applyTheme();
+    b.addEventListener("click", function(){ lang = b.getAttribute("data-lang"); applyLang(); });
   });
 
-  applyLang();
-
-  if(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){
-    theme = "dark"; applyTheme();
+  /* ---- tema ---- */
+  var toggle = document.getElementById("themeToggle");
+  var icon = document.getElementById("themeIcon");
+  var sun = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>';
+  var moon = '<path d="M20 14.4A8.4 8.4 0 0 1 9.6 4 8.4 8.4 0 1 0 20 14.4Z"/>';
+  function current(){
+    var set = root.getAttribute("data-theme");
+    if(set) return set;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
+  function paintTheme(){
+    var dark = current() === "dark";
+    icon.innerHTML = dark ? moon : sun;
+    toggle.setAttribute("aria-label", dark ? "Passa al tema chiaro" : "Passa al tema scuro");
+  }
+  toggle.addEventListener("click", function(){
+    root.setAttribute("data-theme", current() === "dark" ? "light" : "dark");
+    paintTheme();
+  });
+  paintTheme();
 
-  // --- modal contatti ---
+  /* ---- pill: indicatore scorrevole + scroll-spy ---- */
+  var nav = document.getElementById("pillNav");
+  var thumb = document.getElementById("pillThumb");
+  var items = Array.prototype.slice.call(nav.querySelectorAll(".pill-item"));
+  var links = Array.prototype.slice.call(nav.querySelectorAll("[data-nav]"));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+
+  function moveTo(el){
+    if(!el || !nav.offsetParent) return;  /* pill nascosta da desktop */
+    thumb.style.width = el.offsetWidth + "px";
+    thumb.style.transform = "translateX(" + el.offsetLeft + "px)";
+    thumb.style.opacity = "1";
+  }
+  function setActive(link){
+    links.forEach(function(a){ a.classList.toggle("on", a === link); });
+    moveTo(link);
+  }
+  items.forEach(function(el){ el.addEventListener("mouseenter", function(){ moveTo(el); }); });
+  nav.addEventListener("mouseleave", function(){ moveTo(nav.querySelector(".pill-item.on") || links[0]); });
+
+  function spy(){
+    var best = 0, mid = window.innerHeight * 0.34;
+    sections.forEach(function(s, i){
+      if(s && s.getBoundingClientRect().top <= mid) best = i;
+    });
+    setActive(links[best]);
+  }
+  window.addEventListener("scroll", spy, {passive:true});
+  window.addEventListener("resize", spy);
+
+  /* ---- modal contatti ---- */
   var modal = document.getElementById("contactModal");
-  function openModal(){
+  var lastFocus = null;
+  function openModal(e){
+    lastFocus = e && e.currentTarget ? e.currentTarget : null;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
+    modal.querySelector(".modal-x").focus();
   }
   function closeModal(){
     modal.hidden = true;
     document.body.style.overflow = "";
+    if(lastFocus) lastFocus.focus();
   }
-  document.querySelectorAll("[data-open-contacts]").forEach(function(el){
-    el.addEventListener("click", openModal);
-  });
-  modal.querySelectorAll("[data-close]").forEach(function(el){
-    el.addEventListener("click", closeModal);
-  });
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape" && !modal.hidden) closeModal();
-  });
+  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", openModal); });
+  modal.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !modal.hidden) closeModal(); });
 
-  // --- reveal allo scroll ---
-  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window){
-    var toReveal = document.querySelectorAll("section, .case, .path-row");
-    toReveal.forEach(function(el){ el.classList.add("will-reveal"); });
+  /* ---- reveal ---- */
+  var tiles = document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add("revealed"); io.unobserve(en.target); }
+        if(en.isIntersecting){
+          var d = (Array.prototype.indexOf.call(tiles, en.target) % 3) * 70;
+          setTimeout(function(){ en.target.classList.add("in"); }, d);
+          io.unobserve(en.target);
+        }
       });
-    }, {threshold:0.08});
-    toReveal.forEach(function(el){ io.observe(el); });
+    }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+    tiles.forEach(function(t){ io.observe(t); });
+  }else{
+    tiles.forEach(function(t){ t.classList.add("in"); });
   }
+
+  applyLang();
 })();
 </script>
 
