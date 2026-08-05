@@ -134,14 +134,19 @@
     justify-content:center;padding:0 14px;pointer-events:none;
   }
   .pill{
-    pointer-events:auto;position:relative;
+    pointer-events:auto;position:relative;isolation:isolate;
     display:flex;align-items:stretch;gap:2px;
-    background:var(--glass);
     border:1px solid var(--glass-line);
     border-radius:999px;padding:8px;max-width:100%;
+    box-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
+  }
+  .pill::before,.pill::after{content:"";position:absolute;inset:0;border-radius:999px;pointer-events:none}
+  .pill::before{z-index:-1;background:var(--glass);box-shadow:inset 0 0 7px -1px rgba(255,255,255,.35)}
+  .pill::after{
+    z-index:-2;
     backdrop-filter:saturate(180%) blur(24px);
     -webkit-backdrop-filter:saturate(180%) blur(24px);
-    box-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
+    filter:url(#glass-distortion);-webkit-filter:url(#glass-distortion);
   }
   .pill-thumb{
     position:absolute;z-index:0;left:0;top:8px;bottom:8px;opacity:0;
@@ -166,12 +171,18 @@
   /* utility pill: lingua + tema */
   .utilbar{position:fixed;top:16px;right:16px;z-index:61;display:flex;pointer-events:none}
   .util{
-    pointer-events:auto;display:flex;align-items:center;gap:1px;
-    background:var(--glass);border:1px solid var(--glass-line);
+    pointer-events:auto;position:relative;isolation:isolate;display:flex;align-items:center;gap:1px;
+    border:1px solid var(--glass-line);
     border-radius:999px;padding:5px;
+    box-shadow:0 2px 10px rgba(29,29,31,.08),0 14px 30px -20px rgba(29,29,31,.5),0 1px 0 rgba(255,255,255,.18) inset;
+  }
+  .util::before,.util::after{content:"";position:absolute;inset:0;border-radius:999px;pointer-events:none}
+  .util::before{z-index:-1;background:var(--glass);box-shadow:inset 0 0 7px -1px rgba(255,255,255,.35)}
+  .util::after{
+    z-index:-2;
     backdrop-filter:saturate(180%) blur(24px);
     -webkit-backdrop-filter:saturate(180%) blur(24px);
-    box-shadow:0 2px 10px rgba(29,29,31,.08),0 14px 30px -20px rgba(29,29,31,.5),0 1px 0 rgba(255,255,255,.18) inset;
+    filter:url(#glass-distortion);-webkit-filter:url(#glass-distortion);
   }
   .util-btn{
     background:none;border:none;cursor:pointer;color:var(--muted);
@@ -397,6 +408,16 @@
 </style>
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="glass-distortion" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="92" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+      <feDisplacementMap in="SourceGraphic" in2="blurred" scale="22" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
 
 <div class="pillbar">
   <nav class="pill" id="pillNav" aria-label="Navigazione principale">
