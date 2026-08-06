@@ -205,8 +205,9 @@
     margin-top:16px;font-size:clamp(18px,2.2vw,25px);font-weight:300;
     color:var(--muted);letter-spacing:-.012em;
   }
+  .pc-org-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:24px;flex-wrap:wrap}
   .pc-org{
-    display:inline-flex;align-items:center;margin-top:24px;
+    display:inline-flex;align-items:center;
     font-family:var(--mono);font-size:clamp(11.5px,1vw,12.5px);letter-spacing:.06em;color:var(--muted);
     border:1px solid var(--hair);border-radius:999px;padding:6px 15px;
   }
@@ -225,7 +226,6 @@
   .btn:active{transform:scale(.96);transition-duration:.12s}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
   .btn.ghost:hover{background:var(--tile);filter:none}
-  .pc-icons{display:flex;gap:8px;justify-content:center;margin-top:28px}
   .iconlink{
     width:clamp(38px,3vw,44px);height:clamp(38px,3vw,44px);border-radius:50%;border:1px solid var(--hair);
     display:grid;place-items:center;color:var(--muted);
@@ -234,6 +234,8 @@
   .iconlink:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-soft)}
   .iconlink:active{transform:scale(.9)}
   .iconlink svg{width:clamp(18px,1.4vw,21px);height:clamp(18px,1.4vw,21px);display:block}
+  .iconlink.sm{width:30px;height:30px}
+  .iconlink.sm svg{width:15px;height:15px}
 
   /* ============ bento ============ */
   .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
@@ -456,19 +458,19 @@
     <img class="pc-photo" src="photo.jpg" alt="Nicolò Forcolin" width="132" height="132">
     <h1 class="pc-name">Nicolò Forcolin</h1>
     <p class="pc-head">People &amp; Enterprise Reliability</p>
-    <span class="pc-org">InfoCamere · Padova</span>
+    <div class="pc-org-row">
+      <span class="pc-org">InfoCamere · Padova</span>
+      <a class="iconlink sm" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
+      </a>
+      <a class="iconlink sm" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
+      </a>
+    </div>
     <a class="pc-follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
     <div class="cta">
       <a class="btn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
       <button class="btn" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
-    </div>
-    <div class="pc-icons">
-      <a class="iconlink" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
-      </a>
-      <a class="iconlink" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
-      </a>
     </div>
   </div>
 </header>
