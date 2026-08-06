@@ -25,23 +25,21 @@
 <style>
   :root{
     color-scheme:light dark;
-    /* colori di sistema Apple (iOS/macOS HIG) */
-    --bg:#F2F2F7;
-    --bg-deep:#E5E5EA;
-    --tile:rgba(255,255,255,.55);
-    --tile-2:rgba(255,255,255,.32);
-    --ink:#000000;
-    --muted:rgba(60,60,67,.6);
-    --blue:#007AFF;
-    --blue-soft:rgba(0,122,255,.12);
-    --hair:rgba(60,60,67,.29);
-    --glass:rgba(255,255,255,.55);
-    --glass-line:rgba(255,255,255,.7);
-    --glass-rim:rgba(255,255,255,.85);
-    --shadow:0 1px 1px rgba(0,0,0,.03),0 18px 40px -24px rgba(0,0,0,.22),0 46px 90px -40px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.75);
-    --ok:#34C759;
+    --bg:#F3F5F8;
+    --bg-deep:#E5E9EF;
+    --tile:#FFFFFF;
+    --tile-2:#FAFBFD;
+    --ink:#0B0E14;
+    --muted:#5B6270;
+    --blue:#1B3A75;
+    --blue-soft:rgba(27,58,117,.08);
+    --hair:rgba(11,14,20,.09);
+    --glass:rgba(255,255,255,.72);
+    --glass-line:rgba(11,14,20,.09);
+    --shadow:0 1px 2px rgba(11,14,20,.04),0 20px 40px -28px rgba(11,14,20,.13),0 50px 90px -40px rgba(11,14,20,.09),inset 0 1px 0 rgba(255,255,255,.6);
+    --ok:#2B63C2;
     --btn-text:#FFFFFF;
-    --grad-oltre:linear-gradient(150deg,rgba(0,122,255,.14) 0%,rgba(0,122,255,.03) 40%,var(--tile) 70%);
+    --grad-oltre:linear-gradient(150deg,rgba(27,58,117,.10) 0%,rgba(27,58,117,.03) 40%,var(--tile) 70%);
     --r-lg:26px;
     --r-md:18px;
     --max:1120px;
@@ -52,57 +50,54 @@
     :root{
       --bg:#000000;
       --bg-deep:#000000;
-      --tile:rgba(28,28,30,.55);
-      --tile-2:rgba(44,44,46,.38);
-      --ink:#FFFFFF;
-      --muted:rgba(235,235,245,.6);
-      --blue:#0A84FF;
-      --blue-soft:rgba(10,132,255,.2);
-      --hair:rgba(84,84,88,.6);
-      --glass:rgba(20,20,22,.55);
-      --glass-line:rgba(255,255,255,.16);
-      --glass-rim:rgba(255,255,255,.28);
-      --shadow:0 1px 1px rgba(0,0,0,.4),0 20px 44px -22px rgba(0,0,0,.85),0 50px 100px -36px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);
-      --ok:#32D74B;
-      --btn-text:#FFFFFF;
-      --grad-oltre:linear-gradient(150deg,rgba(10,132,255,.28) 0%,rgba(10,132,255,.06) 40%,var(--tile) 68%);
+      --tile:#0E1015;
+      --tile-2:#181B21;
+      --ink:#F2F4F7;
+      --muted:#8A93A3;
+      --blue:#5C8DFF;
+      --blue-soft:rgba(92,141,255,.16);
+      --hair:rgba(242,244,247,.10);
+      --glass:rgba(8,10,14,.72);
+      --glass-line:rgba(242,244,247,.12);
+      --shadow:0 1px 2px rgba(0,0,0,.5),0 20px 44px -22px rgba(0,0,0,.85),0 50px 100px -36px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);
+      --ok:#3FA0F5;
+      --btn-text:#05070B;
+      --grad-oltre:linear-gradient(150deg,rgba(92,141,255,.24) 0%,rgba(92,141,255,.06) 40%,var(--tile) 68%);
     }
   }
   :root[data-theme="dark"]{
     --bg:#000000;
     --bg-deep:#000000;
-    --tile:rgba(28,28,30,.55);
-    --tile-2:rgba(44,44,46,.38);
-    --ink:#FFFFFF;
-    --muted:rgba(235,235,245,.6);
-    --blue:#0A84FF;
-    --blue-soft:rgba(10,132,255,.2);
-    --hair:rgba(84,84,88,.6);
-    --glass:rgba(20,20,22,.55);
-    --glass-line:rgba(255,255,255,.16);
-    --glass-rim:rgba(255,255,255,.28);
-    --shadow:0 1px 1px rgba(0,0,0,.4),0 20px 44px -22px rgba(0,0,0,.85),0 50px 100px -36px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);
-    --ok:#32D74B;
-    --btn-text:#FFFFFF;
-    --grad-oltre:linear-gradient(150deg,rgba(10,132,255,.28) 0%,rgba(10,132,255,.06) 40%,var(--tile) 68%);
+    --tile:#0E1015;
+    --tile-2:#181B21;
+    --ink:#F2F4F7;
+    --muted:#8A93A3;
+    --blue:#5C8DFF;
+    --blue-soft:rgba(92,141,255,.16);
+    --hair:rgba(242,244,247,.10);
+    --glass:rgba(8,10,14,.72);
+    --glass-line:rgba(242,244,247,.12);
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 20px 44px -22px rgba(0,0,0,.85),0 50px 100px -36px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);
+    --ok:#3FA0F5;
+    --btn-text:#05070B;
+    --grad-oltre:linear-gradient(150deg,rgba(92,141,255,.24) 0%,rgba(92,141,255,.06) 40%,var(--tile) 68%);
   }
   :root[data-theme="light"]{
-    --bg:#F2F2F7;
-    --bg-deep:#E5E5EA;
-    --tile:rgba(255,255,255,.55);
-    --tile-2:rgba(255,255,255,.32);
-    --ink:#000000;
-    --muted:rgba(60,60,67,.6);
-    --blue:#007AFF;
-    --blue-soft:rgba(0,122,255,.12);
-    --hair:rgba(60,60,67,.29);
-    --glass:rgba(255,255,255,.55);
-    --glass-line:rgba(255,255,255,.7);
-    --glass-rim:rgba(255,255,255,.85);
-    --shadow:0 1px 1px rgba(0,0,0,.03),0 18px 40px -24px rgba(0,0,0,.22),0 46px 90px -40px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.75);
-    --ok:#34C759;
+    --bg:#F3F5F8;
+    --bg-deep:#E5E9EF;
+    --tile:#FFFFFF;
+    --tile-2:#FAFBFD;
+    --ink:#0B0E14;
+    --muted:#5B6270;
+    --blue:#1B3A75;
+    --blue-soft:rgba(27,58,117,.08);
+    --hair:rgba(11,14,20,.09);
+    --glass:rgba(255,255,255,.72);
+    --glass-line:rgba(11,14,20,.09);
+    --shadow:0 1px 2px rgba(11,14,20,.04),0 20px 40px -28px rgba(11,14,20,.13),0 50px 90px -40px rgba(11,14,20,.09),inset 0 1px 0 rgba(255,255,255,.6);
+    --ok:#2B63C2;
     --btn-text:#FFFFFF;
-    --grad-oltre:linear-gradient(150deg,rgba(0,122,255,.14) 0%,rgba(0,122,255,.03) 40%,var(--tile) 70%);
+    --grad-oltre:linear-gradient(150deg,rgba(27,58,117,.10) 0%,rgba(27,58,117,.03) 40%,var(--tile) 70%);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -121,38 +116,7 @@
   body::before{
     content:"";
     position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background:
-      radial-gradient(52% 42% at 14% 10%,rgba(0,122,255,.30) 0%,transparent 62%),
-      radial-gradient(46% 38% at 82% 6%,rgba(52,199,89,.22) 0%,transparent 60%),
-      radial-gradient(60% 50% at 92% 62%,rgba(0,122,255,.16) 0%,transparent 65%),
-      radial-gradient(65% 55% at 20% 96%,rgba(52,199,89,.14) 0%,transparent 65%),
-      var(--bg);
-  }
-  @media (prefers-color-scheme:dark){
-    body::before{
-      background:
-        radial-gradient(52% 42% at 14% 10%,rgba(10,132,255,.38) 0%,transparent 62%),
-        radial-gradient(46% 38% at 82% 6%,rgba(50,215,75,.28) 0%,transparent 60%),
-        radial-gradient(60% 50% at 92% 62%,rgba(10,132,255,.22) 0%,transparent 65%),
-        radial-gradient(65% 55% at 20% 96%,rgba(50,215,75,.18) 0%,transparent 65%),
-        var(--bg);
-    }
-  }
-  :root[data-theme="dark"] body::before{
-    background:
-      radial-gradient(52% 42% at 14% 10%,rgba(10,132,255,.38) 0%,transparent 62%),
-      radial-gradient(46% 38% at 82% 6%,rgba(50,215,75,.28) 0%,transparent 60%),
-      radial-gradient(60% 50% at 92% 62%,rgba(10,132,255,.22) 0%,transparent 65%),
-      radial-gradient(65% 55% at 20% 96%,rgba(50,215,75,.18) 0%,transparent 65%),
-      var(--bg);
-  }
-  :root[data-theme="light"] body::before{
-    background:
-      radial-gradient(52% 42% at 14% 10%,rgba(0,122,255,.30) 0%,transparent 62%),
-      radial-gradient(46% 38% at 82% 6%,rgba(52,199,89,.22) 0%,transparent 60%),
-      radial-gradient(60% 50% at 92% 62%,rgba(0,122,255,.16) 0%,transparent 65%),
-      radial-gradient(65% 55% at 20% 96%,rgba(52,199,89,.14) 0%,transparent 65%),
-      var(--bg);
+    background:radial-gradient(130% 120% at 50% 42%,transparent 55%,var(--bg-deep) 130%);
   }
   .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
   a{color:inherit;text-decoration:none}
@@ -170,14 +134,19 @@
     justify-content:center;padding:0 14px;pointer-events:none;
   }
   .pill{
-    pointer-events:auto;position:relative;
+    pointer-events:auto;position:relative;isolation:isolate;
     display:flex;align-items:stretch;gap:2px;
-    background:var(--glass);
     border:1px solid var(--glass-line);
     border-radius:999px;padding:8px;max-width:100%;
+    box-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
+  }
+  .pill::before,.pill::after{content:"";position:absolute;inset:0;border-radius:999px;pointer-events:none}
+  .pill::before{z-index:-1;background:var(--glass);box-shadow:inset 0 0 7px -1px rgba(255,255,255,.35)}
+  .pill::after{
+    z-index:-2;
     backdrop-filter:saturate(180%) blur(24px);
     -webkit-backdrop-filter:saturate(180%) blur(24px);
-    box-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
+    filter:url(#glass-distortion);-webkit-filter:url(#glass-distortion);
   }
   .pill-thumb{
     position:absolute;z-index:0;left:0;top:8px;bottom:8px;opacity:0;
@@ -202,12 +171,18 @@
   /* utility pill: lingua + tema */
   .utilbar{position:fixed;top:16px;right:16px;z-index:61;display:flex;pointer-events:none}
   .util{
-    pointer-events:auto;display:flex;align-items:center;gap:1px;
-    background:var(--glass);border:1px solid var(--glass-line);
+    pointer-events:auto;position:relative;isolation:isolate;display:flex;align-items:center;gap:1px;
+    border:1px solid var(--glass-line);
     border-radius:999px;padding:5px;
+    box-shadow:0 2px 10px rgba(29,29,31,.08),0 14px 30px -20px rgba(29,29,31,.5),0 1px 0 rgba(255,255,255,.18) inset;
+  }
+  .util::before,.util::after{content:"";position:absolute;inset:0;border-radius:999px;pointer-events:none}
+  .util::before{z-index:-1;background:var(--glass);box-shadow:inset 0 0 7px -1px rgba(255,255,255,.35)}
+  .util::after{
+    z-index:-2;
     backdrop-filter:saturate(180%) blur(24px);
     -webkit-backdrop-filter:saturate(180%) blur(24px);
-    box-shadow:0 2px 10px rgba(29,29,31,.08),0 14px 30px -20px rgba(29,29,31,.5),0 1px 0 rgba(255,255,255,.18) inset;
+    filter:url(#glass-distortion);-webkit-filter:url(#glass-distortion);
   }
   .util-btn{
     background:none;border:none;cursor:pointer;color:var(--muted);
@@ -236,12 +211,13 @@
   /* ============ hero: la card profilo dell'originale ============ */
   .hero{
     padding:clamp(128px,12vw,152px) 0 clamp(60px,6vw,72px);text-align:center;scroll-margin-top:0;
+    background:radial-gradient(120% 100% at 50% -12%,var(--bg-deep) 0%,var(--bg) 60%);
   }
   .pc-photo{
     width:clamp(160px,17vw,240px);height:clamp(160px,17vw,240px);
     border-radius:50%;object-fit:cover;object-position:center 40%;
-    display:block;margin:0 auto 34px;border:3px solid var(--glass-rim);
-    box-shadow:inset 0 0 0 1px rgba(0,0,0,.06),0 18px 44px -22px rgba(29,29,31,.45);
+    display:block;margin:0 auto 34px;border:1px solid var(--hair);
+    box-shadow:0 18px 44px -22px rgba(29,29,31,.45);
   }
   :root[data-theme="dark"] .pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
   @media (prefers-color-scheme:dark){.pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}}
@@ -254,38 +230,26 @@
   .pc-org{
     display:inline-flex;align-items:center;margin-top:24px;
     font-family:var(--mono);font-size:clamp(11.5px,1vw,12.5px);letter-spacing:.06em;color:var(--muted);
-    background:var(--glass);border:1px solid var(--glass-line);border-radius:999px;padding:6px 15px;
-    backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
-    box-shadow:inset 0 1px 0 var(--glass-rim);
+    border:1px solid var(--hair);border-radius:999px;padding:6px 15px;
   }
   .pc-follow{display:block;margin-top:18px;font-size:clamp(14.5px,1.1vw,15.5px);color:var(--blue);font-weight:450}
   .pc-follow:hover{text-decoration:underline;text-underline-offset:3px}
   .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
   .btn{
-    display:inline-flex;align-items:center;gap:8px;position:relative;overflow:hidden;
-    font-size:clamp(15px,1.15vw,16px);font-weight:600;letter-spacing:0;
-    padding:clamp(11px,1vw,13px) clamp(22px,2vw,27px);border-radius:999px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:clamp(15px,1.15vw,16px);font-weight:500;letter-spacing:0;
+    padding:clamp(11px,1vw,13px) clamp(22px,2vw,27px);border-radius:999px;cursor:pointer;border:1px solid transparent;
     font-family:var(--sans);
-    background:linear-gradient(165deg,color-mix(in srgb,var(--blue) 78%,white 0%) 0%,var(--blue) 100%);
-    color:var(--btn-text);
-    border:1px solid rgba(255,255,255,.35);
-    backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 24px -12px color-mix(in srgb,var(--blue) 60%,transparent);
+    background:var(--blue);color:var(--btn-text);
     transition:transform .2s cubic-bezier(.32,.72,0,1),filter .2s,background .2s;
   }
-  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
   .btn:active{transform:scale(.96);transition-duration:.12s}
-  .btn.ghost{
-    background:var(--glass);color:var(--ink);border-color:var(--glass-line);
-    box-shadow:inset 0 1px 0 var(--glass-rim);
-  }
-  .btn.ghost:hover{background:var(--tile-2);filter:none}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
+  .btn.ghost:hover{background:var(--tile);filter:none}
   .pc-icons{display:flex;gap:8px;justify-content:center;margin-top:28px}
   .iconlink{
-    width:clamp(38px,3vw,44px);height:clamp(38px,3vw,44px);border-radius:50%;
-    background:var(--glass);border:1px solid var(--glass-line);
-    backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);
-    box-shadow:inset 0 1px 0 var(--glass-rim);
+    width:clamp(38px,3vw,44px);height:clamp(38px,3vw,44px);border-radius:50%;border:1px solid var(--hair);
     display:grid;place-items:center;color:var(--muted);
     transition:color .2s,border-color .2s,background .2s,transform .15s cubic-bezier(.32,.72,0,1);
   }
@@ -304,36 +268,17 @@
   .tile{
     --py:0px;
     background:var(--tile);
-    border:1px solid var(--glass-line);
-    border-radius:28px;
+    border:1px solid var(--hair);
+    border-radius:24px;
     padding:34px;
     box-shadow:var(--shadow);
-    backdrop-filter:saturate(180%) blur(30px);-webkit-backdrop-filter:saturate(180%) blur(30px);
     display:flex;flex-direction:column;
     position:relative;overflow:hidden;
     transform:translateY(var(--py));
     transition:transform .45s cubic-bezier(.32,.72,0,1),box-shadow .45s cubic-bezier(.32,.72,0,1);
     transform-style:preserve-3d;will-change:transform;
   }
-  .tile{--mx:30%;--my:15%}
-  .tile::before{
-    content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-    background:radial-gradient(260px circle at var(--mx) var(--my),var(--glass-rim),transparent 62%);
-    opacity:.6;mix-blend-mode:overlay;
-    transition:opacity .3s ease;
-  }
-  .tile::after{
-    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;
-    padding:1px;
-    background:conic-gradient(from calc(var(--mx) * 3.6deg) at var(--mx) var(--my),
-      rgba(0,122,255,.55),rgba(52,199,89,.35),rgba(255,255,255,.05),rgba(0,122,255,.55));
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;mask-composite:exclude;
-    opacity:.45;
-  }
-  .tile > *{position:relative;z-index:1}
-  .tile:hover{transform:translateY(calc(var(--py) - 4px)) scale(1.014)}
-  .tile:hover::before{opacity:.85}
+  .tile:hover{transform:translateY(calc(var(--py) - 4px)) scale(1.008)}
   .t-2{grid-column:span 2}
   .t-3{grid-column:span 3}
   .t-6{grid-column:span 6}
@@ -411,11 +356,9 @@
   .modal{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px}
   .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
   .modal-panel{
-    position:relative;background:var(--tile);border:1px solid var(--glass-line);
-    backdrop-filter:saturate(180%) blur(34px);-webkit-backdrop-filter:saturate(180%) blur(34px);
+    position:relative;background:var(--tile);border:1px solid var(--hair);
     border-radius:var(--r-lg);max-width:460px;width:100%;padding:30px;
-    max-height:86vh;overflow:auto;
-    box-shadow:inset 0 1px 0 var(--glass-rim),0 24px 60px -20px rgba(0,0,0,.45);
+    max-height:86vh;overflow:auto;box-shadow:0 24px 60px -20px rgba(0,0,0,.45);
   }
   .modal-handle{display:none}
   @media (max-width:640px){
@@ -462,41 +405,22 @@
   @keyframes statPop{0%{transform:scale(1)}45%{transform:scale(1.08)}100%{transform:scale(1)}}
   .t-proof .v{display:inline-block}
   .t-proof .v.pop{animation:statPop .55s cubic-bezier(.34,1.56,.64,1)}
-
-  /* ============ Liquid Glass reale: canvas WebGL con rifrazione ottica ============ */
-  #glassCanvas{
-    position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;display:block;
-  }
-  header.hero,main,footer{position:relative;z-index:2}
-  body.glass-live .glass-surface{
-    background:transparent!important;
-    backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
-  }
-  body.glass-live .tile{box-shadow:0 20px 46px -28px rgba(0,0,0,.32)!important;border-color:rgba(255,255,255,.30)}
-  body.glass-live .tile::before,body.glass-live .tile::after{display:none}
-  body.glass-live .pill,body.glass-live .util{box-shadow:0 10px 26px -16px rgba(0,0,0,.3)!important;border-color:rgba(255,255,255,.32)}
-  body.glass-live .btn{box-shadow:0 12px 26px -14px rgba(0,0,0,.28)!important;border-color:rgba(255,255,255,.35)}
-  body.glass-live .modal-panel{box-shadow:0 28px 64px -22px rgba(0,0,0,.5)!important;border-color:rgba(255,255,255,.28)}
-  body.glass-live .pc-org,body.glass-live .iconlink{border-color:rgba(255,255,255,.32)}
-  :root[data-theme="dark"] body.glass-live .tile,
-  :root[data-theme="dark"] body.glass-live .pill,
-  :root[data-theme="dark"] body.glass-live .util,
-  :root[data-theme="dark"] body.glass-live .btn,
-  :root[data-theme="dark"] body.glass-live .modal-panel,
-  :root[data-theme="dark"] body.glass-live .pc-org,
-  :root[data-theme="dark"] body.glass-live .iconlink{border-color:rgba(255,255,255,.14)}
-  @media (prefers-color-scheme:dark){
-    body.glass-live .tile,body.glass-live .pill,body.glass-live .util,body.glass-live .btn,
-    body.glass-live .modal-panel,body.glass-live .pc-org,body.glass-live .iconlink{border-color:rgba(255,255,255,.14)}
-  }
 </style>
 </head>
 <body>
 
-<canvas id="glassCanvas" aria-hidden="true"></canvas>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="glass-distortion" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="92" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+      <feDisplacementMap in="SourceGraphic" in2="blurred" scale="22" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
 
 <div class="pillbar">
-  <nav class="pill glass-surface" id="pillNav" aria-label="Navigazione principale">
+  <nav class="pill" id="pillNav" aria-label="Navigazione principale">
     <span class="pill-thumb" id="pillThumb" aria-hidden="true"></span>
 
     <a class="pill-item" href="#profilo" data-nav>
@@ -546,7 +470,7 @@
 </div>
 
 <div class="utilbar">
-  <div class="util glass-surface">
+  <div class="util">
     <button class="util-btn lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
     <button class="util-btn lang-btn" data-lang="en" aria-label="English">EN</button>
     <button class="util-btn lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -564,17 +488,17 @@
     <img class="pc-photo" src="photo.jpg" alt="Nicolò Forcolin" width="132" height="132">
     <h1 class="pc-name">Nicolò Forcolin</h1>
     <p class="pc-head">People &amp; Enterprise Reliability</p>
-    <span class="pc-org glass-surface">InfoCamere · Padova</span>
+    <span class="pc-org">InfoCamere · Padova</span>
     <a class="pc-follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
     <div class="cta">
-      <a class="btn glass-surface" data-glass-tint="blue" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
-      <button class="btn ghost glass-surface" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
+      <a class="btn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
+      <button class="btn" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
     </div>
     <div class="pc-icons">
-      <a class="iconlink glass-surface" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
+      <a class="iconlink" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
       </a>
-      <a class="iconlink glass-surface" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+      <a class="iconlink" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
       </a>
     </div>
@@ -587,19 +511,19 @@
     <!-- ===== in sintesi ===== -->
     <div class="band" id="sintesi"><span class="eyebrow" data-i18n="proof_label">In sintesi</span></div>
 
-    <section class="tile t-2 t-proof rv glass-surface" aria-labelledby="p1k">
+    <section class="tile t-2 t-proof rv" aria-labelledby="p1k">
       <span class="eyebrow k" id="p1k" data-i18n="p1k">Advisory</span>
       <p class="v" data-i18n="p1v"><span class="num" data-count="2">0</span> Business Unit + <span class="num" data-count="1">0</span> CEO esterno</p>
       <p class="d" data-i18n="p1d">Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.</p>
     </section>
 
-    <section class="tile t-2 t-proof rv glass-surface" aria-labelledby="p2k">
+    <section class="tile t-2 t-proof rv" aria-labelledby="p2k">
       <span class="eyebrow k" id="p2k" data-i18n="p2k">Formazione</span>
       <p class="v" data-i18n="p2v"><span class="num" data-count="5">0</span> sessioni · <span class="num" data-count="25">0</span>+ persone</p>
       <p class="d" data-i18n="p2d">Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.</p>
     </section>
 
-    <section class="tile t-2 t-proof rv glass-surface" aria-labelledby="p3k">
+    <section class="tile t-2 t-proof rv" aria-labelledby="p3k">
       <span class="eyebrow k" id="p3k" data-i18n="p3k">Certificazioni</span>
       <p class="v" data-i18n="p3v"><span class="num" data-count="15">0</span> · IBM, Google</p>
       <p class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo.</p>
@@ -608,7 +532,7 @@
     <!-- ===== percorso ===== -->
     <div class="band" id="percorso"><span class="eyebrow" data-i18n="sec_percorso">Percorso</span></div>
 
-    <section class="tile t-6 rv glass-surface" aria-label="InfoCamere">
+    <section class="tile t-6 rv" aria-label="InfoCamere">
       <div class="path-row">
         <time data-i18n="t1">Set 2022 — oggi</time>
         <div>
@@ -618,7 +542,7 @@
       </div>
     </section>
 
-    <section class="tile t-6 rv glass-surface" aria-label="IdeaGrip">
+    <section class="tile t-6 rv" aria-label="IdeaGrip">
       <div class="path-row">
         <time data-i18n="t2">Feb 2022 — Set 2022</time>
         <div>
@@ -628,7 +552,7 @@
       </div>
     </section>
 
-    <section class="tile t-6 rv glass-surface" aria-label="Generali">
+    <section class="tile t-6 rv" aria-label="Generali">
       <div class="path-row">
         <time data-i18n="t3">Ott 2020 — Feb 2022</time>
         <div>
@@ -641,7 +565,7 @@
     <!-- ===== casi studio ===== -->
     <div class="band" id="casi-studio"><span class="eyebrow" data-i18n="sec_lavori">Casi studio</span></div>
 
-    <article class="tile t-3 t-case rv glass-surface">
+    <article class="tile t-3 t-case rv">
       <div class="case-head">
         <span class="status"><span class="dot"></span><span data-i18n="st_prod">In produzione</span></span>
       </div>
@@ -653,7 +577,7 @@
       </div>
     </article>
 
-    <article class="tile t-3 t-case rv glass-surface">
+    <article class="tile t-3 t-case rv">
       <div class="case-head">
         <span class="status"><span class="dot"></span><span data-i18n="st_prod2">In produzione</span></span>
       </div>
@@ -668,7 +592,7 @@
     <!-- ===== oltre il lavoro ===== -->
     <div class="band" id="oltre"><span class="eyebrow" data-i18n="sec_oltre">Oltre il lavoro</span></div>
 
-    <section class="tile t-6 t-oltre rv glass-surface" aria-label="Oltre il lavoro">
+    <section class="tile t-6 t-oltre rv" aria-label="Oltre il lavoro">
       <p data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
       <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </section>
@@ -682,7 +606,7 @@
 
 <div class="modal" id="contactModal" hidden>
   <div class="modal-backdrop" data-close></div>
-  <div class="modal-panel glass-surface" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
     <div class="modal-handle" aria-hidden="true"></div>
     <div class="modal-head">
       <h2 id="cmTitle" data-i18n="cm_title">Informazioni di contatto</h2>
@@ -942,9 +866,7 @@
         var rx = (py * -3.5).toFixed(2);
         var ry = (px * 3.5).toFixed(2);
         tile.style.transform =
-          "translateY(-4px) scale(1.014) perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
-        tile.style.setProperty("--mx", ((px + 0.5) * 100).toFixed(1) + "%");
-        tile.style.setProperty("--my", ((py + 0.5) * 100).toFixed(1) + "%");
+          "translateY(-4px) scale(1.012) perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
       });
       tile.addEventListener("pointerleave", function(){
         tile.style.transition = "";
@@ -1072,220 +994,6 @@
       if(raf === null){ current = window.scrollY; raf = requestAnimationFrame(loop); }
     }, {passive:false});
     window.addEventListener("resize", clampTarget);
-  })();
-
-  /* ---- Liquid Glass reale: canvas WebGL con rifrazione ottica dello sfondo ---- */
-  (function(){
-    var canvas = document.getElementById("glassCanvas");
-    if(!canvas || !window.WebGLRenderingContext) return;
-    var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-    if(!gl) return;
-
-    var VERT = "attribute vec2 aPos;void main(){gl_Position=vec4(aPos,0.0,1.0);}";
-    var FRAG =
-      "precision mediump float;"+
-      "uniform vec2 uRes;"+
-      "uniform vec3 uBase;"+
-      "uniform vec3 uBlobColors[4];"+
-      "uniform vec2 uBlobCenters[4];"+
-      "uniform vec2 uBlobRadii[4];"+
-      "uniform float uBlobIntensity[4];"+
-      "uniform vec4 uRects[24];"+
-      "uniform float uRadii[24];"+
-      "uniform vec3 uTints[24];"+
-      "uniform float uTintAlphas[24];"+
-      "uniform int uCount;"+
-      "vec3 bg(vec2 p){"+
-      "  vec2 uv = p / uRes;"+
-      "  vec3 col = uBase;"+
-      "  for(int i=0;i<4;i++){"+
-      "    vec2 d = (uv - uBlobCenters[i]) / uBlobRadii[i];"+
-      "    float f = exp(-dot(d,d)*1.6);"+
-      "    col += uBlobColors[i]*uBlobIntensity[i]*f;"+
-      "  }"+
-      "  return col;"+
-      "}"+
-      "float sdRoundRect(vec2 p, vec2 c, vec2 hs, float r){"+
-      "  vec2 d = abs(p-c) - hs + r;"+
-      "  return length(max(d,0.0)) + min(max(d.x,d.y),0.0) - r;"+
-      "}"+
-      "void main(){"+
-      "  vec2 p = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);"+
-      "  vec3 outCol = bg(p);"+
-      "  for(int i=0;i<24;i++){"+
-      "    if(i>=uCount) break;"+
-      "    vec4 r = uRects[i];"+
-      "    float rad = uRadii[i];"+
-      "    float d = sdRoundRect(p, r.xy, r.zw, rad);"+
-      "    if(d < 0.0){"+
-      "      float ew = 26.0;"+
-      "      float t = clamp(-d/ew, 0.0, 1.0);"+
-      "      float dx1 = sdRoundRect(p+vec2(1.0,0.0), r.xy, r.zw, rad);"+
-      "      float dx2 = sdRoundRect(p-vec2(1.0,0.0), r.xy, r.zw, rad);"+
-      "      float dy1 = sdRoundRect(p+vec2(0.0,1.0), r.xy, r.zw, rad);"+
-      "      float dy2 = sdRoundRect(p-vec2(0.0,1.0), r.xy, r.zw, rad);"+
-      "      vec2 grad = vec2(dx1-dx2, dy1-dy2);"+
-      "      float glen = length(grad);"+
-      "      vec2 normal = glen>0.0001 ? grad/glen : vec2(0.0);"+
-      "      float bendStrength = mix(16.0, 2.0, t);"+
-      "      float chroma = 2.6;"+
-      "      vec3 refr;"+
-      "      refr.r = bg(p - normal*(bendStrength+chroma)).r;"+
-      "      refr.g = bg(p - normal*bendStrength).g;"+
-      "      refr.b = bg(p - normal*(bendStrength-chroma)).b;"+
-      "      vec3 tinted = mix(refr, uTints[i], uTintAlphas[i]);"+
-      "      vec2 lightDir = normalize(vec2(-0.55,-0.8));"+
-      "      float spec = pow(clamp(dot(normal, -lightDir), 0.0, 1.0), 2.2) * smoothstep(ew, 0.0, -d);"+
-      "      outCol = tinted + vec3(spec*0.85);"+
-      "      break;"+
-      "    }"+
-      "  }"+
-      "  gl_FragColor = vec4(outCol, 1.0);"+
-      "}";
-
-    function compile(type, src){
-      var s = gl.createShader(type);
-      gl.shaderSource(s, src);
-      gl.compileShader(s);
-      if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){ return null; }
-      return s;
-    }
-    var vs = compile(gl.VERTEX_SHADER, VERT);
-    var fs = compile(gl.FRAGMENT_SHADER, FRAG);
-    if(!vs || !fs) return;
-    var prog = gl.createProgram();
-    gl.attachShader(prog, vs);
-    gl.attachShader(prog, fs);
-    gl.linkProgram(prog);
-    if(!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
-    gl.useProgram(prog);
-
-    var buf = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-    var aPos = gl.getAttribLocation(prog, "aPos");
-    gl.enableVertexAttribArray(aPos);
-    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
-
-    var uRes = gl.getUniformLocation(prog, "uRes");
-    var uBase = gl.getUniformLocation(prog, "uBase");
-    var uBlobColors = gl.getUniformLocation(prog, "uBlobColors");
-    var uBlobCenters = gl.getUniformLocation(prog, "uBlobCenters");
-    var uBlobRadii = gl.getUniformLocation(prog, "uBlobRadii");
-    var uBlobIntensity = gl.getUniformLocation(prog, "uBlobIntensity");
-    var uRects = gl.getUniformLocation(prog, "uRects");
-    var uRadii = gl.getUniformLocation(prog, "uRadii");
-    var uTints = gl.getUniformLocation(prog, "uTints");
-    var uTintAlphas = gl.getUniformLocation(prog, "uTintAlphas");
-    var uCount = gl.getUniformLocation(prog, "uCount");
-
-    var MAX_RECTS = 24;
-    var rectsData = new Float32Array(MAX_RECTS*4);
-    var radiiData = new Float32Array(MAX_RECTS);
-    var tintsData = new Float32Array(MAX_RECTS*3);
-    var tintAlphasData = new Float32Array(MAX_RECTS);
-    var blobCentersData = new Float32Array([0.14,0.10, 0.82,0.06, 0.92,0.62, 0.20,0.96]);
-    var blobRadiiData = new Float32Array([0.30,0.24, 0.28,0.22, 0.34,0.30, 0.36,0.32]);
-
-    function hexToVec3(hex){
-      hex = hex.trim();
-      var m = hex.match(/^#([0-9a-f]{6})$/i);
-      if(m){
-        var n = parseInt(m[1], 16);
-        return [((n>>16)&255)/255, ((n>>8)&255)/255, (n&255)/255];
-      }
-      var rgb = hex.match(/rgba?\(([^)]+)\)/i);
-      if(rgb){
-        var parts = rgb[1].split(",").map(function(v){ return parseFloat(v); });
-        return [parts[0]/255, parts[1]/255, parts[2]/255];
-      }
-      return [1,1,1];
-    }
-
-    function DPR(){ return Math.min(window.devicePixelRatio || 1, 2); }
-
-    function resize(){
-      var dpr = DPR();
-      canvas.width = Math.round(window.innerWidth * dpr);
-      canvas.height = Math.round(window.innerHeight * dpr);
-      gl.viewport(0, 0, canvas.width, canvas.height);
-    }
-    window.addEventListener("resize", resize);
-    resize();
-
-    function collectRects(){
-      var dpr = DPR();
-      var els = document.querySelectorAll(".glass-surface");
-      var n = Math.min(els.length, MAX_RECTS);
-      for(var i=0; i<n; i++){
-        var el = els[i];
-        var r = el.getBoundingClientRect();
-        if(r.width < 1 || r.height < 1){
-          rectsData[i*4]=0; rectsData[i*4+1]=0; rectsData[i*4+2]=0; rectsData[i*4+3]=0;
-          radiiData[i]=0; tintAlphasData[i]=0;
-          continue;
-        }
-        var cx = (r.left + r.width/2) * dpr;
-        var cy = (r.top + r.height/2) * dpr;
-        var hw = (r.width/2) * dpr;
-        var hh = (r.height/2) * dpr;
-        rectsData[i*4]=cx; rectsData[i*4+1]=cy; rectsData[i*4+2]=hw; rectsData[i*4+3]=hh;
-        var cs = getComputedStyle(el);
-        var rad = parseFloat(cs.borderTopLeftRadius) * dpr;
-        if(isNaN(rad)) rad = 0;
-        radiiData[i] = Math.min(rad, Math.min(hw, hh));
-        var tintAttr = el.getAttribute("data-glass-tint");
-        var isDark = current() === "dark";
-        var tint = isDark ? [0,0,0] : [1,1,1];
-        var alpha = isDark ? 0.30 : 0.30;
-        if(tintAttr === "blue"){
-          tint = hexToVec3(getComputedStyle(document.documentElement).getPropertyValue("--blue"));
-          alpha = 0.5;
-        }
-        tintsData[i*3]=tint[0]; tintsData[i*3+1]=tint[1]; tintsData[i*3+2]=tint[2];
-        tintAlphasData[i] = alpha;
-      }
-      for(var j=n; j<MAX_RECTS; j++){
-        rectsData[j*4]=0; rectsData[j*4+1]=0; rectsData[j*4+2]=0; rectsData[j*4+3]=0;
-        radiiData[j]=0; tintAlphasData[j]=0;
-      }
-      return n;
-    }
-
-    function render(){
-      var dpr = DPR();
-      var isDark = current() === "dark";
-      var baseHex = getComputedStyle(document.documentElement).getPropertyValue("--bg");
-      var blueHex = getComputedStyle(document.documentElement).getPropertyValue("--blue");
-      var greenHex = getComputedStyle(document.documentElement).getPropertyValue("--ok");
-      var base = hexToVec3(baseHex);
-      var blue = hexToVec3(blueHex);
-      var green = hexToVec3(greenHex);
-      var intensities = isDark ? [0.55,0.42,0.30,0.24] : [0.42,0.32,0.22,0.18];
-
-      var n = collectRects();
-
-      gl.useProgram(prog);
-      gl.uniform2f(uRes, canvas.width, canvas.height);
-      gl.uniform3fv(uBase, base);
-      gl.uniform3fv(uBlobColors, new Float32Array(blue.concat(green, blue, green)));
-      gl.uniform2fv(uBlobCenters, blobCentersData);
-      gl.uniform2fv(uBlobRadii, blobRadiiData);
-      gl.uniform1fv(uBlobIntensity, new Float32Array(intensities));
-      gl.uniform4fv(uRects, rectsData);
-      gl.uniform1fv(uRadii, radiiData);
-      gl.uniform3fv(uTints, tintsData);
-      gl.uniform1fv(uTintAlphas, tintAlphasData);
-      gl.uniform1i(uCount, n);
-
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      requestAnimationFrame(render);
-    }
-
-    try{
-      requestAnimationFrame(render);
-      document.body.classList.add("glass-live");
-    }catch(e){ /* WebGL non disponibile: resta il fallback CSS */ }
   })();
 
   applyLang();
