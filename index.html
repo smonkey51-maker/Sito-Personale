@@ -120,7 +120,7 @@
   }
   .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px;box-shadow:var(--glow-soft)}
 
   .eyebrow{
     font-family:var(--mono);font-size:11px;font-weight:500;
@@ -241,11 +241,12 @@
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
   .btn.ghost:hover{background:var(--tile);filter:none}
   .iconlink{
-    width:clamp(38px,3vw,44px);height:clamp(38px,3vw,44px);border-radius:50%;border:1px solid var(--hair);
-    display:grid;place-items:center;color:var(--muted);
-    transition:color .2s,border-color .2s,background .2s,transform .15s cubic-bezier(.32,.72,0,1);
+    width:clamp(38px,3vw,44px);height:clamp(38px,3vw,44px);border-radius:50%;border:1px solid transparent;
+    display:grid;place-items:center;color:var(--blue);background:var(--blue-soft);
+    box-shadow:var(--glow-soft);
+    transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .15s cubic-bezier(.32,.72,0,1);
   }
-  .iconlink:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-soft)}
+  .iconlink:hover{color:var(--btn-text);background:var(--blue);box-shadow:var(--glow)}
   .iconlink:active{transform:scale(.9)}
   .iconlink svg{width:clamp(18px,1.4vw,21px);height:clamp(18px,1.4vw,21px);display:block}
   .iconlink.sm{width:30px;height:30px}
