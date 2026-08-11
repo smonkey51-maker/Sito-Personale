@@ -40,6 +40,10 @@
     --grad-oltre:linear-gradient(150deg,rgba(27,58,117,.10) 0%,rgba(27,58,117,.03) 40%,var(--tile) 70%);
     --glow:0 0 0 rgba(0,0,0,0);
     --glow-soft:0 0 0 rgba(0,0,0,0);
+    --glass-fill:rgba(11,14,20,.05);
+    --glass-line:rgba(11,14,20,.10);
+    --glass-inset:rgba(255,255,255,.6);
+    --dock-glow:transparent;
     --r-lg:26px;
     --r-md:18px;
     --max:1120px;
@@ -63,6 +67,10 @@
       --grad-oltre:linear-gradient(150deg,rgba(92,141,255,.24) 0%,rgba(92,141,255,.06) 40%,var(--tile) 68%);
       --glow:0 14px 36px -10px rgba(92,141,255,.4),0 2px 0 rgba(92,141,255,.12) inset;
       --glow-soft:0 10px 26px -14px rgba(92,141,255,.32);
+      --glass-fill:rgba(255,255,255,.06);
+      --glass-line:rgba(255,255,255,.10);
+      --glass-inset:rgba(255,255,255,.12);
+      --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.65) 0%,rgba(70,120,255,.25) 55%,transparent 80%);
     }
   }
   :root[data-theme="dark"]{
@@ -81,6 +89,10 @@
     --grad-oltre:linear-gradient(150deg,rgba(92,141,255,.24) 0%,rgba(92,141,255,.06) 40%,var(--tile) 68%);
     --glow:0 14px 36px -10px rgba(92,141,255,.4),0 2px 0 rgba(92,141,255,.12) inset;
     --glow-soft:0 10px 26px -14px rgba(92,141,255,.32);
+    --glass-fill:rgba(255,255,255,.06);
+    --glass-line:rgba(255,255,255,.10);
+    --glass-inset:rgba(255,255,255,.12);
+    --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.65) 0%,rgba(70,120,255,.25) 55%,transparent 80%);
   }
   :root[data-theme="light"]{
     --bg:#F3F5F8;
@@ -98,6 +110,10 @@
     --grad-oltre:linear-gradient(150deg,rgba(27,58,117,.10) 0%,rgba(27,58,117,.03) 40%,var(--tile) 70%);
     --glow:0 0 0 rgba(0,0,0,0);
     --glow-soft:0 0 0 rgba(0,0,0,0);
+    --glass-fill:rgba(11,14,20,.05);
+    --glass-line:rgba(11,14,20,.10);
+    --glass-inset:rgba(255,255,255,.6);
+    --dock-glow:transparent;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -144,14 +160,10 @@
   .pill-thumb{
     position:absolute;z-index:0;left:0;top:8px;bottom:8px;opacity:0;
     border-radius:999px;background:var(--blue-soft);
-    box-shadow:var(--glow);
+    box-shadow:var(--glow-soft);
     transition:transform .44s cubic-bezier(.32,.72,0,1),width .44s cubic-bezier(.32,.72,0,1),opacity .25s;
   }
-  .pill-thumb::after{
-    content:"";display:none;
-    position:absolute;left:50%;bottom:6px;transform:translateX(-50%);
-    width:14px;height:3px;border-radius:3px;background:var(--blue);opacity:.9;
-  }
+  .pill-thumb::after{content:"";display:none}
   .pill-item{
     position:relative;z-index:1;
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
@@ -196,7 +208,25 @@
   @media (max-width:600px){
     .pill-item span{display:none}
     .pill-item{padding:12px;gap:0;min-width:0}
-    .pill-thumb::after{display:block}
+
+    /* replica 1:1 del riferimento: glow ellittico + vetro smerigliato + puntino */
+    .pill-thumb{
+      background:var(--glass-fill);
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+      border:1px solid var(--glass-line);
+      box-shadow:0 1px 0 var(--glass-inset) inset;
+    }
+    .pill-thumb::before{
+      content:"";position:absolute;z-index:-1;left:50%;bottom:-6px;transform:translateX(-50%);
+      width:56px;height:32px;border-radius:50%;
+      background:var(--dock-glow);filter:blur(9px);
+    }
+    .pill-thumb::after{
+      content:"";display:block;
+      position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);
+      width:12px;height:4px;border-radius:2px;background:#dfe8ff;
+      box-shadow:0 0 12px 4px rgba(90,140,255,.9);
+    }
   }
 
   /* ============ hero: la card profilo dell'originale ============ */
