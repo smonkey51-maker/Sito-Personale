@@ -177,7 +177,7 @@
     position:absolute;z-index:0;left:0;top:8px;bottom:8px;opacity:0;
     border-radius:999px;background:var(--blue-soft);
     box-shadow:var(--glow-soft);
-    transition:transform .44s cubic-bezier(.32,.72,0,1),width .44s cubic-bezier(.32,.72,0,1),opacity .25s;
+    transition:transform .26s cubic-bezier(.32,.72,0,1),width .26s cubic-bezier(.32,.72,0,1),opacity .2s;
   }
   .pill-thumb::after{content:"";display:none}
   .pill-item{
@@ -845,6 +845,7 @@
     thumb.style.opacity = "1";
   }
   function setActive(link){
+    if(link.classList.contains("on")) return;  /* evita di riavviare la transizione se non cambia nulla */
     links.forEach(function(a){ a.classList.toggle("on", a === link); });
     moveTo(link);
   }
@@ -858,8 +859,14 @@
     });
     setActive(links[best]);
   }
-  window.addEventListener("scroll", spy, {passive:true});
-  window.addEventListener("resize", spy);
+  var spyQueued = false;
+  function spyThrottled(){
+    if(spyQueued) return;
+    spyQueued = true;
+    requestAnimationFrame(function(){ spyQueued = false; spy(); });
+  }
+  window.addEventListener("scroll", spyThrottled, {passive:true});
+  window.addEventListener("resize", spyThrottled);
 
   /* ---- modal contatti ---- */
   var modal = document.getElementById("contactModal");
