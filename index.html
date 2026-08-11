@@ -70,7 +70,7 @@
       --glass-fill:rgba(255,255,255,.06);
       --glass-line:rgba(255,255,255,.10);
       --glass-inset:rgba(255,255,255,.12);
-      --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.65) 0%,rgba(70,120,255,.25) 55%,transparent 80%);
+      --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.45) 0%,rgba(70,120,255,.15) 55%,transparent 80%);
     }
   }
   :root[data-theme="dark"]{
@@ -92,7 +92,7 @@
     --glass-fill:rgba(255,255,255,.06);
     --glass-line:rgba(255,255,255,.10);
     --glass-inset:rgba(255,255,255,.12);
-    --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.65) 0%,rgba(70,120,255,.25) 55%,transparent 80%);
+    --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.45) 0%,rgba(70,120,255,.15) 55%,transparent 80%);
   }
   :root[data-theme="light"]{
     --bg:#F3F5F8;
@@ -219,7 +219,7 @@
     .pill-thumb::before{
       content:"";position:absolute;z-index:-1;left:50%;bottom:-6px;transform:translateX(-50%);
       width:56px;height:32px;border-radius:50%;
-      background:var(--dock-glow);filter:blur(9px);
+      background:var(--dock-glow);filter:blur(10px);
     }
     .pill-thumb::after{
       content:"";display:block;
