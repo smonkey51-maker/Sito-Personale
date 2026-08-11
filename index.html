@@ -44,6 +44,10 @@
     --glass-line:rgba(11,14,20,.10);
     --glass-inset:rgba(255,255,255,.6);
     --dock-glow:transparent;
+    --nav-bg:var(--tile);
+    --nav-line:var(--hair);
+    --nav-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
+    --nav-blur:none;
     --r-lg:26px;
     --r-md:18px;
     --max:1120px;
@@ -71,6 +75,10 @@
       --glass-line:rgba(255,255,255,.10);
       --glass-inset:rgba(255,255,255,.12);
       --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.45) 0%,rgba(70,120,255,.15) 55%,transparent 80%);
+      --nav-bg:rgba(255,255,255,.025);
+      --nav-line:rgba(255,255,255,.06);
+      --nav-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 25px 50px rgba(0,0,0,.6);
+      --nav-blur:blur(24px);
     }
   }
   :root[data-theme="dark"]{
@@ -93,6 +101,10 @@
     --glass-line:rgba(255,255,255,.10);
     --glass-inset:rgba(255,255,255,.12);
     --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.45) 0%,rgba(70,120,255,.15) 55%,transparent 80%);
+    --nav-bg:rgba(255,255,255,.025);
+    --nav-line:rgba(255,255,255,.06);
+    --nav-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 25px 50px rgba(0,0,0,.6);
+    --nav-blur:blur(24px);
   }
   :root[data-theme="light"]{
     --bg:#F3F5F8;
@@ -114,6 +126,10 @@
     --glass-line:rgba(11,14,20,.10);
     --glass-inset:rgba(255,255,255,.6);
     --dock-glow:transparent;
+    --nav-bg:var(--tile);
+    --nav-line:var(--hair);
+    --nav-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
+    --nav-blur:none;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -209,7 +225,14 @@
     .pill-item span{display:none}
     .pill-item{padding:12px;gap:0;min-width:0}
 
-    /* replica 1:1 del riferimento: glow ellittico + vetro smerigliato + puntino */
+    /* replica del riferimento: navbar in vetro, icone distanziate, cerchio attivo che emerge */
+    .pill{
+      gap:8px;
+      background:var(--nav-bg);border-color:var(--nav-line);box-shadow:var(--nav-shadow);
+      backdrop-filter:var(--nav-blur);-webkit-backdrop-filter:var(--nav-blur);
+    }
+    .pill-item svg{opacity:.9}
+    .pill-item.on svg{opacity:1}
     .pill-thumb{
       background:var(--glass-fill);
       backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
@@ -801,10 +824,24 @@
   var links = Array.prototype.slice.call(nav.querySelectorAll("[data-nav]"));
   var sections = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
 
+  var iconOnlyMQ = window.matchMedia("(max-width:600px)");
   function moveTo(el){
     if(!el || !nav.offsetParent) return;  /* pill nascosta da desktop */
-    thumb.style.width = el.offsetWidth + "px";
-    thumb.style.transform = "translateX(" + el.offsetLeft + "px)";
+    if(iconOnlyMQ.matches){
+      /* cerchio attivo a dimensione fissa, più grande dell'icona, come nel riferimento */
+      var d = 56;
+      thumb.style.width = d + "px";
+      thumb.style.height = d + "px";
+      thumb.style.top = "50%";
+      thumb.style.marginTop = -(d / 2) + "px";
+      thumb.style.transform = "translateX(" + (el.offsetLeft + el.offsetWidth / 2 - d / 2) + "px)";
+    } else {
+      thumb.style.width = el.offsetWidth + "px";
+      thumb.style.height = "";
+      thumb.style.top = "";
+      thumb.style.marginTop = "";
+      thumb.style.transform = "translateX(" + el.offsetLeft + "px)";
+    }
     thumb.style.opacity = "1";
   }
   function setActive(link){
