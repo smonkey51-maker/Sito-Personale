@@ -144,8 +144,13 @@
   .pill-thumb{
     position:absolute;z-index:0;left:0;top:8px;bottom:8px;opacity:0;
     border-radius:999px;background:var(--blue-soft);
-    box-shadow:var(--glow-soft);
+    box-shadow:var(--glow);
     transition:transform .44s cubic-bezier(.32,.72,0,1),width .44s cubic-bezier(.32,.72,0,1),opacity .25s;
+  }
+  .pill-thumb::after{
+    content:"";display:none;
+    position:absolute;left:50%;bottom:6px;transform:translateX(-50%);
+    width:14px;height:3px;border-radius:3px;background:var(--blue);opacity:.9;
   }
   .pill-item{
     position:relative;z-index:1;
@@ -191,6 +196,7 @@
   @media (max-width:600px){
     .pill-item span{display:none}
     .pill-item{padding:12px;gap:0;min-width:0}
+    .pill-thumb::after{display:block}
   }
 
   /* ============ hero: la card profilo dell'originale ============ */
