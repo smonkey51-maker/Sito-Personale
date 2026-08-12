@@ -96,22 +96,11 @@
 
   /* ============ topbar ============ */
   .topbar{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line)}
-  .topbar-inner{max-width:1040px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;gap:32px}
-  @media (min-width:901px){.topbar-inner{padding:0 40px}}
+  .topbar-inner{max-width:1040px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:14px;column-gap:20px}
+  @media (min-width:901px){.topbar-inner{padding:0 40px;height:72px}}
   .brand{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--ink);letter-spacing:.01em;border-radius:8px}
 
-  .hamburger{display:none;width:36px;height:36px;flex:none;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;color:var(--ink)}
-  .hamburger svg{width:20px;height:20px}
-
-  .nf-nav{display:flex;align-items:center;gap:6px;flex:1}
-  .navitem{
-    font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;
-    padding:9px 16px;border-radius:999px;color:var(--ink-soft);background:none;border:none;cursor:pointer;white-space:nowrap;
-    transition:background var(--dur-s) var(--ease),color var(--dur-s) var(--ease);
-  }
-  .navitem.on{color:var(--on-accent-soft);background:var(--accent-soft)}
-
-  .topbar-actions{display:flex;align-items:center;gap:18px}
+  .topbar-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
   .utilbar{display:flex;align-items:center;gap:2px}
   .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;padding:4px 7px;color:var(--ink-soft);opacity:.6}
   .lang-btn.on{color:var(--ink);opacity:1}
@@ -123,17 +112,9 @@
     font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
   }
 
-  @media (max-width:900px){
-    .nf-nav,.topbar-actions{display:none}
-    .hamburger{display:flex}
-    .topbar-inner{padding:18px 28px 22px;height:auto;flex-wrap:wrap}
-    .topbar.menu-open{position:fixed;inset:0;overflow-y:auto;box-shadow:var(--shadow)}
-    .topbar.menu-open .nf-nav{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:100%;margin-top:8px}
-    .topbar.menu-open .navitem{padding:10px 14px;font-size:15px;width:100%;text-align:left}
-    .topbar.menu-open .topbar-actions{
-      display:flex;flex-direction:column;align-items:stretch;gap:18px;width:100%;
-      margin-top:24px;padding-top:24px;border-top:1px solid var(--line);
-    }
+  @media (max-width:560px){
+    .topbar-actions{width:100%;flex-direction:column;align-items:stretch;gap:14px}
+    .utilbar{justify-content:center}
   }
 
   /* ============ hero ============ */
@@ -149,7 +130,7 @@
   .hero-role{font-family:var(--sans);font-size:16px;font-weight:400;color:var(--ink-soft);margin-top:8px}
 
   .social-row{display:flex;align-items:center;gap:10px;margin-top:36px;flex-wrap:wrap}
-  .iconbtn{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);border:1px solid var(--line);background:none}
+  .iconbtn{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);border:1px solid var(--line);background:none;font:inherit;cursor:pointer}
   .iconbtn svg{width:15px;height:15px}
   .follow{margin-left:8px;font-family:var(--sans);font-size:13px;color:var(--ink-soft)}
   @media (hover:hover) and (pointer:fine){.follow:hover{text-decoration:underline}}
@@ -257,17 +238,6 @@
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#profilo">N. Forcolin</a>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Apri menu" aria-expanded="false" aria-controls="nfNav">
-      <svg id="hamburgerIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-
-    <nav class="nf-nav" id="nfNav" aria-label="Navigazione principale">
-      <a class="navitem" href="#profilo" data-nav data-i18n="nav_profilo">Profilo</a>
-      <a class="navitem" href="#sintesi" data-nav data-i18n="proof_label">In sintesi</a>
-      <a class="navitem" href="#percorso" data-nav data-i18n="sec_percorso">Percorso</a>
-      <a class="navitem" href="#casi-studio" data-nav data-i18n="sec_lavori">Casi studio</a>
-      <a class="navitem" href="#oltre" data-nav data-i18n="sec_oltre">Oltre</a>
-    </nav>
 
     <div class="topbar-actions">
       <div class="utilbar">
@@ -303,6 +273,9 @@
       <a class="iconbtn" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
       </a>
+      <button class="iconbtn" type="button" data-open-contacts aria-label="Contatti" title="Contatti">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.3" y="5.5" width="17.4" height="13" rx="2.2"/><path d="M4 7.2l8 5.6 8-5.6"/></svg>
+      </button>
       <a class="follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
     </div>
   </div>
@@ -530,7 +503,6 @@
     document.querySelectorAll(".lang-btn").forEach(function(b){
       b.classList.toggle("on", b.getAttribute("data-lang") === lang);
     });
-    spy();
   }
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){ lang = b.getAttribute("data-lang"); applyLang(); });
@@ -558,77 +530,18 @@
   });
   paintTheme();
 
-  /* ---- nav: indicatore attivo + scroll-spy ---- */
-  var nav = document.getElementById("nfNav");
-  var links = Array.prototype.slice.call(nav.querySelectorAll("[data-nav]"));
-  var sections = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
-
-  links.forEach(function(a){
-    a.addEventListener("click", function(e){
-      e.preventDefault();
-      var target = document.querySelector(a.getAttribute("href"));
-      if(target) target.scrollIntoView({behavior:"smooth"});
-      setMenuOpen(false);
-    });
-  });
-
-  function setActive(link){
-    if(link && link.classList.contains("on")) return;
-    links.forEach(function(a){ a.classList.toggle("on", a === link); });
-  }
-  function spy(){
-    var best = 0, mid = window.innerHeight * 0.34;
-    sections.forEach(function(s, i){
-      if(s && s.getBoundingClientRect().top <= mid) best = i;
-    });
-    setActive(links[best]);
-  }
-  var spyQueued = false;
-  function spyThrottled(){
-    if(spyQueued) return;
-    spyQueued = true;
-    requestAnimationFrame(function(){ spyQueued = false; spy(); });
-  }
-  window.addEventListener("scroll", spyThrottled, {passive:true});
-  window.addEventListener("resize", spyThrottled);
-
-  /* ---- hamburger: menu compresso sotto i 900px ---- */
-  var topbar = document.getElementById("topbar");
-  var hamburgerBtn = document.getElementById("hamburgerBtn");
-  var hamburgerIcon = document.getElementById("hamburgerIcon");
-  var hamburgerOpenIcon = '<path d="M4 7h16M4 12h16M4 17h16"/>';
-  var hamburgerCloseIcon = '<path d="M6 6l12 12M18 6 6 18"/>';
-  function setMenuOpen(open){
-    if(topbar.classList.contains("menu-open") === open) return;
-    topbar.classList.toggle("menu-open", open);
-    hamburgerBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    hamburgerBtn.setAttribute("aria-label", open ? "Chiudi menu" : "Apri menu");
-    hamburgerIcon.innerHTML = open ? hamburgerCloseIcon : hamburgerOpenIcon;
-    document.body.style.overflow = open ? "hidden" : "";
-  }
-  hamburgerBtn.addEventListener("click", function(){
-    setMenuOpen(!topbar.classList.contains("menu-open"));
-  });
-  window.addEventListener("resize", function(){
-    if(window.matchMedia("(min-width:901px)").matches) setMenuOpen(false);
-  });
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape" && topbar.classList.contains("menu-open")) setMenuOpen(false);
-  });
-
   /* ---- modal contatti ---- */
   var modal = document.getElementById("contactModal");
   var lastFocus = null;
   function openModal(e){
     lastFocus = e && e.currentTarget ? e.currentTarget : null;
-    setMenuOpen(false);
     modal.hidden = false;
     document.body.style.overflow = "hidden";
     modal.querySelector(".modal-x").focus();
   }
   function closeModal(){
     modal.hidden = true;
-    document.body.style.overflow = topbar.classList.contains("menu-open") ? "hidden" : "";
+    document.body.style.overflow = "";
     if(lastFocus) lastFocus.focus();
   }
   document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", openModal); });
