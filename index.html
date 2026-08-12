@@ -39,8 +39,6 @@
     --accent:#415F91;
     --accent-soft:#DBE2F9;
     --on-accent-soft:#141B2C;
-    --status-bg:#C2F2D0;
-    --on-status-bg:#0C3B22;
     --scrim:rgba(0,0,0,.4);
     --shadow:0 1px 2px rgba(0,0,0,.16),0 1px 3px 1px rgba(0,0,0,.08);
 
@@ -56,7 +54,6 @@
       --bg:#121316;--surface:#1B1C20;--surface2:#292A2F;
       --ink:#E3E2E6;--ink-soft:#C6C6D0;--line:#45464F;
       --accent:#AAC7FF;--accent-soft:#3F4759;--on-accent-soft:#DBE2F9;
-      --status-bg:#1D4B32;--on-status-bg:#A6F2C1;
       --scrim:rgba(0,0,0,.6);
       --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
     }
@@ -65,7 +62,6 @@
     --bg:#121316;--surface:#1B1C20;--surface2:#292A2F;
     --ink:#E3E2E6;--ink-soft:#C6C6D0;--line:#45464F;
     --accent:#AAC7FF;--accent-soft:#3F4759;--on-accent-soft:#DBE2F9;
-    --status-bg:#1D4B32;--on-status-bg:#A6F2C1;
     --scrim:rgba(0,0,0,.6);
     --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
   }
@@ -73,7 +69,6 @@
     --bg:#FAF9FD;--surface:#F4F3F8;--surface2:#E8E7ED;
     --ink:#1B1B1F;--ink-soft:#45464F;--line:#C6C6D0;
     --accent:#415F91;--accent-soft:#DBE2F9;--on-accent-soft:#141B2C;
-    --status-bg:#C2F2D0;--on-status-bg:#0C3B22;
     --scrim:rgba(0,0,0,.4);
     --shadow:0 1px 2px rgba(0,0,0,.16),0 1px 3px 1px rgba(0,0,0,.08);
   }
@@ -168,27 +163,18 @@
   .job-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-top:4px}
   .job-supp{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.6;max-width:640px}
 
-  /* ============ casi studio ============ */
-  .cases{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:12px}
-  @media (max-width:640px){.cases{grid-template-columns:1fr}}
-  .case{background:var(--surface);padding:32px;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column}
-  .case-headrow{display:flex;align-items:center;justify-content:space-between}
-  .case-index{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
-  .status{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--on-status-bg);background:var(--status-bg);padding:5px 12px;border-radius:999px}
-  .case h3{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--ink);margin:18px 0 10px;line-height:1.3}
-  @media (hover:hover) and (pointer:fine){.case h3 a:hover{color:var(--accent)}}
-  .case p{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.65;margin:0}
-  .metarow{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px}
-  .metachip{font-family:var(--mono);font-size:11px;color:var(--ink-soft);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+  /* ============ casi studio (stile percorso) ============ */
+  .case-status{color:var(--accent)}
+  .case-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-top:4px;line-height:1.3}
+  @media (hover:hover) and (pointer:fine){.case-title a:hover{color:var(--accent)}}
+  .case-supp{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.65;max-width:640px}
+  .metarow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px}
+  .metachip{font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
 
-  /* ============ oltre ============ */
-  .oltre{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px}
-  @media (max-width:900px){.oltre{padding:28px}}
-  @media (max-width:640px){.oltre{flex-direction:column;align-items:flex-start;gap:20px}}
-  .oltre p{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--ink);margin:0;max-width:70%}
-  @media (max-width:640px){.oltre p{max-width:100%}}
-  .eq{display:flex;align-items:flex-end;gap:4px;height:28px;flex:none}
-  .eq i{width:2px;background:var(--on-accent-soft);border-radius:1px;opacity:.7;display:block}
+  /* ============ oltre (stile percorso) ============ */
+  .oltre-supp{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--ink);margin:0;max-width:640px}
+  .eq{display:flex;align-items:flex-end;gap:4px;height:28px;flex:none;margin-top:16px}
+  .eq i{width:2px;background:var(--accent);border-radius:1px;opacity:.8;display:block}
   @media (prefers-reduced-motion:no-preference){
     .eq i{animation:eqbar 1.6s ease-in-out infinite}
     .eq i:nth-child(1){height:24%;animation-delay:0s}
@@ -327,37 +313,42 @@
   </div>
 
   <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Casi studio</span></div>
-  <div class="cases">
-    <article class="case rv">
-      <div class="case-headrow">
-        <span class="case-index">01</span>
-        <span class="status" data-i18n="st_prod">In produzione</span>
+  <div class="timeline rv">
+    <div class="job-row">
+      <div class="job-dotcol"><span class="job-dot"></span></div>
+      <div class="job-body">
+        <div class="job-overline">01 · <span class="case-status" data-i18n="st_prod">In produzione</span></div>
+        <h3 class="case-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h3>
+        <p class="case-supp" data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
+        <div class="metarow">
+          <span class="metachip" data-i18n="c1m1t">Ambito — InfoCamere · catalogo servizi IT</span>
+          <span class="metachip" data-i18n="c1m2t">Vincoli — dati interni, governance presidiata</span>
+        </div>
       </div>
-      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h3>
-      <p data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
-      <div class="metarow">
-        <span class="metachip" data-i18n="c1m1t">Ambito — InfoCamere · catalogo servizi IT</span>
-        <span class="metachip" data-i18n="c1m2t">Vincoli — dati interni, governance presidiata</span>
+    </div>
+    <div class="job-row last">
+      <div class="job-dotcol"><span class="job-dot"></span></div>
+      <div class="job-body">
+        <div class="job-overline">02 · <span class="case-status" data-i18n="st_prod2">In produzione</span></div>
+        <h3 class="case-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h3>
+        <p class="case-supp" data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise.</p>
+        <div class="metarow">
+          <span class="metachip" data-i18n="c2m1t">Approccio — fine-tuning · deploy on-premise</span>
+          <span class="metachip" data-i18n="c2m2t">Output — sessioni dimostrative per il vertice</span>
+        </div>
       </div>
-    </article>
-    <article class="case rv">
-      <div class="case-headrow">
-        <span class="case-index">02</span>
-        <span class="status" data-i18n="st_prod2">In produzione</span>
-      </div>
-      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h3>
-      <p data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise.</p>
-      <div class="metarow">
-        <span class="metachip" data-i18n="c2m1t">Approccio — fine-tuning · deploy on-premise</span>
-        <span class="metachip" data-i18n="c2m2t">Output — sessioni dimostrative per il vertice</span>
-      </div>
-    </article>
+    </div>
   </div>
 
   <div class="section-label" id="oltre"><span class="section-num">04</span><span data-i18n="sec_oltre">Oltre</span></div>
-  <div class="oltre rv">
-    <p data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
-    <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="timeline rv">
+    <div class="job-row last">
+      <div class="job-dotcol"><span class="job-dot"></span></div>
+      <div class="job-body">
+        <p class="oltre-supp" data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
+        <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
   </div>
 
   <footer>
