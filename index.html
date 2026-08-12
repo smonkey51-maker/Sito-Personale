@@ -22,636 +22,493 @@
 <meta name="twitter:title" content="Nicolò Forcolin — AI enterprise in ambienti regolamentati">
 <meta name="twitter:description" content="Strategia, sistemi e progetti AI in un contesto IT pubblico e regolamentato.">
 <meta name="twitter:image" content="https://nforcolin.eu/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
 <style>
+  /* ============================================================
+     Material 3 — token di sistema (colore, tipografia, forma, elevazione, moto)
+     Palette tonale generata dal seed del brand (#1B3A75), ruoli M3 standard.
+     ============================================================ */
   :root{
     color-scheme:light dark;
-    --bg:#F3F5F8;
-    --bg-deep:#E5E9EF;
-    --tile:#FFFFFF;
-    --tile-2:#FAFBFD;
-    --ink:#0B0E14;
-    --muted:#5B6270;
-    --blue:#1B3A75;
-    --blue-soft:rgba(27,58,117,.08);
-    --hair:rgba(11,14,20,.09);
-    --shadow:0 1px 2px rgba(11,14,20,.04),0 20px 40px -28px rgba(11,14,20,.13),0 50px 90px -40px rgba(11,14,20,.09),inset 0 1px 0 rgba(255,255,255,.6);
-    --ok:#2B63C2;
-    --btn-text:#FFFFFF;
-    --grad-oltre:linear-gradient(150deg,rgba(27,58,117,.10) 0%,rgba(27,58,117,.03) 40%,var(--tile) 70%);
-    --glow:0 0 0 rgba(0,0,0,0);
-    --glow-soft:0 0 0 rgba(0,0,0,0);
-    --glass-fill:rgba(11,14,20,.05);
-    --glass-line:rgba(11,14,20,.10);
-    --glass-inset:rgba(255,255,255,.6);
-    --dock-glow:transparent;
-    --nav-bg:var(--tile);
-    --nav-line:var(--hair);
-    --nav-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
-    --nav-blur:none;
-    --r-lg:26px;
-    --r-md:18px;
-    --max:1120px;
-    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Segoe UI,system-ui,sans-serif;
-    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,"Roboto Mono",monospace;
+    --md-primary:#415F91;
+    --md-on-primary:#FFFFFF;
+    --md-primary-container:#D6E3FF;
+    --md-on-primary-container:#001B3D;
+    --md-secondary-container:#DBE2F9;
+    --md-on-secondary-container:#141B2C;
+    --md-success-container:#C2F2D0;
+    --md-on-success-container:#0C3B22;
+    --md-surface:#FAF9FD;
+    --md-surface-container-lowest:#FFFFFF;
+    --md-surface-container-low:#F4F3F8;
+    --md-surface-container:#EEEDF2;
+    --md-surface-container-high:#E8E7ED;
+    --md-on-surface:#1B1B1F;
+    --md-on-surface-variant:#45464F;
+    --md-outline:#767680;
+    --md-outline-variant:#C6C6D0;
+    --md-scrim:rgba(0,0,0,.4);
+    --md-elev-1:0 1px 2px rgba(0,0,0,.16),0 1px 3px 1px rgba(0,0,0,.08);
+    --md-elev-2:0 1px 2px rgba(0,0,0,.18),0 2px 6px 2px rgba(0,0,0,.09);
+    --md-elev-3:0 1px 3px rgba(0,0,0,.2),0 4px 8px 3px rgba(0,0,0,.1);
+
+    --md-display:"Roboto","Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;
+    --md-body:"Roboto","Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;
+    --md-mono:ui-monospace,"Roboto Mono",SFMono-Regular,Menlo,monospace;
+
+    --shape-sm:8px;--shape-md:12px;--shape-lg:16px;--shape-xl:28px;--shape-full:999px;
+
+    --m3-standard:cubic-bezier(.2,0,0,1);
+    --m3-emphasized:cubic-bezier(.3,0,.1,1);
+    --dur-s:150ms;--dur-m:280ms;--dur-l:450ms;
   }
   @media (prefers-color-scheme:dark){
-    :root{
-      --bg:#000000;
-      --bg-deep:#000000;
-      --tile:#0E1015;
-      --tile-2:#181B21;
-      --ink:#F2F4F7;
-      --muted:#8A93A3;
-      --blue:#5C8DFF;
-      --blue-soft:rgba(92,141,255,.16);
-      --hair:rgba(242,244,247,.10);
-      --shadow:0 1px 2px rgba(0,0,0,.5),0 20px 44px -22px rgba(0,0,0,.85),0 50px 100px -36px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);
-      --ok:#3FA0F5;
-      --btn-text:#05070B;
-      --grad-oltre:linear-gradient(150deg,rgba(92,141,255,.24) 0%,rgba(92,141,255,.06) 40%,var(--tile) 68%);
-      --glow:0 14px 36px -10px rgba(92,141,255,.4),0 2px 0 rgba(92,141,255,.12) inset;
-      --glow-soft:0 10px 26px -14px rgba(92,141,255,.32);
-      --glass-fill:rgba(255,255,255,.06);
-      --glass-line:rgba(255,255,255,.10);
-      --glass-inset:rgba(255,255,255,.12);
-      --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.45) 0%,rgba(70,120,255,.15) 55%,transparent 80%);
-      --nav-bg:rgba(255,255,255,.025);
-      --nav-line:rgba(255,255,255,.06);
-      --nav-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 25px 50px rgba(0,0,0,.6);
-      --nav-blur:blur(24px);
+    :root:not([data-theme="light"]){
+      --md-primary:#AAC7FF;
+      --md-on-primary:#0A2F60;
+      --md-primary-container:#284777;
+      --md-on-primary-container:#D6E3FF;
+      --md-secondary-container:#3F4759;
+      --md-on-secondary-container:#DBE2F9;
+      --md-success-container:#1D4B32;
+      --md-on-success-container:#A6F2C1;
+      --md-surface:#121316;
+      --md-surface-container-lowest:#0C0E11;
+      --md-surface-container-low:#1B1C20;
+      --md-surface-container:#1F2024;
+      --md-surface-container-high:#292A2F;
+      --md-on-surface:#E3E2E6;
+      --md-on-surface-variant:#C6C6D0;
+      --md-outline:#90909A;
+      --md-outline-variant:#45464F;
+      --md-scrim:rgba(0,0,0,.6);
+      --md-elev-1:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
+      --md-elev-2:0 1px 2px rgba(0,0,0,.45),0 2px 6px 2px rgba(0,0,0,.3);
+      --md-elev-3:0 1px 3px rgba(0,0,0,.5),0 4px 8px 3px rgba(0,0,0,.35);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#000000;
-    --bg-deep:#000000;
-    --tile:#0E1015;
-    --tile-2:#181B21;
-    --ink:#F2F4F7;
-    --muted:#8A93A3;
-    --blue:#5C8DFF;
-    --blue-soft:rgba(92,141,255,.16);
-    --hair:rgba(242,244,247,.10);
-    --shadow:0 1px 2px rgba(0,0,0,.5),0 20px 44px -22px rgba(0,0,0,.85),0 50px 100px -36px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);
-    --ok:#3FA0F5;
-    --btn-text:#05070B;
-    --grad-oltre:linear-gradient(150deg,rgba(92,141,255,.24) 0%,rgba(92,141,255,.06) 40%,var(--tile) 68%);
-    --glow:0 14px 36px -10px rgba(92,141,255,.4),0 2px 0 rgba(92,141,255,.12) inset;
-    --glow-soft:0 10px 26px -14px rgba(92,141,255,.32);
-    --glass-fill:rgba(255,255,255,.06);
-    --glass-line:rgba(255,255,255,.10);
-    --glass-inset:rgba(255,255,255,.12);
-    --dock-glow:radial-gradient(closest-side,rgba(70,120,255,.45) 0%,rgba(70,120,255,.15) 55%,transparent 80%);
-    --nav-bg:rgba(255,255,255,.025);
-    --nav-line:rgba(255,255,255,.06);
-    --nav-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 25px 50px rgba(0,0,0,.6);
-    --nav-blur:blur(24px);
+    --md-primary:#AAC7FF;--md-on-primary:#0A2F60;
+    --md-primary-container:#284777;--md-on-primary-container:#D6E3FF;
+    --md-secondary-container:#3F4759;--md-on-secondary-container:#DBE2F9;
+    --md-success-container:#1D4B32;--md-on-success-container:#A6F2C1;
+    --md-surface:#121316;--md-surface-container-lowest:#0C0E11;
+    --md-surface-container-low:#1B1C20;--md-surface-container:#1F2024;--md-surface-container-high:#292A2F;
+    --md-on-surface:#E3E2E6;--md-on-surface-variant:#C6C6D0;
+    --md-outline:#90909A;--md-outline-variant:#45464F;--md-scrim:rgba(0,0,0,.6);
+    --md-elev-1:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
+    --md-elev-2:0 1px 2px rgba(0,0,0,.45),0 2px 6px 2px rgba(0,0,0,.3);
+    --md-elev-3:0 1px 3px rgba(0,0,0,.5),0 4px 8px 3px rgba(0,0,0,.35);
   }
   :root[data-theme="light"]{
-    --bg:#F3F5F8;
-    --bg-deep:#E5E9EF;
-    --tile:#FFFFFF;
-    --tile-2:#FAFBFD;
-    --ink:#0B0E14;
-    --muted:#5B6270;
-    --blue:#1B3A75;
-    --blue-soft:rgba(27,58,117,.08);
-    --hair:rgba(11,14,20,.09);
-    --shadow:0 1px 2px rgba(11,14,20,.04),0 20px 40px -28px rgba(11,14,20,.13),0 50px 90px -40px rgba(11,14,20,.09),inset 0 1px 0 rgba(255,255,255,.6);
-    --ok:#2B63C2;
-    --btn-text:#FFFFFF;
-    --grad-oltre:linear-gradient(150deg,rgba(27,58,117,.10) 0%,rgba(27,58,117,.03) 40%,var(--tile) 70%);
-    --glow:0 0 0 rgba(0,0,0,0);
-    --glow-soft:0 0 0 rgba(0,0,0,0);
-    --glass-fill:rgba(11,14,20,.05);
-    --glass-line:rgba(11,14,20,.10);
-    --glass-inset:rgba(255,255,255,.6);
-    --dock-glow:transparent;
-    --nav-bg:var(--tile);
-    --nav-line:var(--hair);
-    --nav-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset;
-    --nav-blur:none;
+    --md-primary:#415F91;--md-on-primary:#FFFFFF;
+    --md-primary-container:#D6E3FF;--md-on-primary-container:#001B3D;
+    --md-secondary-container:#DBE2F9;--md-on-secondary-container:#141B2C;
+    --md-success-container:#C2F2D0;--md-on-success-container:#0C3B22;
+    --md-surface:#FAF9FD;--md-surface-container-lowest:#FFFFFF;
+    --md-surface-container-low:#F4F3F8;--md-surface-container:#EEEDF2;--md-surface-container-high:#E8E7ED;
+    --md-on-surface:#1B1B1F;--md-on-surface-variant:#45464F;
+    --md-outline:#767680;--md-outline-variant:#C6C6D0;--md-scrim:rgba(0,0,0,.4);
+    --md-elev-1:0 1px 2px rgba(0,0,0,.16),0 1px 3px 1px rgba(0,0,0,.08);
+    --md-elev-2:0 1px 2px rgba(0,0,0,.18),0 2px 6px 2px rgba(0,0,0,.09);
+    --md-elev-3:0 1px 3px rgba(0,0,0,.2),0 4px 8px 3px rgba(0,0,0,.1);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
-    font-size:17px;
-    line-height:1.55;
-    letter-spacing:-.012em;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-    position:relative;
+    background:var(--md-surface);color:var(--md-on-surface);
+    font-family:var(--md-body);font-size:16px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
-  body::before{
-    content:"";
-    position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background:radial-gradient(130% 120% at 50% 42%,transparent 55%,var(--bg-deep) 130%);
-  }
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px;box-shadow:var(--glow-soft)}
+  :focus-visible{outline:2px solid var(--md-primary);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px}
 
-  .eyebrow{
-    font-family:var(--mono);font-size:11px;font-weight:500;
-    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  /* stato: overlay "state layer" M3 — hover/focus/press, sempre da currentColor */
+  .state{position:relative;isolation:isolate}
+  .state::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;background:currentColor;
+    opacity:0;transition:opacity var(--dur-s) var(--m3-standard);pointer-events:none;z-index:-1;
   }
+  @media (hover:hover) and (pointer:fine){.state:hover::after{opacity:.08}}
+  .state:focus-visible::after{opacity:.12}
+  .state:active::after{opacity:.12}
 
-  /* ============ navigation pill: solo mobile/tablet ============ */
-  .pillbar{
-    display:none;
-    position:fixed;left:0;right:0;bottom:16px;z-index:60;
-    justify-content:center;padding:0 14px;pointer-events:none;
-  }
-  .pill{
-    pointer-events:auto;position:relative;
-    display:flex;align-items:stretch;gap:2px;
-    background:var(--tile);
-    border:1px solid var(--hair);
-    border-radius:999px;padding:8px;max-width:100%;
-    box-shadow:0 2px 10px rgba(29,29,31,.08),0 18px 40px -22px rgba(29,29,31,.6),0 1px 0 rgba(255,255,255,.18) inset,var(--glow-soft);
-  }
-  .pill-thumb{
-    position:absolute;z-index:0;left:0;top:8px;bottom:8px;opacity:0;
-    border-radius:999px;background:var(--blue-soft);
-    box-shadow:var(--glow-soft);
-    transition:transform .26s cubic-bezier(.32,.72,0,1),width .26s cubic-bezier(.32,.72,0,1),opacity .2s;
-  }
-  .pill-thumb::after{content:"";display:none}
-  .pill-item{
-    position:relative;z-index:1;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
-    min-width:84px;padding:12px 16px 11px;border-radius:999px;
-    background:none;border:none;cursor:pointer;font-family:var(--sans);
-    color:var(--muted);transition:color .25s ease,transform .15s cubic-bezier(.32,.72,0,1);
-  }
-  .pill-item svg{width:23px;height:23px;display:block;stroke-width:1.6}
-  .pill-item span{
-    font-size:12.5px;font-weight:550;letter-spacing:-.005em;white-space:nowrap;line-height:1;
-  }
-  .pill-item.on{color:var(--blue)}
-  .pill-item:active{transform:scale(.92)}
-
-  /* utility pill: lingua + tema */
-  .utilbar{position:fixed;top:16px;right:16px;z-index:61;display:flex;pointer-events:none}
-  .util{
-    pointer-events:auto;position:relative;display:flex;align-items:center;gap:1px;
-    background:var(--tile);
-    border:1px solid var(--hair);
-    border-radius:999px;padding:5px;
-    box-shadow:0 2px 10px rgba(29,29,31,.08),0 14px 30px -20px rgba(29,29,31,.5),0 1px 0 rgba(255,255,255,.18) inset,var(--glow-soft);
-  }
-  .util-btn{
-    background:none;border:none;cursor:pointer;color:var(--muted);
-    font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.04em;
-    padding:7px 9px;border-radius:999px;transition:color .2s,background .2s,transform .15s cubic-bezier(.32,.72,0,1);
-  }
-  .util-btn:active{transform:scale(.9)}
-  .util-btn.on{color:var(--blue);background:var(--blue-soft)}
-  .util-div{width:1px;height:18px;background:var(--hair);margin:0 4px;flex:none}
-  .util-icon{padding:7px 8px;display:grid;place-items:center}
-  .util-icon svg{width:16px;height:16px;display:block}
-
-  /* la pill compare solo qui, in basso, a portata di pollice */
-  @media (max-width:860px){
-    .pillbar{display:flex}
-    .pill{padding:6px}
-    .pill-item{min-width:0;padding:10px 14px 9px;gap:6px}
-    .pill-item span{font-size:11px}
-  }
-  @media (max-width:600px){
-    .pill-item span{display:none}
-    .pill-item{padding:12px;gap:0;min-width:0}
-
-    /* replica del riferimento: navbar in vetro, icone distanziate, cerchio attivo che emerge */
-    .pill{
-      gap:8px;
-      background:var(--nav-bg);border-color:var(--nav-line);box-shadow:var(--nav-shadow);
-      backdrop-filter:var(--nav-blur);-webkit-backdrop-filter:var(--nav-blur);
-    }
-    .pill-item svg{opacity:.9}
-    .pill-item.on svg{opacity:1}
-    .pill-thumb{
-      background:var(--glass-fill);
-      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-      border:1px solid var(--glass-line);
-      box-shadow:0 1px 0 var(--glass-inset) inset;
-    }
-    .pill-thumb::before{
-      content:"";position:absolute;z-index:-1;left:50%;bottom:-6px;transform:translateX(-50%);
-      width:56px;height:32px;border-radius:50%;
-      background:var(--dock-glow);filter:blur(10px);
-    }
-    .pill-thumb::after{
-      content:"";display:block;
-      position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);
-      width:12px;height:4px;border-radius:2px;background:#dfe8ff;
-      box-shadow:0 0 12px 4px rgba(90,140,255,.9);
-    }
+  .section-label{
+    font-family:var(--md-body);font-size:14px;font-weight:500;letter-spacing:.1px;
+    color:var(--md-on-surface-variant);padding:40px 0 14px;scroll-margin-top:96px;
   }
 
-  /* ============ hero: la card profilo dell'originale ============ */
-  .hero{
-    padding:clamp(128px,12vw,152px) 0 clamp(60px,6vw,72px);text-align:center;scroll-margin-top:0;
-    background:radial-gradient(120% 100% at 50% -12%,var(--bg-deep) 0%,var(--bg) 60%);
+  /* ============ hero ============ */
+  .hero{padding:56px 0 28px}
+  .avatar{
+    width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center 40%;
+    display:block;box-shadow:var(--md-elev-1);
   }
-  .pc-photo{
-    width:clamp(160px,17vw,240px);height:clamp(160px,17vw,240px);
-    border-radius:50%;object-fit:cover;object-position:center 40%;
-    display:block;margin:0 auto 34px;border:1px solid var(--hair);
-    box-shadow:0 18px 44px -22px rgba(29,29,31,.45);
+  .hero-name{
+    font-family:var(--md-display);font-size:clamp(34px,4.6vw,45px);font-weight:400;
+    line-height:1.15;letter-spacing:0;color:var(--md-on-surface);margin-top:20px;text-wrap:balance;
   }
-  :root[data-theme="dark"] .pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}
-  @media (prefers-color-scheme:dark){.pc-photo{box-shadow:0 18px 44px -20px rgba(0,0,0,.8)}}
-  :root[data-theme="light"] .pc-photo{box-shadow:0 18px 44px -22px rgba(29,29,31,.45)}
-  .pc-name{font-size:clamp(40px,6.4vw,74px);font-weight:600;letter-spacing:-.045em;line-height:1.05}
-  .pc-head{
-    margin-top:16px;font-size:clamp(18px,2.2vw,25px);font-weight:300;
-    color:var(--muted);letter-spacing:-.012em;
+  .hero-role{
+    font-family:var(--md-body);font-size:18px;font-weight:400;
+    color:var(--md-on-surface-variant);margin-top:6px;
   }
-  .pc-org-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:24px;flex-wrap:wrap}
-  .pc-org{
-    display:inline-flex;align-items:center;
-    font-family:var(--mono);font-size:clamp(11.5px,1vw,12.5px);letter-spacing:.06em;color:var(--muted);
-    border:1px solid var(--hair);border-radius:999px;padding:6px 15px;
+  .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:7px 14px;border-radius:var(--shape-full);border:1px solid var(--md-outline-variant);
+    font-family:var(--md-body);font-size:13px;font-weight:500;color:var(--md-on-surface-variant);
   }
-  .pc-follow{display:block;margin-top:18px;font-size:clamp(14.5px,1.1vw,15.5px);color:var(--blue);font-weight:450}
-  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px;max-width:100%}
+  .chip.tonal{border:none;background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+  .iconbtn{
+    width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+    color:var(--md-on-surface-variant);border:1px solid var(--md-outline-variant);background:none;cursor:pointer;
+  }
+  .iconbtn svg{width:17px;height:17px}
+  .follow{
+    display:block;margin-top:16px;font-family:var(--md-body);font-size:14px;
+    color:var(--md-primary);font-weight:500;
+  }
+  @media (hover:hover) and (pointer:fine){.follow:hover{text-decoration:underline}}
+  .btnrow{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:0;
-    font-size:clamp(15px,1.15vw,16px);font-weight:500;letter-spacing:0;
-    padding:clamp(11px,1vw,13px) clamp(22px,2vw,27px);border-radius:999px;cursor:pointer;border:1px solid transparent;
-    font-family:var(--sans);white-space:nowrap;
-    background:var(--blue);color:var(--btn-text);
-    box-shadow:var(--glow-soft);
-    transition:transform .2s cubic-bezier(.32,.72,0,1),filter .2s,background .2s,box-shadow .2s;
+    font-family:var(--md-body);font-size:14px;font-weight:500;letter-spacing:.1px;
+    padding:10px 24px;border-radius:var(--shape-full);border:none;cursor:pointer;
+    transition:box-shadow var(--dur-s) var(--m3-standard);
   }
-  @media (max-width:420px){
-    .cta{gap:8px;flex-wrap:nowrap}
-    .btn{padding:10px 14px;font-size:13.5px;overflow:hidden;text-overflow:ellipsis}
-  }
-  .btn:active{transform:scale(.96);transition-duration:.12s}
-  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
-  .iconlink{
-    width:clamp(38px,3vw,44px);height:clamp(38px,3vw,44px);border-radius:50%;border:1px solid transparent;
-    display:grid;place-items:center;color:var(--blue);background:var(--blue-soft);
-    box-shadow:var(--glow-soft);
-    transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .15s cubic-bezier(.32,.72,0,1);
-  }
-  .iconlink:active{transform:scale(.9)}
-  .iconlink svg{width:clamp(18px,1.4vw,21px);height:clamp(18px,1.4vw,21px);display:block}
-  .iconlink.sm{width:30px;height:30px}
-  .iconlink.sm svg{width:15px;height:15px}
+  .btn.filled{background:var(--md-primary);color:var(--md-on-primary)}
+  .btn.filled:hover{box-shadow:var(--md-elev-1)}
+  .btn.tonal{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
 
-  /* ============ bento ============ */
-  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-  .band{
-    grid-column:1/-1;display:flex;align-items:baseline;gap:14px;
-    padding:44px 4px 2px;scroll-margin-top:86px;
+  /* ============ in sintesi: filled card M3 ============ */
+  .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .statcard{
+    background:var(--md-surface-container-low);border-radius:var(--shape-lg);padding:20px;
+    display:flex;flex-direction:column;gap:8px;
   }
-  .band::after{content:"";flex:1;height:1px;background:var(--hair)}
-  .band .eyebrow{color:var(--blue)}
-  .tile{
-    --py:0px;
-    background:var(--tile);
-    border:1px solid var(--hair);
-    border-radius:24px;
-    padding:34px;
-    box-shadow:var(--shadow),var(--glow-soft);
-    display:flex;flex-direction:column;
-    position:relative;overflow:hidden;
-    transform:translateY(var(--py));
-    transition:transform .45s cubic-bezier(.32,.72,0,1),box-shadow .45s cubic-bezier(.32,.72,0,1);
-    transform-style:preserve-3d;will-change:transform;
+  .statcard .k{font-family:var(--md-body);font-size:13px;font-weight:500;color:var(--md-primary)}
+  .statcard .v{
+    font-family:var(--md-display);font-size:30px;font-weight:400;line-height:1.15;
+    color:var(--md-on-surface);font-variant-numeric:tabular-nums;display:inline-block;
   }
-  .t-2{grid-column:span 2}
-  .t-3{grid-column:span 3}
-  .t-6{grid-column:span 6}
-  .tile h2{font-size:22px;font-weight:600;letter-spacing:-.026em;line-height:1.22;text-wrap:balance}
-  .tile p{color:var(--muted);font-size:15.5px;font-weight:400;line-height:1.52;letter-spacing:-.006em}
+  @keyframes statPop{0%{transform:scale(1)}45%{transform:scale(1.08)}100%{transform:scale(1)}}
+  .statcard .v.pop{animation:statPop .55s var(--m3-emphasized)}
+  .statcard .d{font-family:var(--md-body);font-size:13px;color:var(--md-on-surface-variant);line-height:1.5}
+  @media (max-width:560px){.statgrid{grid-template-columns:1fr}}
 
-  /* in sintesi */
-  .t-proof{background:linear-gradient(162deg,var(--tile-2),var(--tile) 58%)}
-  .t-proof .k{margin-bottom:16px}
-  .t-proof .v{font-size:23px;font-weight:600;letter-spacing:-.024em;line-height:1.25;text-wrap:balance}
-  .num{font-variant-numeric:tabular-nums;font-size:1.3em;font-weight:700;letter-spacing:-.02em}
-  .t-proof .d{margin-top:12px}
-
-  /* percorso */
-  .path-row{
-    display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 28px;
-    padding:22px 0;border-top:1px solid var(--hair);
+  /* ============ percorso: lista M3 a tre righe ============ */
+  .list{background:var(--md-surface-container-low);border-radius:var(--shape-lg);overflow:hidden}
+  .listitem{padding:16px 18px;border-top:1px solid var(--md-outline-variant)}
+  .listitem:first-child{border-top:none}
+  .listbody .overline{
+    font-family:var(--md-mono);font-size:11px;font-weight:600;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--md-on-surface-variant);
   }
-  .path-row:first-of-type{border-top:none;padding-top:6px}
-  .path-row:last-of-type{padding-bottom:0}
-  .path-row time{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--muted);padding-top:5px}
-  .path-row b{font-size:17.5px;font-weight:600;letter-spacing:-.018em}
-  .path-row p{margin-top:6px;max-width:66ch}
-  @media (max-width:640px){.path-row{grid-template-columns:1fr;gap:4px}}
+  .listbody .title{font-family:var(--md-body);font-size:16px;font-weight:500;color:var(--md-on-surface);margin-top:2px}
+  .listbody .supp{font-family:var(--md-body);font-size:14px;color:var(--md-on-surface-variant);margin-top:4px;line-height:1.55}
 
-  /* casi studio */
-  .case-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
-  .status{
-    display:inline-flex;align-items:center;gap:7px;
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);
-    border:1px solid color-mix(in srgb,var(--ok) 34%,transparent);border-radius:999px;padding:3px 10px;
+  /* ============ casi studio: elevated card M3 ============ */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:700px){.cases{grid-template-columns:1fr}}
+  .case{
+    background:var(--md-surface-container-low);border-radius:var(--shape-lg);padding:22px;
+    box-shadow:var(--md-elev-1);display:flex;flex-direction:column;
   }
-  .dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 18%,transparent)}
-  .t-case p{margin-top:12px}
-  .meta{display:flex;flex-direction:column;gap:8px;margin-top:auto;padding-top:22px}
-  .meta span{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--muted);line-height:1.45}
-  .meta span b{font-weight:600;color:var(--ink)}
+  .case .status{
+    display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:var(--shape-full);
+    background:var(--md-success-container);color:var(--md-on-success-container);
+    font-family:var(--md-body);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    align-self:flex-start;
+  }
+  .case .status i{width:6px;height:6px;border-radius:50%;background:currentColor;display:block}
+  .case h3{
+    font-family:var(--md-body);font-size:18px;font-weight:500;color:var(--md-on-surface);
+    margin:14px 0 6px;line-height:1.35;
+  }
+  .case h3 a{transition:color var(--dur-s)}
+  @media (hover:hover) and (pointer:fine){.case h3 a:hover{color:var(--md-primary)}}
+  .case p{font-family:var(--md-body);font-size:14px;color:var(--md-on-surface-variant);line-height:1.6;margin:0}
+  .case .metarow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--md-outline-variant);margin-top:auto}
+  .case .metachip{
+    font-family:var(--md-body);font-size:11.5px;font-weight:500;color:var(--md-on-surface-variant);
+    border:1px solid var(--md-outline-variant);padding:5px 10px;border-radius:var(--shape-full);
+  }
 
-  /* oltre */
-  .t-oltre{background:var(--grad-oltre)}
-  .t-oltre p{font-size:16.5px;max-width:62ch}
-  .bars{display:flex;align-items:flex-end;gap:4px;height:28px;margin-top:20px}
-  .bars i{width:4px;border-radius:2px;background:var(--blue);opacity:.5;height:30%}
+  /* ============ oltre il lavoro ============ */
+  .oltre{
+    background:var(--md-primary-container);color:var(--md-on-primary-container);
+    border-radius:var(--shape-lg);padding:22px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .oltre p{font-family:var(--md-body);font-size:14px;line-height:1.6;margin:0;max-width:64%}
+  .eq{display:flex;align-items:flex-end;gap:3px;height:26px;flex:none}
+  .eq i{width:3px;background:var(--md-on-primary-container);border-radius:2px;opacity:.55;height:30%}
   @media (prefers-reduced-motion:no-preference){
-    .bars i{animation:eq 1.6s ease-in-out infinite}
-    .bars i:nth-child(2){animation-delay:.18s}
-    .bars i:nth-child(3){animation-delay:.36s}
-    .bars i:nth-child(4){animation-delay:.1s}
-    .bars i:nth-child(5){animation-delay:.5s}
-    .bars i:nth-child(6){animation-delay:.28s}
-    .bars i:nth-child(7){animation-delay:.42s}
+    .eq i{animation:eq 1.6s ease-in-out infinite}
+    .eq i:nth-child(2){animation-delay:.18s}.eq i:nth-child(3){animation-delay:.36s}
+    .eq i:nth-child(4){animation-delay:.1s}.eq i:nth-child(5){animation-delay:.5s}
+    .eq i:nth-child(6){animation-delay:.28s}.eq i:nth-child(7){animation-delay:.42s}
     @keyframes eq{0%,100%{height:24%}50%{height:100%}}
   }
 
-  @media (max-width:900px){
-    .t-2,.t-3{grid-column:span 3}
-    .tile{padding:24px;border-radius:var(--r-md)}
+  footer{padding:48px 0 40px}
+  footer p{font-family:var(--md-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--md-on-surface-variant)}
+
+  /* ============ reveal allo scroll (stessa meccanica dell'originale) ============ */
+  .rv{opacity:0;transform:translateY(40px) scale(.94);filter:blur(10px)}
+  @media (prefers-reduced-motion:no-preference){
+    .rv{transition:opacity var(--dur-l) var(--m3-emphasized),transform var(--dur-l) var(--m3-emphasized),filter var(--dur-l) var(--m3-emphasized)}
   }
-  @media (max-width:860px){
-    /* la pill sta in basso: il fondo pagina le lascia spazio */
+  .rv.in{opacity:1;transform:none;filter:blur(0)}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none}}
+
+  @media (hover:hover) and (pointer:fine){
+    .statcard,.case,.listitem{transition:box-shadow var(--dur-s) var(--m3-standard)}
+    .case:hover{box-shadow:var(--md-elev-2)}
+  }
+
+  /* ============================================================
+     Navigazione adattiva M3: Navigation Bar (compact) → Navigation Rail (medium/expanded)
+     ============================================================ */
+  .m3nav{
+    position:fixed;z-index:60;display:flex;background:var(--md-surface-container);
+  }
+  .navitem{
+    display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;
+    background:none;border:none;font-family:var(--md-body);color:var(--md-on-surface-variant);
+  }
+  .navitem .ind{
+    width:64px;height:32px;border-radius:var(--shape-full);display:grid;place-items:center;position:relative;
+    transition:background var(--dur-m) var(--m3-standard);
+  }
+  .navitem svg{width:24px;height:24px}
+  .navitem.on .ind{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+  .navitem .lbl{font-family:var(--md-body);font-size:12px;font-weight:500}
+  .navitem.on .lbl{color:var(--md-on-surface);font-weight:600}
+
+  .fab{
+    position:fixed;z-index:61;display:inline-flex;align-items:center;gap:10px;
+    background:var(--md-primary-container);color:var(--md-on-primary-container);
+    border-radius:var(--shape-lg);padding:16px 22px 16px 18px;box-shadow:var(--md-elev-2);
+    font-family:var(--md-body);font-size:14px;font-weight:500;border:none;cursor:pointer;
+  }
+  @media (hover:hover) and (pointer:fine){.fab:hover{box-shadow:var(--md-elev-3)}}
+  .fab svg{width:22px;height:22px}
+
+  .utilbar{position:fixed;top:16px;right:16px;z-index:61;display:flex;gap:6px;
+    background:var(--md-surface-container);border-radius:var(--shape-full);padding:5px;box-shadow:var(--md-elev-1)}
+  .util-btn{
+    background:none;border:none;cursor:pointer;color:var(--md-on-surface-variant);
+    font-family:var(--md-body);font-size:12px;font-weight:600;letter-spacing:.02em;
+    padding:7px 10px;border-radius:var(--shape-full);
+  }
+  .util-btn.on{color:var(--md-on-secondary-container);background:var(--md-secondary-container)}
+  .util-icon{padding:7px 8px;display:grid;place-items:center}
+  .util-icon svg{width:16px;height:16px;display:block}
+
+  /* ---- compact (<600dp): Navigation Bar in basso, sempre etichettata ---- */
+  @media (max-width:599px){
+    .m3nav{
+      left:0;right:0;bottom:0;height:80px;flex-direction:row;justify-content:space-around;
+      align-items:center;padding:0 4px 10px;border-top:1px solid var(--md-outline-variant);
+    }
+    .navitem{padding-top:12px;width:64px}
+    .fab{right:16px;bottom:96px}
     body{padding-bottom:96px}
-    .hero{padding:96px 0 52px}
-    .band{scroll-margin-top:22px}
-  }
-  @media (max-width:560px){
-    .t-2,.t-3,.t-6{grid-column:span 6}
-    .hero{padding:84px 0 44px}
   }
 
-  footer{padding:56px 0 60px;text-align:center}
-  footer p{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  /* ---- medium/expanded (≥600dp): Navigation Rail a sinistra ---- */
+  @media (min-width:600px){
+    .m3nav{
+      top:0;left:0;bottom:0;width:88px;flex-direction:column;align-items:center;
+      padding:96px 0 24px;gap:28px;border-right:1px solid var(--md-outline-variant);
+    }
+    .fab{position:static;margin-bottom:8px;padding:14px;border-radius:var(--shape-lg)}
+    .fab span{display:none}
+    body{padding-left:88px}
+  }
+  @media (min-width:840px){
+    .wrap{padding:0 40px}
+    .fab{padding:14px 20px;border-radius:var(--shape-lg)}
+    .fab span{display:inline}
+  }
 
-  /* ============ modal contatti ============ */
+  /* ============ modale contatti (bottom sheet M3 su compact) ============ */
   .modal[hidden]{display:none}
   .modal{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px}
-  .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .modal-backdrop{position:absolute;inset:0;background:var(--md-scrim)}
   .modal-panel{
-    position:relative;background:var(--tile);border:1px solid var(--hair);
-    border-radius:var(--r-lg);max-width:460px;width:100%;padding:30px;
-    max-height:86vh;overflow:auto;box-shadow:0 24px 60px -20px rgba(0,0,0,.45);
+    position:relative;background:var(--md-surface-container-high);
+    border-radius:var(--shape-xl);max-width:460px;width:100%;padding:28px;
+    max-height:86vh;overflow:auto;box-shadow:var(--md-elev-3);
   }
   .modal-handle{display:none}
   @media (max-width:640px){
     .modal{align-items:flex-end;padding:0}
-    .modal-panel{
-      max-width:100%;border-radius:26px 26px 0 0;
-      padding:0 24px 30px;max-height:88vh;
-    }
-    .modal-handle{
-      display:flex;align-items:center;justify-content:center;
-      width:100%;height:36px;margin-bottom:2px;
-      touch-action:none;cursor:grab;
-    }
-    .modal-handle::after{
-      content:"";width:36px;height:5px;border-radius:999px;background:var(--hair);
-    }
+    .modal-panel{max-width:100%;border-radius:28px 28px 0 0;padding:0 24px 30px;max-height:88vh}
+    .modal-handle{display:flex;align-items:center;justify-content:center;width:100%;height:36px;touch-action:none;cursor:grab}
+    .modal-handle::after{content:"";width:36px;height:5px;border-radius:var(--shape-full);background:var(--md-outline-variant)}
   }
-  .modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:6px}
-  .modal-head h2{font-size:20px;font-weight:600;letter-spacing:-.022em}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:8px}
+  .modal-head h2{font-family:var(--md-body);font-size:20px;font-weight:500;color:var(--md-on-surface)}
   .modal-x{
-    background:var(--bg-deep);border:none;cursor:pointer;color:var(--muted);
-    width:30px;height:30px;border-radius:50%;font-size:17px;line-height:1;flex:none;
-    font-family:var(--sans);transition:color .2s,background .2s;
+    background:var(--md-surface-container-low);border:none;cursor:pointer;color:var(--md-on-surface-variant);
+    width:32px;height:32px;border-radius:50%;font-size:17px;line-height:1;flex:none;font-family:var(--md-body);
   }
-  .cm-row{padding:15px 0;border-top:1px solid var(--hair);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+  .cm-row{padding:15px 0;border-top:1px solid var(--md-outline-variant);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
   .cm-row:first-of-type{border-top:none}
-  .cm-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);flex:none}
-  .cm-v{font-size:15.5px;font-weight:450;text-align:right;letter-spacing:-.01em}
+  .cm-k{font-family:var(--md-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--md-on-surface-variant);flex:none}
+  .cm-v{font-size:15px;font-weight:450;text-align:right;color:var(--md-on-surface)}
+  .cm-v a{color:var(--md-primary)}
   @media (prefers-reduced-motion:no-preference){
-    .modal-panel{animation:panelIn .3s cubic-bezier(.32,.72,0,1)}
+    .modal-panel{animation:panelIn .3s var(--m3-emphasized)}
     @keyframes panelIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
-  }
-
-  /* reveal */
-  .rv{opacity:0;transform:translateY(46px) scale(.9);filter:blur(14px)}
-  @media (prefers-reduced-motion:no-preference){
-    .rv{transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1),filter 1s cubic-bezier(.16,1,.3,1)}
-  }
-  .rv.in{opacity:1;transform:translateY(var(--py)) scale(1);filter:blur(0)}
-  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none}}
-
-  @keyframes statPop{0%{transform:scale(1)}45%{transform:scale(1.08)}100%{transform:scale(1)}}
-  .t-proof .v{display:inline-block}
-  .t-proof .v.pop{animation:statPop .55s cubic-bezier(.34,1.56,.64,1)}
-
-  /* hover: solo su dispositivi con puntatore fine, per non restare "incollati"
-     allo stato hover dopo un tap su touch */
-  @media (hover:hover) and (pointer:fine){
-    .pill-item:hover{color:var(--ink)}
-    .util-btn:hover{color:var(--ink)}
-    .pc-follow:hover{text-decoration:underline;text-underline-offset:3px}
-    .btn:hover{filter:brightness(1.1);transform:translateY(-1px);box-shadow:var(--glow)}
-    .btn.ghost:hover{background:var(--tile);filter:none}
-    .iconlink:hover{color:var(--btn-text);background:var(--blue);box-shadow:var(--glow)}
-    .tile:hover{transform:translateY(calc(var(--py) - 4px)) scale(1.008)}
-    .modal-x:hover{color:var(--ink)}
-    .cm-v a:hover{color:var(--blue)}
   }
 </style>
 </head>
 <body>
 
-<div class="pillbar">
-  <nav class="pill" id="pillNav" aria-label="Navigazione principale">
-    <span class="pill-thumb" id="pillThumb" aria-hidden="true"></span>
+<nav class="m3nav" id="m3nav" aria-label="Navigazione principale">
+  <button class="fab state" data-open-contacts aria-label="Contatti">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 5.4L20 7"/></svg>
+    <span data-i18n="cm_title">Informazioni di contatto</span>
+  </button>
 
-    <a class="pill-item" href="#profilo" data-nav>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M3.6 10.3 12 3.6l8.4 6.7V20a.9.9 0 0 1-.9.9h-4.7v-6.1H9.2v6.1H4.5a.9.9 0 0 1-.9-.9Z"/>
-      </svg>
-      <span data-i18n="nav_profilo">Profilo</span>
-    </a>
-
-    <a class="pill-item" href="#sintesi" data-nav>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true">
-        <rect x="3.6" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="3.6" width="7.2" height="7.2" rx="1.6"/>
-        <rect x="3.6" y="13.2" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="13.2" width="7.2" height="7.2" rx="1.6"/>
-      </svg>
-      <span data-i18n="proof_label">In sintesi</span>
-    </a>
-
-    <a class="pill-item" href="#percorso" data-nav>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="6.4" cy="5.8" r="2.2"/><circle cx="6.4" cy="18.2" r="2.2"/>
-        <path d="M6.4 8v8"/><path d="M11.2 5.8h9.2M11.2 12h6.4M11.2 18.2h9.2"/>
-      </svg>
-      <span data-i18n="sec_percorso">Percorso</span>
-    </a>
-
-    <a class="pill-item" href="#casi-studio" data-nav>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 3.4 21 8l-9 4.6L3 8Z"/><path d="M3 12.4 12 17l9-4.6"/><path d="M3 16.8 12 21.4l9-4.6"/>
-      </svg>
-      <span data-i18n="sec_lavori">Casi studio</span>
-    </a>
-
-    <a class="pill-item" href="#oltre" data-nav>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M9.4 17.6V5.6l9-1.8v11.4"/><circle cx="6.6" cy="17.6" r="2.8"/><circle cx="15.6" cy="15.2" r="2.8"/>
-      </svg>
-      <span data-i18n="sec_oltre">Oltre il lavoro</span>
-    </a>
-
-    <button class="pill-item" data-open-contacts>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2.9" y="4.8" width="18.2" height="14.4" rx="2.6"/><path d="m3.6 7.4 8.4 5.4 8.4-5.4"/>
-      </svg>
-      <span data-i18n="nav_contatti">Contatti</span>
-    </button>
-  </nav>
-</div>
+  <a class="navitem" href="#profilo" data-nav>
+    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 10.3 12 3.6l8.4 6.7V20a.9.9 0 0 1-.9.9h-4.7v-6.1H9.2v6.1H4.5a.9.9 0 0 1-.9-.9Z"/></svg></span>
+    <span class="lbl" data-i18n="nav_profilo">Profilo</span>
+  </a>
+  <a class="navitem" href="#sintesi" data-nav>
+    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3.6" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="3.6" y="13.2" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="13.2" width="7.2" height="7.2" rx="1.6"/></svg></span>
+    <span class="lbl" data-i18n="proof_label">In sintesi</span>
+  </a>
+  <a class="navitem" href="#percorso" data-nav>
+    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.4" cy="5.8" r="2.2"/><circle cx="6.4" cy="18.2" r="2.2"/><path d="M6.4 8v8"/><path d="M11.2 5.8h9.2M11.2 12h6.4M11.2 18.2h9.2"/></svg></span>
+    <span class="lbl" data-i18n="sec_percorso">Percorso</span>
+  </a>
+  <a class="navitem" href="#casi-studio" data-nav>
+    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M12 3.4 21 8l-9 4.6L3 8Z"/><path d="M3 12.4 12 17l9-4.6"/><path d="M3 16.8 12 21.4l9-4.6"/></svg></span>
+    <span class="lbl" data-i18n="sec_lavori">Casi studio</span>
+  </a>
+  <a class="navitem" href="#oltre" data-nav>
+    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M9.4 17.6V5.6l9-1.8v11.4"/><circle cx="6.6" cy="17.6" r="2.8"/><circle cx="15.6" cy="15.2" r="2.8"/></svg></span>
+    <span class="lbl" data-i18n="sec_oltre">Oltre</span>
+  </a>
+</nav>
 
 <div class="utilbar">
-  <div class="util">
-    <button class="util-btn lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
-    <button class="util-btn lang-btn" data-lang="en" aria-label="English">EN</button>
-    <button class="util-btn lang-btn" data-lang="fr" aria-label="Français">FR</button>
-    <span class="util-div" aria-hidden="true"></span>
-    <button class="util-btn util-icon" id="themeToggle" aria-label="Cambia tema">
-      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
-      </svg>
-    </button>
-  </div>
+  <button class="util-btn lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
+  <button class="util-btn lang-btn" data-lang="en" aria-label="English">EN</button>
+  <button class="util-btn lang-btn" data-lang="fr" aria-label="Français">FR</button>
+  <button class="util-btn util-icon" id="themeToggle" aria-label="Cambia tema">
+    <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+    </svg>
+  </button>
 </div>
 
 <header class="hero" id="profilo">
   <div class="wrap">
-    <img class="pc-photo" src="photo.jpg" alt="Nicolò Forcolin" width="132" height="132">
-    <h1 class="pc-name">Nicolò Forcolin</h1>
-    <p class="pc-head">People &amp; Enterprise Reliability</p>
-    <div class="pc-org-row">
-      <span class="pc-org">InfoCamere · Padova</span>
-      <a class="iconlink sm" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
+    <img class="avatar" src="photo.jpg" alt="Nicolò Forcolin" width="96" height="96">
+    <h1 class="hero-name">Nicolò Forcolin</h1>
+    <p class="hero-role">People &amp; Enterprise Reliability</p>
+    <div class="chiprow">
+      <span class="chip tonal">InfoCamere · Padova</span>
+      <a class="iconbtn state" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
       </a>
-      <a class="iconlink sm" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+      <a class="iconbtn state" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
       </a>
     </div>
-    <a class="pc-follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
-    <div class="cta">
-      <a class="btn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
-      <button class="btn" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
+    <a class="follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
+    <div class="btnrow">
+      <a class="btn filled state" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
+      <button class="btn tonal state" data-open-contacts data-i18n="cm_title">Informazioni di contatto</button>
     </div>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="bento">
 
-    <!-- ===== in sintesi ===== -->
-    <div class="band" id="sintesi"><span class="eyebrow" data-i18n="proof_label">In sintesi</span></div>
-
-    <section class="tile t-2 t-proof rv" aria-labelledby="p1k">
-      <span class="eyebrow k" id="p1k" data-i18n="p1k">Advisory</span>
-      <p class="v" data-i18n="p1v"><span class="num" data-count="2">0</span> Business Unit + <span class="num" data-count="1">0</span> CEO esterno</p>
+  <div class="section-label" id="sintesi" data-i18n="proof_label">In sintesi</div>
+  <div class="statgrid">
+    <div class="statcard rv" aria-labelledby="p1k">
+      <span class="k" id="p1k" data-i18n="p1k">Advisory</span>
+      <p class="v" data-i18n="p1v"><span class="num" data-count="2">0</span>+<span class="num" data-count="1">0</span></p>
       <p class="d" data-i18n="p1d">Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.</p>
-    </section>
-
-    <section class="tile t-2 t-proof rv" aria-labelledby="p2k">
-      <span class="eyebrow k" id="p2k" data-i18n="p2k">Formazione</span>
-      <p class="v" data-i18n="p2v"><span class="num" data-count="5">0</span> sessioni · <span class="num" data-count="25">0</span>+ persone</p>
+    </div>
+    <div class="statcard rv" aria-labelledby="p2k">
+      <span class="k" id="p2k" data-i18n="p2k">Formazione</span>
+      <p class="v"><span class="num" data-count="25">0</span>+</p>
       <p class="d" data-i18n="p2d">Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.</p>
-    </section>
-
-    <section class="tile t-2 t-proof rv" aria-labelledby="p3k">
-      <span class="eyebrow k" id="p3k" data-i18n="p3k">Certificazioni</span>
-      <p class="v" data-i18n="p3v"><span class="num" data-count="15">0</span> · IBM, Google</p>
-      <p class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo.</p>
-    </section>
-
-    <!-- ===== percorso ===== -->
-    <div class="band" id="percorso"><span class="eyebrow" data-i18n="sec_percorso">Percorso</span></div>
-
-    <section class="tile t-6 rv" aria-label="InfoCamere">
-      <div class="path-row">
-        <time data-i18n="t1">Set 2022 — oggi</time>
-        <div>
-          <b>InfoCamere</b>
-          <p data-i18n="pr1">SysAdmin. Monitoraggio dell'infrastruttura mission-critical per il sistema camerale, con un focus crescente sull'integrazione dell'AI nei processi operativi.<br><br>Collaborazione con colleghi di altre Unità Operative e Strutture Operative, per migliorare coesione aziendale e gestione eventi presenti e futuri.<br><br>Speaker in eventi di presentazione di InfoCamere, guidati da Responsabili di Unità/Struttura e Direttore per stakeholders esterni (anche membri dello Stato).<br><br>Social Ambassador dal 2025, per promuovere la cultura aziendale e l'AI dentro e fuori InfoCamere.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="tile t-6 rv" aria-label="IdeaGrip">
-      <div class="path-row">
-        <time data-i18n="t2">Feb 2022 — Set 2022</time>
-        <div>
-          <b>IdeaGrip</b>
-          <p data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="tile t-6 rv" aria-label="Generali">
-      <div class="path-row">
-        <time data-i18n="t3">Ott 2020 — Feb 2022</time>
-        <div>
-          <b>Generali</b>
-          <p data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== casi studio ===== -->
-    <div class="band" id="casi-studio"><span class="eyebrow" data-i18n="sec_lavori">Casi studio</span></div>
-
-    <article class="tile t-3 t-case rv">
-      <div class="case-head">
-        <span class="status"><span class="dot"></span><span data-i18n="st_prod">In produzione</span></span>
-      </div>
-      <h2><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h2>
-      <p data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
-      <div class="meta">
-        <span data-i18n="c1m1">Ambito — <b>InfoCamere · catalogo servizi IT</b></span>
-        <span data-i18n="c1m2">Vincoli — <b>dati interni, governance presidiata</b></span>
-      </div>
-    </article>
-
-    <article class="tile t-3 t-case rv">
-      <div class="case-head">
-        <span class="status"><span class="dot"></span><span data-i18n="st_prod2">In produzione</span></span>
-      </div>
-      <h2><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h2>
-      <p data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise: zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti, controllo pieno sugli asset informativi strategici.</p>
-      <div class="meta">
-        <span data-i18n="c2m1">Approccio — <b>fine-tuning · deploy on-premise</b></span>
-        <span data-i18n="c2m2">Output — <b>sessioni dimostrative per il vertice</b></span>
-      </div>
-    </article>
-
-    <!-- ===== oltre il lavoro ===== -->
-    <div class="band" id="oltre"><span class="eyebrow" data-i18n="sec_oltre">Oltre il lavoro</span></div>
-
-    <section class="tile t-6 t-oltre rv" aria-label="Oltre il lavoro">
-      <p data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
-      <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    </section>
-
+    </div>
+    <div class="statcard rv" aria-labelledby="p3k">
+      <span class="k" id="p3k" data-i18n="p3k">Certificazioni</span>
+      <p class="v"><span class="num" data-count="15">0</span></p>
+      <p class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo — IBM, Google.</p>
+    </div>
   </div>
-</main>
 
-<footer>
-  <div class="wrap"><p>© 2026 Nicolò Forcolin</p></div>
-</footer>
+  <div class="section-label" id="percorso" data-i18n="sec_percorso">Percorso</div>
+  <div class="list rv">
+    <div class="listitem" aria-label="InfoCamere">
+      <div class="listbody">
+        <div class="overline" data-i18n="t1">Set 2022 — oggi</div>
+        <div class="title">InfoCamere</div>
+        <div class="supp" data-i18n="pr1s">SysAdmin. Monitoraggio dell'infrastruttura mission-critical per il sistema camerale, con focus crescente sull'integrazione dell'AI nei processi operativi.</div>
+      </div>
+    </div>
+    <div class="listitem" aria-label="IdeaGrip">
+      <div class="listbody">
+        <div class="overline" data-i18n="t2">Feb 2022 — Set 2022</div>
+        <div class="title">IdeaGrip</div>
+        <div class="supp" data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</div>
+      </div>
+    </div>
+    <div class="listitem" aria-label="Generali">
+      <div class="listbody">
+        <div class="overline" data-i18n="t3">Ott 2020 — Feb 2022</div>
+        <div class="title">Generali</div>
+        <div class="supp" data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label" id="casi-studio" data-i18n="sec_lavori">Casi studio</div>
+  <div class="cases">
+    <article class="case rv">
+      <span class="status"><i></i><span data-i18n="st_prod">In produzione</span></span>
+      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h3>
+      <p data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
+      <div class="metarow">
+        <span class="metachip" data-i18n="c1m1t">Ambito — InfoCamere · catalogo servizi IT</span>
+        <span class="metachip" data-i18n="c1m2t">Vincoli — dati interni, governance presidiata</span>
+      </div>
+    </article>
+    <article class="case rv">
+      <span class="status"><i></i><span data-i18n="st_prod2">In produzione</span></span>
+      <h3><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h3>
+      <p data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise.</p>
+      <div class="metarow">
+        <span class="metachip" data-i18n="c2m1t">Approccio — fine-tuning · deploy on-premise</span>
+        <span class="metachip" data-i18n="c2m2t">Output — sessioni dimostrative per il vertice</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="section-label" id="oltre" data-i18n="sec_oltre">Oltre il lavoro</div>
+  <div class="oltre rv">
+    <p data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock.</p>
+    <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <footer><p>© 2026 Nicolò Forcolin</p></footer>
+</main>
 
 <div class="modal" id="contactModal" hidden>
   <div class="modal-backdrop" data-close></div>
@@ -682,50 +539,50 @@
     it: {
       pc_follow:"1.500+ follower · 500+ collegamenti",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
-      nav_profilo:"Profilo", nav_contatti:"Contatti",
+      nav_profilo:"Profilo",
       proof_label:"In sintesi",
-      p1k:"Advisory", p1v:"<span class=\"num\" data-count=\"2\">0</span> Business Unit + <span class=\"num\" data-count=\"1\">0</span> CEO esterno", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
-      p2k:"Formazione", p2v:"<span class=\"num\" data-count=\"5\">0</span> sessioni · <span class=\"num\" data-count=\"25\">0</span>+ persone", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
-      p3k:"Certificazioni", p3v:"<span class=\"num\" data-count=\"15\">0</span> · IBM, Google", p3d:"Percorsi certificati su AI, cloud e sviluppo.",
+      p1k:"Advisory", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
+      p2k:"Formazione", p2d:"Sessioni interne ed esterne sull'AI operativa, con risparmi stimati in mesi di lavoro.",
+      p3k:"Certificazioni", p3d:"Percorsi certificati su AI, cloud e sviluppo — IBM, Google.",
       sec_lavori:"Casi studio",
       c1t:"Enterprise Knowledge Retrieval — due sistemi RAG",
       c1p:"Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.",
       st_prod:"In produzione", st_prod2:"In produzione",
-      c1m1:"Ambito — <b>InfoCamere · catalogo servizi IT</b>",
-      c1m2:"Vincoli — <b>dati interni, governance presidiata</b>",
+      c1m1t:"Ambito — InfoCamere · catalogo servizi IT",
+      c1m2t:"Vincoli — dati interni, governance presidiata",
       c2t:"Modelli locali per ambienti a dati sensibili",
-      c2p:"Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise: zero dati fuori dal perimetro, meno dipendenza dai provider esterni, costi operativi ridotti, controllo pieno sugli asset informativi strategici.",
-      c2m1:"Approccio — <b>fine-tuning · deploy on-premise</b>",
-      c2m2:"Output — <b>sessioni dimostrative per il vertice</b>",
+      c2p:"Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise.",
+      c2m1t:"Approccio — fine-tuning · deploy on-premise",
+      c2m2t:"Output — sessioni dimostrative per il vertice",
       sec_percorso:"Percorso",
       t1:"Set 2022 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
-      pr1:"SysAdmin. Monitoraggio dell'infrastruttura mission-critical per il sistema camerale, con un focus crescente sull'integrazione dell'AI nei processi operativi.<br><br>Collaborazione con colleghi di altre Unità Operative e Strutture Operative, per migliorare coesione aziendale e gestione eventi presenti e futuri.<br><br>Speaker in eventi di presentazione di InfoCamere, guidati da Responsabili di Unità/Struttura e Direttore per stakeholders esterni (anche membri dello Stato).<br><br>Social Ambassador dal 2025, per promuovere la cultura aziendale e l'AI dentro e fuori InfoCamere.",
+      pr1s:"SysAdmin. Monitoraggio dell'infrastruttura mission-critical per il sistema camerale, con focus crescente sull'integrazione dell'AI nei processi operativi.",
       pr2:"Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).",
       pr3:"Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.",
-      sec_oltre:"Oltre il lavoro",
+      sec_oltre:"Oltre",
       oltre_p:"Fuori orario ascolto musica da audiofilo — soprattutto YES e Black Sabbath, tra progressive rock e hard rock."
     },
     en: {
       pc_follow:"1,500+ followers · 500+ connections",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
-      nav_profilo:"Profile", nav_contatti:"Contact",
+      nav_profilo:"Profile",
       proof_label:"At a glance",
-      p1k:"Advisory", p1v:"<span class=\"num\" data-count=\"2\">0</span> business units + <span class=\"num\" data-count=\"1\">0</span> external CEO", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
-      p2k:"Training", p2v:"<span class=\"num\" data-count=\"5\">0</span> sessions · <span class=\"num\" data-count=\"25\">0</span>+ people", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
-      p3k:"Certifications", p3v:"<span class=\"num\" data-count=\"15\">0</span> · IBM, Google", p3d:"Certified paths across AI, cloud and development.",
+      p1k:"Advisory", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
+      p2k:"Training", p2d:"Internal and external sessions on operational AI, with estimated savings of months of work.",
+      p3k:"Certifications", p3d:"Certified paths across AI, cloud and development — IBM, Google.",
       sec_lavori:"Case studies",
       c1t:"Enterprise Knowledge Retrieval — two RAG systems",
       c1p:"Two RAG agents (Retrieval-Augmented Generation) that make operational knowledge — previously buried across multiple enterprise repositories — queryable by managers and decision-makers: less retrieval time, access to complex and structured documentation, human-in-the-loop validation.",
       st_prod:"In production", st_prod2:"In production",
-      c1m1:"Scope — <b>InfoCamere · IT service catalog</b>",
-      c1m2:"Constraints — <b>internal data, governed environment</b>",
+      c1m1t:"Scope — InfoCamere · IT service catalog",
+      c1m2t:"Constraints — internal data, governed environment",
       c2t:"Local models for sensitive-data environments",
-      c2p:"Local models (Gemma, Qwen, Ollama-based architectures) trained on internal procedures, to assess the feasibility of AI adoption in sensitive-data environments where data cannot leave the perimeter. Deployed fully on-premise: zero data leaving the perimeter, reduced dependency on external providers, lower operational costs, full control over strategic information assets.",
-      c2m1:"Approach — <b>fine-tuning · on-premise deployment</b>",
-      c2m2:"Output — <b>demonstration sessions for senior leadership</b>",
+      c2p:"Local models (Gemma, Qwen, Ollama-based architectures) trained on internal procedures, to assess the feasibility of AI adoption in sensitive-data environments where data cannot leave the perimeter. Deployed fully on-premise.",
+      c2m1t:"Approach — fine-tuning · on-premise deployment",
+      c2m2t:"Output — demonstration sessions for senior leadership",
       sec_percorso:"Path",
       t1:"Sep 2022 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
-      pr1:"SysAdmin. Monitoring the mission-critical infrastructure for the Italian Chambers of Commerce system, with a growing focus on integrating AI into operational processes.<br><br>Collaboration with colleagues from other Operating Units and Structures, to improve organizational cohesion and the management of current and future events.<br><br>Speaker at InfoCamere presentation events, led by Unit/Structure Heads and the Director, for external stakeholders (including government officials).<br><br>Social Ambassador since 2025, promoting company culture and AI inside and outside InfoCamere.",
+      pr1s:"SysAdmin. Monitoring the mission-critical infrastructure for the Italian Chambers of Commerce system, with a growing focus on integrating AI into operational processes.",
       pr2:"IT Specialist (internship). First hands-on IT role: infrastructure support, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition).",
       pr3:"Insurance consultant. Client-facing role in a highly regulated industry, where trust, compliance and reliability matter as much as the business itself.",
       sec_oltre:"Beyond work",
@@ -734,27 +591,27 @@
     fr: {
       pc_follow:"1 500+ abonnés · 500+ relations",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
-      nav_profilo:"Profil", nav_contatti:"Contact",
+      nav_profilo:"Profil",
       proof_label:"En bref",
-      p1k:"Conseil", p1v:"<span class=\"num\" data-count=\"2\">0</span> business units + <span class=\"num\" data-count=\"1\">0</span> CEO externe", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l'Italie et la Chine.",
-      p2k:"Formation", p2v:"<span class=\"num\" data-count=\"5\">0</span> sessions · <span class=\"num\" data-count=\"25\">0</span>+ personnes", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
-      p3k:"Certifications", p3v:"<span class=\"num\" data-count=\"15\">0</span> · IBM, Google", p3d:"Parcours certifiés en IA, cloud et développement.",
+      p1k:"Conseil", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l'Italie et la Chine.",
+      p2k:"Formation", p2d:"Sessions internes et externes sur l'IA opérationnelle, avec des gains estimés en mois de travail.",
+      p3k:"Certifications", p3d:"Parcours certifiés en IA, cloud et développement — IBM, Google.",
       sec_lavori:"Études de cas",
       c1t:"Enterprise Knowledge Retrieval — deux systèmes RAG",
       c1p:"Deux agents RAG (Retrieval-Augmented Generation) qui rendent interrogeable par les managers et les décideurs la connaissance opérationnelle, auparavant enfouie dans plusieurs référentiels d'entreprise : moins de temps de recherche, accès à une documentation complexe et structurée, validation human-in-the-loop.",
       st_prod:"En production", st_prod2:"En production",
-      c1m1:"Périmètre — <b>InfoCamere · catalogue des services IT</b>",
-      c1m2:"Contraintes — <b>données internes, gouvernance maîtrisée</b>",
+      c1m1t:"Périmètre — InfoCamere · catalogue des services IT",
+      c1m2t:"Contraintes — données internes, gouvernance maîtrisée",
       c2t:"Modèles locaux pour environnements à données sensibles",
-      c2p:"Des modèles locaux (Gemma, Qwen, architectures Ollama-based) entraînés sur des procédures internes, pour évaluer la faisabilité de l'adoption de l'IA dans des environnements à données sensibles où les données ne peuvent pas sortir du périmètre. Déployés entièrement on-premise : aucune donnée hors du périmètre, moins de dépendance aux fournisseurs externes, des coûts opérationnels réduits, un contrôle total sur les actifs informationnels stratégiques.",
-      c2m1:"Approche — <b>fine-tuning · déploiement on-premise</b>",
-      c2m2:"Résultat — <b>sessions de démonstration pour la direction</b>",
+      c2p:"Des modèles locaux (Gemma, Qwen, architectures Ollama-based) entraînés sur des procédures internes, pour évaluer la faisabilité de l'adoption de l'IA dans des environnements à données sensibles où les données ne peuvent pas sortir du périmètre. Déployés entièrement on-premise.",
+      c2m1t:"Approche — fine-tuning · déploiement on-premise",
+      c2m2t:"Résultat — sessions de démonstration pour la direction",
       sec_percorso:"Parcours",
       t1:"Sept. 2022 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
-      pr1:"SysAdmin. Suivi de l'infrastructure critique pour le système des Chambres de commerce italiennes, avec un accent croissant sur l'intégration de l'IA dans les processus opérationnels.<br><br>Collaboration avec des collègues d'autres Unités et Structures Opérationnelles, pour améliorer la cohésion de l'entreprise et la gestion des événements présents et futurs.<br><br>Intervenant lors d'événements de présentation d'InfoCamere, animés par les Responsables d'Unité/Structure et le Directeur, à destination de parties prenantes externes (y compris des représentants de l'État).<br><br>Social Ambassador depuis 2025, pour promouvoir la culture d'entreprise et l'IA en interne comme en externe.",
+      pr1s:"SysAdmin. Suivi de l'infrastructure critique pour le système des Chambres de commerce italiennes, avec un accent croissant sur l'intégration de l'IA dans les processus opérationnels.",
       pr2:"Spécialiste IT (stage). Premier rôle IT concret : support infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne).",
       pr3:"Consultant assurance. Rôle au contact du client dans un secteur fortement réglementé, où la confiance, la conformité et la fiabilité comptent autant que le business lui-même.",
-      sec_oltre:"Au-delà du travail",
+      sec_oltre:"Au-delà",
       oltre_p:"En dehors des heures de travail, j'écoute de la musique en audiophile — surtout YES et Black Sabbath, entre rock progressif et hard rock."
     }
   };
@@ -763,14 +620,11 @@
   (function(){
     var eu = "nicolo.forcolin", ed = "infocamere.it";
     var email = eu + "@" + ed;
-    document.getElementById("cmEmail").innerHTML =
-      '<a href="mailto:' + email + '">' + email + "</a>";
-
+    document.getElementById("cmEmail").innerHTML = '<a href="mailto:' + email + '">' + email + "</a>";
     var pn = ["+39", "347", "908", "1966"];
     var phoneDisplay = pn.join(" ");
     var phoneHref = "tel:" + pn.join("").replace(/\s/g, "");
-    document.getElementById("cmPhone").innerHTML =
-      '<a href="' + phoneHref + '">' + phoneDisplay + "</a>";
+    document.getElementById("cmPhone").innerHTML = '<a href="' + phoneHref + '">' + phoneDisplay + "</a>";
   })();
 
   var root = document.documentElement;
@@ -782,13 +636,10 @@
     var dict = i18n[lang];
     document.querySelectorAll("[data-i18n]").forEach(function(el){
       var k = el.getAttribute("data-i18n");
-      if(dict[k] !== undefined){ el.innerHTML = dict[k]; }
+      if(dict[k] !== undefined){ el.textContent = dict[k]; }
     });
     document.querySelectorAll(".lang-btn").forEach(function(b){
       b.classList.toggle("on", b.getAttribute("data-lang") === lang);
-    });
-    document.querySelectorAll(".rv.in .num").forEach(function(n){
-      n.textContent = n.getAttribute("data-count");
     });
     spy();
   }
@@ -817,41 +668,15 @@
   });
   paintTheme();
 
-  /* ---- pill: indicatore scorrevole + scroll-spy ---- */
-  var nav = document.getElementById("pillNav");
-  var thumb = document.getElementById("pillThumb");
-  var items = Array.prototype.slice.call(nav.querySelectorAll(".pill-item"));
+  /* ---- nav: indicatore attivo + scroll-spy (bar su compact, rail su medium/expanded) ---- */
+  var nav = document.getElementById("m3nav");
   var links = Array.prototype.slice.call(nav.querySelectorAll("[data-nav]"));
   var sections = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
 
-  var iconOnlyMQ = window.matchMedia("(max-width:600px)");
-  function moveTo(el){
-    if(!el || !nav.offsetParent) return;  /* pill nascosta da desktop */
-    if(iconOnlyMQ.matches){
-      /* cerchio attivo a dimensione fissa, più grande dell'icona, come nel riferimento */
-      var d = 56;
-      thumb.style.width = d + "px";
-      thumb.style.height = d + "px";
-      thumb.style.top = "50%";
-      thumb.style.marginTop = -(d / 2) + "px";
-      thumb.style.transform = "translateX(" + (el.offsetLeft + el.offsetWidth / 2 - d / 2) + "px)";
-    } else {
-      thumb.style.width = el.offsetWidth + "px";
-      thumb.style.height = "";
-      thumb.style.top = "";
-      thumb.style.marginTop = "";
-      thumb.style.transform = "translateX(" + el.offsetLeft + "px)";
-    }
-    thumb.style.opacity = "1";
-  }
   function setActive(link){
-    if(link.classList.contains("on")) return;  /* evita di riavviare la transizione se non cambia nulla */
+    if(link.classList.contains("on")) return;
     links.forEach(function(a){ a.classList.toggle("on", a === link); });
-    moveTo(link);
   }
-  items.forEach(function(el){ el.addEventListener("mouseenter", function(){ moveTo(el); }); });
-  nav.addEventListener("mouseleave", function(){ moveTo(nav.querySelector(".pill-item.on") || links[0]); });
-
   function spy(){
     var best = 0, mid = window.innerHeight * 0.34;
     sections.forEach(function(s, i){
@@ -922,42 +747,18 @@
     handle.addEventListener("pointerdown", onDown);
   })();
 
-  /* ---- tile: tilt 3D leggero al passaggio del mouse ---- */
-  if(window.matchMedia("(hover:hover) and (pointer:fine)").matches &&
-     !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
-    document.querySelectorAll(".tile").forEach(function(tile){
-      tile.addEventListener("pointerenter", function(){
-        tile.style.transition = "transform .05s linear";
-      });
-      tile.addEventListener("pointermove", function(e){
-        var rect = tile.getBoundingClientRect();
-        var px = (e.clientX - rect.left) / rect.width - 0.5;
-        var py = (e.clientY - rect.top) / rect.height - 0.5;
-        var rx = (py * -3.5).toFixed(2);
-        var ry = (px * 3.5).toFixed(2);
-        tile.style.transform =
-          "translateY(-4px) scale(1.012) perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
-      });
-      tile.addEventListener("pointerleave", function(){
-        tile.style.transition = "";
-        tile.style.transform = "";
-      });
-    });
-  }
-
-  /* ---- hero: parallax leggero sulla foto in scroll ---- */
+  /* ---- hero: parallax leggero sull'avatar in scroll ---- */
   (function(){
-    var photo = document.querySelector(".pc-photo");
+    var photo = document.querySelector(".avatar");
     var heroEl = document.querySelector(".hero");
     if(!photo || !heroEl || window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
     var ticking = false;
     function update(){
       var rect = heroEl.getBoundingClientRect();
       var progress = Math.min(Math.max(-rect.top / (rect.height || 1), 0), 1);
-      var ty = (progress * 36).toFixed(1);
-      var scale = (1 - progress * 0.1).toFixed(3);
+      var ty = (progress * 30).toFixed(1);
       var opacity = (1 - progress * 0.7).toFixed(2);
-      photo.style.transform = "translateY(" + ty + "px) scale(" + scale + ")";
+      photo.style.transform = "translateY(" + ty + "px)";
       photo.style.opacity = opacity;
       ticking = false;
     }
@@ -967,45 +768,14 @@
     update();
   })();
 
-  /* ---- bento: parallax leggero sulle card allo scroll ---- */
-  (function(){
-    if(window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
-    var cards = Array.prototype.slice.call(document.querySelectorAll(".tile"));
-    if(!cards.length) return;
-    var ticking = false;
-    function update(){
-      var mid = window.innerHeight / 2;
-      cards.forEach(function(card){
-        var rect = card.getBoundingClientRect();
-        var cardMid = rect.top + rect.height / 2;
-        var ratio = Math.max(-1, Math.min(1, (cardMid - mid) / mid));
-        var py = (ratio * 16).toFixed(1) + "px";
-        if(card.dataset.py !== py){
-          card.dataset.py = py;
-          card.style.setProperty("--py", py);
-        }
-      });
-      ticking = false;
-    }
-    window.addEventListener("scroll", function(){
-      if(!ticking){ requestAnimationFrame(update); ticking = true; }
-    }, {passive:true});
-    update();
-  })();
-
-  /* ---- contatori animati (tile "In sintesi") ---- */
+  /* ---- contatori animati ---- */
   function setCountsFinal(scope){
-    scope.querySelectorAll(".num").forEach(function(n){
-      n.textContent = n.getAttribute("data-count");
-    });
+    scope.querySelectorAll(".num").forEach(function(n){ n.textContent = n.getAttribute("data-count"); });
   }
   function animateCounts(scope){
     var nums = scope.querySelectorAll(".num");
     if(!nums.length) return;
-    if(window.matchMedia("(prefers-reduced-motion:reduce)").matches){
-      setCountsFinal(scope);
-      return;
-    }
+    if(window.matchMedia("(prefers-reduced-motion:reduce)").matches){ setCountsFinal(scope); return; }
     nums.forEach(function(n){
       var target = parseFloat(n.getAttribute("data-count"));
       var dur = 900, start = null;
@@ -1014,9 +784,8 @@
         var p = Math.min((ts - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
         n.textContent = Math.round(target * eased);
-        if(p < 1){
-          requestAnimationFrame(step);
-        }else{
+        if(p < 1){ requestAnimationFrame(step); }
+        else{
           var v = n.closest(".v");
           if(v){ v.classList.remove("pop"); void v.offsetWidth; v.classList.add("pop"); }
         }
@@ -1025,13 +794,13 @@
     });
   }
 
-  /* ---- reveal ---- */
+  /* ---- reveal allo scroll ---- */
   var tiles = document.querySelectorAll(".rv");
   if("IntersectionObserver" in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         if(en.isIntersecting){
-          var d = (Array.prototype.indexOf.call(tiles, en.target) % 4) * 130;
+          var d = (Array.prototype.indexOf.call(tiles, en.target) % 4) * 120;
           setTimeout(function(){
             en.target.classList.add("in");
             animateCounts(en.target);
@@ -1048,6 +817,5 @@
   applyLang();
 })();
 </script>
-
 </body>
 </html>
