@@ -141,7 +141,7 @@
 
   .section-label{
     font-family:var(--md-body);font-size:14px;font-weight:500;letter-spacing:.1px;
-    color:var(--md-on-surface-variant);padding:40px 0 14px;scroll-margin-top:96px;
+    color:var(--md-on-surface-variant);padding:40px 0 14px;scroll-margin-top:80px;
   }
 
   /* ============ hero ============ */
@@ -263,87 +263,83 @@
   }
 
   /* ============================================================
-     Navigazione adattiva M3: Navigation Bar (compact) → Navigation Rail (medium/expanded)
+     Navigazione: barra superiore sticky, menu compresso dietro
+     un'icona hamburger sotto i 720px
      ============================================================ */
-  .m3nav{
-    position:fixed;z-index:60;display:flex;background:var(--md-surface-container);
+  .topbar{
+    position:sticky;top:0;z-index:60;
+    background:var(--md-surface-container);
+    border-bottom:1px solid var(--md-outline-variant);
   }
+  .topbar-inner{max-width:1120px;margin:0 auto;padding:0 20px}
+  @media (min-width:960px){.topbar-inner{padding:0 32px}}
+
+  .topbar-head{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{
+    font-family:var(--md-display);font-size:17px;font-weight:500;
+    color:var(--md-on-surface);flex:none;border-radius:var(--shape-sm);padding:6px 4px;
+  }
+
+  .hamburger{
+    display:none;width:40px;height:40px;border-radius:50%;flex:none;
+    align-items:center;justify-content:center;background:none;border:none;cursor:pointer;
+    color:var(--md-on-surface-variant);
+  }
+  .hamburger svg{width:22px;height:22px}
+
+  .m3nav{display:flex;align-items:center;gap:2px}
   .navitem{
-    display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;
-    background:none;border:none;font-family:var(--md-body);color:var(--md-on-surface-variant);
+    display:flex;align-items:center;gap:5px;padding:8px 12px;border-radius:var(--shape-full);
+    cursor:pointer;background:none;border:none;font-family:var(--md-body);white-space:nowrap;
+    color:var(--md-on-surface-variant);font-size:13.5px;font-weight:500;
+    transition:background var(--dur-s) var(--m3-standard),color var(--dur-s) var(--m3-standard);
   }
-  .navitem .ind{
-    width:64px;height:32px;border-radius:var(--shape-full);display:grid;place-items:center;position:relative;
-    transition:background var(--dur-m) var(--m3-standard);
-  }
-  .navitem svg{width:24px;height:24px;flex:none}
-  .navitem.on .ind{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
-  .navitem .lbl{font-family:var(--md-body);font-size:12px;font-weight:500}
-  .navitem.on .lbl{color:var(--md-on-surface);font-weight:600}
+  .navitem svg{width:18px;height:18px;flex:none}
+  .navitem.on{background:var(--md-secondary-container);color:var(--md-on-secondary-container);font-weight:600}
 
-  .nav-theme{
-    width:44px;height:44px;border-radius:50%;flex:none;
-    background:var(--md-surface-container-high);color:var(--md-on-surface-variant);
-    display:none;align-items:center;justify-content:center;border:none;cursor:pointer;
-  }
-  .nav-theme svg{width:19px;height:19px}
+  .topbar-actions{display:flex;align-items:center;gap:8px}
 
-  .fab{
-    position:fixed;z-index:61;display:inline-flex;align-items:center;gap:10px;
-    background:var(--md-primary-container);color:var(--md-on-primary-container);
-    border-radius:var(--shape-lg);padding:16px 22px 16px 18px;box-shadow:var(--md-elev-2);
-    font-family:var(--md-body);font-size:14px;font-weight:500;border:none;cursor:pointer;
-  }
-  @media (hover:hover) and (pointer:fine){.fab:hover{box-shadow:var(--md-elev-3)}}
-  .fab svg{width:22px;height:22px}
-
-  .utilbar{position:fixed;top:16px;right:16px;z-index:61;display:flex;gap:6px;
-    background:var(--md-surface-container);border-radius:var(--shape-full);padding:5px;box-shadow:var(--md-elev-1)}
+  .utilbar{display:flex;gap:4px;background:var(--md-surface-container-high);border-radius:var(--shape-full);padding:4px}
   .util-btn{
     background:none;border:none;cursor:pointer;color:var(--md-on-surface-variant);
     font-family:var(--md-body);font-size:12px;font-weight:600;letter-spacing:.02em;
-    padding:7px 10px;border-radius:var(--shape-full);
+    padding:6px 9px;border-radius:var(--shape-full);
   }
   .util-btn.on{color:var(--md-on-secondary-container);background:var(--md-secondary-container)}
   .util-icon{padding:7px 8px;display:grid;place-items:center}
   .util-icon svg{width:16px;height:16px;display:block}
 
-  /* ---- compact (<600dp): pillola flottante, l'etichetta compare solo sulla voce attiva ---- */
-  @media (max-width:599px){
-    .m3nav{
-      left:10px;right:10px;bottom:10px;border-radius:var(--shape-full);
-      flex-direction:row;justify-content:space-between;align-items:center;
-      padding:5px;gap:2px;border:none;box-shadow:var(--md-elev-2);
-    }
-    .navitem{flex-direction:row;padding-top:0;width:auto}
-    .navitem .ind{
-      width:36px;height:36px;padding:0;gap:0;
-      transition:width var(--dur-m) var(--m3-emphasized),padding var(--dur-m) var(--m3-emphasized),background var(--dur-m) var(--m3-standard);
-    }
-    .navitem.on .ind{width:auto;padding:0 8px}
-    .navitem svg{width:18px;height:18px}
-    .navitem .lbl{
-      max-width:0;opacity:0;overflow:hidden;white-space:nowrap;margin-left:0;
-      font-size:12.5px;
-      transition:max-width .32s var(--m3-emphasized),opacity .2s,margin-left .32s var(--m3-emphasized);
-    }
-    .navitem.on .lbl{max-width:76px;opacity:1;margin-left:6px}
-    .nav-theme{display:flex;width:38px;height:38px}
-    .nav-theme svg{width:17px;height:17px}
-    .utilbar .theme-toggle{display:none}
-    .fab{right:16px;bottom:92px}
-    body{padding-bottom:88px}
+  .fab{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--md-primary-container);color:var(--md-on-primary-container);
+    border-radius:var(--shape-full);padding:10px 16px;
+    font-family:var(--md-body);font-size:13px;font-weight:500;border:none;cursor:pointer;white-space:nowrap;
+    transition:box-shadow var(--dur-s) var(--m3-standard);
+  }
+  @media (hover:hover) and (pointer:fine){.fab:hover{box-shadow:var(--md-elev-1)}}
+  .fab svg{width:18px;height:18px;flex:none}
+
+  /* ---- ≥960px: il menu appare in riga nella barra superiore ---- */
+  @media (min-width:960px){
+    .topbar-head{display:contents}
+    .topbar-inner{display:flex;align-items:center;gap:20px;height:64px}
+    .m3nav{flex:1}
   }
 
-  /* ---- medium/expanded (≥600dp): Navigation Rail a sinistra ---- */
-  @media (min-width:600px){
-    .m3nav{
-      top:0;left:0;bottom:0;width:88px;flex-direction:column;align-items:center;
-      padding:96px 0 24px;gap:28px;border-right:1px solid var(--md-outline-variant);
+  /* ---- <960px: il menu resta nascosto dietro l'icona hamburger ---- */
+  @media (max-width:959px){
+    .hamburger{display:flex}
+    .m3nav,.topbar-actions{display:none}
+    .topbar.menu-open{position:fixed;inset:0;overflow-y:auto;border-bottom:none;box-shadow:var(--md-elev-2)}
+    .topbar.menu-open .topbar-inner{padding-bottom:28px}
+    .topbar.menu-open .m3nav{display:flex;flex-direction:column;gap:2px;margin-top:12px}
+    .topbar.menu-open .navitem{padding:13px 16px;font-size:15px;justify-content:flex-start}
+    .topbar.menu-open .topbar-actions{
+      display:flex;flex-direction:column;align-items:stretch;gap:14px;
+      margin-top:22px;padding-top:22px;border-top:1px solid var(--md-outline-variant);
     }
-    .fab{position:static;margin-bottom:8px;padding:14px;border-radius:var(--shape-lg)}
-    .fab span{display:none}
-    body{padding-left:88px}
+    .topbar.menu-open .utilbar{align-self:flex-start}
+    .topbar.menu-open .fab{justify-content:center}
   }
   @media (min-width:840px){
     .wrap{padding:0 40px}
@@ -384,50 +380,56 @@
 </head>
 <body>
 
-<nav class="m3nav" id="m3nav" aria-label="Navigazione principale">
-  <button class="fab state" data-open-contacts aria-label="Contatti">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 5.4L20 7"/></svg>
-    <span data-i18n="cm_title">Informazioni di contatto</span>
-  </button>
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-head">
+      <a class="brand state" href="#profilo">Nicolò Forcolin</a>
+      <button class="hamburger state" id="hamburgerBtn" aria-label="Apri menu" aria-expanded="false" aria-controls="m3nav">
+        <svg id="hamburgerIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
 
-  <a class="navitem" href="#profilo" data-nav>
-    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M5 20c0-3.6 3.1-6.4 7-6.4s7 2.8 7 6.4"/></svg></span>
-    <span class="lbl" data-i18n="nav_profilo">Profilo</span>
-  </a>
-  <a class="navitem" href="#sintesi" data-nav>
-    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3.6" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="3.6" y="13.2" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="13.2" width="7.2" height="7.2" rx="1.6"/></svg></span>
-    <span class="lbl" data-i18n="proof_label">In sintesi</span>
-  </a>
-  <a class="navitem" href="#percorso" data-nav>
-    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.4" cy="5.8" r="2.2"/><circle cx="6.4" cy="18.2" r="2.2"/><path d="M6.4 8v8"/><path d="M11.2 5.8h9.2M11.2 12h6.4M11.2 18.2h9.2"/></svg></span>
-    <span class="lbl" data-i18n="sec_percorso">Percorso</span>
-  </a>
-  <a class="navitem" href="#casi-studio" data-nav>
-    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M12 3.4 21 8l-9 4.6L3 8Z"/><path d="M3 12.4 12 17l9-4.6"/><path d="M3 16.8 12 21.4l9-4.6"/></svg></span>
-    <span class="lbl" data-i18n="sec_lavori">Casi studio</span>
-  </a>
-  <a class="navitem" href="#oltre" data-nav>
-    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M9.4 17.6V5.6l9-1.8v11.4"/><circle cx="6.6" cy="17.6" r="2.8"/><circle cx="15.6" cy="15.2" r="2.8"/></svg></span>
-    <span class="lbl" data-i18n="sec_oltre">Oltre</span>
-  </a>
+    <nav class="m3nav" id="m3nav" aria-label="Navigazione principale">
+      <a class="navitem state" href="#profilo" data-nav>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M5 20c0-3.6 3.1-6.4 7-6.4s7 2.8 7 6.4"/></svg>
+        <span data-i18n="nav_profilo">Profilo</span>
+      </a>
+      <a class="navitem state" href="#sintesi" data-nav>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3.6" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="3.6" width="7.2" height="7.2" rx="1.6"/><rect x="3.6" y="13.2" width="7.2" height="7.2" rx="1.6"/><rect x="13.2" y="13.2" width="7.2" height="7.2" rx="1.6"/></svg>
+        <span data-i18n="proof_label">In sintesi</span>
+      </a>
+      <a class="navitem state" href="#percorso" data-nav>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.4" cy="5.8" r="2.2"/><circle cx="6.4" cy="18.2" r="2.2"/><path d="M6.4 8v8"/><path d="M11.2 5.8h9.2M11.2 12h6.4M11.2 18.2h9.2"/></svg>
+        <span data-i18n="sec_percorso">Percorso</span>
+      </a>
+      <a class="navitem state" href="#casi-studio" data-nav>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M12 3.4 21 8l-9 4.6L3 8Z"/><path d="M3 12.4 12 17l9-4.6"/><path d="M3 16.8 12 21.4l9-4.6"/></svg>
+        <span data-i18n="sec_lavori">Casi studio</span>
+      </a>
+      <a class="navitem state" href="#oltre" data-nav>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M9.4 17.6V5.6l9-1.8v11.4"/><circle cx="6.6" cy="17.6" r="2.8"/><circle cx="15.6" cy="15.2" r="2.8"/></svg>
+        <span data-i18n="sec_oltre">Oltre</span>
+      </a>
+    </nav>
 
-  <button class="nav-theme theme-toggle" aria-label="Cambia tema">
-    <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
-    </svg>
-  </button>
-</nav>
-
-<div class="utilbar">
-  <button class="util-btn lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
-  <button class="util-btn lang-btn" data-lang="en" aria-label="English">EN</button>
-  <button class="util-btn lang-btn" data-lang="fr" aria-label="Français">FR</button>
-  <button class="util-btn util-icon theme-toggle" aria-label="Cambia tema">
-    <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
-    </svg>
-  </button>
-</div>
+    <div class="topbar-actions">
+      <div class="utilbar">
+        <button class="util-btn lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
+        <button class="util-btn lang-btn" data-lang="en" aria-label="English">EN</button>
+        <button class="util-btn lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        <button class="util-btn util-icon theme-toggle" aria-label="Cambia tema">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+          </svg>
+        </button>
+      </div>
+      <button class="fab state" data-open-contacts aria-label="Contatti">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 5.4L20 7"/></svg>
+        <span data-i18n="nav_contatti">Contatti</span>
+      </button>
+    </div>
+  </div>
+</header>
 
 <header class="hero" id="profilo">
   <div class="wrap">
@@ -556,6 +558,7 @@
     it: {
       pc_follow:"1.500+ follower · 500+ collegamenti",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
+      nav_contatti:"Contatti",
       nav_profilo:"Profilo",
       proof_label:"In sintesi",
       p1k:"Advisory", p1d:"Consulenza AI a business unit interne e al CEO di Dabo Technology, azienda tech attiva tra Italia e Cina.",
@@ -582,6 +585,7 @@
     en: {
       pc_follow:"1,500+ followers · 500+ connections",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
+      nav_contatti:"Contact",
       nav_profilo:"Profile",
       proof_label:"At a glance",
       p1k:"Advisory", p1d:"AI advisory to internal business units and to the CEO of Dabo Technology, a tech company active between Italy and China.",
@@ -608,6 +612,7 @@
     fr: {
       pc_follow:"1 500+ abonnés · 500+ relations",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
+      nav_contatti:"Contact",
       nav_profilo:"Profil",
       proof_label:"En bref",
       p1k:"Conseil", p1d:"Conseil en IA auprès de business units internes et du CEO de Dabo Technology, entreprise tech active entre l'Italie et la Chine.",
@@ -712,12 +717,38 @@
   window.addEventListener("scroll", spyThrottled, {passive:true});
   window.addEventListener("resize", spyThrottled);
 
+  /* ---- hamburger: menu compresso sotto i 720px ---- */
+  var topbar = document.getElementById("topbar");
+  var hamburgerBtn = document.getElementById("hamburgerBtn");
+  var hamburgerIcon = document.getElementById("hamburgerIcon");
+  var hamburgerOpenIcon = '<path d="M4 7h16M4 12h16M4 17h16"/>';
+  var hamburgerCloseIcon = '<path d="M6 6l12 12M18 6 6 18"/>';
+  function setMenuOpen(open){
+    if(topbar.classList.contains("menu-open") === open) return;
+    topbar.classList.toggle("menu-open", open);
+    hamburgerBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    hamburgerBtn.setAttribute("aria-label", open ? "Chiudi menu" : "Apri menu");
+    hamburgerIcon.innerHTML = open ? hamburgerCloseIcon : hamburgerOpenIcon;
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  hamburgerBtn.addEventListener("click", function(){
+    setMenuOpen(!topbar.classList.contains("menu-open"));
+  });
+  links.forEach(function(a){ a.addEventListener("click", function(){ setMenuOpen(false); }); });
+  window.addEventListener("resize", function(){
+    if(window.matchMedia("(min-width:720px)").matches) setMenuOpen(false);
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && topbar.classList.contains("menu-open")) setMenuOpen(false);
+  });
+
   /* ---- modal contatti ---- */
   var modal = document.getElementById("contactModal");
   var lastFocus = null;
   var modalPanel = modal.querySelector(".modal-panel");
   function openModal(e){
     lastFocus = e && e.currentTarget ? e.currentTarget : null;
+    setMenuOpen(false);
     modalPanel.style.transition = "";
     modalPanel.style.transform = "";
     modal.hidden = false;
@@ -726,7 +757,7 @@
   }
   function closeModal(){
     modal.hidden = true;
-    document.body.style.overflow = "";
+    document.body.style.overflow = topbar.classList.contains("menu-open") ? "hidden" : "";
     if(lastFocus) lastFocus.focus();
   }
   document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", openModal); });
