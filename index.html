@@ -100,7 +100,7 @@
   @media (min-width:901px){.topbar-inner{padding:0 40px;height:72px}}
   .brand{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--ink);letter-spacing:.01em;border-radius:8px}
 
-  .topbar-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .topbar-lead{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
   .utilbar{display:flex;align-items:center;gap:2px}
   .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;padding:4px 7px;color:var(--ink-soft);opacity:.6}
   .lang-btn.on{color:var(--ink);opacity:1}
@@ -113,8 +113,8 @@
   }
 
   @media (max-width:560px){
-    .topbar-actions{width:100%;flex-direction:column;align-items:stretch;gap:14px}
-    .utilbar{justify-content:center}
+    .topbar-inner{justify-content:center}
+    .fab{width:100%}
   }
 
   /* ============ hero ============ */
@@ -237,9 +237,8 @@
 
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
-    <a class="brand" href="#profilo">N. Forcolin</a>
-
-    <div class="topbar-actions">
+    <div class="topbar-lead">
+      <a class="brand" href="#profilo">N. Forcolin</a>
       <div class="utilbar">
         <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
@@ -247,8 +246,8 @@
         <span class="util-divider"></span>
         <button class="theme-toggle" aria-label="Cambia tema">DARK</button>
       </div>
-      <button class="fab" data-open-contacts aria-label="Contatti" data-i18n="nav_contatti">Contatti</button>
     </div>
+    <button class="fab" data-open-contacts aria-label="Contatti" data-i18n="nav_contatti">Contatti</button>
   </div>
 </header>
 
@@ -273,9 +272,6 @@
       <a class="iconbtn" href="https://open.spotify.com/user/31gzge3t3el66m3lzpf2gdlxzpee" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M7.4 9.4c3.1-1 6.7-.8 9.3.8"/><path d="M8 12.3c2.6-.8 5.4-.6 7.6.7"/><path d="M8.6 15c2-.6 4.3-.4 6 .6"/></svg>
       </a>
-      <button class="iconbtn" type="button" data-open-contacts aria-label="Contatti" title="Contatti">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.3" y="5.5" width="17.4" height="13" rx="2.2"/><path d="M4 7.2l8 5.6 8-5.6"/></svg>
-      </button>
       <a class="follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
     </div>
   </div>
