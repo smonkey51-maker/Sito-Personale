@@ -175,15 +175,6 @@
     color:var(--md-primary);font-weight:500;
   }
   @media (hover:hover) and (pointer:fine){.follow:hover{text-decoration:underline}}
-  .btnrow{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
-  .btn{
-    font-family:var(--md-body);font-size:14px;font-weight:500;letter-spacing:.1px;
-    padding:10px 24px;border-radius:var(--shape-full);border:none;cursor:pointer;
-    transition:box-shadow var(--dur-s) var(--m3-standard);
-  }
-  .btn.filled{background:var(--md-primary);color:var(--md-on-primary)}
-  .btn.filled:hover{box-shadow:var(--md-elev-1)}
-  .btn.tonal{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
 
   /* ============ in sintesi: filled card M3 ============ */
   .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -285,10 +276,17 @@
     width:64px;height:32px;border-radius:var(--shape-full);display:grid;place-items:center;position:relative;
     transition:background var(--dur-m) var(--m3-standard);
   }
-  .navitem svg{width:24px;height:24px}
+  .navitem svg{width:24px;height:24px;flex:none}
   .navitem.on .ind{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
   .navitem .lbl{font-family:var(--md-body);font-size:12px;font-weight:500}
   .navitem.on .lbl{color:var(--md-on-surface);font-weight:600}
+
+  .nav-theme{
+    width:44px;height:44px;border-radius:50%;flex:none;
+    background:var(--md-surface-container-high);color:var(--md-on-surface-variant);
+    display:none;align-items:center;justify-content:center;border:none;cursor:pointer;
+  }
+  .nav-theme svg{width:19px;height:19px}
 
   .fab{
     position:fixed;z-index:61;display:inline-flex;align-items:center;gap:10px;
@@ -310,15 +308,31 @@
   .util-icon{padding:7px 8px;display:grid;place-items:center}
   .util-icon svg{width:16px;height:16px;display:block}
 
-  /* ---- compact (<600dp): Navigation Bar in basso, sempre etichettata ---- */
+  /* ---- compact (<600dp): pillola flottante, l'etichetta compare solo sulla voce attiva ---- */
   @media (max-width:599px){
     .m3nav{
-      left:0;right:0;bottom:0;height:80px;flex-direction:row;justify-content:space-around;
-      align-items:center;padding:0 4px 10px;border-top:1px solid var(--md-outline-variant);
+      left:10px;right:10px;bottom:10px;border-radius:var(--shape-full);
+      flex-direction:row;justify-content:space-between;align-items:center;
+      padding:5px;gap:2px;border:none;box-shadow:var(--md-elev-2);
     }
-    .navitem{padding-top:12px;width:64px}
-    .fab{right:16px;bottom:96px}
-    body{padding-bottom:96px}
+    .navitem{flex-direction:row;padding-top:0;width:auto}
+    .navitem .ind{
+      width:36px;height:36px;padding:0;gap:0;
+      transition:width var(--dur-m) var(--m3-emphasized),padding var(--dur-m) var(--m3-emphasized),background var(--dur-m) var(--m3-standard);
+    }
+    .navitem.on .ind{width:auto;padding:0 8px}
+    .navitem svg{width:18px;height:18px}
+    .navitem .lbl{
+      max-width:0;opacity:0;overflow:hidden;white-space:nowrap;margin-left:0;
+      font-size:12.5px;
+      transition:max-width .32s var(--m3-emphasized),opacity .2s,margin-left .32s var(--m3-emphasized);
+    }
+    .navitem.on .lbl{max-width:76px;opacity:1;margin-left:6px}
+    .nav-theme{display:flex;width:38px;height:38px}
+    .nav-theme svg{width:17px;height:17px}
+    .utilbar .theme-toggle{display:none}
+    .fab{right:16px;bottom:92px}
+    body{padding-bottom:88px}
   }
 
   /* ---- medium/expanded (≥600dp): Navigation Rail a sinistra ---- */
@@ -333,8 +347,6 @@
   }
   @media (min-width:840px){
     .wrap{padding:0 40px}
-    .fab{padding:14px 20px;border-radius:var(--shape-lg)}
-    .fab span{display:inline}
   }
 
   /* ============ modale contatti (bottom sheet M3 su compact) ============ */
@@ -379,7 +391,7 @@
   </button>
 
   <a class="navitem" href="#profilo" data-nav>
-    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 10.3 12 3.6l8.4 6.7V20a.9.9 0 0 1-.9.9h-4.7v-6.1H9.2v6.1H4.5a.9.9 0 0 1-.9-.9Z"/></svg></span>
+    <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M5 20c0-3.6 3.1-6.4 7-6.4s7 2.8 7 6.4"/></svg></span>
     <span class="lbl" data-i18n="nav_profilo">Profilo</span>
   </a>
   <a class="navitem" href="#sintesi" data-nav>
@@ -398,14 +410,20 @@
     <span class="ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M9.4 17.6V5.6l9-1.8v11.4"/><circle cx="6.6" cy="17.6" r="2.8"/><circle cx="15.6" cy="15.2" r="2.8"/></svg></span>
     <span class="lbl" data-i18n="sec_oltre">Oltre</span>
   </a>
+
+  <button class="nav-theme theme-toggle" aria-label="Cambia tema">
+    <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+    </svg>
+  </button>
 </nav>
 
 <div class="utilbar">
   <button class="util-btn lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
   <button class="util-btn lang-btn" data-lang="en" aria-label="English">EN</button>
   <button class="util-btn lang-btn" data-lang="fr" aria-label="Français">FR</button>
-  <button class="util-btn util-icon" id="themeToggle" aria-label="Cambia tema">
-    <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+  <button class="util-btn util-icon theme-toggle" aria-label="Cambia tema">
+    <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
       <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
     </svg>
   </button>
@@ -418,6 +436,9 @@
     <p class="hero-role">People &amp; Enterprise Reliability</p>
     <div class="chiprow">
       <span class="chip tonal">InfoCamere · Padova</span>
+      <a class="iconbtn state" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><circle cx="8.6" cy="8.4" r=".9" fill="currentColor" stroke="none"/><path d="M8.6 11.2v5.2"/><path d="M12.2 16.4v-3.1c0-1.4 1-2.3 2.1-2.3 1.2 0 2 .8 2 2.2v3.2"/><path d="M12.2 11.2v5.2"/></svg>
+      </a>
       <a class="iconbtn state" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
       </a>
@@ -426,9 +447,6 @@
       </a>
     </div>
     <a class="follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
-    <div class="btnrow">
-      <a class="btn filled state" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener">LinkedIn</a>
-    </div>
   </div>
 </header>
 
@@ -647,8 +665,8 @@
   });
 
   /* ---- tema ---- */
-  var toggle = document.getElementById("themeToggle");
-  var icon = document.getElementById("themeIcon");
+  var toggles = Array.prototype.slice.call(document.querySelectorAll(".theme-toggle"));
+  var icons = Array.prototype.slice.call(document.querySelectorAll(".theme-icon"));
   var sun = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>';
   var moon = '<path d="M20 14.4A8.4 8.4 0 0 1 9.6 4 8.4 8.4 0 1 0 20 14.4Z"/>';
   function current(){
@@ -658,12 +676,14 @@
   }
   function paintTheme(){
     var dark = current() === "dark";
-    icon.innerHTML = dark ? moon : sun;
-    toggle.setAttribute("aria-label", dark ? "Passa al tema chiaro" : "Passa al tema scuro");
+    icons.forEach(function(icon){ icon.innerHTML = dark ? moon : sun; });
+    toggles.forEach(function(t){ t.setAttribute("aria-label", dark ? "Passa al tema chiaro" : "Passa al tema scuro"); });
   }
-  toggle.addEventListener("click", function(){
-    root.setAttribute("data-theme", current() === "dark" ? "light" : "dark");
-    paintTheme();
+  toggles.forEach(function(t){
+    t.addEventListener("click", function(){
+      root.setAttribute("data-theme", current() === "dark" ? "light" : "dark");
+      paintTheme();
+    });
   });
   paintTheme();
 
