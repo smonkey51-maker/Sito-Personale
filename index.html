@@ -103,13 +103,14 @@
   .theme-toggle{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;color:var(--ink-soft);padding:4px 0}
 
   .fab{
-    background:var(--accent-soft);color:var(--on-accent-soft);border:none;border-radius:999px;padding:10px 22px;
+    position:fixed;right:28px;bottom:24px;z-index:65;
+    background:var(--accent-soft);color:var(--on-accent-soft);border:none;border-radius:999px;padding:14px 26px;
     font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
+    box-shadow:var(--shadow);
   }
 
   @media (max-width:560px){
-    .topbar-inner{justify-content:center}
-    .fab{width:100%}
+    .fab{right:16px;bottom:16px;padding:13px 22px}
   }
 
   /* ============ hero ============ */
@@ -187,8 +188,8 @@
   }
   @media (prefers-reduced-motion:reduce){.eq i{height:60%}}
 
-  footer{padding:80px 0 56px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
-  @media (max-width:900px){footer{padding:56px 0 48px}}
+  footer{padding:80px 0 96px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
+  @media (max-width:900px){footer{padding:56px 0 88px}}
   footer p{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
 
   /* ============ reveal allo scroll ============ */
@@ -233,9 +234,10 @@
         <button class="theme-toggle" aria-label="Cambia tema">DARK</button>
       </div>
     </div>
-    <button class="fab" data-open-contacts aria-label="Contatti" data-i18n="nav_contatti">Contatti</button>
   </div>
 </header>
+
+<button class="fab" data-open-contacts aria-label="Contatti" data-i18n="nav_contatti">Contatti</button>
 
 <header class="hero" id="profilo">
   <div class="wrap">
