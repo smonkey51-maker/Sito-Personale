@@ -96,21 +96,14 @@
   @keyframes statPop{0%{transform:scale(1)}45%{transform:scale(1.08)}100%{transform:scale(1)}}
 
   /* ============ topbar ============ */
-  .topbar{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line)}
-  .topbar-inner{max-width:1080px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:14px;column-gap:20px}
+  .topbar{position:sticky;top:0;z-index:60;background:var(--bg)}
+  .topbar-inner{max-width:1080px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:flex-end}
   @media (min-width:901px){.topbar-inner{padding:0 40px;height:72px}}
-  .brand{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--ink);border-radius:8px}
-
-  .topbar-lead{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-  .topnav{display:flex;gap:24px;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
-  @media (hover:hover) and (pointer:fine){.topnav a:hover{color:var(--ink)}}
-  @media (max-width:640px){.topnav{display:none}}
 
   .utilbar{display:flex;align-items:center;gap:2px}
   .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;padding:4px 7px;color:var(--ink-soft);opacity:.6}
   .lang-btn.on{color:var(--ink);opacity:1}
-  .util-divider{width:1px;height:12px;background:var(--line);margin:0 8px}
-  .theme-toggle{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;color:var(--ink-soft);padding:4px 0}
+  .theme-toggle{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;color:var(--ink-soft);padding:4px 0 4px 8px}
 
   .fab{
     position:fixed;right:28px;bottom:24px;z-index:65;
@@ -226,19 +219,10 @@
 
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
-    <div class="topbar-lead">
-      <a class="brand" href="#profilo">N. Forcolin</a>
-      <nav class="topnav">
-        <a href="#casi-studio" data-i18n="sec_lavori">Casi studio</a>
-        <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
-        <a href="#percorso" data-i18n="sec_percorso">Percorso</a>
-      </nav>
-    </div>
     <div class="utilbar">
       <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
       <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
-      <span class="util-divider"></span>
       <button class="theme-toggle" aria-label="Cambia tema">DARK</button>
     </div>
   </div>
@@ -277,35 +261,7 @@
 
 <main class="wrap">
 
-  <div class="section-label" id="pilastri"><span class="section-num">01</span><span data-i18n="sec_pilastri">Pilastri</span></div>
-  <div class="timeline rv">
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-title" data-i18n="pil1_title">Sicurezza &amp; Governance</div>
-        <div class="job-supp" data-i18n="pil1_desc">Adozione dell'AI in ambienti a dati sensibili e fortemente regolamentati, con validazione human-in-the-loop e governance presidiata.</div>
-        <div class="metarow"><span class="metachip">Governance AI</span><span class="metachip" data-i18n="pil1_tag2">Dati sensibili</span><span class="metachip">On-premise</span></div>
-      </div>
-    </div>
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-title">MLOps</div>
-        <div class="job-supp" data-i18n="pil2_desc">Sistemi RAG e modelli locali (Gemma, Qwen) per rendere interrogabile la conoscenza operativa, dal fine-tuning al deploy.</div>
-        <div class="metarow"><span class="metachip">RAG</span><span class="metachip">LLM</span><span class="metachip">Fine-tuning</span></div>
-      </div>
-    </div>
-    <div class="job-row last">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-title">Advisory &amp; Upskilling</div>
-        <div class="job-supp" data-i18n="pil3_desc">Percorsi di formazione per oltre 25 colleghi e consulenza strategica per 1 CEO (di DABO, azienda attiva tra UE e Cina).</div>
-        <div class="metarow"><span class="metachip">Upskilling</span><span class="metachip">Advisory</span><span class="metachip" data-i18n="pil3_tag3">Formazione</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">In sintesi</span></div>
+  <div class="section-label" id="sintesi"><span class="section-num">01</span><span data-i18n="proof_label">In sintesi</span></div>
   <div class="statrow">
     <div class="stat rv" aria-labelledby="p3k">
       <p class="v"><span class="num" data-count="15">0</span></p>
@@ -332,7 +288,7 @@
     </div>
   </div>
 
-  <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Casi studio</span></div>
+  <div class="section-label" id="casi-studio"><span class="section-num">02</span><span data-i18n="sec_lavori">Casi studio</span></div>
   <div class="timeline rv">
     <div class="job-row">
       <div class="job-dotcol"><span class="job-dot"></span></div>
@@ -367,7 +323,7 @@
     </div>
   </div>
 
-  <div class="section-label" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
+  <div class="section-label" id="competenze"><span class="section-num">03</span><span data-i18n="sec_competenze">Competenze</span></div>
   <div class="timeline rv">
     <div class="job-row">
       <div class="job-dotcol"><span class="job-dot"></span></div>
@@ -399,7 +355,7 @@
     </div>
   </div>
 
-  <div class="section-label" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Percorso</span></div>
+  <div class="section-label" id="percorso"><span class="section-num">04</span><span data-i18n="sec_percorso">Percorso</span></div>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-dotcol"><span class="job-dot"></span></div>
@@ -427,7 +383,7 @@
     </div>
   </div>
 
-  <div class="section-label" id="oltre"><span class="section-num">06</span><span data-i18n="sec_oltre">Oltre</span></div>
+  <div class="section-label" id="oltre"><span class="section-num">05</span><span data-i18n="sec_oltre">Oltre</span></div>
   <p class="oltre-supp rv" data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock.</p>
 
   <footer>
@@ -467,10 +423,6 @@
       nav_profilo:"Profilo",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Esplora i casi studio", hero_cta3:"Competenze",
-      sec_pilastri:"Pilastri",
-      pil1_title:"Sicurezza & Governance", pil1_desc:"Adozione dell'AI in ambienti a dati sensibili e fortemente regolamentati, con validazione human-in-the-loop e governance presidiata.", pil1_tag2:"Dati sensibili",
-      pil2_desc:"Sistemi RAG e modelli locali (Gemma, Qwen) per rendere interrogabile la conoscenza operativa, dal fine-tuning al deploy.",
-      pil3_desc:"Percorsi di formazione per oltre 25 colleghi e consulenza strategica per 1 CEO (di DABO, azienda attiva tra UE e Cina).", pil3_tag3:"Formazione",
       proof_label:"In sintesi",
       p1k:"Advisory", p1d:"Consulenza AI a 2 business unit interne e ad 1 CEO (azienda DABO, attiva tra Europa e Cina)",
       p2k:"Formazione", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa: upskilling di 25+ colleghi e del CEO di DABO. Risparmi stimati in mesi di lavoro.",
@@ -510,10 +462,6 @@
       nav_profilo:"Profile",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Explore case studies", hero_cta3:"Skills",
-      sec_pilastri:"Pillars",
-      pil1_title:"Security & Governance", pil1_desc:"AI adoption in sensitive-data, heavily regulated environments, with human-in-the-loop validation and close governance.", pil1_tag2:"Sensitive data",
-      pil2_desc:"RAG systems and local models (Gemma, Qwen) that make operational knowledge queryable, from fine-tuning to deployment.",
-      pil3_desc:"Training programs for 25+ colleagues and strategic advisory for 1 CEO (from DABO, a company active between EU and China).", pil3_tag3:"Training",
       proof_label:"At a glance",
       p1k:"Advisory", p1d:"AI advisory to 2 internal business units and to 1 CEO (DABO, a company active between Europe and China)",
       p2k:"Training", p2d:"5 internal and external training programs on operational AI: upskilling 25+ colleagues and DABO's CEO. Estimated savings worth months of work.",
@@ -553,10 +501,6 @@
       nav_profilo:"Profil",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Découvrir les études de cas", hero_cta3:"Compétences",
-      sec_pilastri:"Piliers",
-      pil1_title:"Sécurité & Gouvernance", pil1_desc:"Adoption de l'IA dans des environnements à données sensibles et fortement réglementés, avec validation human-in-the-loop et gouvernance maîtrisée.", pil1_tag2:"Données sensibles",
-      pil2_desc:"Systèmes RAG et modèles locaux (Gemma, Qwen) rendant la connaissance opérationnelle interrogeable, du fine-tuning au déploiement.",
-      pil3_desc:"Programmes de formation pour plus de 25 collègues et conseil stratégique pour 1 CEO (de DABO, entreprise active entre l'UE et la Chine).", pil3_tag3:"Formation",
       proof_label:"En bref",
       p1k:"Conseil", p1d:"Conseil en IA auprès de 2 business units internes et d'1 CEO (DABO, entreprise active entre l'Europe et la Chine)",
       p2k:"Formation", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle : upskilling de 25+ collègues et du CEO de DABO. Gains estimés en mois de travail.",
