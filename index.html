@@ -49,7 +49,7 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#0E2550;
+      --bg:#0A1C40;
       --ink:#F4E8D2;--ink-soft:#C9B98A;--line:rgba(244,232,210,.18);
       --accent:#9DB8F0;--accent-soft:#2A4E8C;--on-accent-soft:#F4E8D2;
       --scrim:rgba(0,0,0,.6);
@@ -57,7 +57,7 @@
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0E2550;
+    --bg:#0A1C40;
     --ink:#F4E8D2;--ink-soft:#C9B98A;--line:rgba(244,232,210,.18);
     --accent:#9DB8F0;--accent-soft:#2A4E8C;--on-accent-soft:#F4E8D2;
     --scrim:rgba(0,0,0,.6);
@@ -75,7 +75,7 @@
   html{scroll-behavior:smooth}
   body{
     background:var(--bg);color:var(--ink);
-    font-family:var(--sans);font-size:16px;line-height:1.55;
+    font-family:var(--sans);font-size:17px;line-height:1.6;
     -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
@@ -120,14 +120,14 @@
   .hero-divider{width:1px;background:var(--line);align-self:stretch}
   @media (max-width:900px){.hero-divider{display:none}}
   .hero-text{display:flex;flex-direction:column}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
   .hero-name{font-family:var(--serif);font-size:clamp(38px,5vw,54px);font-weight:400;line-height:1.05;color:var(--ink);margin:0}
-  .hero-role{font-family:var(--sans);font-size:16px;font-weight:400;color:var(--ink-soft);margin-top:8px}
+  .hero-role{font-family:var(--sans);font-size:17.5px;font-weight:400;color:var(--ink-soft);margin-top:8px}
 
   .social-row{display:flex;align-items:center;gap:10px;margin-top:24px;flex-wrap:wrap}
   .iconbtn{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);border:1px solid var(--line);background:none;font:inherit;cursor:pointer}
   .iconbtn svg{width:15px;height:15px}
-  .follow{margin-left:8px;font-family:var(--sans);font-size:13px;line-height:1;color:var(--ink-soft)}
+  .follow{margin-left:8px;font-family:var(--sans);font-size:13.5px;line-height:1;color:var(--ink-soft)}
   @media (hover:hover) and (pointer:fine){.follow:hover{text-decoration:underline}}
 
   /* ============ section label ============ */
@@ -145,7 +145,7 @@
   .stat .v{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1;color:var(--ink);margin:0;display:inline-block;font-variant-numeric:tabular-nums}
   .stat .v.pop{animation:statPop .55s var(--ease)}
   .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-  .stat .d{font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0}
+  .stat .d{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0}
   .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:2px}
   @media (max-width:640px){
     .statrow{flex-direction:column;gap:28px}
@@ -162,15 +162,15 @@
   .job-row.last .job-body{padding-bottom:0;border-left:none}
   .job-overline{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .job-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-top:4px}
-  .job-supp{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.6;max-width:640px}
+  .job-supp{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin-top:8px;line-height:1.65;max-width:640px}
 
   /* ============ casi studio (stile percorso) ============ */
   .case-status{color:var(--accent)}
   .case-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-top:4px;line-height:1.3}
   @media (hover:hover) and (pointer:fine){.case-title a:hover{color:var(--accent)}}
-  .case-supp{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.65;max-width:640px}
+  .case-supp{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin-top:8px;line-height:1.7;max-width:640px}
   .metarow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px}
-  .metachip{font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
+  .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
 
   /* ============ oltre (stile percorso) ============ */
   .oltre-supp{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--ink);margin:0;max-width:640px}
@@ -190,7 +190,7 @@
 
   footer{padding:80px 0 96px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
   @media (max-width:900px){footer{padding:56px 0 88px}}
-  footer p{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
+  footer p{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
 
   /* ============ reveal allo scroll ============ */
   .rv{opacity:0;transform:translateY(28px)}
@@ -216,7 +216,7 @@
   .cm-row{padding:14px 0;border-top:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
   .cm-row:first-of-type{border-top:none}
   .cm-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);flex:none}
-  .cm-v{font-size:14.5px;text-align:right;color:var(--ink);font-family:var(--sans)}
+  .cm-v{font-size:15.5px;text-align:right;color:var(--ink);font-family:var(--sans)}
   .cm-v a{color:var(--accent)}
 </style>
 </head>
