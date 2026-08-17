@@ -155,12 +155,8 @@
 
   .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
-  .hero-btn.primary{background:var(--accent-soft);color:var(--on-accent-soft);border:none}
   .hero-btn.outline{background:none;color:var(--ink);border:1px solid var(--line)}
-  @media (hover:hover) and (pointer:fine){
-    .hero-btn.primary:hover{opacity:.82}
-    .hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}
-  }
+  @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
 
   /* ============ section label ============ */
   .section-label{
@@ -296,7 +292,7 @@
         <h1 class="hero-name">Nicolò Forcolin</h1>
         <p class="hero-role">MLOps &amp; AI Integration | Human and Enterprise Reliability</p>
         <div class="hero-cta-row">
-          <a class="hero-btn primary" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
+          <a class="hero-btn outline" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
           <a class="hero-btn outline" href="#competenze" data-i18n="hero_cta3">Competenze</a>
         </div>
         <div class="social-row">
