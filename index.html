@@ -129,6 +129,15 @@
   .follow{margin-left:8px;font-family:var(--sans);font-size:13.5px;line-height:1;color:var(--ink-soft)}
   @media (hover:hover) and (pointer:fine){.follow:hover{text-decoration:underline}}
 
+  .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+  .btn{font-family:var(--sans);font-size:13.5px;font-weight:500;padding:11px 22px;border-radius:999px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
+  .btn-primary{background:var(--accent-soft);color:var(--on-accent-soft);border:none}
+  .btn-secondary{background:none;color:var(--ink);border:1px solid var(--line)}
+  @media (hover:hover) and (pointer:fine){
+    .btn-primary:hover{opacity:.85}
+    .btn-secondary:hover{border-color:var(--accent)}
+  }
+
   /* ============ section label ============ */
   .section-label{
     display:flex;align-items:baseline;gap:13px;font-family:var(--sans);font-size:14.5px;font-weight:600;
@@ -237,6 +246,11 @@
         <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
         <h1 class="hero-name">Nicolò Forcolin</h1>
         <p class="hero-role">Human and Enterprise reliability</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
+          <a class="btn btn-secondary" href="#casi-studio" data-i18n="hero_cta2">Governance &amp; metodo</a>
+          <a class="btn btn-secondary" href="#competenze" data-i18n="hero_cta3">Competenze</a>
+        </div>
         <div class="social-row">
           <a class="iconbtn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><circle cx="8.6" cy="8.4" r=".9" fill="currentColor" stroke="none"/><path d="M8.6 11.2v5.2"/><path d="M12.2 16.4v-3.1c0-1.4 1-2.3 2.1-2.3 1.2 0 2 .8 2 2.2v3.2"/><path d="M12.2 11.2v5.2"/></svg>
@@ -424,6 +438,7 @@
       nav_contatti:"Contatti",
       nav_profilo:"Profilo",
       eyebrow_role:"InfoCamere · Padova",
+      hero_cta1:"Esplora i casi studio", hero_cta2:"Governance & metodo", hero_cta3:"Competenze",
       proof_label:"In sintesi",
       p1k:"Advisory", p1d:"Consulenza AI a 2 business unit interne e ad 1 CEO (azienda DABO, attiva tra Europa e Cina)",
       p2k:"Formazione", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa: upskilling di 25+ colleghi e del CEO di DABO. Risparmi stimati in mesi di lavoro.",
@@ -458,6 +473,7 @@
       nav_contatti:"Contact",
       nav_profilo:"Profile",
       eyebrow_role:"InfoCamere · Padova",
+      hero_cta1:"Explore case studies", hero_cta2:"Governance & method", hero_cta3:"Skills",
       proof_label:"At a glance",
       p1k:"Advisory", p1d:"AI advisory to 2 internal business units and to 1 CEO (DABO, a company active between Europe and China)",
       p2k:"Training", p2d:"5 internal and external training programs on operational AI: upskilling 25+ colleagues and DABO's CEO. Estimated savings worth months of work.",
@@ -492,6 +508,7 @@
       nav_contatti:"Contact",
       nav_profilo:"Profil",
       eyebrow_role:"InfoCamere · Padova",
+      hero_cta1:"Découvrir les études de cas", hero_cta2:"Gouvernance & méthode", hero_cta3:"Compétences",
       proof_label:"En bref",
       p1k:"Conseil", p1d:"Conseil en IA auprès de 2 business units internes et d'1 CEO (DABO, entreprise active entre l'Europe et la Chine)",
       p2k:"Formation", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle : upskilling de 25+ collègues et du CEO de DABO. Gains estimés en mois de travail.",
