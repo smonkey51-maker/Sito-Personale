@@ -129,14 +129,9 @@
   .follow{margin-left:8px;font-family:var(--sans);font-size:13.5px;line-height:1;color:var(--ink-soft)}
   @media (hover:hover) and (pointer:fine){.follow:hover{text-decoration:underline}}
 
-  .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
-  .btn{font-family:var(--sans);font-size:13.5px;font-weight:500;padding:11px 22px;border-radius:999px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
-  .btn-primary{background:var(--accent-soft);color:var(--on-accent-soft);border:none}
-  .btn-secondary{background:none;color:var(--ink);border:1px solid var(--line)}
-  @media (hover:hover) and (pointer:fine){
-    .btn-primary:hover{opacity:.85}
-    .btn-secondary:hover{border-color:var(--accent)}
-  }
+  .hero-cta-row{display:flex;align-items:center;gap:18px;margin-top:18px;flex-wrap:wrap}
+  .cta-link{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap}
+  @media (hover:hover) and (pointer:fine){.cta-link:hover{border-bottom-color:var(--accent)}}
 
   /* ============ section label ============ */
   .section-label{
@@ -247,9 +242,9 @@
         <h1 class="hero-name">Nicolò Forcolin</h1>
         <p class="hero-role">Human and Enterprise reliability</p>
         <div class="hero-cta-row">
-          <a class="btn btn-primary" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
-          <a class="btn btn-secondary" href="#casi-studio" data-i18n="hero_cta2">Governance &amp; metodo</a>
-          <a class="btn btn-secondary" href="#competenze" data-i18n="hero_cta3">Competenze</a>
+          <a class="cta-link" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
+          <a class="cta-link" href="#casi-studio" data-i18n="hero_cta2">Governance &amp; metodo</a>
+          <a class="cta-link" href="#competenze" data-i18n="hero_cta3">Competenze</a>
         </div>
         <div class="social-row">
           <a class="iconbtn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn">
