@@ -171,6 +171,14 @@
   .metarow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px}
   .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
 
+  /* ============ competenze ============ */
+  .skills{padding-bottom:8px}
+  .skill-group{margin-bottom:28px}
+  .skill-group:last-child{margin-bottom:0}
+  .skill-cat{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .skill-tag{font-family:var(--sans);font-size:13px;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:6px 14px;line-height:1.2}
+
   /* ============ oltre (stile percorso) ============ */
   .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:640px}
 
@@ -335,7 +343,62 @@
     </div>
   </div>
 
-  <div class="section-label" id="oltre"><span class="section-num">04</span><span data-i18n="sec_oltre">Oltre</span></div>
+  <div class="section-label" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
+  <div class="skills rv">
+    <div class="skill-group">
+      <span class="skill-cat" data-i18n="sk_cat1">AI &amp; Machine Learning</span>
+      <div class="skill-tags">
+        <span class="skill-tag">Large Language Models (LLM)</span>
+        <span class="skill-tag" data-i18n="sk1_2">Governance e regolamentazione dell'IA</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">MLOps</span>
+        <span class="skill-tag" data-i18n="sk1_5">Knowledge Retrieval (RAG)</span>
+        <span class="skill-tag" data-i18n="sk1_6">Adozione e strategia AI in azienda</span>
+        <span class="skill-tag" data-i18n="sk1_7">Apprendimento Human-in-the-loop</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-cat" data-i18n="sk_cat2">Sviluppo &amp; Cloud</span>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Flutter</span>
+        <span class="skill-tag">Google Cloud Platform (GCP)</span>
+        <span class="skill-tag" data-i18n="sk2_6">Microservizi &amp; REST API</span>
+        <span class="skill-tag" data-i18n="sk2_7">Database</span>
+        <span class="skill-tag" data-i18n="sk2_8">Amministrazione Linux/Windows</span>
+        <span class="skill-tag" data-i18n="sk2_9">Cybersecurity</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-cat" data-i18n="sk_cat3">Business &amp; Analytics</span>
+      <div class="skill-tags">
+        <span class="skill-tag" data-i18n="sk3_1">Project Management (Agile)</span>
+        <span class="skill-tag" data-i18n="sk3_2">Pianificazione strategica</span>
+        <span class="skill-tag" data-i18n="sk3_3">Power BI &amp; Analytics</span>
+        <span class="skill-tag" data-i18n="sk3_4">Gestione incidenti</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-cat" data-i18n="sk_cat4">Persone &amp; Comunicazione</span>
+      <div class="skill-tags">
+        <span class="skill-tag" data-i18n="sk4_1">Public speaking</span>
+        <span class="skill-tag" data-i18n="sk4_2">Comunicazione e social media</span>
+        <span class="skill-tag" data-i18n="sk4_3">Risorse umane (HR)</span>
+        <span class="skill-tag" data-i18n="sk4_4">Costruire la fiducia</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-cat" data-i18n="sk_cat5">Settori regolamentati</span>
+      <div class="skill-tags">
+        <span class="skill-tag" data-i18n="sk5_1">Settore pubblico</span>
+        <span class="skill-tag" data-i18n="sk5_2">Assicurazioni (proprietà, vita, commerciali)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label" id="oltre"><span class="section-num">05</span><span data-i18n="sec_oltre">Oltre</span></div>
   <div class="timeline rv">
     <div class="job-row last">
       <div class="job-dotcol"><span class="job-dot"></span></div>
@@ -401,6 +464,12 @@
       pr1s:"SysAdmin. Monitoraggio dell'infrastruttura mission-critical per il sistema camerale, con focus crescente sull'integrazione dell'AI nei processi operativi.",
       pr2:"Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).",
       pr3:"Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.",
+      sec_competenze:"Competenze",
+      sk_cat1:"AI & Machine Learning", sk1_2:"Governance e regolamentazione dell'IA", sk1_5:"Knowledge Retrieval (RAG)", sk1_6:"Adozione e strategia AI in azienda", sk1_7:"Apprendimento Human-in-the-loop",
+      sk_cat2:"Sviluppo & Cloud", sk2_6:"Microservizi & REST API", sk2_7:"Database", sk2_8:"Amministrazione Linux/Windows", sk2_9:"Cybersecurity",
+      sk_cat3:"Business & Analytics", sk3_1:"Project Management (Agile)", sk3_2:"Pianificazione strategica", sk3_3:"Power BI & Analytics", sk3_4:"Gestione incidenti",
+      sk_cat4:"Persone & Comunicazione", sk4_1:"Public speaking", sk4_2:"Comunicazione e social media", sk4_3:"Risorse umane (HR)", sk4_4:"Costruire la fiducia",
+      sk_cat5:"Settori regolamentati", sk5_1:"Settore pubblico", sk5_2:"Assicurazioni (proprietà, vita, commerciali)",
       sec_oltre:"Oltre",
       oltre_p:"Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock."
     },
@@ -429,6 +498,12 @@
       pr1s:"SysAdmin. Monitoring the mission-critical infrastructure for the Italian Chambers of Commerce system, with a growing focus on integrating AI into operational processes.",
       pr2:"IT Specialist (internship). First hands-on IT role: infrastructure support, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition).",
       pr3:"Insurance consultant. Client-facing role in a highly regulated industry, where trust, compliance and reliability matter as much as the business itself.",
+      sec_competenze:"Skills",
+      sk_cat1:"AI & Machine Learning", sk1_2:"AI governance & regulation", sk1_5:"Knowledge Retrieval (RAG)", sk1_6:"Enterprise AI adoption & strategy", sk1_7:"Human-in-the-loop learning",
+      sk_cat2:"Development & Cloud", sk2_6:"Microservices & REST APIs", sk2_7:"Databases", sk2_8:"Linux/Windows administration", sk2_9:"Cybersecurity",
+      sk_cat3:"Business & Analytics", sk3_1:"Project Management (Agile)", sk3_2:"Strategic planning", sk3_3:"Power BI & Analytics", sk3_4:"Incident management",
+      sk_cat4:"People & Communication", sk4_1:"Public speaking", sk4_2:"Communication & social media", sk4_3:"Human Resources (HR)", sk4_4:"Building trust",
+      sk_cat5:"Regulated sectors", sk5_1:"Public sector", sk5_2:"Insurance (property, life, commercial)",
       sec_oltre:"Beyond work",
       oltre_p:"After hours I listen to music as an audiophile, between classical, jazz and progressive rock."
     },
@@ -457,6 +532,12 @@
       pr1s:"SysAdmin. Suivi de l'infrastructure critique pour le système des Chambres de commerce italiennes, avec un accent croissant sur l'intégration de l'IA dans les processus opérationnels.",
       pr2:"Spécialiste IT (stage). Premier rôle IT concret : support infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne).",
       pr3:"Consultant assurance. Rôle au contact du client dans un secteur fortement réglementé, où la confiance, la conformité et la fiabilité comptent autant que le business lui-même.",
+      sec_competenze:"Compétences",
+      sk_cat1:"IA & Machine Learning", sk1_2:"Gouvernance et réglementation de l'IA", sk1_5:"Knowledge Retrieval (RAG)", sk1_6:"Adoption et stratégie IA en entreprise", sk1_7:"Apprentissage human-in-the-loop",
+      sk_cat2:"Développement & Cloud", sk2_6:"Microservices & API REST", sk2_7:"Bases de données", sk2_8:"Administration Linux/Windows", sk2_9:"Cybersécurité",
+      sk_cat3:"Business & Analytics", sk3_1:"Project Management (Agile)", sk3_2:"Planification stratégique", sk3_3:"Power BI & Analytics", sk3_4:"Gestion des incidents",
+      sk_cat4:"Personnes & Communication", sk4_1:"Public speaking", sk4_2:"Communication & réseaux sociaux", sk4_3:"Ressources humaines (RH)", sk4_4:"Instaurer la confiance",
+      sk_cat5:"Secteurs réglementés", sk5_1:"Secteur public", sk5_2:"Assurances (dommages, vie, entreprises)",
       sec_oltre:"Au-delà",
       oltre_p:"En dehors des heures de travail, j'écoute de la musique en audiophile, entre classique, jazz et rock progressif."
     }
