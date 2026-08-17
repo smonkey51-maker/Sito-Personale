@@ -127,14 +127,7 @@
   .hero-name{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,50px);letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:0;text-wrap:balance}
   .hero-role{font-family:var(--sans);font-size:16.5px;font-weight:400;color:var(--ink-soft);margin-top:10px;max-width:52ch}
 
-  .social-row{display:flex;align-items:center;gap:10px;margin-top:22px;flex-wrap:wrap}
-  .iconbtn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);border:1px solid var(--line);background:none;font:inherit;cursor:pointer;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease)}
-  .iconbtn svg{width:19px;height:19px}
-  @media (hover:hover) and (pointer:fine){.iconbtn:hover{border-color:var(--accent);color:var(--accent)}}
-  .follow{margin-left:8px;font-family:var(--sans);font-size:13.5px;line-height:1;color:var(--ink-soft)}
-  @media (hover:hover) and (pointer:fine){.follow:hover{text-decoration:underline}}
-
-  .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
   .hero-btn.outline{background:none;color:var(--ink);border:1px solid var(--line)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
@@ -241,15 +234,7 @@
         <div class="hero-cta-row">
           <a class="hero-btn outline" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
           <a class="hero-btn outline" href="#competenze" data-i18n="hero_cta3">Competenze</a>
-        </div>
-        <div class="social-row">
-          <a class="iconbtn" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><circle cx="8.6" cy="8.4" r=".9" fill="currentColor" stroke="none"/><path d="M8.6 11.2v5.2"/><path d="M12.2 16.4v-3.1c0-1.4 1-2.3 2.1-2.3 1.2 0 2 .8 2 2.2v3.2"/><path d="M12.2 11.2v5.2"/></svg>
-          </a>
-          <a class="iconbtn" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener" aria-label="Google Skills Boost" title="Google Skills Boost">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .7-7.94A6.2 6.2 0 0 0 6.2 8.9 4.75 4.75 0 0 0 7 18.5Z"/></svg>
-          </a>
-          <a class="follow" href="https://www.linkedin.com/in/nicoloforcolin" target="_blank" rel="noopener" data-i18n="pc_follow">1.500+ follower · 500+ collegamenti</a>
+          <a class="hero-btn outline" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a>
         </div>
       </div>
     </div>
@@ -414,7 +399,6 @@
 (function(){
   var i18n = {
     it: {
-      pc_follow:"1.500+ follower · 500+ collegamenti",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
       nav_contatti:"Contatti",
       nav_profilo:"Profilo",
@@ -453,7 +437,6 @@
       oltre_p:"Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock."
     },
     en: {
-      pc_follow:"1,500+ followers · 500+ connections",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profile",
@@ -492,7 +475,6 @@
       oltre_p:"After hours I listen to music as an audiophile, between classical, jazz and progressive rock."
     },
     fr: {
-      pc_follow:"1 500+ abonnés · 500+ relations",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profil",
