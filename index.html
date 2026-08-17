@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://nforcolin.eu/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nicolò Forcolin — Human and Enterprise reliability, InfoCamere · Padova">
+<meta property="og:image:alt" content="Nicolò Forcolin — MLOps & AI Integration, Human and Enterprise Reliability, InfoCamere · Padova">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nicolò Forcolin — AI enterprise in ambienti regolamentati">
@@ -25,22 +25,31 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
 <style>
   :root{
     color-scheme:light dark;
-    --bg:#FBF3E2;
-    --ink:#18150F;
-    --ink-soft:#5B4F3A;
-    --line:#E4D2AC;
-    --accent:#173B78;
-    --accent-soft:#DCE4F5;
-    --on-accent-soft:#12294F;
-    --scrim:rgba(15,12,5,.4);
-    --shadow:0 1px 2px rgba(23,20,10,.14),0 1px 3px 1px rgba(23,20,10,.08);
+    --bg:#F2F4F9;
+    --ink:#13161D;
+    --ink-soft:#4B5568;
+    --line:#D9DFEA;
+    --accent:#2F4E7A;
+    --accent-soft:#DCE6F7;
+    --on-accent-soft:#152A4C;
+    --surface-1:#E6EAF2;
+    --surface-2:#DAE0EC;
+    --outline:#C7CFDD;
+    --secondary:#3F6B54;
+    --secondary-soft:#DCEAE1;
+    --on-secondary-soft:#153A2B;
+    --case-bg:#2F4E7A;
+    --on-case:#EEF2FA;
+    --scrim:rgba(15,20,30,.45);
+    --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
+    --shadow-2:0 1px 3px rgba(20,30,50,.12),0 6px 16px rgba(20,30,50,.10);
 
-    --serif:"Newsreader",Georgia,serif;
+    --display:"Public Sans",-apple-system,BlinkMacSystemFont,sans-serif;
     --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 
@@ -49,26 +58,38 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#0A1C40;
-      --ink:#F4E8D2;--ink-soft:#C9B98A;--line:rgba(244,232,210,.18);
-      --accent:#9DB8F0;--accent-soft:#2A4E8C;--on-accent-soft:#F4E8D2;
+      --bg:#0C0F16;
+      --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
+      --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
+      --surface-1:#151B25;--surface-2:#1D2431;--outline:#313B4C;
+      --secondary:#8FC7AA;--secondary-soft:#1F4536;--on-secondary-soft:#CFEBDC;
+      --case-bg:#18294A;--on-case:#E9EFFB;
       --scrim:rgba(0,0,0,.6);
       --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
+      --shadow-2:0 1px 3px rgba(0,0,0,.4),0 8px 20px rgba(0,0,0,.35);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0A1C40;
-    --ink:#F4E8D2;--ink-soft:#C9B98A;--line:rgba(244,232,210,.18);
-    --accent:#9DB8F0;--accent-soft:#2A4E8C;--on-accent-soft:#F4E8D2;
+    --bg:#0C0F16;
+    --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
+    --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
+    --surface-1:#151B25;--surface-2:#1D2431;--outline:#313B4C;
+    --secondary:#8FC7AA;--secondary-soft:#1F4536;--on-secondary-soft:#CFEBDC;
+    --case-bg:#18294A;--on-case:#E9EFFB;
     --scrim:rgba(0,0,0,.6);
     --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
+    --shadow-2:0 1px 3px rgba(0,0,0,.4),0 8px 20px rgba(0,0,0,.35);
   }
   :root[data-theme="light"]{
-    --bg:#FBF3E2;
-    --ink:#18150F;--ink-soft:#5B4F3A;--line:#E4D2AC;
-    --accent:#173B78;--accent-soft:#DCE4F5;--on-accent-soft:#12294F;
-    --scrim:rgba(15,12,5,.4);
-    --shadow:0 1px 2px rgba(23,20,10,.14),0 1px 3px 1px rgba(23,20,10,.08);
+    --bg:#F2F4F9;
+    --ink:#13161D;--ink-soft:#4B5568;--line:#D9DFEA;
+    --accent:#2F4E7A;--accent-soft:#DCE6F7;--on-accent-soft:#152A4C;
+    --surface-1:#E6EAF2;--surface-2:#DAE0EC;--outline:#C7CFDD;
+    --secondary:#3F6B54;--secondary-soft:#DCEAE1;--on-secondary-soft:#153A2B;
+    --case-bg:#2F4E7A;--on-case:#EEF2FA;
+    --scrim:rgba(15,20,30,.45);
+    --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
+    --shadow-2:0 1px 3px rgba(20,30,50,.12),0 6px 16px rgba(20,30,50,.10);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -80,7 +101,7 @@
   }
   a{color:inherit;text-decoration:none}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
   @media (min-width:840px){.wrap{padding:0 40px}}
 
   @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -88,11 +109,15 @@
 
   /* ============ topbar ============ */
   .topbar{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line)}
-  .topbar-inner{max-width:1040px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:14px;column-gap:20px}
+  .topbar-inner{max-width:1080px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:14px;column-gap:20px}
   @media (min-width:901px){.topbar-inner{padding:0 40px;height:72px}}
-  .brand{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--ink);letter-spacing:.01em;border-radius:8px}
+  .brand{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--ink);border-radius:8px}
 
-  .topbar-lead{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .topbar-lead{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+  .topnav{display:flex;gap:24px;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+  @media (hover:hover) and (pointer:fine){.topnav a:hover{color:var(--ink)}}
+  @media (max-width:640px){.topnav{display:none}}
+
   .utilbar{display:flex;align-items:center;gap:2px}
   .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;padding:4px 7px;color:var(--ink-soft);opacity:.6}
   .lang-btn.on{color:var(--ink);opacity:1}
@@ -101,9 +126,9 @@
 
   .fab{
     position:fixed;right:28px;bottom:24px;z-index:65;
-    background:var(--accent-soft);color:var(--on-accent-soft);border:none;border-radius:999px;padding:14px 26px;
-    font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
-    box-shadow:var(--shadow);
+    background:var(--case-bg);color:var(--on-case);border:none;border-radius:999px;padding:14px 26px;
+    font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
+    box-shadow:var(--shadow-2);
   }
 
   @media (max-width:560px){
@@ -111,19 +136,17 @@
   }
 
   /* ============ hero ============ */
-  .hero{padding:100px 0 64px}
-  @media (max-width:900px){.hero{padding:56px 0 40px}}
-  .hero-toprow{display:flex;align-items:stretch;gap:32px}
-  @media (max-width:900px){.hero-toprow{flex-wrap:wrap}}
-  .avatar{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:center 40%;display:block;box-shadow:var(--shadow);flex:none}
-  .hero-divider{width:1px;background:var(--line);align-self:stretch}
-  @media (max-width:900px){.hero-divider{display:none}}
+  .hero{padding:72px 0 56px}
+  @media (max-width:900px){.hero{padding:48px 0 36px}}
+  .hero-toprow{display:flex;align-items:center;gap:36px}
+  @media (max-width:900px){.hero-toprow{flex-wrap:wrap;gap:24px}}
+  .avatar{width:160px;height:160px;border-radius:28px;object-fit:cover;object-position:center 40%;display:block;box-shadow:var(--shadow-2);border:1px solid var(--line);flex:none}
   .hero-text{display:flex;flex-direction:column}
   .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
-  .hero-name{font-family:var(--serif);font-size:clamp(38px,5vw,54px);font-weight:400;line-height:1.05;color:var(--ink);margin:0}
-  .hero-role{font-family:var(--sans);font-size:17.5px;font-weight:400;color:var(--ink-soft);margin-top:8px}
+  .hero-name{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,50px);letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:0;text-wrap:balance}
+  .hero-role{font-family:var(--sans);font-size:16.5px;font-weight:400;color:var(--ink-soft);margin-top:10px;max-width:52ch}
 
-  .social-row{display:flex;align-items:center;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .social-row{display:flex;align-items:center;gap:10px;margin-top:22px;flex-wrap:wrap}
   .iconbtn{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);border:1px solid var(--line);background:none;font:inherit;cursor:pointer}
   .iconbtn svg{width:15px;height:15px}
   .follow{margin-left:8px;font-family:var(--sans);font-size:13.5px;line-height:1;color:var(--ink-soft)}
@@ -133,27 +156,39 @@
   .cta-link{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:2px;white-space:nowrap}
   @media (hover:hover) and (pointer:fine){.cta-link:hover{border-bottom-color:var(--accent)}}
 
-  /* ============ section label ============ */
+  /* ============ section head ============ */
   .section-label{
     display:flex;align-items:baseline;gap:13px;font-family:var(--sans);font-size:14.5px;font-weight:600;
-    letter-spacing:.055em;text-transform:uppercase;color:var(--ink);padding:88px 0 24px;margin-bottom:36px;scroll-margin-top:88px;
+    letter-spacing:.055em;text-transform:uppercase;color:var(--ink);padding:72px 0 0;scroll-margin-top:88px;
   }
-  @media (max-width:900px){.section-label{padding:64px 0 20px}}
+  @media (max-width:900px){.section-label{padding:52px 0 0}}
   .section-num{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
+  .section-head{padding-bottom:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .section-title{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.01em;margin-top:8px;text-wrap:balance}
+  .section-sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);max-width:42ch;margin-top:8px}
+  .section-label.compact{padding-bottom:24px}
+
+  /* ============ pilastri ============ */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:8px}
+  @media (max-width:820px){.pillars{grid-template-columns:1fr}}
+  .pillar{background:var(--surface-1);border-radius:20px;padding:24px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:11px;transition:transform var(--dur-l) var(--ease),box-shadow var(--dur-l) var(--ease)}
+  @media (hover:hover) and (pointer:fine){.pillar:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}}
+  .pillar-icon{width:42px;height:42px;border-radius:13px;background:var(--accent-soft);color:var(--on-accent-soft);display:grid;place-items:center;flex:none}
+  .pillar-icon svg{width:21px;height:21px}
+  .pillar-title{font-family:var(--display);font-weight:700;font-size:16.5px;letter-spacing:-.005em;color:var(--ink)}
+  .pillar-desc{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55}
+  .pillar-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  .chip-mini{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--ink-soft);background:var(--surface-2);border-radius:8px;padding:4px 8px}
 
   /* ============ in sintesi ============ */
-  .statrow{display:flex;gap:44px;padding-bottom:8px}
-  .stat{flex:1;display:flex;flex-direction:column;gap:10px;padding-left:44px;border-left:1px solid var(--line)}
-  .stat:first-child{padding-left:0;border-left:none}
-  .stat .v{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1;color:var(--ink);margin:0;display:inline-block;font-variant-numeric:tabular-nums}
+  .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:8px}
+  @media (max-width:720px){.statrow{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--secondary-soft);color:var(--on-secondary-soft);border-radius:18px;padding:20px}
+  .stat .v{font-family:var(--display);font-size:30px;font-weight:800;line-height:1;margin:0;display:inline-block;font-variant-numeric:tabular-nums}
   .stat .v.pop{animation:statPop .55s var(--ease)}
-  .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-  .stat .d{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0}
-  .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:2px}
-  @media (max-width:640px){
-    .statrow{flex-direction:column;gap:28px}
-    .stat{border-left:none;padding-left:0}
-  }
+  .stat .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.85;display:block;margin-top:8px}
+  .stat .d{font-family:var(--sans);font-size:12.5px;opacity:.92;line-height:1.5;margin:6px 0 0}
+  .stat .lnk{font-family:var(--mono);font-size:10.5px;opacity:.92;margin-top:8px;display:inline-block;border-bottom:1px solid currentColor}
 
   /* ============ percorso ============ */
   .timeline{padding-bottom:8px}
@@ -161,29 +196,42 @@
   .job-dotcol{width:9px;flex:none}
   .job-dot{width:9px;height:9px;border-radius:50%;background:var(--line);display:block;margin-top:6px}
   .job-row.current .job-dot{background:var(--accent)}
-  .job-body{padding-bottom:56px;border-left:1px solid var(--line);margin-left:-1px;padding-left:26px}
+  .job-body{padding-bottom:48px;border-left:1px solid var(--line);margin-left:-1px;padding-left:26px}
   .job-row.last .job-body{padding-bottom:0;border-left:none}
   .job-overline{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-  .job-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-top:4px}
+  .job-title{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin-top:5px}
   .job-supp{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin-top:8px;line-height:1.65;max-width:640px}
 
-  /* ============ casi studio (stile percorso) ============ */
-  .case-status{color:var(--accent)}
-  .case-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-top:4px;line-height:1.3}
-  @media (hover:hover) and (pointer:fine){.case-title a:hover{color:var(--accent)}}
-  .case-supp{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin-top:8px;line-height:1.7;max-width:640px}
-  .metarow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px}
-  .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
+  /* ============ casi studio (filled card) ============ */
+  .cases{display:flex;flex-direction:column;gap:18px;padding-bottom:8px}
+  .case-card{background:var(--case-bg);color:var(--on-case);border-radius:22px;padding:30px;box-shadow:var(--shadow-2);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}
+  @media (max-width:720px){.case-card{grid-template-columns:1fr;padding:26px 22px}}
+  .case-status{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,.14);border-radius:100px;padding:5px 12px;width:fit-content}
+  .case-status .dot{width:6px;height:6px;border-radius:50%;background:#8FE0B0}
+  .case-title{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.005em;margin-top:14px;line-height:1.3}
+  .case-result{font-family:var(--mono);font-size:12px;letter-spacing:.01em;opacity:.9;margin-top:8px}
+  .case-block-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin-top:18px}
+  .case-p{font-family:var(--sans);font-size:14.5px;line-height:1.6;margin-top:6px;opacity:.95;max-width:60ch}
+  .metarow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .metachip{font-family:var(--mono);font-size:10.5px;background:rgba(255,255,255,.12);border-radius:8px;padding:5px 10px}
+  .case-btn{align-self:start;justify-self:end;background:#FFFFFF;color:var(--case-bg);font-family:var(--sans);font-weight:600;font-size:13px;border-radius:100px;padding:11px 20px;white-space:nowrap}
+  @media (hover:hover) and (pointer:fine){.case-btn:hover{opacity:.9}}
+  @media (max-width:720px){.case-btn{justify-self:start}}
 
-  /* ============ competenze (stile percorso) ============ */
-  .skill-list{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin-top:8px;line-height:1.7;max-width:640px}
+  /* ============ competenze (chip) ============ */
+  .skill-group{padding-bottom:26px}
+  .skill-group:last-child{padding-bottom:8px}
+  .skill-cat{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+  .chip-row{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-family:var(--sans);font-weight:500;font-size:13px;background:var(--surface-1);border:1px solid var(--outline);border-radius:100px;padding:8px 15px;color:var(--ink)}
 
-  /* ============ oltre (stile percorso) ============ */
-  .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:640px}
+  /* ============ oltre ============ */
+  .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:640px;padding-bottom:8px}
 
-  footer{padding:80px 0 96px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
-  @media (max-width:900px){footer{padding:56px 0 88px}}
-  footer p{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
+  footer{padding:56px 0 88px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  @media (max-width:900px){footer{padding:44px 0 80px}}
+  .footer-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
+  .footer-cta{background:var(--case-bg);color:var(--on-case);font-family:var(--sans);font-weight:600;font-size:13.5px;border-radius:100px;padding:12px 24px;border:none;cursor:pointer;font-variant-numeric:tabular-nums}
 
   /* ============ reveal allo scroll ============ */
   .rv{opacity:0;transform:translateY(28px)}
@@ -197,14 +245,14 @@
   .modal[hidden]{display:none}
   .modal{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px}
   .modal-backdrop{position:absolute;inset:0;background:var(--scrim)}
-  .modal-panel{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:22px;max-width:440px;width:100%;padding:36px;max-height:86vh;overflow:auto;box-shadow:var(--shadow)}
+  .modal-panel{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:22px;max-width:440px;width:100%;padding:36px;max-height:86vh;overflow:auto;box-shadow:var(--shadow-2)}
   @media (prefers-reduced-motion:no-preference){.modal-panel{animation:panelIn .25s ease-out}}
   @media (max-width:640px){
     .modal{align-items:flex-end;padding:0}
     .modal-panel{max-width:100%;border-radius:20px 20px 0 0}
   }
   .modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}
-  .modal-head h2{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink)}
+  .modal-head h2{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
   .modal-x{background:none;border:1px solid var(--line);cursor:pointer;color:var(--ink-soft);width:30px;height:30px;border-radius:50%;font-size:16px;line-height:1;flex:none;font-family:var(--sans)}
   .cm-row{padding:14px 0;border-top:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
   .cm-row:first-of-type{border-top:none}
@@ -219,13 +267,18 @@
   <div class="topbar-inner">
     <div class="topbar-lead">
       <a class="brand" href="#profilo">N. Forcolin</a>
-      <div class="utilbar">
-        <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
-        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
-        <span class="util-divider"></span>
-        <button class="theme-toggle" aria-label="Cambia tema">DARK</button>
-      </div>
+      <nav class="topnav">
+        <a href="#casi-studio" data-i18n="sec_lavori">Casi studio</a>
+        <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
+        <a href="#percorso" data-i18n="sec_percorso">Percorso</a>
+      </nav>
+    </div>
+    <div class="utilbar">
+      <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+      <span class="util-divider"></span>
+      <button class="theme-toggle" aria-label="Cambia tema">DARK</button>
     </div>
   </div>
 </header>
@@ -236,11 +289,10 @@
   <div class="wrap">
     <div class="hero-toprow">
       <img class="avatar" src="photo.jpg" alt="Nicolò Forcolin" width="160" height="160">
-      <div class="hero-divider"></div>
       <div class="hero-text">
         <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
         <h1 class="hero-name">Nicolò Forcolin</h1>
-        <p class="hero-role">Human and Enterprise reliability</p>
+        <p class="hero-role">🇮🇹 🇧🇪 🇪🇺 MLOps &amp; AI Integration | Human and Enterprise Reliability</p>
         <div class="hero-cta-row">
           <a class="cta-link" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
           <a class="cta-link" href="#casi-studio" data-i18n="hero_cta2">Governance &amp; metodo</a>
@@ -265,7 +317,38 @@
 
 <main class="wrap">
 
-  <div class="section-label" id="sintesi"><span class="section-num">01</span><span data-i18n="proof_label">In sintesi</span></div>
+  <div class="section-label" id="pilastri"><span class="section-num">01</span><span data-i18n="sec_pilastri">Pilastri</span></div>
+  <div class="section-head">
+    <div>
+      <h2 class="section-title" data-i18n="pilastri_title">Tre aree di responsabilità</h2>
+    </div>
+    <p class="section-sub" data-i18n="pilastri_sub">Le competenze reali raggruppate in tre pilastri strategici.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar rv">
+      <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3.2v5.3c0 4.6-3 8.8-7 9.9-4-1.1-7-5.3-7-9.9V6.2L12 3Z"/><path d="M9.2 12.3l2 2 3.6-4"/></svg></div>
+      <p class="pillar-title" data-i18n="pil1_title">Sicurezza &amp; Governance</p>
+      <p class="pillar-desc" data-i18n="pil1_desc">Adozione dell'AI in ambienti a dati sensibili e fortemente regolamentati, con validazione human-in-the-loop e governance presidiata.</p>
+      <div class="pillar-tags"><span class="chip-mini">Governance AI</span><span class="chip-mini" data-i18n="pil1_tag2">Dati sensibili</span><span class="chip-mini">On-premise</span></div>
+    </div>
+    <div class="pillar rv" style="transition-delay:.06s">
+      <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.4"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18.1 5.9l-1.7 1.7M7.6 16.4l-1.7 1.7M18.1 18.1l-1.7-1.7M7.6 7.6 5.9 5.9"/></svg></div>
+      <p class="pillar-title">Generative AI &amp; MLOps</p>
+      <p class="pillar-desc" data-i18n="pil2_desc">Sistemi RAG e modelli locali (Gemma, Qwen) per rendere interrogabile la conoscenza operativa, dal fine-tuning al deploy.</p>
+      <div class="pillar-tags"><span class="chip-mini">RAG</span><span class="chip-mini">LLM</span><span class="chip-mini">Fine-tuning</span></div>
+    </div>
+    <div class="pillar rv" style="transition-delay:.12s">
+      <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 19c.6-3 3-5 5.8-5s5.2 2 5.8 5"/><path d="M16.2 6.4c1.5.5 2.5 1.9 2.5 3.6 0 1.6-1 3-2.5 3.6M18 14.3c1.8.6 3 2.3 3 4.2"/></svg></div>
+      <p class="pillar-title" data-i18n="pil3_title">Integrazione HR</p>
+      <p class="pillar-desc" data-i18n="pil3_desc">Upskilling di oltre 25 colleghi su AI operativa, public speaking e comunicazione: la tecnologia adottata attraverso le persone.</p>
+      <div class="pillar-tags"><span class="chip-mini">Upskilling</span><span class="chip-mini" data-i18n="pil3_tag2">Formazione</span><span class="chip-mini" data-i18n="pil3_tag3">Comunicazione</span></div>
+    </div>
+  </div>
+
+  <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">In sintesi</span></div>
+  <div class="section-head">
+    <h2 class="section-title" data-i18n="sintesi_title">Numeri reali del percorso</h2>
+  </div>
   <div class="statrow">
     <div class="stat rv" aria-labelledby="p3k">
       <p class="v"><span class="num" data-count="15">0</span></p>
@@ -292,7 +375,73 @@
     </div>
   </div>
 
-  <div class="section-label" id="percorso"><span class="section-num">02</span><span data-i18n="sec_percorso">Percorso</span></div>
+  <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Casi studio</span></div>
+  <div class="section-head">
+    <h2 class="section-title" data-i18n="casi_title">Problema aziendale → soluzione architetturale</h2>
+  </div>
+  <div class="cases">
+    <article class="case-card rv">
+      <div>
+        <span class="case-status"><span class="dot"></span><span data-i18n="st_prod">In produzione</span></span>
+        <h3 class="case-title" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</h3>
+        <p class="case-result" data-i18n="c1_result">Risultato — meno tempo di ricerca per manager e decision-maker</p>
+        <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+        <p class="case-p" data-i18n="c1_problem">Conoscenza operativa sepolta in più repository aziendali, nessun accesso strutturato per chi deve decidere.</p>
+        <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
+        <p class="case-p" data-i18n="c1_solution">Due agenti RAG (Retrieval-Augmented Generation) che rendono la conoscenza interrogabile in linguaggio naturale, con validazione human-in-the-loop.</p>
+        <div class="metarow">
+          <span class="metachip" data-i18n="c1m1t">Ambito — InfoCamere · catalogo servizi IT</span>
+          <span class="metachip" data-i18n="c1m2t">Vincoli — dati interni, governance presidiata</span>
+        </div>
+      </div>
+      <a class="case-btn" href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="case_cta">Approfondisci</a>
+    </article>
+    <article class="case-card rv" style="transition-delay:.08s">
+      <div>
+        <span class="case-status"><span class="dot"></span><span data-i18n="st_prod2">In produzione</span></span>
+        <h3 class="case-title" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</h3>
+        <p class="case-result" data-i18n="c2_result">Risultato — nessun dato esce dal perimetro aziendale</p>
+        <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+        <p class="case-p" data-i18n="c2_problem">L'adozione dell'AI era preclusa negli ambienti a dati sensibili, dove i dati non possono uscire dal perimetro.</p>
+        <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
+        <p class="case-p" data-i18n="c2_solution">Modelli locali (Gemma, Qwen, architetture Ollama-based), addestrati su procedure interne e distribuiti interamente on-premise.</p>
+        <div class="metarow">
+          <span class="metachip" data-i18n="c2m1t">Approccio — fine-tuning · deploy on-premise</span>
+        </div>
+      </div>
+      <a class="case-btn" href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="case_cta">Approfondisci</a>
+    </article>
+  </div>
+
+  <div class="section-label" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
+  <div class="section-head">
+    <h2 class="section-title" data-i18n="competenze_title">A blocchi, non elenchi</h2>
+  </div>
+  <div class="skill-group rv">
+    <p class="skill-cat" data-i18n="sk_cat1">AI &amp; Machine Learning</p>
+    <div class="chip-row" data-i18n-chips="sk1"></div>
+  </div>
+  <div class="skill-group rv" style="transition-delay:.05s">
+    <p class="skill-cat" data-i18n="sk_cat2">Sviluppo &amp; Cloud</p>
+    <div class="chip-row" data-i18n-chips="sk2"></div>
+  </div>
+  <div class="skill-group rv" style="transition-delay:.1s">
+    <p class="skill-cat" data-i18n="sk_cat3">Business &amp; Analytics</p>
+    <div class="chip-row" data-i18n-chips="sk3"></div>
+  </div>
+  <div class="skill-group rv" style="transition-delay:.15s">
+    <p class="skill-cat" data-i18n="sk_cat4">Persone &amp; Comunicazione</p>
+    <div class="chip-row" data-i18n-chips="sk4"></div>
+  </div>
+  <div class="skill-group rv" style="transition-delay:.2s">
+    <p class="skill-cat" data-i18n="sk_cat5">Settori regolamentati</p>
+    <div class="chip-row" data-i18n-chips="sk5"></div>
+  </div>
+
+  <div class="section-label" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Percorso</span></div>
+  <div class="section-head">
+    <h2 class="section-title" data-i18n="percorso_title">Timeline istituzionale</h2>
+  </div>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-dotcol"><span class="job-dot"></span></div>
@@ -320,85 +469,13 @@
     </div>
   </div>
 
-  <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Casi studio</span></div>
-  <div class="timeline rv">
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline">01 · <span class="case-status" data-i18n="st_prod">In produzione</span></div>
-        <h3 class="case-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c1t">Enterprise Knowledge Retrieval — due sistemi RAG</a></h3>
-        <p class="case-supp" data-i18n="c1p">Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.</p>
-        <div class="metarow">
-          <span class="metachip" data-i18n="c1m1t">Ambito — InfoCamere · catalogo servizi IT</span>
-          <span class="metachip" data-i18n="c1m2t">Vincoli — dati interni, governance presidiata</span>
-        </div>
-      </div>
-    </div>
-    <div class="job-row last">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline">02 · <span class="case-status" data-i18n="st_prod2">In produzione</span></div>
-        <h3 class="case-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" data-i18n="c2t">Modelli locali per ambienti a dati sensibili</a></h3>
-        <p class="case-supp" data-i18n="c2p">Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise.</p>
-        <div class="metarow">
-          <span class="metachip" data-i18n="c2m1t">Approccio — fine-tuning · deploy on-premise</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-label" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
-  <div class="timeline rv">
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat1">AI &amp; Machine Learning</div>
-        <p class="skill-list" data-i18n="sk1">Large Language Models (LLM) · Governance e regolamentazione dell'IA · Machine Learning · MLOps · Knowledge Retrieval (RAG) · Adozione e strategia AI in azienda · Human-in-the-loop</p>
-      </div>
-    </div>
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat2">Sviluppo &amp; Cloud</div>
-        <p class="skill-list" data-i18n="sk2">Python · Java · TypeScript · Flutter · Google Cloud Platform (GCP) · Microservizi &amp; REST API · Database · Amministrazione Linux/Windows</p>
-      </div>
-    </div>
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat3">Business &amp; Analytics</div>
-        <p class="skill-list" data-i18n="sk3">Project Management (Agile) · Pianificazione strategica · Power BI &amp; Analytics</p>
-      </div>
-    </div>
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat4">Persone &amp; Comunicazione</div>
-        <p class="skill-list" data-i18n="sk4">Public speaking · Comunicazione e social media · Risorse umane (HR)</p>
-      </div>
-    </div>
-    <div class="job-row last">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat5">Settori regolamentati</div>
-        <p class="skill-list" data-i18n="sk5">Generali Assicurazioni</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-label" id="oltre"><span class="section-num">05</span><span data-i18n="sec_oltre">Oltre</span></div>
-  <div class="timeline rv">
-    <div class="job-row last">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <p class="oltre-supp" data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock.</p>
-      </div>
-    </div>
-  </div>
+  <div class="section-label" id="oltre"><span class="section-num">06</span><span data-i18n="sec_oltre">Oltre</span></div>
+  <div class="section-head"></div>
+  <p class="oltre-supp rv" data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock.</p>
 
   <footer>
-    <p>© 2026 Nicolò Forcolin</p>
-    <p>Padova, Italia</p>
+    <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
+    <button class="footer-cta" data-open-contacts data-i18n="nav_contatti">Contatti</button>
   </footer>
 </main>
 
@@ -434,26 +511,41 @@
       nav_profilo:"Profilo",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Esplora i casi studio", hero_cta2:"Governance & metodo", hero_cta3:"Competenze",
+      sec_pilastri:"Pilastri",
+      pilastri_title:"Tre aree di responsabilità",
+      pilastri_sub:"Le competenze reali raggruppate in tre pilastri strategici.",
+      pil1_title:"Sicurezza & Governance", pil1_desc:"Adozione dell'AI in ambienti a dati sensibili e fortemente regolamentati, con validazione human-in-the-loop e governance presidiata.", pil1_tag2:"Dati sensibili",
+      pil2_desc:"Sistemi RAG e modelli locali (Gemma, Qwen) per rendere interrogabile la conoscenza operativa, dal fine-tuning al deploy.",
+      pil3_title:"Integrazione HR", pil3_desc:"Upskilling di oltre 25 colleghi su AI operativa, public speaking e comunicazione: la tecnologia adottata attraverso le persone.", pil3_tag2:"Formazione", pil3_tag3:"Comunicazione",
       proof_label:"In sintesi",
+      sintesi_title:"Numeri reali del percorso",
       p1k:"Advisory", p1d:"Consulenza AI a 2 business unit interne e ad 1 CEO (azienda DABO, attiva tra Europa e Cina)",
       p2k:"Formazione", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa: upskilling di 25+ colleghi e del CEO di DABO. Risparmi stimati in mesi di lavoro.",
       p3k:"Certificazioni", p3d:"Percorsi certificati su AI, cloud e sviluppo — IBM, Google.",
       p4k:"Innovazione", p4d:"Su invito del CEO di DABO, membro del team SCWL per il contest \"2026 Sprint Forward in Golden Boots\" — Innovation & Entrepreneurship Competition, distretto di Shangcheng.",
       sec_lavori:"Casi studio",
+      casi_title:"Problema aziendale → soluzione architetturale",
+      case_problem_label:"Problema", case_solution_label:"Soluzione", case_cta:"Approfondisci",
       c1t:"Enterprise Knowledge Retrieval — due sistemi RAG",
-      c1p:"Due agenti RAG (Retrieval-Augmented Generation) che rendono interrogabile da manager e decision-maker la conoscenza operativa, prima sepolta in più repository aziendali: meno tempo di ricerca, accesso a documentazione complessa e strutturata, validazione human-in-the-loop.",
+      c1_result:"Risultato — meno tempo di ricerca per manager e decision-maker",
+      c1_problem:"Conoscenza operativa sepolta in più repository aziendali, nessun accesso strutturato per chi deve decidere.",
+      c1_solution:"Due agenti RAG (Retrieval-Augmented Generation) che rendono la conoscenza interrogabile in linguaggio naturale, con validazione human-in-the-loop.",
       st_prod:"In produzione", st_prod2:"In produzione",
       c1m1t:"Ambito — InfoCamere · catalogo servizi IT",
       c1m2t:"Vincoli — dati interni, governance presidiata",
       c2t:"Modelli locali per ambienti a dati sensibili",
-      c2p:"Modelli locali (Gemma, Qwen, architetture Ollama-based) addestrati su procedure interne, per valutare la fattibilità dell'adozione AI in ambienti a dati sensibili dove i dati non possono uscire dal perimetro. Deploy interamente on-premise.",
+      c2_result:"Risultato — nessun dato esce dal perimetro aziendale",
+      c2_problem:"L'adozione dell'AI era preclusa negli ambienti a dati sensibili, dove i dati non possono uscire dal perimetro.",
+      c2_solution:"Modelli locali (Gemma, Qwen, architetture Ollama-based), addestrati su procedure interne e distribuiti interamente on-premise.",
       c2m1t:"Approccio — fine-tuning · deploy on-premise",
       sec_percorso:"Percorso",
+      percorso_title:"Timeline istituzionale",
       t1:"Set 2022 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
       pr1s:"SysAdmin. Monitoraggio dell'infrastruttura mission-critical per il sistema camerale, con focus crescente sull'integrazione dell'AI nei processi operativi.",
       pr2:"Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).",
       pr3:"Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.",
       sec_competenze:"Competenze",
+      competenze_title:"A blocchi, non elenchi",
       sk_cat1:"AI & Machine Learning", sk1:"Large Language Models (LLM) · Governance e regolamentazione dell'IA · Machine Learning · MLOps · Knowledge Retrieval (RAG) · Adozione e strategia AI in azienda · Human-in-the-loop",
       sk_cat2:"Sviluppo & Cloud", sk2:"Python · Java · TypeScript · Flutter · Google Cloud Platform (GCP) · Microservizi & REST API · Database · Amministrazione Linux/Windows",
       sk_cat3:"Business & Analytics", sk3:"Project Management (Agile) · Pianificazione strategica · Power BI & Analytics",
@@ -469,26 +561,41 @@
       nav_profilo:"Profile",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Explore case studies", hero_cta2:"Governance & method", hero_cta3:"Skills",
+      sec_pilastri:"Pillars",
+      pilastri_title:"Three areas of responsibility",
+      pilastri_sub:"Real-world skills grouped into three strategic pillars.",
+      pil1_title:"Security & Governance", pil1_desc:"AI adoption in sensitive-data, heavily regulated environments, with human-in-the-loop validation and close governance.", pil1_tag2:"Sensitive data",
+      pil2_desc:"RAG systems and local models (Gemma, Qwen) that make operational knowledge queryable, from fine-tuning to deployment.",
+      pil3_title:"HR Integration", pil3_desc:"Upskilling 25+ colleagues on operational AI, public speaking and communication: technology adopted through people.", pil3_tag2:"Training", pil3_tag3:"Communication",
       proof_label:"At a glance",
+      sintesi_title:"Real numbers from the journey",
       p1k:"Advisory", p1d:"AI advisory to 2 internal business units and to 1 CEO (DABO, a company active between Europe and China)",
       p2k:"Training", p2d:"5 internal and external training programs on operational AI: upskilling 25+ colleagues and DABO's CEO. Estimated savings worth months of work.",
       p3k:"Certifications", p3d:"Certified paths across AI, cloud and development — IBM, Google.",
       p4k:"Innovation", p4d:"At the invitation of DABO's CEO, SCWL Team member for the \"2026 Sprint Forward in Golden Boots\" — Innovation & Entrepreneurship Competition, Shangcheng District.",
       sec_lavori:"Case studies",
+      casi_title:"Business problem → architectural solution",
+      case_problem_label:"Problem", case_solution_label:"Solution", case_cta:"Learn more",
       c1t:"Enterprise Knowledge Retrieval — two RAG systems",
-      c1p:"Two RAG agents (Retrieval-Augmented Generation) that make operational knowledge — previously buried across multiple enterprise repositories — queryable by managers and decision-makers: less retrieval time, access to complex and structured documentation, human-in-the-loop validation.",
+      c1_result:"Result — less retrieval time for managers and decision-makers",
+      c1_problem:"Operational knowledge buried across multiple enterprise repositories, no structured access for decision-makers.",
+      c1_solution:"Two RAG agents (Retrieval-Augmented Generation) that make knowledge queryable in natural language, with human-in-the-loop validation.",
       st_prod:"In production", st_prod2:"In production",
       c1m1t:"Scope — InfoCamere · IT service catalog",
       c1m2t:"Constraints — internal data, governed environment",
       c2t:"Local models for sensitive-data environments",
-      c2p:"Local models (Gemma, Qwen, Ollama-based architectures) trained on internal procedures, to assess the feasibility of AI adoption in sensitive-data environments where data cannot leave the perimeter. Deployed fully on-premise.",
+      c2_result:"Result — no data leaves the company perimeter",
+      c2_problem:"AI adoption was precluded in sensitive-data environments, where data cannot leave the perimeter.",
+      c2_solution:"Local models (Gemma, Qwen, Ollama-based architectures), trained on internal procedures and deployed fully on-premise.",
       c2m1t:"Approach — fine-tuning · on-premise deployment",
       sec_percorso:"Path",
+      percorso_title:"Institutional timeline",
       t1:"Sep 2022 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
       pr1s:"SysAdmin. Monitoring the mission-critical infrastructure for the Italian Chambers of Commerce system, with a growing focus on integrating AI into operational processes.",
       pr2:"IT Specialist (internship). First hands-on IT role: infrastructure support, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition).",
       pr3:"Insurance consultant. Client-facing role in a highly regulated industry, where trust, compliance and reliability matter as much as the business itself.",
       sec_competenze:"Skills",
+      competenze_title:"In blocks, not lists",
       sk_cat1:"AI & Machine Learning", sk1:"Large Language Models (LLM) · AI governance & regulation · Machine Learning · MLOps · Knowledge Retrieval (RAG) · Enterprise AI adoption & strategy · Human-in-the-loop",
       sk_cat2:"Development & Cloud", sk2:"Python · Java · TypeScript · Flutter · Google Cloud Platform (GCP) · Microservices & REST APIs · Databases · Linux/Windows administration",
       sk_cat3:"Business & Analytics", sk3:"Project Management (Agile) · Strategic planning · Power BI & Analytics",
@@ -504,26 +611,41 @@
       nav_profilo:"Profil",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Découvrir les études de cas", hero_cta2:"Gouvernance & méthode", hero_cta3:"Compétences",
+      sec_pilastri:"Piliers",
+      pilastri_title:"Trois domaines de responsabilité",
+      pilastri_sub:"Les compétences réelles regroupées en trois piliers stratégiques.",
+      pil1_title:"Sécurité & Gouvernance", pil1_desc:"Adoption de l'IA dans des environnements à données sensibles et fortement réglementés, avec validation human-in-the-loop et gouvernance maîtrisée.", pil1_tag2:"Données sensibles",
+      pil2_desc:"Systèmes RAG et modèles locaux (Gemma, Qwen) rendant la connaissance opérationnelle interrogeable, du fine-tuning au déploiement.",
+      pil3_title:"Intégration RH", pil3_desc:"Upskilling de plus de 25 collègues sur l'IA opérationnelle, la prise de parole en public et la communication : la technologie adoptée à travers les personnes.", pil3_tag2:"Formation", pil3_tag3:"Communication",
       proof_label:"En bref",
+      sintesi_title:"Chiffres réels du parcours",
       p1k:"Conseil", p1d:"Conseil en IA auprès de 2 business units internes et d'1 CEO (DABO, entreprise active entre l'Europe et la Chine)",
       p2k:"Formation", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle : upskilling de 25+ collègues et du CEO de DABO. Gains estimés en mois de travail.",
       p3k:"Certifications", p3d:"Parcours certifiés en IA, cloud et développement — IBM, Google.",
       p4k:"Innovation", p4d:"Sur invitation du CEO de DABO, membre de l'équipe SCWL pour le concours « 2026 Sprint Forward in Golden Boots » — Innovation & Entrepreneurship Competition, district de Shangcheng.",
       sec_lavori:"Études de cas",
+      casi_title:"Problème métier → solution architecturale",
+      case_problem_label:"Problème", case_solution_label:"Solution", case_cta:"En savoir plus",
       c1t:"Enterprise Knowledge Retrieval — deux systèmes RAG",
-      c1p:"Deux agents RAG (Retrieval-Augmented Generation) qui rendent interrogeable par les managers et les décideurs la connaissance opérationnelle, auparavant enfouie dans plusieurs référentiels d'entreprise : moins de temps de recherche, accès à une documentation complexe et structurée, validation human-in-the-loop.",
+      c1_result:"Résultat — moins de temps de recherche pour managers et décideurs",
+      c1_problem:"Connaissance opérationnelle enfouie dans plusieurs référentiels d'entreprise, aucun accès structuré pour les décideurs.",
+      c1_solution:"Deux agents RAG (Retrieval-Augmented Generation) qui rendent la connaissance interrogeable en langage naturel, avec validation human-in-the-loop.",
       st_prod:"En production", st_prod2:"En production",
       c1m1t:"Périmètre — InfoCamere · catalogue des services IT",
       c1m2t:"Contraintes — données internes, gouvernance maîtrisée",
       c2t:"Modèles locaux pour environnements à données sensibles",
-      c2p:"Des modèles locaux (Gemma, Qwen, architectures Ollama-based) entraînés sur des procédures internes, pour évaluer la faisabilité de l'adoption de l'IA dans des environnements à données sensibles où les données ne peuvent pas sortir du périmètre. Déployés entièrement on-premise.",
+      c2_result:"Résultat — aucune donnée ne sort du périmètre de l'entreprise",
+      c2_problem:"L'adoption de l'IA était impossible dans les environnements à données sensibles, où les données ne peuvent pas sortir du périmètre.",
+      c2_solution:"Des modèles locaux (Gemma, Qwen, architectures Ollama-based), entraînés sur des procédures internes et déployés entièrement on-premise.",
       c2m1t:"Approche — fine-tuning · déploiement on-premise",
       sec_percorso:"Parcours",
+      percorso_title:"Chronologie institutionnelle",
       t1:"Sept. 2022 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
       pr1s:"SysAdmin. Suivi de l'infrastructure critique pour le système des Chambres de commerce italiennes, avec un accent croissant sur l'intégration de l'IA dans les processus opérationnels.",
       pr2:"Spécialiste IT (stage). Premier rôle IT concret : support infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne).",
       pr3:"Consultant assurance. Rôle au contact du client dans un secteur fortement réglementé, où la confiance, la conformité et la fiabilité comptent autant que le business lui-même.",
       sec_competenze:"Compétences",
+      competenze_title:"En blocs, pas en listes",
       sk_cat1:"IA & Machine Learning", sk1:"Large Language Models (LLM) · Gouvernance et réglementation de l'IA · Machine Learning · MLOps · Knowledge Retrieval (RAG) · Adoption et stratégie IA en entreprise · Human-in-the-loop",
       sk_cat2:"Développement & Cloud", sk2:"Python · Java · TypeScript · Flutter · Google Cloud Platform (GCP) · Microservices & API REST · Bases de données · Administration Linux/Windows",
       sk_cat3:"Business & Analytics", sk3:"Project Management (Agile) · Planification stratégique · Power BI & Analytics",
@@ -548,6 +670,23 @@
   var root = document.documentElement;
   var lang = "it";
 
+  /* ---- competenze: chip generate a partire dalle stringhe i18n ---- */
+  function renderChips(){
+    var dict = i18n[lang];
+    document.querySelectorAll("[data-i18n-chips]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-chips");
+      var raw = dict[k];
+      if(raw === undefined) return;
+      el.innerHTML = "";
+      raw.split(" · ").forEach(function(item){
+        var span = document.createElement("span");
+        span.className = "chip";
+        span.textContent = item;
+        el.appendChild(span);
+      });
+    });
+  }
+
   /* ---- lingua ---- */
   function applyLang(){
     root.lang = lang;
@@ -559,6 +698,7 @@
     document.querySelectorAll(".lang-btn").forEach(function(b){
       b.classList.toggle("on", b.getAttribute("data-lang") === lang);
     });
+    renderChips();
   }
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){ lang = b.getAttribute("data-lang"); applyLang(); });
