@@ -177,6 +177,21 @@
   /* ============ oltre ============ */
   .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:640px;padding-bottom:8px}
 
+  /* ============ perspectives ============ */
+  .persp-intro{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0 0 28px;max-width:640px}
+  .persp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:900px){.persp-grid{grid-template-columns:1fr}}
+  .persp-card{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--line);border-radius:16px}
+  .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .persp-title{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin:0;line-height:1.35}
+  .persp-excerpt{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
+  .persp-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px;background:none;border:none;padding:0;text-align:left;cursor:pointer}
+  @media (hover:hover) and (pointer:fine){.persp-link:hover{opacity:.75}}
+  .persp-card.soon{opacity:.5}
+  .persp-card.soon .persp-title{color:var(--ink-soft)}
+  .persp-body{font-family:var(--sans);font-size:15px;line-height:1.75;color:var(--ink-soft);white-space:pre-line}
+  .persp-body p{margin:0 0 16px}
+
   footer{padding:56px 0 88px;border-top:1px solid var(--line)}
   @media (max-width:900px){footer{padding:44px 0 80px}}
   .footer-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
@@ -194,6 +209,7 @@
   .modal{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px}
   .modal-backdrop{position:absolute;inset:0;background:var(--scrim)}
   .modal-panel{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:22px;max-width:440px;width:100%;padding:36px;max-height:86vh;overflow:auto;box-shadow:var(--shadow-2)}
+  .modal-panel.wide{max-width:680px}
   @media (prefers-reduced-motion:no-preference){.modal-panel{animation:panelIn .25s ease-out}}
   @media (max-width:640px){
     .modal{align-items:flex-end;padding:0}
@@ -235,6 +251,7 @@
         <div class="hero-cta-row">
           <a class="hero-btn outline" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
           <a class="hero-btn outline" href="#competenze" data-i18n="hero_cta3">Competenze</a>
+          <a class="hero-btn outline" href="#perspectives">Perspectives</a>
           <a class="hero-btn outline" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a>
         </div>
       </div>
@@ -285,37 +302,81 @@
     <div class="job-row">
       <div class="job-dotcol"><span class="job-dot"></span></div>
       <div class="job-body">
-        <div class="job-overline">01 · <span data-i18n="st_prod">In produzione</span></div>
-        <h3 class="job-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="c1t">Sistemi RAG</a></h3>
-        <p class="case-result" data-i18n="c1_result">Risultato — meno tempo di ricerca, conoscenza aziendale più accessibile e interrogabile anche su documentazione complessa e strutturata.</p>
+        <div class="job-overline">01 · <span data-i18n="c1_status">Production · 2026</span></div>
+        <h3 class="job-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="c1t">Enterprise Knowledge Retrieval</a></h3>
         <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-        <p class="job-supp" data-i18n="c1_problem">Conoscenza operativa sepolta in più repository aziendali, nessun accesso strutturato per chi deve decidere.</p>
+        <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.</p>
         <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
-        <p class="job-supp" data-i18n="c1_solution">Due agenti RAG (Retrieval-Augmented Generation) che rendono la conoscenza interrogabile in linguaggio naturale, con validazione human-in-the-loop.</p>
+        <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
+        <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
+        <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
+        <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
+        <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
+        <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+        <p class="job-supp" data-i18n="c1_learning">Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.</p>
+        <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
         <div class="metarow">
-          <span class="metachip" data-i18n="c1m1t">Ambito — InfoCamere · catalogo servizi IT</span>
-          <span class="metachip" data-i18n="c1m2t">Vincoli — dati interni, governance presidiata</span>
+          <span class="metachip">Enterprise AI</span>
+          <span class="metachip">RAG</span>
+          <span class="metachip">Systems Integration</span>
+          <span class="metachip">Knowledge Management</span>
+          <span class="metachip">Reliability</span>
         </div>
       </div>
     </div>
     <div class="job-row last">
       <div class="job-dotcol"><span class="job-dot"></span></div>
       <div class="job-body">
-        <div class="job-overline">02 · <span data-i18n="st_prod2">In produzione</span></div>
-        <h3 class="job-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="c2t">Modelli locali a dati sensibili</a></h3>
-        <p class="case-result" data-i18n="c2_result">Risultato — nessun dato esce dal perimetro aziendale</p>
+        <div class="job-overline">02 · <span data-i18n="c2_status">Exploration · Mag – Giu 2026</span></div>
+        <h3 class="job-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="c2t">Local AI for Sensitive Data Environments</a></h3>
         <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-        <p class="job-supp" data-i18n="c2_problem">L'adozione dell'AI era preclusa negli ambienti a dati sensibili, dove i dati non possono uscire dal perimetro.</p>
-        <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
-        <p class="job-supp" data-i18n="c2_solution">Modelli locali (Gemma, Qwen, architetture Ollama-based), addestrati su procedure interne e distribuiti interamente on-premise.</p>
+        <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
+        <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
+        <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
+        <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
         <div class="metarow">
-          <span class="metachip" data-i18n="c2m1t">Approccio — fine-tuning · deploy on-premise</span>
+          <span class="metachip">Data protection</span>
+          <span class="metachip">Infrastructure control</span>
+          <span class="metachip">Provider dependency</span>
+          <span class="metachip">Operational costs</span>
+          <span class="metachip">AI governance</span>
+        </div>
+        <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+        <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
+        <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
+        <div class="metarow">
+          <span class="metachip">Qwen</span>
+          <span class="metachip">Gemma</span>
+          <span class="metachip">Ollama</span>
+          <span class="metachip">Unsloth</span>
+          <span class="metachip">Python</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="section-label" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
+  <div class="section-label" id="perspectives"><span class="section-num">04</span><span>Perspectives</span></div>
+  <p class="persp-intro" data-i18n="persp_intro">Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.</p>
+  <div class="persp-grid rv">
+    <div class="persp-card">
+      <span class="persp-meta">2026</span>
+      <h3 class="persp-title" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h3>
+      <p class="persp-excerpt" data-i18n="persp1_excerpt">Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.</p>
+      <button class="persp-link" type="button" data-open-persp="persp1Modal" data-i18n="persp_read">Leggi la perspective →</button>
+    </div>
+    <div class="persp-card soon">
+      <span class="persp-meta" data-i18n="persp_soon">In arrivo</span>
+      <h3 class="persp-title" data-i18n="persp_soon">In arrivo</h3>
+      <p class="persp-excerpt" data-i18n="persp_soon_p">Nuove perspective in arrivo.</p>
+    </div>
+    <div class="persp-card soon">
+      <span class="persp-meta" data-i18n="persp_soon">In arrivo</span>
+      <h3 class="persp-title" data-i18n="persp_soon">In arrivo</h3>
+      <p class="persp-excerpt" data-i18n="persp_soon_p">Nuove perspective in arrivo.</p>
+    </div>
+  </div>
+
+  <div class="section-label" id="competenze"><span class="section-num">05</span><span data-i18n="sec_competenze">Competenze</span></div>
   <div class="timeline rv">
     <div class="job-row">
       <div class="job-dotcol"><span class="job-dot"></span></div>
@@ -354,7 +415,7 @@
     </div>
   </div>
 
-  <div class="section-label" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Percorso</span></div>
+  <div class="section-label" id="percorso"><span class="section-num">06</span><span data-i18n="sec_percorso">Percorso</span></div>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-dotcol"><span class="job-dot"></span></div>
@@ -390,7 +451,7 @@
     </div>
   </div>
 
-  <div class="section-label" id="oltre"><span class="section-num">06</span><span data-i18n="sec_oltre">Oltre</span></div>
+  <div class="section-label" id="oltre"><span class="section-num">07</span><span data-i18n="sec_oltre">Oltre</span></div>
   <p class="oltre-supp rv" data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock.</p>
 
   <footer>
@@ -420,6 +481,29 @@
   </div>
 </div>
 
+<div class="modal" id="persp1Modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="persp1ModalTitle">
+    <div class="modal-head">
+      <h2 id="persp1ModalTitle" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h2>
+      <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
+    </div>
+    <div class="persp-body" data-i18n="persp1_body">Implementando due sistemi RAG in produzione pensavo che la parte più difficile sarebbe stata far funzionare bene il modello.
+
+È successo quasi il contrario.
+
+Procedure e manuali, anche quando condividono lo stesso formato, raccontano le informazioni in modi diversi. I ticket Jira non contengono sempre tutto il contesto necessario. Parte della conoscenza vive nei documenti, parte nei sistemi e parte nelle persone. E, una volta che il sistema arriva agli utenti, emerge un'altra domanda: cosa dovrebbe sapere il modello — e cosa invece non dovrebbe sapere?
+
+La qualità del retrieval conta. Il modello conta. Ma una parte sorprendentemente grande del lavoro consiste nel decidere quali informazioni fornire, come strutturarle, come collegarle e quali istruzioni dare al sistema.
+
+È qui che RAG diventa interessante dal punto di vista Enterprise IT.
+
+Il problema non è più soltanto costruire un buon sistema AI. Diventa progettare il rapporto tra dati, sistemi, processi e persone affinché quel sistema possa essere affidabile nel contesto reale in cui viene utilizzato.
+
+Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sfide che chiamiamo "AI" sono, in realtà, problemi organizzativi che l'AI rende semplicemente più visibili.</div>
+  </div>
+</div>
+
 <script>
 (function(){
   var i18n = {
@@ -438,19 +522,26 @@
       p3k:"Certificazioni", p3d:"Percorsi certificati su AI, cloud e sviluppo — IBM, Google.",
       p4k:"Innovazione", p4d:"Su invito del CEO di DABO, membro del team SCWL per il contest \"2026 Sprint Forward in Golden Boots\" — Innovation & Entrepreneurship Competition, distretto di Shangcheng.",
       sec_lavori:"Casi studio",
-      case_problem_label:"Problema", case_solution_label:"Soluzione",
-      c1t:"Sistemi RAG",
-      c1_result:"Risultato — meno tempo di ricerca, conoscenza aziendale più accessibile e interrogabile anche su documentazione complessa e strutturata.",
-      c1_problem:"Conoscenza operativa sepolta in più repository aziendali, nessun accesso strutturato per chi deve decidere.",
-      c1_solution:"Implementazione e gestione di due sistemi RAG (Retrieval-Augmented Generation) in produzione: uno rende accessibile la documentazione aziendale, supportando anche la comunicazione verso middle e top management; l'altro trasforma lo storico dei ticket Jira in una base di conoscenza interrogabile per il team e per le attività di incident/problem management. Include l'integrazione di fonti informative aziendali frammentate — affrontando qualità dei dati, contesto e retrieval — e la traduzione di esigenze operative in soluzioni tecniche funzionanti, dall'esplorazione del problema fino a produzione e miglioramento continuo.",
-      st_prod:"In produzione", st_prod2:"In produzione",
-      c1m1t:"Ambito — InfoCamere · catalogo servizi IT",
-      c1m2t:"Vincoli — dati interni, governance presidiata",
-      c2t:"Modelli locali a dati sensibili",
-      c2_result:"Risultato — nessun dato esce dal perimetro aziendale",
-      c2_problem:"L'adozione dell'AI era preclusa negli ambienti a dati sensibili, dove i dati non possono uscire dal perimetro.",
-      c2_solution:"Ho esplorato la fattibilità dell'AI locale in ambienti a dati sensibili, lavorando con modelli Qwen, Gemma e architetture Ollama-based. Il progetto ha coperto fine-tuning, deploy locale e valutazione, con un focus su protezione dei dati, controllo dell'infrastruttura, costi e governance dell'AI.",
-      c2m1t:"Approccio — fine-tuning · deploy on-premise",
+      persp_intro:"Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.",
+      persp_read:"Leggi la perspective →",
+      persp_soon:"In arrivo", persp_soon_p:"Nuove perspective in arrivo.",
+      persp1_title:"Quando un problema AI smette di essere un problema AI",
+      persp1_excerpt:"Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.",
+      persp1_body:"Implementando due sistemi RAG in produzione pensavo che la parte più difficile sarebbe stata far funzionare bene il modello.\n\nÈ successo quasi il contrario.\n\nProcedure e manuali, anche quando condividono lo stesso formato, raccontano le informazioni in modi diversi. I ticket Jira non contengono sempre tutto il contesto necessario. Parte della conoscenza vive nei documenti, parte nei sistemi e parte nelle persone. E, una volta che il sistema arriva agli utenti, emerge un'altra domanda: cosa dovrebbe sapere il modello — e cosa invece non dovrebbe sapere?\n\nLa qualità del retrieval conta. Il modello conta. Ma una parte sorprendentemente grande del lavoro consiste nel decidere quali informazioni fornire, come strutturarle, come collegarle e quali istruzioni dare al sistema.\n\nÈ qui che RAG diventa interessante dal punto di vista Enterprise IT.\n\nIl problema non è più soltanto costruire un buon sistema AI. Diventa progettare il rapporto tra dati, sistemi, processi e persone affinché quel sistema possa essere affidabile nel contesto reale in cui viene utilizzato.\n\nPiù lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sfide che chiamiamo \"AI\" sono, in realtà, problemi organizzativi che l'AI rende semplicemente più visibili.",
+      case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
+      c1t:"Enterprise Knowledge Retrieval",
+      c1_status:"Production · 2026",
+      c1_problem:"La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.",
+      c1_solution_1:"Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.",
+      c1_solution_2:"Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.",
+      c1_solution_3:"Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.",
+      c1_impact:"I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.",
+      c1_learning:"Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.",
+      c2t:"Local AI for Sensitive Data Environments",
+      c2_status:"Exploration · Mag – Giu 2026",
+      c2_problem:"Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?",
+      c2_solution:"Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.",
+      c2_learning:"Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.",
       sec_percorso:"Percorso",
       t1:"Set 2022 — oggi", tsa:"Mag 2025 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
       pr1s:"SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa e integrazione di nuove tecnologie. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.",
@@ -481,19 +572,26 @@
       p3k:"Certifications", p3d:"Certified paths across AI, cloud and development — IBM, Google.",
       p4k:"Innovation", p4d:"At the invitation of DABO's CEO, SCWL Team member for the \"2026 Sprint Forward in Golden Boots\" — Innovation & Entrepreneurship Competition, Shangcheng District.",
       sec_lavori:"Case studies",
-      case_problem_label:"Problem", case_solution_label:"Solution",
-      c1t:"RAG Systems",
-      c1_result:"Result — less retrieval time, easier access to knowledge, and the ability to query complex, structured enterprise documentation.",
-      c1_problem:"Operational knowledge buried across multiple enterprise repositories, no structured access for decision-makers.",
-      c1_solution:"Implementation and operation of two RAG-based knowledge retrieval systems in production: one supports access to corporate documentation, also aiding communication toward middle and top management; the other turns historical Jira data into an interrogable knowledge base for the team and for incident/problem management. This includes integrating fragmented corporate information sources — addressing data quality, context and retrieval — and translating operational needs into working technical solutions, from problem exploration through production and continuous improvement.",
-      st_prod:"In production", st_prod2:"In production",
-      c1m1t:"Scope — InfoCamere · IT service catalog",
-      c1m2t:"Constraints — internal data, governed environment",
-      c2t:"Local models for sensitive data",
-      c2_result:"Result — no data leaves the company perimeter",
-      c2_problem:"AI adoption was precluded in sensitive-data environments, where data cannot leave the perimeter.",
-      c2_solution:"Explored the feasibility of local AI in sensitive-data environments, working with Qwen, Gemma and Ollama-based models. The project covered fine-tuning, local deployment and evaluation, with a focus on data protection, infrastructure control, cost and AI governance.",
-      c2m1t:"Approach — fine-tuning · on-premise deployment",
+      persp_intro:"Reflections on the organizational and human side of enterprise technology, written along the way.",
+      persp_read:"Read the perspective →",
+      persp_soon:"Coming soon", persp_soon_p:"New perspectives coming soon.",
+      persp1_title:"When an AI problem stops being an AI problem",
+      persp1_excerpt:"Two RAG systems in production showed me that the hardest part isn't necessarily the model. Fragmented data, context, processes and user behavior quickly turn a technical challenge into an organizational one.",
+      persp1_body:"Implementing two RAG systems in production, I thought the hardest part would be getting the model to work well.\n\nWhat happened was almost the opposite.\n\nProcedures and manuals, even when they share the same format, tell information in different ways. Jira tickets don't always contain all the necessary context. Part of the knowledge lives in documents, part in systems, and part in people. And once the system reaches users, another question emerges: what should the model know — and what shouldn't it know?\n\nRetrieval quality matters. The model matters. But a surprisingly large part of the work is deciding which information to provide, how to structure it, how to connect it, and what instructions to give the system.\n\nThis is where RAG becomes interesting from an Enterprise IT perspective.\n\nThe problem is no longer just building a good AI system. It becomes designing the relationship between data, systems, processes and people so that the system can be reliable in the real context where it's used.\n\nThe more I work with AI in production, the more I'm convinced of one thing: many of the challenges we call \"AI\" are, in fact, organizational problems that AI simply makes more visible.",
+      case_problem_label:"Problem", case_solution_label:"Solution", case_approach_label:"Approach", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
+      c1t:"Enterprise Knowledge Retrieval",
+      c1_status:"Production · 2026",
+      c1_problem:"Enterprise knowledge exists, but it's often fragmented: documents, procedures, manuals and tickets hold useful information that lives across different sources that don't always talk to each other.",
+      c1_solution_1:"I implemented and brought into production two RAG systems, born from operational needs identified together with my manager.",
+      c1_solution_2:"The first makes corporate documentation quickly searchable, easing information retrieval and cross-referencing — also supporting communication toward middle and top management.",
+      c1_solution_3:"The second turns historical Jira data into a searchable knowledge base for the working team, supporting the retrieval of accumulated experience and incident/problem management activities.",
+      c1_impact:"The two systems reduce the work needed to manually search, connect and interpret information scattered across different corporate sources.",
+      c1_learning:"Bringing them into production made clear that the main challenge of an enterprise RAG system isn't just the model: data quality and structure, context, instructions, information boundaries and usage patterns directly affect the system's reliability.",
+      c2t:"Local AI for Sensitive Data Environments",
+      c2_status:"Exploration · May – Jun 2026",
+      c2_problem:"How can AI models be used in sensitive contexts while keeping greater control over data, infrastructure and dependency on external providers?",
+      c2_solution:"I explored the feasibility of locally-run AI models, working with Qwen, Gemma and Ollama-based architectures. The project included dataset preparation, fine-tuning, local deployment and practical demos.",
+      c2_learning:"Bringing AI into a controlled environment isn't just about running a model locally. Infrastructure, data management, cost and governance become an integral part of the solution.",
       sec_percorso:"Path",
       t1:"Sep 2022 — today", tsa:"May 2025 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
       pr1s:"SysAdmin. Support for the mission-critical infrastructure of the Italian Chambers of Commerce system, with a focus on operational reliability and the integration of new technologies. In parallel, I develop and operate AI solutions in production, integrated with corporate knowledge and workflows.",
@@ -524,19 +622,26 @@
       p3k:"Certifications", p3d:"Parcours certifiés en IA, cloud et développement — IBM, Google.",
       p4k:"Innovation", p4d:"Sur invitation du CEO de DABO, membre de l'équipe SCWL pour le concours « 2026 Sprint Forward in Golden Boots » — Innovation & Entrepreneurship Competition, district de Shangcheng.",
       sec_lavori:"Études de cas",
-      case_problem_label:"Problème", case_solution_label:"Solution",
-      c1t:"Systèmes RAG",
-      c1_result:"Résultat — moins de temps de recherche, une connaissance d'entreprise plus accessible et interrogeable même sur une documentation complexe et structurée.",
-      c1_problem:"Connaissance opérationnelle enfouie dans plusieurs référentiels d'entreprise, aucun accès structuré pour les décideurs.",
-      c1_solution:"Mise en œuvre et exploitation de deux systèmes RAG (Retrieval-Augmented Generation) en production : l'un facilite l'accès à la documentation d'entreprise, en soutenant aussi la communication vers le management intermédiaire et supérieur ; l'autre transforme l'historique des tickets Jira en une base de connaissances interrogeable pour l'équipe et pour la gestion des incidents/problèmes. Cela inclut l'intégration de sources d'information fragmentées — en traitant la qualité des données, le contexte et la recherche — ainsi que la traduction des besoins opérationnels en solutions techniques concrètes, de l'exploration du problème jusqu'à la production et à l'amélioration continue.",
-      st_prod:"En production", st_prod2:"En production",
-      c1m1t:"Périmètre — InfoCamere · catalogue des services IT",
-      c1m2t:"Contraintes — données internes, gouvernance maîtrisée",
-      c2t:"Modèles locaux pour données sensibles",
-      c2_result:"Résultat — aucune donnée ne sort du périmètre de l'entreprise",
-      c2_problem:"L'adoption de l'IA était impossible dans les environnements à données sensibles, où les données ne peuvent pas sortir du périmètre.",
-      c2_solution:"J'ai exploré la faisabilité de l'IA locale dans des environnements à données sensibles, en travaillant avec des modèles Qwen, Gemma et des architectures Ollama-based. Le projet a couvert le fine-tuning, le déploiement local et l'évaluation, avec un accent sur la protection des données, le contrôle de l'infrastructure, les coûts et la gouvernance de l'IA.",
-      c2m1t:"Approche — fine-tuning · déploiement on-premise",
+      persp_intro:"Réflexions sur le versant organisationnel et humain de la technologie d'entreprise, écrites en chemin.",
+      persp_read:"Lire la perspective →",
+      persp_soon:"À venir", persp_soon_p:"Nouvelles perspectives à venir.",
+      persp1_title:"Quand un problème d'IA cesse d'être un problème d'IA",
+      persp1_excerpt:"Deux systèmes RAG en production m'ont montré que la partie la plus difficile n'est pas nécessairement le modèle. Données fragmentées, contexte, processus et comportement des utilisateurs transforment rapidement un défi technique en défi organisationnel.",
+      persp1_body:"En mettant en œuvre deux systèmes RAG en production, je pensais que la partie la plus difficile serait de faire fonctionner correctement le modèle.\n\nC'est presque l'inverse qui s'est produit.\n\nLes procédures et les manuels, même lorsqu'ils partagent le même format, racontent l'information de manières différentes. Les tickets Jira ne contiennent pas toujours tout le contexte nécessaire. Une partie de la connaissance vit dans les documents, une partie dans les systèmes et une partie dans les personnes. Et une fois que le système arrive aux utilisateurs, une autre question se pose : que devrait savoir le modèle — et que ne devrait-il pas savoir ?\n\nLa qualité du retrieval compte. Le modèle compte. Mais une part étonnamment grande du travail consiste à décider quelles informations fournir, comment les structurer, comment les relier et quelles instructions donner au système.\n\nC'est là que le RAG devient intéressant du point de vue de l'IT d'entreprise.\n\nLe problème n'est plus seulement de construire un bon système d'IA. Il devient de concevoir la relation entre données, systèmes, processus et personnes pour que ce système puisse être fiable dans le contexte réel où il est utilisé.\n\nPlus je travaille avec l'IA en production, plus je suis convaincu d'une chose : beaucoup des défis que nous appelons « IA » sont, en réalité, des problèmes organisationnels que l'IA rend simplement plus visibles.",
+      case_problem_label:"Problème", case_solution_label:"Solution", case_approach_label:"Approche", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
+      c1t:"Enterprise Knowledge Retrieval",
+      c1_status:"Production · 2026",
+      c1_problem:"La connaissance d'entreprise existe, mais elle est souvent fragmentée : documents, procédures, manuels et tickets contiennent des informations utiles réparties dans différentes sources qui ne communiquent pas toujours entre elles.",
+      c1_solution_1:"J'ai mis en œuvre et déployé en production deux systèmes RAG, nés de besoins opérationnels identifiés avec mon responsable.",
+      c1_solution_2:"Le premier rend la documentation d'entreprise rapidement interrogeable, facilitant la recherche et la mise en relation des informations, en soutenant aussi la communication vers le management intermédiaire et supérieur.",
+      c1_solution_3:"Le second transforme l'historique Jira en une base de connaissances interrogeable pour l'équipe, facilitant l'accès à l'expérience accumulée et les activités de gestion des incidents/problèmes.",
+      c1_impact:"Les deux systèmes réduisent le travail nécessaire pour rechercher, relier et interpréter manuellement des informations réparties entre différentes sources d'entreprise.",
+      c1_learning:"Leur mise en production a montré que le principal défi d'un système RAG enterprise n'est pas seulement le modèle : la qualité et la structure des données, le contexte, les instructions, les limites de l'information et les modes d'utilisation influencent directement la fiabilité du système.",
+      c2t:"Local AI for Sensitive Data Environments",
+      c2_status:"Exploration · Mai – juin 2026",
+      c2_problem:"Comment utiliser des modèles d'IA dans des contextes sensibles tout en gardant un meilleur contrôle sur les données, l'infrastructure et la dépendance aux fournisseurs externes ?",
+      c2_solution:"J'ai exploré la faisabilité de modèles d'IA exécutés localement, en travaillant avec Qwen, Gemma et des architectures basées sur Ollama. Le projet a inclus la préparation des jeux de données, le fine-tuning, le déploiement local et des démonstrations pratiques.",
+      c2_learning:"Amener l'IA dans un environnement contrôlé ne consiste pas simplement à exécuter un modèle en local. L'infrastructure, la gestion des données, les coûts et la gouvernance font partie intégrante de la solution.",
       sec_percorso:"Parcours",
       t1:"Sept. 2022 — aujourd'hui", tsa:"Mai 2025 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
       pr1s:"SysAdmin. Support de l'infrastructure critique du système des Chambres de commerce italiennes, avec un accent sur la fiabilité opérationnelle et l'intégration de nouvelles technologies. En parallèle, je développe et exploite des solutions IA en production, intégrées aux connaissances et aux workflows de l'entreprise.",
@@ -606,23 +711,31 @@
   });
   paintTheme();
 
-  /* ---- modal contatti ---- */
-  var modal = document.getElementById("contactModal");
+  /* ---- modali (contatti, perspectives) ---- */
+  var openModalEl = null;
   var lastFocus = null;
-  function openModal(e){
-    lastFocus = e && e.currentTarget ? e.currentTarget : null;
-    modal.hidden = false;
-    document.body.style.overflow = "hidden";
-    modal.querySelector(".modal-x").focus();
+  function openModalById(id){
+    return function(e){
+      lastFocus = e && e.currentTarget ? e.currentTarget : null;
+      openModalEl = document.getElementById(id);
+      openModalEl.hidden = false;
+      document.body.style.overflow = "hidden";
+      openModalEl.querySelector(".modal-x").focus();
+    };
   }
   function closeModal(){
-    modal.hidden = true;
+    if(!openModalEl) return;
+    openModalEl.hidden = true;
     document.body.style.overflow = "";
     if(lastFocus) lastFocus.focus();
+    openModalEl = null;
   }
-  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", openModal); });
-  modal.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !modal.hidden) closeModal(); });
+  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", openModalById("contactModal")); });
+  document.querySelectorAll("[data-open-persp]").forEach(function(el){ el.addEventListener("click", openModalById(el.getAttribute("data-open-persp"))); });
+  document.querySelectorAll(".modal").forEach(function(m){
+    m.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
+  });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && openModalEl) closeModal(); });
 
   /* ---- contatori animati ---- */
   function setCountsFinal(scope){
