@@ -179,7 +179,7 @@
 
   /* ============ perspectives ============ */
   .persp-intro{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0 0 28px;max-width:640px}
-  .persp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .persp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,360px));gap:20px}
   @media (max-width:900px){.persp-grid{grid-template-columns:1fr}}
   .persp-card{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--line);border-radius:16px}
   .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
@@ -187,8 +187,6 @@
   .persp-excerpt{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
   .persp-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px;background:none;border:none;padding:0;text-align:left;cursor:pointer}
   @media (hover:hover) and (pointer:fine){.persp-link:hover{opacity:.75}}
-  .persp-card.soon{opacity:.5}
-  .persp-card.soon .persp-title{color:var(--ink-soft)}
   .persp-body{font-family:var(--sans);font-size:15px;line-height:1.75;color:var(--ink-soft);white-space:pre-line}
   .persp-body p{margin:0 0 16px}
 
@@ -267,30 +265,30 @@
   <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">In sintesi</span></div>
   <div class="statrow">
     <div class="stat rv" aria-labelledby="p5k">
-      <p class="v"><span class="num" data-count="2">0</span></p>
+      <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Sistemi in produzione</span>
       <p class="d" data-i18n="p5d">Due sistemi RAG (Retrieval-Augmented Generation) in produzione presso InfoCamere: uno per la documentazione aziendale, l'altro per l'incident e problem management.</p>
       <a class="lnk" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
     </div>
     <div class="stat rv" aria-labelledby="p1k">
-      <p class="v"><span class="num" data-count="2">0</span>+<span class="num" data-count="1">0</span></p>
+      <p class="v"><span class="num" data-count="2">2</span>+<span class="num" data-count="1">1</span></p>
       <span class="k" id="p1k" data-i18n="p1k">Advisory</span>
       <p class="d" data-i18n="p1d">Consulenza AI a 2 business unit interne e ad 1 CEO (azienda DABO, attiva tra Europa e Cina)</p>
       <a class="lnk" href="https://www.dabohts.eu/" target="_blank" rel="noopener">dabohts.eu</a>
     </div>
     <div class="stat rv" aria-labelledby="p2k">
-      <p class="v"><span class="num" data-count="25">0</span>+</p>
+      <p class="v"><span class="num" data-count="25">25</span>+</p>
       <span class="k" id="p2k" data-i18n="p2k">Enablement</span>
       <p class="d" data-i18n="p2d">5 programmi di formazione interni ed esterni sull'AI operativa: upskilling di 25+ colleghi e del CEO di DABO. Risparmi stimati in mesi di lavoro.</p>
     </div>
     <div class="stat rv" aria-labelledby="p4k">
-      <p class="v"><span class="num" data-count="2026">0</span></p>
+      <p class="v"><span class="num" data-count="2026">2026</span></p>
       <span class="k" id="p4k" data-i18n="p4k">Innovazione</span>
       <p class="d" data-i18n="p4d">Su invito del CEO di DABO, membro del team SCWL per il contest "2026 Sprint Forward in Golden Boots" — Innovation &amp; Entrepreneurship Competition, distretto di Shangcheng.</p>
       <a class="lnk" href="https://www.jinxuebenpao.com/" target="_blank" rel="noopener">jinxuebenpao.com</a>
     </div>
     <div class="stat rv" aria-labelledby="p3k">
-      <p class="v"><span class="num" data-count="15">0</span></p>
+      <p class="v"><span class="num" data-count="15">15</span></p>
       <span class="k" id="p3k" data-i18n="p3k">Certificazioni</span>
       <p class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo — IBM, Google.</p>
       <a class="lnk" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a>
@@ -363,16 +361,6 @@
       <h3 class="persp-title" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h3>
       <p class="persp-excerpt" data-i18n="persp1_excerpt">Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.</p>
       <button class="persp-link" type="button" data-open-persp="persp1Modal" data-i18n="persp_read">Leggi la perspective →</button>
-    </div>
-    <div class="persp-card soon">
-      <span class="persp-meta" data-i18n="persp_soon">In arrivo</span>
-      <h3 class="persp-title" data-i18n="persp_soon">In arrivo</h3>
-      <p class="persp-excerpt" data-i18n="persp_soon_p">Nuove perspective in arrivo.</p>
-    </div>
-    <div class="persp-card soon">
-      <span class="persp-meta" data-i18n="persp_soon">In arrivo</span>
-      <h3 class="persp-title" data-i18n="persp_soon">In arrivo</h3>
-      <p class="persp-excerpt" data-i18n="persp_soon_p">Nuove perspective in arrivo.</p>
     </div>
   </div>
 
@@ -524,7 +512,6 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sec_lavori:"Casi studio",
       persp_intro:"Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.",
       persp_read:"Leggi la perspective →",
-      persp_soon:"In arrivo", persp_soon_p:"Nuove perspective in arrivo.",
       persp1_title:"Quando un problema AI smette di essere un problema AI",
       persp1_excerpt:"Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.",
       persp1_body:"Implementando due sistemi RAG in produzione pensavo che la parte più difficile sarebbe stata far funzionare bene il modello.\n\nÈ successo quasi il contrario.\n\nProcedure e manuali, anche quando condividono lo stesso formato, raccontano le informazioni in modi diversi. I ticket Jira non contengono sempre tutto il contesto necessario. Parte della conoscenza vive nei documenti, parte nei sistemi e parte nelle persone. E, una volta che il sistema arriva agli utenti, emerge un'altra domanda: cosa dovrebbe sapere il modello — e cosa invece non dovrebbe sapere?\n\nLa qualità del retrieval conta. Il modello conta. Ma una parte sorprendentemente grande del lavoro consiste nel decidere quali informazioni fornire, come strutturarle, come collegarle e quali istruzioni dare al sistema.\n\nÈ qui che RAG diventa interessante dal punto di vista Enterprise IT.\n\nIl problema non è più soltanto costruire un buon sistema AI. Diventa progettare il rapporto tra dati, sistemi, processi e persone affinché quel sistema possa essere affidabile nel contesto reale in cui viene utilizzato.\n\nPiù lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sfide che chiamiamo \"AI\" sono, in realtà, problemi organizzativi che l'AI rende semplicemente più visibili.",
@@ -544,7 +531,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_learning:"Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.",
       sec_percorso:"Percorso",
       t1:"Set 2022 — oggi", tsa:"Mag 2025 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
-      pr1s:"SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa e integrazione di nuove tecnologie. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.",
+      pr1s:"SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.",
       prsa:"Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 25 professionisti.",
       pr2:"Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).",
       pr3:"Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.",
@@ -553,7 +540,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat2:"AI & Knowledge Systems", sk2:"Large Language Models (LLM) · Retrieval-Augmented Generation (RAG) · AI Integration · Local AI · MLOps · Human-in-the-loop systems",
       sk_cat3:"Sviluppo & Cloud", sk3:"Python · Google Cloud Platform (GCP) · Microservizi · REST API · Integrazione di sistemi e servizi",
       sk_cat4:"Governance & Adoption", sk4:"AI Governance · Enterprise AI Adoption · Knowledge Management · Valutazione di affidabilità e requisiti operativi",
-      sk_cat5:"People & Enablement", sk5:"AI Advisory · Formazione & Upskilling · Public Speaking · Digital Culture",
+      sk_cat5:"People & Enablement", sk5:"AI Advisory · Formazione & Upskilling · Technology Communication · Public Speaking · Digital Culture",
       sec_oltre:"Oltre",
       oltre_p:"Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock."
     },
@@ -574,7 +561,6 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sec_lavori:"Case studies",
       persp_intro:"Reflections on the organizational and human side of enterprise technology, written along the way.",
       persp_read:"Read the perspective →",
-      persp_soon:"Coming soon", persp_soon_p:"New perspectives coming soon.",
       persp1_title:"When an AI problem stops being an AI problem",
       persp1_excerpt:"Two RAG systems in production showed me that the hardest part isn't necessarily the model. Fragmented data, context, processes and user behavior quickly turn a technical challenge into an organizational one.",
       persp1_body:"Implementing two RAG systems in production, I thought the hardest part would be getting the model to work well.\n\nWhat happened was almost the opposite.\n\nProcedures and manuals, even when they share the same format, tell information in different ways. Jira tickets don't always contain all the necessary context. Part of the knowledge lives in documents, part in systems, and part in people. And once the system reaches users, another question emerges: what should the model know — and what shouldn't it know?\n\nRetrieval quality matters. The model matters. But a surprisingly large part of the work is deciding which information to provide, how to structure it, how to connect it, and what instructions to give the system.\n\nThis is where RAG becomes interesting from an Enterprise IT perspective.\n\nThe problem is no longer just building a good AI system. It becomes designing the relationship between data, systems, processes and people so that the system can be reliable in the real context where it's used.\n\nThe more I work with AI in production, the more I'm convinced of one thing: many of the challenges we call \"AI\" are, in fact, organizational problems that AI simply makes more visible.",
@@ -594,7 +580,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_learning:"Bringing AI into a controlled environment isn't just about running a model locally. Infrastructure, data management, cost and governance become an integral part of the solution.",
       sec_percorso:"Path",
       t1:"Sep 2022 — today", tsa:"May 2025 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
-      pr1s:"SysAdmin. Support for the mission-critical infrastructure of the Italian Chambers of Commerce system, with a focus on operational reliability and the integration of new technologies. In parallel, I develop and operate AI solutions in production, integrated with corporate knowledge and workflows.",
+      pr1s:"SysAdmin. Support for the mission-critical infrastructure of the Italian Chambers of Commerce system, with a focus on operational reliability. In parallel, I develop and operate AI solutions in production, integrated with corporate knowledge and workflows.",
       prsa:"Driving digital culture and AI adoption across InfoCamere through advisory, training and technology communication. I help translate emerging technologies into practical knowledge and use cases, contributing to the upskilling of 25+ professionals.",
       pr2:"IT Specialist (internship). First hands-on IT role: infrastructure support, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition).",
       pr3:"Insurance consultant. Client-facing role in a highly regulated industry, where trust, compliance and reliability matter as much as the business itself.",
@@ -603,7 +589,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat2:"AI & Knowledge Systems", sk2:"Large Language Models (LLM) · Retrieval-Augmented Generation (RAG) · AI Integration · Local AI · MLOps · Human-in-the-loop systems",
       sk_cat3:"Development & Cloud", sk3:"Python · Google Cloud Platform (GCP) · Microservices · REST APIs · Systems & Service Integration",
       sk_cat4:"Governance & Adoption", sk4:"AI Governance · Enterprise AI Adoption · Knowledge Management · Reliability & Operational Requirements Assessment",
-      sk_cat5:"People & Enablement", sk5:"AI Advisory · Training & Upskilling · Public Speaking · Digital Culture",
+      sk_cat5:"People & Enablement", sk5:"AI Advisory · Training & Upskilling · Technology Communication · Public Speaking · Digital Culture",
       sec_oltre:"Beyond work",
       oltre_p:"After hours I listen to music as an audiophile, between classical, jazz and progressive rock."
     },
@@ -624,7 +610,6 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sec_lavori:"Études de cas",
       persp_intro:"Réflexions sur le versant organisationnel et humain de la technologie d'entreprise, écrites en chemin.",
       persp_read:"Lire la perspective →",
-      persp_soon:"À venir", persp_soon_p:"Nouvelles perspectives à venir.",
       persp1_title:"Quand un problème d'IA cesse d'être un problème d'IA",
       persp1_excerpt:"Deux systèmes RAG en production m'ont montré que la partie la plus difficile n'est pas nécessairement le modèle. Données fragmentées, contexte, processus et comportement des utilisateurs transforment rapidement un défi technique en défi organisationnel.",
       persp1_body:"En mettant en œuvre deux systèmes RAG en production, je pensais que la partie la plus difficile serait de faire fonctionner correctement le modèle.\n\nC'est presque l'inverse qui s'est produit.\n\nLes procédures et les manuels, même lorsqu'ils partagent le même format, racontent l'information de manières différentes. Les tickets Jira ne contiennent pas toujours tout le contexte nécessaire. Une partie de la connaissance vit dans les documents, une partie dans les systèmes et une partie dans les personnes. Et une fois que le système arrive aux utilisateurs, une autre question se pose : que devrait savoir le modèle — et que ne devrait-il pas savoir ?\n\nLa qualité du retrieval compte. Le modèle compte. Mais une part étonnamment grande du travail consiste à décider quelles informations fournir, comment les structurer, comment les relier et quelles instructions donner au système.\n\nC'est là que le RAG devient intéressant du point de vue de l'IT d'entreprise.\n\nLe problème n'est plus seulement de construire un bon système d'IA. Il devient de concevoir la relation entre données, systèmes, processus et personnes pour que ce système puisse être fiable dans le contexte réel où il est utilisé.\n\nPlus je travaille avec l'IA en production, plus je suis convaincu d'une chose : beaucoup des défis que nous appelons « IA » sont, en réalité, des problèmes organisationnels que l'IA rend simplement plus visibles.",
@@ -644,7 +629,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_learning:"Amener l'IA dans un environnement contrôlé ne consiste pas simplement à exécuter un modèle en local. L'infrastructure, la gestion des données, les coûts et la gouvernance font partie intégrante de la solution.",
       sec_percorso:"Parcours",
       t1:"Sept. 2022 — aujourd'hui", tsa:"Mai 2025 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
-      pr1s:"SysAdmin. Support de l'infrastructure critique du système des Chambres de commerce italiennes, avec un accent sur la fiabilité opérationnelle et l'intégration de nouvelles technologies. En parallèle, je développe et exploite des solutions IA en production, intégrées aux connaissances et aux workflows de l'entreprise.",
+      pr1s:"SysAdmin. Support de l'infrastructure critique du système des Chambres de commerce italiennes, avec un accent sur la fiabilité opérationnelle. En parallèle, je développe et exploite des solutions IA en production, intégrées aux connaissances et aux workflows de l'entreprise.",
       prsa:"Promotion de la culture numérique et de l'adoption de l'IA chez InfoCamere à travers le conseil, la formation et la communication technologique. J'aide à traduire les technologies émergentes en connaissances pratiques et cas d'usage, contribuant à l'upskilling de plus de 25 professionnels.",
       pr2:"Spécialiste IT (stage). Premier rôle IT concret : support infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne).",
       pr3:"Consultant assurance. Rôle au contact du client dans un secteur fortement réglementé, où la confiance, la conformité et la fiabilité comptent autant que le business lui-même.",
@@ -653,7 +638,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat2:"IA & Systèmes de connaissance", sk2:"Large Language Models (LLM) · Retrieval-Augmented Generation (RAG) · Intégration IA · IA locale · MLOps · Systèmes human-in-the-loop",
       sk_cat3:"Développement & Cloud", sk3:"Python · Google Cloud Platform (GCP) · Microservices · API REST · Intégration de systèmes et services",
       sk_cat4:"Gouvernance & Adoption", sk4:"Gouvernance de l'IA · Adoption de l'IA en entreprise · Gestion des connaissances · Évaluation de la fiabilité et des besoins opérationnels",
-      sk_cat5:"Personnes & Enablement", sk5:"Conseil en IA · Formation & upskilling · Public speaking · Culture numérique",
+      sk_cat5:"Personnes & Enablement", sk5:"Conseil en IA · Formation & upskilling · Technology Communication · Public speaking · Culture numérique",
       sec_oltre:"Au-delà",
       oltre_p:"En dehors des heures de travail, j'écoute de la musique en audiophile, entre classique, jazz et rock progressif."
     }
