@@ -179,19 +179,47 @@
 
   /* ============ perspectives ============ */
   .persp-intro{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0 0 28px;max-width:640px}
-  .persp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,360px));gap:20px}
+  .persp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,560px));gap:20px}
   @media (max-width:900px){.persp-grid{grid-template-columns:1fr}}
-  .persp-card{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--line);border-radius:16px}
+  .persp-card{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:18px}
   .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-  .persp-title{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin:0;line-height:1.35}
-  .persp-excerpt{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
+  .persp-title{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
+  .persp-excerpt{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.65;margin:0;flex:1}
   .persp-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px;background:none;border:none;padding:0;text-align:left;cursor:pointer}
   @media (hover:hover) and (pointer:fine){.persp-link:hover{opacity:.75}}
   .persp-body{font-family:var(--sans);font-size:15px;line-height:1.75;color:var(--ink-soft);white-space:pre-line}
   .persp-body p{margin:0 0 16px}
 
-  footer{padding:56px 0 88px;border-top:1px solid var(--line)}
+  /* ============ selected work ============ */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media (max-width:760px){.work-grid{grid-template-columns:1fr}}
+  .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid var(--line);border-radius:18px}
+  .work-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .work-title{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
+  .work-summary{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
+  .work-chips{display:flex;flex-wrap:wrap;gap:6px 14px}
+  .work-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px;background:none;border:none;padding:0;text-align:left;cursor:pointer}
+  @media (hover:hover) and (pointer:fine){.work-link:hover{opacity:.75}}
+
+  /* ============ capabilities ============ */
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
+  @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
+  .cap-cell{display:flex;flex-direction:column;gap:6px}
+  .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
+
+  /* ============ experience ============ */
+  .exp-sub{margin-top:16px;padding-left:20px;border-left:1px solid var(--line)}
+  .exp-sub-overline{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .exp-sub-title{font-family:var(--display);font-size:14.5px;font-weight:700;color:var(--ink);margin-top:4px}
+  .exp-sub-supp{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
+
+  footer{padding:56px 0 88px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
   @media (max-width:900px){footer{padding:44px 0 80px}}
+  .footer-beyond-k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .footer-beyond-v{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);margin-top:4px}
+  .footer-links{font-family:var(--mono);font-size:12.5px;color:var(--accent);display:flex;flex-wrap:wrap;gap:6px 10px}
   .footer-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
 
   /* ============ reveal allo scroll ============ */
@@ -247,10 +275,8 @@
         <h1 class="hero-name">Nicolò Forcolin</h1>
         <p class="hero-role">Enterprise IT | AI &amp; Systems Integration | Reliability, Governance &amp; Innovation</p>
         <div class="hero-cta-row">
-          <a class="hero-btn outline" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
-          <a class="hero-btn outline" href="#competenze" data-i18n="hero_cta3">Competenze</a>
-          <a class="hero-btn outline" href="#perspectives">Perspectives</a>
-          <a class="hero-btn outline" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a>
+          <a class="hero-btn outline" href="#casi-studio" data-i18n="hero_cta1">Esplora il mio lavoro</a>
+          <a class="hero-btn outline" href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -262,94 +288,49 @@
   <div class="section-label" id="chi-sono"><span class="section-num">01</span><span data-i18n="sec_chisono">Chi sono</span></div>
   <p class="oltre-supp rv" data-i18n="chisono_p">Lavoro tra IT enterprise, AI e integrazione di sistemi, con l'obiettivo di trasformare la tecnologia in capacità affidabili che funzionano dentro organizzazioni reali. La tecnologia enterprise raramente è solo un problema tecnico: dati, integrazione, governance e persone determinano se una soluzione crea davvero valore.</p>
 
-  <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">In sintesi</span></div>
+  <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></div>
   <div class="statrow">
     <div class="stat rv" aria-labelledby="p5k">
       <p class="v"><span class="num" data-count="2">2</span></p>
-      <span class="k" id="p5k" data-i18n="p5k">Sistemi in produzione</span>
-      <p class="d" data-i18n="p5d">Due sistemi RAG (Retrieval-Augmented Generation) in produzione presso InfoCamere: uno per la documentazione aziendale, l'altro per l'incident e problem management.</p>
-      <a class="lnk" href="#casi-studio" data-i18n="hero_cta1">Esplora i casi studio</a>
+      <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
     </div>
     <div class="stat rv" aria-labelledby="p1k">
       <p class="v"><span class="num" data-count="2">2</span>+<span class="num" data-count="1">1</span></p>
-      <span class="k" id="p1k" data-i18n="p1k">Advisory</span>
-      <p class="d" data-i18n="p1d">Consulenza AI a 2 business unit interne e ad 1 CEO (azienda DABO, attiva tra Europa e Cina)</p>
-      <a class="lnk" href="https://www.dabohts.eu/" target="_blank" rel="noopener">dabohts.eu</a>
+      <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
     </div>
     <div class="stat rv" aria-labelledby="p2k">
       <p class="v"><span class="num" data-count="25">25</span>+</p>
-      <span class="k" id="p2k" data-i18n="p2k">Enablement</span>
-      <p class="d" data-i18n="p2d">5 programmi di formazione interni ed esterni sull'AI operativa: upskilling di 25+ colleghi e del CEO di DABO. Risparmi stimati in mesi di lavoro.</p>
+      <span class="k" id="p2k" data-i18n="p2k">Professionals Enabled</span>
     </div>
-    <div class="stat rv" aria-labelledby="p4k">
-      <p class="v"><span class="num" data-count="2026">2026</span></p>
-      <span class="k" id="p4k" data-i18n="p4k">Innovazione</span>
-      <p class="d" data-i18n="p4d">Su invito del CEO di DABO, membro del team SCWL per il contest "2026 Sprint Forward in Golden Boots" — Innovation &amp; Entrepreneurship Competition, distretto di Shangcheng.</p>
-      <a class="lnk" href="https://www.jinxuebenpao.com/" target="_blank" rel="noopener">jinxuebenpao.com</a>
-    </div>
-    <div class="stat rv" aria-labelledby="p3k">
-      <p class="v"><span class="num" data-count="15">15</span></p>
-      <span class="k" id="p3k" data-i18n="p3k">Certificazioni</span>
-      <p class="d" data-i18n="p3d">Percorsi certificati su AI, cloud e sviluppo — IBM, Google.</p>
-      <a class="lnk" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a>
+    <div class="stat rv" aria-labelledby="p6k">
+      <p class="v"><span class="num" data-count="5">5</span></p>
+      <span class="k" id="p6k" data-i18n="p6k">Training Programs</span>
     </div>
   </div>
 
-  <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Casi studio</span></div>
-  <div class="timeline rv">
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline">01 · <span data-i18n="c1_status">Production · 2026</span></div>
-        <h3 class="job-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="c1t">Enterprise Knowledge Retrieval</a></h3>
-        <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-        <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.</p>
-        <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
-        <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
-        <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
-        <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
-        <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
-        <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
-        <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
-        <p class="job-supp" data-i18n="c1_learning">Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.</p>
-        <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
-        <div class="metarow">
-          <span class="metachip">Enterprise AI</span>
-          <span class="metachip">RAG</span>
-          <span class="metachip">Systems Integration</span>
-          <span class="metachip">Knowledge Management</span>
-          <span class="metachip">Reliability</span>
-        </div>
+  <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti selezionati</span></div>
+  <div class="work-grid rv">
+    <div class="work-card">
+      <span class="work-meta" data-i18n="c1_status">Production · 2026</span>
+      <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
+      <p class="work-summary" data-i18n="c1_summary">Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.</p>
+      <div class="work-chips">
+        <span class="metachip">RAG</span>
+        <span class="metachip">Systems Integration</span>
+        <span class="metachip">Knowledge Management</span>
       </div>
+      <button class="work-link" type="button" data-open-modal="c1Modal" data-i18n="work_view">Vedi il case study →</button>
     </div>
-    <div class="job-row last">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline">02 · <span data-i18n="c2_status">Exploration · Mag – Giu 2026</span></div>
-        <h3 class="job-title"><a href="https://www.linkedin.com/in/nicoloforcolin/details/projects/" target="_blank" rel="noopener" data-i18n="c2t">Local AI for Sensitive Data Environments</a></h3>
-        <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-        <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
-        <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
-        <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
-        <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
-        <div class="metarow">
-          <span class="metachip">Data protection</span>
-          <span class="metachip">Infrastructure control</span>
-          <span class="metachip">Provider dependency</span>
-          <span class="metachip">Operational costs</span>
-          <span class="metachip">AI governance</span>
-        </div>
-        <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
-        <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
-        <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
-        <div class="metarow">
-          <span class="metachip">Qwen</span>
-          <span class="metachip">Gemma</span>
-          <span class="metachip">Ollama</span>
-          <span class="metachip">Unsloth</span>
-          <span class="metachip">Python</span>
-        </div>
+    <div class="work-card">
+      <span class="work-meta" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
+      <h3 class="work-title" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
+      <p class="work-summary" data-i18n="c2_summary">Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.</p>
+      <div class="work-chips">
+        <span class="metachip">Local AI</span>
+        <span class="metachip">Data Protection</span>
+        <span class="metachip">AI Governance</span>
       </div>
+      <button class="work-link" type="button" data-open-modal="c2Modal" data-i18n="work_view">Vedi il case study →</button>
     </div>
   </div>
 
@@ -357,74 +338,56 @@
   <p class="persp-intro" data-i18n="persp_intro">Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.</p>
   <div class="persp-grid rv">
     <div class="persp-card">
-      <span class="persp-meta">2026</span>
+      <span class="persp-meta" data-i18n="persp1_meta">Perspective 01 · 2026</span>
       <h3 class="persp-title" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h3>
       <p class="persp-excerpt" data-i18n="persp1_excerpt">Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.</p>
-      <button class="persp-link" type="button" data-open-persp="persp1Modal" data-i18n="persp_read">Leggi la perspective →</button>
+      <button class="persp-link" type="button" data-open-modal="persp1Modal" data-i18n="persp_read">Leggi →</button>
     </div>
   </div>
 
   <div class="section-label" id="competenze"><span class="section-num">05</span><span data-i18n="sec_competenze">Competenze</span></div>
-  <div class="timeline rv">
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat1">Enterprise IT &amp; Systems</div>
-        <p class="job-supp" data-i18n="sk1">Systems Integration · Operational Reliability · Amministrazione Linux/Windows · Automazione</p>
-      </div>
+  <div class="cap-grid rv">
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat1">Enterprise IT</div>
+      <p class="cap-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
     </div>
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat2">AI &amp; Knowledge Systems</div>
-        <p class="job-supp" data-i18n="sk2">Large Language Models (LLM) · Retrieval-Augmented Generation (RAG) · AI Integration · Local AI · MLOps · Human-in-the-loop systems</p>
-      </div>
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat2">AI Systems</div>
+      <p class="cap-list" data-i18n="sk2">LLM · RAG · Local AI · MLOps</p>
     </div>
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat3">Sviluppo &amp; Cloud</div>
-        <p class="job-supp" data-i18n="sk3">Python · Google Cloud Platform (GCP) · Microservizi · REST API · Integrazione di sistemi e servizi</p>
-      </div>
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat3">Engineering</div>
+      <p class="cap-list" data-i18n="sk3">Python · GCP · Microservices · APIs</p>
     </div>
-    <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat4">Governance &amp; Adoption</div>
-        <p class="job-supp" data-i18n="sk4">AI Governance · Enterprise AI Adoption · Knowledge Management · Valutazione di affidabilità e requisiti operativi</p>
-      </div>
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat4">Governance</div>
+      <p class="cap-list" data-i18n="sk4">AI Governance · Adoption · Knowledge Management</p>
     </div>
-    <div class="job-row last">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="sk_cat5">People &amp; Enablement</div>
-        <p class="job-supp" data-i18n="sk5">AI Advisory · Formazione &amp; Upskilling · Public Speaking · Digital Culture</p>
-      </div>
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat5">Enablement</div>
+      <p class="cap-list" data-i18n="sk5">Advisory · Training · Public Speaking · Technology Communication</p>
     </div>
   </div>
 
-  <div class="section-label" id="percorso"><span class="section-num">06</span><span data-i18n="sec_percorso">Percorso</span></div>
+  <div class="section-label" id="percorso"><span class="section-num">06</span><span data-i18n="sec_percorso">Esperienza</span></div>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-dotcol"><span class="job-dot"></span></div>
       <div class="job-body">
         <div class="job-overline" data-i18n="t1">Set 2022 — oggi</div>
         <div class="job-title">InfoCamere</div>
-        <div class="job-supp" data-i18n="pr1s">SysAdmin. Monitoraggio dell'infrastruttura mission-critical per il sistema camerale, con focus crescente sull'integrazione dell'AI nei processi operativi.</div>
-      </div>
-    </div>
-    <div class="job-row current">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="tsa">Mag 2025 — oggi</div>
-        <div class="job-title">Social Ambassador · InfoCamere</div>
-        <div class="job-supp" data-i18n="prsa">Diffusione di cultura digitale e comunicazione tecnologica dentro e fuori InfoCamere, con advisory AI a business unit interne e contributo a programmi di formazione — un percorso che ha portato anche a un confronto diretto con il Direttore Generale su come dare più valore all'innovazione in azienda.</div>
+        <div class="job-supp" data-i18n="pr1s">SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.</div>
+        <div class="exp-sub">
+          <div class="exp-sub-overline" data-i18n="tsa">Mag 2025 — oggi</div>
+          <div class="exp-sub-title">↳ Social Ambassador</div>
+          <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 25 professionisti.</div>
+        </div>
       </div>
     </div>
     <div class="job-row">
       <div class="job-dotcol"><span class="job-dot"></span></div>
       <div class="job-body">
-        <div class="job-overline" data-i18n="t2">Feb 2022 — Set 2022</div>
+        <div class="job-overline" data-i18n="t2">2022</div>
         <div class="job-title">IdeaGrip</div>
         <div class="job-supp" data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</div>
       </div>
@@ -432,17 +395,25 @@
     <div class="job-row last">
       <div class="job-dotcol"><span class="job-dot"></span></div>
       <div class="job-body">
-        <div class="job-overline" data-i18n="t3">Ott 2020 — Feb 2022</div>
+        <div class="job-overline" data-i18n="t3">2020 — 2022</div>
         <div class="job-title">Generali</div>
         <div class="job-supp" data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</div>
       </div>
     </div>
   </div>
 
-  <div class="section-label" id="oltre"><span class="section-num">07</span><span data-i18n="sec_oltre">Oltre</span></div>
-  <p class="oltre-supp rv" data-i18n="oltre_p">Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock.</p>
-
   <footer>
+    <div>
+      <div class="footer-beyond-k" data-i18n="sec_oltre">Beyond work</div>
+      <p class="footer-beyond-v" data-i18n="oltre_p">Classica · Jazz · Progressive Rock · Hi-Fi</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn</a>
+      <span>·</span>
+      <button type="button" data-open-modal="contactModal" style="background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Email</button>
+      <span>·</span>
+      <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a>
+    </div>
     <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
   </footer>
 </main>
@@ -465,6 +436,68 @@
     <div class="cm-row">
       <span class="cm-k" data-i18n="cm_cert">Certificazioni</span>
       <span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a></span>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="c1Modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="c1ModalTitle">
+    <div class="modal-head">
+      <h2 id="c1ModalTitle" data-i18n="c1t">Enterprise Knowledge Retrieval</h2>
+      <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
+    </div>
+    <p class="case-block-label" data-i18n="c1_status">Production · 2026</p>
+    <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+    <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.</p>
+    <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
+    <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
+    <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
+    <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
+    <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
+    <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
+    <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+    <p class="job-supp" data-i18n="c1_learning">Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.</p>
+    <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+    <div class="metarow">
+      <span class="metachip">Enterprise AI</span>
+      <span class="metachip">RAG</span>
+      <span class="metachip">Systems Integration</span>
+      <span class="metachip">Knowledge Management</span>
+      <span class="metachip">Reliability</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="c2Modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="c2ModalTitle">
+    <div class="modal-head">
+      <h2 id="c2ModalTitle" data-i18n="c2t">Local AI for Sensitive Data Environments</h2>
+      <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
+    </div>
+    <p class="case-block-label" data-i18n="c2_status">Exploration · Mag – Giu 2026</p>
+    <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+    <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
+    <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
+    <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
+    <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+    <div class="metarow">
+      <span class="metachip">Data protection</span>
+      <span class="metachip">Infrastructure control</span>
+      <span class="metachip">Provider dependency</span>
+      <span class="metachip">Operational costs</span>
+      <span class="metachip">AI governance</span>
+    </div>
+    <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+    <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
+    <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
+    <div class="metarow">
+      <span class="metachip">Qwen</span>
+      <span class="metachip">Gemma</span>
+      <span class="metachip">Ollama</span>
+      <span class="metachip">Unsloth</span>
+      <span class="metachip">Python</span>
     </div>
   </div>
 </div>
@@ -500,18 +533,21 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       nav_contatti:"Contatti",
       nav_profilo:"Profilo",
       eyebrow_role:"InfoCamere · Padova",
-      hero_cta1:"Esplora i casi studio", hero_cta3:"Competenze",
+      hero_cta1:"Esplora il mio lavoro",
       sec_chisono:"Chi sono",
       chisono_p:"Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi. Costruisco soluzioni AI in produzione, offro advisory sull'adozione dell'AI e contribuisco all'upskilling digitale. Il mio focus è trasformare la tecnologia in capacità affidabili, connettendo sistemi, dati, governance e persone.",
-      proof_label:"In sintesi",
-      p5k:"Sistemi in produzione", p5d:"Due sistemi RAG (Retrieval-Augmented Generation) in produzione presso InfoCamere: uno per la documentazione aziendale, l'altro per l'incident e problem management.",
-      p1k:"Advisory", p1d:"Consulenza AI a 2 business unit interne e ad 1 CEO (azienda DABO, attiva tra Europa e Cina)",
-      p2k:"Enablement", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa: upskilling di 25+ colleghi e del CEO di DABO. Risparmi stimati in mesi di lavoro.",
-      p3k:"Certificazioni", p3d:"Percorsi certificati su AI, cloud e sviluppo — IBM, Google.",
-      p4k:"Innovazione", p4d:"Su invito del CEO di DABO, membro del team SCWL per il contest \"2026 Sprint Forward in Golden Boots\" — Innovation & Entrepreneurship Competition, distretto di Shangcheng.",
-      sec_lavori:"Casi studio",
+      proof_label:"Impact",
+      p5k:"Production Systems",
+      p1k:"AI Advisory",
+      p2k:"Professionals Enabled",
+      p6k:"Training Programs",
+      sec_lavori:"Progetti selezionati",
+      work_view:"Vedi il case study →",
+      c1_summary:"Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.",
+      c2_summary:"Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.",
+      persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.",
-      persp_read:"Leggi la perspective →",
+      persp_read:"Leggi →",
       persp1_title:"Quando un problema AI smette di essere un problema AI",
       persp1_excerpt:"Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.",
       persp1_body:"Implementando due sistemi RAG in produzione pensavo che la parte più difficile sarebbe stata far funzionare bene il modello.\n\nÈ successo quasi il contrario.\n\nProcedure e manuali, anche quando condividono lo stesso formato, raccontano le informazioni in modi diversi. I ticket Jira non contengono sempre tutto il contesto necessario. Parte della conoscenza vive nei documenti, parte nei sistemi e parte nelle persone. E, una volta che il sistema arriva agli utenti, emerge un'altra domanda: cosa dovrebbe sapere il modello — e cosa invece non dovrebbe sapere?\n\nLa qualità del retrieval conta. Il modello conta. Ma una parte sorprendentemente grande del lavoro consiste nel decidere quali informazioni fornire, come strutturarle, come collegarle e quali istruzioni dare al sistema.\n\nÈ qui che RAG diventa interessante dal punto di vista Enterprise IT.\n\nIl problema non è più soltanto costruire un buon sistema AI. Diventa progettare il rapporto tra dati, sistemi, processi e persone affinché quel sistema possa essere affidabile nel contesto reale in cui viene utilizzato.\n\nPiù lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sfide che chiamiamo \"AI\" sono, in realtà, problemi organizzativi che l'AI rende semplicemente più visibili.",
@@ -529,38 +565,41 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_problem:"Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?",
       c2_solution:"Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.",
       c2_learning:"Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.",
-      sec_percorso:"Percorso",
+      sec_percorso:"Esperienza",
       t1:"Set 2022 — oggi", tsa:"Mag 2025 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
       pr1s:"SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.",
       prsa:"Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 25 professionisti.",
       pr2:"Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).",
       pr3:"Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.",
       sec_competenze:"Competenze",
-      sk_cat1:"Enterprise IT & Systems", sk1:"Systems Integration · Operational Reliability · Amministrazione Linux/Windows · Automazione",
-      sk_cat2:"AI & Knowledge Systems", sk2:"Large Language Models (LLM) · Retrieval-Augmented Generation (RAG) · AI Integration · Local AI · MLOps · Human-in-the-loop systems",
-      sk_cat3:"Sviluppo & Cloud", sk3:"Python · Google Cloud Platform (GCP) · Microservizi · REST API · Integrazione di sistemi e servizi",
-      sk_cat4:"Governance & Adoption", sk4:"AI Governance · Enterprise AI Adoption · Knowledge Management · Valutazione di affidabilità e requisiti operativi",
-      sk_cat5:"People & Enablement", sk5:"AI Advisory · Formazione & Upskilling · Technology Communication · Public Speaking · Digital Culture",
-      sec_oltre:"Oltre",
-      oltre_p:"Fuori orario ascolto musica da audiofilo, tra classica, jazz e progressive rock."
+      sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
+      sk_cat2:"AI Systems", sk2:"LLM · RAG · Local AI · MLOps",
+      sk_cat3:"Engineering", sk3:"Python · GCP · Microservizi · API",
+      sk_cat4:"Governance", sk4:"AI Governance · Adoption · Knowledge Management",
+      sk_cat5:"Enablement", sk5:"Advisory · Formazione · Public Speaking · Technology Communication",
+      sec_oltre:"Beyond work",
+      oltre_p:"Classica · Jazz · Progressive Rock · Hi-Fi"
     },
     en: {
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profile",
       eyebrow_role:"InfoCamere · Padova",
-      hero_cta1:"Explore case studies", hero_cta3:"Skills",
+      hero_cta1:"Explore my work",
       sec_chisono:"About",
       chisono_p:"Enterprise IT professional working across critical infrastructure, AI and Systems Integration. I build production AI solutions, advise on AI adoption and contribute to digital upskilling. My focus is turning technology into reliable capabilities by connecting systems, data, governance and people.",
-      proof_label:"At a glance",
-      p5k:"Production systems", p5d:"Two RAG (Retrieval-Augmented Generation) systems in production at InfoCamere: one for corporate documentation, the other for incident and problem management.",
-      p1k:"Advisory", p1d:"AI advisory to 2 internal business units and to 1 CEO (DABO, a company active between Europe and China)",
-      p2k:"Enablement", p2d:"5 internal and external training programs on operational AI: upskilling 25+ colleagues and DABO's CEO. Estimated savings worth months of work.",
-      p3k:"Certifications", p3d:"Certified paths across AI, cloud and development — IBM, Google.",
-      p4k:"Innovation", p4d:"At the invitation of DABO's CEO, SCWL Team member for the \"2026 Sprint Forward in Golden Boots\" — Innovation & Entrepreneurship Competition, Shangcheng District.",
-      sec_lavori:"Case studies",
+      proof_label:"Impact",
+      p5k:"Production Systems",
+      p1k:"AI Advisory",
+      p2k:"Professionals Enabled",
+      p6k:"Training Programs",
+      sec_lavori:"Selected Work",
+      work_view:"View case study →",
+      c1_summary:"Two RAG systems turning fragmented corporate knowledge into accessible, operational information.",
+      c2_summary:"Explored the feasibility of secure, locally-run AI for sensitive-data environments.",
+      persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Reflections on the organizational and human side of enterprise technology, written along the way.",
-      persp_read:"Read the perspective →",
+      persp_read:"Read →",
       persp1_title:"When an AI problem stops being an AI problem",
       persp1_excerpt:"Two RAG systems in production showed me that the hardest part isn't necessarily the model. Fragmented data, context, processes and user behavior quickly turn a technical challenge into an organizational one.",
       persp1_body:"Implementing two RAG systems in production, I thought the hardest part would be getting the model to work well.\n\nWhat happened was almost the opposite.\n\nProcedures and manuals, even when they share the same format, tell information in different ways. Jira tickets don't always contain all the necessary context. Part of the knowledge lives in documents, part in systems, and part in people. And once the system reaches users, another question emerges: what should the model know — and what shouldn't it know?\n\nRetrieval quality matters. The model matters. But a surprisingly large part of the work is deciding which information to provide, how to structure it, how to connect it, and what instructions to give the system.\n\nThis is where RAG becomes interesting from an Enterprise IT perspective.\n\nThe problem is no longer just building a good AI system. It becomes designing the relationship between data, systems, processes and people so that the system can be reliable in the real context where it's used.\n\nThe more I work with AI in production, the more I'm convinced of one thing: many of the challenges we call \"AI\" are, in fact, organizational problems that AI simply makes more visible.",
@@ -578,38 +617,41 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_problem:"How can AI models be used in sensitive contexts while keeping greater control over data, infrastructure and dependency on external providers?",
       c2_solution:"I explored the feasibility of locally-run AI models, working with Qwen, Gemma and Ollama-based architectures. The project included dataset preparation, fine-tuning, local deployment and practical demos.",
       c2_learning:"Bringing AI into a controlled environment isn't just about running a model locally. Infrastructure, data management, cost and governance become an integral part of the solution.",
-      sec_percorso:"Path",
+      sec_percorso:"Experience",
       t1:"Sep 2022 — today", tsa:"May 2025 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
       pr1s:"SysAdmin. Support for the mission-critical infrastructure of the Italian Chambers of Commerce system, with a focus on operational reliability. In parallel, I develop and operate AI solutions in production, integrated with corporate knowledge and workflows.",
       prsa:"Driving digital culture and AI adoption across InfoCamere through advisory, training and technology communication. I help translate emerging technologies into practical knowledge and use cases, contributing to the upskilling of 25+ professionals.",
       pr2:"IT Specialist (internship). First hands-on IT role: infrastructure support, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition).",
       pr3:"Insurance consultant. Client-facing role in a highly regulated industry, where trust, compliance and reliability matter as much as the business itself.",
-      sec_competenze:"Skills",
-      sk_cat1:"Enterprise IT & Systems", sk1:"Systems Integration · Operational Reliability · Linux/Windows Administration · Automation",
-      sk_cat2:"AI & Knowledge Systems", sk2:"Large Language Models (LLM) · Retrieval-Augmented Generation (RAG) · AI Integration · Local AI · MLOps · Human-in-the-loop systems",
-      sk_cat3:"Development & Cloud", sk3:"Python · Google Cloud Platform (GCP) · Microservices · REST APIs · Systems & Service Integration",
-      sk_cat4:"Governance & Adoption", sk4:"AI Governance · Enterprise AI Adoption · Knowledge Management · Reliability & Operational Requirements Assessment",
-      sk_cat5:"People & Enablement", sk5:"AI Advisory · Training & Upskilling · Technology Communication · Public Speaking · Digital Culture",
+      sec_competenze:"Capabilities",
+      sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
+      sk_cat2:"AI Systems", sk2:"LLM · RAG · Local AI · MLOps",
+      sk_cat3:"Engineering", sk3:"Python · GCP · Microservices · APIs",
+      sk_cat4:"Governance", sk4:"AI Governance · Adoption · Knowledge Management",
+      sk_cat5:"Enablement", sk5:"Advisory · Training · Public Speaking · Technology Communication",
       sec_oltre:"Beyond work",
-      oltre_p:"After hours I listen to music as an audiophile, between classical, jazz and progressive rock."
+      oltre_p:"Classical · Jazz · Progressive Rock · Hi-Fi"
     },
     fr: {
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profil",
       eyebrow_role:"InfoCamere · Padova",
-      hero_cta1:"Découvrir les études de cas", hero_cta3:"Compétences",
+      hero_cta1:"Découvrir mon travail",
       sec_chisono:"À propos",
       chisono_p:"Professionnel IT d'entreprise travaillant entre infrastructures critiques, IA et intégration de systèmes. Je construis des solutions IA en production, conseille sur l'adoption de l'IA et contribue à l'upskilling numérique. Mon objectif est de transformer la technologie en capacités fiables, en connectant systèmes, données, gouvernance et personnes.",
-      proof_label:"En bref",
-      p5k:"Systèmes en production", p5d:"Deux systèmes RAG (Retrieval-Augmented Generation) en production chez InfoCamere : l'un pour la documentation d'entreprise, l'autre pour la gestion des incidents et des problèmes.",
-      p1k:"Conseil", p1d:"Conseil en IA auprès de 2 business units internes et d'1 CEO (DABO, entreprise active entre l'Europe et la Chine)",
-      p2k:"Enablement", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle : upskilling de 25+ collègues et du CEO de DABO. Gains estimés en mois de travail.",
-      p3k:"Certifications", p3d:"Parcours certifiés en IA, cloud et développement — IBM, Google.",
-      p4k:"Innovation", p4d:"Sur invitation du CEO de DABO, membre de l'équipe SCWL pour le concours « 2026 Sprint Forward in Golden Boots » — Innovation & Entrepreneurship Competition, district de Shangcheng.",
-      sec_lavori:"Études de cas",
+      proof_label:"Impact",
+      p5k:"Production Systems",
+      p1k:"AI Advisory",
+      p2k:"Professionals Enabled",
+      p6k:"Training Programs",
+      sec_lavori:"Projets sélectionnés",
+      work_view:"Voir le case study →",
+      c1_summary:"Deux systèmes RAG qui transforment une connaissance d'entreprise fragmentée en information accessible et opérationnelle.",
+      c2_summary:"Exploration de la faisabilité d'une IA locale et sécurisée pour des environnements à données sensibles.",
+      persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Réflexions sur le versant organisationnel et humain de la technologie d'entreprise, écrites en chemin.",
-      persp_read:"Lire la perspective →",
+      persp_read:"Lire →",
       persp1_title:"Quand un problème d'IA cesse d'être un problème d'IA",
       persp1_excerpt:"Deux systèmes RAG en production m'ont montré que la partie la plus difficile n'est pas nécessairement le modèle. Données fragmentées, contexte, processus et comportement des utilisateurs transforment rapidement un défi technique en défi organisationnel.",
       persp1_body:"En mettant en œuvre deux systèmes RAG en production, je pensais que la partie la plus difficile serait de faire fonctionner correctement le modèle.\n\nC'est presque l'inverse qui s'est produit.\n\nLes procédures et les manuels, même lorsqu'ils partagent le même format, racontent l'information de manières différentes. Les tickets Jira ne contiennent pas toujours tout le contexte nécessaire. Une partie de la connaissance vit dans les documents, une partie dans les systèmes et une partie dans les personnes. Et une fois que le système arrive aux utilisateurs, une autre question se pose : que devrait savoir le modèle — et que ne devrait-il pas savoir ?\n\nLa qualité du retrieval compte. Le modèle compte. Mais une part étonnamment grande du travail consiste à décider quelles informations fournir, comment les structurer, comment les relier et quelles instructions donner au système.\n\nC'est là que le RAG devient intéressant du point de vue de l'IT d'entreprise.\n\nLe problème n'est plus seulement de construire un bon système d'IA. Il devient de concevoir la relation entre données, systèmes, processus et personnes pour que ce système puisse être fiable dans le contexte réel où il est utilisé.\n\nPlus je travaille avec l'IA en production, plus je suis convaincu d'une chose : beaucoup des défis que nous appelons « IA » sont, en réalité, des problèmes organisationnels que l'IA rend simplement plus visibles.",
@@ -627,20 +669,20 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_problem:"Comment utiliser des modèles d'IA dans des contextes sensibles tout en gardant un meilleur contrôle sur les données, l'infrastructure et la dépendance aux fournisseurs externes ?",
       c2_solution:"J'ai exploré la faisabilité de modèles d'IA exécutés localement, en travaillant avec Qwen, Gemma et des architectures basées sur Ollama. Le projet a inclus la préparation des jeux de données, le fine-tuning, le déploiement local et des démonstrations pratiques.",
       c2_learning:"Amener l'IA dans un environnement contrôlé ne consiste pas simplement à exécuter un modèle en local. L'infrastructure, la gestion des données, les coûts et la gouvernance font partie intégrante de la solution.",
-      sec_percorso:"Parcours",
+      sec_percorso:"Expérience",
       t1:"Sept. 2022 — aujourd'hui", tsa:"Mai 2025 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
       pr1s:"SysAdmin. Support de l'infrastructure critique du système des Chambres de commerce italiennes, avec un accent sur la fiabilité opérationnelle. En parallèle, je développe et exploite des solutions IA en production, intégrées aux connaissances et aux workflows de l'entreprise.",
       prsa:"Promotion de la culture numérique et de l'adoption de l'IA chez InfoCamere à travers le conseil, la formation et la communication technologique. J'aide à traduire les technologies émergentes en connaissances pratiques et cas d'usage, contribuant à l'upskilling de plus de 25 professionnels.",
       pr2:"Spécialiste IT (stage). Premier rôle IT concret : support infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne).",
       pr3:"Consultant assurance. Rôle au contact du client dans un secteur fortement réglementé, où la confiance, la conformité et la fiabilité comptent autant que le business lui-même.",
       sec_competenze:"Compétences",
-      sk_cat1:"IT d'entreprise & Systèmes", sk1:"Intégration de systèmes · Fiabilité opérationnelle · Administration Linux/Windows · Automatisation",
-      sk_cat2:"IA & Systèmes de connaissance", sk2:"Large Language Models (LLM) · Retrieval-Augmented Generation (RAG) · Intégration IA · IA locale · MLOps · Systèmes human-in-the-loop",
-      sk_cat3:"Développement & Cloud", sk3:"Python · Google Cloud Platform (GCP) · Microservices · API REST · Intégration de systèmes et services",
-      sk_cat4:"Gouvernance & Adoption", sk4:"Gouvernance de l'IA · Adoption de l'IA en entreprise · Gestion des connaissances · Évaluation de la fiabilité et des besoins opérationnels",
-      sk_cat5:"Personnes & Enablement", sk5:"Conseil en IA · Formation & upskilling · Technology Communication · Public speaking · Culture numérique",
-      sec_oltre:"Au-delà",
-      oltre_p:"En dehors des heures de travail, j'écoute de la musique en audiophile, entre classique, jazz et rock progressif."
+      sk_cat1:"IT d'entreprise", sk1:"Intégration de systèmes · Fiabilité · Linux/Windows · Automatisation",
+      sk_cat2:"Systèmes IA", sk2:"LLM · RAG · IA locale · MLOps",
+      sk_cat3:"Ingénierie", sk3:"Python · GCP · Microservices · API",
+      sk_cat4:"Gouvernance", sk4:"Gouvernance de l'IA · Adoption · Gestion des connaissances",
+      sk_cat5:"Enablement", sk5:"Conseil · Formation · Public Speaking · Technology Communication",
+      sec_oltre:"Beyond work",
+      oltre_p:"Classique · Jazz · Progressive Rock · Hi-Fi"
     }
   };
 
@@ -716,7 +758,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
     openModalEl = null;
   }
   document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", openModalById("contactModal")); });
-  document.querySelectorAll("[data-open-persp]").forEach(function(el){ el.addEventListener("click", openModalById(el.getAttribute("data-open-persp"))); });
+  document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", openModalById(el.getAttribute("data-open-modal"))); });
   document.querySelectorAll(".modal").forEach(function(m){
     m.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
   });
