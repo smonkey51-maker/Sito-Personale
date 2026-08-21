@@ -230,6 +230,17 @@
   @media (hover:hover) and (pointer:fine){.work-link:hover{opacity:.75}}
 
   /* ============ capabilities ============ */
+  .cap-sublabel{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+  .cap-sublabel.ext{margin-top:52px}
+
+  .core-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media (max-width:700px){.core-grid{grid-template-columns:1fr}}
+  .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft)}
+  .core-title{font-family:var(--display);font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+  .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
+  .core-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px}
+  @media (hover:hover) and (pointer:fine){.core-link:hover{opacity:.75}}
+
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
   @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
@@ -390,17 +401,23 @@
   </div>
 
   <div class="section-label" id="competenze"><span class="section-num">05</span><span data-i18n="sec_competenze">Competenze</span></div>
+
+  <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
+  <div class="core-grid rv">
+    <div class="core-cell">
+      <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
+      <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
+      <a class="core-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+    </div>
+    <div class="core-cell">
+      <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
+      <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
+      <a class="core-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+    </div>
+  </div>
+
+  <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
   <div class="cap-grid rv">
-    <div class="cap-cell">
-      <div class="cap-title" data-i18n="sk_cat1">Enterprise IT</div>
-      <p class="cap-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
-      <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
-    </div>
-    <div class="cap-cell">
-      <div class="cap-title" data-i18n="sk_cat2">Enterprise AI</div>
-      <p class="cap-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
-      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
-    </div>
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
       <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Automation</p>
@@ -408,12 +425,12 @@
     </div>
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
-      <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management · Information Boundaries</p>
+      <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
       <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
-      <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking · Technology Communication</p>
+      <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
       <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
   </div>
@@ -627,9 +644,10 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
       sk_cat2:"Enterprise AI", sk2:"RAG · Local AI · LLM · Knowledge Retrieval",
       sk_cat3:"Cloud & Development", sk3:"Python · GCP · API · Automazione",
-      sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management · Information Boundaries",
-      sk_cat5:"Technology Enablement", sk5:"Advisory · Formazione · Public Speaking · Technology Communication",
+      sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
+      sk_cat5:"Technology Enablement", sk5:"Advisory · Formazione · Public Speaking",
       cap_link_exp:"→ Esperienza", cap_link_work:"→ Case study", cap_link_projects:"→ Progetti",
+      cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_oltre:"Beyond work",
       oltre_p:"Classica · Jazz · Progressive Rock · Hi-Fi"
     },
@@ -683,9 +701,10 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
       sk_cat2:"Enterprise AI", sk2:"RAG · Local AI · LLM · Knowledge Retrieval",
       sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Automation",
-      sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management · Information Boundaries",
-      sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking · Technology Communication",
+      sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
+      sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
       cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
+      cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_oltre:"Beyond work",
       oltre_p:"Classical · Jazz · Progressive Rock · Hi-Fi"
     },
@@ -739,9 +758,10 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat1:"IT d'entreprise", sk1:"Intégration de systèmes · Fiabilité · Linux/Windows · Automatisation",
       sk_cat2:"IA d'entreprise", sk2:"RAG · IA locale · LLM · Knowledge Retrieval",
       sk_cat3:"Cloud & Développement", sk3:"Python · GCP · API · Automatisation",
-      sk_cat4:"Adoption & gouvernance de l'IA", sk4:"Adoption de l'IA · Protection des données · Gestion des connaissances · Information Boundaries",
-      sk_cat5:"Technology Enablement", sk5:"Conseil · Formation · Public Speaking · Technology Communication",
+      sk_cat4:"Adoption & gouvernance de l'IA", sk4:"Adoption de l'IA · Protection des données · Gestion des connaissances",
+      sk_cat5:"Technology Enablement", sk5:"Conseil · Formation · Public Speaking",
       cap_link_exp:"→ Expérience", cap_link_work:"→ Étude de cas", cap_link_projects:"→ Projets",
+      cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_oltre:"Beyond work",
       oltre_p:"Classique · Jazz · Progressive Rock · Hi-Fi"
     }
