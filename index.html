@@ -39,6 +39,8 @@
     --on-accent-soft:#152A4C;
     --case-bg:#2F4E7A;
     --on-case:#EEF2FA;
+    --status-explore:#96661F;
+    --status-explore-soft:#F3E7D3;
     --scrim:rgba(15,20,30,.45);
     --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
     --shadow-2:0 1px 3px rgba(20,30,50,.12),0 6px 16px rgba(20,30,50,.10);
@@ -56,6 +58,7 @@
       --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
       --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
       --case-bg:#18294A;--on-case:#E9EFFB;
+      --status-explore:#D6A868;--status-explore-soft:#3A2C18;
       --scrim:rgba(0,0,0,.6);
       --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
       --shadow-2:0 1px 3px rgba(0,0,0,.4),0 8px 20px rgba(0,0,0,.35);
@@ -66,6 +69,7 @@
     --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
     --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
     --case-bg:#18294A;--on-case:#E9EFFB;
+    --status-explore:#D6A868;--status-explore-soft:#3A2C18;
     --scrim:rgba(0,0,0,.6);
     --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
     --shadow-2:0 1px 3px rgba(0,0,0,.4),0 8px 20px rgba(0,0,0,.35);
@@ -75,6 +79,7 @@
     --ink:#13161D;--ink-soft:#4B5568;--line:#D9DFEA;
     --accent:#2F4E7A;--accent-soft:#DCE6F7;--on-accent-soft:#152A4C;
     --case-bg:#2F4E7A;--on-case:#EEF2FA;
+    --status-explore:#96661F;--status-explore-soft:#F3E7D3;
     --scrim:rgba(15,20,30,.45);
     --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
     --shadow-2:0 1px 3px rgba(20,30,50,.12),0 6px 16px rgba(20,30,50,.10);
@@ -128,10 +133,19 @@
   .hero-name{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,50px);letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:0;text-wrap:balance}
   .hero-role{font-family:var(--sans);font-size:16.5px;font-weight:400;color:var(--ink-soft);margin-top:10px;max-width:52ch}
 
+  .hero-role{display:none}
+  .hero-headline{font-family:var(--display);font-weight:700;font-size:clamp(17px,2vw,19.5px);line-height:1.5;color:var(--ink-soft);margin-top:12px;max-width:46ch}
+
   .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
   .hero-btn.outline{background:none;color:var(--ink);border:1px solid var(--line)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
+  .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg)}
+  @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:.88}}
+
+  .hero-nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+  .hero-nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-soft)}
+  @media (hover:hover) and (pointer:fine){.hero-nav a:hover{color:var(--accent)}}
 
   /* ============ section label ============ */
   .section-label{
@@ -182,6 +196,9 @@
   .persp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,560px));gap:20px}
   @media (max-width:900px){.persp-grid{grid-template-columns:1fr}}
   .persp-card{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:18px}
+  .persp-featured{display:flex;flex-direction:column;gap:16px;max-width:680px;padding:4px 0 4px 28px;border-left:2px solid var(--accent)}
+  .persp-featured .persp-title{font-size:24px}
+  .persp-featured .persp-excerpt{font-size:16px}
   .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .persp-title{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .persp-excerpt{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.65;margin:0;flex:1}
@@ -194,7 +211,12 @@
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   @media (max-width:760px){.work-grid{grid-template-columns:1fr}}
   .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid var(--line);border-radius:18px}
-  .work-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .work-meta{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;width:fit-content}
+  .work-meta::before{content:"";width:6px;height:6px;border-radius:50%;flex:none}
+  .work-meta.live{color:var(--accent);background:var(--accent-soft)}
+  .work-meta.live::before{background:var(--accent)}
+  .work-meta.explore{color:var(--status-explore);background:var(--status-explore-soft)}
+  .work-meta.explore::before{background:var(--status-explore)}
   .work-title{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .work-summary{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
   .work-chips{display:flex;flex-wrap:wrap;gap:6px 14px}
@@ -208,6 +230,8 @@
   .cap-cell{display:flex;flex-direction:column;gap:6px}
   .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
+  .cap-link{font-family:var(--mono);font-size:11.5px;color:var(--accent);margin-top:2px}
+  @media (hover:hover) and (pointer:fine){.cap-link:hover{opacity:.75}}
 
   /* ============ experience ============ */
   .exp-sub{margin-top:16px;padding-left:20px;border-left:1px solid var(--line)}
@@ -218,7 +242,7 @@
   footer{padding:56px 0 88px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
   @media (max-width:900px){footer{padding:44px 0 80px}}
   .footer-beyond-k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-  .footer-beyond-v{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);margin-top:4px}
+  .footer-beyond-v{font-family:var(--display);font-weight:700;font-size:17px;color:var(--ink);margin-top:6px;letter-spacing:-.005em}
   .footer-links{font-family:var(--mono);font-size:12.5px;color:var(--accent);display:flex;flex-wrap:wrap;gap:6px 10px}
   .footer-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
 
@@ -274,10 +298,19 @@
         <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
         <h1 class="hero-name">Nicolò Forcolin</h1>
         <p class="hero-role">Enterprise IT | AI &amp; Systems Integration | Reliability, Governance &amp; Innovation</p>
+        <p class="hero-headline" data-i18n="hero_headline">Porto l'AI in produzione dentro organizzazioni regolamentate, e aiuto chi mi circonda a usarla.</p>
         <div class="hero-cta-row">
-          <a class="hero-btn outline" href="#casi-studio" data-i18n="hero_cta1">Esplora il mio lavoro</a>
-          <a class="hero-btn outline" href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="hero-btn solid" href="#casi-studio" data-i18n="hero_cta1">Esplora il mio lavoro</a>
+          <button class="hero-btn outline" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
         </div>
+        <nav class="hero-nav" aria-label="Sezioni della pagina">
+          <a href="#chi-sono" data-i18n="sec_chisono">Chi sono</a>
+          <a href="#sintesi" data-i18n="proof_label">Impact</a>
+          <a href="#casi-studio" data-i18n="sec_lavori">Progetti selezionati</a>
+          <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
+          <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
+          <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
+        </nav>
       </div>
     </div>
   </div>
@@ -294,11 +327,13 @@
       <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
       <p class="d" data-i18n="p5d">RAG systems live at InfoCamere</p>
+      <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
     </div>
     <div class="stat rv" aria-labelledby="p1k">
       <p class="v"><span class="num" data-count="2">2</span>+<span class="num" data-count="1">1</span></p>
       <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
       <p class="d" data-i18n="p1d">Business units + CEO advised</p>
+      <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso →</a>
     </div>
     <div class="stat rv" aria-labelledby="p2k">
       <p class="v"><span class="num" data-count="25">25</span>+</p>
@@ -315,7 +350,7 @@
   <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti selezionati</span></div>
   <div class="work-grid rv">
     <div class="work-card">
-      <span class="work-meta" data-i18n="c1_status">Production · 2026</span>
+      <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
       <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
       <p class="work-summary" data-i18n="c1_summary">Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.</p>
       <div class="work-chips">
@@ -326,7 +361,7 @@
       <button class="work-link" type="button" data-open-modal="c1Modal" data-i18n="work_view">Vedi il case study →</button>
     </div>
     <div class="work-card">
-      <span class="work-meta" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
+      <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
       <h3 class="work-title" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
       <p class="work-summary" data-i18n="c2_summary">Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.</p>
       <div class="work-chips">
@@ -338,15 +373,13 @@
     </div>
   </div>
 
-  <div class="section-label" id="perspectives"><span class="section-num">04</span><span>Perspectives</span></div>
-  <p class="persp-intro" data-i18n="persp_intro">Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.</p>
-  <div class="persp-grid rv">
-    <div class="persp-card">
-      <span class="persp-meta" data-i18n="persp1_meta">Perspective 01 · 2026</span>
-      <h3 class="persp-title" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h3>
-      <p class="persp-excerpt" data-i18n="persp1_excerpt">Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.</p>
-      <button class="persp-link" type="button" data-open-modal="persp1Modal" data-i18n="persp_read">Leggi →</button>
-    </div>
+  <div class="section-label" id="perspectives"><span class="section-num">04</span><span data-i18n="sec_perspectives">Perspectives</span></div>
+  <p class="persp-intro" data-i18n="persp_intro_single">Un saggio in evidenza sul lato organizzativo e umano della tecnologia enterprise. La serie continuerà con la prossima riflessione.</p>
+  <div class="persp-featured rv">
+    <span class="persp-meta" data-i18n="persp1_meta">Perspective 01 · 2026</span>
+    <h3 class="persp-title" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h3>
+    <p class="persp-excerpt" data-i18n="persp1_excerpt">Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.</p>
+    <button class="persp-link" type="button" data-open-modal="persp1Modal" data-i18n="persp_read">Leggi →</button>
   </div>
 
   <div class="section-label" id="competenze"><span class="section-num">05</span><span data-i18n="sec_competenze">Competenze</span></div>
@@ -354,22 +387,27 @@
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat1">Enterprise IT</div>
       <p class="cap-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
+      <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat2">AI Systems</div>
       <p class="cap-list" data-i18n="sk2">LLM · RAG · Local AI · MLOps</p>
+      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat3">Engineering</div>
       <p class="cap-list" data-i18n="sk3">Python · GCP · Microservices · APIs</p>
+      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat4">Governance</div>
       <p class="cap-list" data-i18n="sk4">AI Governance · Adoption · Knowledge Management</p>
+      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
     <div class="cap-cell">
       <div class="cap-title" data-i18n="sk_cat5">Enablement</div>
       <p class="cap-list" data-i18n="sk5">Advisory · Training · Public Speaking · Technology Communication</p>
+      <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
   </div>
 
@@ -538,19 +576,22 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       nav_profilo:"Profilo",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Esplora il mio lavoro",
+      hero_headline:"Porto l'AI in produzione dentro organizzazioni regolamentate, e aiuto chi mi circonda a usarla.",
       sec_chisono:"Chi sono",
       chisono_p:"Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi. Progetto e porto in produzione soluzioni AI e collaboro con middle e top management per tradurre esigenze operative e organizzative in soluzioni tecnologiche concrete. Contribuisco inoltre all'adozione dell'AI e all'upskilling digitale. Il mio focus è trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.",
       proof_label:"Impact",
-      p5k:"Production Systems", p5d:"2 sistemi RAG (Retrieval-Augmented Generation) già in produzione presso InfoCamere.",
-      p1k:"AI Advisory", p1d:"Consulenza AI a 2 business unit interne e al CEO di DABO, azienda attiva tra Europa e Cina.",
+      p5k:"Production Systems", p5d:"2 sistemi RAG (Retrieval-Augmented Generation) già in produzione presso InfoCamere.", p5_link:"Vedi i progetti →",
+      p1k:"AI Advisory", p1d:"Consulenza AI a 2 business unit interne e al CEO di DABO, azienda attiva tra Europa e Cina.", p1_link:"Vedi il percorso →",
       p2k:"Enablement", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa, per l'upskilling di oltre 25 colleghi e del CEO di DABO.",
       p4k:"Innovazione", p4d:"Su invito del CEO di DABO, membro del team SCWL per il contest \"2026 Sprint Forward in Golden Boots\", Shangcheng.",
       sec_lavori:"Progetti selezionati",
       work_view:"Vedi il case study →",
       c1_summary:"Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.",
       c2_summary:"Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.",
+      sec_perspectives:"Perspectives",
       persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.",
+      persp_intro_single:"Un saggio in evidenza sul lato organizzativo e umano della tecnologia enterprise. La serie continuerà con la prossima riflessione.",
       persp_read:"Leggi →",
       persp1_title:"Quando un problema AI smette di essere un problema AI",
       persp1_excerpt:"Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.",
@@ -581,6 +622,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat3:"Engineering", sk3:"Python · GCP · Microservizi · API",
       sk_cat4:"Governance", sk4:"AI Governance · Adoption · Knowledge Management",
       sk_cat5:"Enablement", sk5:"Advisory · Formazione · Public Speaking · Technology Communication",
+      cap_link_exp:"→ Esperienza", cap_link_work:"→ Case study",
       sec_oltre:"Beyond work",
       oltre_p:"Classica · Jazz · Progressive Rock · Hi-Fi"
     },
@@ -590,19 +632,22 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       nav_profilo:"Profile",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Explore my work",
+      hero_headline:"I bring AI into production inside regulated organizations, and help the people around me use it.",
       sec_chisono:"About",
       chisono_p:"Enterprise IT professional working across critical infrastructure, AI and Systems Integration. I build production AI solutions, advise on AI adoption and contribute to digital upskilling. My focus is turning technology into reliable capabilities by connecting systems, data, governance and people.",
       proof_label:"Impact",
-      p5k:"Production Systems", p5d:"2 RAG (Retrieval-Augmented Generation) systems already live in production at InfoCamere.",
-      p1k:"AI Advisory", p1d:"AI advisory to 2 internal business units and to DABO's CEO, a company active between Europe and China.",
+      p5k:"Production Systems", p5d:"2 RAG (Retrieval-Augmented Generation) systems already live in production at InfoCamere.", p5_link:"See the projects →",
+      p1k:"AI Advisory", p1d:"AI advisory to 2 internal business units and to DABO's CEO, a company active between Europe and China.", p1_link:"See the path →",
       p2k:"Enablement", p2d:"5 internal and external training programs on operational AI, upskilling 25+ colleagues and DABO's CEO.",
       p4k:"Innovation", p4d:"At the invitation of DABO's CEO, SCWL Team member for the \"2026 Sprint Forward in Golden Boots\" contest, Shangcheng.",
       sec_lavori:"Selected Work",
       work_view:"View case study →",
       c1_summary:"Two RAG systems turning fragmented corporate knowledge into accessible, operational information.",
       c2_summary:"Explored the feasibility of secure, locally-run AI for sensitive-data environments.",
+      sec_perspectives:"Perspectives",
       persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Reflections on the organizational and human side of enterprise technology, written along the way.",
+      persp_intro_single:"A featured essay on the organizational and human side of enterprise technology. The series will continue with the next reflection.",
       persp_read:"Read →",
       persp1_title:"When an AI problem stops being an AI problem",
       persp1_excerpt:"Two RAG systems in production showed me that the hardest part isn't necessarily the model. Fragmented data, context, processes and user behavior quickly turn a technical challenge into an organizational one.",
@@ -633,6 +678,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat3:"Engineering", sk3:"Python · GCP · Microservices · APIs",
       sk_cat4:"Governance", sk4:"AI Governance · Adoption · Knowledge Management",
       sk_cat5:"Enablement", sk5:"Advisory · Training · Public Speaking · Technology Communication",
+      cap_link_exp:"→ Experience", cap_link_work:"→ Case study",
       sec_oltre:"Beyond work",
       oltre_p:"Classical · Jazz · Progressive Rock · Hi-Fi"
     },
@@ -642,19 +688,22 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       nav_profilo:"Profil",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Découvrir mon travail",
+      hero_headline:"Je mets l'IA en production dans des organisations réglementées, et j'aide mon entourage à l'utiliser.",
       sec_chisono:"À propos",
       chisono_p:"Professionnel IT d'entreprise travaillant entre infrastructures critiques, IA et intégration de systèmes. Je construis des solutions IA en production, conseille sur l'adoption de l'IA et contribue à l'upskilling numérique. Mon objectif est de transformer la technologie en capacités fiables, en connectant systèmes, données, gouvernance et personnes.",
       proof_label:"Impact",
-      p5k:"Production Systems", p5d:"2 systèmes RAG (Retrieval-Augmented Generation) déjà en production chez InfoCamere.",
-      p1k:"AI Advisory", p1d:"Conseil en IA auprès de 2 business units internes et du CEO de DABO, entreprise active entre l'Europe et la Chine.",
+      p5k:"Production Systems", p5d:"2 systèmes RAG (Retrieval-Augmented Generation) déjà en production chez InfoCamere.", p5_link:"Voir les projets →",
+      p1k:"AI Advisory", p1d:"Conseil en IA auprès de 2 business units internes et du CEO de DABO, entreprise active entre l'Europe et la Chine.", p1_link:"Voir le parcours →",
       p2k:"Enablement", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle, pour l'upskilling de plus de 25 collègues et du CEO de DABO.",
       p4k:"Innovation", p4d:"Sur invitation du CEO de DABO, membre de l'équipe SCWL pour le concours « 2026 Sprint Forward in Golden Boots », Shangcheng.",
       sec_lavori:"Projets sélectionnés",
       work_view:"Voir le case study →",
       c1_summary:"Deux systèmes RAG qui transforment une connaissance d'entreprise fragmentée en information accessible et opérationnelle.",
       c2_summary:"Exploration de la faisabilité d'une IA locale et sécurisée pour des environnements à données sensibles.",
+      sec_perspectives:"Perspectives",
       persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Réflexions sur le versant organisationnel et humain de la technologie d'entreprise, écrites en chemin.",
+      persp_intro_single:"Un essai mis en avant sur le versant organisationnel et humain de la technologie d'entreprise. La série se poursuivra avec la prochaine réflexion.",
       persp_read:"Lire →",
       persp1_title:"Quand un problème d'IA cesse d'être un problème d'IA",
       persp1_excerpt:"Deux systèmes RAG en production m'ont montré que la partie la plus difficile n'est pas nécessairement le modèle. Données fragmentées, contexte, processus et comportement des utilisateurs transforment rapidement un défi technique en défi organisationnel.",
@@ -685,6 +734,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sk_cat3:"Ingénierie", sk3:"Python · GCP · Microservices · API",
       sk_cat4:"Gouvernance", sk4:"Gouvernance de l'IA · Adoption · Gestion des connaissances",
       sk_cat5:"Enablement", sk5:"Conseil · Formation · Public Speaking · Technology Communication",
+      cap_link_exp:"→ Expérience", cap_link_work:"→ Étude de cas",
       sec_oltre:"Beyond work",
       oltre_p:"Classique · Jazz · Progressive Rock · Hi-Fi"
     }
