@@ -43,8 +43,8 @@
     --on-accent-soft:#152A4C;
     --case-bg:#2F4E7A;
     --on-case:#EEF2FA;
-    --status-explore:#96661F;
-    --status-explore-soft:#F3E7D3;
+    --status-explore:#7A6A3E;
+    --status-explore-soft:#EFEAD9;
     --scrim:rgba(15,20,30,.45);
     --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
     --shadow-2:0 1px 3px rgba(20,30,50,.12),0 6px 16px rgba(20,30,50,.10);
@@ -62,7 +62,7 @@
       --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
       --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
       --case-bg:#18294A;--on-case:#E9EFFB;
-      --status-explore:#D6A868;--status-explore-soft:#3A2C18;
+      --status-explore:#D6C68A;--status-explore-soft:#332C1B;
       --scrim:rgba(0,0,0,.6);
       --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
       --shadow-2:0 1px 3px rgba(0,0,0,.4),0 8px 20px rgba(0,0,0,.35);
@@ -73,7 +73,7 @@
     --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
     --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
     --case-bg:#18294A;--on-case:#E9EFFB;
-    --status-explore:#D6A868;--status-explore-soft:#3A2C18;
+    --status-explore:#D6C68A;--status-explore-soft:#332C1B;
     --scrim:rgba(0,0,0,.6);
     --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
     --shadow-2:0 1px 3px rgba(0,0,0,.4),0 8px 20px rgba(0,0,0,.35);
@@ -83,7 +83,7 @@
     --ink:#13161D;--ink-soft:#4B5568;--line:#D9DFEA;
     --accent:#2F4E7A;--accent-soft:#DCE6F7;--on-accent-soft:#152A4C;
     --case-bg:#2F4E7A;--on-case:#EEF2FA;
-    --status-explore:#96661F;--status-explore-soft:#F3E7D3;
+    --status-explore:#7A6A3E;--status-explore-soft:#EFEAD9;
     --scrim:rgba(15,20,30,.45);
     --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
     --shadow-2:0 1px 3px rgba(20,30,50,.12),0 6px 16px rgba(20,30,50,.10);
@@ -109,10 +109,12 @@
   .topbar-inner{max-width:1080px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:flex-end}
   @media (min-width:901px){.topbar-inner{padding:0 40px;height:72px}}
 
-  .utilbar{display:flex;align-items:center;gap:2px}
-  .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;padding:4px 7px;color:var(--ink-soft);opacity:.6}
-  .lang-btn.on{color:var(--ink);opacity:1}
-  .theme-toggle{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;color:var(--ink-soft);padding:4px 0 4px 8px}
+  .utilbar{display:inline-flex;align-items:center;gap:2px;background:var(--accent-soft);border-radius:999px;padding:3px}
+  .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.03em;padding:6px 11px;border-radius:999px;color:var(--on-accent-soft);opacity:.55;transition:opacity var(--dur-s) var(--ease),background var(--dur-s) var(--ease)}
+  .lang-btn.on{opacity:1;background:var(--bg);box-shadow:var(--shadow)}
+  .utilbar-sep{width:1px;height:16px;background:var(--line);margin:0 4px;flex:none}
+  .theme-toggle{background:none;border:none;cursor:pointer;color:var(--on-accent-soft);width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1}
+  @media (hover:hover) and (pointer:fine){.theme-toggle:hover{background:var(--bg)}}
 
   .fab{
     position:fixed;right:28px;bottom:24px;z-index:65;
@@ -147,8 +149,8 @@
   .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg)}
   @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:.88}}
 
-  .hero-nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
-  .hero-nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-soft)}
+  .hero-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+  .hero-nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft)}
   @media (hover:hover) and (pointer:fine){.hero-nav a:hover{color:var(--accent)}}
 
   /* ============ section label ============ */
@@ -287,7 +289,8 @@
       <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
       <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
-      <button class="theme-toggle" aria-label="Cambia tema">DARK</button>
+      <span class="utilbar-sep"></span>
+      <button class="theme-toggle" aria-label="Cambia tema">☾</button>
     </div>
   </div>
 </header>
@@ -587,7 +590,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       p5k:"Production Systems", p5d:"2 sistemi RAG (Retrieval-Augmented Generation) già in produzione presso InfoCamere.", p5_link:"Vedi i progetti →",
       p1k:"AI Advisory", p1d:"Consulenza AI a 2 business unit interne e al CEO di DABO, azienda attiva tra Europa e Cina.", p1_link:"Vedi il percorso →",
       p2k:"Enablement", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa, per l'upskilling di oltre 25 colleghi e del CEO di DABO.",
-      p4k:"Innovazione", p4d:"Su invito del CEO di DABO, membro del team SCWL per il contest \"2026 Sprint Forward in Golden Boots\", Shangcheng.",
+      p4k:"Innovazione", p4d:"Su invito del CEO di DABO: team SCWL, contest \"Sprint Forward\", Shangcheng.",
       sec_lavori:"Progetti",
       work_view:"Vedi il case study →",
       c1_summary:"Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.",
@@ -643,7 +646,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       p5k:"Production Systems", p5d:"2 RAG (Retrieval-Augmented Generation) systems already live in production at InfoCamere.", p5_link:"See the projects →",
       p1k:"AI Advisory", p1d:"AI advisory to 2 internal business units and to DABO's CEO, a company active between Europe and China.", p1_link:"See the path →",
       p2k:"Enablement", p2d:"5 internal and external training programs on operational AI, upskilling 25+ colleagues and DABO's CEO.",
-      p4k:"Innovation", p4d:"At the invitation of DABO's CEO, SCWL Team member for the \"2026 Sprint Forward in Golden Boots\" contest, Shangcheng.",
+      p4k:"Innovation", p4d:"At the invitation of DABO's CEO: SCWL Team, \"Sprint Forward\" contest, Shangcheng.",
       sec_lavori:"Selected Work",
       work_view:"View case study →",
       c1_summary:"Two RAG systems turning fragmented corporate knowledge into accessible, operational information.",
@@ -699,7 +702,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       p5k:"Production Systems", p5d:"2 systèmes RAG (Retrieval-Augmented Generation) déjà en production chez InfoCamere.", p5_link:"Voir les projets →",
       p1k:"AI Advisory", p1d:"Conseil en IA auprès de 2 business units internes et du CEO de DABO, entreprise active entre l'Europe et la Chine.", p1_link:"Voir le parcours →",
       p2k:"Enablement", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle, pour l'upskilling de plus de 25 collègues et du CEO de DABO.",
-      p4k:"Innovation", p4d:"Sur invitation du CEO de DABO, membre de l'équipe SCWL pour le concours « 2026 Sprint Forward in Golden Boots », Shangcheng.",
+      p4k:"Innovation", p4d:"Sur invitation du CEO de DABO : équipe SCWL, concours « Sprint Forward », Shangcheng.",
       sec_lavori:"Projets sélectionnés",
       work_view:"Voir le case study →",
       c1_summary:"Deux systèmes RAG qui transforment une connaissance d'entreprise fragmentée en information accessible et opérationnelle.",
@@ -784,7 +787,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
   function paintTheme(){
     var dark = current() === "dark";
     toggles.forEach(function(t){
-      t.textContent = dark ? "LIGHT" : "DARK";
+      t.textContent = dark ? "☀" : "☾";
       t.setAttribute("aria-label", dark ? "Passa al tema chiaro" : "Passa al tema scuro");
     });
   }
