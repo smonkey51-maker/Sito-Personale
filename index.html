@@ -145,7 +145,8 @@
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
   .hero-btn.outline{background:none;color:var(--ink);border:1px solid var(--line)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
-  .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg)}
+  .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 20px}
+  .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--bg);color:var(--case-bg);display:flex;align-items:center;justify-content:center;font-size:12px;flex:none}
   @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:.88}}
 
   .hero-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
@@ -181,7 +182,8 @@
   .stat .v.pop{animation:statPop .55s var(--ease)}
   .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .stat .d{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0}
-  .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:2px}
+  .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;width:fit-content;display:inline-block}
+  @media (hover:hover) and (pointer:fine){.stat .lnk:hover{color:var(--accent);border-color:var(--accent)}}
   @media (max-width:640px){
     .statrow{flex-direction:column;gap:28px}
     .stat{border-left:none;padding-left:0}
@@ -207,8 +209,8 @@
   .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .persp-title{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .persp-excerpt{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.65;margin:0;flex:1}
-  .persp-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px;background:none;border:none;padding:0;text-align:left;cursor:pointer}
-  @media (hover:hover) and (pointer:fine){.persp-link:hover{opacity:.75}}
+  .persp-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:none;border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content}
+  @media (hover:hover) and (pointer:fine){.persp-link:hover{color:var(--accent);border-color:var(--accent)}}
   .persp-body{font-family:var(--sans);font-size:15px;line-height:1.75;color:var(--ink-soft);white-space:pre-line}
   .persp-body p{margin:0 0 16px}
 
@@ -220,13 +222,13 @@
   .work-meta::before{content:"";width:6px;height:6px;border-radius:50%;flex:none}
   .work-meta.live{color:var(--accent);background:var(--accent-soft)}
   .work-meta.live::before{background:var(--accent)}
-  .work-meta.explore{color:var(--status-explore);background:var(--status-explore-soft)}
-  .work-meta.explore::before{background:var(--status-explore)}
+  .work-meta.explore{color:var(--ink);background:var(--line)}
+  .work-meta.explore::before{background:var(--ink)}
   .work-title{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .work-summary{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
   .work-chips{display:flex;flex-wrap:wrap;gap:6px 14px}
-  .work-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px;background:none;border:none;padding:0;text-align:left;cursor:pointer}
-  @media (hover:hover) and (pointer:fine){.work-link:hover{opacity:.75}}
+  .work-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:none;border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content}
+  @media (hover:hover) and (pointer:fine){.work-link:hover{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ capabilities ============ */
   .cap-sublabel{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid var(--line)}
@@ -237,8 +239,8 @@
   .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft)}
   .core-title{font-family:var(--display);font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
-  .core-link{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-top:2px}
-  @media (hover:hover) and (pointer:fine){.core-link:hover{opacity:.75}}
+  .core-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content}
+  @media (hover:hover) and (pointer:fine){.core-link:hover{color:var(--accent);border-color:var(--accent)}}
 
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
   @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
@@ -246,8 +248,8 @@
   .cap-cell{display:flex;flex-direction:column;gap:6px}
   .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
-  .cap-link{font-family:var(--mono);font-size:11.5px;color:var(--accent);margin-top:2px}
-  @media (hover:hover) and (pointer:fine){.cap-link:hover{opacity:.75}}
+  .cap-link{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content}
+  @media (hover:hover) and (pointer:fine){.cap-link:hover{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ experience ============ */
   .exp-sub{margin-top:16px;padding-left:20px;border-left:1px solid var(--line)}
@@ -259,7 +261,10 @@
   @media (max-width:900px){footer{padding:44px 0 80px}}
   .footer-beyond-k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .footer-beyond-v{font-family:var(--display);font-weight:700;font-size:17px;color:var(--ink);margin-top:6px;letter-spacing:-.005em}
-  .footer-links{font-family:var(--mono);font-size:12.5px;color:var(--accent);display:flex;flex-wrap:wrap;gap:6px 10px}
+  .footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
+  .footer-links a,.footer-links button{font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px}
+  .footer-links svg{width:15px;height:15px;flex:none}
+  @media (hover:hover) and (pointer:fine){.footer-links a:hover,.footer-links button:hover{color:var(--accent)}}
   .footer-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}
 
   /* ============ reveal allo scroll ============ */
@@ -321,8 +326,9 @@
   @media(max-width:900px){
     .hero{padding:46px 0 26px}.hero-toprow{gap:28px}.avatar{width:148px;height:148px;border-radius:24px}.hero-name{font-size:clamp(38px,11vw,52px)}
     .hero-proof{display:none}
-    .hero-nav{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
-    .hero-nav a{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-soft)}
+    .hero-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+    .hero-nav a{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+    .hero-nav a:hover{color:var(--accent);border-color:var(--accent)}
   }
   @media(max-width:560px){.hero-toprow{display:block}.avatar{width:112px;height:112px;border-radius:20px;margin-bottom:24px}.hero-cta-row{display:grid;grid-template-columns:1fr 1fr}.hero-btn{width:100%}}
   .section-label{padding:92px 0 26px;font-size:13px;letter-spacing:.09em}
@@ -384,7 +390,7 @@
         <h1 class="hero-name">Nicolò Forcolin</h1>
         <p class="hero-role">Enterprise IT | AI &amp; Systems Integration | Reliability, Governance &amp; Innovation</p>
         <div class="hero-cta-row">
-          <a class="hero-btn solid" href="#casi-studio" data-i18n="hero_cta1">Esplora il mio lavoro</a>
+          <a class="hero-btn solid" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span><span class="circle">→</span></a>
           <button class="hero-btn outline" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
         </div>
         <div class="hero-proof" aria-label="Professional focus">
@@ -545,10 +551,8 @@
     </div>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn</a>
-      <span>·</span>
-      <button type="button" data-open-modal="contactModal" style="background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Email</button>
-      <span>·</span>
-      <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a>
+      <button type="button" data-open-modal="contactModal" style="background:none;border:none;padding:0;font:inherit;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email</button>
+      <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Google Skills Boost</a>
     </div>
     <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
   </footer>
