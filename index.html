@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" id="themeColorMeta" content="#F2F4F9">
 
 <title>Nicolò Forcolin — Enterprise IT, AI & Systems Integration</title>
 <meta name="description" content="Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.">
@@ -276,15 +277,12 @@
   @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
 
   /* ============ modale contatti ============ */
-  .modal[hidden]{display:none}
-  .modal{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px}
-  .modal-backdrop{position:absolute;inset:0;background:var(--scrim)}
-  .modal-panel{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:22px;max-width:440px;width:100%;padding:36px;max-height:86vh;overflow:auto;box-shadow:var(--shadow-2)}
-  .modal-panel.wide{max-width:680px}
-  @media (prefers-reduced-motion:no-preference){.modal-panel{animation:panelIn .25s ease-out}}
+  dialog{margin:auto;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:22px;max-width:440px;width:calc(100% - 44px);padding:36px;max-height:86vh;overflow:auto;box-shadow:var(--shadow-2)}
+  dialog.wide{max-width:680px}
+  dialog::backdrop{background:var(--scrim)}
+  @media (prefers-reduced-motion:no-preference){dialog[open]{animation:panelIn .25s ease-out}}
   @media (max-width:640px){
-    .modal{align-items:flex-end;padding:0}
-    .modal-panel{max-width:100%;border-radius:20px 20px 0 0}
+    dialog{margin:auto 0 0 0;width:100%;max-width:100%;border-radius:20px 20px 0 0;max-height:90vh}
   }
   .modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}
   .modal-head h2{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
@@ -558,98 +556,87 @@
   </footer>
 </main>
 
-<div class="modal" id="contactModal" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
-    <div class="modal-head">
-      <h2 id="cmTitle" data-i18n="cm_title">Informazioni di contatto</h2>
-      <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
-    </div>
-    <div class="cm-row">
-      <span class="cm-k">Email</span>
-      <span class="cm-v" id="cmEmail"></span>
-    </div>
-    <div class="cm-row">
-      <span class="cm-k" data-i18n="cm_phone">Telefono</span>
-      <span class="cm-v" id="cmPhone"></span>
-    </div>
-    <div class="cm-row">
-      <span class="cm-k" data-i18n="cm_cert">Certificazioni</span>
-      <span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a></span>
-    </div>
+<dialog id="contactModal" aria-labelledby="cmTitle">
+  <div class="modal-head">
+    <h2 id="cmTitle" data-i18n="cm_title">Informazioni di contatto</h2>
+    <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
   </div>
-</div>
-
-<div class="modal" id="c1Modal" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="c1ModalTitle">
-    <div class="modal-head">
-      <h2 id="c1ModalTitle" data-i18n="c1t">Enterprise Knowledge Retrieval</h2>
-      <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
-    </div>
-    <p class="case-block-label" data-i18n="c1_status">Production · 2026</p>
-    <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-    <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.</p>
-    <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
-    <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
-    <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
-    <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
-    <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
-    <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
-    <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
-    <p class="job-supp" data-i18n="c1_learning">Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.</p>
-    <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
-    <div class="metarow">
-      <span class="metachip">Enterprise AI</span>
-      <span class="metachip">RAG</span>
-      <span class="metachip">Systems Integration</span>
-      <span class="metachip">Knowledge Management</span>
-      <span class="metachip">Reliability</span>
-    </div>
+  <div class="cm-row">
+    <span class="cm-k">Email</span>
+    <span class="cm-v" id="cmEmail"></span>
   </div>
-</div>
-
-<div class="modal" id="c2Modal" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="c2ModalTitle">
-    <div class="modal-head">
-      <h2 id="c2ModalTitle" data-i18n="c2t">Local AI for Sensitive Data Environments</h2>
-      <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
-    </div>
-    <p class="case-block-label" data-i18n="c2_status">Exploration · Mag – Giu 2026</p>
-    <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-    <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
-    <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
-    <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
-    <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
-    <div class="metarow">
-      <span class="metachip">Data protection</span>
-      <span class="metachip">Infrastructure control</span>
-      <span class="metachip">Provider dependency</span>
-      <span class="metachip">Operational costs</span>
-      <span class="metachip">AI governance</span>
-    </div>
-    <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
-    <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
-    <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
-    <div class="metarow">
-      <span class="metachip">Qwen</span>
-      <span class="metachip">Gemma</span>
-      <span class="metachip">Ollama</span>
-      <span class="metachip">Unsloth</span>
-      <span class="metachip">Python</span>
-    </div>
+  <div class="cm-row">
+    <span class="cm-k" data-i18n="cm_phone">Telefono</span>
+    <span class="cm-v" id="cmPhone"></span>
   </div>
-</div>
+  <div class="cm-row">
+    <span class="cm-k" data-i18n="cm_cert">Certificazioni</span>
+    <span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a></span>
+  </div>
+</dialog>
 
-<div class="modal" id="persp1Modal" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="persp1ModalTitle">
-    <div class="modal-head">
-      <h2 id="persp1ModalTitle" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h2>
-      <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
-    </div>
-    <div class="persp-body" data-i18n="persp1_body">Implementando due sistemi RAG in produzione pensavo che la parte più difficile sarebbe stata far funzionare bene il modello.
+<dialog id="c1Modal" class="wide" aria-labelledby="c1ModalTitle">
+  <div class="modal-head">
+    <h2 id="c1ModalTitle" data-i18n="c1t">Enterprise Knowledge Retrieval</h2>
+    <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
+  </div>
+  <p class="case-block-label" data-i18n="c1_status">Production · 2026</p>
+  <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+  <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.</p>
+  <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
+  <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
+  <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
+  <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
+  <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
+  <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
+  <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+  <p class="job-supp" data-i18n="c1_learning">Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.</p>
+  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+  <div class="metarow">
+    <span class="metachip">Enterprise AI</span>
+    <span class="metachip">RAG</span>
+    <span class="metachip">Systems Integration</span>
+    <span class="metachip">Knowledge Management</span>
+    <span class="metachip">Reliability</span>
+  </div>
+</dialog>
+
+<dialog id="c2Modal" class="wide" aria-labelledby="c2ModalTitle">
+  <div class="modal-head">
+    <h2 id="c2ModalTitle" data-i18n="c2t">Local AI for Sensitive Data Environments</h2>
+    <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
+  </div>
+  <p class="case-block-label" data-i18n="c2_status">Exploration · Mag – Giu 2026</p>
+  <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+  <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
+  <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
+  <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
+  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+  <div class="metarow">
+    <span class="metachip">Data protection</span>
+    <span class="metachip">Infrastructure control</span>
+    <span class="metachip">Provider dependency</span>
+    <span class="metachip">Operational costs</span>
+    <span class="metachip">AI governance</span>
+  </div>
+  <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+  <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
+  <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
+  <div class="metarow">
+    <span class="metachip">Qwen</span>
+    <span class="metachip">Gemma</span>
+    <span class="metachip">Ollama</span>
+    <span class="metachip">Unsloth</span>
+    <span class="metachip">Python</span>
+  </div>
+</dialog>
+
+<dialog id="persp1Modal" class="wide" aria-labelledby="persp1ModalTitle">
+  <div class="modal-head">
+    <h2 id="persp1ModalTitle" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h2>
+    <button class="modal-x" data-close aria-label="Chiudi">&times;</button>
+  </div>
+  <div class="persp-body" data-i18n="persp1_body">Implementando due sistemi RAG in produzione pensavo che la parte più difficile sarebbe stata far funzionare bene il modello.
 
 È successo quasi il contrario.
 
@@ -662,8 +649,7 @@ La qualità del retrieval conta. Il modello conta. Ma una parte sorprendentement
 Il problema non è più soltanto costruire un buon sistema AI. Diventa progettare il rapporto tra dati, sistemi, processi e persone affinché quel sistema possa essere affidabile nel contesto reale in cui viene utilizzato.
 
 Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sfide che chiamiamo "AI" sono, in realtà, problemi organizzativi che l'AI rende semplicemente più visibili.</div>
-  </div>
-</div>
+</dialog>
 
 <script>
 (function(){
@@ -878,12 +864,14 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
     if(set) return set;
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
+  var themeColorMeta = document.getElementById("themeColorMeta");
   function paintTheme(){
     var dark = current() === "dark";
     toggles.forEach(function(t){
       t.textContent = dark ? "☀" : "☾";
       t.setAttribute("aria-label", dark ? "Passa al tema chiaro" : "Passa al tema scuro");
     });
+    if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#0C0F16" : "#F2F4F9");
   }
   toggles.forEach(function(t){
     t.addEventListener("click", function(){
@@ -891,33 +879,36 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       paintTheme();
     });
   });
+  if(window.matchMedia){
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(){
+      if(!root.getAttribute("data-theme")) paintTheme();
+    });
+  }
   paintTheme();
 
-  /* ---- modali (contatti, perspectives) ---- */
-  var openModalEl = null;
-  var lastFocus = null;
-  function openModalById(id){
-    return function(e){
-      lastFocus = e && e.currentTarget ? e.currentTarget : null;
-      openModalEl = document.getElementById(id);
-      openModalEl.hidden = false;
-      document.body.style.overflow = "hidden";
-      openModalEl.querySelector(".modal-x").focus();
-    };
+  /* ---- modali (contatti, perspectives) — <dialog> nativo ---- */
+  function openModal(id){
+    var dlg = document.getElementById(id);
+    if(!dlg) return;
+    document.body.style.overflow = "hidden";
+    dlg.showModal();
   }
-  function closeModal(){
-    if(!openModalEl) return;
-    openModalEl.hidden = true;
-    document.body.style.overflow = "";
-    if(lastFocus) lastFocus.focus();
-    openModalEl = null;
-  }
-  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", openModalById("contactModal")); });
-  document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", openModalById(el.getAttribute("data-open-modal"))); });
-  document.querySelectorAll(".modal").forEach(function(m){
-    m.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
+  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", function(){ openModal("contactModal"); }); });
+  document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", function(){ openModal(el.getAttribute("data-open-modal")); }); });
+  document.querySelectorAll("dialog [data-close]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var dlg = btn.closest("dialog");
+      if(dlg) dlg.close();
+    });
   });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && openModalEl) closeModal(); });
+  document.querySelectorAll("dialog").forEach(function(dlg){
+    dlg.addEventListener("click", function(e){
+      var r = dlg.getBoundingClientRect();
+      var inside = r.top <= e.clientY && e.clientY <= r.top + r.height && r.left <= e.clientX && e.clientX <= r.left + r.width;
+      if(!inside) dlg.close();
+    });
+    dlg.addEventListener("close", function(){ document.body.style.overflow = ""; });
+  });
 
   /* ---- contatori animati ---- */
   function setCountsFinal(scope){
