@@ -163,14 +163,11 @@
   .section-num{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
 
   /* ============ percorso (e tutte le sezioni a lista) ============ */
-  .timeline{padding-bottom:8px}
-  .job-row{display:flex;gap:24px}
-  .job-dotcol{width:9px;flex:none}
-  .job-dot{width:9px;height:9px;border-radius:50%;background:var(--line);display:block;margin-top:6px}
-  .job-row.current .job-dot{background:var(--accent)}
-  .job-body{padding-bottom:48px;border-left:1px solid var(--line);margin-left:-1px;padding-left:26px}
-  .job-row.last .job-body{padding-bottom:0;border-left:none}
-  .job-overline{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .timeline{display:flex;flex-direction:column;gap:16px;padding-bottom:8px}
+  .job-row{padding:28px 30px;border:1px solid var(--line);border-radius:20px}
+  .job-row.current{border-color:var(--accent);background:var(--accent-soft)}
+  .job-overline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .job-current-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--bg);border-radius:999px;padding:3px 9px}
   .job-title{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin-top:5px}
   @media (hover:hover) and (pointer:fine){.job-title a:hover{color:var(--accent)}}
   .job-supp{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin-top:8px;line-height:1.65;max-width:640px}
@@ -218,10 +215,10 @@
   /* ============ badge ============ */
   .badge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media (max-width:760px){.badge-grid{grid-template-columns:1fr}}
-  .badge-card{display:flex;align-items:center;gap:16px;padding:22px;border:1px solid var(--line);border-radius:18px}
-  .badge-icon{width:48px;height:48px;border-radius:50%;background:var(--accent-soft);color:var(--on-accent-soft);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:15px;flex:none}
-  .badge-title{font-family:var(--display);font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.3}
-  .badge-date{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-soft);margin-top:4px}
+  .badge-card{display:flex;align-items:center;gap:18px;padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease)}
+  @media (hover:hover) and (pointer:fine){.badge-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}}
+  .badge-icon{width:56px;height:56px;border-radius:50%;background:var(--case-bg);color:var(--on-case);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:18px;flex:none;box-shadow:var(--shadow)}
+  .badge-title{font-family:var(--display);font-size:17px;font-weight:800;color:var(--on-accent-soft);line-height:1.3}
 
   /* ============ selected work ============ */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -345,7 +342,7 @@
   .core-title{font-size:22px}.core-list{font-size:15px}
   .cap-sublabel{margin-bottom:16px}.cap-sublabel.ext{margin-top:42px}
   .cap-grid{gap:14px}.cap-cell{padding:20px;border:1px solid var(--line);border-radius:16px;min-height:150px}
-  .timeline{max-width:760px}.job-body{padding-bottom:42px}.job-title{font-size:19px}.job-supp{font-size:15px}
+  .timeline{max-width:760px}.job-title{font-size:19px}.job-supp{font-size:15px}
   .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;padding:0}
   .stat{padding:26px 24px;border-left:1px solid var(--line);gap:8px;min-width:0}
   .stat:first-child{padding-left:24px}.stat .v{font-size:38px}.stat .d{font-size:13.5px}
@@ -353,7 +350,7 @@
   @media(max-width:520px){.statrow{grid-template-columns:1fr}.stat,.stat:first-child{padding:22px}.stat:not(:first-child){border-left:none;border-top:1px solid var(--line)}}
   .work-grid{gap:16px}.work-card{padding:30px;border-radius:22px;min-height:300px;position:relative;transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease)}
   .work-title{font-size:22px}.work-summary{font-size:15px}.work-link{margin-top:auto;padding-top:10px;min-height:34px}
-  .persp-featured{max-width:760px;padding:30px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 22px 22px 0}
+  .persp-featured{max-width:760px;padding:30px;border:1px solid var(--line);border-radius:22px}
   footer{margin-top:96px}
   @media(hover:hover) and (pointer:fine){.core-cell:hover,.work-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:var(--shadow-2)}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
@@ -460,33 +457,24 @@
   <div class="section-label" id="percorso"><span class="section-num">03</span><span data-i18n="sec_percorso">Esperienza</span></div>
   <div class="timeline rv">
     <div class="job-row current">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="t1">Set 2022 — oggi</div>
-        <div class="job-title">InfoCamere</div>
-        <div class="job-supp" data-i18n="pr1s">SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.</div>
-        <div class="exp-sub">
-          <div class="exp-sub-overline" data-i18n="tsa">Mag 2025 — oggi</div>
-          <div class="exp-sub-title">↳ Social Ambassador</div>
-          <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.</div>
-        </div>
+      <div class="job-overline"><span data-i18n="t1">Set 2022 — oggi</span><span class="job-current-tag" data-i18n="job_current">In corso</span></div>
+      <div class="job-title">InfoCamere</div>
+      <div class="job-supp" data-i18n="pr1s">SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.</div>
+      <div class="exp-sub">
+        <div class="exp-sub-overline" data-i18n="tsa">Mag 2025 — oggi</div>
+        <div class="exp-sub-title">↳ Social Ambassador</div>
+        <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.</div>
       </div>
     </div>
     <div class="job-row">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="t2">2022</div>
-        <div class="job-title">IdeaGrip</div>
-        <div class="job-supp" data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</div>
-      </div>
+      <div class="job-overline" data-i18n="t2">2022</div>
+      <div class="job-title">IdeaGrip</div>
+      <div class="job-supp" data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</div>
     </div>
     <div class="job-row last">
-      <div class="job-dotcol"><span class="job-dot"></span></div>
-      <div class="job-body">
-        <div class="job-overline" data-i18n="t3">2020 — 2022</div>
-        <div class="job-title">Generali</div>
-        <div class="job-supp" data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</div>
-      </div>
+      <div class="job-overline" data-i18n="t3">2020 — 2022</div>
+      <div class="job-title">Generali</div>
+      <div class="job-supp" data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</div>
     </div>
   </div>
 
@@ -557,24 +545,15 @@
   <div class="badge-grid rv">
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
-      <span>
-        <span class="badge-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span>
-        <span class="badge-date" data-i18n="badge1_date">31 Ago 2026</span>
-      </span>
+      <span class="badge-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span>
     </a>
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
-      <span>
-        <span class="badge-title" data-i18n="badge2_title">Google Developer Program — Premium Tier</span>
-        <span class="badge-date" data-i18n="badge2_date">22 Lug 2026</span>
-      </span>
+      <span class="badge-title" data-i18n="badge2_title">Google Developer Program — Premium Tier</span>
     </a>
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
-      <span>
-        <span class="badge-title" data-i18n="badge3_title">Google Cloud Innovator</span>
-        <span class="badge-date" data-i18n="badge3_date">19 Ago 2025</span>
-      </span>
+      <span class="badge-title" data-i18n="badge3_title">Google Cloud Innovator</span>
     </a>
   </div>
 
@@ -731,6 +710,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_solution:"Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.",
       c2_learning:"Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.",
       sec_percorso:"Esperienza",
+      job_current:"In corso",
       t1:"Set 2022 — oggi", tsa:"Mag 2025 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
       pr1s:"SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.",
       prsa:"Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.",
@@ -746,9 +726,9 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_badge:"Badge",
       badge_intro:"Riconoscimenti e certificazioni Google più recenti.",
-      badge1_title:"Gemini Enterprise Agent Ready", badge1_date:"31 Ago 2026",
-      badge2_title:"Google Developer Program — Premium Tier", badge2_date:"22 Lug 2026",
-      badge3_title:"Google Cloud Innovator", badge3_date:"19 Ago 2025",
+      badge1_title:"Gemini Enterprise Agent Ready",
+      badge2_title:"Google Developer Program — Premium Tier",
+      badge3_title:"Google Cloud Innovator",
       sec_oltre:"Beyond work",
       oltre_p:"Classica · Jazz · Progressive Rock · Hi-Fi"
     },
@@ -793,6 +773,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_solution:"I explored the feasibility of locally-run AI models, working with Qwen, Gemma and Ollama-based architectures. The project included dataset preparation, fine-tuning, local deployment and practical demos.",
       c2_learning:"Bringing AI into a controlled environment isn't just about running a model locally. Infrastructure, data management, cost and governance become an integral part of the solution.",
       sec_percorso:"Experience",
+      job_current:"Ongoing",
       t1:"Sep 2022 — today", tsa:"May 2025 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
       pr1s:"SysAdmin. Support for the mission-critical infrastructure of the Italian Chambers of Commerce system, with a focus on operational reliability. In parallel, I develop and operate AI solutions in production, integrated with corporate knowledge and workflows.",
       prsa:"Driving digital culture and AI adoption across InfoCamere through advisory, training and technology communication. I help translate emerging technologies into practical knowledge and use cases, contributing to the upskilling of 35+ professionals.",
@@ -808,9 +789,9 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_badge:"Badges",
       badge_intro:"Recent Google recognitions and certifications.",
-      badge1_title:"Gemini Enterprise Agent Ready", badge1_date:"Aug 31, 2026",
-      badge2_title:"Google Developer Program — Premium Tier", badge2_date:"Jul 22, 2026",
-      badge3_title:"Google Cloud Innovator", badge3_date:"Aug 19, 2025",
+      badge1_title:"Gemini Enterprise Agent Ready",
+      badge2_title:"Google Developer Program — Premium Tier",
+      badge3_title:"Google Cloud Innovator",
       sec_oltre:"Beyond work",
       oltre_p:"Classical · Jazz · Progressive Rock · Hi-Fi"
     },
@@ -855,6 +836,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       c2_solution:"J'ai exploré la faisabilité de modèles d'IA exécutés localement, en travaillant avec Qwen, Gemma et des architectures basées sur Ollama. Le projet a inclus la préparation des jeux de données, le fine-tuning, le déploiement local et des démonstrations pratiques.",
       c2_learning:"Amener l'IA dans un environnement contrôlé ne consiste pas simplement à exécuter un modèle en local. L'infrastructure, la gestion des données, les coûts et la gouvernance font partie intégrante de la solution.",
       sec_percorso:"Expérience",
+      job_current:"En cours",
       t1:"Sept. 2022 — aujourd'hui", tsa:"Mai 2025 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
       pr1s:"SysAdmin. Support de l'infrastructure critique du système des Chambres de commerce italiennes, avec un accent sur la fiabilité opérationnelle. En parallèle, je développe et exploite des solutions IA en production, intégrées aux connaissances et aux workflows de l'entreprise.",
       prsa:"Promotion de la culture numérique et de l'adoption de l'IA chez InfoCamere à travers le conseil, la formation et la communication technologique. J'aide à traduire les technologies émergentes en connaissances pratiques et cas d'usage, contribuant à l'upskilling de plus de 35 professionnels.",
@@ -870,9 +852,9 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_badge:"Badges",
       badge_intro:"Reconnaissances et certifications Google récentes.",
-      badge1_title:"Gemini Enterprise Agent Ready", badge1_date:"31 août 2026",
-      badge2_title:"Google Developer Program — Premium Tier", badge2_date:"22 juil. 2026",
-      badge3_title:"Google Cloud Innovator", badge3_date:"19 août 2025",
+      badge1_title:"Gemini Enterprise Agent Ready",
+      badge2_title:"Google Developer Program — Premium Tier",
+      badge3_title:"Google Cloud Innovator",
       sec_oltre:"Beyond work",
       oltre_p:"Classique · Jazz · Progressive Rock · Hi-Fi"
     }
