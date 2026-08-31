@@ -167,7 +167,7 @@
 
   .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
-  .hero-btn.outline{background:none;color:var(--ink);border:1px solid var(--line)}
+  .hero-btn.outline{background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);color:var(--ink);border:1px solid var(--line)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
   .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 20px}
   .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--bg);color:var(--case-bg);display:flex;align-items:center;justify-content:center;font-size:12px;flex:none}
@@ -197,14 +197,15 @@
 
   /* ============ in sintesi ============ */
   .statrow{display:flex;gap:44px;padding-bottom:8px}
-  .stat{flex:1;display:flex;flex-direction:column;gap:10px;padding-left:44px;border-left:1px solid var(--line);min-width:0}
+  .stat{flex:1;display:flex;flex-direction:column;gap:10px;padding-left:44px;border-left:1px solid var(--line);min-width:0;cursor:pointer;transition:background var(--dur-s) var(--ease)}
+  @media (hover:hover) and (pointer:fine){.stat:hover{background:var(--accent-soft)}}
   .stat:first-child{padding-left:0;border-left:none}
   .stat .v{font-family:var(--display);font-size:34px;font-weight:800;line-height:1;color:var(--ink);margin:0;display:inline-block;font-variant-numeric:tabular-nums}
   .stat .v.v-word{font-size:26px;letter-spacing:-.01em}
   .stat .v.pop{animation:statPop .55s var(--ease)}
   .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .stat .d{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0}
-  .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;width:fit-content;display:inline-block}
+  .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;width:fit-content;display:inline-block;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%)}
   @media (hover:hover) and (pointer:fine){.stat .lnk:hover{color:var(--accent);border-color:var(--accent)}}
   @media (max-width:640px){
     .statrow{flex-direction:column;gap:28px}
@@ -230,7 +231,7 @@
   .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .persp-title{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .persp-excerpt{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.65;margin:0;flex:1}
-  .persp-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:none;border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content}
+  .persp-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content}
   @media (hover:hover) and (pointer:fine){.persp-link:hover{color:var(--accent);border-color:var(--accent)}}
   .persp-body{font-family:var(--sans);font-size:15px;line-height:1.75;color:var(--ink-soft);white-space:pre-line}
   .persp-body p{margin:0 0 16px}
@@ -248,7 +249,7 @@
   /* ============ selected work ============ */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   @media (max-width:760px){.work-grid{grid-template-columns:1fr}}
-  .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid var(--line);border-radius:18px;min-width:0}
+  .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid var(--line);border-radius:18px;min-width:0;cursor:pointer}
   .work-meta{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;width:fit-content}
   .work-meta::before{content:"";width:6px;height:6px;border-radius:50%;flex:none}
   .work-meta.live{color:var(--accent);background:var(--accent-soft)}
@@ -258,7 +259,7 @@
   .work-title{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .work-summary{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
   .work-chips{display:flex;flex-wrap:wrap;gap:6px 14px}
-  .work-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:none;border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content}
+  .work-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content}
   @media (hover:hover) and (pointer:fine){.work-link:hover{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ capabilities ============ */
@@ -270,7 +271,7 @@
   .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);min-width:0}
   .core-title{font-family:var(--display);font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
-  .core-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content}
+  .core-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%)}
   @media (hover:hover) and (pointer:fine){.core-link:hover{color:var(--accent);border-color:var(--accent)}}
 
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
@@ -279,7 +280,7 @@
   .cap-cell{display:flex;flex-direction:column;gap:6px;min-width:0}
   .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
-  .cap-link{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content}
+  .cap-link{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%)}
   @media (hover:hover) and (pointer:fine){.cap-link:hover{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ experience ============ */
@@ -441,33 +442,35 @@
 
   <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></div>
   <div class="statrow">
-    <div class="stat rv" aria-labelledby="p5k">
+    <div class="stat rv" aria-labelledby="p5k" data-card-href="#casi-studio">
       <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
       <p class="d" data-i18n="p5d">RAG systems live at InfoCamere</p>
       <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
     </div>
-    <div class="stat rv" aria-labelledby="p1k">
+    <div class="stat rv" aria-labelledby="p1k" data-card-href="#percorso">
       <p class="v"><span class="num" data-count="3">3</span></p>
       <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
       <p class="d" data-i18n="p1d">Business units + CEO advised</p>
       <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso →</a>
     </div>
-    <div class="stat rv" aria-labelledby="p2k">
+    <div class="stat rv" aria-labelledby="p2k" data-card-href="#competenze">
       <p class="v"><span class="num" data-count="35">35</span>+</p>
       <span class="k" id="p2k" data-i18n="p2k">Enablement</span>
       <p class="d" data-i18n="p2d">Trained on operational AI</p>
+      <a class="lnk" href="#competenze" data-i18n="p2_link">Vedi le competenze →</a>
     </div>
-    <div class="stat rv" aria-labelledby="p4k">
+    <div class="stat rv" aria-labelledby="p4k" data-card-href="#percorso">
       <p class="v v-word" data-i18n="p4v">Internazionale</p>
       <span class="k" id="p4k" data-i18n="p4k">Innovazione</span>
       <p class="d" data-i18n="p4d">Su invito del CEO di DABO: team SCWL, contest "Sprint Forward", Shangcheng.</p>
+      <a class="lnk" href="#percorso" data-i18n="p4_link">Vedi il percorso →</a>
     </div>
   </div>
 
   <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti</span></div>
   <div class="work-grid rv">
-    <div class="work-card">
+    <div class="work-card" data-card-modal="c1Modal">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
       <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
       <p class="work-summary" data-i18n="c1_summary">Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.</p>
@@ -478,7 +481,7 @@
       </div>
       <button class="work-link" type="button" data-open-modal="c1Modal" data-i18n="work_view">Vedi il case study →</button>
     </div>
-    <div class="work-card">
+    <div class="work-card" data-card-modal="c2Modal">
       <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
       <h3 class="work-title" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
       <p class="work-summary" data-i18n="c2_summary">Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.</p>
@@ -734,8 +737,8 @@ Il modello è la parte facile. Il resto è il valore.</div>
       proof_label:"Risultati",
       p5k:"Production Systems", p5d:"2 sistemi RAG (Retrieval-Augmented Generation) già in produzione presso InfoCamere.", p5_link:"Vedi i progetti →",
       p1k:"AI Advisory", p1d:"3 coinvolgimenti di advisory AI: 2 business unit interne e il CEO di DABO, azienda attiva tra Europa e Cina.", p1_link:"Vedi il percorso →",
-      p2k:"Enablement", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa, per l'upskilling di oltre 35 colleghi e del CEO di DABO.",
-      p4v:"Internazionale", p4k:"Innovazione", p4d:"Su invito del CEO di DABO: team SCWL, contest \"Sprint Forward\", Shangcheng.",
+      p2k:"Enablement", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa, per l'upskilling di oltre 35 colleghi e del CEO di DABO.", p2_link:"Vedi le competenze →",
+      p4v:"Internazionale", p4k:"Innovazione", p4d:"Su invito del CEO di DABO: team SCWL, contest \"Sprint Forward\", Shangcheng.", p4_link:"Vedi il percorso →",
       sec_lavori:"Progetti",
       work_view:"Vedi il case study →",
       c1_summary:"Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.",
@@ -796,8 +799,8 @@ Il modello è la parte facile. Il resto è il valore.</div>
       proof_label:"Impact",
       p5k:"Production Systems", p5d:"2 RAG (Retrieval-Augmented Generation) systems already live in production at InfoCamere.", p5_link:"See the projects →",
       p1k:"AI Advisory", p1d:"3 AI advisory engagements: 2 internal business units and DABO's CEO, a company active between Europe and China.", p1_link:"See the path →",
-      p2k:"Enablement", p2d:"5 internal and external training programs on operational AI, upskilling 35+ colleagues and DABO's CEO.",
-      p4v:"International", p4k:"Innovation", p4d:"At the invitation of DABO's CEO: SCWL Team, \"Sprint Forward\" contest, Shangcheng.",
+      p2k:"Enablement", p2d:"5 internal and external training programs on operational AI, upskilling 35+ colleagues and DABO's CEO.", p2_link:"See capabilities →",
+      p4v:"International", p4k:"Innovation", p4d:"At the invitation of DABO's CEO: SCWL Team, \"Sprint Forward\" contest, Shangcheng.", p4_link:"See the path →",
       sec_lavori:"Selected Work",
       work_view:"View case study →",
       c1_summary:"Two RAG systems turning fragmented corporate knowledge into accessible, operational information.",
@@ -858,8 +861,8 @@ Il modello è la parte facile. Il resto è il valore.</div>
       proof_label:"Impact",
       p5k:"Production Systems", p5d:"2 systèmes RAG (Retrieval-Augmented Generation) déjà en production chez InfoCamere.", p5_link:"Voir les projets →",
       p1k:"AI Advisory", p1d:"3 missions d'advisory IA : 2 business units internes et le CEO de DABO, entreprise active entre l'Europe et la Chine.", p1_link:"Voir le parcours →",
-      p2k:"Enablement", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle, pour l'upskilling de plus de 35 collègues et du CEO de DABO.",
-      p4v:"International", p4k:"Innovation", p4d:"Sur invitation du CEO de DABO : équipe SCWL, concours « Sprint Forward », Shangcheng.",
+      p2k:"Enablement", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle, pour l'upskilling de plus de 35 collègues et du CEO de DABO.", p2_link:"Voir les compétences →",
+      p4v:"International", p4k:"Innovation", p4d:"Sur invitation du CEO de DABO : équipe SCWL, concours « Sprint Forward », Shangcheng.", p4_link:"Voir le parcours →",
       sec_lavori:"Projets sélectionnés",
       work_view:"Voir le case study →",
       c1_summary:"Deux systèmes RAG qui transforment une connaissance d'entreprise fragmentée en information accessible et opérationnelle.",
@@ -985,6 +988,13 @@ Il modello è la parte facile. Il resto è il valore.</div>
     card.addEventListener("click", function(e){
       if(e.target.closest("button, a")) return;
       openModal(card.getAttribute("data-card-modal"), card);
+    });
+  });
+  document.querySelectorAll("[data-card-href]").forEach(function(card){
+    card.addEventListener("click", function(e){
+      if(e.target.closest("button, a")) return;
+      var target = document.querySelector(card.getAttribute("data-card-href"));
+      if(target) target.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block: "start"});
     });
   });
   document.querySelectorAll("dialog [data-close]").forEach(function(btn){
