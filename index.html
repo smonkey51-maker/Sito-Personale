@@ -174,7 +174,7 @@
 
   /* ============ in sintesi ============ */
   .statrow{display:flex;gap:44px;padding-bottom:8px}
-  .stat{flex:1;display:flex;flex-direction:column;gap:10px;padding-left:44px;border-left:1px solid var(--line)}
+  .stat{flex:1;display:flex;flex-direction:column;gap:10px;padding-left:44px;border-left:1px solid var(--line);min-width:0}
   .stat:first-child{padding-left:0;border-left:none}
   .stat .v{font-family:var(--display);font-size:34px;font-weight:800;line-height:1;color:var(--ink);margin:0;display:inline-block;font-variant-numeric:tabular-nums}
   .stat .v.pop{animation:statPop .55s var(--ease)}
@@ -200,7 +200,7 @@
   .persp-intro{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0 0 28px;max-width:640px}
   .persp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,560px));gap:20px}
   @media (max-width:900px){.persp-grid{grid-template-columns:1fr}}
-  .persp-card{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:18px}
+  .persp-card{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:18px;min-width:0}
   .persp-featured{display:flex;flex-direction:column;gap:16px;max-width:680px;padding:4px 0 4px 28px;border-left:2px solid var(--accent)}
   .persp-featured .persp-title{font-size:24px}
   .persp-featured .persp-excerpt{font-size:16px}
@@ -213,9 +213,9 @@
   .persp-body p{margin:0 0 16px}
 
   /* ============ badge ============ */
-  .badge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
   @media (max-width:760px){.badge-grid{grid-template-columns:1fr}}
-  .badge-card{display:flex;align-items:center;gap:18px;padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease)}
+  .badge-card{display:flex;align-items:center;gap:18px;padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease);min-width:0}
   @media (hover:hover) and (pointer:fine){.badge-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}}
   .badge-icon{width:56px;height:56px;border-radius:50%;background:var(--case-bg);color:var(--on-case);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:18px;flex:none;box-shadow:var(--shadow)}
   .badge-title{font-family:var(--display);font-size:17px;font-weight:800;color:var(--on-accent-soft);line-height:1.3}
@@ -223,7 +223,7 @@
   /* ============ selected work ============ */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   @media (max-width:760px){.work-grid{grid-template-columns:1fr}}
-  .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid var(--line);border-radius:18px}
+  .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid var(--line);border-radius:18px;min-width:0}
   .work-meta{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;width:fit-content}
   .work-meta::before{content:"";width:6px;height:6px;border-radius:50%;flex:none}
   .work-meta.live{color:var(--accent);background:var(--accent-soft)}
@@ -242,7 +242,7 @@
 
   .core-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   @media (max-width:700px){.core-grid{grid-template-columns:1fr}}
-  .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft)}
+  .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);min-width:0}
   .core-title{font-family:var(--display);font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
   .core-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content}
@@ -251,7 +251,7 @@
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
   @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
-  .cap-cell{display:flex;flex-direction:column;gap:6px}
+  .cap-cell{display:flex;flex-direction:column;gap:6px;min-width:0}
   .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
   .cap-link{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content}
@@ -555,6 +555,10 @@
       <span class="badge-icon" aria-hidden="true">G</span>
       <span class="badge-title" data-i18n="badge3_title">Google Cloud Innovator</span>
     </a>
+    <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+      <span class="badge-icon" aria-hidden="true">G</span>
+      <span class="badge-title" data-i18n="badge4_title">Google Skills Boost</span>
+    </a>
   </div>
 
   <footer>
@@ -729,6 +733,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       badge1_title:"Gemini Enterprise Agent Ready",
       badge2_title:"Google Developer Program — Premium Tier",
       badge3_title:"Google Cloud Innovator",
+      badge4_title:"Google Skills Boost",
       sec_oltre:"Beyond work",
       oltre_p:"Classica · Jazz · Progressive Rock · Hi-Fi"
     },
@@ -792,6 +797,7 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       badge1_title:"Gemini Enterprise Agent Ready",
       badge2_title:"Google Developer Program — Premium Tier",
       badge3_title:"Google Cloud Innovator",
+      badge4_title:"Google Skills Boost",
       sec_oltre:"Beyond work",
       oltre_p:"Classical · Jazz · Progressive Rock · Hi-Fi"
     },
