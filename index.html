@@ -9,7 +9,6 @@
 <meta name="description" content="Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.">
 <link rel="canonical" href="https://nforcolin.eu/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nforcolin.eu/">
 <meta property="og:site_name" content="Nicolò Forcolin">
@@ -21,7 +20,6 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Nicolò Forcolin — Enterprise IT, AI & Systems Integration">
 
-<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nicolò Forcolin — Enterprise IT, AI & Systems Integration">
 <meta name="twitter:description" content="Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.">
@@ -55,15 +53,22 @@
 <style>
   :root{
     color-scheme:light dark;
+    /* Variabili Dinamiche HSL di default (Blue Navy) */
+    --dyn-h:215;
+    --dyn-s:44%;
+    
     --bg:#F2F4F9;
     --ink:#13161D;
     --ink-soft:#4B5568;
     --line:#D9DFEA;
-    --accent:#2F4E7A;
-    --accent-soft:#DCE6F7;
-    --on-accent-soft:#152A4C;
-    --case-bg:#2F4E7A;
-    --on-case:#EEF2FA;
+    
+    /* M3 Dynamic Palette Base */
+    --accent:hsl(var(--dyn-h), var(--dyn-s), 35%);
+    --accent-soft:hsl(var(--dyn-h), var(--dyn-s), 92%);
+    --on-accent-soft:hsl(var(--dyn-h), var(--dyn-s), 15%);
+    --case-bg:hsl(var(--dyn-h), var(--dyn-s), 30%);
+    --on-case:hsl(var(--dyn-h), var(--dyn-s), 96%);
+    
     --status-explore:#7A6A3E;
     --status-explore-soft:#EFEAD9;
     --scrim:rgba(15,20,30,.45);
@@ -82,8 +87,11 @@
     :root:not([data-theme="light"]){
       --bg:#0C0F16;
       --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
-      --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
-      --case-bg:#18294A;--on-case:#E9EFFB;
+      --accent:hsl(var(--dyn-h), var(--dyn-s), 75%);
+      --accent-soft:hsl(var(--dyn-h), var(--dyn-s), 22%);
+      --on-accent-soft:hsl(var(--dyn-h), var(--dyn-s), 92%);
+      --case-bg:hsl(var(--dyn-h), var(--dyn-s), 20%);
+      --on-case:hsl(var(--dyn-h), var(--dyn-s), 92%);
       --status-explore:#D6C68A;--status-explore-soft:#332C1B;
       --scrim:rgba(0,0,0,.6);
       --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
@@ -93,8 +101,11 @@
   :root[data-theme="dark"]{
     --bg:#0C0F16;
     --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
-    --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
-    --case-bg:#18294A;--on-case:#E9EFFB;
+    --accent:hsl(var(--dyn-h), var(--dyn-s), 75%);
+    --accent-soft:hsl(var(--dyn-h), var(--dyn-s), 22%);
+    --on-accent-soft:hsl(var(--dyn-h), var(--dyn-s), 92%);
+    --case-bg:hsl(var(--dyn-h), var(--dyn-s), 20%);
+    --on-case:hsl(var(--dyn-h), var(--dyn-s), 92%);
     --status-explore:#D6C68A;--status-explore-soft:#332C1B;
     --scrim:rgba(0,0,0,.6);
     --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
@@ -103,8 +114,11 @@
   :root[data-theme="light"]{
     --bg:#F2F4F9;
     --ink:#13161D;--ink-soft:#4B5568;--line:#D9DFEA;
-    --accent:#2F4E7A;--accent-soft:#DCE6F7;--on-accent-soft:#152A4C;
-    --case-bg:#2F4E7A;--on-case:#EEF2FA;
+    --accent:hsl(var(--dyn-h), var(--dyn-s), 35%);
+    --accent-soft:hsl(var(--dyn-h), var(--dyn-s), 92%);
+    --on-accent-soft:hsl(var(--dyn-h), var(--dyn-s), 15%);
+    --case-bg:hsl(var(--dyn-h), var(--dyn-s), 30%);
+    --on-case:hsl(var(--dyn-h), var(--dyn-s), 96%);
     --status-explore:#7A6A3E;--status-explore-soft:#EFEAD9;
     --scrim:rgba(15,20,30,.45);
     --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
@@ -159,11 +173,11 @@
   .theme-toggle{background:none;border:none;cursor:pointer;color:var(--on-accent-soft);width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1}
   @media (hover:hover) and (pointer:fine){.theme-toggle:hover{background:var(--bg)}}
 
-  /* ============ fab (Updated to M3 Squircle) ============ */
+  /* ============ fab (M3 Squircle) ============ */
   .fab{
     position:fixed;right:28px;bottom:24px;z-index:65;
     background:var(--case-bg);color:var(--on-case);border:none;
-    border-radius:16px; /* M3 standard shape */
+    border-radius:16px; 
     padding:16px 28px;
     font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
     box-shadow:var(--shadow-2);
@@ -356,7 +370,6 @@
   .cm-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);flex:none}
   .cm-v{font-size:15.5px;text-align:right;color:var(--ink);font-family:var(--sans)}
   .cm-v a{color:var(--accent)}
-
 
   /* ============ UX/UI system v2 ============ */
   :root{--surface:color-mix(in srgb,var(--bg) 92%,var(--ink) 8%);--surface-strong:color-mix(in srgb,var(--bg) 84%,var(--ink) 16%);--radius:24px}
@@ -760,7 +773,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
 <script>
 (function(){
   var i18n = {
-    // ... [Il tuo oggetto i18n originale rimane intatto qui, ometto di rimetterlo parola per parola solo in questo commento ma nel codice effettivo gira completo] ...
     it: {
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
       nav_contatti:"Contatti",
@@ -1097,7 +1109,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
     tiles.forEach(function(t){ t.classList.add("in"); setCountsFinal(t); });
   }
 
-  /* ---- fab: visibile solo oltre la hero, dove il pulsante Contatti non è più a vista ---- */
+  /* ---- fab: visibile solo oltre la hero ---- */
   (function(){
     var fab = document.querySelector(".fab");
     var hero = document.getElementById("profilo");
@@ -1153,6 +1165,53 @@ Il modello è la parte facile. Il resto è il valore.</div>
   document.querySelectorAll('.md-ripple-wrapper').forEach(btn => {
     btn.addEventListener('mousedown', createRipple);
   });
+
+  /* ---- Material 3 Dynamic Color Extraction ---- */
+  (function(){
+    var img = document.querySelector(".avatar");
+    if(!img) return;
+    function extractColor(){
+      try {
+        var canvas = document.createElement("canvas");
+        canvas.width = 1; canvas.height = 1;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, 1, 1);
+        var data = ctx.getImageData(0, 0, 1, 1).data;
+        var r = data[0]/255, g = data[1]/255, b = data[2]/255;
+        
+        var max = Math.max(r, g, b), min = Math.min(r, g, b);
+        var h, s, l = (max + min) / 2;
+        
+        if(max === min){ 
+          h = s = 0; 
+        } else {
+          var d = max - min;
+          s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+          switch(max){
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+          }
+          h /= 6;
+        }
+        
+        h = Math.round(h * 360);
+        // Calmieri la saturazione per non snaturare il look enterprise (min 20%, max 60%)
+        s = Math.min(Math.max(Math.round(s * 100), 20), 60);
+        
+        document.documentElement.style.setProperty("--dyn-h", h);
+        document.documentElement.style.setProperty("--dyn-s", s + "%");
+      } catch(e) {
+        console.warn("Estrazione Dynamic Color saltata (usando i default). Motivo: ", e);
+      }
+    }
+    
+    if(img.complete) {
+      extractColor();
+    } else {
+      img.addEventListener("load", extractColor);
+    }
+  })();
 
   applyLang();
 })();
