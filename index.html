@@ -32,6 +32,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Nicolò Forcolin",
+    "url": "https://nforcolin.eu/",
+    "image": "https://nforcolin.eu/og-image.png",
+    "jobTitle": "Enterprise IT, AI & Systems Integration",
+    "worksFor": { "@type": "Organization", "name": "InfoCamere" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Padova", "addressCountry": "IT" },
+    "sameAs": [
+      "https://www.linkedin.com/in/nicoloforcolin/",
+      "https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519"
+    ]
+  }
+}
+</script>
+
 <style>
   :root{
     color-scheme:light dark;
@@ -222,7 +242,9 @@
   .badge-card{display:flex;align-items:center;gap:18px;padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease);min-width:0}
   @media (hover:hover) and (pointer:fine){.badge-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}}
   .badge-icon{width:56px;height:56px;border-radius:50%;background:var(--case-bg);color:var(--on-case);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:18px;flex:none;box-shadow:var(--shadow)}
+  .badge-text{display:flex;flex-direction:column;gap:3px}
   .badge-title{font-family:var(--display);font-size:17px;font-weight:800;color:var(--on-accent-soft);line-height:1.3}
+  .badge-meta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-soft)}
 
   /* ============ selected work ============ */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -367,13 +389,11 @@
   <div class="topbar-inner">
     <a class="brandmark" href="#profilo" aria-label="Nicolò Forcolin — Home">Nicolò Forcolin</a>
     <nav class="desktop-nav" aria-label="Navigazione principale">
-      <a href="#chi-sono" data-i18n="sec_chisono">Chi sono</a>
-      <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
-      <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
       <a href="#sintesi" data-i18n="proof_label">Impact</a>
       <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
+      <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
+      <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
       <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
-      <a href="#badge" data-i18n="sec_badge">Badge</a>
     </nav>
     <div class="utilbar">
       <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
@@ -403,13 +423,11 @@
           <span>Enterprise IT</span><span>AI in Production</span><span>Systems Integration</span><span>AI Adoption</span>
         </div>
         <nav class="hero-nav" aria-label="Sezioni della pagina">
-          <a href="#chi-sono" data-i18n="sec_chisono">Chi sono</a>
-          <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
-          <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
           <a href="#sintesi" data-i18n="proof_label">Impact</a>
           <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
+          <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
+          <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
           <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
-          <a href="#badge" data-i18n="sec_badge">Badge</a>
         </nav>
       </div>
     </div>
@@ -420,69 +438,10 @@
 
   <div class="section-label" id="chi-sono"><span class="section-num">01</span><span data-i18n="sec_chisono">Chi sono</span></div>
   <div class="chisono-card rv">
-    <p class="oltre-supp" data-i18n="chisono_p">Professionista IT enterprise con una base in infrastrutture critiche e integrazione di sistemi, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management per tradurre esigenze operative e organizzative in soluzioni tecnologiche concrete, e contribuisco all'adozione dell'AI e all'upskilling digitale. Il mio focus è trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.</p>
+    <p class="oltre-supp" data-i18n="chisono_p">Professionista IT enterprise con basi in infrastrutture critiche e systems integration, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management traducendo esigenze operative in soluzioni concrete, contribuendo ad AI adoption e upskilling digitale. Focus: trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.</p>
   </div>
 
-  <div class="section-label" id="competenze"><span class="section-num">02</span><span data-i18n="sec_competenze">Competenze</span></div>
-
-  <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
-  <div class="core-grid rv">
-    <div class="core-cell">
-      <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
-      <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
-      <a class="core-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
-    </div>
-    <div class="core-cell">
-      <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
-      <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
-      <a class="core-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
-    </div>
-  </div>
-
-  <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
-  <div class="cap-grid rv">
-    <div class="cap-cell">
-      <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
-      <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Automation</p>
-      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
-    </div>
-    <div class="cap-cell">
-      <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
-      <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
-      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
-    </div>
-    <div class="cap-cell">
-      <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
-      <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
-      <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
-    </div>
-  </div>
-
-  <div class="section-label" id="percorso"><span class="section-num">03</span><span data-i18n="sec_percorso">Esperienza</span></div>
-  <div class="timeline rv">
-    <div class="job-row current">
-      <div class="job-overline"><span data-i18n="t1">Set 2022 — oggi</span><span class="job-current-tag" data-i18n="job_current">In corso</span></div>
-      <div class="job-title">InfoCamere</div>
-      <div class="job-supp" data-i18n="pr1s">SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.</div>
-      <div class="exp-sub">
-        <div class="exp-sub-overline" data-i18n="tsa">Mag 2025 — oggi</div>
-        <div class="exp-sub-title">↳ Social Ambassador</div>
-        <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.</div>
-      </div>
-    </div>
-    <div class="job-row">
-      <div class="job-overline" data-i18n="t2">2022</div>
-      <div class="job-title">IdeaGrip</div>
-      <div class="job-supp" data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</div>
-    </div>
-    <div class="job-row last">
-      <div class="job-overline" data-i18n="t3">2020 — 2022</div>
-      <div class="job-title">Generali</div>
-      <div class="job-supp" data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</div>
-    </div>
-  </div>
-
-  <div class="section-label" id="sintesi"><span class="section-num">04</span><span data-i18n="proof_label">Impact</span></div>
+  <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></div>
   <div class="statrow">
     <div class="stat rv" aria-labelledby="p5k">
       <p class="v"><span class="num" data-count="2">2</span></p>
@@ -491,7 +450,7 @@
       <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
     </div>
     <div class="stat rv" aria-labelledby="p1k">
-      <p class="v"><span class="num" data-count="2">2</span>+<span class="num" data-count="1">1</span></p>
+      <p class="v"><span class="num" data-count="3">3</span></p>
       <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
       <p class="d" data-i18n="p1d">Business units + CEO advised</p>
       <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso →</a>
@@ -502,13 +461,13 @@
       <p class="d" data-i18n="p2d">Trained on operational AI</p>
     </div>
     <div class="stat rv" aria-labelledby="p4k">
-      <p class="v"><span class="num" data-count="2026">2026</span></p>
+      <p class="v" data-i18n="p4v">Internazionale</p>
       <span class="k" id="p4k" data-i18n="p4k">Innovazione</span>
       <p class="d" data-i18n="p4d">Su invito del CEO di DABO: team SCWL, contest "Sprint Forward", Shangcheng.</p>
     </div>
   </div>
 
-  <div class="section-label" id="casi-studio"><span class="section-num">05</span><span data-i18n="sec_lavori">Progetti</span></div>
+  <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti</span></div>
   <div class="work-grid rv">
     <div class="work-card">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
@@ -534,6 +493,65 @@
     </div>
   </div>
 
+  <div class="section-label" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
+
+  <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
+  <div class="core-grid rv">
+    <div class="core-cell">
+      <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
+      <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
+      <a class="core-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+    </div>
+    <div class="core-cell">
+      <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
+      <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
+      <a class="core-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+    </div>
+  </div>
+
+  <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
+  <div class="cap-grid rv">
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
+      <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
+      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
+      <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
+      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+    </div>
+    <div class="cap-cell">
+      <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
+      <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
+      <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+    </div>
+  </div>
+
+  <div class="section-label" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Esperienza</span></div>
+  <div class="timeline rv">
+    <div class="job-row current">
+      <div class="job-overline"><span data-i18n="t1">Set 2022 — oggi</span><span class="job-current-tag" data-i18n="job_current">In corso</span></div>
+      <div class="job-title">InfoCamere</div>
+      <div class="job-supp" data-i18n="pr1s">SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.</div>
+      <div class="exp-sub">
+        <div class="exp-sub-overline" data-i18n="tsa">Mag 2025 — oggi</div>
+        <div class="exp-sub-title">↳ Social Ambassador</div>
+        <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.</div>
+      </div>
+    </div>
+    <div class="job-row">
+      <div class="job-overline" data-i18n="t2">2022</div>
+      <div class="job-title">IdeaGrip</div>
+      <div class="job-supp" data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</div>
+    </div>
+    <div class="job-row last">
+      <div class="job-overline" data-i18n="t3">2020 — 2022</div>
+      <div class="job-title">Generali</div>
+      <div class="job-supp" data-i18n="pr3">Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.</div>
+    </div>
+  </div>
+
   <div class="section-label" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_perspectives">Perspectives</span></div>
   <div class="persp-featured rv">
     <span class="persp-meta" data-i18n="persp1_meta">Perspective 01 · 2026</span>
@@ -546,15 +564,24 @@
   <div class="badge-grid rv">
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
-      <span class="badge-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span>
+      <span class="badge-text">
+        <span class="badge-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span>
+        <span class="badge-meta" data-i18n="badge1_meta">Google · Credential · 2026</span>
+      </span>
     </a>
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
-      <span class="badge-title" data-i18n="badge2_title">Google Developer Program — Premium Tier</span>
+      <span class="badge-text">
+        <span class="badge-title" data-i18n="badge2_title">Google Cloud Innovator</span>
+        <span class="badge-meta" data-i18n="badge2_meta">Google Cloud · Community program · 2025</span>
+      </span>
     </a>
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
-      <span class="badge-title" data-i18n="badge3_title">Google Cloud Innovator</span>
+      <span class="badge-text">
+        <span class="badge-title" data-i18n="badge3_title">Google Developer Program — Premium Tier</span>
+        <span class="badge-meta" data-i18n="badge3_meta">Google · Program status · 2026</span>
+      </span>
     </a>
   </div>
 
@@ -673,12 +700,12 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Esplora il mio lavoro",
       sec_chisono:"Chi sono",
-      chisono_p:"Professionista IT enterprise con una base in infrastrutture critiche e integrazione di sistemi, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management per tradurre esigenze operative e organizzative in soluzioni tecnologiche concrete, e contribuisco all'adozione dell'AI e all'upskilling digitale. Il mio focus è trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.",
+      chisono_p:"Professionista IT enterprise con basi in infrastrutture critiche e systems integration, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management traducendo esigenze operative in soluzioni concrete, contribuendo ad AI adoption e upskilling digitale. Focus: trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.",
       proof_label:"Risultati",
       p5k:"Production Systems", p5d:"2 sistemi RAG (Retrieval-Augmented Generation) già in produzione presso InfoCamere.", p5_link:"Vedi i progetti →",
-      p1k:"AI Advisory", p1d:"Consulenza AI a 2 business unit interne e al CEO di DABO, azienda attiva tra Europa e Cina.", p1_link:"Vedi il percorso →",
+      p1k:"AI Advisory", p1d:"3 coinvolgimenti di advisory AI: 2 business unit interne e il CEO di DABO, azienda attiva tra Europa e Cina.", p1_link:"Vedi il percorso →",
       p2k:"Enablement", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa, per l'upskilling di oltre 35 colleghi e del CEO di DABO.",
-      p4k:"Innovazione", p4d:"Su invito del CEO di DABO: team SCWL, contest \"Sprint Forward\", Shangcheng.",
+      p4v:"Internazionale", p4k:"Innovazione", p4d:"Su invito del CEO di DABO: team SCWL, contest \"Sprint Forward\", Shangcheng.",
       sec_lavori:"Progetti",
       work_view:"Vedi il case study →",
       c1_summary:"Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.",
@@ -714,15 +741,15 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sec_competenze:"Competenze",
       sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
       sk_cat2:"Enterprise AI", sk2:"RAG · Local AI · LLM · Knowledge Retrieval",
-      sk_cat3:"Cloud & Development", sk3:"Python · GCP · API · Automazione",
+      sk_cat3:"Cloud & Development", sk3:"Python · GCP · API · Application Integration",
       sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
       sk_cat5:"Technology Enablement", sk5:"Advisory · Formazione · Public Speaking",
       cap_link_exp:"→ Esperienza", cap_link_work:"→ Case study", cap_link_projects:"→ Progetti",
       cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_badge:"Badge",
-      badge1_title:"Gemini Enterprise Agent Ready",
-      badge2_title:"Google Developer Program — Premium Tier",
-      badge3_title:"Google Cloud Innovator",
+      badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Google · Credential · 2026",
+      badge2_title:"Google Cloud Innovator", badge2_meta:"Google Cloud · Community program · 2025",
+      badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Google · Program status · 2026",
     },
     en: {
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
@@ -731,12 +758,12 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Explore my work",
       sec_chisono:"About",
-      chisono_p:"Enterprise IT professional with a foundation in critical infrastructure and systems integration, from which I design and ship production AI solutions. I work with middle and top management to turn operational and organizational needs into concrete technology solutions, and contribute to AI adoption and digital upskilling. My focus is turning technology into reliable capabilities by connecting systems, data, governance and people.",
+      chisono_p:"Enterprise IT professional with a foundation in critical infrastructure and systems integration, shipping production AI solutions. I work with middle and top management, turning operational needs into concrete solutions and contributing to AI adoption and digital upskilling. Focus: turning technology into reliable capabilities by connecting systems, data, governance and people.",
       proof_label:"Impact",
       p5k:"Production Systems", p5d:"2 RAG (Retrieval-Augmented Generation) systems already live in production at InfoCamere.", p5_link:"See the projects →",
-      p1k:"AI Advisory", p1d:"AI advisory to 2 internal business units and to DABO's CEO, a company active between Europe and China.", p1_link:"See the path →",
+      p1k:"AI Advisory", p1d:"3 AI advisory engagements: 2 internal business units and DABO's CEO, a company active between Europe and China.", p1_link:"See the path →",
       p2k:"Enablement", p2d:"5 internal and external training programs on operational AI, upskilling 35+ colleagues and DABO's CEO.",
-      p4k:"Innovation", p4d:"At the invitation of DABO's CEO: SCWL Team, \"Sprint Forward\" contest, Shangcheng.",
+      p4v:"International", p4k:"Innovation", p4d:"At the invitation of DABO's CEO: SCWL Team, \"Sprint Forward\" contest, Shangcheng.",
       sec_lavori:"Selected Work",
       work_view:"View case study →",
       c1_summary:"Two RAG systems turning fragmented corporate knowledge into accessible, operational information.",
@@ -772,15 +799,15 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sec_competenze:"Capabilities",
       sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
       sk_cat2:"Enterprise AI", sk2:"RAG · Local AI · LLM · Knowledge Retrieval",
-      sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Automation",
+      sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Application Integration",
       sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
       cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
       cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_badge:"Badges",
-      badge1_title:"Gemini Enterprise Agent Ready",
-      badge2_title:"Google Developer Program — Premium Tier",
-      badge3_title:"Google Cloud Innovator",
+      badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Google · Credential · 2026",
+      badge2_title:"Google Cloud Innovator", badge2_meta:"Google Cloud · Community program · 2025",
+      badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Google · Program status · 2026",
     },
     fr: {
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
@@ -789,12 +816,12 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Découvrir mon travail",
       sec_chisono:"À propos",
-      chisono_p:"Professionnel IT d'entreprise avec une base en infrastructures critiques et intégration de systèmes, à partir de laquelle je conçois et déploie des solutions IA en production. Je collabore avec le middle et le top management pour traduire les besoins opérationnels et organisationnels en solutions technologiques concrètes, et je contribue à l'adoption de l'IA et à l'upskilling numérique. Mon objectif est de transformer la technologie en capacités fiables, en connectant systèmes, données, gouvernance et personnes.",
+      chisono_p:"Professionnel IT d'entreprise avec une base en infrastructures critiques et intégration de systèmes, déployant des solutions IA en production. Je collabore avec le middle et le top management, traduisant les besoins opérationnels en solutions concrètes et contribuant à l'adoption de l'IA et à l'upskilling numérique. Objectif : transformer la technologie en capacités fiables, en connectant systèmes, données, gouvernance et personnes.",
       proof_label:"Impact",
       p5k:"Production Systems", p5d:"2 systèmes RAG (Retrieval-Augmented Generation) déjà en production chez InfoCamere.", p5_link:"Voir les projets →",
-      p1k:"AI Advisory", p1d:"Conseil en IA auprès de 2 business units internes et du CEO de DABO, entreprise active entre l'Europe et la Chine.", p1_link:"Voir le parcours →",
+      p1k:"AI Advisory", p1d:"3 missions d'advisory IA : 2 business units internes et le CEO de DABO, entreprise active entre l'Europe et la Chine.", p1_link:"Voir le parcours →",
       p2k:"Enablement", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle, pour l'upskilling de plus de 35 collègues et du CEO de DABO.",
-      p4k:"Innovation", p4d:"Sur invitation du CEO de DABO : équipe SCWL, concours « Sprint Forward », Shangcheng.",
+      p4v:"International", p4k:"Innovation", p4d:"Sur invitation du CEO de DABO : équipe SCWL, concours « Sprint Forward », Shangcheng.",
       sec_lavori:"Projets sélectionnés",
       work_view:"Voir le case study →",
       c1_summary:"Deux systèmes RAG qui transforment une connaissance d'entreprise fragmentée en information accessible et opérationnelle.",
@@ -830,15 +857,15 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       sec_competenze:"Compétences",
       sk_cat1:"IT d'entreprise", sk1:"Intégration de systèmes · Fiabilité · Linux/Windows · Automatisation",
       sk_cat2:"IA d'entreprise", sk2:"RAG · IA locale · LLM · Knowledge Retrieval",
-      sk_cat3:"Cloud & Développement", sk3:"Python · GCP · API · Automatisation",
+      sk_cat3:"Cloud & Développement", sk3:"Python · GCP · API · Application Integration",
       sk_cat4:"Adoption & gouvernance de l'IA", sk4:"Adoption de l'IA · Protection des données · Gestion des connaissances",
       sk_cat5:"Technology Enablement", sk5:"Conseil · Formation · Public Speaking",
       cap_link_exp:"→ Expérience", cap_link_work:"→ Étude de cas", cap_link_projects:"→ Projets",
       cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
       sec_badge:"Badges",
-      badge1_title:"Gemini Enterprise Agent Ready",
-      badge2_title:"Google Developer Program — Premium Tier",
-      badge3_title:"Google Cloud Innovator",
+      badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Google · Credential · 2026",
+      badge2_title:"Google Cloud Innovator", badge2_meta:"Google Cloud · Community program · 2025",
+      badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Google · Program status · 2026",
     }
   };
 
@@ -902,14 +929,16 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
   paintTheme();
 
   /* ---- modali (contatti, perspectives) — <dialog> nativo ---- */
-  function openModal(id){
+  var modalOpener = null;
+  function openModal(id, opener){
     var dlg = document.getElementById(id);
     if(!dlg) return;
+    modalOpener = opener || document.activeElement;
     document.body.style.overflow = "hidden";
     dlg.showModal();
   }
-  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", function(){ openModal("contactModal"); }); });
-  document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", function(){ openModal(el.getAttribute("data-open-modal")); }); });
+  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", function(){ openModal("contactModal", el); }); });
+  document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", function(){ openModal(el.getAttribute("data-open-modal"), el); }); });
   document.querySelectorAll("dialog [data-close]").forEach(function(btn){
     btn.addEventListener("click", function(){
       var dlg = btn.closest("dialog");
@@ -922,7 +951,11 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       var inside = r.top <= e.clientY && e.clientY <= r.top + r.height && r.left <= e.clientX && e.clientX <= r.left + r.width;
       if(!inside) dlg.close();
     });
-    dlg.addEventListener("close", function(){ document.body.style.overflow = ""; });
+    dlg.addEventListener("close", function(){
+      document.body.style.overflow = "";
+      if(modalOpener && typeof modalOpener.focus === "function"){ modalOpener.focus(); }
+      modalOpener = null;
+    });
   });
 
   /* ---- contatori animati ---- */
