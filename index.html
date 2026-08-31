@@ -170,7 +170,9 @@
   .hero-btn.outline{background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);color:var(--ink);border:1px solid var(--line)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
   .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 20px}
-  .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--bg);color:var(--case-bg);display:flex;align-items:center;justify-content:center;font-size:12px;flex:none}
+  .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--line);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;flex:none}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero-btn.solid .circle{background:var(--accent-soft);color:var(--on-accent-soft)}}
+  :root[data-theme="dark"] .hero-btn.solid .circle{background:var(--accent-soft);color:var(--on-accent-soft)}
   @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:.88}}
 
   .hero-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
@@ -268,7 +270,7 @@
 
   .core-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   @media (max-width:700px){.core-grid{grid-template-columns:1fr}}
-  .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);min-width:0}
+  .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);min-width:0;cursor:pointer;transition:background var(--dur-s) var(--ease)}
   .core-title{font-family:var(--display);font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
   .core-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%)}
@@ -277,7 +279,8 @@
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
   @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
-  .cap-cell{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .cap-cell{display:flex;flex-direction:column;gap:6px;min-width:0;cursor:pointer;transition:background var(--dur-s) var(--ease)}
+  @media (hover:hover) and (pointer:fine){.cap-cell:hover{background:var(--accent-soft)}}
   .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
   .cap-link{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%)}
@@ -375,7 +378,7 @@
   .work-grid{gap:16px}.work-card{padding:30px;border-radius:22px;min-height:300px;position:relative;transition:background var(--dur-s) var(--ease)}
   .work-title{font-size:22px}.work-summary{font-size:15px}.work-link{margin-top:auto;padding-top:10px;min-height:34px}
   footer{margin-top:96px}
-  @media(hover:hover) and (pointer:fine){.core-cell:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:var(--shadow-2)}.work-card:hover{background:var(--accent-soft)}}
+  @media(hover:hover) and (pointer:fine){.core-cell:hover{background:var(--accent-soft)}.work-card:hover{background:var(--accent-soft)}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -498,12 +501,12 @@
 
   <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
   <div class="core-grid rv">
-    <div class="core-cell">
+    <div class="core-cell" data-card-href="#percorso">
       <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
       <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
       <a class="core-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
-    <div class="core-cell">
+    <div class="core-cell" data-card-href="#casi-studio">
       <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
       <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
       <a class="core-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
@@ -512,17 +515,17 @@
 
   <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
   <div class="cap-grid rv">
-    <div class="cap-cell">
+    <div class="cap-cell" data-card-href="#casi-studio">
       <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
       <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
       <a class="cap-link" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
     </div>
-    <div class="cap-cell">
+    <div class="cap-cell" data-card-href="#casi-studio">
       <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
       <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
       <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
-    <div class="cap-cell">
+    <div class="cap-cell" data-card-href="#percorso">
       <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
       <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
       <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
