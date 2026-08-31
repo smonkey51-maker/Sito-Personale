@@ -122,7 +122,10 @@
     background:var(--case-bg);color:var(--on-case);border:none;border-radius:999px;padding:14px 26px;
     font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
     box-shadow:var(--shadow-2);
+    opacity:0;transform:translateY(14px);pointer-events:none;
   }
+  .fab.visible{opacity:1;transform:none;pointer-events:auto}
+  @media (prefers-reduced-motion:no-preference){.fab{transition:opacity var(--dur-s) var(--ease),transform var(--dur-s) var(--ease)}}
 
   @media (max-width:560px){
     .fab{right:16px;bottom:16px;padding:13px 22px}
@@ -976,6 +979,18 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
   }else{
     tiles.forEach(function(t){ t.classList.add("in"); setCountsFinal(t); });
   }
+
+  /* ---- fab: visibile solo oltre la hero, dove il pulsante Contatti non è più a vista ---- */
+  (function(){
+    var fab = document.querySelector(".fab");
+    var hero = document.getElementById("profilo");
+    if(!fab || !hero) return;
+    if(!("IntersectionObserver" in window)){ fab.classList.add("visible"); return; }
+    var heroIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ fab.classList.toggle("visible", !en.isIntersecting); });
+    }, {threshold:0});
+    heroIO.observe(hero);
+  })();
 
   /* ---- navigation feedback & reading progress ---- */
   var progress = document.querySelector(".scroll-progress");
