@@ -197,7 +197,8 @@
   .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
 
   /* ============ oltre ============ */
-  .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0;padding-bottom:8px}
+  .chisono-card{border:1px solid var(--line);border-radius:22px;padding:32px;margin-bottom:8px}
+  .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0}
 
   /* ============ perspectives ============ */
   .persp-intro{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0 0 28px;max-width:640px}
@@ -268,8 +269,6 @@
 
   footer{padding:56px 0 88px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
   @media (max-width:900px){footer{padding:44px 0 80px}}
-  .footer-beyond-k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-  .footer-beyond-v{font-family:var(--display);font-weight:700;font-size:17px;color:var(--ink);margin-top:6px;letter-spacing:-.005em}
   .footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
   .footer-links a,.footer-links button{font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px}
   .footer-links svg{width:15px;height:15px;flex:none}
@@ -420,7 +419,9 @@
 <main class="wrap">
 
   <div class="section-label" id="chi-sono"><span class="section-num">01</span><span data-i18n="sec_chisono">Chi sono</span></div>
-  <p class="oltre-supp rv" data-i18n="chisono_p">Professionista IT enterprise con una base in infrastrutture critiche e integrazione di sistemi, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management per tradurre esigenze operative e organizzative in soluzioni tecnologiche concrete, e contribuisco all'adozione dell'AI e all'upskilling digitale. Il mio focus è trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.</p>
+  <div class="chisono-card rv">
+    <p class="oltre-supp" data-i18n="chisono_p">Professionista IT enterprise con una base in infrastrutture critiche e integrazione di sistemi, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management per tradurre esigenze operative e organizzative in soluzioni tecnologiche concrete, e contribuisco all'adozione dell'AI e all'upskilling digitale. Il mio focus è trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.</p>
+  </div>
 
   <div class="section-label" id="competenze"><span class="section-num">02</span><span data-i18n="sec_competenze">Competenze</span></div>
 
@@ -558,10 +559,6 @@
   </div>
 
   <footer>
-    <div>
-      <div class="footer-beyond-k" data-i18n="sec_oltre">Beyond work</div>
-      <p class="footer-beyond-v" data-i18n="oltre_p">Classica · Jazz · Progressive Rock · Hi-Fi</p>
-    </div>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn</a>
       <button type="button" data-open-modal="contactModal" style="background:none;border:none;padding:0;font:inherit;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email</button>
@@ -726,8 +723,6 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       badge1_title:"Gemini Enterprise Agent Ready",
       badge2_title:"Google Developer Program — Premium Tier",
       badge3_title:"Google Cloud Innovator",
-      sec_oltre:"Beyond work",
-      oltre_p:"Classica · Jazz · Progressive Rock · Hi-Fi"
     },
     en: {
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
@@ -786,8 +781,6 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       badge1_title:"Gemini Enterprise Agent Ready",
       badge2_title:"Google Developer Program — Premium Tier",
       badge3_title:"Google Cloud Innovator",
-      sec_oltre:"Beyond work",
-      oltre_p:"Classical · Jazz · Progressive Rock · Hi-Fi"
     },
     fr: {
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
@@ -846,8 +839,6 @@ Più lavoro con l'AI in produzione, più mi convinco di una cosa: molte delle sf
       badge1_title:"Gemini Enterprise Agent Ready",
       badge2_title:"Google Developer Program — Premium Tier",
       badge3_title:"Google Cloud Innovator",
-      sec_oltre:"Beyond work",
-      oltre_p:"Classique · Jazz · Progressive Rock · Hi-Fi"
     }
   };
 
