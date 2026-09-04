@@ -1093,6 +1093,9 @@ Il modello è la parte facile. Il resto è il valore.</div>
       return { h: best.h / best.count, s: Math.min(Math.max(avgS, 28), 55) };
     }
 
+    /* Il blu resta il colore-guida fisso del brand: qui adattiamo solo i
+       toni neutri (sfondo, testo, bordi, etichetta "in esplorazione") in
+       base al colore dominante della foto, mentre accent/case restano blu. */
     function buildPalette(seed){
       var h = seed.h, s = seed.s;
       var hComp = (h + 45) % 360;
@@ -1104,11 +1107,11 @@ Il modello è la parte facile. Il resto è il valore.</div>
           "--ink": hslToHex(h, neutralS * 0.5, 12),
           "--ink-soft": hslToHex(h, neutralS * 0.4, 34),
           "--line": hslToHex(h, neutralS * 0.7, 85),
-          "--accent": hslToHex(h, s, 34),
-          "--accent-soft": hslToHex(h, s * 0.75, 89),
-          "--on-accent-soft": hslToHex(h, s, 20),
-          "--case-bg": hslToHex(h, s, 30),
-          "--on-case": hslToHex(h, neutralS * 0.3, 95),
+          "--accent": "#2F4E7A",
+          "--accent-soft": "#DCE6F7",
+          "--on-accent-soft": "#152A4C",
+          "--case-bg": "#2F4E7A",
+          "--on-case": "#EEF2FA",
           "--status-explore": hslToHex(hComp, complS, 38),
           "--status-explore-soft": hslToHex(hComp, complS * 0.7, 90)
         },
@@ -1117,11 +1120,11 @@ Il modello è la parte facile. Il resto è il valore.</div>
           "--ink": hslToHex(h, neutralS * 0.4, 92),
           "--ink-soft": hslToHex(h, neutralS * 0.5, 68),
           "--line": hslToHex(h, neutralS * 0.8, 20),
-          "--accent": hslToHex(h, s * 0.7, 78),
-          "--accent-soft": hslToHex(h, s * 0.8, 24),
-          "--on-accent-soft": hslToHex(h, s * 0.6, 88),
-          "--case-bg": hslToHex(h, s * 0.75, 20),
-          "--on-case": hslToHex(h, neutralS * 0.3, 92),
+          "--accent": "#A9C3EE",
+          "--accent-soft": "#233A5E",
+          "--on-accent-soft": "#D9E6FA",
+          "--case-bg": "#18294A",
+          "--on-case": "#E9EFFB",
           "--status-explore": hslToHex(hComp, complS * 0.7, 74),
           "--status-explore-soft": hslToHex(hComp, complS * 0.6, 22)
         }
