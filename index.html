@@ -9,6 +9,30 @@
 <meta name="description" content="Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.">
 <link rel="canonical" href="https://nforcolin.eu/">
 
+<!-- Icone e installabilità (PWA) -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+
+<script>
+/* Applica subito l'eventuale palette Material 3 salvata da una visita
+   precedente, prima del primo paint, per evitare il flash della palette
+   statica mentre la foto viene ricaricata e ri-analizzata. */
+(function(){
+  try{
+    var mode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var cached = JSON.parse(localStorage.getItem("nfPalette") || "null");
+    var vars = cached && cached[mode];
+    if(vars){
+      var root = document.documentElement;
+      Object.keys(vars).forEach(function(k){ root.style.setProperty(k, vars[k]); });
+    }
+  } catch(e){}
+})();
+</script>
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nforcolin.eu/">
@@ -30,7 +54,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -183,6 +207,7 @@
   .hero{padding:72px 0 56px}
   @media (max-width:900px){.hero{padding:48px 0 36px}}
   .hero-toprow{display:flex;align-items:center;gap:36px}
+  .hero-toprow picture{display:contents}
   @media (max-width:900px){.hero-toprow{flex-wrap:wrap;gap:24px}}
   .avatar{width:230px;height:230px;border-radius:36px;object-fit:cover;object-position:center 40%;display:block;box-shadow:var(--shadow-2);border:1px solid var(--line);flex:none}
   @media (max-width:900px){.avatar{width:170px;height:170px;border-radius:28px}}
@@ -363,6 +388,7 @@
   body{font-size:16px;line-height:1.65}
   .skip-link{position:fixed;left:16px;top:10px;z-index:1000;transform:translateY(-160%);background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:10px;font-weight:600}
   .skip-link:focus{transform:none}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:100;pointer-events:none}
   .topbar{border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
   .topbar-inner{justify-content:space-between;gap:24px}
@@ -417,6 +443,7 @@
 
 <a class="skip-link" href="#chi-sono">Vai al contenuto</a>
 <div class="scroll-progress" aria-hidden="true"></div>
+<div class="visually-hidden" id="themeAnnouncer" role="status" aria-live="polite"></div>
 
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
@@ -443,7 +470,10 @@
 <header class="hero" id="profilo">
   <div class="wrap">
     <div class="hero-toprow">
-      <img class="avatar" id="avatarPhoto" src="photo.jpg" alt="Nicolò Forcolin" width="186" height="186">
+      <picture>
+        <source srcset="photo.webp" type="image/webp">
+        <img class="avatar" id="avatarPhoto" src="photo.jpg" alt="Nicolò Forcolin" width="186" height="186" fetchpriority="high">
+      </picture>
       <div class="hero-text">
         <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
         <h1 class="hero-name">Nicolò Forcolin</h1>
@@ -1002,25 +1032,39 @@ Il modello è la parte facile. Il resto è il valore.</div>
       themeColorMeta.setAttribute("content", dark ? "#0C0F16" : "#F2F4F9");
     }
   }
+  var themeAnnouncer = document.getElementById("themeAnnouncer");
+  function announceTheme(dark){
+    if(themeAnnouncer) themeAnnouncer.textContent = dark ? "Tema scuro attivato" : "Tema chiaro attivato";
+  }
   toggles.forEach(function(t){
     t.addEventListener("click", function(){
       root.setAttribute("data-theme", current() === "dark" ? "light" : "dark");
       paintTheme();
+      announceTheme(current() === "dark");
     });
   });
   if(window.matchMedia){
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(){
-      if(!root.getAttribute("data-theme")) paintTheme();
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(e){
+      if(!root.getAttribute("data-theme")){
+        paintTheme();
+        announceTheme(e.matches);
+      }
     });
   }
   paintTheme();
 
   /* ---- Material 3 dynamic color: estrae un colore "seme" dalla foto e ne
      deriva una palette in stile Material You. Se la foto non ha un colore
-     dominante riconoscibile (es. bianco e nero) resta la palette statica. */
+     dominante riconoscibile (es. bianco e nero) resta la palette statica.
+     Il risultato viene messo in cache in localStorage (vedi script in
+     <head>, che la applica subito ad ogni caricamento per evitare il
+     flash), e ogni tono neutro è corretto per rispettare il contrasto
+     minimo WCAG AA rispetto allo sfondo generato. */
   (function(){
     var avatarImg = document.getElementById("avatarPhoto");
     if(!avatarImg || !window.HTMLCanvasElement) return;
+    var CACHE_KEY = "nfPalette";
+    var DYNAMIC_KEYS = ["--bg","--ink","--ink-soft","--line","--accent","--accent-soft","--on-accent-soft","--case-bg","--on-case","--status-explore","--status-explore-soft"];
 
     function rgbToHsl(r, g, b){
       r /= 255; g /= 255; b /= 255;
@@ -1059,6 +1103,36 @@ Il modello è la parte facile. Il resto è il valore.</div>
       }
       function ch(v){ return Math.round(v * 255).toString(16).padStart(2, "0"); }
       return "#" + ch(r) + ch(g) + ch(b);
+    }
+
+    /* Contrasto WCAG: https://www.w3.org/TR/WCAG21/#contrast-minimum */
+    function hexToRgb(hex){
+      var n = parseInt(hex.slice(1), 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    }
+    function relLuminance(hex){
+      var rgb = hexToRgb(hex).map(function(v){
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+    }
+    function contrastRatio(hexA, hexB){
+      var lA = relLuminance(hexA), lB = relLuminance(hexB);
+      var lighter = Math.max(lA, lB), darker = Math.min(lA, lB);
+      return (lighter + 0.05) / (darker + 0.05);
+    }
+    /* Genera il colore in HSL e, se il contrasto con lo sfondo non basta,
+       scurisce/schiarisce (dir -1/+1) finché non raggiunge minRatio. */
+    function ensureContrast(h, s, l, bgHex, minRatio, dir){
+      var hex = hslToHex(h, s, l);
+      var guard = 0;
+      while(contrastRatio(hex, bgHex) < minRatio && guard < 40 && l > 0 && l < 100){
+        l = Math.max(0, Math.min(100, l + dir * 2));
+        hex = hslToHex(h, s, l);
+        guard++;
+      }
+      return hex;
     }
 
     function extractSeed(img){
@@ -1101,11 +1175,15 @@ Il modello è la parte facile. Il resto è il valore.</div>
       var hComp = (h + 45) % 360;
       var neutralS = Math.min(s * 0.28, 14);
       var complS = Math.min(Math.max(s, 25), 45);
+
+      var bgLight = hslToHex(h, neutralS * 0.6, 96);
+      var bgDark = hslToHex(h, neutralS * 0.9, 8);
+
       return {
         light: {
-          "--bg": hslToHex(h, neutralS * 0.6, 96),
-          "--ink": hslToHex(h, neutralS * 0.5, 12),
-          "--ink-soft": hslToHex(h, neutralS * 0.4, 34),
+          "--bg": bgLight,
+          "--ink": ensureContrast(h, neutralS * 0.5, 12, bgLight, 4.5, -1),
+          "--ink-soft": ensureContrast(h, neutralS * 0.4, 34, bgLight, 3, -1),
           "--line": hslToHex(h, neutralS * 0.7, 85),
           "--accent": "#2F4E7A",
           "--accent-soft": "#DCE6F7",
@@ -1116,9 +1194,9 @@ Il modello è la parte facile. Il resto è il valore.</div>
           "--status-explore-soft": hslToHex(hComp, complS * 0.7, 90)
         },
         dark: {
-          "--bg": hslToHex(h, neutralS * 0.9, 8),
-          "--ink": hslToHex(h, neutralS * 0.4, 92),
-          "--ink-soft": hslToHex(h, neutralS * 0.5, 68),
+          "--bg": bgDark,
+          "--ink": ensureContrast(h, neutralS * 0.4, 92, bgDark, 4.5, 1),
+          "--ink-soft": ensureContrast(h, neutralS * 0.5, 68, bgDark, 3, 1),
           "--line": hslToHex(h, neutralS * 0.8, 20),
           "--accent": "#A9C3EE",
           "--accent-soft": "#233A5E",
@@ -1133,9 +1211,19 @@ Il modello è la parte facile. Il resto è il valore.</div>
 
     function onReady(){
       var seed = extractSeed(avatarImg);
-      if(!seed) return;
+      if(!seed){
+        /* Foto senza colore dominante riconoscibile (es. bianco e nero):
+           rimuove eventuali variabili applicate da una cache di una foto
+           precedente e torna alla palette statica del foglio di stile. */
+        dynamicPalette = null;
+        DYNAMIC_KEYS.forEach(function(k){ root.style.removeProperty(k); });
+        try{ localStorage.removeItem(CACHE_KEY); } catch(e){}
+        paintTheme();
+        return;
+      }
       dynamicPalette = buildPalette(seed);
       paintTheme();
+      try{ localStorage.setItem(CACHE_KEY, JSON.stringify(dynamicPalette)); } catch(e){}
     }
 
     if(avatarImg.complete && avatarImg.naturalWidth){ onReady(); }
