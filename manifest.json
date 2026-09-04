@@ -1,0 +1,19 @@
+{
+  "name": "Nicolò Forcolin — Enterprise IT, AI & Systems Integration",
+  "short_name": "Nicolò Forcolin",
+  "description": "Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "it",
+  "background_color": "#F2F4F9",
+  "theme_color": "#2F4E7A",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
