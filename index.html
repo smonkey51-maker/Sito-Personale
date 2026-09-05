@@ -1315,7 +1315,9 @@ Il modello è la parte facile. Il resto è il valore.</div>
         }
       });
     }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
-    tiles.forEach(function(t){ io.observe(t); });
+    var startObserving = function(){ tiles.forEach(function(t){ io.observe(t); }); };
+    if(document.readyState === "complete"){ startObserving(); }
+    else{ window.addEventListener("load", startObserving); }
   }else{
     tiles.forEach(function(t){ t.classList.add("in"); setCountsFinal(t); });
   }
