@@ -506,26 +506,26 @@
   </div>
 
   <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></div>
-  <div class="statrow">
-    <div class="stat rv" aria-labelledby="p5k" data-card-href="#casi-studio">
+  <div class="statrow rv">
+    <div class="stat" aria-labelledby="p5k" data-card-href="#casi-studio">
       <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
       <p class="d" data-i18n="p5d">RAG systems live at InfoCamere</p>
       <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
     </div>
-    <div class="stat rv" aria-labelledby="p1k" data-card-href="#percorso">
+    <div class="stat" aria-labelledby="p1k" data-card-href="#percorso">
       <p class="v"><span class="num" data-count="3">3</span></p>
       <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
       <p class="d" data-i18n="p1d">Business units + CEO advised</p>
       <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso →</a>
     </div>
-    <div class="stat rv" aria-labelledby="p2k" data-card-href="#competenze">
+    <div class="stat" aria-labelledby="p2k" data-card-href="#competenze">
       <p class="v"><span class="num" data-count="35">35</span>+</p>
       <span class="k" id="p2k" data-i18n="p2k">Enablement</span>
       <p class="d" data-i18n="p2d">Trained on operational AI</p>
       <a class="lnk" href="#competenze" data-i18n="p2_link">Vedi le competenze →</a>
     </div>
-    <div class="stat rv" aria-labelledby="p4k" data-card-href="#percorso">
+    <div class="stat" aria-labelledby="p4k" data-card-href="#percorso">
       <p class="v v-word" data-i18n="p4v">Internazionale</p>
       <span class="k" id="p4k" data-i18n="p4k">Innovazione</span>
       <p class="d" data-i18n="p4d">Su invito del CEO di DABO: team SCWL, contest "Sprint Forward", Shangcheng.</p>
@@ -1306,7 +1306,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         if(en.isIntersecting){
-          var d = (Array.prototype.indexOf.call(tiles, en.target) % 4) * 120;
+          var d = 150 + (Array.prototype.indexOf.call(tiles, en.target) % 4) * 120;
           setTimeout(function(){
             en.target.classList.add("in");
             animateCounts(en.target);
