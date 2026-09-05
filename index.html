@@ -54,7 +54,18 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script>
+/* Salta il download dei webfont Google se l'utente ha attivo il Risparmio dati:
+   il sito resta leggibile grazie allo stack di font di sistema di fallback. */
+(function(){
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if(saveData) return;
+  var l = document.createElement("link");
+  l.rel = "stylesheet";
+  l.href = "https://fonts.googleapis.com/css2?family=Public+Sans:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap";
+  document.head.appendChild(l);
+})();
+</script>
 
 <script type="application/ld+json">
 {
@@ -94,9 +105,9 @@
     --shadow:0 1px 2px rgba(20,30,50,.10),0 1px 3px 1px rgba(20,30,50,.08);
     --shadow-2:0 1px 3px rgba(20,30,50,.12),0 6px 16px rgba(20,30,50,.10);
 
-    --display:"Public Sans",-apple-system,BlinkMacSystemFont,sans-serif;
-    --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    --display:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
 
     --dur-s:150ms;
     /* Material 3 Emphasized Decelerate Easing */
@@ -171,16 +182,19 @@
     }
   }
 
+  /* ============ feedback tattile sui pulsanti a pillola ============ */
+  .hero-btn:active,.work-link:active,.persp-link:active,.core-link:active,.cap-link:active,.lnk:active,.fab:active,.lang-btn:active,.theme-toggle:active,.modal-x:active,.copy-btn:active{transform:scale(.97);}
+
   /* ============ topbar ============ */
   .topbar{position:sticky;top:0;z-index:60;background:var(--bg)}
   .topbar-inner{max-width:1080px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:flex-end}
   @media (min-width:901px){.topbar-inner{padding:0 40px;height:72px}}
 
   .utilbar{display:inline-flex;align-items:center;gap:2px;background:var(--accent-soft);border-radius:999px;padding:3px}
-  .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.03em;padding:6px 11px;border-radius:999px;color:var(--on-accent-soft);opacity:.55;transition:opacity var(--dur-s) var(--ease),background var(--dur-s) var(--ease)}
+  .lang-btn{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.03em;padding:6px 11px;border-radius:999px;color:var(--on-accent-soft);opacity:.55;transition:opacity var(--dur-s) var(--ease),background var(--dur-s) var(--ease),transform var(--dur-s) var(--ease)}
   .lang-btn.on{opacity:1;background:var(--bg);box-shadow:var(--shadow)}
   .utilbar-sep{width:1px;height:16px;background:var(--line);margin:0 4px;flex:none}
-  .theme-toggle{background:none;border:none;cursor:pointer;color:var(--on-accent-soft);width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1}
+  .theme-toggle{background:none;border:none;cursor:pointer;color:var(--on-accent-soft);width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;transition:transform var(--dur-s) var(--ease),background var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.theme-toggle:hover{background:var(--bg)}}
 
   /* ============ fab (Updated to M3 Squircle) ============ */
@@ -263,7 +277,7 @@
   .stat .v.pop{animation:statPop .55s var(--ease)}
   .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .stat .d{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0}
-  .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;width:fit-content;display:inline-block;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
+  .stat .lnk{font-family:var(--mono);font-size:11px;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;width:fit-content;display:inline-block;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.stat:hover .lnk{color:var(--accent);border-color:var(--accent)}}
   @media (max-width:640px){
     .statrow{flex-direction:column;gap:16px}
@@ -289,7 +303,7 @@
   .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .persp-title{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .persp-excerpt{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.65;margin:0;flex:1}
-  .persp-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content; transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
+  .persp-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content; transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.persp-card:hover .persp-link{color:var(--accent);border-color:var(--accent)}}
   .persp-body{font-family:var(--sans);font-size:15px;line-height:1.75;color:var(--ink-soft);white-space:pre-line}
   .persp-body p{margin:0 0 16px}
@@ -318,7 +332,7 @@
   .work-title{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .work-summary{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
   .work-chips{display:flex;flex-wrap:wrap;gap:6px 14px}
-  .work-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content; transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
+  .work-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content; transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.work-card:hover .work-link{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ capabilities ============ */
@@ -331,7 +345,7 @@
   @media (hover:hover) and (pointer:fine){.core-cell:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent; background:var(--accent-soft);}}
   .core-title{font-family:var(--display);font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
-  .core-link{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
+  .core-link{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.core-cell:hover .core-link{color:var(--accent);border-color:var(--accent)}}
 
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
@@ -341,7 +355,7 @@
   @media (hover:hover) and (pointer:fine){.cap-cell:hover{background:var(--accent-soft); transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
   .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
-  .cap-link{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
+  .cap-link{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.cap-cell:hover .cap-link{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ experience ============ */
@@ -376,12 +390,14 @@
   }
   .modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}
   .modal-head h2{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
-  .modal-x{background:none;border:1px solid var(--line);cursor:pointer;color:var(--ink-soft);width:30px;height:30px;border-radius:50%;font-size:16px;line-height:1;flex:none;font-family:var(--sans)}
+  .modal-x{background:none;border:1px solid var(--line);cursor:pointer;color:var(--ink-soft);width:30px;height:30px;border-radius:50%;font-size:16px;line-height:1;flex:none;font-family:var(--sans);transition:transform var(--dur-s) var(--ease)}
   .cm-row{padding:14px 0;border-top:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
   .cm-row:first-of-type{border-top:none}
   .cm-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);flex:none}
-  .cm-v{font-size:15.5px;text-align:right;color:var(--ink);font-family:var(--sans)}
+  .cm-v{font-size:15.5px;text-align:right;color:var(--ink);font-family:var(--sans);display:inline-flex;align-items:center;gap:8px}
   .cm-v a{color:var(--accent)}
+  .copy-btn{background:none;border:1px solid var(--line);cursor:pointer;color:var(--ink-soft);width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:transform var(--dur-s) var(--ease),color var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease)}
+  @media (hover:hover) and (pointer:fine){.copy-btn:hover{color:var(--accent);border-color:var(--accent)}}
 
 
   /* ============ UX/UI system v2 ============ */
@@ -437,6 +453,31 @@
   .work-title{font-size:22px}.work-summary{font-size:15px}.work-link{margin-top:auto;padding-top:10px;min-height:34px}
   footer{margin-top:96px}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+  /* ============ rendering performance ============ */
+  .core-grid,.cap-grid,.timeline,.persp-grid,.badge-grid{content-visibility:auto;contain-intrinsic-size:auto 600px;}
+
+  /* ============ stampa / esportazione PDF del profilo ============ */
+  @media print{
+    :root, :root[data-theme="dark"], :root:not([data-theme="light"]){
+      --bg:#ffffff; --ink:#13161D; --ink-soft:#4B5568; --line:#D9DFEA;
+      --accent:#2F4E7A; --accent-soft:#EEF2FA; --on-accent-soft:#152A4C;
+      --case-bg:#2F4E7A; --on-case:#EEF2FA;
+      --shadow:none; --shadow-2:none;
+    }
+    .rv, .rv.in{opacity:1 !important; transform:none !important;}
+    .topbar, .fab, .scroll-progress, .skip-link, .visually-hidden, dialog,
+    .hero-cta-row, .hero-nav, .hero-proof,
+    .work-link, .persp-link, .core-link, .cap-link, .lnk{
+      display:none !important;
+    }
+    * { box-shadow:none !important; text-shadow:none !important; }
+    body{background:#fff;color:#000}
+    a{color:inherit;text-decoration:underline}
+    .chisono-card,.stat,.work-card,.core-cell,.cap-cell,.job-row,.persp-card,.badge-card{
+      break-inside:avoid; border:1px solid #ccc; background:#fff !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -481,6 +522,7 @@
         <div class="hero-cta-row">
           <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span><span class="circle">→</span></a>
           <button class="hero-btn outline md-ripple-wrapper" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
+          <button class="hero-btn outline md-ripple-wrapper" type="button" id="downloadProfileBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right:6px;vertical-align:-2px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg><span data-i18n="hero_cta_download">Scarica profilo</span></button>
         </div>
         <div class="hero-proof" aria-label="Professional focus">
           <span>Enterprise IT</span><span>AI in Production</span><span>Systems Integration</span><span>AI Adoption</span>
@@ -796,11 +838,13 @@ Il modello è la parte facile. Il resto è il valore.</div>
     // ... [Il tuo oggetto i18n originale rimane intatto qui, ometto di rimetterlo parola per parola solo in questo commento ma nel codice effettivo gira completo] ...
     it: {
       new_tab_hint:" (si apre in una nuova scheda)",
+      copy_email:"Copia email", copy_phone:"Copia numero di telefono", copy_done:"Copiato negli appunti",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
       nav_contatti:"Contatti",
       nav_profilo:"Profilo",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Esplora il mio lavoro",
+      hero_cta_download:"Scarica profilo",
       sec_chisono:"Chi sono",
       chisono_p:"Professionista IT enterprise con basi in infrastrutture critiche e systems integration, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management traducendo esigenze operative in soluzioni concrete, contribuendo ad AI adoption e upskilling digitale. Focus: trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.",
       proof_label:"Risultati",
@@ -859,11 +903,13 @@ Il modello è la parte facile. Il resto è il valore.</div>
     },
     en: {
       new_tab_hint:" (opens in a new tab)",
+      copy_email:"Copy email", copy_phone:"Copy phone number", copy_done:"Copied to clipboard",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profile",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Explore my work",
+      hero_cta_download:"Download profile",
       sec_chisono:"About",
       chisono_p:"Enterprise IT professional with a foundation in critical infrastructure and systems integration, shipping production AI solutions. I work with middle and top management, turning operational needs into concrete solutions and contributing to AI adoption and digital upskilling. Focus: turning technology into reliable capabilities by connecting systems, data, governance and people.",
       proof_label:"Impact",
@@ -922,11 +968,13 @@ Il modello è la parte facile. Il resto è il valore.</div>
     },
     fr: {
       new_tab_hint:" (s'ouvre dans un nouvel onglet)",
+      copy_email:"Copier l'e-mail", copy_phone:"Copier le numéro de téléphone", copy_done:"Copié dans le presse-papiers",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profil",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Découvrir mon travail",
+      hero_cta_download:"Télécharger le profil",
       sec_chisono:"À propos",
       chisono_p:"Professionnel IT d'entreprise avec une base en infrastructures critiques et intégration de systèmes, déployant des solutions IA en production. Je collabore avec le middle et le top management, traduisant les besoins opérationnels en solutions concrètes et contribuant à l'adoption de l'IA et à l'upskilling numérique. Objectif : transformer la technologie en capacités fiables, en connectant systèmes, données, gouvernance et personnes.",
       proof_label:"Impact",
@@ -986,14 +1034,29 @@ Il modello è la parte facile. Il resto è il valore.</div>
   };
 
   /* ---- contatti: costruiti a runtime per non esporli in chiaro nel sorgente ---- */
+  var copyIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  function copyBtn(value, i18nKey){
+    return '<button type="button" class="copy-btn" data-copy-value="' + value.replace(/"/g,"&quot;") + '" data-i18n-aria="' + i18nKey + '">' + copyIcon + '</button>';
+  }
   (function(){
     var eu = "nicolo.forcolin", ed = "infocamere.it";
     var email = eu + "@" + ed;
-    document.getElementById("cmEmail").innerHTML = '<a href="mailto:' + email + '">' + email + "</a>";
+    document.getElementById("cmEmail").innerHTML = '<a href="mailto:' + email + '">' + email + "</a>" + copyBtn(email, "copy_email");
     var pn = ["+39", "347", "908", "1966"];
     var phoneDisplay = pn.join(" ");
     var phoneHref = "tel:" + pn.join("").replace(/\s/g, "");
-    document.getElementById("cmPhone").innerHTML = '<a href="' + phoneHref + '">' + phoneDisplay + "</a>";
+    document.getElementById("cmPhone").innerHTML = '<a href="' + phoneHref + '">' + phoneDisplay + "</a>" + copyBtn(phoneDisplay, "copy_phone");
+    document.querySelectorAll(".copy-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var value = btn.getAttribute("data-copy-value");
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(value).then(function(){
+            var announcer = document.getElementById("themeAnnouncer");
+            if(announcer) announcer.textContent = i18n[lang].copy_done || "Copiato";
+          }).catch(function(){});
+        }
+      });
+    });
   })();
 
   var root = document.documentElement;
@@ -1010,6 +1073,10 @@ Il modello è la parte facile. Il resto è il valore.</div>
     document.querySelectorAll("[data-i18n]").forEach(function(el){
       var k = el.getAttribute("data-i18n");
       if(dict[k] !== undefined){ el.textContent = dict[k]; }
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-aria");
+      if(dict[k] !== undefined){ el.setAttribute("aria-label", dict[k]); }
     });
     document.querySelectorAll(".lang-btn").forEach(function(b){
       b.classList.toggle("on", b.getAttribute("data-lang") === lang);
@@ -1253,6 +1320,8 @@ Il modello è la parte facile. Il resto è il valore.</div>
     dlg.showModal();
   }
   document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", function(){ openModal("contactModal", el); }); });
+  var downloadBtn = document.getElementById("downloadProfileBtn");
+  if(downloadBtn){ downloadBtn.addEventListener("click", function(){ window.print(); }); }
   document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", function(){ openModal(el.getAttribute("data-open-modal"), el); }); });
   document.querySelectorAll("[data-card-modal]").forEach(function(card){
     card.addEventListener("click", function(e){
@@ -1360,7 +1429,11 @@ Il modello è la parte facile. Il resto è il valore.</div>
     var navIO = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
-          navLinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id); });
+          navLinks.forEach(function(a){
+            var isActive = a.getAttribute("href") === "#" + entry.target.id;
+            a.classList.toggle("active", isActive);
+            if(isActive){ a.setAttribute("aria-current", "location"); } else { a.removeAttribute("aria-current"); }
+          });
         }
       });
     }, {rootMargin:"-20% 0px -70% 0px",threshold:0});
