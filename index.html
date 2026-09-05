@@ -235,7 +235,7 @@
   /* ============ section label ============ */
   .section-label{
     display:flex;align-items:baseline;gap:13px;font-family:var(--sans);font-size:14.5px;font-weight:600;
-    letter-spacing:.055em;text-transform:uppercase;color:var(--ink);padding:72px 0 24px;scroll-margin-top:88px;
+    letter-spacing:.055em;text-transform:uppercase;color:var(--ink);padding:72px 0 24px;scroll-margin-top:88px;margin:0;
   }
   @media (max-width:900px){.section-label{padding:52px 0 20px}}
   .section-num{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
@@ -499,12 +499,12 @@
 
 <main class="wrap">
 
-  <div class="section-label rv" id="chi-sono"><span class="section-num">01</span><span data-i18n="sec_chisono">Chi sono</span></div>
+  <h2 class="section-label rv" id="chi-sono"><span class="section-num">01</span><span data-i18n="sec_chisono">Chi sono</span></h2>
   <div class="chisono-card rv">
     <p class="oltre-supp" data-i18n="chisono_p">Professionista IT enterprise con basi in infrastrutture critiche e systems integration, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management traducendo esigenze operative in soluzioni concrete, contribuendo ad AI adoption e upskilling digitale. Focus: trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.</p>
   </div>
 
-  <div class="section-label rv" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></div>
+  <h2 class="section-label rv" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></h2>
   <div class="statrow rv">
     <div class="stat" aria-labelledby="p5k" data-card-href="#casi-studio">
       <p class="v"><span class="num" data-count="2">2</span></p>
@@ -532,7 +532,7 @@
     </div>
   </div>
 
-  <div class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti</span></div>
+  <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti</span></h2>
   <div class="work-grid rv">
     <div class="work-card" data-card-modal="c1Modal">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
@@ -558,7 +558,7 @@
     </div>
   </div>
 
-  <div class="section-label rv" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
+  <h2 class="section-label rv" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></h2>
 
   <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
   <div class="core-grid rv">
@@ -593,7 +593,7 @@
     </div>
   </div>
 
-  <div class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Esperienza</span></div>
+  <h2 class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Esperienza</span></h2>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-overline"><span data-i18n="t1">Set 2022 — oggi</span><span class="job-current-tag" data-i18n="job_current">In corso</span></div>
@@ -617,7 +617,7 @@
     </div>
   </div>
 
-  <div class="section-label rv" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_perspectives">Perspectives</span></div>
+  <h2 class="section-label rv" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_perspectives">Perspectives</span></h2>
   <div class="persp-grid rv">
     <div class="persp-card" data-card-modal="persp2Modal">
       <span class="persp-meta" data-i18n="persp2_meta">Perspective 02 · 2026</span>
@@ -633,7 +633,7 @@
     </div>
   </div>
 
-  <div class="section-label rv" id="badge"><span class="section-num">07</span><span data-i18n="sec_badge">Badge</span></div>
+  <h2 class="section-label rv" id="badge"><span class="section-num">07</span><span data-i18n="sec_badge">Badge</span></h2>
   <div class="badge-grid rv">
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
@@ -641,6 +641,7 @@
         <span class="badge-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span>
         <span class="badge-meta" data-i18n="badge1_meta">Google · Credential · 2026</span>
       </span>
+      <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
     </a>
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
@@ -648,6 +649,7 @@
         <span class="badge-title" data-i18n="badge2_title">Google Cloud Innovator</span>
         <span class="badge-meta" data-i18n="badge2_meta">Google Cloud · Community program · 2025</span>
       </span>
+      <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
     </a>
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
@@ -655,14 +657,15 @@
         <span class="badge-title" data-i18n="badge3_title">Google Developer Program — Premium Tier</span>
         <span class="badge-meta" data-i18n="badge3_meta">Google · Program status · 2026</span>
       </span>
+      <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
     </a>
   </div>
 
   <footer class="rv">
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
       <button type="button" data-open-modal="contactModal" style="background:none;border:none;padding:0;font:inherit;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email</button>
-      <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Google Skills Boost</a>
+      <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Google Skills Boost<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
     </div>
     <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
   </footer>
@@ -683,7 +686,7 @@
   </div>
   <div class="cm-row">
     <span class="cm-k" data-i18n="cm_cert">Certificazioni</span>
-    <span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost</a></span>
+    <span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a></span>
   </div>
 </dialog>
 
@@ -792,6 +795,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
   var i18n = {
     // ... [Il tuo oggetto i18n originale rimane intatto qui, ometto di rimetterlo parola per parola solo in questo commento ma nel codice effettivo gira completo] ...
     it: {
+      new_tab_hint:" (si apre in una nuova scheda)",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni",
       nav_contatti:"Contatti",
       nav_profilo:"Profilo",
@@ -854,6 +858,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Google · Program status · 2026",
     },
     en: {
+      new_tab_hint:" (opens in a new tab)",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profile",
@@ -916,6 +921,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Google · Program status · 2026",
     },
     fr: {
+      new_tab_hint:" (s'ouvre dans un nouvel onglet)",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications",
       nav_contatti:"Contact",
       nav_profilo:"Profil",
@@ -991,7 +997,10 @@ Il modello è la parte facile. Il resto è il valore.</div>
   })();
 
   var root = document.documentElement;
-  var lang = "it";
+  var LANG_KEY = "nfLang";
+  var savedLang = null;
+  try{ savedLang = localStorage.getItem(LANG_KEY); }catch(e){}
+  var lang = (savedLang && i18n[savedLang]) ? savedLang : "it";
   var dynamicPalette = null;
 
   /* ---- lingua ---- */
@@ -1007,7 +1016,11 @@ Il modello è la parte facile. Il resto è il valore.</div>
     });
   }
   document.querySelectorAll(".lang-btn").forEach(function(b){
-    b.addEventListener("click", function(){ lang = b.getAttribute("data-lang"); applyLang(); });
+    b.addEventListener("click", function(){
+      lang = b.getAttribute("data-lang");
+      try{ localStorage.setItem(LANG_KEY, lang); }catch(e){}
+      applyLang();
+    });
   });
 
   /* ---- tema ---- */
