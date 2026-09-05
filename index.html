@@ -243,7 +243,7 @@
   /* ============ percorso (e tutte le sezioni a lista) ============ */
   .timeline{display:flex;flex-direction:column;gap:16px;padding-bottom:8px}
   .job-row{padding:28px 30px;border:1px solid var(--line);border-radius:20px; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease);}
-  @media (hover:hover) and (pointer:fine){.job-row:hover{transform: translateY(-2px); box-shadow: var(--shadow);}}
+  @media (hover:hover) and (pointer:fine){.job-row:hover{transform: translateY(-4px); box-shadow: var(--shadow-2);}}
   .job-row.current{border-color:var(--accent);background:var(--accent-soft)}
   .job-overline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .job-current-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--bg);border-radius:999px;padding:3px 9px}
@@ -277,7 +277,7 @@
 
   /* ============ oltre ============ */
   .chisono-card{border:1px solid var(--line);border-radius:22px;padding:32px;margin-bottom:8px; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease);}
-  @media (hover:hover) and (pointer:fine){.chisono-card:hover{transform: translateY(-2px); box-shadow: var(--shadow);}}
+  @media (hover:hover) and (pointer:fine){.chisono-card:hover{transform: translateY(-4px); box-shadow: var(--shadow-2);}}
   .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0}
 
   /* ============ perspectives ============ */
@@ -298,7 +298,7 @@
   .badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
   @media (max-width:760px){.badge-grid{grid-template-columns:1fr}}
   .badge-card{display:flex;align-items:center;gap:18px;padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);transition:transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);min-width:0}
-  @media (hover:hover) and (pointer:fine){.badge-card:hover{transform: translateY(-2px); box-shadow: var(--shadow); background:color-mix(in srgb,var(--accent-soft) 65%,var(--accent) 35%)}}
+  @media (hover:hover) and (pointer:fine){.badge-card:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); background:color-mix(in srgb,var(--accent-soft) 65%,var(--accent) 35%)}}
   .badge-icon{width:56px;height:56px;border-radius:50%;background:var(--case-bg);color:var(--on-case);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:18px;flex:none;box-shadow:var(--shadow)}
   .badge-text{display:flex;flex-direction:column;gap:3px}
   .badge-title{font-family:var(--display);font-size:17px;font-weight:800;color:var(--on-accent-soft);line-height:1.3}
@@ -331,17 +331,17 @@
   @media (hover:hover) and (pointer:fine){.core-cell:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
   .core-title{font-family:var(--display);font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
-  .core-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
+  .core-link{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.core-cell:hover .core-link{color:var(--accent);border-color:var(--accent)}}
 
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
   @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
   .cap-cell{display:flex;flex-direction:column;gap:6px;min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
-  @media (hover:hover) and (pointer:fine){.cap-cell:hover{background:var(--bg); transform: translateY(-2px); box-shadow: var(--shadow); border-color: transparent;}}
+  @media (hover:hover) and (pointer:fine){.cap-cell:hover{background:var(--bg); transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
   .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
-  .cap-link{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
+  .cap-link{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.cap-cell:hover .cap-link{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ experience ============ */
@@ -500,12 +500,12 @@
 
 <main class="wrap">
 
-  <div class="section-label" id="chi-sono"><span class="section-num">01</span><span data-i18n="sec_chisono">Chi sono</span></div>
+  <div class="section-label rv" id="chi-sono"><span class="section-num">01</span><span data-i18n="sec_chisono">Chi sono</span></div>
   <div class="chisono-card rv">
     <p class="oltre-supp" data-i18n="chisono_p">Professionista IT enterprise con basi in infrastrutture critiche e systems integration, da cui progetto e porto in produzione soluzioni AI. Collaboro con middle e top management traducendo esigenze operative in soluzioni concrete, contribuendo ad AI adoption e upskilling digitale. Focus: trasformare nuove tecnologie in capacità affidabili, connettendo sistemi, dati, governance e persone.</p>
   </div>
 
-  <div class="section-label" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></div>
+  <div class="section-label rv" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></div>
   <div class="statrow rv">
     <div class="stat" aria-labelledby="p5k" data-card-href="#casi-studio">
       <p class="v"><span class="num" data-count="2">2</span></p>
@@ -533,7 +533,7 @@
     </div>
   </div>
 
-  <div class="section-label" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti</span></div>
+  <div class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti</span></div>
   <div class="work-grid rv">
     <div class="work-card" data-card-modal="c1Modal">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
@@ -559,19 +559,19 @@
     </div>
   </div>
 
-  <div class="section-label" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
+  <div class="section-label rv" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></div>
 
   <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
   <div class="core-grid rv">
     <div class="core-cell" data-card-href="#percorso">
       <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
       <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
-      <a class="core-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+      <a class="core-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
     <div class="core-cell" data-card-href="#casi-studio">
       <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
       <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
-      <a class="core-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+      <a class="core-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
   </div>
 
@@ -580,21 +580,21 @@
     <div class="cap-cell" data-card-href="#casi-studio">
       <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
       <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
-      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
+      <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
     </div>
     <div class="cap-cell" data-card-href="#casi-studio">
       <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
       <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
-      <a class="cap-link" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+      <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
     <div class="cap-cell" data-card-href="#percorso">
       <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
       <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
-      <a class="cap-link" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+      <a class="cap-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
   </div>
 
-  <div class="section-label" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Esperienza</span></div>
+  <div class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Esperienza</span></div>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-overline"><span data-i18n="t1">Set 2022 — oggi</span><span class="job-current-tag" data-i18n="job_current">In corso</span></div>
@@ -618,23 +618,23 @@
     </div>
   </div>
 
-  <div class="section-label" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_perspectives">Perspectives</span></div>
+  <div class="section-label rv" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_perspectives">Perspectives</span></div>
   <div class="persp-grid rv">
     <div class="persp-card" data-card-modal="persp2Modal">
       <span class="persp-meta" data-i18n="persp2_meta">Perspective 02 · 2026</span>
       <h3 class="persp-title" data-i18n="persp2_title">Il modello è la parte facile</h3>
       <p class="persp-excerpt" data-i18n="persp2_excerpt">Due settimane dopo il go-live dei RAG, le query erano lente e molti colleghi preferivano cercare a mano. Il valore non è arrivato con il deployment, ma quando dati, adozione e mentalità hanno iniziato a muoversi insieme.</p>
-      <button class="persp-link" type="button" data-open-modal="persp2Modal" data-i18n="persp_read">Leggi →</button>
+      <button class="persp-link md-ripple-wrapper" type="button" data-open-modal="persp2Modal" data-i18n="persp_read">Leggi →</button>
     </div>
     <div class="persp-card" data-card-modal="persp1Modal">
       <span class="persp-meta" data-i18n="persp1_meta">Perspective 01 · 2026</span>
       <h3 class="persp-title" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h3>
       <p class="persp-excerpt" data-i18n="persp1_excerpt">Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.</p>
-      <button class="persp-link" type="button" data-open-modal="persp1Modal" data-i18n="persp_read">Leggi →</button>
+      <button class="persp-link md-ripple-wrapper" type="button" data-open-modal="persp1Modal" data-i18n="persp_read">Leggi →</button>
     </div>
   </div>
 
-  <div class="section-label" id="badge"><span class="section-num">07</span><span data-i18n="sec_badge">Badge</span></div>
+  <div class="section-label rv" id="badge"><span class="section-num">07</span><span data-i18n="sec_badge">Badge</span></div>
   <div class="badge-grid rv">
     <a class="badge-card" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="badge-icon" aria-hidden="true">G</span>
@@ -659,7 +659,7 @@
     </a>
   </div>
 
-  <footer>
+  <footer class="rv">
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn</a>
       <button type="button" data-open-modal="contactModal" style="background:none;border:none;padding:0;font:inherit;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email</button>
@@ -1304,15 +1304,14 @@ Il modello è la parte facile. Il resto è il valore.</div>
   var tiles = document.querySelectorAll(".rv");
   if("IntersectionObserver" in window){
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){
-          var d = 150 + (Array.prototype.indexOf.call(tiles, en.target) % 4) * 120;
-          setTimeout(function(){
-            en.target.classList.add("in");
-            animateCounts(en.target);
-          }, d);
-          io.unobserve(en.target);
-        }
+      var batch = entries.filter(function(en){ return en.isIntersecting; });
+      batch.forEach(function(en, i){
+        var d = 150 + (i % 4) * 120;
+        setTimeout(function(){
+          en.target.classList.add("in");
+          animateCounts(en.target);
+        }, d);
+        io.unobserve(en.target);
       });
     }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
     var startObserving = function(){ tiles.forEach(function(t){ io.observe(t); }); };
