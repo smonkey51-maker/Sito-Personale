@@ -228,14 +228,11 @@
   .hero-photo-col picture{display:contents}
   @media (max-width:900px){.hero-card{grid-template-columns:1fr;border-radius:28px}.hero-photo-col{order:-1;min-height:280px}.hero-toprow{padding:32px 28px}}
   @media (max-width:560px){.hero-card{border-radius:24px}.hero-toprow{padding:28px 22px}}
-  .avatar{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:center 22%;display:block;box-shadow:none;border:0;border-radius:0;transform:scale(1.15)}
+  .avatar{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:center 30%;display:block;box-shadow:none;border:0;border-radius:0;transform:scale(1.03)}
   @media (max-width:900px){.avatar{min-height:280px}}
   .hero-text{display:flex;flex-direction:column}
   .eyebrow{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--on-accent-soft);opacity:.75;margin:0 0 10px}
   .hero-name{font-family:var(--display);font-weight:700;font-size:clamp(36px,4.8vw,54px);letter-spacing:-.015em;line-height:1.05;color:var(--on-accent-soft);margin:0;text-wrap:balance}
-  .hero-role{font-family:var(--sans);font-size:16.5px;font-weight:400;color:var(--ink-soft);margin-top:10px;max-width:52ch}
-
-  .hero-role{display:none}
 
   .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease), transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
@@ -496,6 +493,63 @@
       break-inside:avoid; border:1px solid #ccc; background:#fff !important;
     }
   }
+
+/* ============ 2026-09 surgical polish ============ */
+.stat.recognition{
+  background:transparent;
+  border:1px solid color-mix(in srgb,var(--accent) 34%,var(--line) 66%);
+  box-shadow:none;
+}
+.stat.recognition .v{font-size:24px;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.stat.recognition .k{color:var(--ink-soft)}
+@media (hover:hover) and (pointer:fine){
+  .stat.recognition:hover{background:color-mix(in srgb,var(--accent-soft) 45%,transparent);box-shadow:var(--shadow)}
+}
+
+.hero{padding-bottom:48px}
+#chi-sono.section-label{padding-top:32px}
+.section-label{padding-top:56px;padding-bottom:24px}
+
+@media (max-width:900px){
+  .hero{padding:24px 0 28px}
+  .section-label{padding-top:40px;padding-bottom:20px}
+  #chi-sono.section-label{padding-top:26px}
+  .chisono-card{padding:28px}
+}
+
+@media (max-width:560px){
+  .hero-toprow{padding:28px 24px 30px}
+  .hero-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+  .hero-cta-row .hero-btn{width:100%;min-height:48px;justify-content:center;text-align:center;padding:11px 14px}
+  .hero-cta-row .hero-btn.solid{grid-column:1 / -1}
+  .hero-nav{gap:10px;margin-top:30px;padding-top:22px}
+  .hero-nav a{padding:7px 12px}
+  .section-label{font-size:22px;line-height:1.2;gap:10px}
+  .chisono-card{padding:26px 24px;border-radius:24px}
+  .stat{padding:26px 24px;border-radius:24px}
+  .stat.recognition .v{font-size:23px}
+}
+
+  .job-row.education{border-style:dashed;background:color-mix(in srgb,var(--accent-soft) 42%,transparent);box-shadow:none}
+  .education-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--accent-soft);border-radius:999px;padding:3px 9px;margin-left:8px}
+
+/* ============ unified capabilities ============ */
+.cap-unified{border:1px solid var(--line);border-radius:28px;overflow:hidden;background:color-mix(in srgb,var(--bg) 92%,var(--accent-soft) 8%);box-shadow:var(--shadow)}
+.cap-group{padding:26px}
+.cap-group + .cap-group{border-top:1px solid var(--line)}
+.cap-group-label{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px}
+.cap-group-grid{display:grid;gap:12px}
+.cap-group-grid-core{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cap-group-grid-extended{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cap-item{min-width:0;padding:20px;border:1px solid var(--line);border-radius:20px;background:var(--bg);transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease)}
+.cap-item-core{background:color-mix(in srgb,var(--accent-soft) 62%,var(--bg) 38%);border-color:color-mix(in srgb,var(--accent) 24%,var(--line) 76%)}
+.cap-item-title{font-family:var(--display);font-size:18px;font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:8px}
+.cap-item-list{font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink-soft);margin:0 0 15px}
+.cap-item-link{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink);text-decoration:none}
+@media (hover:hover) and (pointer:fine){.cap-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:color-mix(in srgb,var(--accent) 32%,var(--line) 68%)}}
+@media (max-width:900px){.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr 1fr}.cap-group-grid-extended .cap-item:last-child{grid-column:1 / -1}}
+@media (max-width:560px){.cap-unified{border-radius:24px}.cap-group{padding:18px}.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr;gap:10px}.cap-group-grid-extended .cap-item:last-child{grid-column:auto}.cap-item{padding:18px;border-radius:18px}.cap-group-label{margin-bottom:12px}}
+
 </style>
 </head>
 <body>
@@ -533,7 +587,6 @@
         <div class="hero-text">
           <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
           <h1 class="hero-name">Nicolò Forcolin</h1>
-          <p class="hero-role">Enterprise IT | AI &amp; Systems Integration | Reliability, Governance &amp; Innovation</p>
           <div class="hero-cta-row">
             <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span></a>
             <button class="hero-btn outline md-ripple-wrapper" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
@@ -568,12 +621,12 @@
     <p class="oltre-supp" data-i18n="chisono_p">Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa.</p>
   </div>
 
-  <h2 class="section-label rv" id="sintesi"><span class="section-num">02</span><span data-i18n="proof_label">Impact</span></h2>
+  <h2 class="section-label rv" id="sintesi"><span class="section-num">02</span><span data-i18n="sec_results_title">Che risultati ho prodotto</span></h2>
   <div class="statrow rv">
     <div class="stat" aria-labelledby="p5k" data-card-href="#casi-studio">
       <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
-      <p class="d" data-i18n="p5d">RAG systems live at InfoCamere</p>
+      <p class="d" data-i18n="p5d">2 sistemi RAG in produzione presso InfoCamere, con un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.</p>
       <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
     </div>
     <div class="stat" aria-labelledby="p1k" data-card-href="#percorso">
@@ -588,20 +641,20 @@
       <p class="d" data-i18n="p2d">Trained on operational AI</p>
       <a class="lnk" href="#competenze" data-i18n="p2_link">Vedi le competenze →</a>
     </div>
-    <div class="stat" aria-labelledby="p4k" data-card-href="#percorso">
-      <p class="v v-word" data-i18n="p4v">Internazionale</p>
-      <span class="k" id="p4k" data-i18n="p4k">Innovazione</span>
+    <div class="stat recognition" aria-labelledby="p4k" data-card-href="#percorso">
+      <p class="v v-word" data-i18n="p4v">Europa ↔ Cina</p>
+      <span class="k" id="p4k" data-i18n="p4k">Esperienza internazionale</span>
       <p class="d" data-i18n="p4d">Su invito del CEO di DABO: team SCWL, contest "Sprint Forward", Shangcheng.</p>
       <a class="lnk" href="#percorso" data-i18n="p4_link">Vedi il percorso →</a>
     </div>
   </div>
 
-  <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_lavori">Progetti</span></h2>
+  <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_work_title">Cosa ho costruito</span></h2>
   <div class="work-grid rv">
     <div class="work-card" data-card-modal="c1Modal">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
       <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
-      <p class="work-summary" data-i18n="c1_summary">Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.</p>
+      <p class="work-summary" data-i18n="c1_summary">Due sistemi RAG in produzione per documentazione aziendale e storico Jira, accompagnati da un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.</p>
       <div class="work-chips">
         <span class="metachip">RAG</span>
         <span class="metachip">Systems Integration</span>
@@ -622,42 +675,47 @@
     </div>
   </div>
 
-  <h2 class="section-label rv" id="competenze"><span class="section-num">04</span><span data-i18n="sec_competenze">Competenze</span></h2>
+  <h2 class="section-label rv" id="competenze"><span class="section-num">04</span><span data-i18n="sec_skills_title">Con quali competenze</span></h2>
 
-  <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
-  <div class="core-grid rv">
-    <div class="core-cell" data-card-href="#percorso">
-      <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
-      <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
-      <a class="core-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+  <div class="cap-unified rv">
+    <div class="cap-group cap-group-core">
+      <div class="cap-group-label" data-i18n="cap_core_label">Core capabilities</div>
+      <div class="cap-group-grid cap-group-grid-core">
+        <div class="cap-item cap-item-core" data-card-href="#percorso">
+          <div class="cap-item-title" data-i18n="sk_cat1">Enterprise IT</div>
+          <p class="cap-item-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Experience</a>
+        </div>
+        <div class="cap-item cap-item-core" data-card-href="#casi-studio">
+          <div class="cap-item-title" data-i18n="sk_cat2">Enterprise AI</div>
+          <p class="cap-item-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+        </div>
+      </div>
     </div>
-    <div class="core-cell" data-card-href="#casi-studio">
-      <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
-      <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
-      <a class="core-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+    <div class="cap-group cap-group-extended">
+      <div class="cap-group-label" data-i18n="cap_ext_label">Extended capabilities</div>
+      <div class="cap-group-grid cap-group-grid-extended">
+        <div class="cap-item" data-card-href="#casi-studio">
+          <div class="cap-item-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
+          <p class="cap-item-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Projects</a>
+        </div>
+        <div class="cap-item" data-card-href="#casi-studio">
+          <div class="cap-item-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
+          <p class="cap-item-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+        </div>
+        <div class="cap-item" data-card-href="#percorso">
+          <div class="cap-item-title" data-i18n="sk_cat5">Technology Enablement</div>
+          <p class="cap-item-list" data-i18n="sk5">Advisory · Training · Public Speaking</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Experience</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
-  <div class="cap-grid rv">
-    <div class="cap-cell" data-card-href="#casi-studio">
-      <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
-      <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
-      <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
-    </div>
-    <div class="cap-cell" data-card-href="#casi-studio">
-      <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
-      <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
-      <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
-    </div>
-    <div class="cap-cell" data-card-href="#percorso">
-      <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
-      <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
-      <a class="cap-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
-    </div>
-  </div>
-
-  <h2 class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Esperienza</span></h2>
+  <h2 class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_path_title">Da quale percorso arrivo</span></h2>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-copy">
@@ -672,6 +730,11 @@
       </div>
       <div class="job-photo-slot" role="img" aria-label="InfoCamere"></div>
     </div>
+    <div class="job-row education">
+      <div class="job-overline"><span data-i18n="tpolitica">2026</span><span class="education-tag" data-i18n="politica_tag">Formazione selettiva</span></div>
+      <div class="job-title" data-i18n="politica_title">Meritare l'Europa — Scuola di Formazione Politica, Italia Viva</div>
+      <div class="job-supp" data-i18n="politica_desc">Ammesso al percorso 2026 dedicato alla cittadinanza attiva e all'attività politica istituzionale. Il programma integra geopolitica e futuro dell'Europa, economia e lavoro con focus su innovazione tecnologica e AI, diritti e cittadinanza, comunicazione politica, legislazione e amministrazione, leadership e teamwork.</div>
+    </div>
     <div class="job-row">
       <div class="job-overline" data-i18n="t2">2022</div>
       <div class="job-title">IdeaGrip</div>
@@ -684,7 +747,7 @@
     </div>
   </div>
 
-  <h2 class="section-label rv" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_perspectives">Perspectives</span></h2>
+  <h2 class="section-label rv" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_thinking_title">Come ragiono</span></h2>
   <div class="persp-grid rv">
     <div class="persp-card" data-card-modal="persp2Modal">
       <span class="persp-meta" data-i18n="persp2_meta">Perspective 02 · 2026</span>
@@ -872,14 +935,19 @@ Il modello è la parte facile. Il resto è il valore.</div>
       hero_cta_download:"Scarica profilo",
       sec_chisono:"Chi sono",
       chisono_p:"Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa.",
+      sec_results_title:"Che risultati ho prodotto",
+      sec_work_title:"Cosa ho costruito",
+      sec_skills_title:"Con quali competenze",
+      sec_path_title:"Da quale percorso arrivo",
+      sec_thinking_title:"Come ragiono",
       proof_label:"Risultati",
-      p5k:"Production Systems", p5d:"2 sistemi RAG (Retrieval-Augmented Generation) già in produzione presso InfoCamere.", p5_link:"Vedi i progetti →",
+      p5k:"Production Systems", p5d:"2 sistemi RAG in produzione presso InfoCamere, con un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.", p5_link:"Vedi i progetti →",
       p1k:"AI Advisory", p1d:"3 coinvolgimenti di advisory AI: 2 business unit interne e il CEO di DABO, azienda attiva tra Europa e Cina.", p1_link:"Vedi il percorso →",
       p2k:"Enablement", p2d:"5 programmi di formazione interni ed esterni sull'AI operativa, per l'upskilling di oltre 35 colleghi e del CEO di DABO.", p2_link:"Vedi le competenze →",
-      p4v:"Internazionale", p4k:"Innovazione", p4d:"Su invito del CEO di DABO: team SCWL, contest \"Sprint Forward\", Shangcheng.", p4_link:"Vedi il percorso →",
+      p4v:"Europa ↔ Cina", p4k:"Esperienza internazionale", p4d:"Su invito del CEO di DABO: team SCWL, contest “Sprint Forward”, Shangcheng.", p4_link:"Vedi il percorso →",
       sec_lavori:"Progetti",
       work_view:"Vedi il case study →",
-      c1_summary:"Due sistemi RAG che trasformano conoscenza aziendale frammentata in informazione accessibile e operativa.",
+      c1_summary:"Due sistemi RAG in produzione per documentazione aziendale e storico Jira, accompagnati da un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.",
       c2_summary:"Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.",
       sec_perspectives:"Articoli",
       persp1_meta:"Prospettiva 01 · 2026",
@@ -898,7 +966,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c1_problem:"La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.",
       c1_solution_1:"Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.",
       c1_solution_2:"Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.",
-      c1_solution_3:"Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.",
+      c1_solution_3:"Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell’esperienza accumulata e le attività di Incident & Problem Management. I due RAG sono accompagnati da un manuale operativo strutturato per Service Desk, Incident & Problem Management e Middle Management.",
       c1_impact:"I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.",
       c1_learning:"Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.",
       c2t:"Local AI for Sensitive Data Environments",
@@ -913,14 +981,18 @@ Il modello è la parte facile. Il resto è il valore.</div>
       prsa:"Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.",
       pr2:"Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).",
       pr3:"Consulente assicurativo. Ruolo a contatto con il cliente in un settore fortemente regolamentato, dove fiducia, compliance e affidabilità pesano quanto il business stesso.",
+      tpolitica:"2026",
+      politica_tag:"Formazione selettiva",
+      politica_title:"Meritare l'Europa — Scuola di Formazione Politica, Italia Viva",
+      politica_desc:"Ammesso al percorso 2026 dedicato alla cittadinanza attiva e all'attività politica istituzionale. Il programma integra geopolitica e futuro dell'Europa, economia e lavoro con focus su innovazione tecnologica e AI, diritti e cittadinanza, comunicazione politica, legislazione e amministrazione, leadership e teamwork.",
       sec_competenze:"Competenze",
       sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
       sk_cat2:"Enterprise AI", sk2:"RAG · Local AI · LLM · Knowledge Retrieval",
-      sk_cat3:"Cloud & Development", sk3:"Python · GCP · API · Application Integration",
+      sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Application Integration",
       sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
-      sk_cat5:"Technology Enablement", sk5:"Advisory · Formazione · Public Speaking",
-      cap_link_exp:"→ Esperienza", cap_link_work:"→ Case study", cap_link_projects:"→ Progetti",
-      cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
+      sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
+      cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
+      cap_core_label:"Competenze core", cap_ext_label:"Competenze estese",
       sec_badge:"Badge",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Google · Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Google Cloud · Community program · 2025",
@@ -937,16 +1009,21 @@ Il modello è la parte facile. Il resto è il valore.</div>
       hero_cta_download:"Download profile",
       sec_chisono:"About",
       chisono_p:"IT professional who has expanded his contribution to AI in production and its organizational adoption.",
-      proof_label:"Impact",
-      p5k:"Production Systems", p5d:"2 RAG (Retrieval-Augmented Generation) systems already live in production at InfoCamere.", p5_link:"See the projects →",
+      sec_results_title:"What I’ve delivered",
+      sec_work_title:"What I’ve built",
+      sec_skills_title:"The capabilities behind it",
+      sec_path_title:"The path that brought me here",
+      sec_thinking_title:"How I think",
+      proof_label:"Results",
+      p5k:"Production Systems", p5d:"2 RAG systems in production at InfoCamere, with an operational manual for Service Desk, Incident & Problem Management and Middle Management.", p5_link:"See the projects →",
       p1k:"AI Advisory", p1d:"3 AI advisory engagements: 2 internal business units and DABO's CEO, a company active between Europe and China.", p1_link:"See the path →",
       p2k:"Enablement", p2d:"5 internal and external training programs on operational AI, upskilling 35+ colleagues and DABO's CEO.", p2_link:"See capabilities →",
-      p4v:"International", p4k:"Innovation", p4d:"At the invitation of DABO's CEO: SCWL Team, \"Sprint Forward\" contest, Shangcheng.", p4_link:"See the path →",
-      sec_lavori:"Selected Work",
+      p4v:"Europe ↔ China", p4k:"International exposure", p4d:"At the invitation of DABO’s CEO: SCWL team, “Sprint Forward” contest, Shangcheng.", p4_link:"See the path →",
+      sec_lavori:"Projects",
       work_view:"View case study →",
-      c1_summary:"Two RAG systems turning fragmented corporate knowledge into accessible, operational information.",
+      c1_summary:"Two RAG systems in production for corporate documentation and Jira history, supported by an operational manual for Service Desk, Incident & Problem Management and Middle Management.",
       c2_summary:"Explored the feasibility of secure, locally-run AI for sensitive-data environments.",
-      sec_perspectives:"Perspectives",
+      sec_perspectives:"Articles",
       persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Reflections on the organizational and human side of enterprise technology, written along the way.",
       persp_read:"Read →",
@@ -963,7 +1040,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c1_problem:"Enterprise knowledge exists, but it's often fragmented: documents, procedures, manuals and tickets hold useful information that lives across different sources that don't always talk to each other.",
       c1_solution_1:"I implemented and brought into production two RAG systems, born from operational needs identified together with my manager.",
       c1_solution_2:"The first makes corporate documentation quickly searchable, easing information retrieval and cross-referencing — also supporting communication toward middle and top management.",
-      c1_solution_3:"The second turns historical Jira data into a searchable knowledge base for the working team, supporting the retrieval of accumulated experience and incident/problem management activities.",
+      c1_solution_3:"The second turns Jira history into a queryable knowledge base for the team, supporting access to accumulated experience and Incident & Problem Management. The two RAG systems are accompanied by an operational manual structured for Service Desk, Incident & Problem Management and Middle Management.",
       c1_impact:"The two systems reduce the work needed to manually search, connect and interpret information scattered across different corporate sources.",
       c1_learning:"Bringing them into production made clear that the main challenge of an enterprise RAG system isn't just the model: data quality and structure, context, instructions, information boundaries and usage patterns directly affect the system's reliability.",
       c2t:"Local AI for Sensitive Data Environments",
@@ -978,14 +1055,18 @@ Il modello è la parte facile. Il resto è il valore.</div>
       prsa:"Driving digital culture and AI adoption across InfoCamere through advisory, training and technology communication. I help translate emerging technologies into practical knowledge and use cases, contributing to the upskilling of 35+ professionals.",
       pr2:"IT Specialist (internship). First hands-on IT role: infrastructure support, troubleshooting, the transition from business to technology — with a Google scholarship (WorkInTech, first Italian edition).",
       pr3:"Insurance consultant. Client-facing role in a highly regulated industry, where trust, compliance and reliability matter as much as the business itself.",
-      sec_competenze:"Capabilities",
+      tpolitica:"2026",
+      politica_tag:"Selective education",
+      politica_title:"Meritare l'Europa — School of Political Education, Italia Viva",
+      politica_desc:"Admitted to the 2026 program focused on active citizenship and institutional political activity. The curriculum combines geopolitics and the future of Europe, economics and work with a focus on technological innovation and AI, rights and citizenship, political communication, legislation and public administration, leadership and teamwork.",
+      sec_competenze:"Skills",
       sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
       sk_cat2:"Enterprise AI", sk2:"RAG · Local AI · LLM · Knowledge Retrieval",
       sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Application Integration",
       sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
       cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
-      cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
+      cap_core_label:"Core capabilities", cap_ext_label:"Extended capabilities",
       sec_badge:"Badges",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Google · Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Google Cloud · Community program · 2025",
@@ -1002,16 +1083,21 @@ Il modello è la parte facile. Il resto è il valore.</div>
       hero_cta_download:"Télécharger le profil",
       sec_chisono:"À propos",
       chisono_p:"Professionnel IT qui a élargi sa contribution à l’IA en production et à son adoption organisationnelle.",
-      proof_label:"Impact",
-      p5k:"Production Systems", p5d:"2 systèmes RAG (Retrieval-Augmented Generation) déjà en production chez InfoCamere.", p5_link:"Voir les projets →",
+      sec_results_title:"Ce que j’ai produit",
+      sec_work_title:"Ce que j’ai construit",
+      sec_skills_title:"Les compétences mobilisées",
+      sec_path_title:"Le parcours qui m’a mené ici",
+      sec_thinking_title:"Ma façon de penser",
+      proof_label:"Résultats",
+      p5k:"Production Systems", p5d:"2 systèmes RAG en production chez InfoCamere, avec un manuel opérationnel pour le Service Desk, l’Incident & Problem Management et le Middle Management.", p5_link:"Voir les projets →",
       p1k:"AI Advisory", p1d:"3 missions d'advisory IA : 2 business units internes et le CEO de DABO, entreprise active entre l'Europe et la Chine.", p1_link:"Voir le parcours →",
       p2k:"Enablement", p2d:"5 programmes de formation internes et externes sur l'IA opérationnelle, pour l'upskilling de plus de 35 collègues et du CEO de DABO.", p2_link:"Voir les compétences →",
-      p4v:"International", p4k:"Innovation", p4d:"Sur invitation du CEO de DABO : équipe SCWL, concours « Sprint Forward », Shangcheng.", p4_link:"Voir le parcours →",
-      sec_lavori:"Projets sélectionnés",
+      p4v:"Europe ↔ Chine", p4k:"Expérience internationale", p4d:"Sur invitation du CEO de DABO : équipe SCWL, concours « Sprint Forward », Shangcheng.", p4_link:"Voir le parcours →",
+      sec_lavori:"Projets",
       work_view:"Voir le case study →",
-      c1_summary:"Deux systèmes RAG qui transforment une connaissance d'entreprise fragmentée en information accessible et opérationnelle.",
+      c1_summary:"Deux systèmes RAG en production pour la documentation d’entreprise et l’historique Jira, accompagnés d’un manuel opérationnel pour le Service Desk, l’Incident & Problem Management et le Middle Management.",
       c2_summary:"Exploration de la faisabilité d'une IA locale et sécurisée pour des environnements à données sensibles.",
-      sec_perspectives:"Perspectives",
+      sec_perspectives:"Articles",
       persp1_meta:"Perspective 01 · 2026",
       persp_intro:"Réflexions sur le versant organisationnel et humain de la technologie d'entreprise, écrites en chemin.",
       persp_read:"Lire →",
@@ -1028,7 +1114,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c1_problem:"La connaissance d'entreprise existe, mais elle est souvent fragmentée : documents, procédures, manuels et tickets contiennent des informations utiles réparties dans différentes sources qui ne communiquent pas toujours entre elles.",
       c1_solution_1:"J'ai mis en œuvre et déployé en production deux systèmes RAG, nés de besoins opérationnels identifiés avec mon responsable.",
       c1_solution_2:"Le premier rend la documentation d'entreprise rapidement interrogeable, facilitant la recherche et la mise en relation des informations, en soutenant aussi la communication vers le management intermédiaire et supérieur.",
-      c1_solution_3:"Le second transforme l'historique Jira en une base de connaissances interrogeable pour l'équipe, facilitant l'accès à l'expérience accumulée et les activités de gestion des incidents/problèmes.",
+      c1_solution_3:"Le second transforme l’historique Jira en une base de connaissances interrogeable pour l’équipe, facilitant l’accès à l’expérience accumulée et l’Incident & Problem Management. Les deux systèmes RAG sont accompagnés d’un manuel opérationnel structuré pour le Service Desk, l’Incident & Problem Management et le Middle Management.",
       c1_impact:"Les deux systèmes réduisent le travail nécessaire pour rechercher, relier et interpréter manuellement des informations réparties entre différentes sources d'entreprise.",
       c1_learning:"Leur mise en production a montré que le principal défi d'un système RAG enterprise n'est pas seulement le modèle : la qualité et la structure des données, le contexte, les instructions, les limites de l'information et les modes d'utilisation influencent directement la fiabilité du système.",
       c2t:"Local AI for Sensitive Data Environments",
@@ -1043,14 +1129,18 @@ Il modello è la parte facile. Il resto è il valore.</div>
       prsa:"Promotion de la culture numérique et de l'adoption de l'IA chez InfoCamere à travers le conseil, la formation et la communication technologique. J'aide à traduire les technologies émergentes en connaissances pratiques et cas d'usage, contribuant à l'upskilling de plus de 35 professionnels.",
       pr2:"Spécialiste IT (stage). Premier rôle IT concret : support infrastructure, troubleshooting, la transition du business vers la technologie — avec une bourse Google (WorkInTech, première édition italienne).",
       pr3:"Consultant assurance. Rôle au contact du client dans un secteur fortement réglementé, où la confiance, la conformité et la fiabilité comptent autant que le business lui-même.",
+      tpolitica:"2026",
+      politica_tag:"Formation sélective",
+      politica_title:"Meritare l'Europa — École de formation politique, Italia Viva",
+      politica_desc:"Admis au programme 2026 consacré à la citoyenneté active et à l'activité politique institutionnelle. Le cursus combine géopolitique et avenir de l'Europe, économie et travail avec un focus sur l'innovation technologique et l'IA, droits et citoyenneté, communication politique, législation et administration publique, leadership et travail en équipe.",
       sec_competenze:"Compétences",
-      sk_cat1:"IT d'entreprise", sk1:"Intégration de systèmes · Fiabilité · Linux/Windows · Automatisation",
-      sk_cat2:"IA d'entreprise", sk2:"RAG · IA locale · LLM · Knowledge Retrieval",
-      sk_cat3:"Cloud & Développement", sk3:"Python · GCP · API · Application Integration",
-      sk_cat4:"Adoption & gouvernance de l'IA", sk4:"Adoption de l'IA · Protection des données · Gestion des connaissances",
-      sk_cat5:"Technology Enablement", sk5:"Conseil · Formation · Public Speaking",
-      cap_link_exp:"→ Expérience", cap_link_work:"→ Étude de cas", cap_link_projects:"→ Projets",
-      cap_core_label:"Core", cap_ext_label:"Extended Capabilities",
+      sk_cat1:"Enterprise IT", sk1:"Systems Integration · Reliability · Linux/Windows · Automation",
+      sk_cat2:"Enterprise AI", sk2:"RAG · Local AI · LLM · Knowledge Retrieval",
+      sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Application Integration",
+      sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
+      sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
+      cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
+      cap_core_label:"Compétences clés", cap_ext_label:"Compétences complémentaires",
       sec_badge:"Badges",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Google · Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Google Cloud · Community program · 2025",
