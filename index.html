@@ -243,9 +243,7 @@
   .hero-btn.outline{background:color-mix(in srgb,white 55%,var(--accent-soft) 45%);color:var(--on-accent-soft);border:1px solid color-mix(in srgb,var(--on-accent-soft) 22%,transparent)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
   .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 20px}
-  .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--line);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;flex:none; transition: transform var(--dur-s) var(--ease)}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero-btn.solid .circle{background:var(--accent-soft);color:var(--on-accent-soft)}}
-  :root[data-theme="dark"] .hero-btn.solid .circle{background:var(--accent-soft);color:var(--on-accent-soft)}
+  .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--on-case);color:var(--case-bg);display:flex;align-items:center;justify-content:center;font-size:14px;line-height:1;flex:none; transition: transform var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:1; transform:translateY(-1px); box-shadow:var(--shadow-2); } .hero-btn.solid:hover .circle{ transform:translateX(2px); }}
 
   .hero-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;padding-top:26px;border-top:1px solid color-mix(in srgb,var(--on-accent-soft) 16%,transparent)}
@@ -266,9 +264,8 @@
   @media (hover:hover) and (pointer:fine){.job-row:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); background:var(--accent-soft);}}
   .job-row.current{border-color:transparent;background:var(--accent-soft);padding:0;display:grid;grid-template-columns:1.3fr 1fr;overflow:hidden}
   .job-row.current .job-copy{padding:36px 38px}
-  .job-photo-slot{background:color-mix(in srgb,var(--accent-soft) 60%,var(--ink) 8%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--on-accent-soft);min-height:200px;padding:20px;text-align:center}
-  .job-photo-slot .msym{font-size:34px;opacity:.45}
-  .job-photo-note{font-family:var(--sans);font-size:12px;max-width:180px;opacity:.75}
+  .job-photo-slot{background:#0B1E38;min-height:200px}
+  .job-photo-slot img{width:100%;height:100%;min-height:200px;object-fit:cover;object-position:center;display:block}
   @media (max-width:760px){.job-row.current{grid-template-columns:1fr}.job-photo-slot{order:-1;min-height:160px}}
   .job-overline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .job-current-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--bg);border-radius:999px;padding:3px 9px}
@@ -355,8 +352,9 @@
   .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.core-cell:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent; background:var(--accent-soft);}}
   .core-title{font-family:var(--display);font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
-  .cap-icon{display:block;font-size:28px;color:var(--accent);margin-bottom:2px}
-  .cap-icon.small{font-size:22px}
+  .cap-head{display:flex;align-items:center;gap:12px}
+  .cap-icon{display:block;font-size:26px;color:var(--accent);flex:none}
+  .cap-icon.small{font-size:21px}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
   .core-link{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.core-cell:hover .core-link{color:var(--accent);border-color:var(--accent)}}
@@ -488,7 +486,7 @@
     }
     .rv, .rv.in{opacity:1 !important; transform:none !important;}
     .topbar, .fab, .scroll-progress, .skip-link, .visually-hidden, dialog,
-    .hero-cta-row, .hero-nav, .hero-proof, .job-photo-slot,
+    .hero-cta-row, .hero-nav, .hero-proof,
     .work-link, .persp-link, .core-link, .cap-link, .lnk{
       display:none !important;
     }
@@ -632,14 +630,12 @@
   <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
   <div class="core-grid rv">
     <div class="core-cell" data-card-href="#percorso">
-      <span class="msym cap-icon" aria-hidden="true">dns</span>
-      <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
+      <div class="cap-head"><span class="msym cap-icon" aria-hidden="true">dns</span><div class="core-title" data-i18n="sk_cat1">Enterprise IT</div></div>
       <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
       <a class="core-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
     <div class="core-cell" data-card-href="#casi-studio">
-      <span class="msym cap-icon" aria-hidden="true">neurology</span>
-      <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
+      <div class="cap-head"><span class="msym cap-icon" aria-hidden="true">neurology</span><div class="core-title" data-i18n="sk_cat2">Enterprise AI</div></div>
       <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
       <a class="core-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
@@ -648,20 +644,17 @@
   <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
   <div class="cap-grid rv">
     <div class="cap-cell" data-card-href="#casi-studio">
-      <span class="msym cap-icon small" aria-hidden="true">hub</span>
-      <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
+      <div class="cap-head"><span class="msym cap-icon small" aria-hidden="true">hub</span><div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div></div>
       <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
       <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
     </div>
     <div class="cap-cell" data-card-href="#casi-studio">
-      <span class="msym cap-icon small" aria-hidden="true">verified_user</span>
-      <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
+      <div class="cap-head"><span class="msym cap-icon small" aria-hidden="true">verified_user</span><div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div></div>
       <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
       <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
     <div class="cap-cell" data-card-href="#percorso">
-      <span class="msym cap-icon small" aria-hidden="true">groups</span>
-      <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
+      <div class="cap-head"><span class="msym cap-icon small" aria-hidden="true">groups</span><div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div></div>
       <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
       <a class="cap-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
@@ -680,9 +673,8 @@
           <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.</div>
         </div>
       </div>
-      <div class="job-photo-slot" aria-hidden="true">
-        <span class="msym">add_photo_alternate</span>
-        <span class="job-photo-note">Foto InfoCamere da aggiungere</span>
+      <div class="job-photo-slot">
+        <img src="infocamere.png" alt="InfoCamere" loading="lazy">
       </div>
     </div>
     <div class="job-row">
