@@ -274,7 +274,7 @@
      ogni stat è una card a sé, bordata e con angoli arrotondati, invece di
      un unico blocco con divisori interni. */
   .statrow{display:flex;gap:16px;padding-bottom:8px}
-  .stat{flex:1;display:flex;flex-direction:column;gap:10px;padding:24px;border:0;background:var(--accent-soft);border-radius:18px;min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease)}
+  .stat{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:24px;border:0;background:var(--accent-soft);border-radius:18px;min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.stat:hover{background:color-mix(in srgb,var(--accent-soft) 65%,var(--accent) 35%);transform:translateY(-4px);box-shadow:var(--shadow-2)}}
   .stat .v{font-family:var(--display);font-size:34px;font-weight:900;line-height:1;color:var(--ink);margin:0;display:inline-block;font-variant-numeric:tabular-nums}
   .stat .v.v-word{font-size:26px;letter-spacing:-.01em}
@@ -355,7 +355,7 @@
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
   @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
-  .cap-cell{display:flex;flex-direction:column;gap:6px;min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
+  .cap-cell{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.cap-cell:hover{background:var(--accent-soft); transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
   .cap-title{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
