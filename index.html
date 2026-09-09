@@ -533,6 +533,23 @@
   .job-row.education{border-style:dashed;background:color-mix(in srgb,var(--accent-soft) 42%,transparent);box-shadow:none}
   .education-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--accent-soft);border-radius:999px;padding:3px 9px;margin-left:8px}
 
+/* ============ unified capabilities ============ */
+.cap-unified{border:1px solid var(--line);border-radius:28px;overflow:hidden;background:color-mix(in srgb,var(--bg) 92%,var(--accent-soft) 8%);box-shadow:var(--shadow)}
+.cap-group{padding:26px}
+.cap-group + .cap-group{border-top:1px solid var(--line)}
+.cap-group-label{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px}
+.cap-group-grid{display:grid;gap:12px}
+.cap-group-grid-core{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cap-group-grid-extended{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cap-item{min-width:0;padding:20px;border:1px solid var(--line);border-radius:20px;background:var(--bg);transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease)}
+.cap-item-core{background:color-mix(in srgb,var(--accent-soft) 62%,var(--bg) 38%);border-color:color-mix(in srgb,var(--accent) 24%,var(--line) 76%)}
+.cap-item-title{font-family:var(--display);font-size:18px;font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:8px}
+.cap-item-list{font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink-soft);margin:0 0 15px}
+.cap-item-link{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink);text-decoration:none}
+@media (hover:hover) and (pointer:fine){.cap-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:color-mix(in srgb,var(--accent) 32%,var(--line) 68%)}}
+@media (max-width:900px){.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr 1fr}.cap-group-grid-extended .cap-item:last-child{grid-column:1 / -1}}
+@media (max-width:560px){.cap-unified{border-radius:24px}.cap-group{padding:18px}.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr;gap:10px}.cap-group-grid-extended .cap-item:last-child{grid-column:auto}.cap-item{padding:18px;border-radius:18px}.cap-group-label{margin-bottom:12px}}
+
 </style>
 </head>
 <body>
@@ -660,36 +677,41 @@
 
   <h2 class="section-label rv" id="competenze"><span class="section-num">04</span><span data-i18n="sec_skills_title">Con quali competenze</span></h2>
 
-  <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
-  <div class="core-grid rv">
-    <div class="core-cell" data-card-href="#percorso">
-      <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
-      <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
-      <a class="core-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+  <div class="cap-unified rv">
+    <div class="cap-group cap-group-core">
+      <div class="cap-group-label" data-i18n="cap_core_label">Core capabilities</div>
+      <div class="cap-group-grid cap-group-grid-core">
+        <div class="cap-item cap-item-core" data-card-href="#percorso">
+          <div class="cap-item-title" data-i18n="sk_cat1">Enterprise IT</div>
+          <p class="cap-item-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Experience</a>
+        </div>
+        <div class="cap-item cap-item-core" data-card-href="#casi-studio">
+          <div class="cap-item-title" data-i18n="sk_cat2">Enterprise AI</div>
+          <p class="cap-item-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+        </div>
+      </div>
     </div>
-    <div class="core-cell" data-card-href="#casi-studio">
-      <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
-      <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
-      <a class="core-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
-    </div>
-  </div>
-
-  <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
-  <div class="cap-grid rv">
-    <div class="cap-cell" data-card-href="#casi-studio">
-      <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
-      <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
-      <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
-    </div>
-    <div class="cap-cell" data-card-href="#casi-studio">
-      <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
-      <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
-      <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
-    </div>
-    <div class="cap-cell" data-card-href="#percorso">
-      <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
-      <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
-      <a class="cap-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
+    <div class="cap-group cap-group-extended">
+      <div class="cap-group-label" data-i18n="cap_ext_label">Extended capabilities</div>
+      <div class="cap-group-grid cap-group-grid-extended">
+        <div class="cap-item" data-card-href="#casi-studio">
+          <div class="cap-item-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
+          <p class="cap-item-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Projects</a>
+        </div>
+        <div class="cap-item" data-card-href="#casi-studio">
+          <div class="cap-item-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
+          <p class="cap-item-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
+        </div>
+        <div class="cap-item" data-card-href="#percorso">
+          <div class="cap-item-title" data-i18n="sk_cat5">Technology Enablement</div>
+          <p class="cap-item-list" data-i18n="sk5">Advisory · Training · Public Speaking</p>
+          <a class="cap-item-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Experience</a>
+        </div>
+      </div>
     </div>
   </div>
 
