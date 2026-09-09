@@ -242,9 +242,8 @@
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease), transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
   .hero-btn.outline{background:color-mix(in srgb,white 55%,var(--accent-soft) 45%);color:var(--on-accent-soft);border:1px solid color-mix(in srgb,var(--on-accent-soft) 22%,transparent)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
-  .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 20px}
-  .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--on-case);color:var(--case-bg);display:flex;align-items:center;justify-content:center;font-size:14px;line-height:1;flex:none; transition: transform var(--dur-s) var(--ease)}
-  @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:1; transform:translateY(-1px); box-shadow:var(--shadow-2); } .hero-btn.solid:hover .circle{ transform:translateX(2px); }}
+  .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center}
+  @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:1; transform:translateY(-1px); box-shadow:var(--shadow-2); }}
 
   .hero-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;padding-top:26px;border-top:1px solid color-mix(in srgb,var(--on-accent-soft) 16%,transparent)}
   .hero-nav a{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--on-accent-soft);opacity:.75}
@@ -264,8 +263,8 @@
   @media (hover:hover) and (pointer:fine){.job-row:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); background:var(--accent-soft);}}
   .job-row.current{border-color:transparent;background:var(--accent-soft);padding:0;display:grid;grid-template-columns:1.3fr 1fr;overflow:hidden}
   .job-row.current .job-copy{padding:36px 38px}
-  .job-photo-slot{background:#0B1E38;min-height:200px}
-  .job-photo-slot img{width:100%;height:100%;min-height:200px;object-fit:cover;object-position:center;display:block}
+  .job-photo-slot{position:relative;background:#0B1E38;min-height:200px}
+  .job-photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
   @media (max-width:760px){.job-row.current{grid-template-columns:1fr}.job-photo-slot{order:-1;min-height:160px}}
   .job-overline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .job-current-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--bg);border-radius:999px;padding:3px 9px}
@@ -538,7 +537,7 @@
           <h1 class="hero-name">Nicolò Forcolin</h1>
           <p class="hero-role">Enterprise IT | AI &amp; Systems Integration | Reliability, Governance &amp; Innovation</p>
           <div class="hero-cta-row">
-            <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span><span class="circle">→</span></a>
+            <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span></a>
             <button class="hero-btn outline md-ripple-wrapper" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
             <button class="hero-btn outline md-ripple-wrapper" type="button" id="downloadProfileBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right:6px;vertical-align:-2px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg><span data-i18n="hero_cta_download">Scarica profilo</span></button>
           </div>
