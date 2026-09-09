@@ -1,0 +1,126 @@
+name: Localize skills section once
+
+on:
+  push:
+    paths:
+      - .github/workflows/localize-skills-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Localize section 04
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          replacements = {
+            'it': {
+              'sk_cat1':'IT aziendale',
+              'sk1':'Integrazione di sistemi · Affidabilità · Linux/Windows · Automazione',
+              'sk_cat2':'AI aziendale',
+              'sk2':'RAG · AI locale · LLM · Recupero della conoscenza',
+              'sk_cat3':'Cloud e sviluppo',
+              'sk3':'Python · GCP · API · Integrazione applicativa',
+              'sk_cat4':'Adozione e governance dell’AI',
+              'sk4':'Adozione dell’AI · Protezione dei dati · Gestione della conoscenza',
+              'sk_cat5':'Abilitazione tecnologica',
+              'sk5':'Consulenza · Formazione · Public speaking',
+              'cap_link_exp':'→ Esperienza',
+              'cap_link_work':'→ Caso studio',
+              'cap_link_projects':'→ Progetti',
+              'cap_core_label':'Competenze core',
+              'cap_ext_label':'Competenze estese',
+            },
+            'en': {
+              'sk_cat1':'Enterprise IT',
+              'sk1':'Systems Integration · Reliability · Linux/Windows · Automation',
+              'sk_cat2':'Enterprise AI',
+              'sk2':'RAG · Local AI · LLM · Knowledge Retrieval',
+              'sk_cat3':'Cloud & Development',
+              'sk3':'Python · GCP · APIs · Application Integration',
+              'sk_cat4':'AI Adoption & Governance',
+              'sk4':'AI Adoption · Data Protection · Knowledge Management',
+              'sk_cat5':'Technology Enablement',
+              'sk5':'Advisory · Training · Public Speaking',
+              'cap_link_exp':'→ Experience',
+              'cap_link_work':'→ Case study',
+              'cap_link_projects':'→ Projects',
+              'cap_core_label':'Core capabilities',
+              'cap_ext_label':'Extended capabilities',
+            },
+            'fr': {
+              'sk_cat1':'IT d’entreprise',
+              'sk1':'Intégration de systèmes · Fiabilité · Linux/Windows · Automatisation',
+              'sk_cat2':'IA d’entreprise',
+              'sk2':'RAG · IA locale · LLM · Recherche de connaissances',
+              'sk_cat3':'Cloud et développement',
+              'sk3':'Python · GCP · API · Intégration applicative',
+              'sk_cat4':'Adoption et gouvernance de l’IA',
+              'sk4':'Adoption de l’IA · Protection des données · Gestion des connaissances',
+              'sk_cat5':'Accompagnement technologique',
+              'sk5':'Conseil · Formation · Prise de parole en public',
+              'cap_link_exp':'→ Expérience',
+              'cap_link_work':'→ Étude de cas',
+              'cap_link_projects':'→ Projets',
+              'cap_core_label':'Compétences clés',
+              'cap_ext_label':'Compétences complémentaires',
+            }
+          }
+
+          def bounds(src, lang):
+              m = re.search(rf'^\s{{4}}{lang}\s*:\s*\{{', src, re.M)
+              if not m: raise SystemExit(f'missing {lang}')
+              start = m.start()
+              nxt = {'it':'en','en':'fr'}.get(lang)
+              if nxt:
+                  m2 = re.search(rf'^\s{{4}}{nxt}\s*:\s*\{{', src[m.end():], re.M)
+                  if not m2: raise SystemExit(f'missing next after {lang}')
+                  end = m.end() + m2.start()
+              else:
+                  m2 = re.search(r'^\s{2}\};', src[m.end():], re.M)
+                  if not m2: raise SystemExit('missing i18n end')
+                  end = m.end() + m2.start()
+              return start, end
+
+          def esc_js(v):
+              return v.replace('\\','\\\\').replace('"','\\"')
+
+          for lang in ('fr','en','it'):
+              a,b = bounds(s, lang)
+              block = s[a:b]
+              for key,val in replacements[lang].items():
+                  pat = rf'(\b{re.escape(key)}\s*:\s*)"(?:\\.|[^"\\])*"'
+                  block,n = re.subn(pat, lambda m: m.group(1)+'"'+esc_js(val)+'"', block, count=1)
+                  if n != 1: raise SystemExit(f'{lang}.{key} not found')
+              s = s[:a] + block + s[b:]
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Check localization
+        run: |
+          grep -q 'cap_core_label:"Competenze core"' index.html
+          grep -q 'cap_core_label:"Core capabilities"' index.html
+          grep -q 'cap_core_label:"Compétences clés"' index.html
+          grep -q 'sk_cat5:"Abilitazione tecnologica"' index.html
+          grep -q 'sk_cat5:"Technology Enablement"' index.html
+          grep -q 'sk_cat5:"Accompagnement technologique"' index.html
+          git diff --check
+
+      - name: Commit and push
+        run: |
+          git config user.name 'site-update-bot'
+          git config user.email 'site-update-bot@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Localize skills section by active language'
+          git push origin HEAD:main
