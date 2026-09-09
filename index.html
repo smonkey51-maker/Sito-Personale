@@ -22,11 +22,13 @@
    statica mentre la foto viene ricaricata e ri-analizzata. */
 (function(){
   try{
-    var mode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var root = document.documentElement;
+    var savedTheme = localStorage.getItem("nfTheme");
+    if(savedTheme) root.setAttribute("data-theme", savedTheme);
+    var mode = savedTheme ? savedTheme : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     var cached = JSON.parse(localStorage.getItem("nfPalette") || "null");
     var vars = cached && cached[mode];
     if(vars){
-      var root = document.documentElement;
       Object.keys(vars).forEach(function(k){ root.style.setProperty(k, vars[k]); });
     }
   } catch(e){}
@@ -114,7 +116,7 @@
     --ease:cubic-bezier(0.2, 0, 0, 1);
   }
   @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
+    :root:not([data-theme="light"]):not([data-theme="dark"]){
       --bg:#0C0F16;
       --ink:#E7EAF1;--ink-soft:#A6AFC2;--line:#232B3A;
       --accent:#A9C3EE;--accent-soft:#233A5E;--on-accent-soft:#D9E6FA;
@@ -220,7 +222,7 @@
   /* ============ hero: singolo container tonale M3, ~55/45 testo/foto ============ */
   .hero{padding:40px 0 56px}
   @media (max-width:900px){.hero{padding:24px 0 36px}}
-  .hero-card{background:var(--accent-soft);border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;align-items:stretch}
+  .hero-card{background:var(--accent-soft);border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:stretch}
   .hero-toprow{display:flex;align-items:center;padding:48px 44px}
   .hero-photo-col{position:relative;min-height:360px}
   .hero-photo-col picture{display:contents}
@@ -237,7 +239,7 @@
 
   .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease), transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
-  .hero-btn.outline{background:color-mix(in srgb,white 55%,var(--accent-soft) 45%);color:var(--on-accent-soft);border:1px solid color-mix(in srgb,var(--on-accent-soft) 22%,transparent)}
+  .hero-btn.outline{background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);color:var(--ink);border:1px solid var(--line)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
   .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center}
   @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:1; transform:translateY(-1px); box-shadow:var(--shadow-2); }}
@@ -1139,9 +1141,11 @@ Il modello è la parte facile. Il resto è il valore.</div>
   }
   toggles.forEach(function(t){
     t.addEventListener("click", function(){
-      root.setAttribute("data-theme", current() === "dark" ? "light" : "dark");
+      var next = current() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try{ localStorage.setItem("nfTheme", next); }catch(e){}
       paintTheme();
-      announceTheme(current() === "dark");
+      announceTheme(next === "dark");
     });
   });
   if(window.matchMedia){
