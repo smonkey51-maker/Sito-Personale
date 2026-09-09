@@ -1,0 +1,56 @@
+name: Keep skills section in English
+
+on:
+  push:
+    paths:
+      - .github/workflows/skills-english-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Force section 04 to English
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          vals={
+            'sk_cat1':'Enterprise IT','sk1':'Systems Integration · Reliability · Linux/Windows · Automation',
+            'sk_cat2':'Enterprise AI','sk2':'RAG · Local AI · LLM · Knowledge Retrieval',
+            'sk_cat3':'Cloud & Development','sk3':'Python · GCP · APIs · Application Integration',
+            'sk_cat4':'AI Adoption & Governance','sk4':'AI Adoption · Data Protection · Knowledge Management',
+            'sk_cat5':'Technology Enablement','sk5':'Advisory · Training · Public Speaking',
+            'cap_link_exp':'→ Experience','cap_link_work':'→ Case study','cap_link_projects':'→ Projects',
+            'cap_core_label':'Core capabilities','cap_ext_label':'Extended capabilities'
+          }
+          def bounds(src,lang):
+            m=re.search(rf'^\s{{4}}{lang}\s*:\s*\{{',src,re.M); start=m.start()
+            nxt={'it':'en','en':'fr'}.get(lang)
+            if nxt:
+              m2=re.search(rf'^\s{{4}}{nxt}\s*:\s*\{{',src[m.end():],re.M); end=m.end()+m2.start()
+            else:
+              m2=re.search(r'^\s{2}\};',src[m.end():],re.M); end=m.end()+m2.start()
+            return start,end
+          for lang in ('fr','en','it'):
+            a,b=bounds(s,lang); block=s[a:b]
+            for k,v in vals.items():
+              pat=rf'(\b{re.escape(k)}\s*:\s*)"(?:\\.|[^"\\])*"'
+              block,n=re.subn(pat,lambda m:m.group(1)+'"'+v.replace('\\','\\\\').replace('"','\\"')+'"',block,count=1)
+              if n!=1: raise SystemExit(f'{lang}.{k} not found')
+            s=s[:a]+block+s[b:]
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit and push
+        run: |
+          git config user.name 'site-update-bot'
+          git config user.email 'site-update-bot@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Keep skills section in English across languages'
+          git push origin HEAD:main
