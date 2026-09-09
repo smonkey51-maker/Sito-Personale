@@ -62,7 +62,7 @@
   if(saveData) return;
   var l = document.createElement("link");
   l.rel = "stylesheet";
-  l.href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&family=Roboto+Mono:wght@500;600&display=swap";
+  l.href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&family=Roboto+Mono:wght@500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap";
   document.head.appendChild(l);
 })();
 </script>
@@ -158,6 +158,9 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
   @media (min-width:840px){.wrap{padding:0 40px}}
 
+  /* ============ Material Symbols ============ */
+  .msym{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased}
+
   @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   @keyframes statPop{0%{transform:scale(1)}45%{transform:scale(1.08)}100%{transform:scale(1)}}
 
@@ -217,24 +220,27 @@
     .fab{right:16px;bottom:16px;padding:14px 24px}
   }
 
-  /* ============ hero ============ */
-  .hero{padding:72px 0 56px}
-  @media (max-width:900px){.hero{padding:48px 0 36px}}
-  .hero-toprow{display:flex;align-items:center;gap:36px}
-  .hero-toprow picture{display:contents}
-  @media (max-width:900px){.hero-toprow{flex-wrap:wrap;gap:24px}}
-  .avatar{width:230px;height:230px;border-radius:36px;object-fit:cover;object-position:center 40%;display:block;box-shadow:var(--shadow-2);border:1px solid var(--line);flex:none}
-  @media (max-width:900px){.avatar{width:170px;height:170px;border-radius:28px}}
+  /* ============ hero: singolo container tonale M3, ~55/45 testo/foto ============ */
+  .hero{padding:40px 0 56px}
+  @media (max-width:900px){.hero{padding:24px 0 36px}}
+  .hero-card{background:var(--accent-soft);border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;align-items:stretch}
+  .hero-toprow{display:flex;align-items:center;padding:48px 44px}
+  .hero-photo-col{position:relative;min-height:360px}
+  .hero-photo-col picture{display:contents}
+  @media (max-width:900px){.hero-card{grid-template-columns:1fr;border-radius:28px}.hero-photo-col{order:-1;min-height:280px}.hero-toprow{padding:32px 28px}}
+  @media (max-width:560px){.hero-card{border-radius:24px}.hero-toprow{padding:28px 22px}}
+  .avatar{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:center 22%;display:block;box-shadow:none;border:0;border-radius:0}
+  @media (max-width:900px){.avatar{min-height:280px}}
   .hero-text{display:flex;flex-direction:column}
-  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
-  .hero-name{font-family:var(--display);font-weight:900;font-size:clamp(34px,4.6vw,50px);letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:0;text-wrap:balance}
+  .eyebrow{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--on-accent-soft);opacity:.75;margin:0 0 10px}
+  .hero-name{font-family:var(--display);font-weight:700;font-size:clamp(36px,4.8vw,54px);letter-spacing:-.015em;line-height:1.05;color:var(--on-accent-soft);margin:0;text-wrap:balance}
   .hero-role{font-family:var(--sans);font-size:16.5px;font-weight:400;color:var(--ink-soft);margin-top:10px;max-width:52ch}
 
   .hero-role{display:none}
 
   .hero-cta-row{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hero-btn{font-family:var(--sans);font-size:13px;font-weight:600;padding:11px 22px;border-radius:999px;white-space:nowrap;transition:border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease), transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
-  .hero-btn.outline{background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);color:var(--ink);border:1px solid var(--line)}
+  .hero-btn.outline{background:color-mix(in srgb,white 55%,var(--accent-soft) 45%);color:var(--on-accent-soft);border:1px solid color-mix(in srgb,var(--on-accent-soft) 22%,transparent)}
   @media (hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
   .hero-btn.solid{background:var(--case-bg);color:var(--on-case);border:1px solid var(--case-bg);display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 20px}
   .hero-btn.solid .circle{width:28px;height:28px;border-radius:50%;background:var(--line);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;flex:none; transition: transform var(--dur-s) var(--ease)}
@@ -242,23 +248,28 @@
   :root[data-theme="dark"] .hero-btn.solid .circle{background:var(--accent-soft);color:var(--on-accent-soft)}
   @media (hover:hover) and (pointer:fine){.hero-btn.solid:hover{opacity:1; transform:translateY(-1px); box-shadow:var(--shadow-2); } .hero-btn.solid:hover .circle{ transform:translateX(2px); }}
 
-  .hero-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
-  .hero-nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft)}
-  @media (hover:hover) and (pointer:fine){.hero-nav a:hover{color:var(--accent)}}
+  .hero-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;padding-top:26px;border-top:1px solid color-mix(in srgb,var(--on-accent-soft) 16%,transparent)}
+  .hero-nav a{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--on-accent-soft);opacity:.75}
+  @media (hover:hover) and (pointer:fine){.hero-nav a:hover{opacity:1}}
 
-  /* ============ section label ============ */
+  /* ============ section label (Material headline, non più mono/uppercase) ============ */
   .section-label{
-    display:flex;align-items:baseline;gap:13px;font-family:var(--sans);font-size:14.5px;font-weight:600;
-    letter-spacing:.055em;text-transform:uppercase;color:var(--ink);padding:72px 0 24px;scroll-margin-top:88px;margin:0;
+    display:flex;align-items:baseline;gap:12px;font-family:var(--display);font-size:28px;font-weight:500;
+    letter-spacing:-.01em;text-transform:none;color:var(--ink);padding:64px 0 28px;scroll-margin-top:88px;margin:0;
   }
-  @media (max-width:900px){.section-label{padding:52px 0 20px}}
-  .section-num{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
+  @media (max-width:900px){.section-label{padding:44px 0 22px;font-size:23px}}
+  .section-num{font-family:var(--sans);font-size:13px;color:var(--accent);font-weight:500;opacity:.6}
 
   /* ============ percorso (e tutte le sezioni a lista) ============ */
   .timeline{display:flex;flex-direction:column;gap:16px;padding-bottom:8px}
-  .job-row{padding:28px 30px;border:1px solid var(--line);border-radius:20px; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
+  .job-row{padding:28px 30px;border:1px solid var(--line);border-radius:28px; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.job-row:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); background:var(--accent-soft);}}
-  .job-row.current{border-color:var(--accent);background:var(--accent-soft)}
+  .job-row.current{border-color:transparent;background:var(--accent-soft);padding:0;display:grid;grid-template-columns:1.3fr 1fr;overflow:hidden}
+  .job-row.current .job-copy{padding:36px 38px}
+  .job-photo-slot{background:color-mix(in srgb,var(--accent-soft) 60%,var(--ink) 8%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--on-accent-soft);min-height:200px;padding:20px;text-align:center}
+  .job-photo-slot .msym{font-size:34px;opacity:.45}
+  .job-photo-note{font-family:var(--sans);font-size:12px;max-width:180px;opacity:.75}
+  @media (max-width:760px){.job-row.current{grid-template-columns:1fr}.job-photo-slot{order:-1;min-height:160px}}
   .job-overline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .job-current-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--bg);border-radius:999px;padding:3px 9px}
   .job-title{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin-top:5px}
@@ -290,7 +301,7 @@
   .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
 
   /* ============ oltre ============ */
-  .chisono-card{border:1px solid var(--line);border-radius:22px;padding:32px;margin-bottom:8px; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
+  .chisono-card{border:1px solid var(--line);border-radius:28px;padding:32px;margin-bottom:8px; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.chisono-card.in:hover, .chisono-card:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); background:var(--accent-soft);}}
   .oltre-supp{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0}
 
@@ -298,7 +309,7 @@
   .persp-intro{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0 0 28px;max-width:640px}
   .persp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
   @media (max-width:900px){.persp-grid{grid-template-columns:1fr}}
-  .persp-card{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:18px;min-width:0;cursor:pointer;transition:background var(--dur-s) var(--ease), transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
+  .persp-card{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:28px;min-width:0;cursor:pointer;transition:background var(--dur-s) var(--ease), transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.persp-card:hover{background:var(--accent-soft); transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
   .persp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .persp-title{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
@@ -343,7 +354,9 @@
   @media (max-width:700px){.core-grid{grid-template-columns:1fr}}
   .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.core-cell:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent; background:var(--accent-soft);}}
-  .core-title{font-family:var(--display);font-size:23px;font-weight:900;color:var(--ink);letter-spacing:-.01em}
+  .core-title{font-family:var(--display);font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+  .cap-icon{display:block;font-size:28px;color:var(--accent);margin-bottom:2px}
+  .cap-icon.small{font-size:22px}
   .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
   .core-link{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.core-cell:hover .core-link{color:var(--accent);border-color:var(--accent)}}
@@ -353,7 +366,7 @@
   @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
   .cap-cell{display:flex;flex-direction:column;gap:6px;min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.cap-cell:hover{background:var(--accent-soft); transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
-  .cap-title{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .cap-title{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink)}
   .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
   .cap-link{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.cap-cell:hover .cap-link{color:var(--accent);border-color:var(--accent)}}
@@ -417,40 +430,48 @@
   .desktop-nav a.active::after{transform:scaleX(1)}
   @media(max-width:900px){.brandmark,.desktop-nav{display:none}.topbar-inner{justify-content:flex-end}}
   @media(min-width:901px){.fab{display:none}}
-  .hero{padding:86px 0 52px}
-  .hero-toprow{align-items:center;gap:52px}
-  .avatar{width:250px;height:250px;border-radius:32px;box-shadow:none;border:1px solid var(--line)}
-  .hero-text{max-width:680px}
-  .hero-name{font-size:clamp(42px,5.5vw,66px);letter-spacing:-.045em;line-height:.98}
+  .hero{padding:56px 0 52px}
+  .hero-toprow{padding:56px 52px}
+  .hero-text{max-width:640px}
+  .hero-name{font-size:clamp(42px,5.2vw,60px);letter-spacing:-.02em;line-height:1.02}
   .hero-cta-row{margin-top:28px}
   .hero-btn{padding:12px 20px;font-size:13px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
   .hero-proof{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
-  .hero-proof span{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink-soft);border:1px solid var(--line);padding:7px 10px;border-radius:999px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%)}
   .hero-nav{display:none}
   @media(max-width:900px){
-    .hero{padding:46px 0 26px}.hero-toprow{gap:28px}.avatar{width:148px;height:148px;border-radius:24px}.hero-name{font-size:clamp(38px,11vw,52px)}
+    .hero{padding:24px 0 26px}
+    .hero-toprow{padding:32px 28px}
+    .hero-name{font-size:clamp(34px,9vw,46px)}
     .hero-proof{display:none}
-    .hero-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
-    .hero-nav a{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
-    .hero-nav a:hover{color:var(--accent);border-color:var(--accent)}
+    .hero-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:22px;border-top:1px solid color-mix(in srgb,var(--on-accent-soft) 16%,transparent)}
+    .hero-nav a{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--on-accent-soft);border:1px solid color-mix(in srgb,var(--on-accent-soft) 22%,transparent);border-radius:999px;padding:7px 13px}
+    .hero-nav a:hover{opacity:.8}
   }
-  @media(max-width:560px){.hero-toprow{display:block}.avatar{width:260px;height:260px;border-radius:28px;margin:0 auto 24px;display:block}.eyebrow{font-size:11px}.hero-name{font-size:clamp(28px,8vw,36px)}.hero-cta-row{display:grid;grid-template-columns:1fr 1fr}.hero-btn{width:100%}}
-  .section-label{padding:92px 0 26px;font-size:13px;letter-spacing:.09em}
-  .section-num{font-size:11px;opacity:.8}
-  @media(max-width:900px){.section-label{padding:64px 0 20px}}
+  @media(max-width:560px){.hero-toprow{padding:28px 22px}.eyebrow{font-size:12px}.hero-name{font-size:clamp(28px,9vw,36px)}.hero-cta-row{display:grid;grid-template-columns:1fr 1fr}.hero-btn{width:100%}}
+  .section-label{padding:64px 0 28px;font-size:28px;font-weight:500;letter-spacing:-.01em;text-transform:none}
+  .section-num{font-size:13px;opacity:.6}
+  @media(max-width:900px){.section-label{padding:44px 0 22px;font-size:23px}}
   .oltre-supp,.persp-intro{font-size:17px;line-height:1.75}
-  .core-grid{gap:16px}.core-cell{padding:30px;border-radius:20px;background:transparent;}
-  .core-title{font-size:22px}.core-list{font-size:15px}
+  .core-grid{gap:16px}.core-cell{padding:36px;border-radius:28px;}
+  .core-title{font-size:23px}.core-list{font-size:15px}
   .cap-sublabel{margin-bottom:16px}.cap-sublabel.ext{margin-top:42px}
-  .cap-grid{gap:14px}.cap-cell{padding:20px;border:1px solid var(--line);border-radius:16px;min-height:150px}
+  .cap-grid{gap:14px}.cap-cell{padding:24px;border:0;background:color-mix(in srgb,var(--bg) 92%,var(--ink) 8%);border-radius:22px;min-height:150px}
   .job-title{font-size:19px}.job-supp{font-size:15px}
   .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0}
-  .stat{padding:26px 24px;border-radius:20px;gap:8px;min-width:0}
+  .stat{padding:26px 24px;border-radius:24px;gap:8px;min-width:0}
   .stat .v{font-size:38px}.stat .v.v-word{font-size:28px}.stat .d{font-size:13.5px}
   @media(max-width:820px){.statrow{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.statrow{grid-template-columns:1fr}.stat{padding:22px}}
-  .work-grid{gap:16px}.work-card{padding:30px;border-radius:22px;min-height:300px;position:relative;}
-  .work-title{font-size:22px}.work-summary{font-size:15px}.work-link{margin-top:auto;padding-top:10px;min-height:34px}
+  .work-grid{gap:16px;grid-template-columns:2fr 1fr}
+  @media (max-width:760px){.work-grid{grid-template-columns:1fr}}
+  .work-card{padding:32px;border-radius:28px;min-height:300px;position:relative;}
+  .work-card:first-child{background:var(--case-bg);border-color:transparent;color:var(--on-case)}
+  .work-card:first-child .work-title,.work-card:first-child .work-summary{color:var(--on-case)}
+  .work-card:first-child .metachip{color:color-mix(in srgb,var(--on-case) 80%,transparent)}
+  .work-card:first-child .work-link{color:var(--on-case)}
+  .work-card:first-child .work-meta.live{color:var(--on-case);background:color-mix(in srgb,var(--on-case) 18%,transparent)}
+  .work-card:first-child .work-meta.live::before{background:var(--on-case)}
+  .work-title{font-size:23px}.work-summary{font-size:15px}.work-link{margin-top:auto;padding-top:10px;min-height:34px}
   footer{margin-top:96px}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
@@ -467,10 +488,12 @@
     }
     .rv, .rv.in{opacity:1 !important; transform:none !important;}
     .topbar, .fab, .scroll-progress, .skip-link, .visually-hidden, dialog,
-    .hero-cta-row, .hero-nav, .hero-proof,
+    .hero-cta-row, .hero-nav, .hero-proof, .job-photo-slot,
     .work-link, .persp-link, .core-link, .cap-link, .lnk{
       display:none !important;
     }
+    .hero-card{background:#fff !important;display:block !important}
+    .job-row.current{display:block !important}
     * { box-shadow:none !important; text-shadow:none !important; }
     body{background:#fff;color:#000}
     a{color:inherit;text-decoration:underline}
@@ -510,30 +533,34 @@
 
 <header class="hero" id="profilo">
   <div class="wrap">
-    <div class="hero-toprow">
-      <picture>
-        <source srcset="photo.webp" type="image/webp">
-        <img class="avatar" id="avatarPhoto" src="photo.jpg" alt="Nicolò Forcolin" width="186" height="186" fetchpriority="high">
-      </picture>
-      <div class="hero-text">
-        <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
-        <h1 class="hero-name">Nicolò Forcolin</h1>
-        <p class="hero-role">Enterprise IT | AI &amp; Systems Integration | Reliability, Governance &amp; Innovation</p>
-        <div class="hero-cta-row">
-          <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span><span class="circle">→</span></a>
-          <button class="hero-btn outline md-ripple-wrapper" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
-          <button class="hero-btn outline md-ripple-wrapper" type="button" id="downloadProfileBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right:6px;vertical-align:-2px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg><span data-i18n="hero_cta_download">Scarica profilo</span></button>
+    <div class="hero-card">
+      <div class="hero-toprow">
+        <div class="hero-text">
+          <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
+          <h1 class="hero-name">Nicolò Forcolin</h1>
+          <p class="hero-role">Enterprise IT | AI &amp; Systems Integration | Reliability, Governance &amp; Innovation</p>
+          <div class="hero-cta-row">
+            <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span><span class="circle">→</span></a>
+            <button class="hero-btn outline md-ripple-wrapper" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
+            <button class="hero-btn outline md-ripple-wrapper" type="button" id="downloadProfileBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right:6px;vertical-align:-2px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg><span data-i18n="hero_cta_download">Scarica profilo</span></button>
+          </div>
+          <div class="hero-proof" aria-label="Professional focus">
+            <span>Enterprise IT</span><span>AI in Production</span><span>Systems Integration</span><span>AI Adoption</span>
+          </div>
+          <nav class="hero-nav" aria-label="Sezioni della pagina">
+            <a href="#sintesi" data-i18n="proof_label">Impact</a>
+            <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
+            <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
+            <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
+            <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
+          </nav>
         </div>
-        <div class="hero-proof" aria-label="Professional focus">
-          <span>Enterprise IT</span><span>AI in Production</span><span>Systems Integration</span><span>AI Adoption</span>
-        </div>
-        <nav class="hero-nav" aria-label="Sezioni della pagina">
-          <a href="#sintesi" data-i18n="proof_label">Impact</a>
-          <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
-          <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
-          <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
-          <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
-        </nav>
+      </div>
+      <div class="hero-photo-col">
+        <picture>
+          <source srcset="photo.webp" type="image/webp">
+          <img class="avatar" id="avatarPhoto" src="photo.jpg" alt="Nicolò Forcolin" width="186" height="186" fetchpriority="high">
+        </picture>
       </div>
     </div>
   </div>
@@ -605,11 +632,13 @@
   <div class="cap-sublabel" data-i18n="cap_core_label">Core</div>
   <div class="core-grid rv">
     <div class="core-cell" data-card-href="#percorso">
+      <span class="msym cap-icon" aria-hidden="true">dns</span>
       <div class="core-title" data-i18n="sk_cat1">Enterprise IT</div>
       <p class="core-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
       <a class="core-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
     </div>
     <div class="core-cell" data-card-href="#casi-studio">
+      <span class="msym cap-icon" aria-hidden="true">neurology</span>
       <div class="core-title" data-i18n="sk_cat2">Enterprise AI</div>
       <p class="core-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
       <a class="core-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
@@ -619,16 +648,19 @@
   <div class="cap-sublabel ext" data-i18n="cap_ext_label">Extended Capabilities</div>
   <div class="cap-grid rv">
     <div class="cap-cell" data-card-href="#casi-studio">
+      <span class="msym cap-icon small" aria-hidden="true">hub</span>
       <div class="cap-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
       <p class="cap-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
       <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Progetti</a>
     </div>
     <div class="cap-cell" data-card-href="#casi-studio">
+      <span class="msym cap-icon small" aria-hidden="true">verified_user</span>
       <div class="cap-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
       <p class="cap-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
       <a class="cap-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
     </div>
     <div class="cap-cell" data-card-href="#percorso">
+      <span class="msym cap-icon small" aria-hidden="true">groups</span>
       <div class="cap-title" data-i18n="sk_cat5">Technology Enablement</div>
       <p class="cap-list" data-i18n="sk5">Advisory · Formazione · Public Speaking</p>
       <a class="cap-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Esperienza</a>
@@ -638,13 +670,19 @@
   <h2 class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_percorso">Esperienza</span></h2>
   <div class="timeline rv">
     <div class="job-row current">
-      <div class="job-overline"><span data-i18n="t1">Set 2022 — oggi</span><span class="job-current-tag" data-i18n="job_current">In corso</span></div>
-      <div class="job-title">InfoCamere</div>
-      <div class="job-supp" data-i18n="pr1s">SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.</div>
-      <div class="exp-sub">
-        <div class="exp-sub-overline" data-i18n="tsa">Mag 2025 — oggi</div>
-        <div class="exp-sub-title">↳ Social Ambassador</div>
-        <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.</div>
+      <div class="job-copy">
+        <div class="job-overline"><span data-i18n="t1">Set 2022 — oggi</span><span class="job-current-tag" data-i18n="job_current">In corso</span></div>
+        <div class="job-title">InfoCamere</div>
+        <div class="job-supp" data-i18n="pr1s">SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.</div>
+        <div class="exp-sub">
+          <div class="exp-sub-overline" data-i18n="tsa">Mag 2025 — oggi</div>
+          <div class="exp-sub-title">↳ Social Ambassador</div>
+          <div class="exp-sub-supp" data-i18n="prsa">Diffusione di cultura digitale e adozione dell'AI in InfoCamere attraverso advisory, formazione e comunicazione tecnologica. Aiuto a tradurre tecnologie emergenti in conoscenza pratica e casi d'uso, contribuendo all'upskilling di oltre 35 professionisti.</div>
+        </div>
+      </div>
+      <div class="job-photo-slot" aria-hidden="true">
+        <span class="msym">add_photo_alternate</span>
+        <span class="job-photo-note">Foto InfoCamere da aggiungere</span>
       </div>
     </div>
     <div class="job-row">
