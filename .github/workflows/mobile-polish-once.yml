@@ -1,0 +1,122 @@
+name: Final mobile polish once
+
+on:
+  push:
+    paths:
+      - .github/workflows/mobile-polish-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply mobile polish
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          old_desc = 'Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.'
+          new_desc = 'Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa.'
+          s = s.replace(old_desc, new_desc)
+
+          marker = '/* ============ final mobile polish ============ */'
+          if marker not in s:
+              css = r'''
+
+  /* ============ final mobile polish ============ */
+  /* Più contrasto sulle superfici blu in dark mode */
+  :root[data-theme="dark"] .stat .d,
+  :root[data-theme="dark"] .job-row.current .job-supp,
+  :root[data-theme="dark"] .job-row.current .exp-sub-supp{
+    color:#C9D3EA;
+  }
+  :root[data-theme="dark"] .work-card:first-child .work-summary,
+  :root[data-theme="dark"] .work-card:first-child .metachip{
+    color:#EDF2FF;
+  }
+
+  /* Production pill: contrasto netto sulla featured card */
+  .work-card:first-child .work-meta.live{
+    background:rgba(255,255,255,.18);
+    color:#FFFFFF;
+    border:1px solid rgba(255,255,255,.30);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+  }
+  .work-card:first-child .work-meta.live::before{background:#FFFFFF}
+
+  /* Il FAB resta utile senza coprire troppo contenuto */
+  @media (max-width:560px){
+    .fab{
+      right:14px;
+      bottom:14px;
+      padding:12px 20px;
+      border-radius:15px;
+      font-size:11.5px;
+      letter-spacing:.025em;
+    }
+    .fab.near-footer{
+      opacity:0;
+      transform:translateY(10px) scale(.96);
+      pointer-events:none;
+    }
+
+    /* Densità verticale leggermente ridotta, senza comprimere il layout */
+    .stat{padding:22px}
+    .work-card{padding:24px}
+    .persp-card{padding:28px}
+    .chisono-card{padding:29px}
+    .core-cell{padding:31px}
+    .job-row.current .job-copy{padding:32px 34px}
+  }
+
+  /* Separazione più elegante tra thinking e credentials/footer */
+  .persp-grid{margin-bottom:56px}
+  .badge-grid{margin-bottom:64px}
+  footer{padding-top:8px}
+'''
+              s = s.replace('\n</style>', css + '\n</style>', 1)
+
+          js_marker = '/* final mobile polish: hide FAB near footer */'
+          if js_marker not in s:
+              js = r'''
+<script>
+/* final mobile polish: hide FAB near footer */
+(function(){
+  var fab = document.querySelector('.fab');
+  var footer = document.querySelector('footer');
+  if(!fab || !footer || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      fab.classList.toggle('near-footer', entry.isIntersecting);
+    });
+  }, {rootMargin:'0px 0px 110px 0px', threshold:0});
+  io.observe(footer);
+})();
+</script>
+'''
+              s = s.replace('\n</body>', js + '\n</body>', 1)
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Validate
+        run: |
+          grep -q 'final mobile polish' index.html
+          grep -q 'Professionista IT che ha esteso il proprio contributo' index.html
+          git diff --check
+
+      - name: Commit and push
+        run: |
+          git config user.name 'site-update-bot'
+          git config user.email 'site-update-bot@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Polish mobile contrast spacing and contact FAB'
+          git push origin HEAD:main
