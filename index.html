@@ -591,6 +591,46 @@
 @media (hover:hover) and (pointer:fine){.credential-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent)}.credential-row:hover .credential-arrow{transform:translateX(3px);opacity:1}}
 @media (max-width:560px){.credential-list{border-radius:20px}.credential-row{padding:16px 17px;gap:12px}.credential-icon{width:34px;height:34px;font-size:12px}.credential-title{font-size:14px}.credential-meta{font-size:9.5px}}
 
+  /* ============ Material 3 action footer ============ */
+  .footer-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+  }
+  .footer-action{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:44px;
+    padding:10px 15px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:color-mix(in srgb,var(--bg) 94%,var(--accent-soft) 6%);
+    color:var(--ink);
+    font:600 13px/1 var(--sans);
+    cursor:pointer;
+    transition:background var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease);
+  }
+  .footer-action svg{width:17px;height:17px;flex:none}
+  .footer-action .footer-g{
+    width:21px;height:21px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+    background:var(--accent);color:#fff;font-family:var(--display);font-size:10px;font-weight:800;flex:none;
+  }
+  :root[data-theme="dark"] .footer-action .footer-g{color:#0B1F57}
+  .footer-external{font-size:15px;line-height:1;color:var(--accent);opacity:.8;transition:transform var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
+  @media (hover:hover) and (pointer:fine){
+    .footer-action:hover{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 32%,var(--line) 68%);color:var(--ink);box-shadow:var(--shadow)}
+    .footer-action:hover .footer-external{opacity:1;transform:translate(1px,-1px)}
+  }
+  .footer-note{margin-top:18px}
+  @media (max-width:560px){
+    .footer-links{display:grid;grid-template-columns:1fr;gap:9px}
+    .footer-action{width:100%;justify-content:flex-start;padding:12px 15px;border-radius:16px}
+    .footer-external{margin-left:auto}
+  }
+
 </style>
 </head>
 <body>
@@ -819,9 +859,20 @@
 
   <footer class="rv">
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
-      <button type="button" data-open-modal="contactModal" style="background:none;border:none;padding:0;font:inherit;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email</button>
-      <a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Google Skills Boost<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
+      <a class="footer-action md-ripple-wrapper" href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10v6M8 8h.01M12 16v-3.5a2.5 2.5 0 0 1 5 0V16M12 10v6"/></svg>
+        <span>LinkedIn</span><span class="footer-external" aria-hidden="true">↗</span>
+        <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
+      </a>
+      <button class="footer-action md-ripple-wrapper" type="button" data-open-contacts>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+        <span>Email</span>
+      </button>
+      <a class="footer-action md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+        <span class="footer-g" aria-hidden="true">G</span>
+        <span>Google Skills</span><span class="footer-external" aria-hidden="true">↛</span>
+        <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
+      </a>
     </div>
     <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
   </footer>
