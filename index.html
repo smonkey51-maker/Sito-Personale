@@ -6,7 +6,7 @@
 <meta name="theme-color" id="themeColorMeta" content="#F7F8FC">
 
 <title>Nicolò Forcolin — Enterprise IT, AI & Systems Integration</title>
-<meta name="description" content="Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.">
+<meta name="description" content="Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa.">
 <link rel="canonical" href="https://nforcolin.eu/">
 
 <!-- Icone e installabilità (PWA) -->
@@ -41,7 +41,7 @@
 <meta property="og:site_name" content="Nicolò Forcolin">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Nicolò Forcolin — Enterprise IT, AI & Systems Integration">
-<meta property="og:description" content="Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.">
+<meta property="og:description" content="Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa.">
 <meta property="og:image" content="https://nforcolin.eu/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -50,7 +50,7 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nicolò Forcolin — Enterprise IT, AI & Systems Integration">
-<meta name="twitter:description" content="Professionista IT enterprise che lavora tra infrastrutture critiche, AI e integrazione di sistemi.">
+<meta name="twitter:description" content="Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa.">
 <meta name="twitter:image" content="https://nforcolin.eu/og-image.png">
 <meta name="twitter:image:alt" content="Nicolò Forcolin — Enterprise IT, AI & Systems Integration">
 
@@ -549,6 +549,34 @@
 @media (hover:hover) and (pointer:fine){.cap-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:color-mix(in srgb,var(--accent) 32%,var(--line) 68%)}}
 @media (max-width:900px){.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr 1fr}.cap-group-grid-extended .cap-item:last-child{grid-column:1 / -1}}
 @media (max-width:560px){.cap-unified{border-radius:24px}.cap-group{padding:18px}.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr;gap:10px}.cap-group-grid-extended .cap-item:last-child{grid-column:auto}.cap-item{padding:18px;border-radius:18px}.cap-group-label{margin-bottom:12px}}
+
+  /* ============ final mobile polish ============ */
+  :root[data-theme="dark"] .stat .d,
+  :root[data-theme="dark"] .job-row.current .job-supp,
+  :root[data-theme="dark"] .job-row.current .exp-sub-supp{color:#C9D3EA}
+  :root[data-theme="dark"] .work-card:first-child .work-summary,
+  :root[data-theme="dark"] .work-card:first-child .metachip{color:#EDF2FF}
+  .work-card:first-child .work-meta.live{
+    background:rgba(255,255,255,.18);
+    color:#FFFFFF;
+    border:1px solid rgba(255,255,255,.30);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px)
+  }
+  .work-card:first-child .work-meta.live::before{background:#FFFFFF}
+  @media (max-width:560px){
+    .fab{right:14px;bottom:14px;padding:12px 20px;border-radius:15px;font-size:11.5px;letter-spacing:.025em}
+    .fab.near-footer{opacity:0;transform:translateY(10px) scale(.96);pointer-events:none}
+    .stat{padding:22px}
+    .work-card{padding:24px}
+    .persp-card{padding:28px}
+    .chisono-card{padding:29px}
+    .core-cell{padding:31px}
+    .job-row.current .job-copy{padding:32px 34px}
+  }
+  .persp-grid{margin-bottom:56px}
+  .badge-grid{margin-bottom:64px}
+  footer{padding-top:8px}
 
 </style>
 </head>
@@ -1583,5 +1611,18 @@ Il modello è la parte facile. Il resto è il valore.</div>
   applyLang();
 })();
 </script>
+<script>
+/* final mobile polish: hide FAB near footer */
+(function(){
+  var fab=document.querySelector('.fab');
+  var footer=document.querySelector('footer');
+  if(!fab||!footer||!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){fab.classList.toggle('near-footer',entry.isIntersecting);});
+  },{rootMargin:'0px 0px 110px 0px',threshold:0});
+  io.observe(footer);
+})();
+</script>
+
 </body>
 </html>
