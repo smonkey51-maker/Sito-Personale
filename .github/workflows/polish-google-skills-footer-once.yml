@@ -1,0 +1,49 @@
+name: Polish Google Skills icon and footer
+on: [push]
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply icon and footer typography polish
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          # Footer copyright line: use the normal sans family instead of mono metadata styling.
+          s, n_footer = re.subn(
+              r'\.footer-note\{font-family:var\(--mono\);font-size:11\.5px;letter-spacing:\.05em;color:var\(--ink-soft\);margin:0\}',
+              '.footer-note{font-family:var(--sans);font-size:12.5px;letter-spacing:0;color:var(--ink-soft);margin:0}',
+              s,
+              count=1
+          )
+          if n_footer != 1:
+              raise SystemExit(f'footer-note replacement failed: {n_footer}')
+
+          # Replace the generic blue G in section 08 with a neutral learning / education icon.
+          old = '<span class="contact-icon contact-g" aria-hidden="true">G</span>\n      <span class="contact-label">Google Skills</span>'
+          new = '<span class="contact-icon contact-skills" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 6l9 4.5-9 4.5-9-4.5Z"/><path d="M7 12.5V16c2.8 2 7.2 2 10 0v-3.5"/><path d="M21 10.5V16"/></svg></span>\n      <span class="contact-label">Google Skills</span>'
+          if old not in s:
+              raise SystemExit('Google Skills contact icon target not found')
+          s = s.replace(old, new, 1)
+
+          # Ensure the new icon stays visually aligned with LinkedIn and Email.
+          marker = '.contact-icon svg{width:21px;height:21px}'
+          if marker in s and '.contact-icon.contact-skills' not in s:
+              s = s.replace(marker, marker + '\n  .contact-icon.contact-skills{color:var(--accent);background:color-mix(in srgb,var(--accent-soft) 42%,transparent)}', 1)
+
+          p.write_text(s, encoding='utf-8')
+          PY
+          git diff --check
+          git config user.name 'site-update-bot'
+          git config user.email 'site-update-bot@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Polish Google Skills icon and footer typography' || exit 0
+          git push origin HEAD:main
