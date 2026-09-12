@@ -1,4 +1,4 @@
-name: Google Skills icon once
+name: Footer typography once
 on: [push]
 permissions:
   contents: write
@@ -7,23 +7,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Replace Google Skills icon
+      - name: Use sans typography for footer copyright
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('index.html')
-          s=p.read_text(encoding='utf-8')
-          old='<span class="contact-icon contact-g" aria-hidden="true">G</span>'
-          new='''<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 7 12 11 19.5 7 12 3Z"/><path d="M6.5 9.2V14c0 1.8 2.5 3.3 5.5 3.3s5.5-1.5 5.5-3.3V9.2"/><path d="M19.5 7v5"/></svg></span>'''
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          old = '.footer-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);margin:0}'
+          new = '.footer-note{font-family:var(--sans);font-size:12.5px;letter-spacing:0;color:var(--ink-soft);margin:0}'
           if old not in s:
-              raise SystemExit('Google Skills icon target not found')
-          s=s.replace(old,new,1)
-          p.write_text(s,encoding='utf-8')
+              raise SystemExit('footer-note target not found')
+          s = s.replace(old, new, 1)
+          p.write_text(s, encoding='utf-8')
           PY
           git diff --check
           git config user.name 'site-update-bot'
           git config user.email 'site-update-bot@users.noreply.github.com'
           git add index.html
-          git commit -m 'Use learning icon for Google Skills' || exit 0
+          git commit -m 'Use sans typography for footer copyright' || exit 0
           git push origin HEAD:main
