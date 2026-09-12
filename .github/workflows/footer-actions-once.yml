@@ -7,88 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Update footer actions
+      - name: Apply footer redesign
         shell: bash
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          p=Path('index.html')
-          s=p.read_text(encoding='utf-8')
-
-          css=r'''
-
-  /* ============ Material 3 action footer ============ */
-  .footer-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    align-items:center;
-  }
-  .footer-action{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    min-height:44px;
-    padding:10px 15px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    background:color-mix(in srgb,var(--bg) 94%,var(--accent-soft) 6%);
-    color:var(--ink);
-    font:600 13px/1 var(--sans);
-    cursor:pointer;
-    transition:background var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease);
-  }
-  .footer-action svg{width:17px;height:17px;flex:none}
-  .footer-action .footer-g{
-    width:21px;height:21px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
-    background:var(--accent);color:#fff;font-family:var(--display);font-size:10px;font-weight:800;flex:none;
-  }
-  :root[data-theme="dark"] .footer-action .footer-g{color:#0B1F57}
-  .footer-external{font-size:15px;line-height:1;color:var(--accent);opacity:.8}
-  @media (hover:hover) and (pointer:fine){
-    .footer-action:hover{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 32%,var(--line) 68%);color:var(--ink);box-shadow:var(--shadow)}
-    .footer-action:hover .footer-external{opacity:1;transform:translate(1px,-1px)}
-  }
-  .footer-note{margin-top:18px}
-  @media (max-width:560px){
-    .footer-links{display:grid;grid-template-columns:1fr;gap:9px}
-    .footer-action{width:100%;justify-content:flex-start;padding:12px 15px;border-radius:16px}
-    .footer-external{margin-left:auto}
-  }
-'''
-          marker='/* ============ Material 3 action footer ============ */'
-          if marker not in s:
-              s=s.replace('\n</style>',css+'\n</style>',1)
-
-          new=r'''  <footer class="rv">
-    <div class="footer-links">
-      <a class="footer-action md-ripple-wrapper" href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10v6M8 8h.01M12 16v-3.5a2.5 2.5 0 0 1 5 0V16M12 10v6"/></svg>
-        <span>LinkedIn</span><span class="footer-external" aria-hidden="true">↗</span>
-        <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
-      </a>
-      <button class="footer-action md-ripple-wrapper" type="button" data-open-contacts>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
-        <span>Email</span>
-      </button>
-      <a class="footer-action md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
-        <span class="footer-g" aria-hidden="true">G</span>
-        <span>Google Skills</span><span class="footer-external" aria-hidden="true">↗</span>
-        <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
-      </a>
-    </div>
-    <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
-  </footer>'''
-          pat=re.compile(r'  <footer class="rv">.*?</footer>',re.S)
-          s,n=pat.subn(new,s,count=1)
-          if n!=1: raise SystemExit(f'footer replacement failed: {n}')
-          p.write_text(s,encoding='utf-8')
-          PY
+          echo 'ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmltcG9ydCByZQpwPVBhdGgoJ2luZGV4Lmh0bWwnKQpzPXAucmVhZF90ZXh0KGVuY29kaW5nPSd1dGYtOCcpCgpjc3M9cicnJwogIC8qID09PT09PT09PT09PSBNYXRlcmlhbCAzIGFjdGlvbiBmb290ZXIgPT09PT09PT09PT09ICovCiAgLmZvb3Rlci1saW5rc3sKICAgIGRpc3BsYXk6ZmxleDsKICAgIGZsZXgtd3JhcDp3cmFwOwogICAgZ2FwOjEwcHg7CiAgICBhbGlnbi1pdGVtczpjZW50ZXI7CiAgfQogIC5mb290ZXItYWN0aW9uewogICAgZGlzcGxheTppbmxpbmUtZmxleDsKICAgIGFsaWduLWl0ZW1zOmNlbnRlcjsKICAgIGp1c3RpZnktY29udGVudDpjZW50ZXI7CiAgICBnYXA6OXB4OwogICAgbWluLWhlaWdodDo0NHB4OwogICAgcGFkZGluZzoxMHB4IDE1cHg7CiAgICBib3JkZXI6MXB4IHNvbGlkIHZhcigtLWxpbmUpOwogICAgYm9yZGVyLXJhZGl1czo5OTlweDsKICAgIGJhY2tncm91bmQ6Y29sb3ItbWl4KGluIHNyZ2IsdmFyKC0tYmcpIDk0JSx2YXIoLS1hY2NlbnQtc29mdCkgNiUpOwogICAgY29sb3I6dmFyKC0taW5rKTsKICAgIGZvbnQ6NjAwIDEzcHgvMSB2YXIoLS1zYW5zKTsKICAgIGN1cnNvcjpwb2ludGVyOwogICAgdHJhbnNpdGlvbjpiYWNrZ3JvdW5kIHZhcigtLWR1ci1zKSB2YXIoLS1lYXNlKSxib3JkZXItY29sb3IgdmFyKC0tZHVyLXMpIHZhcigtLWVhc2UpLGNvbG9yIHZhcigtLWR1ci1zKSB2YXIoLS1lYXNlKSx0cmFuc2Zvcm0gdmFyKC0tZHVyLXMpIHZhcigtLWVhc2UpLGJveC1zaGFkb3cgdmFyKC0tZHVyLXMpIHZhcigtLWVhc2UpOwogIH0KICAuZm9vdGVyLWFjdGlvbiBzdmd7d2lkdGg6MTdweDtoZWlnaHQ6MTdweDtmbGV4Om5vbmV9CiAgLmZvb3Rlci1hY3Rpb24gLmZvb3Rlci1newogICAgd2lkdGg6MjFweDtoZWlnaHQ6MjFweDtib3JkZXItcmFkaXVzOjUwJTtkaXNwbGF5OmlubGluZS1mbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyOwogICAgYmFja2dyb3VuZDp2YXIoLS1hY2NlbnQpO2NvbG9yOiNmZmY7Zm9udC1mYW1pbHk6dmFyKC0tZGlzcGxheSk7Zm9udC1zaXplOjEwcHg7Zm9udC13ZWlnaHQ6ODAwO2ZsZXg6bm9uZTsKICB9CiAgOnJvb3RbZGF0YS10aGVtZT0iZGFyayJdIC5mb290ZXItYWN0aW9uIC5mb290ZXItZ3tjb2xvcjojMEIxRjU3fQogIC5mb290ZXItZXh0ZXJuYWx7Zm9udC1zaXplOjE1cHg7bGluZS1oZWlnaHQ6MTtjb2xvcjp2YXIoLS1hY2NlbnQpO29wYWNpdHk6Ljg7dHJhbnNpdGlvbjp0cmFuc2Zvcm0gdmFyKC0tZHVyLXMpIHZhcigtLWVhc2UpLG9wYWNpdHkgdmFyKC0tZHVyLXMpIHZhcigtLWVhc2UpfQogIEBtZWRpYSAoaG92ZXI6aG92ZXIpIGFuZCAocG9pbnRlcjpmaW5lKXsKICAgIC5mb290ZXItYWN0aW9uOmhvdmVye2JhY2tncm91bmQ6dmFyKC0tYWNjZW50LXNvZnQpO2JvcmRlci1jb2xvcjpjb2xvci1taXgoaW4gc3JnYix2YXIoLS1hY2NlbnQpIDMyJSx2YXIoLS1saW5lKSA2OCUpO2NvbG9yOnZhcigtLWluayk7Ym94LXNoYWRvdzp2YXIoLS1zaGFkb3cpfQogICAgLmZvb3Rlci1hY3Rpb246aG92ZXIgLmZvb3Rlci1leHRlcm5hbHtvcGFjaXR5OjE7dHJhbnNmb3JtOnRyYW5zbGF0ZSgxcHgsLTFweCl9CiAgfQogIC5mb290ZXItbm90ZXttYXJnaW4tdG9wOjE4cHh9CiAgQG1lZGlhIChtYXgtd2lkdGg6NTYwcHgpewogICAgLmZvb3Rlci1saW5rc3tkaXNwbGF5OmdyaWQ7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmcjtnYXA6OXB4fQogICAgLmZvb3Rlci1hY3Rpb257d2lkdGg6MTAwJTtqdXN0aWZ5LWNvbnRlbnQ6ZmxleC1zdGFydDtwYWRkaW5nOjEycHggMTVweDtib3JkZXItcmFkaXVzOjE2cHh9CiAgICAuZm9vdGVyLWV4dGVybmFse21hcmdpbi1sZWZ0OmF1dG99CiAgfQonJycKbWFya2VyPScvKiA9PT09PT09PT09PT09IE1hdGVyaWFsIDMgYWN0aW9uIGZvb3RlciA9PT09PT09PT09PT09ICovJwppZiBtYXJrZXIgbm90IGluIHM6CiAgICBzPXMucmVwbGFjZSgnXG48L3N0eWxlPicsIGNzcyArICdcbjwvc3R5bGU+JywgMSkKCm5ldz1yJycnICA8Zm9vdGVyIGNsYXNzPSJydiI+CiAgICA8ZGl2IGNsYXNzPSJmb290ZXItbGlua3MiPgogICAgICA8YSBjbGFzcz0iZm9vdGVyLWFjdGlvbiBtZC1yaXBwbGUtd3JhcHBlciIgaHJlZj0iaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL25pY29sb2ZvcmNvbGluLyIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIiPgogICAgICAgIDxzdmcgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIvPjxwYXRoIGQ9Ik04IDEwdjZNOCA4aC4wMU0xMiAxNnYtMy41YTIuNSAyLjUgMCAwIDEgNSAwVjE2TTEyIDEwdjYiLz48L3N2Zz4KICAgICAgICA8c3Bhbj5MaW5rZWRJbjwvc3Bhbj48c3BhbiBjbGFzcz0iZm9vdGVyLWV4dGVybmFsIiBhcmlhLWhpZGRlbj0idHJ1ZSI+4oaXPC9zcGFuPgogICAgICAgIDxzcGFuIGNsYXNzPSJ2aXN1YWxseS1oaWRkZW4iIGRhdGEtaTE4bj0ibmV3X3RhYl9oaW50Ij4gKHNpIGFwcmUgaW4gdW5hIG51b3ZhIHNjaGVkYSk8L3NwYW4+CiAgICAgIDwvYT4KICAgICAgPGJ1dHRvbiBjbGFzcz0iZm9vdGVyLWFjdGlvbiBtZC1yaXBwbGUtd3JhcHBlciIgdHlwZT0iYnV0dG9uIiBkYXRhLW9wZW4tY29udGFjdHM+CiAgICAgICAgPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiIGFyaWEtaGlkZGVuPSJ0cnVlIj48cmVjdCB4PSIyIiB5PSI0IiB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHJ4PSIyIi8+PHBhdGggZD0ibTIgNiAxMCA3TDIyIDYiLz48L3N2Zz4KICAgICAgICA8c3Bhbj5FbWFpbDwvc3Bhbj4KICAgICAgPC9idXR0b24+CiAgICAgIDxhIGNsYXNzPSJmb290ZXItYWN0aW9uIG1kLXJpcHBsZS13cmFwcGVyIiBocmVmPSJodHRwczovL3d3dy5za2lsbHMuZ29vZ2xlL3B1YmxpY19wcm9maWxlcy80OTYzOGQ3Yi0zZjQ5LTQ3MTItYjcwZi1mODVmNWUyMzk1MTkiIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj4KICAgICAgICA8c3BhbiBjbGFzcz0iZm9vdGVyLWciIGFyaWEtaGlkZGVuPSJ0cnVlIj5HPC9zcGFuPgogICAgICAgIDxzcGFuPkdvb2dsZSBTa2lsbHM8L3NwYW4+PHNwYW4gY2xhc3M9ImZvb3Rlci1leHRlcm5hbCIgYXJpYS1oaWRkZW49InRydWUiPuKGmzwvc3Bhbj4KICAgICAgICA8c3BhbiBjbGFzcz0idmlzdWFsbHktaGlkZGVuIiBkYXRhLWkxOG49Im5ld190YWJfaGludCI+IChzaSBhcHJlIGluIHVuYSBudW92YSBzY2hlZGEpPC9zcGFuPgogICAgICA8L2E+CiAgICA8L2Rpdj4KICAgIDxwIGNsYXNzPSJmb290ZXItbm90ZSI+wqkgMjAyNiBOaWNvbMOyIEZvcmNvbGluIOKAlCBQYWRvdmEsIEl0YWxpYTwvcD4KICA8L2Zvb3Rlcj4nJycKcGF0PXJlLmNvbXBpbGUocicgIDxmb290ZXIgY2xhc3M9InJ2Ij4uKzwvZm9vdGVyPicsIHJlLlMpCnMsbj1wYXQuc3VibihuZXcscyxjb3VudD0xKQppZiBuIT0xOgogICAgcmFpc2UgU3lzdGVtRXhpdChmJ2Zvb3RlciByZXBsYWNlbWVudCBmYWlsZWQ6IHtufScpCnAud3JpdGVfdGV4dChzLGVuY29kaW5nPSd1dGYtOCcpCg==' | base64 -d > /tmp/footer.py
+          python /tmp/footer.py
           git diff --check
           git config user.name 'site-update-bot'
           git config user.email 'site-update-bot@users.noreply.github.com'
           git add index.html
-          git commit -m 'Redesign footer links as Material 3 actions'
+          git commit -m 'Redesign footer links as Material 3 actions' || exit 0
           git push origin HEAD:main
