@@ -1,0 +1,134 @@
+name: Contacts section once
+on: [push]
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Redesign contacts as section 08
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          css=r'''
+
+  /* ============ section 08 contacts ============ */
+  .contact-list{
+    border:1px solid var(--line);
+    border-radius:24px;
+    overflow:hidden;
+    background:color-mix(in srgb,var(--bg) 96%,var(--accent-soft) 4%);
+    box-shadow:none;
+  }
+  .contact-row{
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    align-items:center;
+    gap:14px;
+    min-width:0;
+    min-height:72px;
+    padding:16px 20px;
+    color:var(--ink);
+    background:transparent;
+    border:0;
+    width:100%;
+    text-align:left;
+    cursor:pointer;
+    font:inherit;
+    transition:background var(--dur-s) var(--ease),transform var(--dur-s) var(--ease);
+  }
+  .contact-row + .contact-row{border-top:1px solid var(--line)}
+  .contact-icon{
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex:none;
+    color:var(--ink-soft);
+  }
+  .contact-icon svg{width:21px;height:21px}
+  .contact-icon.contact-g{background:var(--accent);color:#fff;font-family:var(--display);font-size:12px;font-weight:800}
+  :root[data-theme="dark"] .contact-icon.contact-g{color:#0B1F57}
+  .contact-label{font-family:var(--display);font-size:15px;font-weight:700;line-height:1.25;color:var(--ink)}
+  .contact-arrow{font-family:var(--sans);font-size:22px;line-height:1;color:var(--accent);opacity:.78;transition:transform var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
+  @media (hover:hover) and (pointer:fine){
+    .contact-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent)}
+    .contact-row:hover .contact-arrow{transform:translateX(3px);opacity:1}
+  }
+  @media (max-width:560px){
+    .contact-list{border-radius:20px}
+    .contact-row{min-height:68px;padding:15px 17px;gap:12px}
+    .contact-icon{width:34px;height:34px}
+    .contact-label{font-size:14.5px}
+  }
+'''
+          marker='/* ============ section 08 contacts ============ */'
+          if marker not in s:
+              s=s.replace('\n</style>', css+'\n</style>', 1)
+
+          # Add i18n key for the section title in each language block.
+          it_pos=s.find('    it: {')
+          en_pos=s.find('    en: {')
+          fr_pos=s.find('    fr: {')
+          if it_pos!=-1 and 'sec_contacts:"Contatti"' not in s[it_pos:en_pos if en_pos!=-1 else len(s)]:
+              segment=s[it_pos:en_pos]
+              segment=segment.replace('sec_badge:"Credenziali"', 'sec_badge:"Credenziali",sec_contacts:"Contatti"', 1)
+              s=s[:it_pos]+segment+s[en_pos:]
+              en_pos=s.find('    en: {'); fr_pos=s.find('    fr: {')
+          if en_pos!=-1 and 'sec_contacts:"Contacts"' not in s[en_pos:fr_pos if fr_pos!=-1 else len(s)]:
+              segment=s[en_pos:fr_pos]
+              segment=segment.replace('sec_badge:"Credentials"', 'sec_badge:"Credentials",sec_contacts:"Contacts"', 1)
+              s=s[:en_pos]+segment+s[fr_pos:]
+              fr_pos=s.find('    fr: {')
+          if fr_pos!=-1 and 'sec_contacts:"Contacts"' not in s[fr_pos:]:
+              segment=s[fr_pos:]
+              segment=segment.replace('sec_badge:"Accréditations"', 'sec_badge:"Accréditations",sec_contacts:"Contacts"', 1)
+              s=s[:fr_pos]+segment
+
+          new=r'''  <h2 class="section-label rv" id="contatti"><span class="section-num">08</span><span data-i18n="sec_contacts">Contatti</span></h2>
+  <div class="contact-list rv">
+    <a class="contact-row md-ripple-wrapper" href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">
+      <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10v6M8 8h.01M12 16v-3.5a2.5 2.5 0 0 1 5 0V16M12 10v6"/></svg></span>
+      <span class="contact-label">LinkedIn</span>
+      <span class="contact-arrow" aria-hidden="true">&gt;</span>
+      <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
+    </a>
+    <button class="contact-row md-ripple-wrapper" type="button" data-open-contacts>
+      <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
+      <span class="contact-label">Email</span>
+      <span class="contact-arrow" aria-hidden="true">&gt;</span>
+    </button>
+    <a class="contact-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+      <span class="contact-icon contact-g" aria-hidden="true">G</span>
+      <span class="contact-label">Google Skills</span>
+      <span class="contact-arrow" aria-hidden="true">&gt;</span>
+      <span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
+    </a>
+  </div>
+
+  <footer class="rv">
+    <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
+  </footer>'''
+
+          pat=re.compile(r'  <footer class="rv">.*?</footer>', re.S)
+          s,n=pat.subn(new,s,count=1)
+          if n!=1:
+              raise SystemExit(f'footer replacement failed: {n}')
+
+          # Credentials arrows: normalize all to literal > for visual consistency.
+          s=s.replace('<span class="credential-arrow" aria-hidden="true">›</span>', '<span class="credential-arrow" aria-hidden="true">&gt;</span>')
+
+          p.write_text(s,encoding='utf-8')
+          PY
+          git diff --check
+          grep -q 'section-num">08' index.html
+          grep -q 'class="contact-list rv"' index.html
+          git config user.name 'site-update-bot'
+          git config user.email 'site-update-bot@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Add section 08 contacts matching credentials' || exit 0
+          git push origin HEAD:main
