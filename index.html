@@ -634,18 +634,19 @@
 
   /* ============ section 08 contacts ============ */
   .contact-list{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:color-mix(in srgb,var(--bg) 96%,var(--accent-soft) 4%);box-shadow:none}
-  .contact-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;min-width:0;min-height:72px;padding:16px 20px;color:var(--ink);background:transparent;border:0;width:100%;text-align:left;cursor:pointer;font:inherit;transition:background var(--dur-s) var(--ease),transform var(--dur-s) var(--ease)}
+  .contact-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:18px 20px;min-width:0;color:var(--ink);background:transparent;border:0;width:100%;text-align:left;cursor:pointer;font:inherit;transition:background var(--dur-s) var(--ease)}
   .contact-row + .contact-row{border-top:1px solid var(--line)}
-  .contact-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;color:var(--ink-soft)}
+  .contact-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;color:var(--accent);background:color-mix(in srgb,var(--accent-soft) 58%,transparent)}
   .contact-icon svg{width:21px;height:21px}
-  .contact-icon.contact-g{background:var(--accent);color:#fff;font-family:var(--display);font-size:12px;font-weight:800}
-  :root[data-theme="dark"] .contact-icon.contact-g{color:#0B1F57}
-  .contact-label{font-family:var(--display);font-size:15px;font-weight:700;line-height:1.25;color:var(--ink)}
-  .contact-arrow{font-family:var(--sans);font-size:22px;line-height:1;color:var(--accent);opacity:.78;transition:transform var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
+  .contact-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .contact-label{font-family:var(--display);font-size:14.5px;font-weight:700;line-height:1.35;color:var(--ink)}
+  .contact-meta{font-family:var(--mono);font-size:10px;letter-spacing:.045em;color:var(--ink-soft);line-height:1.4}
+  .contact-arrow{font-family:var(--sans);font-size:22px;line-height:1;color:var(--accent);opacity:.72;transition:transform var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.contact-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent)}.contact-row:hover .contact-arrow{transform:translateX(3px);opacity:1}}
-  @media (max-width:560px){.contact-list{border-radius:20px}.contact-row{min-height:68px;padding:15px 17px;gap:12px}.contact-icon{width:34px;height:34px}.contact-label{font-size:14.5px}}
+  @media (max-width:560px){.contact-list{border-radius:20px}.contact-row{padding:16px 17px;gap:12px}.contact-icon{width:34px;height:34px}.contact-label{font-size:14px}.contact-meta{font-size:9.5px}}
 
 </style>
+<style id="footer-final-polish">footer{padding-bottom:52px}@media(max-width:900px){footer{padding-bottom:48px}}</style>
 </head>
 <body>
 
@@ -875,15 +876,15 @@
   <div class="contact-list rv">
     <a class="contact-row md-ripple-wrapper" href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">
       <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10v6M8 8h.01M12 16v-3.5a2.5 2.5 0 0 1 5 0V16M12 10v6"/></svg></span>
-      <span class="contact-label">LinkedIn</span><span class="contact-arrow" aria-hidden="true">&gt;</span>
+      <span class="contact-copy"><span class="contact-label">LinkedIn</span><span class="contact-meta" data-i18n="contact_linkedin_meta">Profilo professionale</span></span><span class="contact-arrow" aria-hidden="true">&gt;</span>
     </a>
     <button class="contact-row md-ripple-wrapper" type="button" data-open-contacts>
       <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
-      <span class="contact-label">Email</span><span class="contact-arrow" aria-hidden="true">&gt;</span>
+      <span class="contact-copy"><span class="contact-label">Email</span><span class="contact-meta" data-i18n="contact_email_meta">Contatto diretto</span></span><span class="contact-arrow" aria-hidden="true">&gt;</span>
     </button>
     <a class="contact-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
       <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 7 12 11 19.5 7 12 3Z"/><path d="M6.5 9.2V14c0 1.8 2.5 3.3 5.5 3.3s5.5-1.5 5.5-3.3V9.2"/><path d="M19.5 7v5"/></svg></span>
-      <span class="contact-label">Google Skills</span><span class="contact-arrow" aria-hidden="true">&gt;</span>
+      <span class="contact-copy"><span class="contact-label">Google Skills</span><span class="contact-meta" data-i18n="contact_skills_meta">Certificazioni e learning profile</span></span><span class="contact-arrow" aria-hidden="true">&gt;</span>
     </a>
   </div>
 
@@ -1082,7 +1083,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
       cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
       cap_core_label:"Competenze core", cap_ext_label:"Competenze estese",
-      sec_badge:"Credenziali",sec_contacts:"Contatti",
+      sec_badge:"Credenziali",sec_contacts:"Contatti", contact_linkedin_meta:"Profilo professionale", contact_email_meta:"Contatto diretto", contact_skills_meta:"Certificazioni e learning profile",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
@@ -1156,7 +1157,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
       cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
       cap_core_label:"Core capabilities", cap_ext_label:"Extended capabilities",
-      sec_badge:"Credentials",sec_contacts:"Contacts",
+      sec_badge:"Credentials",sec_contacts:"Contacts", contact_linkedin_meta:"Professional profile", contact_email_meta:"Direct contact", contact_skills_meta:"Credentials and learning profile",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
@@ -1230,7 +1231,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
       cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
       cap_core_label:"Compétences clés", cap_ext_label:"Compétences complémentaires",
-      sec_badge:"Accréditations",sec_contacts:"Contacts",
+      sec_badge:"Accréditations",sec_contacts:"Contacts", contact_linkedin_meta:"Profil professionnel", contact_email_meta:"Contact direct", contact_skills_meta:"Certifications et profil de formation",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
