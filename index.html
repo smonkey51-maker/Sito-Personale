@@ -173,7 +173,7 @@
   }
 
   /* ============ feedback tattile sui pulsanti a pillola ============ */
-  .hero-btn:active,.work-link:active,.persp-link:active,.core-link:active,.cap-link:active,.lnk:active,.fab:active,.lang-btn:active,.theme-toggle:active,.modal-x:active,.copy-btn:active{transform:scale(.97);}
+  .hero-btn:active,.work-link:active,.persp-link:active,.lnk:active,.fab:active,.lang-btn:active,.theme-toggle:active,.modal-x:active,.copy-btn:active{transform:scale(.97);}
 
   /* ============ topbar ============ */
   .topbar{position:sticky;top:0;z-index:60;background:var(--bg)}
@@ -277,7 +277,6 @@
   }
 
   /* ============ casi studio ============ */
-  .case-result{font-family:var(--mono);font-size:12px;letter-spacing:.01em;color:var(--accent);margin-top:10px}
   .case-block-label{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:16px}
   .metarow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px}
   .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
@@ -303,14 +302,6 @@
   .persp-body p{margin:0 0 16px}
 
   /* ============ badge ============ */
-  .badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-  @media (max-width:760px){.badge-grid{grid-template-columns:1fr}}
-  .badge-card{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:transparent;transition:transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease);min-width:0}
-  @media (hover:hover) and (pointer:fine){.badge-card:hover{transform: translateY(-3px); box-shadow: var(--shadow-2); background:var(--accent-soft); border-color:transparent}}
-  .badge-icon{width:30px;height:30px;border-radius:50%;background:var(--case-bg);color:var(--on-case);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:12px;flex:none}
-  .badge-text{display:flex;flex-direction:column;gap:2px}
-  .badge-title{font-family:var(--display);font-size:13px;font-weight:700;color:var(--ink);line-height:1.3}
-  .badge-meta{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;color:var(--ink-soft)}
 
   /* ============ selected work ============ */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -332,27 +323,6 @@
   @media (hover:hover) and (pointer:fine){.work-card:hover .work-link{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ capabilities ============ */
-  .cap-sublabel{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:24px}
-  .cap-sublabel.ext{margin-top:52px}
-
-  .core-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media (max-width:700px){.core-grid{grid-template-columns:1fr}}
-  .core-cell{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid var(--line);border-radius:20px;background:var(--accent-soft);box-shadow:var(--shadow);min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease);}
-  @media (hover:hover) and (pointer:fine){.core-cell:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent; background:var(--accent-soft);}}
-  .core-title{font-family:var(--display);font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
-  .core-list{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6}
-  .core-link{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
-  @media (hover:hover) and (pointer:fine){.core-cell:hover .core-link{color:var(--accent);border-color:var(--accent)}}
-
-  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px}
-  @media (max-width:760px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:480px){.cap-grid{grid-template-columns:1fr}}
-  .cap-cell{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;cursor:pointer;box-shadow:var(--shadow);transition:transform var(--dur-s) var(--ease), background var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
-  @media (hover:hover) and (pointer:fine){.cap-cell:hover{background:var(--accent-soft); transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
-  .cap-title{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink)}
-  .cap-list{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
-  .cap-link{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:2px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;width:fit-content;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%); transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
-  @media (hover:hover) and (pointer:fine){.cap-cell:hover .cap-link{color:var(--accent);border-color:var(--accent)}}
 
   /* ============ experience ============ */
   .exp-sub{margin-top:16px;padding-left:20px;border-left:1px solid var(--line)}
@@ -362,10 +332,6 @@
 
   footer{padding:56px 0 88px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
   @media (max-width:900px){footer{padding:44px 0 80px}}
-  .footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
-  .footer-links a,.footer-links button{font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px}
-  .footer-links svg{width:15px;height:15px;flex:none}
-  @media (hover:hover) and (pointer:fine){.footer-links a:hover,.footer-links button:hover{color:var(--accent)}}
   .footer-note{font-family:var(--sans);font-size:12.5px;letter-spacing:0;color:var(--ink-soft);margin:0}
 
   /* ============ reveal allo scroll ============ */
@@ -438,10 +404,6 @@
   .section-num{font-size:13px;opacity:.6}
   @media(max-width:900px){.section-label{padding:44px 0 22px;font-size:23px}}
   .oltre-supp,.persp-intro{font-size:17px;line-height:1.75}
-  .core-grid{gap:16px}.core-cell{padding:36px;border-radius:28px;}
-  .core-title{font-size:23px}.core-list{font-size:15px}
-  .cap-sublabel{margin-bottom:16px}.cap-sublabel.ext{margin-top:42px}
-  .cap-grid{gap:14px}.cap-cell{padding:24px;border:0;background:color-mix(in srgb,var(--bg) 92%,var(--ink) 8%);border-radius:22px;min-height:150px}
   .job-title{font-size:19px}.job-supp{font-size:15px}
   .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0}
   .stat{padding:26px 24px;border-radius:24px;gap:8px;min-width:0}
@@ -462,7 +424,7 @@
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
   /* ============ rendering performance ============ */
-  .core-grid,.cap-grid,.timeline,.persp-grid,.badge-grid{content-visibility:auto;contain-intrinsic-size:auto 600px;}
+  .timeline,.persp-grid{content-visibility:auto;contain-intrinsic-size:auto 600px;}
 
   /* ============ stampa / esportazione PDF del profilo ============ */
   @media print{
@@ -475,7 +437,7 @@
     .rv, .rv.in{opacity:1 !important; transform:none !important;}
     .topbar, .fab, .scroll-progress, .skip-link, .visually-hidden, dialog,
     .hero-cta-row, .hero-nav, .hero-proof,
-    .work-link, .persp-link, .core-link, .cap-link, .lnk{
+    .work-link, .persp-link, .lnk{
       display:none !important;
     }
     .hero-card{background:#fff !important;display:block !important}
@@ -483,7 +445,7 @@
     * { box-shadow:none !important; text-shadow:none !important; }
     body{background:#fff;color:#000}
     a{color:inherit;text-decoration:underline}
-    .chisono-card,.stat,.work-card,.core-cell,.cap-cell,.job-row,.persp-card,.badge-card{
+    .chisono-card,.stat,.work-card,.job-row,.persp-card{
       break-inside:avoid; border:1px solid #ccc; background:#fff !important;
     }
   }
@@ -555,11 +517,9 @@
     .work-card{padding:24px}
     .persp-card{padding:28px}
     .chisono-card{padding:29px}
-    .core-cell{padding:31px}
     .job-row.current .job-copy{padding:32px 34px}
   }
   .persp-grid{margin-bottom:56px}
-  .badge-grid{margin-bottom:64px}
   footer{padding-top:8px}
 
 /* ============ credentials redesign ============ */
@@ -575,45 +535,7 @@
 @media (hover:hover) and (pointer:fine){.credential-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent);transform:translateY(-2px);box-shadow:var(--shadow-2)}.credential-row:hover .credential-arrow{transform:translateX(3px);opacity:1}}
 @media (max-width:560px){.credential-row{padding:16px 17px;gap:12px;border-radius:18px}.credential-icon{width:34px;height:34px;font-size:12px}.credential-title{font-size:14px}.credential-meta{font-size:9.5px}}
 
-  /* ============ Material 3 action footer ============ */
-  .footer-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    align-items:center;
-  }
-  .footer-action{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    min-height:44px;
-    padding:10px 15px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    background:color-mix(in srgb,var(--bg) 94%,var(--accent-soft) 6%);
-    color:var(--ink);
-    font:600 13px/1 var(--sans);
-    cursor:pointer;
-    transition:background var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease),color var(--dur-s) var(--ease),transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease);
-  }
-  .footer-action svg{width:17px;height:17px;flex:none}
-  .footer-action .footer-g{
-    width:21px;height:21px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
-    background:var(--accent);color:#fff;font-family:var(--display);font-size:10px;font-weight:800;flex:none;
-  }
-  :root[data-theme="dark"] .footer-action .footer-g{color:#0B1F57}
-  .footer-external{font-size:15px;line-height:1;color:var(--accent);opacity:.8;transition:transform var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
-  @media (hover:hover) and (pointer:fine){
-    .footer-action:hover{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 32%,var(--line) 68%);color:var(--ink);box-shadow:var(--shadow)}
-    .footer-action:hover .footer-external{opacity:1;transform:translate(1px,-1px)}
-  }
   .footer-note{margin-top:18px}
-  @media (max-width:560px){
-    .footer-links{display:grid;grid-template-columns:1fr;gap:9px}
-    .footer-action{width:100%;justify-content:flex-start;padding:12px 15px;border-radius:16px}
-    .footer-external{margin-left:auto}
-  }
 
 
   /* ============ section 08 contacts ============ */
@@ -1028,7 +950,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c2_summary:"Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.",
       sec_perspectives:"Articoli",
       persp1_meta:"Prospettiva 01 · 2026",
-      persp_intro:"Riflessioni sul lato organizzativo e umano della tecnologia enterprise, scritte lungo il percorso.",
       persp_read:"Leggi →",
       persp1_title:"Quando un problema AI smette di essere un problema AI",
       persp1_excerpt:"Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.",
@@ -1103,7 +1024,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c2_summary:"Explored the feasibility of secure, locally-run AI for sensitive-data environments.",
       sec_perspectives:"Articles",
       persp1_meta:"Perspective 01 · 2026",
-      persp_intro:"Reflections on the organizational and human side of enterprise technology, written along the way.",
       persp_read:"Read →",
       persp1_title:"When an AI problem stops being an AI problem",
       persp1_excerpt:"Two RAG systems in production showed me that the hardest part isn't necessarily the model. Fragmented data, context, processes and user behavior quickly turn a technical challenge into an organizational one.",
@@ -1178,7 +1098,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c2_summary:"Exploration de la faisabilité d'une IA locale et sécurisée pour des environnements à données sensibles.",
       sec_perspectives:"Articles",
       persp1_meta:"Perspective 01 · 2026",
-      persp_intro:"Réflexions sur le versant organisationnel et humain de la technologie d'entreprise, écrites en chemin.",
       persp_read:"Lire →",
       persp1_title:"Quand un problème d'IA cesse d'être un problème d'IA",
       persp1_excerpt:"Deux systèmes RAG en production m'ont montré que la partie la plus difficile n'est pas nécessairement le modèle. Données fragmentées, contexte, processus et comportement des utilisateurs transforment rapidement un défi technique en défi organisationnel.",
