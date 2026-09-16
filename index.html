@@ -273,7 +273,8 @@
      ogni stat è una card a sé, bordata e con angoli arrotondati, invece di
      un unico blocco con divisori interni. */
   .statrow{display:flex;gap:16px;padding-bottom:8px}
-  .stat{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:24px;border:0;background:var(--accent-soft);border-radius:18px;box-shadow:var(--shadow);min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease)}
+  .stat{flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:10px;padding:24px;border:0;background:var(--accent-soft);border-radius:18px;box-shadow:var(--shadow);min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease)}
+  .stat .lnk{margin-top:auto}
   @media (hover:hover) and (pointer:fine){.stat:hover{background:color-mix(in srgb,var(--accent-soft) 65%,var(--accent) 35%);transform:translateY(-4px);box-shadow:var(--shadow-2)}}
   .stat:active{background:color-mix(in srgb,var(--accent-soft) 65%,var(--accent) 35%);transform:scale(.98);box-shadow:var(--shadow-2)}
   .stat .v{font-family:var(--display);font-size:34px;font-weight:900;line-height:1;color:var(--ink);margin:0;display:inline-block;font-variant-numeric:tabular-nums}
@@ -500,16 +501,6 @@
   }
 
 /* ============ 2026-09 surgical polish ============ */
-.stat.recognition{
-  background:transparent;
-  border:1px solid color-mix(in srgb,var(--accent) 34%,var(--line) 66%);
-  box-shadow:none;
-}
-.stat.recognition .v{font-size:24px;font-weight:700;line-height:1.15;letter-spacing:-.01em}
-.stat.recognition .k{color:var(--ink-soft)}
-@media (hover:hover) and (pointer:fine){
-  .stat.recognition:hover{background:color-mix(in srgb,var(--accent-soft) 45%,transparent);box-shadow:var(--shadow)}
-}
 
 .hero{padding-bottom:48px}
 #chi-sono.section-label{padding-top:32px}
@@ -531,10 +522,9 @@
   .section-label{font-size:22px;line-height:1.2;gap:10px}
   .chisono-card{padding:26px 24px;border-radius:24px}
   .stat{padding:26px 24px;border-radius:24px}
-  .stat.recognition .v{font-size:23px}
 }
 
-  .job-row.education{border-style:dashed;border-color:color-mix(in srgb,var(--accent) 35%,var(--line) 65%);background:color-mix(in srgb,var(--accent-soft) 42%,transparent);box-shadow:none}
+  .job-row.education{background:color-mix(in srgb,var(--accent-soft) 42%,transparent);box-shadow:none}
   .education-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--accent-soft);border-radius:999px;padding:3px 9px;margin-left:8px}
 
 /* ============ unified capabilities ============ */
@@ -585,17 +575,17 @@
   footer{padding-top:8px}
 
 /* ============ credentials redesign ============ */
-.credential-list{border:1px solid transparent;border-radius:24px;overflow:hidden;background:color-mix(in srgb,var(--bg) 96%,var(--accent-soft) 4%);box-shadow:0 0 24px -8px color-mix(in srgb,var(--line) 45%,transparent)}
-.credential-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:18px 20px;min-width:0;transition:background var(--dur-s) var(--ease)}
-.credential-row + .credential-row{border-top:1px solid var(--line)}
+.credential-list{display:flex;flex-direction:column;gap:12px}
+.credential-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:18px 20px;min-width:0;border-radius:20px;border:1px solid transparent;background:color-mix(in srgb,var(--bg) 96%,var(--accent-soft) 4%);box-shadow:0 0 24px -8px color-mix(in srgb,var(--line) 45%,transparent);transition:background var(--dur-s) var(--ease),transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease)}
+.credential-row:active{transform:scale(.98);background:color-mix(in srgb,var(--accent-soft) 34%,transparent)}
 .credential-icon{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:13px;flex:none}
 :root[data-theme="dark"] .credential-icon{color:#0B1F57}
 .credential-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
 .credential-title{font-family:var(--display);font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.35}
 .credential-meta{font-family:var(--mono);font-size:10px;letter-spacing:.045em;color:var(--ink-soft);line-height:1.4}
 .credential-arrow{font-family:var(--sans);font-size:22px;line-height:1;color:var(--accent);opacity:.72;transition:transform var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
-@media (hover:hover) and (pointer:fine){.credential-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent)}.credential-row:hover .credential-arrow{transform:translateX(3px);opacity:1}}
-@media (max-width:560px){.credential-list{border-radius:20px}.credential-row{padding:16px 17px;gap:12px}.credential-icon{width:34px;height:34px;font-size:12px}.credential-title{font-size:14px}.credential-meta{font-size:9.5px}}
+@media (hover:hover) and (pointer:fine){.credential-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent);transform:translateY(-2px);box-shadow:var(--shadow-2)}.credential-row:hover .credential-arrow{transform:translateX(3px);opacity:1}}
+@media (max-width:560px){.credential-row{padding:16px 17px;gap:12px;border-radius:18px}.credential-icon{width:34px;height:34px;font-size:12px}.credential-title{font-size:14px}.credential-meta{font-size:9.5px}}
 
   /* ============ Material 3 action footer ============ */
   .footer-links{
@@ -639,17 +629,17 @@
 
 
   /* ============ section 08 contacts ============ */
-  .contact-list{border:1px solid transparent;border-radius:24px;overflow:hidden;background:color-mix(in srgb,var(--bg) 96%,var(--accent-soft) 4%);box-shadow:0 0 24px -8px color-mix(in srgb,var(--line) 45%,transparent)}
-  .contact-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:18px 20px;min-width:0;color:var(--ink);background:transparent;border:0;width:100%;text-align:left;cursor:pointer;font:inherit;transition:background var(--dur-s) var(--ease)}
-  .contact-row + .contact-row{border-top:1px solid var(--line)}
+  .contact-list{display:flex;flex-direction:column;gap:12px}
+  .contact-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:18px 20px;min-width:0;color:var(--ink);border-radius:20px;background:color-mix(in srgb,var(--bg) 96%,var(--accent-soft) 4%);box-shadow:0 0 24px -8px color-mix(in srgb,var(--line) 45%,transparent);border:1px solid transparent;width:100%;text-align:left;cursor:pointer;font:inherit;transition:background var(--dur-s) var(--ease),transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease)}
+  .contact-row:active{transform:scale(.98);background:color-mix(in srgb,var(--accent-soft) 34%,transparent)}
   .contact-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;color:var(--accent);background:color-mix(in srgb,var(--accent-soft) 58%,transparent)}
   .contact-icon svg{width:21px;height:21px}
   .contact-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
   .contact-label{font-family:var(--display);font-size:14.5px;font-weight:700;line-height:1.35;color:var(--ink)}
   .contact-meta{font-family:var(--mono);font-size:10px;letter-spacing:.045em;color:var(--ink-soft);line-height:1.4}
   .contact-arrow{font-family:var(--sans);font-size:22px;line-height:1;color:var(--accent);opacity:.72;transition:transform var(--dur-s) var(--ease),opacity var(--dur-s) var(--ease)}
-  @media (hover:hover) and (pointer:fine){.contact-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent)}.contact-row:hover .contact-arrow{transform:translateX(3px);opacity:1}}
-  @media (max-width:560px){.contact-list{border-radius:20px}.contact-row{padding:16px 17px;gap:12px}.contact-icon{width:34px;height:34px}.contact-label{font-size:14px}.contact-meta{font-size:9.5px}}
+  @media (hover:hover) and (pointer:fine){.contact-row:hover{background:color-mix(in srgb,var(--accent-soft) 34%,transparent);transform:translateY(-2px);box-shadow:var(--shadow-2)}.contact-row:hover .contact-arrow{transform:translateX(3px);opacity:1}}
+  @media (max-width:560px){.contact-row{padding:16px 17px;gap:12px;border-radius:18px}.contact-icon{width:34px;height:34px}.contact-label{font-size:14px}.contact-meta{font-size:9.5px}}
 
 </style>
 <style id="footer-final-polish">footer{padding-bottom:52px}@media(max-width:900px){footer{padding-bottom:48px}}</style>
@@ -742,7 +732,7 @@
       <p class="d" data-i18n="p2d">Trained on operational AI</p>
       <a class="lnk" href="#competenze" data-i18n="p2_link">Vedi le competenze →</a>
     </div>
-    <div class="stat recognition md-ripple-wrapper" aria-labelledby="p4k" data-card-href="#percorso">
+    <div class="stat md-ripple-wrapper" aria-labelledby="p4k" data-card-href="#percorso">
       <p class="v v-word" data-i18n="p4v">Europa ↔ Cina</p>
       <span class="k" id="p4k" data-i18n="p4k">Esperienza internazionale</span>
       <p class="d" data-i18n="p4d">Su invito del CEO di DABO: team SCWL, contest "Sprint Forward", Shangcheng.</p>
@@ -871,13 +861,13 @@
 
   <h2 class="section-label rv" id="badge"><span class="section-num">07</span><span data-i18n="sec_badge">Credenziali</span></h2>
 <div class="credential-list rv">
-  <a class="credential-row" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+  <a class="credential-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
     <span class="credential-icon" aria-hidden="true">G</span><span class="credential-copy"><span class="credential-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span><span class="credential-meta" data-i18n="badge1_meta">Credential · 2026</span></span><span class="credential-arrow" aria-hidden="true">&gt;</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
   </a>
-  <a class="credential-row" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+  <a class="credential-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
     <span class="credential-icon" aria-hidden="true">G</span><span class="credential-copy"><span class="credential-title" data-i18n="badge3_title">Google Developer Program — Premium Tier</span><span class="credential-meta" data-i18n="badge3_meta">Program status · 2026</span></span><span class="credential-arrow" aria-hidden="true">&gt;</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
   </a>
-  <a class="credential-row" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+  <a class="credential-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
     <span class="credential-icon" aria-hidden="true">G</span><span class="credential-copy"><span class="credential-title" data-i18n="badge2_title">Google Cloud Innovator</span><span class="credential-meta" data-i18n="badge2_meta">Community program · 2025</span></span><span class="credential-arrow" aria-hidden="true">&gt;</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
   </a>
 </div>
