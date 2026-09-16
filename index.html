@@ -275,6 +275,7 @@
   .statrow{display:flex;gap:16px;padding-bottom:8px}
   .stat{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:24px;border:0;background:var(--accent-soft);border-radius:18px;box-shadow:var(--shadow);min-width:0;cursor:pointer;transition:transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.stat:hover{background:color-mix(in srgb,var(--accent-soft) 65%,var(--accent) 35%);transform:translateY(-4px);box-shadow:var(--shadow-2)}}
+  .stat:active{background:color-mix(in srgb,var(--accent-soft) 65%,var(--accent) 35%);transform:scale(.98);box-shadow:var(--shadow-2)}
   .stat .v{font-family:var(--display);font-size:34px;font-weight:900;line-height:1;color:var(--ink);margin:0;display:inline-block;font-variant-numeric:tabular-nums}
   .stat .v.v-word{font-size:26px;letter-spacing:-.01em;overflow-wrap:break-word;hyphens:auto}
   .stat .v.pop{animation:statPop .55s var(--ease)}
@@ -303,6 +304,7 @@
   @media (max-width:900px){.persp-grid{grid-template-columns:1fr}}
   .persp-card{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid transparent;border-radius:28px;background:color-mix(in srgb,var(--bg) 97%,var(--accent-soft) 3%);box-shadow:0 0 30px -8px color-mix(in srgb,var(--line) 50%,transparent);min-width:0;cursor:pointer;transition:background var(--dur-s) var(--ease), transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease)}
   @media (hover:hover) and (pointer:fine){.persp-card:hover{background:var(--accent-soft); transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent;}}
+  .persp-card:active{background:var(--accent-soft);transform:scale(.98);box-shadow:var(--shadow-2);border-color:transparent}
   .persp-meta{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .persp-title{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .persp-excerpt{font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.65;margin:0;flex:1}
@@ -326,6 +328,8 @@
   @media (max-width:760px){.work-grid{grid-template-columns:1fr}}
   .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid transparent;border-radius:18px;background:color-mix(in srgb,var(--bg) 97%,var(--accent-soft) 3%);box-shadow:0 0 30px -8px color-mix(in srgb,var(--line) 50%,transparent);min-width:0;cursor:pointer; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.work-card:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent; background:var(--accent-soft);}}
+  .work-card:active{transform:scale(.98);box-shadow:var(--shadow-2)}
+  .work-card:not(:first-child):active{border-color:transparent;background:var(--accent-soft)}
   .work-meta{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;width:fit-content;white-space:nowrap}
   .work-meta::before{content:"";width:6px;height:6px;border-radius:50%;flex:none}
   .work-meta.live{color:var(--accent);background:var(--accent-soft)}
@@ -541,13 +545,14 @@
 .cap-group-grid{display:grid;gap:16px}
 .cap-group-grid-core{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cap-group-grid-extended{grid-template-columns:repeat(3,minmax(0,1fr))}
-.cap-item{min-width:0;padding:24px;border:1px solid transparent;border-radius:20px;background:var(--bg);box-shadow:0 0 20px -8px color-mix(in srgb,var(--line) 45%,transparent);transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease)}
+.cap-item{min-width:0;padding:24px;border:1px solid transparent;border-radius:20px;background:var(--bg);box-shadow:0 0 20px -8px color-mix(in srgb,var(--line) 45%,transparent);cursor:pointer;transition:transform var(--dur-s) var(--ease),box-shadow var(--dur-s) var(--ease),border-color var(--dur-s) var(--ease),background var(--dur-s) var(--ease)}
 .cap-item-core{background:color-mix(in srgb,var(--accent-soft) 62%,var(--bg) 38%);border-color:color-mix(in srgb,var(--accent) 24%,var(--line) 76%)}
 .cap-item-icon{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);margin-bottom:14px}
 .cap-item-title{font-family:var(--display);font-size:18px;font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:8px}
 .cap-item-list{font-family:var(--sans);font-size:14px;line-height:1.6;color:var(--ink-soft);margin:0 0 15px}
 .cap-item-link{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink);text-decoration:none}
-@media (hover:hover) and (pointer:fine){.cap-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:color-mix(in srgb,var(--accent) 32%,var(--line) 68%)}}
+@media (hover:hover) and (pointer:fine){.cap-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:transparent;background:var(--accent-soft)}}
+.cap-item:active{transform:scale(.98);box-shadow:var(--shadow-2);border-color:transparent;background:var(--accent-soft)}
 @media (max-width:900px){.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr 1fr}.cap-group-grid-extended .cap-item:last-child{grid-column:1 / -1}}
 @media (max-width:560px){.cap-unified{border-radius:24px}.cap-group{padding:18px}.cap-group-grid-core,.cap-group-grid-extended{grid-template-columns:1fr;gap:10px}.cap-group-grid-extended .cap-item:last-child{grid-column:auto}.cap-item{padding:18px;border-radius:18px}.cap-group-label{margin-bottom:12px}}
 
@@ -719,25 +724,25 @@
 
   <h2 class="section-label rv" id="sintesi"><span class="section-num">02</span><span data-i18n="sec_results_title">Che risultati ho prodotto</span></h2>
   <div class="statrow rv">
-    <div class="stat" aria-labelledby="p5k" data-card-href="#casi-studio">
+    <div class="stat md-ripple-wrapper" aria-labelledby="p5k" data-card-href="#casi-studio">
       <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
       <p class="d" data-i18n="p5d">2 sistemi RAG in produzione presso InfoCamere, con un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.</p>
       <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
     </div>
-    <div class="stat" aria-labelledby="p1k" data-card-href="#percorso">
+    <div class="stat md-ripple-wrapper" aria-labelledby="p1k" data-card-href="#percorso">
       <p class="v"><span class="num" data-count="3">3</span></p>
       <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
       <p class="d" data-i18n="p1d">Business units + CEO advised</p>
       <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso →</a>
     </div>
-    <div class="stat" aria-labelledby="p2k" data-card-href="#competenze">
+    <div class="stat md-ripple-wrapper" aria-labelledby="p2k" data-card-href="#competenze">
       <p class="v"><span class="num" data-count="35">35</span>+</p>
       <span class="k" id="p2k" data-i18n="p2k">Enablement</span>
       <p class="d" data-i18n="p2d">Trained on operational AI</p>
       <a class="lnk" href="#competenze" data-i18n="p2_link">Vedi le competenze →</a>
     </div>
-    <div class="stat recognition" aria-labelledby="p4k" data-card-href="#percorso">
+    <div class="stat recognition md-ripple-wrapper" aria-labelledby="p4k" data-card-href="#percorso">
       <p class="v v-word" data-i18n="p4v">Europa ↔ Cina</p>
       <span class="k" id="p4k" data-i18n="p4k">Esperienza internazionale</span>
       <p class="d" data-i18n="p4d">Su invito del CEO di DABO: team SCWL, contest "Sprint Forward", Shangcheng.</p>
@@ -747,7 +752,7 @@
 
   <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_work_title">Cosa ho costruito</span></h2>
   <div class="work-grid rv">
-    <div class="work-card" data-card-modal="c1Modal">
+    <div class="work-card md-ripple-wrapper" data-card-modal="c1Modal">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
       <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
       <p class="work-summary" data-i18n="c1_summary">Due sistemi RAG in produzione per documentazione aziendale e storico Jira, accompagnati da un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.</p>
@@ -758,7 +763,7 @@
       </div>
       <button class="work-link md-ripple-wrapper" type="button" data-open-modal="c1Modal" data-i18n="work_view">Vedi il case study →</button>
     </div>
-    <div class="work-card" data-card-modal="c2Modal">
+    <div class="work-card md-ripple-wrapper" data-card-modal="c2Modal">
       <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
       <h3 class="work-title" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
       <p class="work-summary" data-i18n="c2_summary">Esplorazione della fattibilità di AI locale e sicura per contesti a dati sensibili.</p>
@@ -777,13 +782,13 @@
     <div class="cap-group cap-group-core">
       <div class="cap-group-label" data-i18n="cap_core_label">Core capabilities</div>
       <div class="cap-group-grid cap-group-grid-core">
-        <div class="cap-item cap-item-core" data-card-href="#percorso">
+        <div class="cap-item cap-item-core md-ripple-wrapper" data-card-href="#percorso">
           <div class="cap-item-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div>
           <div class="cap-item-title" data-i18n="sk_cat1">Enterprise IT</div>
           <p class="cap-item-list" data-i18n="sk1">Systems Integration · Reliability · Linux/Windows · Automation</p>
           <a class="cap-item-link md-ripple-wrapper" href="#percorso" data-i18n="cap_link_exp">→ Experience</a>
         </div>
-        <div class="cap-item cap-item-core" data-card-href="#casi-studio">
+        <div class="cap-item cap-item-core md-ripple-wrapper" data-card-href="#casi-studio">
           <div class="cap-item-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.7 7.3 10.5 16.4M17.3 7.3 13.5 16.4M7 6h10"/></svg></div>
           <div class="cap-item-title" data-i18n="sk_cat2">Enterprise AI</div>
           <p class="cap-item-list" data-i18n="sk2">RAG · Local AI · LLM · Knowledge Retrieval</p>
@@ -794,19 +799,19 @@
     <div class="cap-group cap-group-extended">
       <div class="cap-group-label" data-i18n="cap_ext_label">Extended capabilities</div>
       <div class="cap-group-grid cap-group-grid-extended">
-        <div class="cap-item" data-card-href="#casi-studio">
+        <div class="cap-item md-ripple-wrapper" data-card-href="#casi-studio">
           <div class="cap-item-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97A5.5 5.5 0 0 0 7.05 9.5 4 4 0 0 0 7 18Z"/></svg></div>
           <div class="cap-item-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
           <p class="cap-item-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
           <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Projects</a>
         </div>
-        <div class="cap-item" data-card-href="#casi-studio">
+        <div class="cap-item md-ripple-wrapper" data-card-href="#casi-studio">
           <div class="cap-item-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6.5v5c0 4.7 3.4 8.9 8 10 4.6-1.1 8-5.3 8-10v-5L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
           <div class="cap-item-title" data-i18n="sk_cat4">AI Adoption &amp; Governance</div>
           <p class="cap-item-list" data-i18n="sk4">AI Adoption · Data Protection · Knowledge Management</p>
           <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_work">→ Case study</a>
         </div>
-        <div class="cap-item" data-card-href="#percorso">
+        <div class="cap-item md-ripple-wrapper" data-card-href="#percorso">
           <div class="cap-item-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-2-8-8-3Z"/></svg></div>
           <div class="cap-item-title" data-i18n="sk_cat5">Technology Enablement</div>
           <p class="cap-item-list" data-i18n="sk5">Advisory · Training · Public Speaking</p>
@@ -850,13 +855,13 @@
 
   <h2 class="section-label rv" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_thinking_title">Come ragiono</span></h2>
   <div class="persp-grid rv">
-    <div class="persp-card" data-card-modal="persp2Modal">
+    <div class="persp-card md-ripple-wrapper" data-card-modal="persp2Modal">
       <span class="persp-meta" data-i18n="persp2_meta">Perspective 02 · 2026</span>
       <h3 class="persp-title" data-i18n="persp2_title">Il modello è la parte facile</h3>
       <p class="persp-excerpt" data-i18n="persp2_excerpt">Due settimane dopo il go-live dei RAG, le query erano lente e molti colleghi preferivano cercare a mano. Il valore non è arrivato con il deployment, ma quando dati, adozione e mentalità hanno iniziato a muoversi insieme.</p>
       <button class="persp-link md-ripple-wrapper" type="button" data-open-modal="persp2Modal" data-i18n="persp_read">Leggi →</button>
     </div>
-    <div class="persp-card" data-card-modal="persp1Modal">
+    <div class="persp-card md-ripple-wrapper" data-card-modal="persp1Modal">
       <span class="persp-meta" data-i18n="persp1_meta">Perspective 01 · 2026</span>
       <h3 class="persp-title" data-i18n="persp1_title">Quando un problema AI smette di essere un problema AI</h3>
       <p class="persp-excerpt" data-i18n="persp1_excerpt">Due sistemi RAG in produzione mi hanno mostrato che la parte più difficile non è necessariamente il modello. Dati frammentati, contesto, processi e comportamento degli utenti trasformano rapidamente una sfida tecnica in una sfida organizzativa.</p>
@@ -1656,24 +1661,26 @@ Il modello è la parte facile. Il resto è il valore.</div>
   /* ---- Material 3 Ripple Effect Logic ---- */
   function createRipple(event) {
     const button = event.currentTarget;
+    const point = event.touches ? event.touches[0] : event;
     const circle = document.createElement("span");
     const diameter = Math.max(button.clientWidth, button.clientHeight);
     const radius = diameter / 2;
     circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
-    circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+    circle.style.left = `${point.clientX - button.getBoundingClientRect().left - radius}px`;
+    circle.style.top = `${point.clientY - button.getBoundingClientRect().top - radius}px`;
     circle.classList.add("md-ripple");
-    
+
     const existingRipple = button.querySelector(".md-ripple");
     if (existingRipple) {
       existingRipple.remove();
     }
-    
+
     button.appendChild(circle);
   }
-  
+
   document.querySelectorAll('.md-ripple-wrapper').forEach(btn => {
     btn.addEventListener('mousedown', createRipple);
+    btn.addEventListener('touchstart', createRipple, { passive: true });
   });
 
   applyLang();
