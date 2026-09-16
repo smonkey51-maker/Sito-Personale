@@ -1,0 +1,55 @@
+name: One-off site copy refinement
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/site-copy-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply targeted copy fixes
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = [
+              ('<p class="d" data-i18n="p1d">Business units + CEO advised</p>', '<p class="d" data-i18n="p1d">2 business unit interne + 1 CEO</p>'),
+              ('<div class="cap-group-label" data-i18n="cap_core_label">Core capabilities</div>', '<div class="cap-group-label" data-i18n="cap_core_label">Competenze core</div>'),
+              ('<div class="cap-group-label" data-i18n="cap_ext_label">Extended capabilities</div>', '<div class="cap-group-label" data-i18n="cap_ext_label">Competenze estese</div>'),
+              ('p5k:"Production Systems", p5d:"2 sistemi RAG in produzione presso InfoCamere, con un manuale operativo per Service Desk, Incident & Problem Management e Middle Management."', 'p5k:"Sistemi in produzione", p5d:"2 sistemi RAG in produzione presso InfoCamere, con un manuale operativo per Service Desk, Incident & Problem Management e Middle Management."'),
+              ('p1k:"AI Advisory", p1d:"3 coinvolgimenti di advisory AI: 2 business unit interne e il CEO di DABO, azienda attiva tra Europa e Cina."', 'p1k:"AI Advisory", p1d:"2 business unit interne + 1 CEO, per 3 coinvolgimenti di advisory AI complessivi."'),
+              ('cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",\n      cap_core_label:"Competenze core", cap_ext_label:"Competenze estese"', 'cap_link_exp:"→ Esperienza", cap_link_work:"→ Caso studio", cap_link_projects:"→ Progetti",\n      cap_core_label:"Competenze core", cap_ext_label:"Competenze estese"'),
+              ('politica_desc:"Ammesso al percorso 2026 dedicato alla cittadinanza attiva e all\'attività politica istituzionale. Il programma integra geopolitica e futuro dell\'Europa, economia e lavoro con focus su innovazione tecnologica e AI, diritti e cittadinanza, comunicazione politica, legislazione e amministrazione, leadership e teamwork."', 'politica_desc:"Ammesso al percorso 2026 dedicato a cittadinanza attiva, istituzioni e leadership pubblica, con approfondimenti su Europa, processi decisionali, innovazione tecnologica e AI."'),
+              ('politica_desc:"Admitted to the 2026 program focused on active citizenship and institutional political activity. The curriculum combines geopolitics and the future of Europe, economics and work with a focus on technological innovation and AI, rights and citizenship, political communication, legislation and public administration, leadership and teamwork."', 'politica_desc:"Admitted to the 2026 program focused on active citizenship, institutions and public leadership, with modules on Europe, decision-making processes, technological innovation and AI."'),
+              ('politica_desc:"Admis au programme 2026 consacré à la citoyenneté active et à l\'activité politique institutionnelle. Le cursus combine géopolitique et avenir de l\'Europe, économie et travail avec un focus sur l\'innovation technologique et l\'IA, droits et citoyenneté, communication politique, législation et administration publique, leadership et travail en équipe."', 'politica_desc:"Admis au programme 2026 consacré à la citoyenneté active, aux institutions et au leadership public, avec des modules sur l\'Europe, les processus décisionnels, l\'innovation technologique et l\'IA."'),
+              ('<div class="job-supp" data-i18n="politica_desc">Ammesso al percorso 2026 dedicato alla cittadinanza attiva e all\'attività politica istituzionale. Il programma integra geopolitica e futuro dell\'Europa, economia e lavoro con focus su innovazione tecnologica e AI, diritti e cittadinanza, comunicazione politica, legislazione e amministrazione, leadership e teamwork.</div>', '<div class="job-supp" data-i18n="politica_desc">Ammesso al percorso 2026 dedicato a cittadinanza attiva, istituzioni e leadership pubblica, con approfondimenti su Europa, processi decisionali, innovazione tecnologica e AI.</div>'),
+          ]
+
+          for old, new in replacements:
+              if old not in text:
+                  raise SystemExit(f'Expected text not found: {old[:120]}')
+              text = text.replace(old, new, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit refined copy
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/site-copy-fix.yml
+          git add index.html
+          git commit -m "fix: refine site copy and localization"
+          git push
