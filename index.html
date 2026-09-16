@@ -25,7 +25,7 @@
     var root = document.documentElement;
     var savedTheme = localStorage.getItem("nfTheme");
     if(savedTheme) root.setAttribute("data-theme", savedTheme);
-    var mode = savedTheme ? savedTheme : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    var mode = savedTheme || "light";
     var cached = JSON.parse(localStorage.getItem("nfPalette") || "null");
     var vars = cached && cached[mode];
     if(vars){
@@ -114,18 +114,6 @@
     --dur-s:150ms;
     /* Material 3 Emphasized Decelerate Easing */
     --ease:cubic-bezier(0.2, 0, 0, 1);
-  }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]):not([data-theme="dark"]){
-      --bg:#0B0E17;
-      --ink:#E9EDFA;--ink-soft:#A9B4CF;--line:#27304A;
-      --accent:#AFC2FF;--accent-soft:#0C2D7A;--on-accent-soft:#E3EAFF;
-      --case-bg:#214E97;--on-case:#F4F7FF;
-      --status-explore:#D8C48C;--status-explore-soft:#3A311A;
-      --scrim:rgba(0,0,0,.6);
-      --shadow:0 1px 2px rgba(0,0,0,.4),0 1px 3px 1px rgba(0,0,0,.3);
-      --shadow-2:0 1px 3px rgba(0,0,0,.4),0 8px 20px rgba(0,0,0,.35);
-    }
   }
   :root[data-theme="dark"]{
     --bg:#0B0E17;
@@ -1301,9 +1289,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
   /* ---- tema ---- */
   var toggles = Array.prototype.slice.call(document.querySelectorAll(".theme-toggle"));
   function current(){
-    var set = root.getAttribute("data-theme");
-    if(set) return set;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return root.getAttribute("data-theme") || "light";
   }
   var themeColorMeta = document.getElementById("themeColorMeta");
   function paintTheme(){
@@ -1333,14 +1319,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
       announceTheme(next === "dark");
     });
   });
-  if(window.matchMedia){
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(e){
-      if(!root.getAttribute("data-theme")){
-        paintTheme();
-        announceTheme(e.matches);
-      }
-    });
-  }
   paintTheme();
 
   /* ---- Material 3 dynamic color: estrae un colore "seme" dalla foto e ne
