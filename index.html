@@ -522,7 +522,6 @@
   .hero-toprow{padding:28px 24px 30px}
   .hero-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
   .hero-cta-row .hero-btn{width:100%;min-height:48px;justify-content:center;text-align:center;padding:11px 14px}
-  .hero-cta-row .hero-btn.solid{grid-column:1 / -1}
   .hero-nav{gap:10px;margin-top:30px;padding-top:22px}
   .hero-nav a{padding:7px 12px}
   .section-label{font-size:22px;line-height:1.2;gap:10px}
@@ -687,7 +686,6 @@
           <div class="hero-cta-row">
             <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span></a>
             <button class="hero-btn outline md-ripple-wrapper" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
-            <button class="hero-btn outline md-ripple-wrapper" type="button" id="downloadProfileBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right:6px;vertical-align:-2px"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg><span data-i18n="hero_cta_download">Scarica profilo</span></button>
           </div>
           <div class="hero-proof" aria-label="Professional focus" data-i18n-aria="hero_proof_label">
             <span data-i18n="hero_proof1">Enterprise IT @ InfoCamere</span><span data-i18n="hero_proof2">Building AI in Production</span><span data-i18n="hero_proof3">Google Cloud Innovator</span><span data-i18n="hero_proof4">Selected for Meritare l’Europa 2026</span>
@@ -1023,7 +1021,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
       nav_profilo:"Profilo",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Esplora il mio lavoro",
-      hero_cta_download:"Stampa profilo",
       sec_chisono:"Chi sono",
       chisono_p:"Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa. Google Cloud Innovator. Selezionato per Meritare l’Europa 2026 — Scuola di Formazione Politica.",
       sec_results_title:"Che risultati ho prodotto",
@@ -1099,7 +1096,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
       nav_profilo:"Profile",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Explore my work",
-      hero_cta_download:"Print profile",
       sec_chisono:"About",
       chisono_p:"IT professional who has expanded his contribution to AI in production and its organizational adoption. Google Cloud Innovator. Selected for Meritare l’Europa 2026 — School of Political Education.",
       sec_results_title:"What I’ve delivered",
@@ -1175,7 +1171,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
       nav_profilo:"Profil",
       eyebrow_role:"InfoCamere · Padova",
       hero_cta1:"Découvrir mon travail",
-      hero_cta_download:"Imprimer le profil",
       sec_chisono:"À propos",
       chisono_p:"Professionnel IT qui a élargi sa contribution à l’IA en production et à son adoption organisationnelle. Google Cloud Innovator. Sélectionné pour Meritare l’Europa 2026 — École de formation politique.",
       sec_results_title:"Ce que j’ai produit",
@@ -1534,8 +1529,6 @@ Il modello è la parte facile. Il resto è il valore.</div>
     dlg.showModal();
   }
   document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", function(){ openModal("contactModal", el); }); });
-  var downloadBtn = document.getElementById("downloadProfileBtn");
-  if(downloadBtn){ downloadBtn.addEventListener("click", function(){ window.print(); }); }
   document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", function(){ openModal(el.getAttribute("data-open-modal"), el); }); });
   document.querySelectorAll("[data-card-modal]").forEach(function(card){
     card.addEventListener("click", function(e){
