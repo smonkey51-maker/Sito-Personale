@@ -329,6 +329,10 @@
   .exp-sub-overline{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .exp-sub-title{font-family:var(--display);font-size:14.5px;font-weight:700;color:var(--ink);margin-top:4px}
   .exp-sub-supp{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
+  .experience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .experience-card{display:flex;flex-direction:column;gap:10px;padding:24px;background:var(--bg);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);min-width:0}
+  .experience-card .job-overline,.experience-card .job-title,.experience-card .job-supp{margin-top:0}
+  @media (max-width:820px){.experience-grid{grid-template-columns:1fr}}
 
   footer{padding:56px 0 88px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
   @media (max-width:900px){footer{padding:44px 0 80px}}
@@ -617,7 +621,8 @@
       <a href="#sintesi" data-i18n="proof_label">Impact</a>
       <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
       <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
-      <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
+      <a href="#percorso" data-i18n="sec_percorso">Percorso</a>
+      <a href="#esperienze" data-i18n="sec_experiences">Esperienze</a>
       <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
     </nav>
     <div class="utilbar">
@@ -765,7 +770,7 @@
     </div>
   </div>
 
-  <h2 class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_path_title">Da quale percorso arrivo</span></h2>
+  <h2 class="section-label rv" id="percorso"><span class="section-num">05</span><span data-i18n="sec_path_title">Percorso</span></h2>
   <div class="timeline rv">
     <div class="job-row current">
       <div class="job-copy">
@@ -781,21 +786,6 @@
       <div class="job-photo-slot" role="img" aria-label="InfoCamere"></div>
     </div>
     <div class="job-row">
-      <div class="job-overline"><span data-i18n="tdabo">2026</span><span class="education-tag" data-i18n="dabo_tag">Esperienza internazionale</span></div>
-      <div class="job-title">DABO · SCWL / Sprint Forward</div>
-      <div class="job-supp" data-i18n="dabo_desc">Su invito del CEO di DABO: coinvolgimento nel team SCWL per il contest “Sprint Forward” a Shangcheng, Cina.</div>
-    </div>
-    <div class="job-row">
-      <div class="job-overline"><span data-i18n="club_tag">Community & affiliazioni</span></div>
-      <div class="job-title"><a href="https://uominigentili.fimelato.com/club/" target="_blank" rel="noopener">Club degli Uomini Gentili</a></div>
-      <div class="job-supp" data-i18n="club_desc">Membro della community che promuove gentilezza, rispetto, cortesia ed eleganza come valori personali e professionali.</div>
-    </div>
-    <div class="job-row education">
-      <div class="job-overline"><span data-i18n="tpolitica">2026</span><span class="education-tag" data-i18n="politica_tag">Formazione selettiva</span></div>
-      <div class="job-title" data-i18n="politica_title">Meritare l'Europa — Scuola di Formazione Politica, Italia Viva</div>
-      <div class="job-supp" data-i18n="politica_desc">Ammesso al percorso 2026 dedicato a cittadinanza attiva, istituzioni e leadership pubblica, con approfondimenti su Europa, processi decisionali, innovazione tecnologica e AI.</div>
-    </div>
-    <div class="job-row">
       <div class="job-overline" data-i18n="t2">2022</div>
       <div class="job-title">IdeaGrip</div>
       <div class="job-supp" data-i18n="pr2">Specialista IT (stage). Primo ruolo IT operativo: supporto infrastrutturale, troubleshooting, la transizione dal business alla tecnologia — con una borsa di studio Google (WorkInTech, prima edizione italiana).</div>
@@ -807,7 +797,26 @@
     </div>
   </div>
 
-  <h2 class="section-label rv" id="perspectives"><span class="section-num">06</span><span data-i18n="sec_thinking_title">Come ragiono</span></h2>
+  <h2 class="section-label rv" id="esperienze"><span class="section-num">06</span><span data-i18n="sec_experiences">Esperienze</span></h2>
+  <div class="experience-grid rv">
+    <div class="experience-card">
+      <div class="job-overline"><span data-i18n="tdabo">2026</span><span class="education-tag" data-i18n="dabo_tag">Esperienza internazionale</span></div>
+      <div class="job-title">DABO · SCWL / Sprint Forward</div>
+      <div class="job-supp" data-i18n="dabo_desc">Su invito del CEO di DABO: coinvolgimento nel team SCWL per il contest “Sprint Forward” a Shangcheng, Cina.</div>
+    </div>
+    <div class="experience-card">
+      <div class="job-overline"><span data-i18n="tpolitica">2026</span><span class="education-tag" data-i18n="politica_tag">Formazione selettiva</span></div>
+      <div class="job-title" data-i18n="politica_title">Meritare l'Europa — Scuola di Formazione Politica, Italia Viva</div>
+      <div class="job-supp" data-i18n="politica_desc">Ammesso al percorso 2026 dedicato a cittadinanza attiva, istituzioni e leadership pubblica, con approfondimenti su Europa, processi decisionali, innovazione tecnologica e AI.</div>
+    </div>
+    <div class="experience-card">
+      <div class="job-overline"><span data-i18n="club_tag">Community & affiliazioni</span></div>
+      <div class="job-title"><a href="https://uominigentili.fimelato.com/club/" target="_blank" rel="noopener">Club degli Uomini Gentili</a></div>
+      <div class="job-supp" data-i18n="club_desc">Membro della community che promuove gentilezza, rispetto, cortesia ed eleganza come valori personali e professionali.</div>
+    </div>
+  </div>
+
+  <h2 class="section-label rv" id="perspectives"><span class="section-num">07</span><span data-i18n="sec_thinking_title">Come ragiono</span></h2>
   <div class="persp-grid rv">
     <div class="persp-card md-ripple-wrapper" data-card-modal="persp2Modal">
       <span class="persp-meta" data-i18n="persp2_meta">Perspective 02 · 2026</span>
@@ -823,7 +832,7 @@
     </div>
   </div>
 
-  <h2 class="section-label rv" id="badge"><span class="section-num">07</span><span data-i18n="sec_badge">Credenziali</span></h2>
+  <h2 class="section-label rv" id="badge"><span class="section-num">08</span><span data-i18n="sec_badge">Credenziali</span></h2>
 <div class="credential-list rv">
   <a class="credential-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
     <span class="credential-icon" aria-hidden="true">G</span><span class="credential-copy"><span class="credential-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span><span class="credential-meta" data-i18n="badge1_meta">Credential · 2026</span></span><span class="credential-arrow" aria-hidden="true">&gt;</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
@@ -991,7 +1000,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sec_results_title:"Che risultati ho prodotto",
       sec_work_title:"Cosa ho costruito",
       sec_skills_title:"Con quali competenze",
-      sec_path_title:"Da quale percorso arrivo",
+      sec_path_title:"Percorso",
       sec_thinking_title:"Come ragiono",
       proof_label:"Risultati",
       p5k:"Sistemi in produzione", p5d:"2 sistemi RAG in produzione presso InfoCamere, con un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.", p5_link:"Vedi i progetti →",
@@ -1027,7 +1036,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c2_problem:"Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?",
       c2_solution:"Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.",
       c2_learning:"Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.",
-      sec_percorso:"Esperienza",
+      sec_percorso:"Percorso", sec_experiences:"Esperienze",
       job_current:"In corso",
       t1:"Set 2022 — oggi", tsa:"Mag 2025 — oggi", t2:"Feb 2022 — Set 2022", t3:"Ott 2020 — Feb 2022",
       pr1s:"SysAdmin. Supporto all'infrastruttura mission-critical del sistema camerale, con focus su affidabilità operativa. In parallelo, sviluppo e gestione di soluzioni AI in produzione integrate con knowledge e workflow aziendali.",
@@ -1066,7 +1075,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sec_results_title:"What I’ve delivered",
       sec_work_title:"What I’ve built",
       sec_skills_title:"The capabilities behind it",
-      sec_path_title:"The path that brought me here",
+      sec_path_title:"Career path",
       sec_thinking_title:"How I think",
       proof_label:"Results",
       p5k:"Production Systems", p5d:"2 RAG systems in production at InfoCamere, with an operational manual for Service Desk, Incident & Problem Management and Middle Management.", p5_link:"See the projects →",
@@ -1102,7 +1111,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c2_problem:"How can AI models be used in sensitive contexts while keeping greater control over data, infrastructure and dependency on external providers?",
       c2_solution:"I explored the feasibility of locally-run AI models, working with Qwen, Gemma and Ollama-based architectures. The project included dataset preparation, fine-tuning, local deployment and practical demos.",
       c2_learning:"Bringing AI into a controlled environment isn't just about running a model locally. Infrastructure, data management, cost and governance become an integral part of the solution.",
-      sec_percorso:"Experience",
+      sec_percorso:"Career", sec_experiences:"Experiences",
       job_current:"Ongoing",
       t1:"Sep 2022 — today", tsa:"May 2025 — today", t2:"Feb 2022 — Sep 2022", t3:"Oct 2020 — Feb 2022",
       pr1s:"SysAdmin. Support for the mission-critical infrastructure of the Italian Chambers of Commerce system, with a focus on operational reliability. In parallel, I develop and operate AI solutions in production, integrated with corporate knowledge and workflows.",
@@ -1141,7 +1150,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sec_results_title:"Ce que j’ai produit",
       sec_work_title:"Ce que j’ai construit",
       sec_skills_title:"Les compétences mobilisées",
-      sec_path_title:"Le parcours qui m’a mené ici",
+      sec_path_title:"Parcours",
       sec_thinking_title:"Ma façon de penser",
       proof_label:"Résultats",
       p5k:"Production Systems", p5d:"2 systèmes RAG en production chez InfoCamere, avec un manuel opérationnel pour le Service Desk, l’Incident & Problem Management et le Middle Management.", p5_link:"Voir les projets →",
@@ -1177,7 +1186,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       c2_problem:"Comment utiliser des modèles d'IA dans des contextes sensibles tout en gardant un meilleur contrôle sur les données, l'infrastructure et la dépendance aux fournisseurs externes ?",
       c2_solution:"J'ai exploré la faisabilité de modèles d'IA exécutés localement, en travaillant avec Qwen, Gemma et des architectures basées sur Ollama. Le projet a inclus la préparation des jeux de données, le fine-tuning, le déploiement local et des démonstrations pratiques.",
       c2_learning:"Amener l'IA dans un environnement contrôlé ne consiste pas simplement à exécuter un modèle en local. L'infrastructure, la gestion des données, les coûts et la gouvernance font partie intégrante de la solution.",
-      sec_percorso:"Expérience",
+      sec_percorso:"Parcours", sec_experiences:"Expériences",
       job_current:"En cours",
       t1:"Sept. 2022 — aujourd'hui", tsa:"Mai 2025 — aujourd'hui", t2:"Févr. 2022 — sept. 2022", t3:"Oct. 2020 — févr. 2022",
       pr1s:"SysAdmin. Support de l'infrastructure critique du système des Chambres de commerce italiennes, avec un accent sur la fiabilité opérationnelle. En parallèle, je développe et exploite des solutions IA en production, intégrées aux connaissances et aux workflows de l'entreprise.",
