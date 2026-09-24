@@ -282,16 +282,11 @@
   .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
   .system-map{margin:18px 0 8px;padding:18px;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--bg) 95%,var(--accent-soft) 5%)}
   .system-map-title{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
-  .system-flow{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1.1fr) 34px minmax(0,1fr);align-items:stretch;gap:8px}
-  .system-node{display:flex;min-height:72px;align-items:center;justify-content:center;text-align:center;padding:12px 10px;border:1px solid var(--line);border-radius:14px;background:var(--bg);font-family:var(--sans);font-size:12.5px;font-weight:600;line-height:1.35;color:var(--ink)}
+  .system-flow{display:grid;grid-template-columns:1fr;gap:8px}
+  .system-node{display:flex;min-height:62px;align-items:center;justify-content:center;text-align:center;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--bg);font-family:var(--sans);font-size:12.5px;font-weight:600;line-height:1.4;color:var(--ink)}
   .system-node.primary{border-color:color-mix(in srgb,var(--accent) 36%,var(--line));background:var(--accent-soft);color:var(--on-accent-soft)}
-  .system-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--mono);font-size:18px}
+  .system-arrow{display:flex;align-items:center;justify-content:center;min-height:18px;color:var(--accent);font-family:var(--mono);font-size:18px;transform:rotate(90deg)}
   .system-caption{font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin:12px 2px 0}
-  @media (max-width:620px){
-    .system-flow{grid-template-columns:1fr;gap:7px}
-    .system-arrow{min-height:18px;transform:rotate(90deg)}
-    .system-node{min-height:58px}
-  }
 
   /* ============ oltre ============ */
   .chisono-card{border:1px solid transparent;border-radius:28px;padding:32px;margin-bottom:8px;background:color-mix(in srgb,var(--bg) 97%,var(--accent-soft) 3%);box-shadow:0 0 30px -8px color-mix(in srgb,var(--line) 50%,transparent); transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
@@ -331,15 +326,10 @@
   .work-title{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
   .work-summary{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
   .work-mini-map{margin:4px 0 2px;padding:13px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--bg) 96%,var(--accent-soft) 4%)}
-  .work-mini-flow{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1.1fr) 18px minmax(0,1fr);align-items:center;gap:4px}
-  .work-mini-node{display:flex;min-height:46px;align-items:center;justify-content:center;text-align:center;padding:7px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-family:var(--sans);font-size:10.5px;font-weight:600;line-height:1.25;color:var(--ink)}
+  .work-mini-flow{display:grid;grid-template-columns:1fr;gap:6px}
+  .work-mini-node{display:flex;min-height:48px;align-items:center;justify-content:center;text-align:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-family:var(--sans);font-size:10.5px;font-weight:600;line-height:1.3;color:var(--ink)}
   .work-mini-node.primary{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 30%,var(--line));color:var(--on-accent-soft)}
-  .work-mini-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--mono);font-size:13px}
-  @media (max-width:520px){
-    .work-mini-flow{grid-template-columns:1fr;gap:4px}
-    .work-mini-arrow{min-height:12px;transform:rotate(90deg)}
-    .work-mini-node{min-height:42px}
-  }
+  .work-mini-arrow{display:flex;align-items:center;justify-content:center;min-height:14px;color:var(--accent);font-family:var(--mono);font-size:13px;transform:rotate(90deg)}
   .work-chips{display:flex;flex-wrap:wrap;gap:6px 14px}
   .work-link{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);margin-top:2px;background:color-mix(in srgb,var(--bg) 90%,var(--ink) 10%);border:1px solid var(--line);border-radius:999px;padding:8px 15px;text-align:left;cursor:pointer;width:fit-content; transition: border-color var(--dur-s) var(--ease), color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.work-card:hover .work-link{color:var(--accent);border-color:var(--accent)}}
