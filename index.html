@@ -683,6 +683,296 @@
 }
 </style>
 
+
+<style id="enterprise-modern-responsive">
+/* Institutional-modern polish: editorial hierarchy, flatter surfaces, responsive-first. */
+.topbar{
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  border-bottom:1px solid color-mix(in srgb,var(--line) 58%,transparent);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+@media (min-width:901px){.topbar-inner{height:64px}}
+
+.section-label{
+  padding:84px 0 30px;
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.section-num{
+  font-family:var(--mono);
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.06em;
+  opacity:.72;
+}
+@media(max-width:900px){
+  .section-label{padding:56px 0 22px;font-size:25px}
+}
+@media(max-width:560px){
+  .section-label{padding:48px 0 18px;font-size:23px;gap:9px}
+}
+
+/* About: editorial surface rather than app card. */
+.chisono-card{
+  padding:30px 32px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:color-mix(in srgb,var(--bg) 97%,var(--accent-soft) 3%);
+  box-shadow:none;
+}
+@media (hover:hover) and (pointer:fine){
+  .chisono-card:hover,.chisono-card.in:hover{
+    transform:none;
+    box-shadow:none;
+    background:color-mix(in srgb,var(--bg) 93%,var(--accent-soft) 7%);
+  }
+}
+
+/* Impact: executive-summary strip, not dashboard tiles. */
+.statrow{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  max-width:none;
+  padding:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.stat{
+  min-height:210px;
+  padding:30px 30px 28px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  gap:10px;
+}
+.stat + .stat{border-left:1px solid var(--line)}
+.stat .v{font-size:40px;font-weight:800;letter-spacing:-.035em}
+.stat .k{font-size:10.5px}
+.stat .lnk{background:transparent;border-color:var(--line)}
+@media (hover:hover) and (pointer:fine){
+  .stat:hover{
+    transform:none;
+    box-shadow:none;
+    background:color-mix(in srgb,var(--accent-soft) 24%,transparent);
+  }
+}
+@media(max-width:760px){
+  .statrow{grid-template-columns:1fr}
+  .stat{min-height:auto;padding:24px 4px}
+  .stat + .stat{border-left:0;border-top:1px solid var(--line)}
+  .stat .v{font-size:34px}
+}
+
+/* Case studies: technical-report cards, restrained geometry. */
+.work-grid{gap:22px}
+.work-card{
+  min-height:auto;
+  gap:16px;
+  padding:38px 40px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  box-shadow:none;
+}
+.work-card:first-child{border-color:transparent}
+.work-title{font-size:24px;letter-spacing:-.015em}
+.work-summary{max-width:780px;line-height:1.7}
+.work-mini-map{
+  margin:8px 0 0;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:none;
+}
+.work-mini-node{
+  min-height:50px;
+  padding:11px 14px;
+  border-radius:8px;
+}
+.work-mini-node.primary{box-shadow:none}
+.work-link{margin-top:2px}
+@media (hover:hover) and (pointer:fine){
+  .work-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px -24px color-mix(in srgb,var(--accent) 42%,transparent);
+  }
+}
+@media(max-width:760px){
+  .work-grid{gap:16px}
+  .work-card{padding:24px 22px;border-radius:16px;gap:13px}
+  .work-title{font-size:21px}
+  .work-summary{font-size:14.5px}
+  .work-mini-map{padding:12px;border-radius:12px}
+  .work-mini-node{min-height:46px;padding:9px 10px}
+}
+
+/* Capabilities: flatter, less tile-heavy. */
+.cap-unified{
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:color-mix(in srgb,var(--bg) 98%,var(--accent-soft) 2%);
+  box-shadow:none;
+}
+.cap-group{padding:28px}
+.cap-item{
+  border-radius:14px;
+  border-color:var(--line);
+  background:var(--bg);
+  box-shadow:none;
+}
+.cap-item-core{
+  background:color-mix(in srgb,var(--accent-soft) 36%,var(--bg) 64%);
+  border-color:color-mix(in srgb,var(--accent) 16%,var(--line) 84%);
+}
+@media (hover:hover) and (pointer:fine){
+  .cap-item:hover{
+    transform:translateY(-2px);
+    box-shadow:none;
+    background:color-mix(in srgb,var(--accent-soft) 22%,var(--bg) 78%);
+    border-color:color-mix(in srgb,var(--accent) 22%,var(--line) 78%);
+  }
+}
+@media(max-width:560px){
+  .cap-unified{border-radius:16px}
+  .cap-group{padding:18px}
+  .cap-item{border-radius:12px}
+}
+
+/* Career: reduce app-card feel while retaining the current-role feature block. */
+.job-row:not(.current){
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:transparent;
+  box-shadow:none;
+}
+.job-row.current{
+  border-radius:20px;
+  box-shadow:none;
+}
+@media (hover:hover) and (pointer:fine){
+  .job-row:not(.current):hover{
+    transform:translateY(-2px);
+    box-shadow:none;
+    background:color-mix(in srgb,var(--accent-soft) 20%,transparent);
+  }
+}
+@media(max-width:560px){
+  .job-row:not(.current),.job-row.current{border-radius:16px}
+}
+
+/* External experiences: dossier/list treatment. */
+.experience-grid{
+  display:block;
+  border-top:1px solid var(--line);
+}
+.experience-card{
+  display:grid;
+  grid-template-columns:minmax(150px,.34fr) minmax(0,1fr);
+  column-gap:34px;
+  row-gap:8px;
+  padding:26px 4px;
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.experience-card .job-overline{grid-column:1}
+.experience-card .job-title,
+.experience-card .job-supp{grid-column:2}
+@media (hover:hover) and (pointer:fine){
+  .experience-card:hover{
+    transform:none;
+    box-shadow:none;
+    background:color-mix(in srgb,var(--accent-soft) 16%,transparent);
+  }
+}
+@media(max-width:720px){
+  .experience-card{
+    display:flex;
+    gap:8px;
+    padding:22px 2px;
+  }
+}
+
+/* Perspectives: editorial cards with quieter surfaces. */
+.persp-grid{gap:16px}
+.persp-card{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:transparent;
+  box-shadow:none;
+}
+@media (hover:hover) and (pointer:fine){
+  .persp-card:hover{
+    transform:translateY(-2px);
+    box-shadow:none;
+    background:color-mix(in srgb,var(--accent-soft) 18%,transparent);
+  }
+}
+@media(max-width:560px){
+  .persp-card{padding:22px;border-radius:14px}
+}
+
+/* Credentials: compact institutional registry on desktop, stacked rows on mobile. */
+.credential-list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.credential-row{
+  min-height:88px;
+  padding:18px 18px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.credential-row + .credential-row{border-left:1px solid var(--line)}
+.credential-icon{width:32px;height:32px;font-size:12px}
+@media (hover:hover) and (pointer:fine){
+  .credential-row:hover{
+    transform:none;
+    box-shadow:none;
+    background:color-mix(in srgb,var(--accent-soft) 20%,transparent);
+  }
+}
+@media(max-width:760px){
+  .credential-list{grid-template-columns:1fr}
+  .credential-row{min-height:auto;padding:16px 4px}
+  .credential-row + .credential-row{border-left:0;border-top:1px solid var(--line)}
+}
+
+/* Contact rows follow the same quieter institutional language. */
+.contact-list{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact-row{
+  padding:17px 4px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.contact-row + .contact-row{border-top:1px solid var(--line)}
+@media (hover:hover) and (pointer:fine){
+  .contact-row:hover{
+    transform:none;
+    box-shadow:none;
+    background:color-mix(in srgb,var(--accent-soft) 18%,transparent);
+  }
+}
+
+/* Motion remains functional but understated. */
+@media (prefers-reduced-motion:no-preference){
+  .work-card,.cap-item,.job-row,.persp-card{
+    transition-duration:140ms;
+  }
+}
+</style>
 </head>
 <body>
 
