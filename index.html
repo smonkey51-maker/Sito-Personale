@@ -280,6 +280,18 @@
   .case-block-label{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:16px}
   .metarow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px}
   .metachip{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
+  .system-map{margin:18px 0 8px;padding:18px;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--bg) 95%,var(--accent-soft) 5%)}
+  .system-map-title{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  .system-flow{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1.1fr) 34px minmax(0,1fr);align-items:stretch;gap:8px}
+  .system-node{display:flex;min-height:72px;align-items:center;justify-content:center;text-align:center;padding:12px 10px;border:1px solid var(--line);border-radius:14px;background:var(--bg);font-family:var(--sans);font-size:12.5px;font-weight:600;line-height:1.35;color:var(--ink)}
+  .system-node.primary{border-color:color-mix(in srgb,var(--accent) 36%,var(--line));background:var(--accent-soft);color:var(--on-accent-soft)}
+  .system-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--mono);font-size:18px}
+  .system-caption{font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin:12px 2px 0}
+  @media (max-width:620px){
+    .system-flow{grid-template-columns:1fr;gap:7px}
+    .system-arrow{min-height:18px;transform:rotate(90deg)}
+    .system-node{min-height:58px}
+  }
 
   /* ============ oltre ============ */
   .chisono-card{border:1px solid transparent;border-radius:28px;padding:32px;margin-bottom:8px;background:color-mix(in srgb,var(--bg) 97%,var(--accent-soft) 3%);box-shadow:0 0 30px -8px color-mix(in srgb,var(--line) 50%,transparent); transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
@@ -685,7 +697,7 @@
     <a class="brandmark" href="#profilo" aria-label="Nicolò Forcolin — Home">Nicolò Forcolin</a>
     <nav class="desktop-nav" aria-label="Navigazione principale" data-i18n-aria="nav_main_label">
       <a href="#sintesi" data-i18n="proof_label">Impact</a>
-      <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
+      <a href="#casi-studio" data-i18n="sec_lavori">Case Studies</a>
       <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
       <a href="#percorso" data-i18n="sec_percorso">Percorso</a>
       <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
@@ -718,7 +730,7 @@
           </div>
           <nav class="hero-nav" aria-label="Sezioni della pagina" data-i18n-aria="hero_nav_label">
             <a href="#sintesi" data-i18n="proof_label">Impact</a>
-            <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
+            <a href="#casi-studio" data-i18n="sec_lavori">Case Studies</a>
             <a href="#competenze" data-i18n="sec_competenze">Competenze</a>
             <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
             <a href="#perspectives" data-i18n="sec_perspectives">Perspectives</a>
@@ -748,7 +760,7 @@
       <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
       <p class="d" data-i18n="p5d">2 sistemi RAG in produzione presso InfoCamere per knowledge documentale e storico Jira, con manuale operativo dedicato.</p>
-      <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
+      <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i case studies →</a>
     </div>
     <div class="stat md-ripple-wrapper" aria-labelledby="p1k" data-card-href="#percorso">
       <p class="v"><span>2+1</span></p>
@@ -764,7 +776,7 @@
     </div>
   </div>
 
-  <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_work_title">Cosa ho costruito</span></h2>
+  <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_work_title">Case Studies</span></h2>
   <div class="work-grid rv">
     <div class="work-card md-ripple-wrapper" data-card-modal="c1Modal">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
@@ -817,7 +829,7 @@
           <div class="cap-item-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97A5.5 5.5 0 0 0 7.05 9.5 4 4 0 0 0 7 18Z"/></svg></div>
           <div class="cap-item-title" data-i18n="sk_cat3">Cloud &amp; Development</div>
           <p class="cap-item-list" data-i18n="sk3">Python · GCP · APIs · Application Integration</p>
-          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Projects</a>
+          <a class="cap-item-link md-ripple-wrapper" href="#casi-studio" data-i18n="cap_link_projects">→ Case study</a>
         </div>
         <div class="cap-item md-ripple-wrapper" data-card-href="#casi-studio">
           <div class="cap-item-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6.5v5c0 4.7 3.4 8.9 8 10 4.6-1.1 8-5.3 8-10v-5L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
@@ -960,6 +972,17 @@
   <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
   <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
   <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
+  <div class="system-map" aria-label="Enterprise Knowledge Retrieval system view">
+    <p class="system-map-title" data-i18n="system_view_label">System view</p>
+    <div class="system-flow">
+      <div class="system-node" data-i18n="c1_map_sources">Documentazione aziendale · Storico Jira</div>
+      <div class="system-arrow" aria-hidden="true">→</div>
+      <div class="system-node primary" data-i18n="c1_map_layer">Retrieval · RAG · Knowledge layer</div>
+      <div class="system-arrow" aria-hidden="true">→</div>
+      <div class="system-node" data-i18n="c1_map_users">Service Desk · Incident/Problem · Management</div>
+    </div>
+    <p class="system-caption" data-i18n="c1_map_caption">Il sistema collega fonti distribuite, retrieval e contesti d'uso operativi: l'affidabilità dipende dall'intera catena, non dal solo modello.</p>
+  </div>
   <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
   <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
   <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
@@ -984,6 +1007,17 @@
   <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
   <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
   <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
+  <div class="system-map" aria-label="Local AI system view">
+    <p class="system-map-title" data-i18n="system_view_label">System view</p>
+    <div class="system-flow">
+      <div class="system-node" data-i18n="c2_map_data">Dati sensibili · Dataset controllati</div>
+      <div class="system-arrow" aria-hidden="true">→</div>
+      <div class="system-node primary" data-i18n="c2_map_runtime">Infrastruttura locale · Ollama · Modelli</div>
+      <div class="system-arrow" aria-hidden="true">→</div>
+      <div class="system-node" data-i18n="c2_map_output">Inferenza controllata · Demo operative</div>
+    </div>
+    <p class="system-caption" data-i18n="c2_map_caption">L'esplorazione considera insieme dati, runtime, infrastruttura, costi e governance per valutare dove il controllo locale crea valore reale.</p>
+  </div>
   <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
   <div class="metarow">
     <span class="metachip">Data protection</span>
@@ -1063,15 +1097,15 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sec_chisono:"Chi sono",
       chisono_p:"Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa. Google Cloud Innovator. Selezionato per Meritare l’Europa 2026 — Scuola di Formazione Politica.",
       sec_results_title:"Che risultati ho prodotto",
-      sec_work_title:"Cosa ho costruito",
+      sec_work_title:"Case Studies",
       sec_skills_title:"Con quali competenze",
       sec_path_title:"Percorso",
       sec_thinking_title:"Come ragiono",
       proof_label:"Risultati",
-      p5k:"Sistemi in produzione", p5d:"2 sistemi RAG in produzione presso InfoCamere per knowledge documentale e storico Jira, con manuale operativo dedicato.", p5_link:"Vedi i progetti →",
+      p5k:"Sistemi in produzione", p5d:"2 sistemi RAG in produzione presso InfoCamere per knowledge documentale e storico Jira, con manuale operativo dedicato.", p5_link:"Vedi i case studies →",
       p1k:"AI Advisory", p1d:"3 coinvolgimenti di advisory AI: 2 business unit interne + 1 CEO.", p1_link:"Vedi il percorso →",
       p2k:"Enablement", p2d:"5 programmi di formazione sull'AI operativa, per oltre 35 professionisti.", p2_link:"Vedi le competenze →",
-      sec_lavori:"Progetti",
+      sec_lavori:"Case Studies",
       tdabo:"2026", dabo_tag:"Esperienza internazionale", dabo_desc:"Su invito del CEO di DABO, coinvolgimento nel team SCWL per il contest “Sprint Forward” a Shangcheng, Cina, in un contesto internazionale di innovazione e confronto tecnologico.",
       club_tag:"Community & affiliazioni", club_desc:"Membro di una community professionale orientata a promuovere gentilezza, rispetto e qualità delle relazioni come elementi di leadership e cultura organizzativa.",
       work_view:"Vedi il case study →",
@@ -1087,7 +1121,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       persp2_title:"Il valore arriva dopo il go-live",
       persp2_excerpt:"Il deployment rende disponibile uno strumento. Il valore arriva quando affidabilità dei dati, adozione e processi operativi iniziano a convergere.",
       persp2_body:"A due settimane dal go-live dei sistemi RAG sono emersi alcuni segnali che i test iniziali non avevano evidenziato: tempi di risposta non sempre coerenti, dati incompleti e comportamenti d'uso molto diversi da quelli previsti in fase di sviluppo.\n\nIn produzione, la variabilità delle query ha reso visibili incoerenze informative e limiti di contesto. Anche quando le risposte erano corrette, parte degli utenti continuava a preferire la ricerca manuale. Il problema non era più soltanto tecnico: entravano in gioco fiducia, abitudini operative e qualità percepita dello strumento.\n\nIl valore ha iniziato a emergere quando abbiamo lavorato contemporaneamente su tre dimensioni.\n\nLa prima: qualità e coerenza dei dati. Non serviva perseguire una perfezione teorica, ma rendere le informazioni sufficientemente strutturate, affidabili e coerenti da sostenere l'utilizzo quotidiano.\n\nLa seconda: comprensione dei comportamenti d'uso. Abbiamo osservato come le persone interrogavano realmente il sistema e adattato supporto e documentazione alle esigenze operative. Da qui è nato un manuale articolato su tre livelli: Service Desk, Incident & Problem Management e Middle Management, con obiettivi diversi ma complementari — velocità operativa, gestione delle criticità, analisi e reporting.\n\nLa terza: adozione. Quando qualità dei dati e affidabilità delle risposte sono diventate più consistenti, anche il comportamento degli utenti ha iniziato a cambiare. La fiducia nello strumento non è arrivata con il deployment, ma attraverso l'esperienza d'uso ripetuta e la progressiva integrazione nei processi.\n\nIl deployment rende disponibile uno strumento. L'adozione lo rende utile. Il valore emerge quando affidabilità dei dati, comportamento degli utenti e processi operativi iniziano a convergere.",
-      case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
+      case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack", system_view_label:"System view", c1_map_sources:"Documentazione aziendale · Storico Jira", c1_map_layer:"Retrieval · RAG · Knowledge layer", c1_map_users:"Service Desk · Incident/Problem · Management", c1_map_caption:"Il sistema collega fonti distribuite, retrieval e contesti d’uso operativi: l’affidabilità dipende dall’intera catena, non dal solo modello.", c2_map_data:"Dati sensibili · Dataset controllati", c2_map_runtime:"Infrastruttura locale · Ollama · Modelli", c2_map_output:"Inferenza controllata · Demo operative", c2_map_caption:"L’esplorazione considera insieme dati, runtime, infrastruttura, costi e governance per valutare dove il controllo locale crea valore reale.",
       c1t:"Enterprise Knowledge Retrieval",
       c1_status:"Production · 2026",
       c1_problem:"La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.",
@@ -1118,7 +1152,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Application Integration",
       sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
-      cap_link_exp:"→ Esperienza", cap_link_work:"→ Caso studio", cap_link_projects:"→ Progetti",
+      cap_link_exp:"→ Esperienza", cap_link_work:"→ Caso studio", cap_link_projects:"→ Caso studio",
       cap_core_label:"Competenze core", cap_ext_label:"Competenze estese",
       sec_badge:"Credenziali",sec_contacts:"Contatti", contact_linkedin_meta:"Profilo professionale", contact_email_meta:"Contatto diretto", contact_skills_meta:"Certificazioni e learning profile",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
@@ -1138,15 +1172,15 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sec_chisono:"About",
       chisono_p:"IT professional who has expanded his contribution to AI in production and its organizational adoption. Google Cloud Innovator. Selected for Meritare l’Europa 2026 — School of Political Education.",
       sec_results_title:"What I’ve delivered",
-      sec_work_title:"What I’ve built",
+      sec_work_title:"Case Studies",
       sec_skills_title:"The capabilities behind it",
       sec_path_title:"Career path",
       sec_thinking_title:"How I think",
       proof_label:"Results",
-      p5k:"Production Systems", p5d:"2 RAG systems in production at InfoCamere for corporate knowledge and Jira history, with a dedicated operating manual.", p5_link:"See the projects →",
+      p5k:"Production Systems", p5d:"2 RAG systems in production at InfoCamere for corporate knowledge and Jira history, with a dedicated operating manual.", p5_link:"View case studies →",
       p1k:"AI Advisory", p1d:"3 AI advisory engagements: 2 internal business units + 1 CEO.", p1_link:"See the path →",
       p2k:"Enablement", p2d:"5 operational-AI training programs, reaching 35+ professionals.", p2_link:"See capabilities →",
-      sec_lavori:"Projects",
+      sec_lavori:"Case Studies",
       tdabo:"2026", dabo_tag:"International experience", dabo_desc:"At the invitation of DABO’s CEO, involvement with the SCWL team for the “Sprint Forward” contest in Shangcheng, China, within an international technology and innovation context.",
       club_tag:"Community & affiliations", club_desc:"Member of a professional community focused on kindness, respect and quality of relationships as elements of leadership and organizational culture.",
       work_view:"View case study →",
@@ -1162,7 +1196,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       persp2_title:"Value comes after go-live",
       persp2_excerpt:"Deployment makes a tool available. Value arrives when data reliability, adoption and operational processes begin to converge.",
       persp2_body:"Two weeks after the RAG systems went live, several signals appeared that initial testing had not exposed: inconsistent response times, incomplete data and usage patterns that differed significantly from those anticipated during development.\n\nIn production, the variability of real queries made information inconsistencies and context gaps visible. Even when answers were correct, some users still preferred manual search. The issue was no longer purely technical: trust, operational habits and perceived reliability had become part of the system.\n\nValue began to emerge when we worked on three dimensions at the same time.\n\nFirst: data quality and consistency. The goal was not theoretical perfection, but information structured and reliable enough to support everyday use.\n\nSecond: understanding actual usage. We observed how people queried the system and adapted support and documentation to operational needs. This led to an operating manual structured across three levels: Service Desk, Incident & Problem Management and Middle Management — supporting operational speed, issue management, analysis and reporting.\n\nThird: adoption. As data quality and answer reliability became more consistent, user behavior started to change as well. Trust did not arrive with deployment; it developed through repeated use and progressive integration into operational processes.\n\nDeployment makes a tool available. Adoption makes it useful. Value emerges when data reliability, user behavior and operational processes begin to converge.",
-      case_problem_label:"Problem", case_solution_label:"Solution", case_approach_label:"Approach", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
+      case_problem_label:"Problem", case_solution_label:"Solution", case_approach_label:"Approach", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack", system_view_label:"System view", c1_map_sources:"Corporate documentation · Jira history", c1_map_layer:"Retrieval · RAG · Knowledge layer", c1_map_users:"Service Desk · Incident/Problem · Management", c1_map_caption:"The system connects distributed sources, retrieval and operational contexts: reliability depends on the whole chain, not on the model alone.", c2_map_data:"Sensitive data · Controlled datasets", c2_map_runtime:"Local infrastructure · Ollama · Models", c2_map_output:"Controlled inference · Operational demos", c2_map_caption:"The exploration considers data, runtime, infrastructure, costs and governance together to evaluate where local control creates real value.",
       c1t:"Enterprise Knowledge Retrieval",
       c1_status:"Production · 2026",
       c1_problem:"Enterprise knowledge exists, but it's often fragmented: documents, procedures, manuals and tickets hold useful information that lives across different sources that don't always talk to each other.",
@@ -1193,7 +1227,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Application Integration",
       sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
-      cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
+      cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Case study",
       cap_core_label:"Core capabilities", cap_ext_label:"Extended capabilities",
       sec_badge:"Credentials",sec_contacts:"Contacts", contact_linkedin_meta:"Professional profile", contact_email_meta:"Direct contact", contact_skills_meta:"Credentials and learning profile",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
@@ -1213,15 +1247,15 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sec_chisono:"À propos",
       chisono_p:"Professionnel IT qui a élargi sa contribution à l’IA en production et à son adoption organisationnelle. Google Cloud Innovator. Sélectionné pour Meritare l’Europa 2026 — École de formation politique.",
       sec_results_title:"Ce que j’ai produit",
-      sec_work_title:"Ce que j’ai construit",
+      sec_work_title:"Case Studies",
       sec_skills_title:"Les compétences mobilisées",
       sec_path_title:"Parcours",
       sec_thinking_title:"Ma façon de penser",
       proof_label:"Résultats",
-      p5k:"Production Systems", p5d:"2 systèmes RAG en production chez InfoCamere pour la connaissance documentaire et l’historique Jira, avec un manuel opérationnel dédié.", p5_link:"Voir les projets →",
+      p5k:"Production Systems", p5d:"2 systèmes RAG en production chez InfoCamere pour la connaissance documentaire et l’historique Jira, avec un manuel opérationnel dédié.", p5_link:"Voir les case studies →",
       p1k:"AI Advisory", p1d:"3 missions d'advisory IA : 2 business units internes + 1 CEO.", p1_link:"Voir le parcours →",
       p2k:"Enablement", p2d:"5 programmes de formation à l'IA opérationnelle, pour plus de 35 professionnels.", p2_link:"Voir les compétences →",
-      sec_lavori:"Projets",
+      sec_lavori:"Case Studies",
       tdabo:"2026", dabo_tag:"Expérience internationale", dabo_desc:"À l’invitation du CEO de DABO, participation à l’équipe SCWL pour le concours « Sprint Forward » à Shangcheng, en Chine, dans un contexte international d’innovation et de technologie.",
       club_tag:"Communauté & affiliations", club_desc:"Membre d’une communauté professionnelle centrée sur la gentillesse, le respect et la qualité des relations comme éléments de leadership et de culture organisationnelle.",
       work_view:"Voir le case study →",
@@ -1237,7 +1271,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       persp2_title:"La valeur arrive après la mise en production",
       persp2_excerpt:"Le déploiement rend un outil disponible. La valeur apparaît lorsque fiabilité des données, adoption et processus opérationnels commencent à converger.",
       persp2_body:"Deux semaines après la mise en production des systèmes RAG, plusieurs signaux sont apparus que les tests initiaux n'avaient pas révélés : des temps de réponse irréguliers, des données incomplètes et des usages sensiblement différents de ceux anticipés pendant le développement.\n\nEn production, la variété des requêtes réelles a rendu visibles des incohérences informationnelles et des lacunes de contexte. Même lorsque les réponses étaient correctes, certains utilisateurs continuaient à préférer la recherche manuelle. Le sujet n'était plus seulement technique : la confiance, les habitudes opérationnelles et la fiabilité perçue faisaient désormais partie du système.\n\nLa valeur a commencé à émerger lorsque nous avons travaillé simultanément sur trois dimensions.\n\nPremièrement : la qualité et la cohérence des données. L'objectif n'était pas une perfection théorique, mais des informations suffisamment structurées et fiables pour soutenir l'usage quotidien.\n\nDeuxièmement : la compréhension des usages réels. Nous avons observé la manière dont les personnes interrogeaient le système et adapté l'accompagnement et la documentation aux besoins opérationnels. Cela a conduit à un manuel structuré sur trois niveaux : Service Desk, Incident & Problem Management et Middle Management — pour soutenir rapidité opérationnelle, gestion des incidents, analyse et reporting.\n\nTroisièmement : l'adoption. À mesure que la qualité des données et la fiabilité des réponses devenaient plus constantes, les comportements ont commencé à évoluer. La confiance n'est pas arrivée avec le déploiement ; elle s'est construite par l'usage répété et l'intégration progressive dans les processus.\n\nLe déploiement rend un outil disponible. L'adoption le rend utile. La valeur apparaît lorsque fiabilité des données, usages et processus opérationnels commencent à converger.",
-      case_problem_label:"Problème", case_solution_label:"Solution", case_approach_label:"Approche", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
+      case_problem_label:"Problème", case_solution_label:"Solution", case_approach_label:"Approche", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack", system_view_label:"System view", c1_map_sources:"Documentation d’entreprise · Historique Jira", c1_map_layer:"Retrieval · RAG · Knowledge layer", c1_map_users:"Service Desk · Incident/Problem · Management", c1_map_caption:"Le système relie des sources distribuées, le retrieval et les contextes opérationnels : la fiabilité dépend de toute la chaîne, pas seulement du modèle.", c2_map_data:"Données sensibles · Jeux de données contrôlés", c2_map_runtime:"Infrastructure locale · Ollama · Modèles", c2_map_output:"Inférence contrôlée · Démonstrations opérationnelles", c2_map_caption:"L’exploration considère ensemble les données, le runtime, l’infrastructure, les coûts et la gouvernance afin d’évaluer où le contrôle local crée une valeur réelle.",
       c1t:"Enterprise Knowledge Retrieval",
       c1_status:"Production · 2026",
       c1_problem:"La connaissance d'entreprise existe, mais elle est souvent fragmentée : documents, procédures, manuels et tickets contiennent des informations utiles réparties dans différentes sources qui ne communiquent pas toujours entre elles.",
@@ -1268,7 +1302,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
       sk_cat3:"Cloud & Development", sk3:"Python · GCP · APIs · Application Integration",
       sk_cat4:"AI Adoption & Governance", sk4:"AI Adoption · Data Protection · Knowledge Management",
       sk_cat5:"Technology Enablement", sk5:"Advisory · Training · Public Speaking",
-      cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Projects",
+      cap_link_exp:"→ Experience", cap_link_work:"→ Case study", cap_link_projects:"→ Case study",
       cap_core_label:"Compétences clés", cap_ext_label:"Compétences complémentaires",
       sec_badge:"Accréditations",sec_contacts:"Contacts", contact_linkedin_meta:"Profil professionnel", contact_email_meta:"Contact direct", contact_skills_meta:"Certifications et profil de formation",
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
