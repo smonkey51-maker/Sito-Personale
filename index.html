@@ -973,6 +973,492 @@
   }
 }
 </style>
+
+<style id="institutional-linear-system">
+/* One visual language: institutional, factual, linear. Tiles are not the default container. */
+:root{
+  --institutional-rule:color-mix(in srgb,var(--line) 92%,transparent);
+  --institutional-hover:color-mix(in srgb,var(--accent-soft) 18%,transparent);
+}
+
+/* Navigation */
+.topbar{
+  background:color-mix(in srgb,var(--bg) 96%,transparent);
+  border-bottom:1px solid var(--institutional-rule);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.utilbar{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  padding:0;
+  gap:1px;
+}
+.lang-btn{border-radius:6px;padding:6px 9px}
+.lang-btn.on{box-shadow:none;background:var(--accent-soft)}
+.theme-toggle{border-radius:6px}
+
+/* Hero: an editorial header, not a large app tile. */
+.hero{padding:36px 0 54px}
+.hero-card{
+  background:transparent;
+  border-radius:0;
+  overflow:visible;
+  grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);
+  gap:48px;
+  border-bottom:1px solid var(--institutional-rule);
+  padding-bottom:44px;
+}
+.hero-toprow{padding:34px 0;align-items:center}
+.hero-photo-col{
+  min-height:340px;
+  border-radius:0;
+  overflow:hidden;
+  border-left:1px solid var(--institutional-rule);
+}
+.avatar{min-height:340px}
+.hero-nav{
+  margin-top:30px;
+  padding-top:20px;
+  gap:10px 24px;
+  border-top:1px solid var(--institutional-rule);
+}
+.hero-nav a{
+  border:0!important;
+  border-radius:0!important;
+  padding:0!important;
+  background:transparent!important;
+  font-size:12.5px;
+  text-decoration:none;
+}
+@media(max-width:900px){
+  .hero{padding:22px 0 38px}
+  .hero-card{grid-template-columns:1fr;gap:0;padding-bottom:30px}
+  .hero-photo-col{
+    order:-1;
+    min-height:260px;
+    border-left:0;
+    border-bottom:1px solid var(--institutional-rule);
+  }
+  .avatar{min-height:260px}
+  .hero-toprow{padding:28px 0 8px}
+}
+@media(max-width:560px){
+  .hero-card{border-radius:0}
+  .hero-photo-col{min-height:230px}
+  .avatar{min-height:230px}
+  .hero-toprow{padding:24px 0 4px}
+  .hero-nav{gap:10px 18px}
+}
+
+/* Section rhythm: same heading treatment everywhere. */
+.section-label{
+  padding:76px 0 24px;
+  font-size:29px;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.section-num{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.06em;
+  opacity:.76;
+}
+@media(max-width:900px){.section-label{padding:54px 0 20px;font-size:25px}}
+@media(max-width:560px){.section-label{padding:46px 0 17px;font-size:23px}}
+
+/* About: pure content block. */
+.chisono-card{
+  padding:4px 0 26px;
+  margin:0;
+  border:0;
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.oltre-supp{max-width:820px}
+@media(hover:hover) and (pointer:fine){
+  .chisono-card:hover,.chisono-card.in:hover{
+    transform:none;
+    background:transparent;
+    box-shadow:none;
+  }
+}
+
+/* Impact: one factual data strip. */
+.statrow{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  max-width:none;
+  margin:0;
+  padding:0;
+  border-top:1px solid var(--institutional-rule);
+  border-bottom:1px solid var(--institutional-rule);
+}
+.stat{
+  min-height:190px;
+  padding:28px 28px 26px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.stat + .stat{border-left:1px solid var(--institutional-rule)}
+.stat .v{font-size:38px;font-weight:800;letter-spacing:-.035em}
+.stat .v.v-word{font-size:27px}
+.stat .lnk{border:0;border-radius:0;padding:0;background:transparent;text-decoration:underline;text-underline-offset:3px}
+@media(hover:hover) and (pointer:fine){
+  .stat:hover{transform:none;box-shadow:none;background:var(--institutional-hover)}
+}
+@media(max-width:760px){
+  .statrow{grid-template-columns:1fr}
+  .stat{min-height:auto;padding:22px 0}
+  .stat + .stat{border-left:0;border-top:1px solid var(--institutional-rule)}
+  .stat .v{font-size:34px}
+}
+
+/* Case studies: report sections separated by rules, never promotional tiles. */
+.work-grid{
+  display:block;
+  border-top:1px solid var(--institutional-rule);
+}
+.work-card,
+.work-card:first-child{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-height:auto;
+  padding:30px 0 34px;
+  border:0;
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  color:var(--ink);
+}
+.work-card:first-child .work-title,
+.work-card:first-child .work-summary{color:var(--ink)}
+.work-card:first-child .metachip{
+  color:var(--ink-soft);
+  border-color:transparent;
+  background:transparent;
+}
+.work-card:first-child .work-meta.live,
+.work-meta.live{
+  color:var(--accent);
+  background:transparent;
+  border:0;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  padding:0;
+}
+.work-card:first-child .work-meta.live::before,
+.work-meta.live::before{background:var(--accent)}
+.work-meta.explore{
+  color:var(--status-explore);
+  background:transparent;
+  border:0;
+  padding:0;
+}
+.work-title{font-size:23px}
+.work-summary{max-width:820px}
+.work-chips{margin-top:2px}
+.metachip{padding:0;background:transparent!important;border:0!important}
+.work-mini-map{
+  max-width:820px;
+  margin:8px 0 2px;
+  padding:0 0 0 18px;
+  border:0;
+  border-left:2px solid color-mix(in srgb,var(--accent) 42%,var(--line));
+  border-radius:0;
+  background:transparent;
+}
+.work-mini-node{
+  min-height:auto;
+  justify-content:flex-start;
+  text-align:left;
+  padding:10px 12px;
+  border:1px solid var(--institutional-rule);
+  border-radius:6px;
+  background:transparent;
+}
+.work-mini-node.primary{
+  background:color-mix(in srgb,var(--accent-soft) 36%,transparent);
+  border-color:color-mix(in srgb,var(--accent) 22%,var(--line));
+}
+.work-link,
+.work-card:first-child .work-link{
+  width:fit-content;
+  padding:0;
+  min-height:auto;
+  margin-top:4px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+@media(hover:hover) and (pointer:fine){
+  .work-card:hover,.work-card:first-child:hover{
+    transform:none;
+    box-shadow:none;
+    background:transparent;
+  }
+}
+@media(max-width:760px){
+  .work-card,.work-card:first-child{padding:24px 0 28px}
+  .work-title{font-size:21px}
+  .work-mini-map{padding-left:12px}
+}
+
+/* Capabilities: registry rows, one grammar for Core and Extended. */
+.cap-unified{
+  border:0;
+  border-top:1px solid var(--institutional-rule);
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  overflow:visible;
+  background:transparent;
+  box-shadow:none;
+}
+.cap-group{padding:24px 0}
+.cap-group + .cap-group{border-top:1px solid var(--institutional-rule)}
+.cap-group-label{margin:0 0 8px}
+.cap-group-grid,
+.cap-group-grid-core,
+.cap-group-grid-extended{
+  display:block;
+}
+.cap-item,
+.cap-item-core{
+  display:grid;
+  grid-template-columns:36px minmax(170px,.42fr) minmax(0,1fr) auto;
+  align-items:center;
+  gap:16px;
+  padding:17px 0;
+  border:0;
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.cap-item:last-child{border-bottom:0}
+.cap-item-icon{
+  width:32px;height:32px;
+  margin:0;
+  border-radius:6px;
+  background:transparent;
+}
+.cap-item-title{margin:0;font-size:16px}
+.cap-item-list{margin:0;font-size:14px}
+.cap-item-link{
+  white-space:nowrap;
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+@media(hover:hover) and (pointer:fine){
+  .cap-item:hover,.cap-item-core:hover{
+    transform:none;
+    box-shadow:none;
+    border-color:var(--institutional-rule);
+    background:var(--institutional-hover);
+  }
+}
+@media(max-width:700px){
+  .cap-group{padding:18px 0}
+  .cap-item,.cap-item-core{
+    grid-template-columns:32px minmax(0,1fr);
+    gap:8px 12px;
+    padding:16px 0;
+  }
+  .cap-item-list,.cap-item-link{grid-column:2}
+  .cap-item-link{margin-top:2px}
+}
+
+/* Career: institutional chronology, including current role. */
+.timeline{
+  gap:0;
+  border-top:1px solid var(--institutional-rule);
+}
+.job-row,
+.job-row:not(.current),
+.job-row.current{
+  border:0;
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.job-row:not(.current){padding:24px 0}
+.job-row.current{
+  padding:0;
+  grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:32px;
+}
+.job-row.current .job-copy{padding:30px 0}
+.job-photo-slot{
+  min-height:210px;
+  border-left:1px solid var(--institutional-rule);
+}
+@media(hover:hover) and (pointer:fine){
+  .job-row:hover,.job-row:not(.current):hover{
+    transform:none;
+    box-shadow:none;
+    background:var(--institutional-hover);
+  }
+}
+@media(max-width:760px){
+  .job-row.current{grid-template-columns:1fr;gap:0}
+  .job-photo-slot{
+    order:-1;
+    min-height:170px;
+    border-left:0;
+    border-bottom:1px solid var(--institutional-rule);
+  }
+  .job-row.current .job-copy{padding:22px 0}
+}
+
+/* External experiences: same chronology language as Career. */
+.experience-grid{
+  display:block;
+  border-top:1px solid var(--institutional-rule);
+}
+.experience-card{
+  display:grid;
+  grid-template-columns:minmax(150px,.32fr) minmax(0,1fr);
+  column-gap:34px;
+  row-gap:6px;
+  padding:24px 0;
+  border:0;
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.experience-card .job-overline{grid-column:1}
+.experience-card .job-title,.experience-card .job-supp{grid-column:2}
+@media(hover:hover) and (pointer:fine){
+  .experience-card:hover{
+    transform:none;
+    box-shadow:none;
+    background:var(--institutional-hover);
+  }
+}
+@media(max-width:700px){
+  .experience-card{display:flex;gap:7px;padding:20px 0}
+}
+
+/* Perspectives: editorial index, not article tiles. */
+.persp-grid{
+  display:block;
+  margin-bottom:48px;
+  border-top:1px solid var(--institutional-rule);
+}
+.persp-card{
+  display:grid;
+  grid-template-columns:minmax(120px,.25fr) minmax(180px,.55fr) minmax(0,1fr) auto;
+  align-items:start;
+  gap:20px;
+  padding:24px 0;
+  border:0;
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.persp-meta,.persp-title,.persp-excerpt,.persp-link{margin:0}
+.persp-link{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  white-space:nowrap;
+}
+@media(hover:hover) and (pointer:fine){
+  .persp-card:hover{
+    transform:none;
+    box-shadow:none;
+    background:var(--institutional-hover);
+  }
+}
+@media(max-width:900px){
+  .persp-card{
+    grid-template-columns:minmax(110px,.28fr) minmax(0,1fr);
+    gap:8px 18px;
+  }
+  .persp-excerpt,.persp-link{grid-column:2}
+}
+@media(max-width:560px){
+  .persp-card{display:flex;gap:8px;padding:20px 0}
+  .persp-link{margin-top:4px}
+}
+
+/* Credentials and contacts: identical registry language. */
+.credential-list,.contact-list{
+  display:block;
+  border-top:1px solid var(--institutional-rule);
+  border-bottom:0;
+}
+.credential-row,.contact-row{
+  display:grid;
+  grid-template-columns:34px minmax(0,1fr) auto;
+  align-items:center;
+  gap:14px;
+  min-height:auto;
+  padding:16px 0;
+  border:0;
+  border-bottom:1px solid var(--institutional-rule);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.credential-row + .credential-row,.contact-row + .contact-row{
+  border-left:0;
+  border-top:0;
+}
+.credential-icon,.contact-icon{
+  width:30px;height:30px;
+  border-radius:6px;
+  box-shadow:none;
+  background:transparent;
+  color:var(--accent);
+}
+.credential-icon{
+  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+}
+@media(hover:hover) and (pointer:fine){
+  .credential-row:hover,.contact-row:hover{
+    transform:none;
+    box-shadow:none;
+    background:var(--institutional-hover);
+  }
+}
+
+/* Unified interaction: stable, restrained, factual. */
+.work-card,.cap-item,.job-row,.experience-card,.persp-card,.credential-row,.contact-row,.stat{
+  transition:background-color 120ms ease;
+}
+.work-card:active,.cap-item:active,.job-row:active,.experience-card:active,.persp-card:active,.credential-row:active,.contact-row:active,.stat:active{
+  transform:none;
+  box-shadow:none;
+}
+
+/* Small screens keep the same language instead of introducing new tile patterns. */
+@media(max-width:560px){
+  .chisono-card{padding:2px 0 22px}
+  .credential-row,.contact-row{padding:15px 0;border-radius:0}
+  .credential-icon,.contact-icon{width:28px;height:28px}
+  footer{margin-top:76px}
+}
+</style>
 </head>
 <body>
 
