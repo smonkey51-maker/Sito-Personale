@@ -1093,6 +1093,200 @@ main{max-width:1080px}
   .credential-row,.contact-row{padding:15px 16px}
   footer{margin-top:82px}
 }
+
+/* ===== Final finishing pass ===== */
+
+/* Hero: same geometry and interaction language as the rest of the site. */
+.hero-btn{
+  border-radius:10px;
+  box-shadow:none;
+  transform:none!important;
+}
+.hero-btn.outline{
+  background:var(--bg);
+  border:1px solid var(--ui-border);
+}
+.hero-btn.solid{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+}
+:root[data-theme="dark"] .hero-btn.solid{color:#0B1F57}
+@media(hover:hover) and (pointer:fine){
+  .hero-btn.outline:hover{
+    background:var(--ui-hover);
+    border-color:color-mix(in srgb,var(--accent) 24%,var(--line));
+  }
+  .hero-btn.solid:hover{
+    background:color-mix(in srgb,var(--accent) 88%,var(--ink) 12%);
+    box-shadow:none;
+    transform:none;
+  }
+}
+.hero-proof{
+  gap:0;
+  border-top:1px solid color-mix(in srgb,var(--on-accent-soft) 14%,transparent);
+  padding-top:16px;
+}
+.hero-proof span{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  padding:0 12px;
+  font-size:12px;
+  font-weight:500;
+  opacity:.8;
+}
+.hero-proof span:first-child{padding-left:0}
+.hero-proof span + span{border-left:1px solid color-mix(in srgb,var(--on-accent-soft) 18%,transparent)}
+@media(max-width:900px){
+  .hero-nav a{
+    border:0!important;
+    border-radius:0!important;
+    padding:4px 0!important;
+    background:transparent!important;
+  }
+  .hero-nav a + a{margin-left:14px}
+}
+
+/* Case-study diagrams: integrated technical flow, not nested cards. */
+.work-mini-map,
+.system-map{
+  background:transparent;
+  border:0;
+  border-top:1px solid var(--ui-border);
+  border-bottom:1px solid var(--ui-border);
+  border-radius:0;
+  padding:14px 0;
+}
+.work-mini-map{max-width:780px}
+.work-mini-flow,
+.system-flow{gap:0}
+.work-mini-node,
+.system-node{
+  justify-content:flex-start;
+  text-align:left;
+  min-height:auto;
+  padding:10px 12px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.work-mini-node.primary,
+.system-node.primary{
+  border:0;
+  border-left:2px solid var(--accent);
+  background:color-mix(in srgb,var(--accent-soft) 24%,transparent);
+  color:var(--ink);
+}
+.work-mini-arrow,
+.system-arrow{
+  justify-content:flex-start;
+  padding-left:12px;
+  min-height:16px;
+  font-size:12px;
+  opacity:.62;
+}
+.system-map-title{margin-bottom:8px}
+.system-caption{margin-top:10px}
+
+/* Perspectives: editorial preview, compact and scannable. */
+.persp-card{
+  grid-template-columns:minmax(105px,.22fr) minmax(190px,.56fr) minmax(0,1fr) auto;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.persp-excerpt{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  max-width:56ch;
+  line-height:1.58;
+}
+.persp-link{
+  font-size:12px;
+  align-self:center;
+}
+@media(max-width:900px){
+  .persp-card{grid-template-columns:minmax(100px,.25fr) minmax(0,1fr)}
+  .persp-excerpt{-webkit-line-clamp:2}
+}
+@media(max-width:560px){
+  .persp-card{padding:18px 16px}
+  .persp-excerpt{-webkit-line-clamp:2}
+}
+
+/* Dialogs: same surface, radius and borders as site panels. */
+dialog,
+dialog.wide{
+  background:var(--ui-surface);
+  border:1px solid var(--ui-border);
+  border-radius:var(--ui-radius);
+  box-shadow:var(--ui-shadow);
+  padding:30px;
+}
+dialog::backdrop{background:color-mix(in srgb,var(--scrim) 82%,transparent)}
+.modal-head{margin-bottom:18px}
+.modal-x,
+.copy-btn{
+  border:1px solid var(--ui-border);
+  border-radius:8px;
+  background:var(--bg);
+  box-shadow:none;
+  transform:none!important;
+}
+@media(hover:hover) and (pointer:fine){
+  .modal-x:hover,.copy-btn:hover{
+    background:var(--ui-hover);
+    border-color:color-mix(in srgb,var(--accent) 20%,var(--line));
+  }
+}
+@media(max-width:640px){
+  dialog,dialog.wide{
+    margin:auto 14px;
+    width:calc(100% - 28px);
+    max-width:calc(100% - 28px);
+    border-radius:16px;
+    padding:24px 20px;
+    max-height:88vh;
+  }
+}
+
+/* Mobile contact control: compact utility, not a floating app component. */
+.fab{
+  right:16px;
+  bottom:16px;
+  padding:11px 16px;
+  min-height:42px;
+  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+  border-radius:10px;
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 4px 16px -12px color-mix(in srgb,var(--accent) 60%,transparent);
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:0;
+  text-transform:none;
+  transform:translateY(8px);
+}
+:root[data-theme="dark"] .fab{color:#0B1F57}
+.fab.visible{transform:none}
+@media(hover:hover) and (pointer:fine){
+  .fab:hover{transform:none;box-shadow:0 4px 16px -12px color-mix(in srgb,var(--accent) 60%,transparent)}
+}
+
+/* One motion language: short, quiet and functional. */
+.rv{opacity:0;transform:translateY(8px)}
+@media(prefers-reduced-motion:no-preference){
+  .rv{transition:opacity 280ms var(--ease),transform 280ms var(--ease)}
+}
+.rv.in{opacity:1;transform:none}
+.stat .v.pop{animation:none!important}
+.hero-btn:active,.work-link:active,.persp-link:active,.lnk:active,.fab:active,.lang-btn:active,.theme-toggle:active,.modal-x:active,.copy-btn:active{
+  transform:none!important;
+}
+.md-ripple{display:none!important}
 </style>
 </head>
 <body>
@@ -2057,25 +2251,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
     scope.querySelectorAll(".num").forEach(function(n){ n.textContent = n.getAttribute("data-count"); });
   }
   function animateCounts(scope){
-    var nums = scope.querySelectorAll(".num");
-    if(!nums.length) return;
-    if(window.matchMedia("(prefers-reduced-motion:reduce)").matches){ setCountsFinal(scope); return; }
-    nums.forEach(function(n){
-      var target = parseFloat(n.getAttribute("data-count"));
-      var dur = 900, start = null;
-      function step(ts){
-        if(start === null) start = ts;
-        var p = Math.min((ts - start) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        n.textContent = Math.round(target * eased);
-        if(p < 1){ requestAnimationFrame(step); }
-        else{
-          var v = n.closest(".v");
-          if(v){ v.classList.remove("pop"); void v.offsetWidth; v.classList.add("pop"); }
-        }
-      }
-      requestAnimationFrame(step);
-    });
+    setCountsFinal(scope);
   }
 
   /* ---- reveal allo scroll ---- */
@@ -2157,10 +2333,7 @@ Il modello è la parte facile. Il resto è il valore.</div>
     button.appendChild(circle);
   }
 
-  document.querySelectorAll('.md-ripple-wrapper').forEach(btn => {
-    btn.addEventListener('mousedown', createRipple);
-    btn.addEventListener('touchstart', createRipple, { passive: true });
-  });
+  /* Ripple disabled: the site now uses a single restrained interaction language. */
 
   applyLang();
 })();
