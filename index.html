@@ -311,8 +311,7 @@
   /* ============ badge ============ */
 
   /* ============ selected work ============ */
-  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  @media (max-width:760px){.work-grid{grid-template-columns:1fr}}
+  .work-grid{display:grid;grid-template-columns:1fr;gap:20px}
   .work-card{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid transparent;border-radius:18px;background:color-mix(in srgb,var(--bg) 97%,var(--accent-soft) 3%);box-shadow:0 0 30px -8px color-mix(in srgb,var(--line) 50%,transparent);min-width:0;cursor:pointer; transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.work-card:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: transparent; background:var(--accent-soft);}}
   .work-card:active{transform:scale(.98);box-shadow:var(--shadow-2)}
