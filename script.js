@@ -259,7 +259,6 @@
   var savedLang = null;
   try{ savedLang = localStorage.getItem(LANG_KEY); }catch(e){}
   var lang = (savedLang && i18n[savedLang]) ? savedLang : "it";
-  var dynamicPalette = null;
 
   /* ---- lingua ---- */
   function applyLang(){
@@ -297,13 +296,7 @@
       t.textContent = dark ? "☀" : "☾";
       t.setAttribute("aria-label", dark ? "Passa al tema chiaro" : "Passa al tema scuro");
     });
-    if(dynamicPalette){
-      var vars = dynamicPalette[dark ? "dark" : "light"];
-      Object.keys(vars).forEach(function(k){ root.style.setProperty(k, vars[k]); });
-      if(themeColorMeta) themeColorMeta.setAttribute("content", vars["--bg"]);
-    } else if(themeColorMeta){
-      themeColorMeta.setAttribute("content", dark ? "#0B0E17" : "#F7F8FC");
-    }
+    if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#1B1A17" : "#F8F7F4");
   }
   var themeAnnouncer = document.getElementById("themeAnnouncer");
   function announceTheme(dark){
@@ -319,183 +312,6 @@
     });
   });
   paintTheme();
-
-  /* ---- Material 3 dynamic color: estrae un colore "seme" dalla foto e ne
-     deriva una palette in stile Material You. Se la foto non ha un colore
-     dominante riconoscibile (es. bianco e nero) resta la palette statica.
-     Il risultato viene messo in cache in localStorage (vedi script in
-     <head>, che la applica subito ad ogni caricamento per evitare il
-     flash), e ogni tono neutro è corretto per rispettare il contrasto
-     minimo WCAG AA rispetto allo sfondo generato. */
-  (function(){
-    var avatarImg = document.getElementById("avatarPhoto");
-    if(!avatarImg || !window.HTMLCanvasElement) return;
-    var CACHE_KEY = "nfPalette";
-    var DYNAMIC_KEYS = ["--bg","--ink","--ink-soft","--line","--accent","--accent-soft","--on-accent-soft","--case-bg","--on-case","--status-explore","--status-explore-soft"];
-
-    function rgbToHsl(r, g, b){
-      r /= 255; g /= 255; b /= 255;
-      var max = Math.max(r, g, b), min = Math.min(r, g, b);
-      var h = 0, s = 0, l = (max + min) / 2;
-      if(max !== min){
-        var d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch(max){
-          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-          case g: h = (b - r) / d + 2; break;
-          default: h = (r - g) / d + 4;
-        }
-        h /= 6;
-      }
-      return [h * 360, s * 100, l * 100];
-    }
-    function hslToHex(h, s, l){
-      h = ((h % 360) + 360) % 360; h /= 360; s = Math.max(0, Math.min(100, s)) / 100; l = Math.max(0, Math.min(100, l)) / 100;
-      function hue2rgb(p, q, t){
-        if(t < 0) t += 1;
-        if(t > 1) t -= 1;
-        if(t < 1/6) return p + (q - p) * 6 * t;
-        if(t < 1/2) return q;
-        if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-        return p;
-      }
-      var r, g, b;
-      if(s === 0){ r = g = b = l; }
-      else{
-        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        var p = 2 * l - q;
-        r = hue2rgb(p, q, h + 1/3);
-        g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1/3);
-      }
-      function ch(v){ return Math.round(v * 255).toString(16).padStart(2, "0"); }
-      return "#" + ch(r) + ch(g) + ch(b);
-    }
-
-    /* Contrasto WCAG: https://www.w3.org/TR/WCAG21/#contrast-minimum */
-    function hexToRgb(hex){
-      var n = parseInt(hex.slice(1), 16);
-      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
-    }
-    function relLuminance(hex){
-      var rgb = hexToRgb(hex).map(function(v){
-        v /= 255;
-        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-      });
-      return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
-    }
-    function contrastRatio(hexA, hexB){
-      var lA = relLuminance(hexA), lB = relLuminance(hexB);
-      var lighter = Math.max(lA, lB), darker = Math.min(lA, lB);
-      return (lighter + 0.05) / (darker + 0.05);
-    }
-    /* Genera il colore in HSL e, se il contrasto con lo sfondo non basta,
-       scurisce/schiarisce (dir -1/+1) finché non raggiunge minRatio. */
-    function ensureContrast(h, s, l, bgHex, minRatio, dir){
-      var hex = hslToHex(h, s, l);
-      var guard = 0;
-      while(contrastRatio(hex, bgHex) < minRatio && guard < 40 && l > 0 && l < 100){
-        l = Math.max(0, Math.min(100, l + dir * 2));
-        hex = hslToHex(h, s, l);
-        guard++;
-      }
-      return hex;
-    }
-
-    function extractSeed(img){
-      var size = 48;
-      var canvas = document.createElement("canvas");
-      canvas.width = canvas.height = size;
-      var ctx = canvas.getContext("2d");
-      var data;
-      try{
-        ctx.drawImage(img, 0, 0, size, size);
-        data = ctx.getImageData(0, 0, size, size).data;
-      } catch(e){ return null; }
-
-      var buckets = {};
-      for(var i = 0; i < data.length; i += 4){
-        if(data[i + 3] < 128) continue;
-        var hsl = rgbToHsl(data[i], data[i + 1], data[i + 2]);
-        var h = hsl[0], s = hsl[1], l = hsl[2];
-        if(l < 8 || l > 92 || s < 12) continue;
-        var key = Math.round(h / 15);
-        var bucket = buckets[key] || (buckets[key] = { count: 0, h: 0, s: 0 });
-        bucket.count++; bucket.h += h; bucket.s += s;
-      }
-      var best = null;
-      Object.keys(buckets).forEach(function(k){
-        var b = buckets[k];
-        if(!best || b.count > best.count) best = b;
-      });
-      if(!best || best.count < 12) return null;
-      var avgS = best.s / best.count;
-      if(avgS < 16) return null;
-      return { h: best.h / best.count, s: Math.min(Math.max(avgS, 28), 55) };
-    }
-
-    /* Il blu resta il colore-guida fisso del brand: qui adattiamo solo i
-       toni neutri (sfondo, testo, bordi, etichetta "in esplorazione") in
-       base al colore dominante della foto, mentre accent/case restano blu. */
-    function buildPalette(seed){
-      var h = seed.h, s = seed.s;
-      var hComp = (h + 45) % 360;
-      var neutralS = Math.min(s * 0.28, 14);
-      var complS = Math.min(Math.max(s, 25), 45);
-
-      var bgLight = hslToHex(h, neutralS * 0.6, 96);
-      var bgDark = hslToHex(h, neutralS * 0.9, 8);
-
-      return {
-        light: {
-          "--bg": bgLight,
-          "--ink": ensureContrast(h, neutralS * 0.5, 12, bgLight, 4.5, -1),
-          "--ink-soft": ensureContrast(h, neutralS * 0.4, 34, bgLight, 3, -1),
-          "--line": hslToHex(h, neutralS * 0.7, 85),
-          "--accent": "#003399",
-          "--accent-soft": "#DCE4FF",
-          "--on-accent-soft": "#0B1F57",
-          "--case-bg": "#1F4E96",
-          "--on-case": "#F5F7FF",
-          "--status-explore": hslToHex(hComp, complS, 38),
-          "--status-explore-soft": hslToHex(hComp, complS * 0.7, 90)
-        },
-        dark: {
-          "--bg": bgDark,
-          "--ink": ensureContrast(h, neutralS * 0.4, 92, bgDark, 4.5, 1),
-          "--ink-soft": ensureContrast(h, neutralS * 0.5, 68, bgDark, 3, 1),
-          "--line": hslToHex(h, neutralS * 0.8, 20),
-          "--accent": "#AFC2FF",
-          "--accent-soft": "#0C2D7A",
-          "--on-accent-soft": "#E3EAFF",
-          "--case-bg": "#214E97",
-          "--on-case": "#F4F7FF",
-          "--status-explore": hslToHex(hComp, complS * 0.7, 74),
-          "--status-explore-soft": hslToHex(hComp, complS * 0.6, 22)
-        }
-      };
-    }
-
-    function onReady(){
-      var seed = extractSeed(avatarImg);
-      if(!seed){
-        /* Foto senza colore dominante riconoscibile (es. bianco e nero):
-           rimuove eventuali variabili applicate da una cache di una foto
-           precedente e torna alla palette statica del foglio di stile. */
-        dynamicPalette = null;
-        DYNAMIC_KEYS.forEach(function(k){ root.style.removeProperty(k); });
-        try{ localStorage.removeItem(CACHE_KEY); } catch(e){}
-        paintTheme();
-        return;
-      }
-      dynamicPalette = buildPalette(seed);
-      paintTheme();
-      try{ localStorage.setItem(CACHE_KEY, JSON.stringify(dynamicPalette)); } catch(e){}
-    }
-
-    if(avatarImg.complete && avatarImg.naturalWidth){ onReady(); }
-    else{ avatarImg.addEventListener("load", onReady); }
-  })();
 
   /* ---- modali (contatti, perspectives) — <dialog> nativo ---- */
   var modalOpener = null;
@@ -569,21 +385,9 @@
     tiles.forEach(function(t){ t.classList.add("in"); setCountsFinal(t); });
   }
 
-  /* ---- fab: visibile solo oltre la hero, dove il pulsante Contatti non è più a vista ---- */
-  (function(){
-    var fab = document.querySelector(".fab");
-    var hero = document.getElementById("profilo");
-    if(!fab || !hero) return;
-    if(!("IntersectionObserver" in window)){ fab.classList.add("visible"); return; }
-    var heroIO = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ fab.classList.toggle("visible", !en.isIntersecting); });
-    }, {threshold:0});
-    heroIO.observe(hero);
-  })();
-
   /* ---- navigation feedback & reading progress ---- */
   var progress = document.querySelector(".scroll-progress");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".desktop-nav a, .hero-nav a"));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".desktop-nav a"));
   var observedSections = navLinks.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
   function updateProgress(){
     var doc = document.documentElement;
@@ -607,38 +411,5 @@
     observedSections.forEach(function(sec){ navIO.observe(sec); });
   }
 
-  /* ---- Material 3 Ripple Effect Logic ---- */
-  function createRipple(event) {
-    const button = event.currentTarget;
-    const point = event.touches ? event.touches[0] : event;
-    const circle = document.createElement("span");
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
-    const radius = diameter / 2;
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${point.clientX - button.getBoundingClientRect().left - radius}px`;
-    circle.style.top = `${point.clientY - button.getBoundingClientRect().top - radius}px`;
-    circle.classList.add("md-ripple");
-
-    const existingRipple = button.querySelector(".md-ripple");
-    if (existingRipple) {
-      existingRipple.remove();
-    }
-
-    button.appendChild(circle);
-  }
-
-  /* Ripple disabled: the site now uses a single restrained interaction language. */
-
   applyLang();
-})();
-
-/* final mobile polish: hide FAB near footer */
-(function(){
-  var fab=document.querySelector('.fab');
-  var footer=document.querySelector('footer');
-  if(!fab||!footer||!('IntersectionObserver' in window)) return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){fab.classList.toggle('near-footer',entry.isIntersecting);});
-  },{rootMargin:'0px 0px 110px 0px',threshold:0});
-  io.observe(footer);
 })();
