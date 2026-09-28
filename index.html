@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" id="themeColorMeta" content="#F7F8FC">
+<meta name="theme-color" id="themeColorMeta" content="#F8F7F4">
 
 <title>Nicolò Forcolin — Enterprise IT @ InfoCamere | AI in Production</title>
 <meta name="description" content="Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa. Google Cloud Innovator. Selezionato per Meritare l’Europa.">
@@ -17,20 +17,12 @@
 <link rel="manifest" href="manifest.json">
 
 <script>
-/* Applica subito l'eventuale palette Material 3 salvata da una visita
-   precedente, prima del primo paint, per evitare il flash della palette
-   statica mentre la foto viene ricaricata e ri-analizzata. */
+/* Applica subito il tema salvato da una visita precedente, prima del
+   primo paint, per evitare il flash del tema chiaro di default. */
 (function(){
   try{
-    var root = document.documentElement;
     var savedTheme = localStorage.getItem("nfTheme");
-    if(savedTheme) root.setAttribute("data-theme", savedTheme);
-    var mode = savedTheme || "light";
-    var cached = JSON.parse(localStorage.getItem("nfPalette") || "null");
-    var vars = cached && cached[mode];
-    if(vars){
-      Object.keys(vars).forEach(function(k){ root.style.setProperty(k, vars[k]); });
-    }
+    if(savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
   } catch(e){}
 })();
 </script>
@@ -64,7 +56,7 @@
   if(saveData) return;
   var l = document.createElement("link");
   l.rel = "stylesheet";
-  l.href = "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@500;600&display=swap";
+  l.href = "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap";
   document.head.appendChild(l);
 })();
 </script>
@@ -110,6 +102,7 @@
       <a href="#sintesi" data-i18n="proof_label">Impact</a>
       <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
       <a href="#percorso" data-i18n="sec_percorso">Percorso</a>
+      <button type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
     </nav>
     <div class="utilbar">
       <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
@@ -121,35 +114,24 @@
   </div>
 </header>
 
-<button class="fab md-ripple-wrapper" data-open-contacts aria-label="Contatti" data-i18n="nav_contatti" data-i18n-aria="nav_contatti">Contatti</button>
-
 <header class="hero" id="profilo">
-  <div class="wrap">
-    <div class="hero-card">
-      <div class="hero-toprow">
-        <div class="hero-text">
-          <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
-          <h1 class="hero-name">Nicolò Forcolin</h1>
-          <div class="hero-cta-row">
-            <a class="hero-btn solid md-ripple-wrapper" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span></a>
-            <button class="hero-btn outline md-ripple-wrapper" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
-          </div>
-          <div class="hero-proof" aria-label="Professional focus" data-i18n-aria="hero_proof_label">
-            <span data-i18n="hero_proof1">Enterprise IT @ InfoCamere</span><span data-i18n="hero_proof2">AI in produzione e adozione organizzativa</span>
-          </div>
-          <nav class="hero-nav" aria-label="Sezioni della pagina" data-i18n-aria="hero_nav_label">
-            <a href="#sintesi" data-i18n="proof_label">Impact</a>
-            <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
-                  <a href="#percorso" data-i18n="sec_percorso">Esperienza</a>
-                </nav>
-        </div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow" data-i18n="eyebrow_role">InfoCamere · Padova</p>
+      <h1 class="hero-name">Nicolò Forcolin</h1>
+      <div class="hero-proof" aria-label="Professional focus" data-i18n-aria="hero_proof_label">
+        <span data-i18n="hero_proof1">Enterprise IT @ InfoCamere</span><span data-i18n="hero_proof2">AI in produzione e adozione organizzativa</span>
       </div>
-      <div class="hero-photo-col">
-        <picture>
-          <source srcset="photo.webp" type="image/webp">
-          <img class="avatar" id="avatarPhoto" src="photo.jpg" alt="Nicolò Forcolin" width="186" height="186" fetchpriority="high">
-        </picture>
+      <div class="hero-cta-row">
+        <a class="hero-btn solid" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span></a>
+        <button class="hero-btn outline" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
       </div>
+    </div>
+    <div class="hero-photo-col">
+      <picture>
+        <source srcset="photo.webp" type="image/webp">
+        <img class="avatar" id="avatarPhoto" src="photo.jpg" alt="Nicolò Forcolin" width="186" height="186" fetchpriority="high">
+      </picture>
     </div>
   </div>
 </header>
@@ -163,19 +145,19 @@
 
   <h2 class="section-label rv" id="sintesi"><span class="section-num">02</span><span data-i18n="sec_results_title">Risultati</span></h2>
   <div class="statrow rv">
-    <div class="stat md-ripple-wrapper" aria-labelledby="p5k" data-card-href="#casi-studio">
+    <div class="stat" aria-labelledby="p5k" data-card-href="#casi-studio">
       <p class="v"><span class="num" data-count="2">2</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Production Systems</span>
       <p class="d" data-i18n="p5d">Documentazione aziendale e storico Jira, con un manuale operativo per l’adozione.</p>
       <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
     </div>
-    <div class="stat md-ripple-wrapper" aria-labelledby="p1k" data-card-href="#percorso">
+    <div class="stat" aria-labelledby="p1k" data-card-href="#percorso">
       <p class="v"><span>2+1</span></p>
       <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
       <p class="d" data-i18n="p1d">Advisory AI per due business unit interne e un CEO.</p>
       <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso →</a>
     </div>
-    <div class="stat md-ripple-wrapper" aria-labelledby="p2k" data-card-href="#percorso">
+    <div class="stat" aria-labelledby="p2k" data-card-href="#percorso">
       <p class="v"><span class="num" data-count="35">35</span>+</p>
       <span class="k" id="p2k" data-i18n="p2k">Enablement</span>
       <p class="d" data-i18n="p2d">Cinque programmi di formazione sull’AI operativa.</p>
@@ -185,7 +167,7 @@
 
   <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_work_title">Progetti</span></h2>
   <div class="work-grid rv">
-    <div class="work-card md-ripple-wrapper" data-card-modal="c1Modal">
+    <div class="work-card" data-card-modal="c1Modal">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
       <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
       <p class="work-summary" data-i18n="c1_summary">La conoscenza era distribuita tra documenti e ticket Jira. Ho implementato due sistemi RAG in produzione e un manuale operativo per i diversi contesti d’uso.</p>
@@ -203,9 +185,9 @@
           <div class="work-mini-node" data-i18n="c1_map_users">Service Desk · Incident/Problem · Management</div>
         </div>
       </div>
-      <button class="work-link md-ripple-wrapper" type="button" data-open-modal="c1Modal" data-i18n="work_view">Vedi il progetto →</button>
+      <button class="work-link" type="button" data-open-modal="c1Modal" data-i18n="work_view">Vedi il progetto →</button>
     </div>
-    <div class="work-card md-ripple-wrapper" data-card-modal="c2Modal">
+    <div class="work-card" data-card-modal="c2Modal">
       <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
       <h3 class="work-title" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
       <p class="work-summary" data-i18n="c2_summary">Per valutare l’AI in contesti a dati sensibili, ho preparato dataset, adattato modelli e realizzato demo con inferenza locale.</p>
@@ -223,7 +205,7 @@
           <div class="work-mini-node" data-i18n="c2_map_output">Inferenza controllata · Demo operative</div>
         </div>
       </div>
-      <button class="work-link md-ripple-wrapper" type="button" data-open-modal="c2Modal" data-i18n="work_view">Vedi il progetto →</button>
+      <button class="work-link" type="button" data-open-modal="c2Modal" data-i18n="work_view">Vedi il progetto →</button>
     </div>
   </div>
 
@@ -255,17 +237,17 @@
 
   <h2 class="section-label rv" id="esperienze"><span class="section-num">05</span><span data-i18n="sec_experiences">Iniziative</span></h2>
   <div class="experience-grid rv">
-    <div class="experience-card md-ripple-wrapper">
+    <div class="experience-card">
       <div class="job-overline"><span data-i18n="tdabo">2026</span><span class="education-tag" data-i18n="dabo_tag">Esperienza internazionale</span></div>
       <div class="job-title">DABO · SCWL / Sprint Forward</div>
       <div class="job-supp" data-i18n="dabo_desc">Su invito del CEO di DABO, coinvolgimento nel team SCWL per il contest “Sprint Forward” a Shangcheng, Cina, in un contesto internazionale di innovazione e confronto tecnologico.</div>
     </div>
-    <div class="experience-card md-ripple-wrapper">
+    <div class="experience-card">
       <div class="job-overline"><span data-i18n="tpolitica">2026</span><span class="education-tag" data-i18n="politica_tag">Formazione selettiva</span></div>
       <div class="job-title" data-i18n="politica_title">Meritare l'Europa — Scuola di Formazione Politica, Italia Viva</div>
       <div class="job-supp" data-i18n="politica_desc">Selezionato per il percorso 2026 dedicato a cittadinanza attiva, istituzioni e leadership pubblica, con focus su Europa, processi decisionali, innovazione tecnologica e AI.</div>
     </div>
-    <div class="experience-card md-ripple-wrapper">
+    <div class="experience-card">
       <div class="job-overline"><span data-i18n="club_tag">Community & affiliazioni</span></div>
       <div class="job-title"><a href="https://uominigentili.fimelato.com/club/" target="_blank" rel="noopener">Club degli Uomini Gentili</a></div>
       <div class="job-supp" data-i18n="club_desc">Membro di una community professionale orientata a promuovere gentilezza, rispetto e qualità delle relazioni come elementi di leadership e cultura organizzativa.</div>
@@ -274,13 +256,13 @@
 
   <h2 class="section-label rv" id="badge"><span class="section-num">06</span><span data-i18n="sec_badge">Credenziali</span></h2>
 <div class="credential-list rv">
-  <a class="credential-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+  <a class="credential-row" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
     <span class="credential-icon" aria-hidden="true">G</span><span class="credential-copy"><span class="credential-title" data-i18n="badge1_title">Gemini Enterprise Agent Ready</span><span class="credential-meta" data-i18n="badge1_meta">Credential · 2026</span></span><span class="credential-arrow" aria-hidden="true">&gt;</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
   </a>
-  <a class="credential-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+  <a class="credential-row" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
     <span class="credential-icon" aria-hidden="true">G</span><span class="credential-copy"><span class="credential-title" data-i18n="badge3_title">Google Developer Program — Premium Tier</span><span class="credential-meta" data-i18n="badge3_meta">Program status · 2026</span></span><span class="credential-arrow" aria-hidden="true">&gt;</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
   </a>
-  <a class="credential-row md-ripple-wrapper" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
+  <a class="credential-row" href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">
     <span class="credential-icon" aria-hidden="true">G</span><span class="credential-copy"><span class="credential-title" data-i18n="badge2_title">Google Cloud Innovator</span><span class="credential-meta" data-i18n="badge2_meta">Community program · 2025</span></span><span class="credential-arrow" aria-hidden="true">&gt;</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span>
   </a>
 </div>
