@@ -153,11 +153,6 @@
   .timeline{display:flex;flex-direction:column;gap:16px;padding-bottom:8px}
   .job-row{padding:28px 30px;border:1px solid transparent;border-radius:28px;background:color-mix(in srgb,var(--bg) 97%,var(--accent-soft) 3%);box-shadow:0 0 30px -8px color-mix(in srgb,var(--line) 50%,transparent); transition: transform var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), background var(--dur-s) var(--ease);}
   @media (hover:hover) and (pointer:fine){.job-row:hover{transform: translateY(-4px); box-shadow: var(--shadow-2); background:var(--accent-soft);}}
-  .job-row.current{border-color:transparent;background:var(--accent-soft);padding:0;display:grid;grid-template-columns:1.3fr 1fr;gap:20px;overflow:hidden;box-shadow:var(--shadow-2)}
-  .job-row.current .job-copy{padding:36px 38px}
-  .job-photo-slot{position:relative;background:#1F4E96;min-height:200px;overflow:hidden}
-  .job-photo-slot::before{content:"";position:absolute;inset:-2%;background-image:url('infocamere.png');background-size:cover;background-position:center}
-  @media (max-width:760px){.job-row.current{grid-template-columns:1fr}.job-photo-slot{order:-1;min-height:160px}}
   .job-overline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
   .job-current-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--on-accent-soft);background:var(--bg);border-radius:999px;padding:3px 9px}
   .job-title{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin-top:5px}
@@ -824,36 +819,16 @@ main{max-width:1080px}
   box-shadow:none;
 }
 .job-row + .job-row{border-top:1px solid var(--ui-border)}
-.job-row:not(.current){padding:24px 26px}
-.job-row.current{
-  padding:0;
-  grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);
-  gap:0;
-  background:var(--ui-surface-strong);
-}
-.job-row.current .job-copy{padding:30px 28px}
-.job-photo-slot{
-  min-height:210px;
-  border-left:1px solid var(--ui-border);
-}
+.job-row{padding:24px 26px}
 @media(hover:hover) and (pointer:fine){
-  .job-row:hover,.job-row:not(.current):hover{
+  .job-row:hover{
     transform:none;
     box-shadow:none;
     background:var(--ui-hover);
   }
-  .job-row.current:hover{background:var(--ui-surface-strong)}
 }
 @media(max-width:760px){
-  .job-row.current{grid-template-columns:1fr}
-  .job-photo-slot{
-    order:-1;
-    min-height:165px;
-    border-left:0;
-    border-bottom:1px solid var(--ui-border);
-  }
-  .job-row.current .job-copy{padding:22px 20px}
-  .job-row:not(.current){padding:20px}
+  .job-row{padding:20px}
 }
 
 /* External experiences: same rows as career */
@@ -1223,3 +1198,15 @@ dialog::backdrop{background:color-mix(in srgb,var(--scrim) 82%,transparent)}
 .hero-btn.outline{background:transparent;border-color:var(--on-navy-line);color:var(--on-navy)}
 @media(hover:hover) and (pointer:fine){.hero-btn.outline:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.32)}}
 @media(max-width:900px){.hero-nav a{color:var(--on-navy-soft)}}
+
+/* ============ Angoli squadrati: nessun riquadro con angoli tondi ============
+   Cerchi (50%) e pill (999px) di badge/bottoni restano: sono una forma a
+   sé, non "riquadri". Qui si azzerano solo i contenitori/box. */
+:root{--ui-radius:0;--ui-radius-sm:0}
+.hero-card,.utilbar,.lang-btn,.theme-toggle,.skip-link,
+.cap-unified,.cap-item,.cap-item-icon,.fab,
+.system-map,.system-node,.work-mini-map,.work-mini-node{
+  border-radius:0;
+}
+@media(max-width:900px){.hero-card{border-radius:0}}
+@media(max-width:560px){.hero-card,.cap-unified,.cap-item{border-radius:0}}
