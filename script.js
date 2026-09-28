@@ -74,7 +74,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Navigazione principale", theme_toggle_label:"Cambia tema", hero_proof_label:"Focus professionale", hero_nav_label:"Sezioni della pagina", modal_close_label:"Chiudi",
-      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI in produzione e adozione organizzativa", hero_proof3:"Google Cloud Innovator", hero_proof4:"Selezionato per Meritare l’Europa",
+      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI per il Management", hero_proof3:"Google Cloud Innovator", hero_proof4:"Selezionato per Meritare l’Europa",
     },
     en: {
       new_tab_hint:" (opens in a new tab)",
@@ -149,7 +149,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Main navigation", theme_toggle_label:"Toggle theme", hero_proof_label:"Professional focus", hero_nav_label:"Page sections", modal_close_label:"Close",
-      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI in production and organizational adoption", hero_proof3:"Google Cloud Innovator", hero_proof4:"Selected for Meritare l’Europa",
+      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI for Management", hero_proof3:"Google Cloud Innovator", hero_proof4:"Selected for Meritare l’Europa",
     },
     fr: {
       new_tab_hint:" (s'ouvre dans un nouvel onglet)",
@@ -224,7 +224,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Navigation principale", theme_toggle_label:"Changer de thème", hero_proof_label:"Axes professionnels", hero_nav_label:"Sections de la page", modal_close_label:"Fermer",
-      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"IA en production et adoption dans l’organisation", hero_proof3:"Google Cloud Innovator", hero_proof4:"Sélectionné pour Meritare l’Europa",
+      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"IA pour le Management", hero_proof3:"Google Cloud Innovator", hero_proof4:"Sélectionné pour Meritare l’Europa",
     }
   };
 
