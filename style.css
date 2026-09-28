@@ -169,9 +169,10 @@ main{padding-bottom:40px}
 .section-label{
   max-width:var(--wide-w);margin:0 auto;padding:56px 24px 22px;
   font-size:24px;font-weight:500;display:flex;align-items:baseline;gap:10px;
+  border-top:1px solid var(--line);
 }
 .section-label .section-num{font-size:12px;position:relative;top:-2px}
-#chi-sono.section-label{padding-top:8px}
+#chi-sono.section-label{padding-top:8px;border-top:0}
 
 /* ---- Bio ---- */
 .chisono-card{max-width:var(--wide-w);margin:0 auto;padding:0 24px 8px}
@@ -181,7 +182,6 @@ main{padding-bottom:40px}
 .statrow{
   max-width:var(--wide-w);margin:0 auto;padding:0 24px;
   display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  border-top:1px solid var(--line);
 }
 .stat{padding:28px 26px 26px;cursor:pointer}
 .stat + .stat{border-left:1px solid var(--line)}
@@ -194,7 +194,7 @@ main{padding-bottom:40px}
 }
 
 /* ---- Progetti ---- */
-.work-grid{max-width:var(--wide-w);margin:0 auto;padding:0 24px;border-top:1px solid var(--line)}
+.work-grid{max-width:var(--wide-w);margin:0 auto;padding:0 24px}
 .work-card{padding:34px 0;border-bottom:1px solid var(--line);cursor:pointer;max-width:680px}
 .work-meta{
   display:block;font-family:var(--sans);font-size:11.5px;font-weight:600;
@@ -214,7 +214,7 @@ main{padding-bottom:40px}
 .work-mini-arrow{color:var(--line)}
 
 /* ---- Percorso / Iniziative ---- */
-.timeline,.experience-grid{max-width:var(--wide-w);margin:0 auto;padding:0 24px;border-top:1px solid var(--line)}
+.timeline,.experience-grid{max-width:var(--wide-w);margin:0 auto;padding:0 24px}
 .job-row,.experience-card{padding:26px 0;border-bottom:1px solid var(--line);max-width:680px}
 .job-overline{
   display:flex;align-items:center;gap:10px;font-family:var(--sans);
@@ -231,7 +231,7 @@ main{padding-bottom:40px}
 .exp-sub-supp{font-size:14px;color:var(--ink-soft);line-height:1.6}
 
 /* ---- Credenziali ---- */
-.credential-list{max-width:var(--wide-w);margin:0 auto;padding:0 24px;border-top:1px solid var(--line)}
+.credential-list{max-width:var(--wide-w);margin:0 auto;padding:0 24px}
 .credential-row{
   display:flex;justify-content:space-between;align-items:baseline;gap:16px;
   padding:20px 0;border-bottom:1px solid var(--line);color:var(--ink);max-width:680px;
