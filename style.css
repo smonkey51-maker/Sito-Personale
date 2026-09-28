@@ -83,10 +83,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;color:va
 }
 .topbar-inner{
   max-width:var(--wide-w);margin:0 auto;padding:0 24px;
-  height:60px;display:flex;align-items:center;gap:28px;
+  height:60px;display:flex;align-items:center;justify-content:space-between;gap:28px;
 }
-.brandmark{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink)}
-.desktop-nav{display:flex;align-items:center;gap:24px;margin-left:auto;flex-wrap:wrap}
+.desktop-nav{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .desktop-nav a,.desktop-nav button{
   font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-soft);
   background:none;border:0;cursor:pointer;padding:4px 0;
@@ -112,8 +111,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;color:va
 .theme-toggle:hover{color:var(--accent)}
 
 @media(max-width:700px){
-  .topbar-inner{height:auto;padding:14px 20px;flex-wrap:wrap;gap:12px 20px}
-  .desktop-nav{gap:16px;order:3;width:100%}
+  .topbar-inner{height:auto;padding:16px 20px;flex-wrap:wrap;justify-content:center;gap:12px 20px}
+  .desktop-nav{gap:16px;justify-content:center;width:100%;order:2}
+  .utilbar{order:1}
 }
 
 /* ============ Hero ============ */
