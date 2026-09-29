@@ -195,7 +195,7 @@ main{padding-bottom:40px}
 
 /* ---- Progetti ---- */
 .work-grid{max-width:var(--wide-w);margin:0 auto;padding:0 24px}
-.work-card{padding:34px 0;border-bottom:1px solid var(--line);cursor:pointer;max-width:680px}
+.work-card{padding:34px 0;border-bottom:1px solid var(--line);max-width:760px}
 .work-meta{
   display:block;font-family:var(--sans);font-size:11.5px;font-weight:600;
   text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:10px;
@@ -207,11 +207,6 @@ main{padding-bottom:40px}
 .work-chips{margin-bottom:16px;font-family:var(--sans);font-size:12px;color:var(--ink-soft);letter-spacing:.02em}
 .metachip{display:inline}
 .metachip + .metachip::before{content:" · "}
-.work-mini-map{margin:0 0 16px}
-.work-mini-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
-.work-mini-node{line-height:1.4}
-.work-mini-node.primary{color:var(--accent);font-weight:600}
-.work-mini-arrow{color:var(--line)}
 
 /* ---- Percorso / Iniziative ---- */
 .timeline,.experience-grid{max-width:var(--wide-w);margin:0 auto;padding:0 24px}
@@ -242,48 +237,30 @@ main{padding-bottom:40px}
 .credential-arrow{font-family:var(--sans);color:var(--ink-soft);flex:none}
 @media(hover:hover) and (pointer:fine){.credential-row:hover .credential-arrow{color:var(--accent)}}
 
-/* ---- Footer ---- */
-footer{max-width:var(--wide-w);margin:0 auto;padding:32px 24px 0}
-.footer-note{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);padding-top:20px;border-top:1px solid var(--line)}
-
-/* ============ Dialoghi ============ */
-dialog{
-  margin:auto;background:var(--bg);color:var(--ink);
-  border:1px solid var(--line);max-width:480px;width:calc(100% - 40px);
-  padding:32px;max-height:86vh;overflow:auto;box-shadow:0 12px 40px -16px rgba(0,0,0,.25);
-}
-dialog.wide{max-width:640px}
-dialog::backdrop{background:rgba(20,20,18,.4)}
-@media(prefers-reduced-motion:no-preference){dialog[open]{animation:revealIn 220ms var(--ease)}}
-.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px}
-.modal-head h2{font-size:20px}
-.modal-x{background:none;border:1px solid var(--line);cursor:pointer;color:var(--ink-soft);width:28px;height:28px;font-size:16px;line-height:1;flex:none}
-.modal-x:hover{color:var(--ink);border-color:var(--ink-soft)}
-.case-block-label{
-  font-family:var(--sans);font-size:11.5px;font-weight:600;text-transform:uppercase;
-  letter-spacing:.06em;color:var(--accent);margin:22px 0 8px;
-}
-.case-block-label:first-of-type{margin-top:0}
-dialog .job-supp{margin-bottom:4px}
-.system-map{margin:18px 0}
-.system-map-title{font-family:var(--sans);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:8px}
-.system-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;color:var(--ink-soft);margin-bottom:8px}
-.system-node.primary{color:var(--accent);font-weight:600}
-.system-arrow{color:var(--line)}
-.system-caption{font-size:13px;color:var(--ink-soft);font-style:italic;font-family:var(--serif)}
-.metarow{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
-.metarow .metachip{display:inline}
+/* ---- Progetti espansi nel flusso editoriale ---- */
+.work-context{font-size:14px;color:var(--ink-soft);line-height:1.65;margin:0 0 16px;max-width:680px}
+.case-details{border-top:1px solid var(--line);margin-top:24px;padding:8px 0 12px;max-width:680px}
+.case-details[hidden]{display:none}
+.case-details .job-supp{margin:0 0 12px}
+.case-block-label{font-family:var(--sans);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:24px 0 8px}
+.metarow{font-family:var(--sans);font-size:13px;color:var(--ink-soft);margin-bottom:12px}
 .metarow .metachip + .metachip::before{content:" · "}
 
-/* ---- Modale contatti ---- */
-.cm-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
-.cm-row:last-child{border-bottom:0}
-.cm-k{font-family:var(--sans);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
-.cm-v{font-family:var(--sans);font-size:14.5px;text-align:right}
-.cm-v a{color:var(--accent)}
+/* ---- Colophon ---- */
+.colophon{background:var(--bg-2);border-top:1px solid var(--line);margin-top:72px;padding:48px 0 28px;scroll-margin-top:72px}
+.colophon-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px 64px}
+.colophon h2{font-size:24px;margin-bottom:12px}
+.colophon-intro p{font-size:14px;color:var(--ink-soft);max-width:34ch}
+.colophon-links{min-width:0}
+.cm-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.cm-k{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+.cm-v{font-size:14px;overflow-wrap:anywhere}
+.cm-v a{color:var(--accent);text-underline-offset:3px}
 .cm-v a:hover{text-decoration:underline}
 .copy-btn{background:none;border:0;cursor:pointer;color:var(--ink-soft);display:inline-flex;vertical-align:middle;margin-left:8px;padding:2px}
 .copy-btn:hover{color:var(--accent)}
+.footer-note{grid-column:1/-1;font-size:12.5px;color:var(--ink-soft);padding-top:20px;border-top:1px solid var(--line)}
+@media(max-width:700px){.colophon-inner{grid-template-columns:1fr;gap:24px}.cm-row{grid-template-columns:90px minmax(0,1fr)}}
 
 /* ============ Riduzione movimento / stampa ============ */
 @media(prefers-reduced-motion:reduce){
@@ -291,7 +268,7 @@ dialog .job-supp{margin-bottom:4px}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 @media print{
-  .topbar,.scroll-progress,.skip-link,.visually-hidden,dialog,.hero-cta-row{display:none!important}
+  .topbar,.scroll-progress,.skip-link,.visually-hidden,.hero-cta-row,.copy-btn{display:none!important}
   .rv,.rv.in{opacity:1!important;transform:none!important}
   * {box-shadow:none!important}
   body{background:#fff;color:#000}

@@ -2,6 +2,7 @@
   var i18n = {
     // ... [Il tuo oggetto i18n originale rimane intatto qui, ometto di rimetterlo parola per parola solo in questo commento ma nel codice effettivo gira completo] ...
     it: {
+      c1_map_prose:'La documentazione aziendale e lo storico Jira alimentano due percorsi di ricerca per Service Desk, Incident & Problem Management e management.', c2_map_prose:'Dataset controllati e modelli eseguiti su infrastruttura locale hanno supportato demo con inferenza sotto controllo.', work_close:'Chiudi il progetto', colophon_title:'Contatti', colophon_note:'Sito personale. Le attività descritte sono presentate a titolo personale.',
       new_tab_hint:" (si apre in una nuova scheda)",
       copy_email:"Copia email", copy_phone:"Copia numero di telefono", copy_done:"Copiato negli appunti",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni", cm_linkedin:"LinkedIn",
@@ -22,7 +23,7 @@
       work_view:"Vedi il progetto →",
       c1_summary:"La conoscenza era distribuita tra documenti e ticket Jira. Ho implementato due sistemi RAG in produzione e un manuale operativo per i diversi contesti d’uso.",
       c2_summary:"Per valutare l’AI in contesti a dati sensibili, ho preparato dataset, adattato modelli e realizzato demo con inferenza locale.",
-      case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack", system_view_label:"System view", c1_map_sources:"Documentazione aziendale · Storico Jira", c1_map_layer:"Retrieval · RAG · Knowledge layer", c1_map_users:"Service Desk · Incident/Problem · Management", c1_map_caption:"Il sistema collega fonti distribuite, retrieval e contesti d’uso operativi: l’affidabilità dipende dall’intera catena, non dal solo modello.", c2_map_data:"Dati sensibili · Dataset controllati", c2_map_runtime:"Infrastruttura locale · Ollama · Modelli", c2_map_output:"Inferenza controllata · Demo operative", c2_map_caption:"L’esplorazione considera insieme dati, runtime, infrastruttura, costi e governance per valutare dove il controllo locale crea valore reale.",
+      case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
       c1t:"Enterprise Knowledge Retrieval",
       c1_status:"Production · 2026",
       c1_problem:"La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.",
@@ -55,6 +56,7 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI per il Management", hero_proof3:"Google Cloud Innovator",
     },
     en: {
+      c1_map_prose:'Corporate documents and Jira history feed two retrieval systems for Service Desk, Incident & Problem Management and management.', c2_map_prose:'Controlled datasets and models running on local infrastructure supported demos with controlled inference.', work_close:'Close project', colophon_title:'Contact', colophon_note:'Personal website. The activities described here are presented in a personal capacity.',
       new_tab_hint:" (opens in a new tab)",
       copy_email:"Copy email", copy_phone:"Copy phone number", copy_done:"Copied to clipboard",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications", cm_linkedin:"LinkedIn",
@@ -75,7 +77,7 @@
       work_view:"View project →",
       c1_summary:"Knowledge was spread across documents and Jira tickets. I implemented two production RAG systems and an operating manual for different use cases.",
       c2_summary:"To assess AI in sensitive-data environments, I prepared datasets, adapted models and built demos with local inference.",
-      case_problem_label:"Problem", case_solution_label:"Solution", case_approach_label:"Approach", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack", system_view_label:"System view", c1_map_sources:"Corporate documentation · Jira history", c1_map_layer:"Retrieval · RAG · Knowledge layer", c1_map_users:"Service Desk · Incident/Problem · Management", c1_map_caption:"The system connects distributed sources, retrieval and operational contexts: reliability depends on the whole chain, not on the model alone.", c2_map_data:"Sensitive data · Controlled datasets", c2_map_runtime:"Local infrastructure · Ollama · Models", c2_map_output:"Controlled inference · Operational demos", c2_map_caption:"The exploration considers data, runtime, infrastructure, costs and governance together to evaluate where local control creates real value.",
+      case_problem_label:"Problem", case_solution_label:"Solution", case_approach_label:"Approach", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
       c1t:"Enterprise Knowledge Retrieval",
       c1_status:"Production · 2026",
       c1_problem:"Enterprise knowledge exists, but it's often fragmented: documents, procedures, manuals and tickets hold useful information that lives across different sources that don't always talk to each other.",
@@ -108,6 +110,7 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI for Management", hero_proof3:"Google Cloud Innovator",
     },
     fr: {
+      c1_map_prose:'La documentation d’entreprise et l’historique Jira alimentent deux systèmes de recherche pour le Service Desk, l’Incident & Problem Management et le management.', c2_map_prose:'Des jeux de données contrôlés et des modèles exécutés sur une infrastructure locale ont permis des démonstrations avec une inférence maîtrisée.', work_close:'Fermer le projet', colophon_title:'Contact', colophon_note:'Site personnel. Les activités décrites ici sont présentées à titre personnel.',
       new_tab_hint:" (s'ouvre dans un nouvel onglet)",
       copy_email:"Copier l'e-mail", copy_phone:"Copier le numéro de téléphone", copy_done:"Copié dans le presse-papiers",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications", cm_linkedin:"LinkedIn",
@@ -128,7 +131,7 @@
       work_view:"Voir le projet →",
       c1_summary:"Les connaissances étaient réparties entre documents et tickets Jira. J’ai mis en production deux systèmes RAG et rédigé un manuel opérationnel adapté aux usages.",
       c2_summary:"Pour évaluer l’IA dans des environnements à données sensibles, j’ai préparé des jeux de données, adapté des modèles et réalisé des démonstrations en local.",
-      case_problem_label:"Problème", case_solution_label:"Solution", case_approach_label:"Approche", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack", system_view_label:"System view", c1_map_sources:"Documentation d’entreprise · Historique Jira", c1_map_layer:"Retrieval · RAG · Knowledge layer", c1_map_users:"Service Desk · Incident/Problem · Management", c1_map_caption:"Le système relie des sources distribuées, le retrieval et les contextes opérationnels : la fiabilité dépend de toute la chaîne, pas seulement du modèle.", c2_map_data:"Données sensibles · Jeux de données contrôlés", c2_map_runtime:"Infrastructure locale · Ollama · Modèles", c2_map_output:"Inférence contrôlée · Démonstrations opérationnelles", c2_map_caption:"L’exploration considère ensemble les données, le runtime, l’infrastructure, les coûts et la gouvernance afin d’évaluer où le contrôle local crée une valeur réelle.",
+      case_problem_label:"Problème", case_solution_label:"Solution", case_approach_label:"Approche", case_impact_label:"Impact", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
       c1t:"Enterprise Knowledge Retrieval",
       c1_status:"Production · 2026",
       c1_problem:"La connaissance d'entreprise existe, mais elle est souvent fragmentée : documents, procédures, manuels et tickets contiennent des informations utiles réparties dans différentes sources qui ne communiquent pas toujours entre elles.",
@@ -206,6 +209,7 @@
       var k = el.getAttribute("data-i18n-aria");
       if(dict[k] !== undefined){ el.setAttribute("aria-label", dict[k]); }
     });
+    document.querySelectorAll("[data-project-toggle][aria-expanded=\"true\"]").forEach(function(btn){ btn.textContent = dict.work_close; });
     document.querySelectorAll(".lang-btn").forEach(function(b){
       b.classList.toggle("on", b.getAttribute("data-lang") === lang);
     });
@@ -247,21 +251,15 @@
   });
   paintTheme();
 
-  /* ---- modali (contatti, perspectives) — <dialog> nativo ---- */
-  var modalOpener = null;
-  function openModal(id, opener){
-    var dlg = document.getElementById(id);
-    if(!dlg) return;
-    modalOpener = opener || document.activeElement;
-    document.body.style.overflow = "hidden";
-    dlg.showModal();
-  }
-  document.querySelectorAll("[data-open-contacts]").forEach(function(el){ el.addEventListener("click", function(){ openModal("contactModal", el); }); });
-  document.querySelectorAll("[data-open-modal]").forEach(function(el){ el.addEventListener("click", function(){ openModal(el.getAttribute("data-open-modal"), el); }); });
-  document.querySelectorAll("[data-card-modal]").forEach(function(card){
-    card.addEventListener("click", function(e){
-      if(e.target.closest("button, a")) return;
-      openModal(card.getAttribute("data-card-modal"), card);
+  /* ---- progetti: espansione nel flusso della pagina ---- */
+  document.querySelectorAll("[data-project-toggle]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      var opening = panel.hidden;
+      panel.hidden = !opening;
+      btn.setAttribute("aria-expanded", String(opening));
+      btn.textContent = i18n[lang][opening ? "work_close" : "work_view"];
+      if(!opening) btn.focus();
     });
   });
   document.querySelectorAll("[data-card-href]").forEach(function(card){
@@ -271,25 +269,6 @@
       if(target) target.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block: "start"});
     });
   });
-  document.querySelectorAll("dialog [data-close]").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var dlg = btn.closest("dialog");
-      if(dlg) dlg.close();
-    });
-  });
-  document.querySelectorAll("dialog").forEach(function(dlg){
-    dlg.addEventListener("click", function(e){
-      var r = dlg.getBoundingClientRect();
-      var inside = r.top <= e.clientY && e.clientY <= r.top + r.height && r.left <= e.clientX && e.clientX <= r.left + r.width;
-      if(!inside) dlg.close();
-    });
-    dlg.addEventListener("close", function(){
-      document.body.style.overflow = "";
-      if(modalOpener && typeof modalOpener.focus === "function"){ modalOpener.focus(); }
-      modalOpener = null;
-    });
-  });
-
   /* ---- contatori animati ---- */
   function setCountsFinal(scope){
     scope.querySelectorAll(".num").forEach(function(n){ n.textContent = n.getAttribute("data-count"); });
