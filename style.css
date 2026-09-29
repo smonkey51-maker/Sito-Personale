@@ -114,17 +114,17 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;color:va
 /* ============ Hero ============ */
 .hero{padding:92px 0 80px}
 .hero-grid{
-  display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:center;
+  display:grid;grid-template-columns:1.7fr 1fr;gap:56px;align-items:center;
 }
 .hero-name{font-size:64px;line-height:1.05;letter-spacing:-.02em;margin:0 0 22px}
 .hero-proof{
-  font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink-soft);
-  text-transform:uppercase;letter-spacing:.06em;
+  font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink-soft);
+  text-transform:uppercase;letter-spacing:.035em;
   display:flex;flex-wrap:wrap;row-gap:10px;margin-bottom:34px;
 }
-.hero-proof span{display:inline-flex;align-items:center}
+.hero-proof span{display:inline-flex;align-items:center;white-space:nowrap}
 .hero-proof span:first-child{color:var(--accent)}
-.hero-proof span + span{margin-left:18px;padding-left:18px;border-left:1px solid var(--line)}
+.hero-proof span + span{margin-left:12px;padding-left:12px;border-left:1px solid var(--line)}
 .hero-cta-row{display:flex;flex-wrap:wrap;gap:16px}
 .avatar{
   width:100%;height:auto;max-width:340px;aspect-ratio:1/1;object-fit:cover;
