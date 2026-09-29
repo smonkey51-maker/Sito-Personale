@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" id="themeColorMeta" content="#F8F7F4">
+
+<title>Informativa sulla privacy — Nicolò Forcolin</title>
+<meta name="description" content="Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://nforcolin.eu/privacy.html">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+
+<script>
+/* Applica subito il tema salvato da una visita precedente, prima del
+   primo paint, per evitare il flash del tema chiaro di default. */
+(function(){
+  try{
+    var savedTheme = localStorage.getItem("nfTheme");
+    if(savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+  } catch(e){}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>
+/* Salta il download dei webfont Google se l'utente ha attivo il Risparmio dati:
+   il sito resta leggibile grazie allo stack di font di sistema di fallback. */
+(function(){
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if(saveData) return;
+  var l = document.createElement("link");
+  l.rel = "stylesheet";
+  l.href = "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap";
+  document.head.appendChild(l);
+})();
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#privacy-content">Vai al contenuto</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="visually-hidden" id="themeAnnouncer" role="status" aria-live="polite"></div>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <nav class="desktop-nav" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+    </nav>
+    <div class="utilbar">
+      <button class="theme-toggle" aria-label="Cambia tema">☾</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2 class="section-label rv" id="privacy-content">Informativa sulla privacy</h2>
+  <div class="legal-intro rv">
+    <p>Questo è il sito personale di Nicolò Forcolin. Non usa cookie, non installa strumenti di tracciamento o analytics e non raccoglie dati tramite moduli: qui sotto trovi esattamente cosa succede quando lo visiti.</p>
+  </div>
+
+  <div class="legal-content rv">
+    <h2>Titolare del trattamento</h2>
+    <p>Nicolò Forcolin — Padova, Italia. Per qualsiasi richiesta relativa a questa informativa puoi scrivere a <a href="mailto:nicolo.forcolin@infocamere.it">nicolo.forcolin@infocamere.it</a>.</p>
+
+    <h2>Nessun cookie, nessun tracciamento</h2>
+    <p>Il sito non utilizza cookie di alcun tipo (né tecnici, né di profilazione), non integra Google Analytics, Meta Pixel o strumenti equivalenti, e non contiene moduli di raccolta dati. Non è quindi presente alcun banner di consenso perché non c'è nulla da richiedere il consenso.</p>
+
+    <h2>Log tecnici del server</h2>
+    <p>Il sito è ospitato su <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel</a>, che per ragioni di sicurezza e funzionamento della rete registra in modo automatico i log tecnici standard di ogni richiesta HTTP (ad es. indirizzo IP, user agent, pagina richiesta, data e ora). Questi log sono gestiti direttamente da Vercel secondo la propria informativa privacy e non vengono utilizzati da questo sito per finalità di profilazione.</p>
+
+    <h2>Dati mostrati sul sito</h2>
+    <p>I recapiti (email, telefono, LinkedIn) pubblicati nella sezione Contatti sono dati personali dell'autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.</p>
+
+    <h2>I tuoi diritti</h2>
+    <p>In quanto non vengono raccolti dati personali dei visitatori, non ci sono trattamenti su cui esercitare i diritti previsti dagli articoli 15–22 del Regolamento (UE) 2016/679 (GDPR). Se ritieni comunque che qualcosa in questa pagina sia impreciso, scrivi all'indirizzo sopra indicato.</p>
+
+    <h2>Modifiche a questa informativa</h2>
+    <p>Questa informativa può essere aggiornata se cambiano gli strumenti usati dal sito (ad es. l'introduzione futura di analytics). La versione in vigore è sempre quella pubblicata su questa pagina.</p>
+    <p class="legal-back" style="padding:0;margin:0"><em>Ultimo aggiornamento: settembre 2026.</em></p>
+  </div>
+
+</main>
+
+<footer class="colophon rv" id="contatti">
+  <div class="wrap colophon-inner">
+    <div class="colophon-intro">
+      <h2>Contatti</h2>
+      <p>Sito personale. Le attività descritte sono presentate a titolo personale.</p>
+    </div>
+    <div class="colophon-links">
+      <div class="cm-row"><span class="cm-k">Email</span><span class="cm-v" id="cmEmail"></span></div>
+      <div class="cm-row"><span class="cm-k">Telefono</span><span class="cm-v" id="cmPhone"></span></div>
+      <div class="cm-row"><span class="cm-k">LinkedIn</span><span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">nicoloforcolin<span class="visually-hidden"> (si apre in una nuova scheda)</span></a></span></div>
+    </div>
+    <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
