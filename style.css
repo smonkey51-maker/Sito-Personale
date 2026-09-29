@@ -168,7 +168,7 @@ main{padding-bottom:40px}
   font-size:38px;font-weight:600;letter-spacing:-.015em;
   border-top:1px solid var(--line);
 }
-#chi-sono.section-label{padding-top:8px;border-top:0}
+#chi-sono.section-label,#privacy-content.section-label{padding-top:8px;border-top:0}
 @media(max-width:700px){.section-label{font-size:29px;padding:48px 20px 20px}}
 
 /* ---- Bio ---- */
@@ -252,11 +252,9 @@ main{padding-bottom:40px}
 .legal-content p{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--ink-soft);max-width:680px;margin:0 0 14px}
 .legal-content ul{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--ink-soft);max-width:680px;margin:0 0 14px;padding-left:20px}
 .legal-content li{margin-bottom:6px}
-.legal-content a{color:var(--accent);text-underline-offset:3px}
-.legal-content a:hover{text-decoration:underline}
-.legal-back{max-width:var(--wide-w);margin:0 auto;padding:28px 24px 0;font-family:var(--sans);font-size:14px}
-.legal-back a{color:var(--accent);text-underline-offset:3px}
-.legal-back a:hover{text-decoration:underline}
+.legal-content a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{color:var(--accent-hover)}
+.legal-updated{margin:0}
 
 /* ---- Colophon ---- */
 .colophon{background:var(--bg-2);border-top:1px solid var(--line);margin-top:72px;padding:48px 0 28px;scroll-margin-top:72px}
