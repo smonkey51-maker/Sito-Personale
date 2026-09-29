@@ -53,7 +53,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Navigazione principale", theme_toggle_label:"Cambia tema", hero_proof_label:"Focus professionale", modal_close_label:"Chiudi",
-      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI in produzione", hero_proof3:"Google Cloud Innovator",
+      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI in Prod", hero_proof3:"Google Cloud Innovator",
     },
     en: {
       c1_map_prose:'Corporate documents and Jira history feed two retrieval systems for Service Desk, Incident & Problem Management and management.', c2_map_prose:'Controlled datasets and models running on local infrastructure supported demos with controlled inference.', work_close:'Close project', colophon_title:'Contact', colophon_note:'Personal website. The activities described here are presented in a personal capacity.',
@@ -107,7 +107,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Main navigation", theme_toggle_label:"Toggle theme", hero_proof_label:"Professional focus", modal_close_label:"Close",
-      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI in Production", hero_proof3:"Google Cloud Innovator",
+      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"AI in Prod", hero_proof3:"Google Cloud Innovator",
     },
     fr: {
       c1_map_prose:'La documentation d’entreprise et l’historique Jira alimentent deux systèmes de recherche pour le Service Desk, l’Incident & Problem Management et le management.', c2_map_prose:'Des jeux de données contrôlés et des modèles exécutés sur une infrastructure locale ont permis des démonstrations avec une inférence maîtrisée.', work_close:'Fermer le projet', colophon_title:'Contact', colophon_note:'Site personnel. Les activités décrites ici sont présentées à titre personnel.',
@@ -161,7 +161,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program — Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Navigation principale", theme_toggle_label:"Changer de thème", hero_proof_label:"Axes professionnels", modal_close_label:"Fermer",
-      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"IA en production", hero_proof3:"Google Cloud Innovator",
+      hero_proof1:"Enterprise IT @ InfoCamere", hero_proof2:"IA in Prod", hero_proof3:"Google Cloud Innovator",
     }
   };
 
