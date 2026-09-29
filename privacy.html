@@ -52,41 +52,45 @@
 
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
-    <nav class="desktop-nav" aria-label="Navigazione principale">
-      <a href="index.html">Home</a>
+    <nav class="desktop-nav" aria-label="Navigazione principale" data-i18n-aria="nav_main_label">
+      <a href="index.html" data-i18n="nav_home">Home</a>
     </nav>
     <div class="utilbar">
-      <button class="theme-toggle" aria-label="Cambia tema">☾</button>
+      <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+      <span class="utilbar-sep"></span>
+      <button class="theme-toggle" aria-label="Cambia tema" data-i18n-aria="theme_toggle_label">☾</button>
     </div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <h1 class="section-label rv" id="privacy-content">Informativa sulla privacy</h1>
+  <h1 class="section-label rv" id="privacy-content" data-i18n="privacy_title">Informativa sulla privacy</h1>
   <div class="legal-intro rv">
-    <p>Questo è il sito personale di Nicolò Forcolin. Non usa cookie, non installa strumenti di tracciamento o analytics e non raccoglie dati tramite moduli: qui sotto trovi esattamente cosa succede quando lo visiti.</p>
+    <p data-i18n="privacy_intro">Questo è il sito personale di Nicolò Forcolin. Non usa cookie, non installa strumenti di tracciamento o analytics e non raccoglie dati tramite moduli: qui sotto trovi esattamente cosa succede quando lo visiti.</p>
   </div>
 
   <div class="legal-content rv">
-    <h2>Titolare del trattamento</h2>
-    <p>Nicolò Forcolin — Padova, Italia. Per qualsiasi richiesta relativa a questa informativa puoi scrivere a <a href="mailto:nicolo.forcolin@infocamere.it">nicolo.forcolin@infocamere.it</a>.</p>
+    <h2 data-i18n="privacy_s1_h">Titolare del trattamento</h2>
+    <p><span data-i18n="privacy_s1_pre">Nicolò Forcolin — Padova, Italia. Per qualsiasi richiesta relativa a questa informativa puoi scrivere a </span><a href="mailto:nicolo.forcolin@infocamere.it">nicolo.forcolin@infocamere.it</a><span data-i18n="privacy_s1_post">.</span></p>
 
-    <h2>Nessun cookie, nessun tracciamento</h2>
-    <p>Il sito non utilizza cookie di alcun tipo (né tecnici, né di profilazione), non integra Google Analytics, Meta Pixel o strumenti equivalenti, e non contiene moduli di raccolta dati. Non è quindi presente alcun banner di consenso perché non c'è nulla da richiedere il consenso.</p>
+    <h2 data-i18n="privacy_s2_h">Nessun cookie, nessun tracciamento</h2>
+    <p data-i18n="privacy_s2_p">Il sito non utilizza cookie di alcun tipo (né tecnici, né di profilazione), non integra Google Analytics, Meta Pixel o strumenti equivalenti, e non contiene moduli di raccolta dati. Non è quindi presente alcun banner di consenso perché non c'è nulla da richiedere il consenso.</p>
 
-    <h2>Log tecnici del server</h2>
-    <p>Il sito è ospitato su <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel</a>, che per ragioni di sicurezza e funzionamento della rete registra in modo automatico i log tecnici standard di ogni richiesta HTTP (ad es. indirizzo IP, user agent, pagina richiesta, data e ora). Questi log sono gestiti direttamente da Vercel secondo la propria informativa privacy e non vengono utilizzati da questo sito per finalità di profilazione.</p>
+    <h2 data-i18n="privacy_s3_h">Log tecnici del server</h2>
+    <p><span data-i18n="privacy_s3_pre">Il sito è ospitato su </span><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a><span data-i18n="privacy_s3_post">, che per ragioni di sicurezza e funzionamento della rete registra in modo automatico i log tecnici standard di ogni richiesta HTTP (ad es. indirizzo IP, user agent, pagina richiesta, data e ora). Questi log sono gestiti direttamente da Vercel secondo la propria informativa privacy e non vengono utilizzati da questo sito per finalità di profilazione.</span></p>
 
-    <h2>Dati mostrati sul sito</h2>
-    <p>I recapiti (email, telefono, LinkedIn) pubblicati nella sezione Contatti sono dati personali dell'autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.</p>
+    <h2 data-i18n="privacy_s4_h">Dati mostrati sul sito</h2>
+    <p data-i18n="privacy_s4_p">I recapiti (email, telefono, LinkedIn) pubblicati nella sezione Contatti sono dati personali dell'autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.</p>
 
-    <h2>I tuoi diritti</h2>
-    <p>In quanto non vengono raccolti dati personali dei visitatori, non ci sono trattamenti su cui esercitare i diritti previsti dagli articoli 15–22 del Regolamento (UE) 2016/679 (GDPR). Se ritieni comunque che qualcosa in questa pagina sia impreciso, scrivi all'indirizzo sopra indicato.</p>
+    <h2 data-i18n="privacy_s5_h">I tuoi diritti</h2>
+    <p data-i18n="privacy_s5_p">In quanto non vengono raccolti dati personali dei visitatori, non ci sono trattamenti su cui esercitare i diritti previsti dagli articoli 15–22 del Regolamento (UE) 2016/679 (GDPR). Se ritieni comunque che qualcosa in questa pagina sia impreciso, scrivi all'indirizzo sopra indicato.</p>
 
-    <h2>Modifiche a questa informativa</h2>
-    <p>Questa informativa può essere aggiornata se cambiano gli strumenti usati dal sito (ad es. l'introduzione futura di analytics). La versione in vigore è sempre quella pubblicata su questa pagina.</p>
-    <p class="legal-updated"><em>Ultimo aggiornamento: settembre 2026.</em></p>
+    <h2 data-i18n="privacy_s6_h">Modifiche a questa informativa</h2>
+    <p data-i18n="privacy_s6_p">Questa informativa può essere aggiornata se cambiano gli strumenti usati dal sito (ad es. l'introduzione futura di analytics). La versione in vigore è sempre quella pubblicata su questa pagina.</p>
+    <p class="legal-updated"><em data-i18n="privacy_updated">Ultimo aggiornamento: settembre 2026.</em></p>
   </div>
 
 </main>
@@ -94,13 +98,13 @@
 <footer class="colophon rv" id="contatti">
   <div class="wrap colophon-inner">
     <div class="colophon-intro">
-      <h2>Contatti</h2>
-      <p>Sito personale. Le attività descritte sono presentate a titolo personale.</p>
+      <h2 data-i18n="colophon_title">Contatti</h2>
+      <p data-i18n="colophon_note">Sito personale. Le attività descritte sono presentate a titolo personale.</p>
     </div>
     <div class="colophon-links">
       <div class="cm-row"><span class="cm-k">Email</span><span class="cm-v" id="cmEmail"></span></div>
-      <div class="cm-row"><span class="cm-k">Telefono</span><span class="cm-v" id="cmPhone"></span></div>
-      <div class="cm-row"><span class="cm-k">LinkedIn</span><span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">nicoloforcolin<span class="visually-hidden"> (si apre in una nuova scheda)</span></a></span></div>
+      <div class="cm-row"><span class="cm-k" data-i18n="cm_phone">Telefono</span><span class="cm-v" id="cmPhone"></span></div>
+      <div class="cm-row"><span class="cm-k">LinkedIn</span><span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">nicoloforcolin<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a></span></div>
     </div>
     <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
   </div>
