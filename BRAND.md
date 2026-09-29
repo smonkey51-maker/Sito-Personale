@@ -9,6 +9,9 @@ Costruita a partire dalle scelte effettivamente fatte sul sito
 (nforcolin.eu), non da preferenze astratte: ogni punto qui sotto è
 riconducibile a una decisione di contenuto o di codice già presa.
 
+**Indice**: 1. Positioning · 2. Voice · 3. Visual — Color & Type ·
+4. Logo · 5. Checklist di lancio
+
 ---
 
 ## 1. Positioning
@@ -241,3 +244,44 @@ restare leggibile dentro il ritaglio circolare/squircle di Android.
 dallo stesso SVG sorgente (stessi rapporti testo/linee), mai da un
 render separato — per restare un unico segno coerente a tutte le
 dimensioni.
+
+---
+
+## 5. Checklist di lancio
+
+Prima di pubblicare qualunque testo o materiale nuovo — sito, social,
+email — verificare contro §1-4. Due gruppi distinti: quanto riguarda il
+sito (verificabile direttamente nel codice) e quanto riguarda profili
+esterni (da allineare manualmente, non ancora verificato qui).
+
+### Sito
+
+- [x] Nessun aggettivo superlativo nel testo pubblicato (tratto voce 1)
+- [x] Ogni risultato è etichettato come confermato / in corso /
+      esplorazione, mai ambiguo (tratto voce 2)
+- [x] Prima persona attiva ovunque, nessun passivo impersonale
+      (tratto voce 3)
+- [x] Termini tecnici esatti mantenuti, non ammorbiditi (tratto voce 4)
+- [x] Palette e tipografia coerenti con §3 (nessun colore/font fuori
+      sistema)
+- [x] Logo presente solo nei touchpoint tecnici (favicon, PWA), non in
+      pagina (§4)
+
+Per ogni nuova sezione o pagina futura, ripassare la checklist rapida
+di §2 prima della pubblicazione.
+
+### Profili social
+
+Non ancora verificati con questo criterio — da allineare quando si
+aggiorna il materiale:
+
+- [ ] LinkedIn: headline e sommario coerenti con il Positioning
+      Statement v1 (§1) e con i 3 differenziatori
+- [ ] LinkedIn: nessun superlativo residuo nei testi esistenti (tratto
+      voce 1)
+- [ ] Eventuali altri profili pubblici (GitHub, social): stesso
+      controllo, stesso registro prima persona/fattuale
+
+Questi punti restano aperti finché non vengono controllati
+direttamente sui profili reali — nessuno dei due va considerato
+verificato solo perché presente in questa checklist.
