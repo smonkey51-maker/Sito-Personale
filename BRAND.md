@@ -199,3 +199,45 @@ vibrare. Va preservato in qualunque estensione futura.
 Lo stesso principio della voice si applica al visivo: nessun elemento
 esiste per stupire di per sé — la sorpresa nasce dal contenuto che la
 tipografia lascia respirare.
+
+---
+
+## 4. Logo
+
+Monogramma "NF" — evoluzione del favicon precedente, non un concept
+nuovo. Il precedente usava `font-weight:bold`, in contraddizione con la
+regola tipografica sopra ("peso 500, mai bold pieno"): corretto in
+questa revisione.
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#F8F7F4"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Source Serif 4,Georgia,serif"
+        font-size="24" font-weight="500" letter-spacing="-1" fill="#2D4A3E">NF</text>
+  <line x1="16" y1="46" x2="48" y2="46" stroke="#2D4A3E" stroke-width="1.5"/>
+  <line x1="22" y1="50" x2="42" y2="50" stroke="#D8D5CD" stroke-width="1"/>
+</svg>
+```
+
+La doppia linea sotto il monogramma richiama una fondazione — lega
+visivamente al primo differenziatore di positioning (affidabilità
+infrastrutturale applicata all'AI).
+
+**Dove vive**: solo nei touchpoint tecnici (favicon, icona PWA, home
+screen iOS/Android) — *non* nella pagina. Il nome "Nicolò Forcolin" in
+hero è già il mark primario; un simbolo aggiuntivo in topbar sarebbe
+ridondante e andrebbe contro la regola "niente elementi decorativi" —
+un logo in header segnala un sito-prodotto, non un professionista
+specifico, e per il pubblico prioritario (top management) è il segnale
+sbagliato.
+
+**File generati**: `favicon.svg`, `favicon-16.png`, `favicon-32.png`,
+`favicon.ico`, `apple-touch-icon.png` (180px), `icon-192.png`,
+`icon-512.png`. Versioni maskable (`icon-192-maskable.png`,
+`icon-512-maskable.png`) con il segno ridotto al 62% e centrato, per
+restare leggibile dentro il ritaglio circolare/squircle di Android.
+
+**Regola per estensioni future**: qualunque nuova icona deve derivare
+dallo stesso SVG sorgente (stessi rapporti testo/linee), mai da un
+render separato — per restare un unico segno coerente a tutte le
+dimensioni.
