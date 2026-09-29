@@ -69,11 +69,6 @@ a{color:inherit;text-decoration:none}
 
 /* ---- Tipografia ---- */
 h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;color:var(--ink)}
-.section-num,.sopratitolo{
-  font-family:var(--sans);font-size:12px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.08em;color:var(--accent);
-}
-
 /* ============ Topbar ============ */
 .topbar{
   position:sticky;top:0;z-index:60;
@@ -167,12 +162,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;color:va
 /* ============ Sezioni ============ */
 main{padding-bottom:40px}
 .section-label{
-  max-width:var(--wide-w);margin:0 auto;padding:56px 24px 22px;
-  font-size:24px;font-weight:500;display:flex;align-items:baseline;gap:10px;
+  max-width:var(--wide-w);margin:0 auto;padding:64px 24px 26px;
+  font-size:38px;font-weight:600;letter-spacing:-.015em;
   border-top:1px solid var(--line);
 }
-.section-label .section-num{font-size:12px;position:relative;top:-2px}
 #chi-sono.section-label{padding-top:8px;border-top:0}
+@media(max-width:700px){.section-label{font-size:29px;padding:48px 20px 20px}}
 
 /* ---- Bio ---- */
 .chisono-card{max-width:var(--wide-w);margin:0 auto;padding:0 24px 8px}
