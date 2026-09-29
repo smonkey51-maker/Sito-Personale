@@ -101,7 +101,7 @@
       <a href="#sintesi" data-i18n="proof_label">Impact</a>
       <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
       <a href="#percorso" data-i18n="sec_percorso">Percorso</a>
-      <button type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
+      <a href="#contatti" data-i18n="nav_contatti">Contatti</a>
     </nav>
     <div class="utilbar">
       <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
@@ -122,7 +122,7 @@
       </div>
       <div class="hero-cta-row">
         <a class="hero-btn solid" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span></a>
-        <button class="hero-btn outline" type="button" data-open-contacts data-i18n="nav_contatti">Contatti</button>
+        <a class="hero-btn outline" href="#contatti" data-i18n="nav_contatti">Contatti</a>
       </div>
     </div>
     <div class="hero-photo-col">
@@ -165,7 +165,7 @@
 
   <h2 class="section-label rv" id="casi-studio"><span class="section-num">03</span><span data-i18n="sec_work_title">Progetti</span></h2>
   <div class="work-grid rv">
-    <div class="work-card" data-card-modal="c1Modal">
+    <div class="work-card">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
       <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
       <p class="work-summary" data-i18n="c1_summary">La conoscenza era distribuita tra documenti e ticket Jira. Ho implementato due sistemi RAG in produzione e un manuale operativo per i diversi contesti d’uso.</p>
@@ -174,18 +174,30 @@
         <span class="metachip">Systems Integration</span>
         <span class="metachip">Knowledge Management</span>
       </div>
-      <div class="work-mini-map" aria-label="Enterprise Knowledge Retrieval system view">
-        <div class="work-mini-flow">
-          <div class="work-mini-node" data-i18n="c1_map_sources">Documentazione aziendale · Storico Jira</div>
-          <div class="work-mini-arrow" aria-hidden="true">→</div>
-          <div class="work-mini-node primary" data-i18n="c1_map_layer">Retrieval · RAG · Knowledge layer</div>
-          <div class="work-mini-arrow" aria-hidden="true">→</div>
-          <div class="work-mini-node" data-i18n="c1_map_users">Service Desk · Incident/Problem · Management</div>
-        </div>
+      <p class="work-context" data-i18n="c1_map_prose">La documentazione aziendale e lo storico Jira alimentano due percorsi di ricerca per Service Desk, Incident & Problem Management e management.</p>
+      <button class="work-link" type="button" aria-expanded="false" aria-controls="c1Details" data-project-toggle data-i18n="work_view">Vedi il progetto</button>
+      <div class="case-details" id="c1Details" hidden>
+<p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+  <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.</p>
+  <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
+  <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
+  <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
+  <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
+  <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
+  <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
+  <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+  <p class="job-supp" data-i18n="c1_learning">Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.</p>
+  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+  <div class="metarow">
+    <span class="metachip">Enterprise AI</span>
+    <span class="metachip">RAG</span>
+    <span class="metachip">Systems Integration</span>
+    <span class="metachip">Knowledge Management</span>
+    <span class="metachip">Reliability</span>
+  </div>
       </div>
-      <button class="work-link" type="button" data-open-modal="c1Modal" data-i18n="work_view">Vedi il progetto →</button>
     </div>
-    <div class="work-card" data-card-modal="c2Modal">
+    <div class="work-card">
       <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
       <h3 class="work-title" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
       <p class="work-summary" data-i18n="c2_summary">Per valutare l’AI in contesti a dati sensibili, ho preparato dataset, adattato modelli e realizzato demo con inferenza locale.</p>
@@ -194,16 +206,32 @@
         <span class="metachip">Data Protection</span>
         <span class="metachip">AI Governance</span>
       </div>
-      <div class="work-mini-map" aria-label="Local AI system view">
-        <div class="work-mini-flow">
-          <div class="work-mini-node" data-i18n="c2_map_data">Dati sensibili · Dataset controllati</div>
-          <div class="work-mini-arrow" aria-hidden="true">→</div>
-          <div class="work-mini-node primary" data-i18n="c2_map_runtime">Infrastruttura locale · Ollama · Modelli</div>
-          <div class="work-mini-arrow" aria-hidden="true">→</div>
-          <div class="work-mini-node" data-i18n="c2_map_output">Inferenza controllata · Demo operative</div>
-        </div>
+      <p class="work-context" data-i18n="c2_map_prose">Dataset controllati e modelli eseguiti su infrastruttura locale hanno supportato demo con inferenza sotto controllo.</p>
+      <button class="work-link" type="button" aria-expanded="false" aria-controls="c2Details" data-project-toggle data-i18n="work_view">Vedi il progetto</button>
+      <div class="case-details" id="c2Details" hidden>
+<p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+  <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
+  <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
+  <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
+  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+  <div class="metarow">
+    <span class="metachip">Data protection</span>
+    <span class="metachip">Infrastructure control</span>
+    <span class="metachip">Provider dependency</span>
+    <span class="metachip">Operational costs</span>
+    <span class="metachip">AI governance</span>
+  </div>
+  <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
+  <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
+  <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
+  <div class="metarow">
+    <span class="metachip">Qwen</span>
+    <span class="metachip">Gemma</span>
+    <span class="metachip">Ollama</span>
+    <span class="metachip">Unsloth</span>
+    <span class="metachip">Python</span>
+  </div>
       </div>
-      <button class="work-link" type="button" data-open-modal="c2Modal" data-i18n="work_view">Vedi il progetto →</button>
     </div>
   </div>
 
@@ -265,109 +293,28 @@
   </a>
 </div>
 
-  <footer class="rv"><p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p></footer>
 </main>
-
-<dialog id="contactModal" aria-labelledby="cmTitle">
-  <div class="modal-head">
-    <h2 id="cmTitle" data-i18n="cm_title">Informazioni di contatto</h2>
-    <button class="modal-x" data-close aria-label="Chiudi" data-i18n-aria="modal_close_label">&times;</button>
-  </div>
-  <div class="cm-row">
-    <span class="cm-k">Email</span>
-    <span class="cm-v" id="cmEmail"></span>
-  </div>
-  <div class="cm-row">
-    <span class="cm-k" data-i18n="cm_phone">Telefono</span>
-    <span class="cm-v" id="cmPhone"></span>
-  </div>
-  <div class="cm-row">
-    <span class="cm-k" data-i18n="cm_cert">Certificazioni</span>
-    <span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a></span>
-  </div>
-  <div class="cm-row">
-    <span class="cm-k" data-i18n="cm_linkedin">LinkedIn</span>
-    <span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">nicoloforcolin<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a></span>
-  </div>
-</dialog>
-
-<dialog id="c1Modal" class="wide" aria-labelledby="c1ModalTitle">
-  <div class="modal-head">
-    <h2 id="c1ModalTitle" data-i18n="c1t">Enterprise Knowledge Retrieval</h2>
-    <button class="modal-x" data-close aria-label="Chiudi" data-i18n-aria="modal_close_label">&times;</button>
-  </div>
-  <p class="case-block-label" data-i18n="c1_status">Production · 2026</p>
-  <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-  <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma spesso è frammentata: documenti, procedure, manuali e ticket contengono informazioni utili che vivono in fonti diverse e non sempre comunicano tra loro.</p>
-  <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
-  <p class="job-supp" data-i18n="c1_solution_1">Ho implementato e portato in produzione due sistemi RAG nati da esigenze operative emerse insieme al mio Responsabile.</p>
-  <p class="job-supp" data-i18n="c1_solution_2">Il primo rende la knowledge documentale aziendale rapidamente interrogabile, facilitando il reperimento e la relazione delle informazioni anche a supporto della comunicazione verso middle e top management.</p>
-  <p class="job-supp" data-i18n="c1_solution_3">Il secondo trasforma lo storico Jira in una knowledge base interrogabile per il team di lavoro, supportando il recupero dell'esperienza accumulata e le attività di incident/problem management.</p>
-  <div class="system-map" aria-label="Enterprise Knowledge Retrieval system view">
-    <p class="system-map-title" data-i18n="system_view_label">System view</p>
-    <div class="system-flow">
-      <div class="system-node" data-i18n="c1_map_sources">Documentazione aziendale · Storico Jira</div>
-      <div class="system-arrow" aria-hidden="true">→</div>
-      <div class="system-node primary" data-i18n="c1_map_layer">Retrieval · RAG · Knowledge layer</div>
-      <div class="system-arrow" aria-hidden="true">→</div>
-      <div class="system-node" data-i18n="c1_map_users">Service Desk · Incident/Problem · Management</div>
+<footer class="colophon rv" id="contatti">
+  <div class="wrap colophon-inner">
+    <div class="colophon-intro">
+      <h2 data-i18n="colophon_title">Contatti</h2>
+      <p data-i18n="colophon_note">Sito personale. Le attività descritte sono presentate a titolo personale.</p>
     </div>
-    <p class="system-caption" data-i18n="c1_map_caption">Il sistema collega fonti distribuite, retrieval e contesti d'uso operativi: l'affidabilità dipende dall'intera catena, non dal solo modello.</p>
-  </div>
-  <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
-  <p class="job-supp" data-i18n="c1_impact">I due sistemi riducono il lavoro necessario per cercare, collegare e interpretare manualmente informazioni distribuite tra fonti aziendali diverse.</p>
-  <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
-  <p class="job-supp" data-i18n="c1_learning">Portarli in produzione ha evidenziato che la sfida principale di un sistema RAG enterprise non è soltanto il modello: qualità e struttura dei dati, contesto, istruzioni, information boundaries e modalità di utilizzo incidono direttamente sull'affidabilità del sistema.</p>
-  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
-  <div class="metarow">
-    <span class="metachip">Enterprise AI</span>
-    <span class="metachip">RAG</span>
-    <span class="metachip">Systems Integration</span>
-    <span class="metachip">Knowledge Management</span>
-    <span class="metachip">Reliability</span>
-  </div>
-</dialog>
-
-<dialog id="c2Modal" class="wide" aria-labelledby="c2ModalTitle">
-  <div class="modal-head">
-    <h2 id="c2ModalTitle" data-i18n="c2t">Local AI for Sensitive Data Environments</h2>
-    <button class="modal-x" data-close aria-label="Chiudi" data-i18n-aria="modal_close_label">&times;</button>
-  </div>
-  <p class="case-block-label" data-i18n="c2_status">Exploration · Mag – Giu 2026</p>
-  <p class="case-block-label" data-i18n="case_problem_label">Problema</p>
-  <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
-  <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
-  <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
-  <div class="system-map" aria-label="Local AI system view">
-    <p class="system-map-title" data-i18n="system_view_label">System view</p>
-    <div class="system-flow">
-      <div class="system-node" data-i18n="c2_map_data">Dati sensibili · Dataset controllati</div>
-      <div class="system-arrow" aria-hidden="true">→</div>
-      <div class="system-node primary" data-i18n="c2_map_runtime">Infrastruttura locale · Ollama · Modelli</div>
-      <div class="system-arrow" aria-hidden="true">→</div>
-      <div class="system-node" data-i18n="c2_map_output">Inferenza controllata · Demo operative</div>
+    <div class="colophon-links">
+      <div class="cm-row"><span class="cm-k">Email</span><span class="cm-v" id="cmEmail"></span></div>
+      <div class="cm-row"><span class="cm-k" data-i18n="cm_phone">Telefono</span><span class="cm-v" id="cmPhone"></span></div>
+      <div class="cm-row"><span class="cm-k">LinkedIn</span><span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener">nicoloforcolin<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a></span></div>
+      <div class="cm-row"><span class="cm-k" data-i18n="cm_cert">Certificazioni</span><span class="cm-v"><a href="https://www.skills.google/public_profiles/49638d7b-3f49-4712-b70f-f85f5e239519" target="_blank" rel="noopener">Google Skills Boost<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a></span></div>
     </div>
-    <p class="system-caption" data-i18n="c2_map_caption">L'esplorazione considera insieme dati, runtime, infrastruttura, costi e governance per valutare dove il controllo locale crea valore reale.</p>
+    <p class="footer-note">© 2026 Nicolò Forcolin — Padova, Italia</p>
   </div>
-  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
-  <div class="metarow">
-    <span class="metachip">Data protection</span>
-    <span class="metachip">Infrastructure control</span>
-    <span class="metachip">Provider dependency</span>
-    <span class="metachip">Operational costs</span>
-    <span class="metachip">AI governance</span>
-  </div>
-  <p class="case-block-label" data-i18n="case_learning_label">Learning</p>
-  <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
-  <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
-  <div class="metarow">
-    <span class="metachip">Qwen</span>
-    <span class="metachip">Gemma</span>
-    <span class="metachip">Ollama</span>
-    <span class="metachip">Unsloth</span>
-    <span class="metachip">Python</span>
-  </div>
-</dialog>
+</footer>
+
+
+
+
+
+
 
 
 
