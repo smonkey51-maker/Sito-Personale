@@ -5,6 +5,7 @@
       c1_map_prose:'La documentazione aziendale e lo storico Jira alimentano due percorsi di ricerca per Service Desk, Incident & Problem Management e management.', c2_map_prose:'Dataset controllati e modelli eseguiti su infrastruttura locale hanno supportato demo con inferenza sotto controllo.', work_close:'Chiudi il progetto', colophon_title:'Contatti', colophon_note:'Sito personale. Le attività descritte sono presentate a titolo personale.',
       new_tab_hint:" (si apre in una nuova scheda)",
       copy_email:"Copia email", copy_phone:"Copia numero di telefono", copy_done:"Copiato negli appunti",
+      reveal_email:"Mostra email", reveal_phone:"Mostra telefono",
       footer_privacy_link:"Informativa privacy",
       cm_title:"Informazioni di contatto", cm_phone:"Telefono", cm_cert:"Certificazioni", cm_linkedin:"LinkedIn",
       nav_contatti:"Contatti",
@@ -60,6 +61,7 @@
       c1_map_prose:'Corporate documents and Jira history feed two retrieval systems for Service Desk, Incident & Problem Management and management.', c2_map_prose:'Controlled datasets and models running on local infrastructure supported demos with controlled inference.', work_close:'Close project', colophon_title:'Contact', colophon_note:'Personal website. The activities described here are presented in a personal capacity.',
       new_tab_hint:" (opens in a new tab)",
       copy_email:"Copy email", copy_phone:"Copy phone number", copy_done:"Copied to clipboard",
+      reveal_email:"Show email", reveal_phone:"Show phone number",
       footer_privacy_link:"Privacy notice",
       cm_title:"Contact information", cm_phone:"Phone", cm_cert:"Certifications", cm_linkedin:"LinkedIn",
       nav_contatti:"Contact",
@@ -115,6 +117,7 @@
       c1_map_prose:'La documentation d’entreprise et l’historique Jira alimentent deux systèmes de recherche pour le Service Desk, l’Incident & Problem Management et le management.', c2_map_prose:'Des jeux de données contrôlés et des modèles exécutés sur une infrastructure locale ont permis des démonstrations avec une inférence maîtrisée.', work_close:'Fermer le projet', colophon_title:'Contact', colophon_note:'Site personnel. Les activités décrites ici sont présentées à titre personnel.',
       new_tab_hint:" (s'ouvre dans un nouvel onglet)",
       copy_email:"Copier l'e-mail", copy_phone:"Copier le numéro de téléphone", copy_done:"Copié dans le presse-papiers",
+      reveal_email:"Afficher l'e-mail", reveal_phone:"Afficher le numéro",
       footer_privacy_link:"Politique de confidentialité",
       cm_title:"Coordonnées", cm_phone:"Téléphone", cm_cert:"Certifications", cm_linkedin:"LinkedIn",
       nav_contatti:"Contact",
@@ -168,20 +171,13 @@
     }
   };
 
-  /* ---- contatti: costruiti a runtime per non esporli in chiaro nel sorgente ---- */
+  /* ---- contatti: costruiti a runtime e mostrati solo dopo un click, per limitare la raccolta automatica ---- */
   var copyIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
   function copyBtn(value, i18nKey){
     return '<button type="button" class="copy-btn" data-copy-value="' + value.replace(/"/g,"&quot;") + '" data-i18n-aria="' + i18nKey + '">' + copyIcon + '</button>';
   }
-  (function(){
-    var eu = "nicolo.forcolin", ed = "infocamere.it";
-    var email = eu + "@" + ed;
-    document.getElementById("cmEmail").innerHTML = '<a href="mailto:' + email + '">' + email + "</a>" + copyBtn(email, "copy_email");
-    var pn = ["+39", "347", "908", "1966"];
-    var phoneDisplay = pn.join(" ");
-    var phoneHref = "tel:" + pn.join("").replace(/\s/g, "");
-    document.getElementById("cmPhone").innerHTML = '<a href="' + phoneHref + '">' + phoneDisplay + "</a>" + copyBtn(phoneDisplay, "copy_phone");
-    document.querySelectorAll(".copy-btn").forEach(function(btn){
+  function bindCopyButtons(scope){
+    scope.querySelectorAll(".copy-btn").forEach(function(btn){
       btn.addEventListener("click", function(){
         var value = btn.getAttribute("data-copy-value");
         if(navigator.clipboard && navigator.clipboard.writeText){
@@ -191,6 +187,28 @@
           }).catch(function(){});
         }
       });
+    });
+  }
+  function revealRow(elId, revealKey, defaultLabel, reveal){
+    var el = document.getElementById(elId);
+    if(!el) return;
+    el.innerHTML = '<button type="button" class="reveal-btn lnk" data-i18n="' + revealKey + '">' + defaultLabel + "</button>";
+    el.querySelector(".reveal-btn").addEventListener("click", function(){
+      el.innerHTML = reveal();
+      bindCopyButtons(el);
+    }, { once: true });
+  }
+  (function(){
+    var eu = "nicolo.forcolin", ed = "infocamere.it";
+    var email = eu + "@" + ed;
+    var pn = ["+39", "347", "908", "1966"];
+    var phoneDisplay = pn.join(" ");
+    var phoneHref = "tel:" + pn.join("").replace(/\s/g, "");
+    revealRow("cmEmail", "reveal_email", "Mostra email", function(){
+      return '<a href="mailto:' + email + '">' + email + "</a>" + copyBtn(email, "copy_email");
+    });
+    revealRow("cmPhone", "reveal_phone", "Mostra telefono", function(){
+      return '<a href="' + phoneHref + '">' + phoneDisplay + "</a>" + copyBtn(phoneDisplay, "copy_phone");
     });
   })();
 
