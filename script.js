@@ -1,6 +1,7 @@
 (function(){
   var i18n = {
     it: {
+      back_to_site:'Torna al sito',
       contribution_label:"Il mio contributo",
       c1_contribution:"Implementazione e messa in produzione, unificazione dei sistemi, integrazione delle fonti e manuale operativo.",
       c2_contribution:"Preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.",
@@ -89,6 +90,7 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     en: {
+      back_to_site:'Back to website',
       contribution_label:"My contribution",
       c1_contribution:"Implementation and production deployment, system unification, source integration and an operating manual.",
       c2_contribution:"Dataset preparation, fine-tuning, local deployment and practical demonstrations.",
@@ -177,6 +179,7 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     fr: {
+      back_to_site:'Retour au site',
       contribution_label:"Ma contribution",
       c1_contribution:"Implémentation et mise en production, unification des systèmes, intégration des sources et manuel opérationnel.",
       c2_contribution:"Préparation des jeux de données, fine-tuning, déploiement local et démonstrations pratiques.",
@@ -378,19 +381,82 @@
     try{ return hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; }
     catch(e){ return null; }
   }
+  var projectDialog = null;
+  var activeReader = null;
+  var activeLayout = null;
+  function restoreProject(){
+      if(!activeReader) return;
+      var reader = activeReader;
+      var target = hashTarget(location.hash);
+      if(target && projectDialog.contains(target)) history.replaceState(null,'','#'+reader.getAttribute('aria-labelledby'));
+      reader.appendChild(activeLayout);
+      reader.open = false;
+      activeReader = null; activeLayout = null;
+      root.classList.remove('reading-project');
+      reader.querySelector('summary').focus();
+  }
+  function closeProject(){
+    if(!projectDialog || !projectDialog.open) return;
+    restoreProject();
+    projectDialog.close();
+  }
+  function openProject(reader){
+    if(!projectDialog || activeReader === reader) return;
+    if(activeReader) closeProject();
+    activeReader = reader;
+    activeLayout = reader.querySelector('.reader-layout');
+    var card = reader.closest('.work-card');
+    var title = card.querySelector('.work-title');
+    var status = card.querySelector('.work-meta');
+    var intro = card.querySelector('[data-i18n="c1_impact"], [data-i18n="c2_summary"]');
+    var head = projectDialog.querySelector('.project-reader-head');
+    head.textContent = '';
+    [status, title, intro].forEach(function(source){
+      if(!source) return;
+      var el = document.createElement(source === title ? 'h2' : 'p');
+      el.className = source === title ? 'project-reader-title' : source === status ? 'work-meta' : 'project-reader-intro';
+      el.textContent = source.textContent;
+      if(source.hasAttribute('data-i18n')) el.setAttribute('data-i18n', source.getAttribute('data-i18n'));
+      if(source === title) el.id = 'project-reader-title';
+      head.appendChild(el);
+    });
+    reader.open = true;
+    projectDialog.appendChild(activeLayout);
+    root.classList.add('reading-project');
+    projectDialog.showModal();
+    projectDialog.scrollTop = 0;
+    projectDialog.querySelector('.project-reader-back').focus();
+  }
+  if(typeof HTMLDialogElement !== 'undefined' && readers.length){
+    projectDialog = document.createElement('dialog');
+    projectDialog.className = 'project-reader';
+    projectDialog.setAttribute('aria-labelledby','project-reader-title');
+    projectDialog.innerHTML = '<button type="button" class="work-link project-reader-back" data-i18n="back_to_site">Torna al sito</button><header class="project-reader-head"></header>';
+    document.body.appendChild(projectDialog);
+    projectDialog.querySelector('button').addEventListener('click',closeProject);
+    projectDialog.addEventListener('close',restoreProject);
+    readers.forEach(function(reader){
+      reader.querySelector('summary').addEventListener('click',function(event){
+        event.preventDefault(); openProject(reader);
+        history.pushState(null,'','#'+reader.id);
+      });
+    });
+  }
   function expose(target){
     if(!target) return;
     var reader = target.closest(".case-reader");
-    if(reader) reader.open = true;
+    if(reader){ reader.open = true; if(projectDialog) openProject(reader); }
   }
   function navigateHash(){
     var target = hashTarget(location.hash);
+    if(activeReader && (!target || (!projectDialog.contains(target) && target !== activeReader))) closeProject();
     expose(target);
     if(target) requestAnimationFrame(function(){ target.scrollIntoView({block:"start", behavior:"instant"}); });
   }
   document.querySelectorAll('a[href^="#"]').forEach(function(link){
     link.addEventListener("click", function(){
       var target = hashTarget(link.getAttribute("href"));
+      if(activeReader && target && !projectDialog.contains(target) && target !== activeReader) closeProject();
       expose(target);
       if(menu) menu.open = false;
       if(target){
@@ -403,6 +469,7 @@
   document.querySelectorAll("[data-reader-close]").forEach(function(button){
     button.addEventListener("click", function(){
       var reader = document.getElementById(button.getAttribute("data-reader-close"));
+      if(activeReader === reader){ closeProject(); return; }
       reader.open = false;
       if(hashTarget(location.hash) && reader.contains(hashTarget(location.hash))){
         history.replaceState(null, "", "#" + reader.getAttribute("aria-labelledby"));
@@ -419,7 +486,7 @@
 
   /* The same section index drives desktop and mobile navigation feedback. */
   var progress = document.querySelector(".scroll-progress");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a, .page-index-links a'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a, .page-index-links a, .section-rail-links a'));
   var sectionIds = Array.from(new Set(navLinks.map(function(a){ return a.hash.slice(1); })));
   var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
   var queued = false;
@@ -439,7 +506,8 @@
     document.querySelectorAll(".case-index a").forEach(function(link){ link.removeAttribute("aria-current"); });
     readers.forEach(function(reader){
       if(!reader.open) return;
-      var links = Array.prototype.slice.call(reader.querySelectorAll(".case-index a"));
+      var scope = activeReader === reader ? projectDialog : reader;
+      var links = Array.prototype.slice.call(scope.querySelectorAll(".case-index a"));
       var selected = null;
       links.forEach(function(link){ var target = hashTarget(link.hash); if(target && target.getBoundingClientRect().top <= top + 18) selected = link; });
       if(selected) selected.setAttribute("aria-current", "location");
@@ -461,6 +529,7 @@
     var bar = document.getElementById("topbar");
     if(bar) new ResizeObserver(queueNavigation).observe(bar);
   }
+  if(projectDialog) projectDialog.addEventListener('scroll',queueNavigation,{passive:true});
   updateNavigation();
   navigateHash();
 
@@ -475,4 +544,5 @@
   });
   applyLang();
 })();
+
 
