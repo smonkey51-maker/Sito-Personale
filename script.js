@@ -1,6 +1,7 @@
 (function(){
   var i18n = {
     it: {
+      page_index:'Indice', page_index_label:'Indice dei contenuti', case_index_label:'Indice del caso studio', related_label:'Contenuti collegati', theme_light:'Passa al tema chiaro', theme_dark:'Passa al tema scuro', theme_on_light:'Tema chiaro attivato', theme_on_dark:'Tema scuro attivato',
       c2_map_prose:'Dataset controllati e modelli eseguiti su infrastruttura locale hanno supportato demo con inferenza sotto controllo.', work_close:'Chiudi il progetto', colophon_title:'Contatti', colophon_note:'Sito personale. Le attività descritte sono presentate a titolo personale.',
       new_tab_hint:" (si apre in una nuova scheda)",
       copy_email:"Copia email", copy_phone:"Copia numero di telefono", copy_done:"Copiato negli appunti",
@@ -34,13 +35,13 @@
       sec_localai_title:"Local AI",
       sec_path_title:"Percorso",
       proof_label:"Risultati",
-      p5k:"Progetto in produzione", p5d:"Knowledge retrieval su fonti aziendali di diversa provenienza, nato da due sistemi RAG successivamente unificati.", p5_link:"Vedi i progetti →",
-      p1k:"AI Advisory", p1d:"Advisory AI per due business unit interne e un CEO.", p1_link:"Vedi il percorso →",
-      p2k:"Enablement", p2d:"Cinque programmi di formazione sull’AI operativa.", p2_link:"Vedi il percorso →",
+      p5k:"Progetto in produzione", p5d:"Knowledge retrieval su fonti aziendali di diversa provenienza, nato da due sistemi RAG successivamente unificati.", p5_link:"Vedi i progetti",
+      p1k:"AI Advisory", p1d:"Advisory AI per due business unit interne e un CEO.", p1_link:"Vedi il percorso",
+      p2k:"Enablement", p2d:"Cinque programmi di formazione sull’AI operativa.", p2_link:"Vedi il percorso",
       sec_lavori:"Progetti",
       tclub:"2026",
       club_tag:"Community & affiliazioni", club_desc:"Membro di una community professionale orientata a promuovere gentilezza, rispetto e qualità delle relazioni come elementi di leadership e cultura organizzativa.",
-      work_view:"Vedi il progetto →",
+      work_view:"Vedi il progetto",
       c1_summary:"Da un'idea sviluppata insieme al mio Responsabile, ho realizzato due sistemi RAG in produzione per la documentazione aziendale e lo storico Jira. Li ho poi unificati in un progetto più ampio, integrando ulteriori fonti di diversa provenienza.",
       c2_summary:"Per valutare l’AI in contesti a dati sensibili, ho preparato dataset, adattato modelli e realizzato demo con inferenza locale.",
       case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_responsibility_label:"Responsabilità", case_learning_label:"Cosa ho imparato", case_focus_label:"Focus", case_stack_label:"Stack",
@@ -81,6 +82,7 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     en: {
+      page_index:'Index', page_index_label:'Contents index', case_index_label:'Case study index', related_label:'Related content', theme_light:'Switch to light theme', theme_dark:'Switch to dark theme', theme_on_light:'Light theme enabled', theme_on_dark:'Dark theme enabled',
       c2_map_prose:'Controlled datasets and models running on local infrastructure supported demos with controlled inference.', work_close:'Close project', colophon_title:'Contact', colophon_note:'Personal website. The activities described here are presented in a personal capacity.',
       new_tab_hint:" (opens in a new tab)",
       copy_email:"Copy email", copy_phone:"Copy phone number", copy_done:"Copied to clipboard",
@@ -114,13 +116,13 @@
       sec_localai_title:"Local AI",
       sec_path_title:"Career path",
       proof_label:"Results",
-      p5k:"Production project", p5d:"Knowledge retrieval across enterprise sources of different origins, born from two RAG systems later unified.", p5_link:"View projects →",
-      p1k:"AI Advisory", p1d:"AI advisory for two internal business units and one CEO.", p1_link:"See the path →",
-      p2k:"Enablement", p2d:"Five training programs on operational AI.", p2_link:"See experience →",
+      p5k:"Production project", p5d:"Knowledge retrieval across enterprise sources of different origins, born from two RAG systems later unified.", p5_link:"View projects",
+      p1k:"AI Advisory", p1d:"AI advisory for two internal business units and one CEO.", p1_link:"See the path",
+      p2k:"Enablement", p2d:"Five training programs on operational AI.", p2_link:"See experience",
       sec_lavori:"Projects",
       tclub:"2026",
       club_tag:"Community & affiliations", club_desc:"Member of a professional community focused on kindness, respect and quality of relationships as elements of leadership and organizational culture.",
-      work_view:"View project →",
+      work_view:"View project",
       c1_summary:"From an idea developed together with my manager, I built two production RAG systems for corporate documentation and Jira history. I later unified them into a broader project, integrating additional sources from different origins.",
       c2_summary:"To assess AI in sensitive-data environments, I prepared datasets, adapted models and built demos with local inference.",
       case_problem_label:"Problem", case_solution_label:"Solution", case_approach_label:"Approach", case_impact_label:"Impact", case_responsibility_label:"Responsibility", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
@@ -161,6 +163,7 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     fr: {
+      page_index:'Sommaire', page_index_label:'Sommaire des contenus', case_index_label:'Sommaire de l’étude de cas', related_label:'Contenus associés', theme_light:'Passer au thème clair', theme_dark:'Passer au thème sombre', theme_on_light:'Thème clair activé', theme_on_dark:'Thème sombre activé',
       c2_map_prose:'Des jeux de données contrôlés et des modèles exécutés sur une infrastructure locale ont permis des démonstrations avec une inférence maîtrisée.', work_close:'Fermer le projet', colophon_title:'Contact', colophon_note:'Site personnel. Les activités décrites ici sont présentées à titre personnel.',
       new_tab_hint:" (s'ouvre dans un nouvel onglet)",
       copy_email:"Copier l'e-mail", copy_phone:"Copier le numéro de téléphone", copy_done:"Copié dans le presse-papiers",
@@ -194,13 +197,13 @@
       sec_localai_title:"Local AI",
       sec_path_title:"Parcours",
       proof_label:"Résultats",
-      p5k:"Projet en production", p5d:"Recherche de connaissances sur des sources d’entreprise de provenances diverses, née de deux systèmes RAG ensuite unifiés.", p5_link:"Voir les projets →",
-      p1k:"AI Advisory", p1d:"Conseil en IA pour deux unités internes et un CEO.", p1_link:"Voir le parcours →",
-      p2k:"Enablement", p2d:"Cinq programmes de formation à l’IA opérationnelle.", p2_link:"Voir le parcours →",
+      p5k:"Projet en production", p5d:"Recherche de connaissances sur des sources d’entreprise de provenances diverses, née de deux systèmes RAG ensuite unifiés.", p5_link:"Voir les projets",
+      p1k:"AI Advisory", p1d:"Conseil en IA pour deux unités internes et un CEO.", p1_link:"Voir le parcours",
+      p2k:"Enablement", p2d:"Cinq programmes de formation à l’IA opérationnelle.", p2_link:"Voir le parcours",
       sec_lavori:"Projets",
       tclub:"2026",
       club_tag:"Communauté & affiliations", club_desc:"Membre d’une communauté professionnelle centrée sur la gentillesse, le respect et la qualité des relations comme éléments de leadership et de culture organisationnelle.",
-      work_view:"Voir le projet →",
+      work_view:"Voir le projet",
       c1_summary:"Partant d’une idée développée avec mon responsable, j’ai réalisé deux systèmes RAG en production pour la documentation d’entreprise et l’historique Jira. Je les ai ensuite unifiés en un projet plus large, en intégrant d’autres sources de provenances diverses.",
       c2_summary:"Pour évaluer l’IA dans des environnements à données sensibles, j’ai préparé des jeux de données, adapté des modèles et réalisé des démonstrations en local.",
       case_problem_label:"Problème", case_solution_label:"Solution", case_approach_label:"Approche", case_impact_label:"Impact", case_responsibility_label:"Responsabilité", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack",
@@ -301,10 +304,12 @@
       var k = el.getAttribute("data-i18n-aria");
       if(dict[k] !== undefined){ el.setAttribute("aria-label", dict[k]); }
     });
-    document.querySelectorAll("[data-project-toggle][aria-expanded=\"true\"]").forEach(function(btn){ btn.textContent = dict.work_close; });
     document.querySelectorAll(".lang-btn").forEach(function(b){
-      b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+      var selected = b.getAttribute("data-lang") === lang;
+      b.classList.toggle("on", selected);
+      b.setAttribute("aria-pressed", String(selected));
     });
+    paintTheme();
   }
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){
@@ -324,13 +329,14 @@
     var dark = current() === "dark";
     toggles.forEach(function(t){
       t.textContent = dark ? "☀" : "☾";
-      t.setAttribute("aria-label", dark ? "Passa al tema chiaro" : "Passa al tema scuro");
+      t.setAttribute("aria-label", i18n[lang][dark ? "theme_light" : "theme_dark"]);
+      t.setAttribute("aria-pressed", String(dark));
     });
     if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#1B1A17" : "#F8F7F4");
   }
   var themeAnnouncer = document.getElementById("themeAnnouncer");
   function announceTheme(dark){
-    if(themeAnnouncer) themeAnnouncer.textContent = dark ? "Tema scuro attivato" : "Tema chiaro attivato";
+    if(themeAnnouncer) themeAnnouncer.textContent = i18n[lang][dark ? "theme_on_dark" : "theme_on_light"];
   }
   toggles.forEach(function(t){
     t.addEventListener("click", function(){
@@ -343,78 +349,99 @@
   });
   paintTheme();
 
-  /* ---- progetti: espansione nel flusso della pagina ---- */
-  document.querySelectorAll("[data-project-toggle]").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var panel = document.getElementById(btn.getAttribute("aria-controls"));
-      var opening = panel.hidden;
-      panel.hidden = !opening;
-      btn.setAttribute("aria-expanded", String(opening));
-      btn.textContent = i18n[lang][opening ? "work_close" : "work_view"];
-      if(!opening) btn.focus();
+  /* Native readers remain usable without JavaScript. Hashes open the
+     appropriate reader before navigation, including direct entry and Back. */
+  var menu = document.getElementById("pageIndex");
+  var readers = Array.prototype.slice.call(document.querySelectorAll(".case-reader"));
+  function hashTarget(hash){
+    try{ return hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; }
+    catch(e){ return null; }
+  }
+  function expose(target){
+    if(!target) return;
+    var reader = target.closest(".case-reader");
+    if(reader) reader.open = true;
+  }
+  function navigateHash(){
+    var target = hashTarget(location.hash);
+    expose(target);
+    if(target) requestAnimationFrame(function(){ target.scrollIntoView({block:"start", behavior:"instant"}); });
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener("click", function(){
+      var target = hashTarget(link.getAttribute("href"));
+      expose(target);
+      if(menu) menu.open = false;
+      if(target){
+        if(!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+        requestAnimationFrame(function(){ target.focus({preventScroll:true}); });
+      }
     });
   });
-  document.querySelectorAll("[data-card-href]").forEach(function(card){
-    card.addEventListener("click", function(e){
-      if(e.target.closest("button, a")) return;
-      var target = document.querySelector(card.getAttribute("data-card-href"));
-      if(target) target.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block: "start"});
+  window.addEventListener("hashchange", navigateHash);
+  document.querySelectorAll("[data-reader-close]").forEach(function(button){
+    button.addEventListener("click", function(){
+      var reader = document.getElementById(button.getAttribute("data-reader-close"));
+      reader.open = false;
+      if(hashTarget(location.hash) && reader.contains(hashTarget(location.hash))){
+        history.replaceState(null, "", "#" + reader.getAttribute("aria-labelledby"));
+      }
+      reader.querySelector("summary").focus();
     });
   });
-  /* ---- contatori animati ---- */
-  function setCountsFinal(scope){
-    scope.querySelectorAll(".num").forEach(function(n){ n.textContent = n.getAttribute("data-count"); });
-  }
-  function animateCounts(scope){
-    setCountsFinal(scope);
-  }
-
-  /* ---- reveal allo scroll ---- */
-  var tiles = document.querySelectorAll(".rv");
-  if("IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(entries){
-      var batch = entries.filter(function(en){ return en.isIntersecting; });
-      batch.forEach(function(en, i){
-        var d = 150 + (i % 4) * 120;
-        setTimeout(function(){
-          en.target.classList.add("in");
-          animateCounts(en.target);
-        }, d);
-        io.unobserve(en.target);
-      });
-    }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
-    var startObserving = function(){ tiles.forEach(function(t){ io.observe(t); }); };
-    if(document.readyState === "complete"){ startObserving(); }
-    else{ window.addEventListener("load", startObserving); }
-  }else{
-    tiles.forEach(function(t){ t.classList.add("in"); setCountsFinal(t); });
+  if(menu){
+    document.addEventListener("click", function(event){ if(!menu.contains(event.target)) menu.open = false; });
+    document.addEventListener("keydown", function(event){
+      if(event.key === "Escape" && menu.open){ menu.open = false; menu.querySelector("summary").focus(); }
+    });
   }
 
-  /* ---- navigation feedback & reading progress ---- */
+  /* The same section index drives desktop and mobile navigation feedback. */
   var progress = document.querySelector(".scroll-progress");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".desktop-nav a"));
-  var observedSections = navLinks.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
-  function updateProgress(){
-    var doc = document.documentElement;
-    var max = doc.scrollHeight - doc.clientHeight;
-    progress.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + "%";
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a, .page-index-links a'));
+  var sectionIds = Array.from(new Set(navLinks.map(function(a){ return a.hash.slice(1); })));
+  var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  var queued = false;
+  function updateNavigation(){
+    queued = false;
+    var bar = document.getElementById("topbar");
+    var offset = bar ? Math.ceil(bar.getBoundingClientRect().height) + 16 : 80;
+    root.style.setProperty("--nav-offset", offset + "px");
+    var top = offset + 12;
+    var active = null;
+    sections.forEach(function(section){ if(section.getBoundingClientRect().top <= top) active = section.id; });
+    navLinks.forEach(function(link){
+      var selected = link.hash === "#" + active;
+      link.classList.toggle("active", selected);
+      if(selected) link.setAttribute("aria-current", "location"); else link.removeAttribute("aria-current");
+    });
+    document.querySelectorAll(".case-index a").forEach(function(link){ link.removeAttribute("aria-current"); });
+    readers.forEach(function(reader){
+      if(!reader.open) return;
+      var links = Array.prototype.slice.call(reader.querySelectorAll(".case-index a"));
+      var selected = null;
+      links.forEach(function(link){ var target = hashTarget(link.hash); if(target && target.getBoundingClientRect().top <= top + 18) selected = link; });
+      if(selected) selected.setAttribute("aria-current", "location");
+    });
+    var max = root.scrollHeight - root.clientHeight;
+    if(progress) progress.style.width = (max > 0 ? root.scrollTop / max * 100 : 0) + "%";
   }
-  window.addEventListener("scroll", updateProgress, {passive:true});
-  updateProgress();
-  if("IntersectionObserver" in window){
-    var navIO = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          navLinks.forEach(function(a){
-            var isActive = a.getAttribute("href") === "#" + entry.target.id;
-            a.classList.toggle("active", isActive);
-            if(isActive){ a.setAttribute("aria-current", "location"); } else { a.removeAttribute("aria-current"); }
-          });
-        }
-      });
-    }, {rootMargin:"-20% 0px -70% 0px",threshold:0});
-    observedSections.forEach(function(sec){ navIO.observe(sec); });
+  function queueNavigation(){ if(!queued){ queued = true; requestAnimationFrame(updateNavigation); } }
+  window.addEventListener("scroll", queueNavigation, {passive:true});
+  window.addEventListener("resize", queueNavigation);
+  readers.forEach(function(reader){ reader.addEventListener("toggle", function(){
+    var target = hashTarget(location.hash);
+    if(!reader.open && target && reader.contains(target)){
+      history.replaceState(null, "", "#" + reader.getAttribute("aria-labelledby"));
+    }
+    queueNavigation();
+  }); });
+  if("ResizeObserver" in window){
+    var bar = document.getElementById("topbar");
+    if(bar) new ResizeObserver(queueNavigation).observe(bar);
   }
+  updateNavigation();
+  navigateHash();
 
   applyLang();
 })();
