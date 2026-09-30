@@ -434,7 +434,7 @@
     projectDialog.innerHTML = '<button type="button" class="work-link project-reader-back" data-i18n="back_to_site">Torna al sito</button><header class="project-reader-head"></header>';
     document.body.appendChild(projectDialog);
     projectDialog.querySelector('button').addEventListener('click',closeProject);
-    projectDialog.addEventListener('close',restoreProject);
+    projectDialog.addEventListener('close',function(){ if(!projectDialog.open) restoreProject(); });
     readers.forEach(function(reader){
       reader.querySelector('summary').addEventListener('click',function(event){
         event.preventDefault(); openProject(reader);
