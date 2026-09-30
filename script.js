@@ -1,6 +1,13 @@
 (function(){
   var i18n = {
     it: {
+      contribution_label:"Il mio contributo",
+      c1_contribution:"Implementazione e messa in produzione, unificazione dei sistemi, integrazione delle fonti e manuale operativo.",
+      c2_contribution:"Preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.",
+      copy_case:"Copia link al progetto",
+      case_copied:"Link copiato",
+      case_copy_failed:"Copia il link dalla barra degli indirizzi.",
+
       page_index:'Indice', page_index_label:'Indice dei contenuti', case_index_label:'Indice del caso studio', related_label:'Contenuti collegati', theme_light:'Passa al tema chiaro', theme_dark:'Passa al tema scuro', theme_on_light:'Tema chiaro attivato', theme_on_dark:'Tema scuro attivato',
       c2_map_prose:'Dataset controllati e modelli eseguiti su infrastruttura locale hanno supportato demo con inferenza sotto controllo.', work_close:'Chiudi il progetto', colophon_title:'Contatti', colophon_note:'Sito personale. Le attività descritte sono presentate a titolo personale.',
       new_tab_hint:" (si apre in una nuova scheda)",
@@ -56,7 +63,7 @@
       c1_learning:"L'evoluzione dai due sistemi iniziali a un progetto con fonti più numerose e diverse ha reso evidente che l'affidabilità di un RAG enterprise dipende anche dalla qualità e dalla struttura dei dati, dal contesto disponibile, dalle istruzioni, dai confini delle informazioni e dalle modalità di utilizzo. Mettere un sistema in produzione è solo una parte del lavoro: renderlo utile richiede attenzione continua a questi elementi e all'adozione da parte delle persone.",
       c2t:"Local AI for Sensitive Data Environments",
       c2_status:"Exploration · Mag – Giu 2026",
-      c2_problem:"Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?",
+      c2_problem:"Valutare l’utilizzo di modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni.",
       c2_solution:"Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.",
       c2_learning:"Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.",
       sec_percorso:"Percorso", sec_experiences:"Iniziative",
@@ -82,6 +89,13 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     en: {
+      contribution_label:"My contribution",
+      c1_contribution:"Implementation and production deployment, system unification, source integration and an operating manual.",
+      c2_contribution:"Dataset preparation, fine-tuning, local deployment and practical demonstrations.",
+      copy_case:"Copy project link",
+      case_copied:"Link copied",
+      case_copy_failed:"Copy the link from the address bar.",
+
       page_index:'Index', page_index_label:'Contents index', case_index_label:'Case study index', related_label:'Related content', theme_light:'Switch to light theme', theme_dark:'Switch to dark theme', theme_on_light:'Light theme enabled', theme_on_dark:'Dark theme enabled',
       c2_map_prose:'Controlled datasets and models running on local infrastructure supported demos with controlled inference.', work_close:'Close project', colophon_title:'Contact', colophon_note:'Personal website. The activities described here are presented in a personal capacity.',
       new_tab_hint:" (opens in a new tab)",
@@ -137,7 +151,7 @@
       c1_learning:"The evolution from the two initial systems into a project with more numerous and varied sources made it clear that the reliability of an enterprise RAG also depends on data quality and structure, available context, instructions, information boundaries and usage patterns. Bringing a system into production is only part of the work: making it useful requires ongoing attention to these elements and to adoption by the people who use it.",
       c2t:"Local AI for Sensitive Data Environments",
       c2_status:"Exploration · May – Jun 2026",
-      c2_problem:"How can AI models be used in sensitive contexts while keeping greater control over data, infrastructure and dependency on external providers?",
+      c2_problem:"Evaluate AI models in sensitive contexts while keeping greater control over data, infrastructure and dependency on external providers.",
       c2_solution:"I explored the feasibility of locally-run AI models, working with Qwen, Gemma and Ollama-based architectures. The project included dataset preparation, fine-tuning, local deployment and practical demos.",
       c2_learning:"Bringing AI into a controlled environment isn't just about running a model locally. Infrastructure, data management, cost and governance become an integral part of the solution.",
       sec_percorso:"Career", sec_experiences:"Initiatives",
@@ -163,6 +177,13 @@
       hero_proof1:"Enterprise IT @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     fr: {
+      contribution_label:"Ma contribution",
+      c1_contribution:"Implémentation et mise en production, unification des systèmes, intégration des sources et manuel opérationnel.",
+      c2_contribution:"Préparation des jeux de données, fine-tuning, déploiement local et démonstrations pratiques.",
+      copy_case:"Copier le lien du projet",
+      case_copied:"Lien copié",
+      case_copy_failed:"Copiez le lien depuis la barre d’adresse.",
+
       page_index:'Sommaire', page_index_label:'Sommaire des contenus', case_index_label:'Sommaire de l’étude de cas', related_label:'Contenus associés', theme_light:'Passer au thème clair', theme_dark:'Passer au thème sombre', theme_on_light:'Thème clair activé', theme_on_dark:'Thème sombre activé',
       c2_map_prose:'Des jeux de données contrôlés et des modèles exécutés sur une infrastructure locale ont permis des démonstrations avec une inférence maîtrisée.', work_close:'Fermer le projet', colophon_title:'Contact', colophon_note:'Site personnel. Les activités décrites ici sont présentées à titre personnel.',
       new_tab_hint:" (s'ouvre dans un nouvel onglet)",
@@ -218,7 +239,7 @@
       c1_learning:"L'évolution des deux systèmes initiaux vers un projet aux sources plus nombreuses et diverses a rendu évident que la fiabilité d'un RAG enterprise dépend aussi de la qualité et de la structure des données, du contexte disponible, des instructions, des limites de l'information et des modes d'utilisation. Mettre un système en production n'est qu'une partie du travail : le rendre utile demande une attention continue à ces éléments et à son adoption par les personnes.",
       c2t:"Local AI for Sensitive Data Environments",
       c2_status:"Exploration · Mai – juin 2026",
-      c2_problem:"Comment utiliser des modèles d'IA dans des contextes sensibles tout en gardant un meilleur contrôle sur les données, l'infrastructure et la dépendance aux fournisseurs externes ?",
+      c2_problem:"Évaluer les modèles d'IA dans des contextes sensibles en gardant un meilleur contrôle sur les données, l'infrastructure et la dépendance aux fournisseurs externes.",
       c2_solution:"J'ai exploré la faisabilité de modèles d'IA exécutés localement, en travaillant avec Qwen, Gemma et des architectures basées sur Ollama. Le projet a inclus la préparation des jeux de données, le fine-tuning, le déploiement local et des démonstrations pratiques.",
       c2_learning:"Amener l'IA dans un environnement contrôlé ne consiste pas simplement à exécuter un modèle en local. L'infrastructure, la gestion des données, les coûts et la gouvernance font partie intégrante de la solution.",
       sec_percorso:"Parcours", sec_experiences:"Initiatives",
@@ -443,5 +464,15 @@
   updateNavigation();
   navigateHash();
 
+  document.querySelectorAll('[data-copy-case]').forEach(function(button){
+    button.addEventListener('click', async function(){
+      var id = button.getAttribute('data-copy-case');
+      var url = new URL(location.href); url.hash = id;
+      var feedback = button.nextElementSibling;
+      try { await navigator.clipboard.writeText(url.href); feedback.textContent = i18n[lang].case_copied; }
+      catch(e) { location.hash = id; feedback.textContent = i18n[lang].case_copy_failed; }
+    });
+  });
   applyLang();
 })();
+
