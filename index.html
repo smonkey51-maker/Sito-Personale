@@ -97,6 +97,20 @@
 
 <header class="topbar" id="topbar">
   <div class="topbar-inner">
+    <details class="page-index" id="pageIndex">
+      <summary data-i18n="page_index">Indice</summary>
+      <nav class="page-index-links" aria-label="Indice dei contenuti" data-i18n-aria="page_index_label">
+        <a href="#chi-sono" data-i18n="sec_chisono">Bio</a>
+        <a href="#casi-studio" data-i18n="sec_work_title">Progetto in produzione</a>
+        <a href="#adozione" data-i18n="sec_adoption_title">AI in produzione e adozione</a>
+        <a href="#sintesi" data-i18n="sec_results_title">Risultati</a>
+        <a href="#local-ai" data-i18n="sec_localai_title">Local AI</a>
+        <a href="#percorso" data-i18n="sec_path_title">Percorso</a>
+        <a href="#esperienze" data-i18n="sec_experiences">Iniziative</a>
+        <a href="#badge" data-i18n="sec_badge">Credenziali</a>
+        <a href="#contatti" data-i18n="nav_contatti">Contatti</a>
+      </nav>
+    </details>
     <nav class="desktop-nav" aria-label="Navigazione principale" data-i18n-aria="nav_main_label">
       <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
       <a href="#sintesi" data-i18n="proof_label">Risultati</a>
@@ -145,28 +159,50 @@
   <div class="work-grid rv">
     <div class="work-card">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
-      <h3 class="work-title" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
-      <p class="work-summary" data-i18n="c1_summary">Da un'idea sviluppata insieme al mio Responsabile, ho realizzato due sistemi RAG in produzione per la documentazione aziendale e lo storico Jira. Li ho poi unificati in un progetto più ampio, integrando ulteriori fonti di diversa provenienza.</p>
+      <h3 class="work-title" id="case-rag" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
       <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
       <p class="work-context" data-i18n="c1_impact">Un punto di accesso comune alla conoscenza aziendale: informazioni prima distribuite tra fonti separate possono essere reperite e collegate nel contesto delle attività operative e di management.</p>
+      <p class="work-summary" data-i18n="c1_summary">Da un'idea sviluppata insieme al mio Responsabile, ho realizzato due sistemi RAG in produzione per la documentazione aziendale e lo storico Jira. Li ho poi unificati in un progetto più ampio, integrando ulteriori fonti di diversa provenienza.</p>
       <div class="work-chips">
         <span class="metachip">RAG</span>
         <span class="metachip">Systems Integration</span>
         <span class="metachip">Knowledge Management</span>
       </div>
-      <button class="work-link" type="button" aria-expanded="false" aria-controls="c1Details" data-project-toggle data-i18n="work_view">Vedi il progetto →</button>
-      <div class="case-details" id="c1Details" hidden>
-<p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+      <details class="case-reader" id="c1Details" aria-labelledby="case-rag">
+        <summary><span data-i18n="work_view">Vedi il progetto</span><span class="reader-sign" aria-hidden="true"></span></summary>
+        <div class="reader-layout">
+          <nav class="case-index" aria-label="Indice del caso studio" data-i18n-aria="case_index_label">
+            <a href="#c1-problema" data-i18n="case_problem_label">Problema</a>
+            <a href="#c1-soluzione" data-i18n="case_solution_label">Soluzione</a>
+            <a href="#c1-responsabilita" data-i18n="case_responsibility_label">Responsabilità</a>
+            <a href="#c1-apprendimenti" data-i18n="case_learning_label">Cosa ho imparato</a>
+            <a href="#c1-focus" data-i18n="case_focus_label">Focus</a>
+          </nav>
+          <div class="case-details">
+            <section class="case-block" aria-labelledby="c1-problema">
+              <h4 class="case-block-label" id="c1-problema" tabindex="-1" data-i18n="case_problem_label">Problema</h4>
   <p class="job-supp" data-i18n="c1_problem">La conoscenza aziendale esiste, ma è spesso frammentata. Documenti, procedure, manuali e ticket contengono informazioni utili distribuite tra fonti diverse. Per rispondere a una richiesta occorre cercarle, collegarle e ricostruirne il contesto.</p>
-  <p class="case-block-label" data-i18n="case_solution_label">Soluzione</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c1-soluzione">
+              <h4 class="case-block-label" id="c1-soluzione" tabindex="-1" data-i18n="case_solution_label">Soluzione</h4>
   <p class="job-supp" data-i18n="c1_solution_1">Da esigenze operative individuate insieme al mio Responsabile sono nati due sistemi RAG, che ho implementato e portato in produzione.</p>
   <p class="job-supp" data-i18n="c1_solution_2">Il primo rende interrogabile la documentazione aziendale, anche a supporto della comunicazione verso middle e top management. Il secondo rende interrogabile lo storico Jira per il team di lavoro e per le attività di Incident & Problem Management.</p>
   <p class="job-supp" data-i18n="c1_solution_3">Successivamente ho unificato i due sistemi in un progetto più ampio e vi ho integrato ulteriori fonti di diversa provenienza. Ho inoltre realizzato un manuale operativo strutturato per Service Desk, Incident & Problem Management e Middle Management.</p>
-  <p class="case-block-label" data-i18n="case_responsibility_label">Responsabilità</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c1-responsabilita">
+              <h4 class="case-block-label" id="c1-responsabilita" tabindex="-1" data-i18n="case_responsibility_label">Responsabilità</h4>
   <p class="job-supp" data-i18n="c1_responsibility">Ho seguito il progetto dalla definizione delle esigenze operative con il mio Responsabile alla messa in produzione dei due RAG. Ne ho curato poi l'unificazione e l'ampliamento a fonti di diversa provenienza, insieme al manuale operativo per i diversi gruppi di utenti.</p>
-  <p class="case-block-label" data-i18n="case_learning_label">Cosa ho imparato</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c1-apprendimenti">
+              <h4 class="case-block-label" id="c1-apprendimenti" tabindex="-1" data-i18n="case_learning_label">Cosa ho imparato</h4>
   <p class="job-supp" data-i18n="c1_learning">L'evoluzione dai due sistemi iniziali a un progetto con fonti più numerose e diverse ha reso evidente che l'affidabilità di un RAG enterprise dipende anche dalla qualità e dalla struttura dei dati, dal contesto disponibile, dalle istruzioni, dai confini delle informazioni e dalle modalità di utilizzo. Mettere un sistema in produzione è solo una parte del lavoro: renderlo utile richiede attenzione continua a questi elementi e all'adozione da parte delle persone.</p>
-  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c1-focus">
+              <h4 class="case-block-label" id="c1-focus" tabindex="-1" data-i18n="case_focus_label">Focus</h4>
   <div class="metarow">
     <span class="metachip">Enterprise AI</span>
     <span class="metachip">RAG</span>
@@ -174,7 +210,16 @@
     <span class="metachip">Knowledge Management</span>
     <span class="metachip">Reliability</span>
   </div>
-      </div>
+            </section>
+            <nav class="related-reading" aria-label="Contenuti collegati" data-i18n-aria="related_label">
+              <p class="case-block-label" data-i18n="related_label">Contenuti collegati</p>
+              <a href="#adozione" data-i18n="sec_adoption_title">AI in produzione e adozione</a>
+              <a href="#local-ai" data-i18n="sec_localai_title">Local AI</a>
+            </nav>
+            <button class="work-link reader-close" type="button" data-reader-close="c1Details" data-i18n="work_close">Chiudi il progetto</button>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -185,23 +230,23 @@
 
   <h2 class="section-label rv" id="sintesi"><span data-i18n="sec_results_title">Risultati</span></h2>
   <div class="statrow rv">
-    <div class="stat" aria-labelledby="p5k" data-card-href="#casi-studio">
+    <div class="stat" aria-labelledby="p5k">
       <p class="v"><span class="num" data-count="1">1</span></p>
       <span class="k" id="p5k" data-i18n="p5k">Progetto in produzione</span>
       <p class="d" data-i18n="p5d">Knowledge retrieval su fonti aziendali di diversa provenienza, nato da due sistemi RAG successivamente unificati.</p>
-      <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti →</a>
+      <a class="lnk" href="#casi-studio" data-i18n="p5_link">Vedi i progetti</a>
     </div>
-    <div class="stat" aria-labelledby="p1k" data-card-href="#percorso">
+    <div class="stat" aria-labelledby="p1k">
       <p class="v"><span>2+1</span></p>
       <span class="k" id="p1k" data-i18n="p1k">AI Advisory</span>
       <p class="d" data-i18n="p1d">Advisory AI per due business unit interne e un CEO.</p>
-      <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso →</a>
+      <a class="lnk" href="#percorso" data-i18n="p1_link">Vedi il percorso</a>
     </div>
-    <div class="stat" aria-labelledby="p2k" data-card-href="#percorso">
+    <div class="stat" aria-labelledby="p2k">
       <p class="v"><span class="num" data-count="35">35</span>+</p>
       <span class="k" id="p2k" data-i18n="p2k">Enablement</span>
       <p class="d" data-i18n="p2d">Cinque programmi di formazione sull’AI operativa.</p>
-      <a class="lnk" href="#percorso" data-i18n="p2_link">Vedi il percorso →</a>
+      <a class="lnk" href="#percorso" data-i18n="p2_link">Vedi il percorso</a>
     </div>
   </div>
 
@@ -209,7 +254,7 @@
   <div class="work-grid rv">
     <div class="work-card">
       <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
-      <h3 class="work-title" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
+      <h3 class="work-title" id="case-local" data-i18n="c2t">Local AI for Sensitive Data Environments</h3>
       <p class="work-summary" data-i18n="c2_summary">Per valutare l’AI in contesti a dati sensibili, ho preparato dataset, adattato modelli e realizzato demo con inferenza locale.</p>
       <div class="work-chips">
         <span class="metachip">Local AI</span>
@@ -217,13 +262,29 @@
         <span class="metachip">AI Governance</span>
       </div>
       <p class="work-context" data-i18n="c2_map_prose">Dataset controllati e modelli eseguiti su infrastruttura locale hanno supportato demo con inferenza sotto controllo.</p>
-      <button class="work-link" type="button" aria-expanded="false" aria-controls="c2Details" data-project-toggle data-i18n="work_view">Vedi il progetto →</button>
-      <div class="case-details" id="c2Details" hidden>
-<p class="case-block-label" data-i18n="case_problem_label">Problema</p>
+      <details class="case-reader" id="c2Details" aria-labelledby="case-local">
+        <summary><span data-i18n="work_view">Vedi il progetto</span><span class="reader-sign" aria-hidden="true"></span></summary>
+        <div class="reader-layout">
+          <nav class="case-index" aria-label="Indice del caso studio" data-i18n-aria="case_index_label">
+            <a href="#c2-problema" data-i18n="case_problem_label">Problema</a>
+            <a href="#c2-approccio" data-i18n="case_approach_label">Approccio</a>
+            <a href="#c2-focus" data-i18n="case_focus_label">Focus</a>
+            <a href="#c2-apprendimenti" data-i18n="case_learning_label">Cosa ho imparato</a>
+            <a href="#c2-stack" data-i18n="case_stack_label">Stack</a>
+          </nav>
+          <div class="case-details">
+            <section class="case-block" aria-labelledby="c2-problema">
+              <h4 class="case-block-label" id="c2-problema" tabindex="-1" data-i18n="case_problem_label">Problema</h4>
   <p class="job-supp" data-i18n="c2_problem">Come utilizzare modelli AI in contesti sensibili mantenendo maggiore controllo su dati, infrastruttura e dipendenza da provider esterni?</p>
-  <p class="case-block-label" data-i18n="case_approach_label">Approccio</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c2-approccio">
+              <h4 class="case-block-label" id="c2-approccio" tabindex="-1" data-i18n="case_approach_label">Approccio</h4>
   <p class="job-supp" data-i18n="c2_solution">Ho esplorato la fattibilità di modelli AI eseguiti localmente, lavorando con Qwen, Gemma e architetture basate su Ollama. Il progetto ha incluso preparazione dei dataset, fine-tuning, deployment locale e dimostrazioni pratiche.</p>
-  <p class="case-block-label" data-i18n="case_focus_label">Focus</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c2-focus">
+              <h4 class="case-block-label" id="c2-focus" tabindex="-1" data-i18n="case_focus_label">Focus</h4>
   <div class="metarow">
     <span class="metachip">Data protection</span>
     <span class="metachip">Infrastructure control</span>
@@ -231,9 +292,15 @@
     <span class="metachip">Operational costs</span>
     <span class="metachip">AI governance</span>
   </div>
-  <p class="case-block-label" data-i18n="case_learning_label">Cosa ho imparato</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c2-apprendimenti">
+              <h4 class="case-block-label" id="c2-apprendimenti" tabindex="-1" data-i18n="case_learning_label">Cosa ho imparato</h4>
   <p class="job-supp" data-i18n="c2_learning">Portare l'AI in un ambiente controllato non significa semplicemente eseguire un modello in locale. Infrastruttura, gestione dei dati, costi e governance diventano parte integrante della soluzione.</p>
-  <p class="case-block-label" data-i18n="case_stack_label">Stack</p>
+
+            </section>
+            <section class="case-block" aria-labelledby="c2-stack">
+              <h4 class="case-block-label" id="c2-stack" tabindex="-1" data-i18n="case_stack_label">Stack</h4>
   <div class="metarow">
     <span class="metachip">Qwen</span>
     <span class="metachip">Gemma</span>
@@ -241,7 +308,16 @@
     <span class="metachip">Unsloth</span>
     <span class="metachip">Python</span>
   </div>
-      </div>
+            </section>
+            <nav class="related-reading" aria-label="Contenuti collegati" data-i18n-aria="related_label">
+              <p class="case-block-label" data-i18n="related_label">Contenuti collegati</p>
+              <a href="#casi-studio" data-i18n="sec_work_title">Progetto in produzione</a>
+              <a href="#adozione" data-i18n="sec_adoption_title">AI in produzione e adozione</a>
+            </nav>
+            <button class="work-link reader-close" type="button" data-reader-close="c2Details" data-i18n="work_close">Chiudi il progetto</button>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
