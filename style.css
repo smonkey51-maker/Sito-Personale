@@ -387,3 +387,31 @@ summary::-webkit-details-marker{display:none}
   .reader-layout{display:block!important}
   .case-reader:not([open])>*:not(summary){display:block!important}
 }
+
+/* Project overviews use the same reading measure as their detailed text. */
+.work-card{padding-top:20px}
+.work-card>.work-context{max-width:70ch;font-size:1.125rem;line-height:1.7}
+.work-summary{max-width:70ch;line-height:1.75}
+.case-contribution{display:grid;grid-template-columns:190px minmax(0,1fr);gap:40px;border-top:1px solid var(--line);padding:20px 0 8px;margin-top:24px}
+.case-contribution .case-block-label{margin:0;line-height:1.75}
+.case-contribution .work-summary{margin:0;color:var(--ink)}
+.case-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px;margin-top:12px}
+.case-actions button{min-height:44px}
+.copy-feedback{font-size:.875rem;color:var(--ink-soft)}
+.case-reader{margin-top:4px}
+.case-reader[open]>summary{color:var(--ink)}
+.work-meta::before{content:none}
+.work-meta.live{color:var(--accent)}
+.work-meta.explore{color:var(--accent-alt)}
+.job-title,.credential-title{font-size:1.25rem;line-height:1.4}
+.job-row,.experience-card,.credential-row{max-width:760px}
+.oltre-supp{font-style:normal;max-width:70ch;line-height:1.75}
+.credential-arrow{display:none}
+.credential-row:hover .credential-title{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.case-contribution{grid-template-columns:160px minmax(0,1fr);gap:28px}}
+@media(max-width:700px){
+ .case-contribution{grid-template-columns:minmax(0,1fr);gap:8px;padding-top:16px}
+ .work-card>.work-context{font-size:1.0625rem}
+ .case-actions{gap:4px 16px}
+ .case-reader>summary{font-size:1rem}
+}
