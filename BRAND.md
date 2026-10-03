@@ -272,16 +272,14 @@ di §2 prima della pubblicazione.
 
 ### Profili social
 
-Non ancora verificati con questo criterio — da allineare quando si
-aggiorna il materiale:
+Allineati dall'autore il 2026-10-03 (controllo diretto sui profili
+reali, non verificabile da codice):
 
-- [ ] LinkedIn: headline e sommario coerenti con il Positioning
+- [x] LinkedIn: headline e sommario coerenti con il Positioning
       Statement v1 (§1) e con i 3 differenziatori
-- [ ] LinkedIn: nessun superlativo residuo nei testi esistenti (tratto
+- [x] LinkedIn: nessun superlativo residuo nei testi esistenti (tratto
       voce 1)
-- [ ] Eventuali altri profili pubblici (GitHub, social): stesso
-      controllo, stesso registro prima persona/fattuale
+- [x] Nessun altro profilo pubblico attivo da allineare
 
-Questi punti restano aperti finché non vengono controllati
-direttamente sui profili reali — nessuno dei due va considerato
-verificato solo perché presente in questa checklist.
+Ricontrollare contro questa checklist a ogni revisione del
+Positioning o della Voice (§1-2).
