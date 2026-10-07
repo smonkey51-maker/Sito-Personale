@@ -35,7 +35,7 @@
     queued=false;chapters=Array.from(reader.querySelectorAll('.case-block'));current=0;
     chapters.forEach(function(el,i){if(el.getBoundingClientRect().top<reader.getBoundingClientRect().top+190)current=i;});
     var max=reader.scrollHeight-reader.clientHeight;var value=max>0?Math.round(reader.scrollTop/max*100):0;
-    var bar=toolbar.querySelector('[role="progressbar"]');bar.setAttribute('aria-valuenow',value);bar.setAttribute('aria-label',t('progress'));bar.firstChild.style.width=value+'%';
+    var bar=toolbar.querySelector('[role="progressbar"]');bar.setAttribute('aria-valuenow',value);bar.setAttribute('aria-label',t('progress'));bar.firstChild.style.transform='scaleX('+(value/100)+')';
     toolbar.querySelector('.chapter-position').textContent=chapters.length?(current+1)+' / '+chapters.length:'';
     toolbar.querySelector('[data-action="previous"]').disabled=current===0;toolbar.querySelector('[data-action="next"]').disabled=current===chapters.length-1;
     toolbar.querySelectorAll('button').forEach(function(button){button.textContent=t(button.dataset.action);});

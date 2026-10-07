@@ -181,7 +181,7 @@ main{padding-bottom:40px}
   max-width:var(--wide-w);margin:0 auto;padding:0 24px;
   display:grid;grid-template-columns:repeat(3,1fr);gap:0;
 }
-.stat{padding:28px 26px 26px;cursor:pointer}
+.stat{padding:32px 28px 28px;cursor:pointer}
 .stat + .stat{border-left:1px solid var(--line)}
 .stat .v{font-family:var(--sans);font-size:2.375rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-bottom:6px}
 .stat .k{display:block;font-family:var(--sans);font-size:.875rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:10px}
