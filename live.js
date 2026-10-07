@@ -16,8 +16,8 @@
   function renderFinder(){
     launcher.textContent=t('explore');finder.querySelector('h2').textContent=t('search');finder.querySelector('button').textContent=t('close');input.setAttribute('aria-label',t('search'));
     var nav=finder.querySelector('nav');nav.textContent='';
-    document.querySelectorAll('.section-rail-links a').forEach(function(source,i){
-      var a=document.createElement('a');a.href=source.getAttribute('href');a.textContent=String(i+1).padStart(2,'0')+'  '+source.textContent;
+    document.querySelectorAll('.section-rail-links a').forEach(function(source){
+      var a=document.createElement('a');a.href=source.getAttribute('href');a.textContent=source.textContent;
       a.hidden=!!input.value && !source.textContent.toLocaleLowerCase().includes(input.value.toLocaleLowerCase());
       a.addEventListener('click',function(){finder.close();document.querySelector(a.hash).scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});nav.appendChild(a);
     });
