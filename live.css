@@ -8,7 +8,8 @@
 .section-rail-links a.active{transform:translateX(8px)}
 .work-title,.job-title{transition:color .25s}.work-card:hover .work-title{color:var(--accent)}
 .explore-launch,.reader-controls button,.finder-close{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:0;padding:8px 12px;cursor:pointer}
-.explore-launch:hover,.reader-controls button:hover,.finder-close:hover{background:var(--accent);color:var(--bg)}
+.explore-launch:hover,.reader-controls button:hover,.finder-close:hover,
+.explore-launch:active,.reader-controls button:active,.finder-close:active{background:var(--accent);color:var(--bg)}
 .explore-launch{margin-left:auto;margin-right:16px;font-size:.8rem}
 .section-finder{width:min(640px,calc(100% - 32px));max-height:80dvh;margin:auto;padding:32px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 .section-finder::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(6px)}
