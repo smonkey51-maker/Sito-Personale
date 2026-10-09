@@ -48,18 +48,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>
-/* Salta il download dei webfont Google se l'utente ha attivo il Risparmio dati:
-   il sito resta leggibile grazie allo stack di font di sistema di fallback. */
-(function(){
-  var saveData = navigator.connection && navigator.connection.saveData;
-  if(saveData) return;
-  var l = document.createElement("link");
-  l.rel = "stylesheet";
-  l.href = "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap";
-  document.head.appendChild(l);
-})();
-</script>
+<script src="fonts.js" data-href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"></script>
 
 <script type="application/ld+json">
 {
