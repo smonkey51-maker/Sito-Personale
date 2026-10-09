@@ -56,7 +56,7 @@
   if(saveData) return;
   var l = document.createElement("link");
   l.rel = "stylesheet";
-  l.href = "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap";
+  l.href = "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap";
   document.head.appendChild(l);
 })();
 </script>
@@ -88,11 +88,11 @@
 </script>
 
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="live.css">
+
 </head>
 <body>
 
-<a class="skip-link" href="#chi-sono">Vai al contenuto</a>
+<a class="skip-link" href="#casi-studio">Vai al contenuto</a>
 <div class="scroll-progress" aria-hidden="true"></div>
 <div class="visually-hidden" id="themeAnnouncer" role="status" aria-live="polite"></div>
 
@@ -128,17 +128,7 @@
   </div>
 </header>
 
-<div class="editorial-shell"><aside class="section-rail"><p class="rail-label" data-i18n="page_index_label">Indice dei contenuti</p><nav class="section-rail-links" aria-label="Indice dei contenuti" data-i18n-aria="page_index_label">
-        <a href="#chi-sono" data-i18n="sec_chisono">Bio</a>
-        <a href="#casi-studio" data-i18n="sec_work_title">Progetto in produzione</a>
-        <a href="#adozione" data-i18n="sec_adoption_title">AI in produzione e adozione</a>
-        <a href="#sintesi" data-i18n="sec_results_title">Risultati</a>
-        <a href="#local-ai" data-i18n="sec_localai_title">Local AI</a>
-        <a href="#percorso" data-i18n="sec_path_title">Percorso</a>
-        <a href="#esperienze" data-i18n="sec_experiences">Iniziative</a>
-        <a href="#badge" data-i18n="sec_badge">Credenziali</a>
-        <a href="#contatti" data-i18n="nav_contatti">Contatti</a>
-      </nav></aside><div class="editorial-content">
+<div class="editorial-shell"><div class="editorial-content">
 <section class="hero" id="profilo" aria-labelledby="hero-name">
   <div class="wrap hero-grid">
     <div class="hero-text">
@@ -163,18 +153,13 @@
 
 <main class="wrap">
 
-  <h2 class="section-label rv" id="chi-sono"><span data-i18n="sec_chisono">Bio</span></h2>
-  <div class="chisono-card rv">
-    <p class="oltre-supp" data-i18n="chisono_p">Professionista IT che ha esteso il proprio contributo all’AI in produzione e alla sua adozione organizzativa.</p>
-  </div>
-
   <h2 class="section-label rv" id="casi-studio"><span data-i18n="sec_work_title">Progetto in produzione</span></h2>
   <div class="work-grid rv">
     <div class="work-card">
       <span class="work-meta live" data-i18n="c1_status">Production · 2026</span>
       <h3 class="work-title" id="case-rag" data-i18n="c1t">Enterprise Knowledge Retrieval</h3>
       <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
-      <p class="work-context" data-i18n="c1_impact">Un punto di accesso comune alla conoscenza aziendale: informazioni prima distribuite tra fonti separate possono essere reperite e collegate nel contesto delle attività operative e di management.</p>
+      <p class="work-context" data-i18n="c1_impact">Documenti aziendali e storico Jira erano consultati separatamente. Ho costruito due sistemi RAG e li ho poi unificati, integrando altre fonti per rendere più semplice ricostruire il contesto di una richiesta operativa.</p>
       <p class="work-summary" data-i18n="c1_summary">Da un'idea sviluppata insieme al mio Responsabile, ho realizzato due sistemi RAG in produzione per la documentazione aziendale e lo storico Jira. Li ho poi unificati in un progetto più ampio, integrando ulteriori fonti di diversa provenienza.</p>
 <div class="case-contribution"><p class="case-block-label" data-i18n="contribution_label">Il mio contributo</p><p class="work-summary" data-i18n="c1_contribution">Implementazione e messa in produzione, unificazione dei sistemi, integrazione delle fonti e manuale operativo.</p></div>
       <div class="work-chips">
@@ -213,7 +198,7 @@
             </section>
             <section class="case-block" aria-labelledby="c1-apprendimenti">
               <h4 class="case-block-label" id="c1-apprendimenti" tabindex="-1" data-i18n="case_learning_label">Cosa ho imparato</h4>
-  <p class="job-supp" data-i18n="c1_learning">L'evoluzione dai due sistemi iniziali a un progetto con fonti più numerose e diverse ha reso evidente che l'affidabilità di un RAG enterprise dipende anche dalla qualità e dalla struttura dei dati, dal contesto disponibile, dalle istruzioni, dai confini delle informazioni e dalle modalità di utilizzo. Mettere un sistema in produzione è solo una parte del lavoro: renderlo utile richiede attenzione continua a questi elementi e all'adozione da parte delle persone.</p>
+  <p class="job-supp" data-i18n="c1_learning">Dopo il rilascio, alcuni utenti continuavano a preferire la ricerca manuale. Sono emersi rallentamenti e lacune nei dati: avere un modello funzionante non bastava. Ho lavorato sulla documentazione operativa e sul confronto diretto con gli utenti. La lezione è concreta: prima di ampliare un RAG bisogna rendere affidabili le fonti e comprensibile il modo in cui usarlo.</p>
 
             </section>
             <section class="case-block" aria-labelledby="c1-focus">
@@ -236,6 +221,11 @@
         </div>
       </details>
     </div>
+  </div>
+
+  <h2 class="section-label rv" id="chi-sono"><span data-i18n="sec_chisono">Bio</span></h2>
+  <div class="chisono-card rv">
+    <p class="oltre-supp" data-i18n="chisono_p">Ho portato in produzione sistemi RAG per rendere accessibili documenti e storico Jira, poi li ho riuniti in un unico progetto. Il lavoro più impegnativo non è stato soltanto integrarli: è stato capire come renderli utili a chi li usa.</p>
   </div>
 
   <h2 class="section-label rv" id="adozione"><span data-i18n="sec_adoption_title">AI in produzione e adozione</span></h2>
@@ -428,7 +418,7 @@
 
 </div></div>
 <script src="script.js"></script>
-<script src="live.js"></script>
+
 
 </body>
 </html>
