@@ -559,4 +559,4 @@ summary::-webkit-details-marker{display:none}
 .system-insight summary{cursor:pointer;font-weight:600;min-height:44px;display:list-item;padding:10px 0}
 .system-insight p{color:var(--ink-soft);line-height:1.65;max-width:75ch;padding:6px 0 10px}
 @media(max-width:760px){.system-flow{grid-template-columns:1fr;gap:16px}.system-arrow{display:none}.system-node{padding:0}.system-node:not(:first-child){border-left:0;border-top:1px solid var(--line);padding-top:16px}}
-/* Portrait is always displayed in its original full colour. */
+/* Portrait is displayed as supplied, with no colour filters. */
