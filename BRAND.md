@@ -1,4 +1,4 @@
-# Brand — Nicolò Forcolin
+# Brand: Nicolò Forcolin
 
 Riferimento interno, non pubblicato. Raccoglie posizionamento, tono e sistema visivo del sito nforcolin.eu.
 Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
@@ -53,8 +53,8 @@ I colori sono funzionali: verde per confermato e link, terracotta per esplorazio
 
 ### Tipografia
 
-- **Serif — Source Serif 4** (fallback Georgia): titoli h1, h2, h3 e righe editoriali. Peso 500, mai grassetto pieno.
-- **Sans — stack di sistema** (Segoe UI, Tahoma, Helvetica Neue, Arial): tutto il resto, cioè corpo, etichette, metadati, bottoni.
+- **Serif: Source Serif 4** (fallback Georgia): titoli h1, h2, h3 e righe editoriali. Peso 500, mai grassetto pieno.
+- **Sans: stack di sistema** (Segoe UI, Tahoma, Helvetica Neue, Arial): tutto il resto, cioè corpo, etichette, metadati, bottoni.
 
 | Elemento | Dimensione | Font | Peso |
 |---|---|---|---|

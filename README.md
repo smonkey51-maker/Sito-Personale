@@ -1,5 +1,9 @@
 # Sito-Personale
 
-Brand direction: V2 Navy / Enterprise Editorial × Human Progress.
+Sito personale di Nicolò Forcolin (nforcolin.eu).
 
-Content rule: all public-facing claims and copy must come from the existing nforcolin.eu content; do not introduce new metrics, employers, projects, outcomes, or positioning claims during visual redesigns.
+## Regola sui contenuti
+
+Tutti i testi pubblici devono derivare dai contenuti già presenti nel sito. Nei redesign visivi non si introducono nuovi numeri, datori di lavoro, progetti, risultati o posizionamenti.
+
+Palette, font e tono sono descritti in BRAND.md.
