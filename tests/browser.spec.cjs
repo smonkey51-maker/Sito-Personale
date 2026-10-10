@@ -31,17 +31,21 @@ for(const viewport of sizes){
    await page.locator('[data-lang="it"]').click();
    await expect(page.locator('[data-i18n="rag_map_title"]')).toHaveText('Come si è evoluto il sistema');
   });
-  test('theme toggle and keyboard focus',async({page})=>{
+  test('dark theme and portrait loading',async({page})=>{
    await page.goto('/');
-   const theme=page.locator('.theme-toggle');
-   await theme.focus();
-   await page.keyboard.press('Enter');
    await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
-   await theme.click();
-   await expect(page.locator('html')).toHaveAttribute('data-theme','light');
+   await expect(page.locator('.theme-toggle')).toHaveCount(0);
    const image=page.locator('#avatarPhoto');
    await expect(image).toHaveJSProperty('complete',true);
    expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
+  });
+  test('contacts open in a dialog, not LinkedIn',async({page})=>{
+   await page.goto('/');
+   await page.locator('.contact-trigger').click();
+   await expect(page.locator('#contactDialog')).toBeVisible();
+   await expect(page.locator('#cmEmail .reveal-btn')).toBeVisible();
+   await page.keyboard.press('Escape');
+   await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
   test('no page errors and accessible disclosure',async({page})=>{
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
@@ -52,21 +56,9 @@ for(const viewport of sizes){
    expect(errors).toEqual([]);
   });
   if(viewport.width<=700){
-   test('mobile nav toggle opens, navigates and closes on Escape',async({page})=>{
+   test('mobile project link remains visible',async({page})=>{
     await page.goto('/');
-    const toggle=page.locator('.nav-toggle');
-    const nav=page.locator('#desktopNav');
-    await expect(nav).not.toBeVisible();
-    await toggle.click();
-    await expect(nav).toBeVisible();
-    await expect(toggle).toHaveAttribute('aria-expanded','true');
-    await page.keyboard.press('Escape');
-    await expect(nav).not.toBeVisible();
-    await expect(toggle).toHaveAttribute('aria-expanded','false');
-    await toggle.click();
-    await nav.locator('a[href="#casi-studio"]').click();
-    await expect(page).toHaveURL(/#casi-studio$/);
-    await expect(nav).not.toBeVisible();
+    await expect(page.locator('.desktop-nav a[href="#casi-studio"]')).toBeVisible();
    });
   }
  });
