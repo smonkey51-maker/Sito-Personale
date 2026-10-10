@@ -376,6 +376,21 @@
     });
   })();
 
+  /* One permanent visual theme; disregard preferences saved by older releases. */
+  document.documentElement.setAttribute("data-theme", "dark");
+  try { localStorage.removeItem("nfTheme"); } catch(e) {}
+
+  var contactDialog = document.getElementById("contactDialog");
+  var contactTrigger = document.querySelector(".contact-trigger");
+  if (contactDialog && contactTrigger) {
+    contactTrigger.addEventListener("click", function(){
+      if (typeof contactDialog.showModal === "function") contactDialog.showModal();
+      else contactDialog.setAttribute("open", "");
+    });
+    contactDialog.querySelector(".contact-close").addEventListener("click", function(){ contactDialog.close(); contactTrigger.focus(); });
+    contactDialog.addEventListener("click", function(event){ if (event.target === contactDialog) contactDialog.close(); });
+  }
+
   var root = document.documentElement;
   var LANG_KEY = "nfLang";
   var savedLang = null;
