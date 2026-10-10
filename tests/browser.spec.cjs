@@ -51,5 +51,23 @@ for(const viewport of sizes){
    await expect(disclosure).toHaveAttribute('open','');
    expect(errors).toEqual([]);
   });
+  if(viewport.width<=700){
+   test('mobile nav toggle opens, navigates and closes on Escape',async({page})=>{
+    await page.goto('/');
+    const toggle=page.locator('.nav-toggle');
+    const nav=page.locator('#desktopNav');
+    await expect(nav).not.toBeVisible();
+    await toggle.click();
+    await expect(nav).toBeVisible();
+    await expect(toggle).toHaveAttribute('aria-expanded','true');
+    await page.keyboard.press('Escape');
+    await expect(nav).not.toBeVisible();
+    await expect(toggle).toHaveAttribute('aria-expanded','false');
+    await toggle.click();
+    await nav.locator('a[href="#percorso"]').click();
+    await expect(page).toHaveURL(/#percorso$/);
+    await expect(nav).not.toBeVisible();
+   });
+  }
  });
 }
