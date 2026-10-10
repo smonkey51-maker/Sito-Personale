@@ -480,8 +480,12 @@ summary::-webkit-details-marker{display:none}
  .hero{padding:32px 0 48px}
  .hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:28px}
  .hero-photo-col{order:-1;width:100%}
- .avatar{width:100%;max-width:300px;margin:0 auto 0 0}
- .hero-name{font-size:3rem;margin:20px 0;line-height:1.2}
+ .avatar{width:100%;max-width:none;margin:0}
+ .hero-text{width:100%;display:flex;flex-direction:column;align-items:stretch}
+ .hero-eyebrow{font-size:1.2rem}
+ .hero-proof{font-size:1.375rem;width:100%}
+ .hero-cta-row{justify-content:space-between;width:100%}
+ .hero-name{font-size:clamp(3rem,22vw,5.5rem);margin:20px 0;line-height:1.02;width:100%}
  .hero-proof{font-size:1rem}
  .section-label{padding:40px 0 24px;font-size:.875rem}
  .oltre-supp{font-size:1.5rem;line-height:1.6}
