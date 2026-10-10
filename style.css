@@ -527,3 +527,8 @@ summary::-webkit-details-marker{display:none}
 
 /* Navigazione: indice nascosto */
 .page-index{display:none!important}
+
+/* Hero: ruolo a rotazione, cambio secco senza dissolvenze */
+.hero-role{font-family:var(--sans);font-size:1.125rem;font-weight:600;color:var(--accent);margin:0 0 20px}
+.hero-role-item{display:none}
+.hero-role-item.on{display:inline}
