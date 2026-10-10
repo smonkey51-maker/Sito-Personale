@@ -25,10 +25,19 @@ jobs:
           image = image.filter(ImageFilter.UnsharpMask(radius=1.2, percent=105, threshold=3))
           image.save('portrait-4k.webp', 'WEBP', quality=87, method=6)
           assert Image.open('portrait-4k.webp').size == (3242, 3840)
+          for file in ['index.html', 'tests/site-regression.test.js']:
+              with open(file, encoding='utf-8') as handle:
+                  content = handle.read()
+              old = 'portrait-current.webp?v=3'
+              assert old in content, f'Expected image reference missing in {file}'
+              with open(file, 'w', encoding='utf-8') as handle:
+                  handle.write(content.replace(old, 'portrait-4k.webp?v=4'))
           PY
+      - name: Verify site regressions
+        run: npm test
       - name: Commit image
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add portrait-4k.webp
+          git add portrait-4k.webp index.html tests/site-regression.test.js
           git diff --cached --quiet || (git commit -m "Generate optimized 4K portrait" && git push)
