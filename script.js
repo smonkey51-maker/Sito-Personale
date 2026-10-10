@@ -111,7 +111,7 @@
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credenziale · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Programma community · 2025",
       badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Stato del programma · 2026",
-      nav_main_label:"Navigazione principale", theme_toggle_label:"Cambia tema", hero_proof_label:"Profilo",
+      nav_main_label:"Navigazione principale", nav_toggle_label:"Menu", theme_toggle_label:"Cambia tema", hero_proof_label:"Profilo",
       hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     en: {
@@ -225,7 +225,7 @@
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Program status · 2026",
-      nav_main_label:"Main navigation", theme_toggle_label:"Toggle theme", hero_proof_label:"Profile",
+      nav_main_label:"Main navigation", nav_toggle_label:"Menu", theme_toggle_label:"Toggle theme", hero_proof_label:"Profile",
       hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     fr: {
@@ -339,7 +339,7 @@
       badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Program status · 2026",
-      nav_main_label:"Navigation principale", theme_toggle_label:"Changer de thème", hero_proof_label:"Profil",
+      nav_main_label:"Navigation principale", nav_toggle_label:"Menu", theme_toggle_label:"Changer de thème", hero_proof_label:"Profil",
       hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     }
   };
@@ -550,6 +550,28 @@
       reader.querySelector("summary").focus();
     });
   });
+
+  /* Mobile nav toggle: desktop-nav doubles as the collapsible menu panel. */
+  var navToggle = document.querySelector(".nav-toggle");
+  var navPanel = document.getElementById("desktopNav");
+  if(navToggle && navPanel){
+    function setNavOpen(open){
+      navPanel.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+    }
+    navToggle.addEventListener("click", function(){
+      setNavOpen(!navPanel.classList.contains("open"));
+    });
+    navPanel.addEventListener("click", function(e){
+      if(e.target.tagName === "A") setNavOpen(false);
+    });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape" && navPanel.classList.contains("open")){
+        setNavOpen(false);
+        navToggle.focus();
+      }
+    });
+  }
 
   /* Keep desktop navigation and reading progress in sync with scroll position. */
   var progress = document.querySelector(".scroll-progress");
