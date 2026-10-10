@@ -1,0 +1,70 @@
+/* Figma-inspired portfolio treatment — keeps existing content and functionality. */
+:root{
+ --bg:#F7F5F1;--bg-2:#EEEAE5;--ink:#1D1E22;--ink-soft:#606168;
+ --line:#DEDAD5;--accent:#7857E8;--accent-hover:#6240D3;
+ --accent-alt:#7857E8;--accent-alt-hover:#6240D3;--on-accent:#FFFFFF;
+ --sans:"Segoe UI",Tahoma,"Helvetica Neue",Arial,sans-serif;
+ --serif:var(--sans);--wide-w:1240px;--content-w:900px;
+}
+:root[data-theme="dark"]{
+ --bg:#17161B;--bg-2:#232129;--ink:#F5F1EC;--ink-soft:#C3BEC7;
+ --line:#3C3741;--accent:#B19AFF;--accent-hover:#C8B8FF;
+ --accent-alt:#B19AFF;--accent-alt-hover:#C8B8FF;--on-accent:#16121D;
+}
+body{font-size:1.03rem;line-height:1.7}
+h1,h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
+.topbar{background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
+.topbar-inner{min-height:86px;gap:32px}
+.site-name{font-weight:800;font-size:1.25rem;letter-spacing:-.05em}
+.desktop-nav a{font-size:.92rem;font-weight:600}
+.hero{padding:100px 0 125px;overflow:hidden}
+.hero-grid{grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);gap:58px;align-items:center}
+.hero-text{min-width:0}
+.hero-eyebrow{font-size:.84rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
+.hero-name{font-family:var(--sans);font-size:clamp(5rem,9vw,9rem);font-weight:800;line-height:.96;letter-spacing:-.09em;margin:0 0 40px}
+.hero-intro{font-size:clamp(1.16rem,1.75vw,1.5rem);line-height:1.55;max-width:630px;color:var(--ink);margin-bottom:30px}
+.hero-proof{margin-bottom:34px;font-size:.78rem;letter-spacing:.07em}
+.hero-photo-col{position:relative;padding:16px 0 16px 16px}
+.hero-photo-col:before{content:"";position:absolute;inset:0 0 0 0;background:#E4DDD5;border-radius:28px;transform:translate(16px,16px);z-index:0}
+.avatar{position:relative;max-width:none;width:100%;height:min(580px,49vw);min-height:420px;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:24px;filter:none}
+.hero-btn{border-radius:12px;padding:15px 24px;font-size:.94rem}
+.hero-btn.solid{background:var(--accent);border-color:var(--accent)}
+.hero-btn.outline{border-color:var(--line)}
+.section-label{font-size:clamp(2.6rem,5vw,4.7rem);padding:100px 24px 35px;line-height:1.06;letter-spacing:-.065em}
+.work-grid{display:grid;grid-template-columns:1fr;gap:0}
+.work-card{max-width:none;background:var(--bg-2);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,52px);margin:0 0 30px}
+.work-title{font-size:clamp(1.8rem,3vw,2.7rem);letter-spacing:-.055em}
+.work-meta{color:var(--accent);font-size:.78rem}
+.work-summary,.work-context,.job-supp{line-height:1.78}
+.system-map{border-radius:16px}
+.case-reader{border-top:1px solid var(--line)}
+.job-row,.experience-card{max-width:none}
+.chisono-card{max-width:var(--wide-w)}
+.oltre-supp{font-family:var(--sans);font-style:normal;max-width:900px;font-size:1.25rem}
+.metachip{letter-spacing:0}
+.hero-photo-col picture{display:block;position:relative}
+@media(min-width:1000px){
+ .work-card>.work-summary,.work-card>.work-context{max-width:850px}
+ .hero-photo-col{align-self:stretch;display:flex;align-items:center}
+ .hero-photo-col picture{width:100%}
+}
+@media(max-width:820px){
+ .topbar-inner{min-height:68px}
+ .hero{padding:52px 0 75px}
+ .hero-grid{grid-template-columns:1fr;gap:36px}
+ .hero-photo-col{order:0;max-width:540px;width:100%;padding:0}
+ .hero-photo-col:before{transform:translate(10px,10px);border-radius:18px}
+ .avatar{height:auto;min-height:0;aspect-ratio:4/4;max-width:none;border-radius:18px}
+ .hero-name{font-size:clamp(4rem,13vw,7rem);margin-bottom:26px}
+ .hero-intro{font-size:1.1rem}
+ .section-label{padding:70px 20px 28px}
+}
+@media(max-width:520px){
+ .hero-name{font-size:clamp(3.75rem,15vw,5.2rem)}
+ .hero{padding-top:38px}
+ .hero-photo-col{max-width:100%}
+ .hero-btn{padding:13px 16px}
+ .work-card{border-radius:18px;padding:22px}
+ .hero-proof{line-height:1.6}
+}
+@media(prefers-reduced-motion:reduce){.hero-photo-col:before{transform:none}}
