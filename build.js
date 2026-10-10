@@ -1,7 +1,7 @@
 // Build di produzione: copia il sito statico in dist/, minificando
 // solo style.css e script.js. index.html resta invariato perché gli
 // script inline in <head> sono ancorati via hash SHA-256 nella CSP
-// (vercel.json) — minificarli cambierebbe quegli hash.
+// (vercel.json): minificarli cambierebbe quegli hash.
 const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
