@@ -431,7 +431,7 @@
       t.setAttribute("aria-label", i18n[lang][dark ? "theme_light" : "theme_dark"]);
       t.setAttribute("aria-pressed", String(dark));
     });
-    if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#1B1A17" : "#F8F7F4");
+    if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#0A0A0A" : "#FFFFFF");
   }
   var themeAnnouncer = document.getElementById("themeAnnouncer");
   function announceTheme(dark){
