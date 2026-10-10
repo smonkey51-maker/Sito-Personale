@@ -1,6 +1,18 @@
 (function(){
   var i18n = {
     it: {
+      skip_to_content:"Vai al contenuto",
+      hero_intro:"Conosco i sistemi e i processi IT dall’operatività quotidiana. Contribuisco a progetti di AI per individuare dove nuove tecnologie possono essere effettivamente utili.",
+      tag_enterprise_ai:"AI aziendale",
+      tag_local_ai:"AI in locale",
+      tag_ai_governance:"Governance AI",
+      tag_data_protection:"Protezione dei dati",
+      tag_infra_control:"Controllo infrastrutturale",
+      tag_provider_dependency:"Dipendenza dai fornitori",
+      tag_operational_costs:"Costi operativi",
+      contact_email_label:"Email",
+      page_title:"Nicolò Forcolin | Progetti AI in produzione",
+      page_description:"Service Desk Agent @ InfoCamere. Progetti AI in produzione, RAG aziendale e AI in locale.",
       rag_map_title:"Come si è evoluto il sistema",
       map_note:"Schema concettuale, non infrastruttura reale",
       rag_step1_kicker:"Fonti iniziali",
@@ -112,6 +124,18 @@
       hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     en: {
+      skip_to_content:"Skip to content",
+      hero_intro:"My understanding of IT systems and processes comes from day-to-day operations. I contribute to AI projects, identifying where new technologies can deliver practical value.",
+      tag_enterprise_ai:"Enterprise AI",
+      tag_local_ai:"Local AI",
+      tag_ai_governance:"AI Governance",
+      tag_data_protection:"Data protection",
+      tag_infra_control:"Infrastructure control",
+      tag_provider_dependency:"Provider dependency",
+      tag_operational_costs:"Operational costs",
+      contact_email_label:"Email",
+      page_title:"Nicolò Forcolin | AI Projects in Production",
+      page_description:"Service Desk Agent @ InfoCamere. AI projects in production, enterprise RAG and local AI.",
       rag_map_title:"How the system evolved",
       map_note:"Conceptual overview, not actual infrastructure",
       rag_step1_kicker:"Initial sources",
@@ -223,6 +247,18 @@
       hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
     },
     fr: {
+      skip_to_content:"Aller au contenu",
+      hero_intro:"Ma connaissance des systèmes et des processus informatiques vient du travail opérationnel quotidien. Je contribue à des projets d’IA pour déterminer où les nouvelles technologies apportent une réelle valeur.",
+      tag_enterprise_ai:"IA en entreprise",
+      tag_local_ai:"IA en local",
+      tag_ai_governance:"Gouvernance de l’IA",
+      tag_data_protection:"Protection des données",
+      tag_infra_control:"Maîtrise de l’infrastructure",
+      tag_provider_dependency:"Dépendance aux fournisseurs",
+      tag_operational_costs:"Coûts d’exploitation",
+      contact_email_label:"E-mail",
+      page_title:"Nicolò Forcolin | Projets d’IA en production",
+      page_description:"Service Desk Agent @ InfoCamere. Projets d’IA en production, RAG d’entreprise et IA en local.",
       rag_map_title:"Évolution du système",
       map_note:"Schéma conceptuel, pas l'infrastructure réelle",
       rag_step1_kicker:"Sources initiales",
@@ -401,6 +437,9 @@
   function applyLang(){
     root.lang = lang;
     var dict = i18n[lang];
+    document.title = dict.page_title;
+    var pageDescription = document.querySelector('meta[name="description"]');
+    if(pageDescription) pageDescription.setAttribute("content", dict.page_description);
     document.querySelectorAll("[data-i18n]").forEach(function(el){
       var k = el.getAttribute("data-i18n");
       if(dict[k] !== undefined){ el.textContent = dict[k]; }
