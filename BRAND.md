@@ -11,7 +11,7 @@ Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
 
 **Positioning statement (v1):**
 
-> Per chi deve decidere se un professionista IT sa portare l'AI dalla demo alla produzione: sono la prova concreta che si può fare, con la disciplina di un'infrastruttura mission-critical.
+> Per chi deve decidere se un professionista IT sa portare l'AI dalla demo alla produzione: il lavoro al Service Desk di InfoCamere e i progetti AI in produzione sono la prova concreta.
 
 **Tre differenziatori:**
 
