@@ -6,16 +6,16 @@
 
 :root{
   color-scheme:light;
-  --bg:#F8F7F4;        /* pietra calda */
-  --bg-2:#F0EFEA;       /* alabastro muto */
-  --ink:#1A1D20;        /* carbone profondo */
-  --ink-soft:#5C646C;   /* ardesia minerale */
-  --line:#D8D5CD;       /* hairline */
-  --accent:#2D4A3E;     /* verde salvia scuro */
-  --accent-hover:#1E332A;
-  --accent-alt:#9E4732; /* terracotta */
-  --accent-alt-hover:#7D3726;
-  --on-accent:#F8F7F4;
+  --bg:#FFFFFF;        /* pietra calda */
+  --bg-2:#FAFAFA;       /* alabastro muto */
+  --ink:#111111;        /* carbone profondo */
+  --ink-soft:#626262;   /* ardesia minerale */
+  --line:#E5E5E5;       /* hairline */
+  --accent:#171717;     /* verde salvia scuro */
+  --accent-hover:#404040;
+  --accent-alt:#9A6700; /* terracotta */
+  --accent-alt-hover:#805600;
+  --on-accent:#FFFFFF;
 
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   --sans:"Segoe UI",Tahoma,"Helvetica Neue",Arial,sans-serif;
@@ -27,16 +27,16 @@
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --bg:#1B1A17;
-  --bg-2:#232220;
-  --ink:#F1EFE9;
-  --ink-soft:#A8A296;
-  --line:#3A3833;
-  --accent:#8FB09E;
-  --accent-hover:#A8C4B4;
-  --accent-alt:#D08165;
-  --accent-alt-hover:#DDA08A;
-  --on-accent:#1B1A17;
+  --bg:#0A0A0A;
+  --bg-2:#141414;
+  --ink:#FAFAFA;
+  --ink-soft:#A3A3A3;
+  --line:#2B2B2B;
+  --accent:#FAFAFA;
+  --accent-hover:#D4D4D4;
+  --accent-alt:#E5B45B;
+  --accent-alt-hover:#F1C879;
+  --on-accent:#0A0A0A;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -527,3 +527,12 @@ summary::-webkit-details-marker{display:none}
 
 /* Navigazione: indice nascosto */
 .page-index{display:none!important}
+
+/* Monochrome refinement: a single navigation and accessible controls. */
+.page-index{display:none!important}
+.topbar-inner{flex-wrap:nowrap}
+.desktop-nav{margin-left:auto;margin-right:0}
+.hero-btn,.page-index-links,.case-reader,.credential-row{transition-duration:var(--dur)}
+.hero-btn{border-radius:6px}
+.hero-btn.outline:hover{border-color:var(--ink);color:var(--ink)}
+@media(max-width:700px){.topbar-inner{flex-wrap:wrap}.desktop-nav{margin-left:0}}
