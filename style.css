@@ -220,11 +220,11 @@ main{padding-bottom:40px}
 .job-current-tag,.education-tag{color:var(--accent);font-weight:600}
 .job-current-tag::before{content:"· "}
 .education-tag::before{content:"· "}
-.job-title{font-family:var(--serif);font-size:1.1875rem;margin-bottom:8px}
+.job-title{font-family:var(--sans);font-size:1.1875rem;margin-bottom:8px}
 .job-supp{font-size:1rem;color:var(--ink-soft);line-height:1.65}
 .exp-sub{margin-top:18px;padding-left:20px;border-left:2px solid var(--accent)}
 .exp-sub-overline{font-family:var(--sans);font-size:.875rem;font-weight:600;text-transform:none;letter-spacing:.01em;color:var(--ink-soft);margin-bottom:4px}
-.exp-sub-title{font-family:var(--serif);font-size:1.0rem;margin-bottom:6px}
+.exp-sub-title{font-family:var(--sans);font-size:1.0rem;margin-bottom:6px}
 .exp-sub-supp{font-size:.875rem;color:var(--ink-soft);line-height:1.6}
 
 /* ---- Credenziali ---- */
@@ -234,7 +234,7 @@ main{padding-bottom:40px}
   padding:20px 0;border-bottom:1px solid var(--line);color:var(--ink);max-width:680px;
 }
 .credential-icon{display:none}
-.credential-title{font-family:var(--serif);font-size:1.0625rem}
+.credential-title{font-family:var(--sans);font-size:1.0625rem}
 .credential-meta{display:block;font-family:var(--sans);font-size:.875rem;color:var(--ink-soft);margin-top:4px}
 .credential-arrow{font-family:var(--sans);color:var(--ink-soft);flex:none}
 @media(hover:hover) and (pointer:fine){.credential-row:hover .credential-arrow{color:var(--accent)}}
