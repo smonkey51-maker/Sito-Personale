@@ -416,11 +416,7 @@ summary::-webkit-details-marker{display:none}
 .topbar-inner{max-width:1440px;padding:12px 64px;gap:32px}
 .editorial-shell{max-width:1440px;margin:auto;display:grid;grid-template-columns:220px minmax(0,908px);gap:48px;padding:0 64px}
 .editorial-content{min-width:0}
-.section-rail{position:sticky;top:calc(var(--nav-offset,88px) + 24px);align-self:start;max-height:calc(100dvh - var(--nav-offset,88px) - 40px);overflow:auto;padding-top:32px}
 .rail-label{font-size:.875rem;color:var(--ink-soft);margin-bottom:20px}
-.section-rail-links{display:grid;gap:6px}
-.section-rail-links a{padding:10px 0;min-height:44px;font-size:.875rem;color:var(--ink-soft);line-height:1.5;border-left:2px solid transparent;padding-left:12px}
-.section-rail-links a:hover,.section-rail-links a[aria-current]{color:var(--accent);border-left-color:var(--accent)}
 .editorial-content .wrap{padding-left:0;padding-right:0}
 .hero{padding:64px 0}
 .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;max-width:none}
@@ -457,7 +453,6 @@ summary::-webkit-details-marker{display:none}
 .colophon h2{font-family:var(--sans);font-size:.875rem;text-transform:none;font-weight:500;letter-spacing:.01em;color:var(--ink-soft)}
 @media(max-width:1050px){
  .editorial-shell{grid-template-columns:minmax(0,1fr);padding:0 40px}
- .section-rail{display:none}
  .topbar-inner{padding:8px 40px}
  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
  .avatar{width:100%}
@@ -485,7 +480,7 @@ summary::-webkit-details-marker{display:none}
  .stat .k,.stat .d,.stat .lnk{grid-column:auto}
  .job-title{font-size:1.625rem}.credential-title{font-size:1.5rem}
 }
-@media print{.editorial-shell{display:block;padding:0}.section-rail,.site-name{display:none}}
+@media print{.editorial-shell{display:block;padding:0}.site-name{display:none}}
 /* Native dialog supplies focus containment and Escape; details are the fallback. */
 .reading-project{overflow:hidden}
 .project-reader{position:fixed;inset:0;width:100%;height:100dvh;max-width:none;max-height:none;border:0;padding:40px max(24px,calc((100vw - 1200px)/2));background:var(--bg);color:var(--ink);overflow-y:auto;overscroll-behavior:contain}
