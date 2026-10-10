@@ -10,7 +10,7 @@ for(const viewport of sizes){
    await expect(page.locator('#avatarPhoto')).toBeVisible();
    await expect(page.locator('.system-map')).toHaveCount(2);
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBeTruthy();
-   await page.locator('a[href="#casi-studio"]').first().click();
+   await page.locator('.hero-btn[href="#casi-studio"]').click();
    await expect(page).toHaveURL(/#casi-studio$/);
   });
   test('case dialog opens and closes with keyboard',async({page})=>{
