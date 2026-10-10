@@ -10,7 +10,7 @@ const root = __dirname;
 const dist = path.join(root, "dist");
 
 const skip = new Set([
-  "node_modules", ".git", "dist", "package.json", "package-lock.json",
+  "node_modules", ".git", ".github", "tests", "dist", "package.json", "package-lock.json", "playwright.config.cjs",
   "build.js", "README.md", "CLAUDE.md", "BRAND.md",
 ]);
 
