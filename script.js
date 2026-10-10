@@ -2,7 +2,7 @@
   var i18n = {
     it: {
       skip_to_content:"Vai al contenuto",
-      hero_intro:"Conosco i sistemi e i processi IT dall’operatività quotidiana. Contribuisco a progetti di AI per individuare dove nuove tecnologie possono essere effettivamente utili.",
+      hero_intro:"Lavoro nel Service Desk di InfoCamere, contribuendo al supporto operativo dell’infrastruttura IT del sistema camerale italiano. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.",
       tag_enterprise_ai:"AI aziendale",
       tag_local_ai:"AI in locale",
       tag_ai_governance:"Governance AI",
@@ -125,7 +125,7 @@
     },
     en: {
       skip_to_content:"Skip to content",
-      hero_intro:"My understanding of IT systems and processes comes from day-to-day operations. I contribute to AI projects, identifying where new technologies can deliver practical value.",
+      hero_intro:"I work in InfoCamere’s Service Desk, helping support the IT infrastructure of the Italian Chambers of Commerce system. In parallel, I contribute to AI projects, including their integration into operational processes and adoption across the organization.",
       tag_enterprise_ai:"Enterprise AI",
       tag_local_ai:"Local AI",
       tag_ai_governance:"AI Governance",
