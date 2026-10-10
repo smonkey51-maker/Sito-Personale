@@ -302,7 +302,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 .lang-btn{min-width:32px}
 .theme-toggle{min-width:44px}
 summary::-webkit-details-marker{display:none}
-.page-index-links a:hover,.page-index-links a[aria-current]{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
 .work-card{max-width:none;padding:12px 0 32px}
 .work-title{font-size:clamp(1.5rem,2.5vw,1.875rem);line-height:1.25;max-width:760px}
 .work-summary,.work-context{font-size:1rem;max-width:760px}
