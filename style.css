@@ -433,7 +433,7 @@ summary::-webkit-details-marker{display:none}
 .section-rail-links a:hover,.section-rail-links a[aria-current]{color:var(--accent);border-left-color:var(--accent)}
 .editorial-content .wrap{padding-left:0;padding-right:0}
 .hero{padding:64px 0}
-.hero-grid{grid-template-columns:220px minmax(0,1fr);gap:64px}
+.hero-grid{grid-template-columns:220px minmax(0,1fr);gap:64px;max-width:none}
 .hero-photo-col{order:-1}
 .avatar{width:220px;max-width:220px;margin:0}
 .hero-name{font-size:5rem;line-height:1.12;margin:20px 0 24px}
@@ -509,7 +509,7 @@ summary::-webkit-details-marker{display:none}
 @media print{.project-reader{position:static;height:auto;overflow:visible}.project-reader-back{display:none}.reading-project{overflow:visible}}
 
 /* Editorial clarity: single reading column, varied section rhythm. */
-.editorial-shell{display:block;max-width:1060px;padding:0 48px}
+.editorial-shell{display:block;max-width:none;padding:0 48px}
 .editorial-content{max-width:100%}
 .section-label{padding-top:64px;letter-spacing:.01em}
 #casi-studio.section-label{border-top:0;padding-top:28px}
