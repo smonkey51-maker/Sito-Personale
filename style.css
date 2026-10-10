@@ -219,7 +219,7 @@ main{padding-bottom:40px}
 }
 .job-current-tag,.education-tag{color:var(--accent);font-weight:600}
 .job-current-tag::before{content:"· "}
-.education-tag::before{content:"— "}
+.education-tag::before{content:"· "}
 .job-title{font-family:var(--serif);font-size:1.1875rem;margin-bottom:8px}
 .job-supp{font-size:1rem;color:var(--ink-soft);line-height:1.65}
 .exp-sub{margin-top:18px;padding-left:20px;border-left:2px solid var(--accent)}
