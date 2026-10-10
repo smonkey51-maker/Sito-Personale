@@ -47,7 +47,7 @@ assert(html.includes('data-i18n="skip_to_content"'), 'Skip link must be translat
 
 assert(!html.includes('data-lang="fr"'), 'French selector must be removed');
 assert(!html.includes('class="desktop-nav"'), 'Redundant project nav must be removed');
-assert(html.includes('srcset="portrait-black.webp?v=2"'), 'New portrait must be displayed');
+assert(html.includes('srcset="portrait-current.webp?v=3"'), 'New portrait must be displayed');
 assert(!html.includes('id="c1Details"'), 'RAG detail reader must be removed');
 assert(!html.includes('rag_step1_title'), 'RAG diagram must be removed');
 assert(!html.includes('id="c2Details"'), 'Local AI detail reader must be removed');
