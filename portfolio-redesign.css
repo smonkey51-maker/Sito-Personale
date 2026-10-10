@@ -168,3 +168,16 @@ h1,h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:820px){
  .hero-photo-col picture,.hero-photo-col .avatar{border-radius:16px}
 }
+
+/* Minimal two-language header without redundant projects navigation. */
+.topbar-inner{min-height:72px;justify-content:space-between;align-items:center;flex-wrap:nowrap}
+.site-name{display:inline-flex!important;white-space:nowrap}
+.utilbar{margin-left:auto;display:flex;align-items:center;gap:12px}
+.hero-photo-col picture{overflow:hidden;background:transparent!important;box-shadow:none!important}
+.hero-photo-col .avatar{display:block;object-fit:cover;object-position:center 22%}
+@media(max-width:520px){
+ .topbar-inner{min-height:64px;padding:12px 20px;gap:10px;flex-wrap:nowrap}
+ .site-name{font-size:.84rem}
+ .utilbar{gap:8px}
+ .hero-photo-col{max-width:300px}
+}
