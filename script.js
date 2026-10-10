@@ -85,7 +85,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Programma community · 2025",
       badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Stato del programma · 2026",
       nav_main_label:"Navigazione principale", theme_toggle_label:"Cambia tema", hero_proof_label:"Profilo",
-      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
+      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator", hero_role1:"Service Desk Agent", hero_role2:"AI in produzione", hero_role3:"Adozione organizzativa",
     },
     en: {
       back_to_site:'Back to website',
@@ -172,7 +172,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Main navigation", theme_toggle_label:"Toggle theme", hero_proof_label:"Profile",
-      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
+      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator", hero_role1:"Service Desk Agent", hero_role2:"AI in production", hero_role3:"Organizational adoption",
     },
     fr: {
       back_to_site:'Retour au site',
@@ -259,7 +259,7 @@
       badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
       badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Program status · 2026",
       nav_main_label:"Navigation principale", theme_toggle_label:"Changer de thème", hero_proof_label:"Profil",
-      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
+      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator", hero_role1:"Service Desk Agent", hero_role2:"IA en production", hero_role3:"Adoption dans l’organisation",
     }
   };
 
@@ -537,6 +537,15 @@
     });
   });
   applyLang();
+  /* ---- ruolo a rotazione nella hero (fermo se l'utente preferisce meno movimento) ---- */
+  (function(){
+    var items = document.querySelectorAll(".hero-role-item");
+    if(items.length < 2 || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    var i = 0;
+    setInterval(function(){
+      items[i].classList.remove("on");
+      i = (i + 1) % items.length;
+      items[i].classList.add("on");
+    }, 2600);
+  })();
 })();
-
-
