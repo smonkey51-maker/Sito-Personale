@@ -553,7 +553,7 @@
 
   /* Keep desktop navigation and reading progress in sync with scroll position. */
   var progress = document.querySelector(".scroll-progress");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a, .section-rail-links a'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a'));
   var sectionIds = Array.from(new Set(navLinks.map(function(a){ return a.hash.slice(1); })));
   var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
   var queued = false;
