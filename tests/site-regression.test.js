@@ -12,14 +12,14 @@ assert(!html.includes('\\n<'), 'Literal newline escape found in HTML');
 assert(!html.includes('class="page-index"'), 'Redundant page index returned');
 assert(!js.includes('getElementById("pageIndex")'), 'Orphaned index JS returned');
 assert(!css.includes('grayscale('), 'Portrait must stay in colour');
-for (const id of ['casi-studio','local-ai','chi-sono','esperienze']) {
+for (const id of ['casi-studio','local-ai','esperienze']) {
   assert(html.includes('id="' + id + '"'), 'Missing section ' + id);
 }
-for (const removed of ['percorso','badge','contatti']) {
+for (const removed of ['percorso','badge','contatti','chi-sono']) {
   assert(!html.includes('id="' + removed + '"'), 'Removed section returned: ' + removed);
 }
 assert(html.indexOf('id="casi-studio"') < html.indexOf('id="local-ai"'), 'RAG must precede local AI');
-assert(html.indexOf('id="local-ai"') < html.indexOf('id="chi-sono"'), 'Projects must precede biography');
+assert(html.indexOf('id="local-ai"') < html.indexOf('id="esperienze"'), 'Projects must precede initiatives');
 for (const key of [...html.matchAll(/data-i18n="([^"]+)"/g)].map(m=>m[1])) {
   for (const lang of ['it','en']) {
     const start=js.indexOf(lang + ': {');
