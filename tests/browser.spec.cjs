@@ -64,8 +64,8 @@ for(const viewport of sizes){
     await expect(nav).not.toBeVisible();
     await expect(toggle).toHaveAttribute('aria-expanded','false');
     await toggle.click();
-    await nav.locator('a[href="#percorso"]').click();
-    await expect(page).toHaveURL(/#percorso$/);
+    await nav.locator('a[href="#casi-studio"]').click();
+    await expect(page).toHaveURL(/#casi-studio$/);
     await expect(nav).not.toBeVisible();
    });
   }
