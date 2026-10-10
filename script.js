@@ -123,7 +123,7 @@
       nav_contatti:"Contact",
       hero_cta1:"Explore my work",
       sec_chisono:"Bio",
-      chisono_p:"I work in the Service Desk of InfoCamere, contributing to the operational support of the IT infrastructure of the Italian Chamber system. In parallel, I take part in AI projects, including their integration into processes and their adoption across the organization.",
+      chisono_p:"I work for the Service Desk of InfoCamere, contributing to the operational support of the IT infrastructure of the Italian Chamber system. In parallel, I take part in projects including AI integration into processes and its adoption across the organization.",
       sec_results_title:"Results",
       sec_work_title:"Production Project",
       sec_adoption_title:"AI in Production & Adoption",
