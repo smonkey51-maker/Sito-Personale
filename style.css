@@ -588,3 +588,21 @@ summary::-webkit-details-marker{display:none}
  .project-reader{padding:20px}
 }
 @media(prefers-reduced-motion:reduce){.avatar{transition:none}}
+
+/* Project diagrams: compact, factual, keyboard-accessible disclosures. */
+.system-map{margin:32px 0 26px;padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2)}
+.system-map-heading{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 20px;margin-bottom:22px;font-size:.875rem;font-weight:600}
+.system-map-note{font-size:.75rem;font-weight:400;color:var(--ink-soft)}
+.system-flow{display:grid;grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr) 20px minmax(0,1fr);gap:10px;align-items:stretch}
+.system-node{border:1px solid var(--line);border-radius:8px;padding:18px;background:var(--bg);min-width:0}
+.system-node-featured{border-color:var(--ink)}
+.system-node-kicker{display:block;color:var(--ink-soft);font-size:.75rem;margin-bottom:9px}
+.system-node strong{display:block;font-size:1rem;line-height:1.35;letter-spacing:-.02em}
+.system-node p{font-size:.8125rem;line-height:1.5;color:var(--ink-soft);margin-top:10px}
+.system-arrow{align-self:center;text-align:center;color:var(--ink-soft)}
+.system-insight{border-top:1px solid var(--line);margin-top:22px;padding-top:14px;font-size:.875rem}
+.system-insight summary{cursor:pointer;font-weight:600;min-height:44px;display:list-item;padding:10px 0}
+.system-insight p{color:var(--ink-soft);line-height:1.65;max-width:75ch;padding:6px 0 10px}
+@media(max-width:760px){.system-map{padding:18px}.system-flow{grid-template-columns:1fr;gap:8px}.system-arrow{transform:rotate(90deg);padding:3px}.system-node{padding:16px}}
+/* Portrait must remain in its original full colour in all states. */
+.avatar,.avatar:hover{filter:none!important}
