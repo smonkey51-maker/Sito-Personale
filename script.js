@@ -450,7 +450,6 @@
 
   /* Native readers remain usable without JavaScript. Hashes open the
      appropriate reader before navigation, including direct entry and Back. */
-  var menu = document.getElementById("pageIndex");
   var readers = Array.prototype.slice.call(document.querySelectorAll(".case-reader"));
   function hashTarget(hash){
     try{ return hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; }
@@ -533,7 +532,6 @@
       var target = hashTarget(link.getAttribute("href"));
       if(activeReader && target && !projectDialog.contains(target) && target !== activeReader) closeProject();
       expose(target);
-      if(menu) menu.open = false;
       if(target){
         if(!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
         requestAnimationFrame(function(){ target.focus({preventScroll:true}); });
@@ -552,16 +550,10 @@
       reader.querySelector("summary").focus();
     });
   });
-  if(menu){
-    document.addEventListener("click", function(event){ if(!menu.contains(event.target)) menu.open = false; });
-    document.addEventListener("keydown", function(event){
-      if(event.key === "Escape" && menu.open){ menu.open = false; menu.querySelector("summary").focus(); }
-    });
-  }
 
-  /* The same section index drives desktop and mobile navigation feedback. */
+  /* Keep desktop navigation and reading progress in sync with scroll position. */
   var progress = document.querySelector(".scroll-progress");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a, .page-index-links a, .section-rail-links a'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a, .section-rail-links a'));
   var sectionIds = Array.from(new Set(navLinks.map(function(a){ return a.hash.slice(1); })));
   var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
   var queued = false;

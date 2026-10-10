@@ -33,42 +33,26 @@ Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
 
 ## 3. Sistema visivo
 
-Il sito segue una direzione editoriale sobria: niente card, niente ombre, niente pillole, niente grafici decorativi. Separano i blocchi solo filetti sottili.
+Il sito usa una direzione monocromatica sobria, con priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. La fotografia resta sempre a colori. Evitare effetti decorativi gratuiti e slogan.
 
 ### Palette
 
 | Token | Light | Dark | Uso |
 |---|---|---|---|
-| `--bg` | `#F8F7F4` | `#1B1A17` | sfondo pagina |
-| `--bg-2` | `#F0EFEA` | `#232220` | sfondo colophon e sezioni alternate |
-| `--ink` | `#1A1D20` | `#F1EFE9` | testo principale |
-| `--ink-soft` | `#5C646C` | `#A8A296` | testo secondario, metadati |
-| `--line` | `#D8D5CD` | `#3A3833` | filetti |
-| `--accent` | `#2D4A3E` | `#8FB09E` | link, stato "prodotto", CTA |
-| `--accent-alt` | `#9E4732` | `#D08165` | stato "esplorazione" |
+| `--bg` | `#FFFFFF` | `#0A0A0A` | Sfondo principale |
+| `--bg-2` | `#FAFAFA` | `#141414` | Superficie secondaria |
+| `--ink` | `#111111` | `#FAFAFA` | Testo principale |
+| `--ink-soft` | `#626262` | `#A3A3A3` | Testo secondario |
+| `--line` | `#E5E5E5` | `#2B2B2B` | Separazioni |
 
-Il dark mode non è un'inversione: verde e terracotta sono leggermente più chiari e meno saturi per restare leggibili.
+### Tipografia e comportamento
 
-I colori sono funzionali: verde per confermato e link, terracotta per esplorazione. Non si aggiungono altri colori.
-
-### Tipografia
-
-- **Serif: Source Serif 4** (fallback Georgia): titoli h1, h2, h3 e righe editoriali. Peso 500, mai grassetto pieno.
-- **Sans: stack di sistema** (Segoe UI, Tahoma, Helvetica Neue, Arial): tutto il resto, cioè corpo, etichette, metadati, bottoni.
-
-| Elemento | Dimensione | Font | Peso |
-|---|---|---|---|
-| Nome hero (h1) | 64px (40px mobile) | Serif | 500 |
-| Titolo sezione (h2) | 38px (29px mobile) | Serif | 600 |
-| Titolo lavoro (h3) | 21px | Serif | 500 |
-| Corpo | 15–16px | Sans | 400 |
-| Etichetta blocco | 12px maiuscolo, tracking .06em | Sans | 600, colore accent |
-
-### Logo
-
-Monogramma "NF" su doppia linea orizzontale, peso 500. Compare solo nei touchpoint tecnici (favicon, icona PWA, schermata home), non nella pagina: il nome nell'hero è già il marchio principale.
-
-Tutte le icone derivano dallo stesso SVG sorgente. Le versioni maskable hanno il segno ridotto al 62% e centrato.
+- Sans di sistema (Segoe UI / fallback), Source Serif 4 dove già previsto. Non usare Inter.
+- Prima i casi studio RAG e Local AI, poi bio e percorso.
+- Navigazione unica, senza indici duplicati.
+- I dettagli espandibili devono funzionare anche da tastiera.
+- Layout fluido per desktop e mobile, con rispetto per `prefers-reduced-motion`.
+- Non inventare metriche, impatti o caratteristiche tecniche.
 
 ## 4. Profili social
 
