@@ -431,7 +431,7 @@
       t.setAttribute("aria-label", i18n[lang][dark ? "theme_light" : "theme_dark"]);
       t.setAttribute("aria-pressed", String(dark));
     });
-    if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#1B1A17" : "#F8F7F4");
+    if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#0A0A0A" : "#FFFFFF");
   }
   var themeAnnouncer = document.getElementById("themeAnnouncer");
   function announceTheme(dark){
@@ -553,7 +553,7 @@
 
   /* Keep desktop navigation and reading progress in sync with scroll position. */
   var progress = document.querySelector(".scroll-progress");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a, .section-rail-links a'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a'));
   var sectionIds = Array.from(new Set(navLinks.map(function(a){ return a.hash.slice(1); })));
   var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
   var queued = false;
