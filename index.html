@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" id="themeColorMeta" content="#FFFFFF">
+<meta name="theme-color" id="themeColorMeta" content="#17161B">
 
 <title>Nicolò Forcolin, Service Desk Agent @ InfoCamere | Progetti AI in produzione</title>
 <meta name="description" content="Service Desk Agent @ InfoCamere. Lavoro su progetti AI in produzione, dal RAG aziendale all’AI in locale. Google Cloud Innovator.">
@@ -16,16 +16,6 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 
-<script>
-/* Applica subito il tema salvato da una visita precedente, prima del
-   primo paint, per evitare il flash del tema chiaro di default. */
-(function(){
-  try{
-    var savedTheme = localStorage.getItem("nfTheme");
-    if(savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
-  } catch(e){}
-})();
-</script>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -96,8 +86,6 @@
       <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
       <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
-      <span class="utilbar-sep"></span>
-      <button class="theme-toggle" aria-label="Cambia tema" data-i18n-aria="theme_toggle_label">☾</button>
     </div>
   </div>
 </header>
@@ -114,7 +102,7 @@
       </div>
       <div class="hero-cta-row">
         <a class="hero-btn solid" href="#casi-studio"><span data-i18n="hero_cta1">Esplora il mio lavoro</span></a>
-        <a class="hero-btn outline" href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener noreferrer">Contatti ↗</a>
+        <button class="hero-btn outline contact-trigger" type="button" aria-haspopup="dialog" aria-controls="contactDialog" data-i18n="colophon_title">Contatti</button>
       </div>
     </div>
     <div class="hero-photo-col">
@@ -347,6 +335,16 @@
 <script src="script.js"></script>
 
 
+
+<dialog id="contactDialog" class="contact-dialog" aria-labelledby="contactDialogTitle">
+  <div class="contact-dialog-head"><h2 id="contactDialogTitle" data-i18n="colophon_title">Contatti</h2><button type="button" class="contact-close" aria-label="Chiudi">×</button></div>
+  <p class="contact-dialog-note" data-i18n="colophon_note">Sito personale. Le attività descritte sono presentate a titolo personale.</p>
+  <div class="colophon-links">
+    <div class="cm-row"><span class="cm-k">Email</span><span class="cm-v" id="cmEmail"></span></div>
+    <div class="cm-row"><span class="cm-k" data-i18n="cm_phone">Telefono</span><span class="cm-v" id="cmPhone"></span></div>
+    <div class="cm-row"><span class="cm-k">LinkedIn</span><span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener noreferrer">nicoloforcolin</a></span></div>
+  </div>
+</dialog>
 </body>
 </html>
 
