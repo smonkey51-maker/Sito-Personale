@@ -29,4 +29,20 @@ for (const key of [...html.matchAll(/data-i18n="([^"]+)"/g)].map(m=>m[1])) {
   }
 }
 assert(config.headers.some(group => group.headers.some(h => h.key === 'Content-Security-Policy')), 'Missing CSP');
+
+// Translation coverage: all keys used in the page must exist in all three dictionaries.
+const translationKeys = [...html.matchAll(/data-i18n(?:-aria|-title|-placeholder)?="([^"]+)"/g)].map(m => m[1]);
+const scriptSource = fs.readFileSync(path.join(__dirname, '..', 'script.js'), 'utf8');
+for (const language of ['it','en','fr']) {
+  const start = scriptSource.indexOf('    ' + language + ': {');
+  const end = language === 'it' ? scriptSource.indexOf('    en: {',start) : language === 'en' ? scriptSource.indexOf('    fr: {',start) : scriptSource.indexOf('\n  };',start);
+  assert(start >= 0 && end > start, 'Translation dictionary missing: ' + language);
+  const section = scriptSource.slice(start,end);
+  for(const key of translationKeys) {
+    assert(new RegExp('\\b' + key + '\\s*:').test(section), language + ' missing translation for ' + key);
+  }
+}
+assert(html.includes('data-i18n="hero_intro"'), 'Hero introduction must be translated');
+assert(html.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
+
 console.log('Site regression checks passed');
