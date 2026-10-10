@@ -50,5 +50,8 @@ assert(!html.includes('class="desktop-nav"'), 'Redundant project nav must be rem
 assert(html.includes('srcset="portrait-black.webp?v=2"'), 'New portrait must be displayed');
 assert(!html.includes('id="c1Details"'), 'RAG detail reader must be removed');
 assert(!html.includes('rag_step1_title'), 'RAG diagram must be removed');
+assert(!html.includes('id="c2Details"'), 'Local AI detail reader must be removed');
+assert(!html.includes('local_step1_title'), 'Local AI diagram must be removed');
+assert(html.includes('data-i18n="c2_summary"'), 'Local AI summary must remain');
 assert(html.includes('data-i18n="c1_summary"'), 'RAG summary must remain');
 console.log('Site regression checks passed');
