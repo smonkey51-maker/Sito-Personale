@@ -478,8 +478,9 @@ summary::-webkit-details-marker{display:none}
  .topbar-inner{padding:8px 24px;gap:12px}.site-name{display:none}
  .editorial-shell{padding:0 24px}
  .hero{padding:32px 0 48px}
- .hero-grid{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
- .avatar{width:96px;max-width:96px}.hero-photo-col{order:-1}
+ .hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:28px}
+ .hero-photo-col{order:-1;width:100%}
+ .avatar{width:100%;max-width:300px;margin:0 auto 0 0}
  .hero-name{font-size:3rem;margin:20px 0;line-height:1.2}
  .hero-proof{font-size:1rem}
  .section-label{padding:40px 0 24px;font-size:.875rem}
