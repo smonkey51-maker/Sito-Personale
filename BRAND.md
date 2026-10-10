@@ -33,7 +33,7 @@ Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
 
 ## 3. Sistema visivo
 
-Il sito usa una direzione monocromatica sobria, con priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. La fotografia resta sempre a colori. Evitare effetti decorativi gratuiti e slogan.
+Il sito usa una direzione monocromatica sobria, con priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. La fotografia è in bianco e nero di origine e non riceve filtri CSS. Evitare effetti decorativi gratuiti e slogan.
 
 ### Palette
 
