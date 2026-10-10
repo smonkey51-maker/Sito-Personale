@@ -50,7 +50,7 @@
       c1_summary:"Da un'idea sviluppata insieme al mio Responsabile, ho realizzato due sistemi RAG in produzione per la documentazione aziendale e lo storico Jira. Li ho poi unificati in un progetto più ampio, integrando ulteriori fonti di diversa provenienza.",
       c2_summary:"Ho valutato l’AI su dati sensibili con modelli in locale, tra dataset, adattamenti e demo.",
       case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_responsibility_label:"Responsabilità", case_learning_label:"Cosa ho imparato", case_focus_label:"Focus", case_stack_label:"Stack",
-      case1_title:"Ricerca nella conoscenza aziendale",
+      case1_title:"RAG aziendale",
       c1_status:"In produzione · 2026",
       c1_problem:"La conoscenza aziendale c’è, ma è frammentata. Documenti, procedure, manuali e ticket hanno informazioni utili sparse tra fonti diverse. Per rispondere a una richiesta bisogna trovarle e ricostruirne il contesto a mano.",
       c1_solution_1:"Con il mio Responsabile ho definito le esigenze operative. Ne sono nati due sistemi RAG, che ho implementato e messo in produzione.",
