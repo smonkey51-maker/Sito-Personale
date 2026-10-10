@@ -515,8 +515,8 @@ summary::-webkit-details-marker{display:none}
 #casi-studio.section-label{border-top:0;padding-top:28px}
 #chi-sono.section-label{border-top:1px solid var(--line);padding-top:48px}
 .work-card{max-width:100%}
-.work-card>.work-context{max-width:32ch}
-.work-summary,.case-contribution .work-summary{max-width:68ch}
+.work-card>.work-context{max-width:none}
+.work-summary,.case-contribution .work-summary{max-width:none}
 .oltre-supp{max-width:62ch}
 @media(max-width:700px){.editorial-shell{padding:0 24px}.section-label{padding-top:48px}.work-card>.work-context{max-width:100%}}
 
