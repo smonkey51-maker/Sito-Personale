@@ -520,8 +520,5 @@ summary::-webkit-details-marker{display:none}
 .oltre-supp{max-width:62ch}
 @media(max-width:700px){.editorial-shell{padding:0 24px}.section-label{padding-top:48px}.work-card>.work-context{max-width:100%}}
 
-/* Navigazione: indice nascosto, voci distribuite sulla larghezza della barra */
+/* Navigazione: indice nascosto */
 .page-index{display:none!important}
-@media(min-width:701px){
-  .desktop-nav{flex:1;justify-content:space-between;margin-right:0;gap:24px}
-}
