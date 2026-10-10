@@ -21,7 +21,7 @@ for (const removed of ['percorso','badge','contatti']) {
 assert(html.indexOf('id="casi-studio"') < html.indexOf('id="local-ai"'), 'RAG must precede local AI');
 assert(html.indexOf('id="local-ai"') < html.indexOf('id="chi-sono"'), 'Projects must precede biography');
 for (const key of [...html.matchAll(/data-i18n="([^"]+)"/g)].map(m=>m[1])) {
-  for (const lang of ['it','en','fr']) {
+  for (const lang of ['it','en']) {
     const start=js.indexOf(lang + ': {');
     assert(start >= 0, 'Missing locale ' + lang);
     const end=js.indexOf('\n    },',start);
@@ -33,9 +33,9 @@ assert(config.headers.some(group => group.headers.some(h => h.key === 'Content-S
 // Translation coverage: all keys used in the page must exist in all three dictionaries.
 const translationKeys = [...html.matchAll(/data-i18n(?:-aria|-title|-placeholder)?="([^"]+)"/g)].map(m => m[1]);
 const scriptSource = fs.readFileSync(path.join(__dirname, '..', 'script.js'), 'utf8');
-for (const language of ['it','en','fr']) {
+for (const language of ['it','en']) {
   const start = scriptSource.indexOf('    ' + language + ': {');
-  const end = language === 'it' ? scriptSource.indexOf('    en: {',start) : language === 'en' ? scriptSource.indexOf('    fr: {',start) : scriptSource.indexOf('\n  };',start);
+  const end = language === 'it' ? scriptSource.indexOf('    en: {',start) : scriptSource.indexOf('\n  };',start);
   assert(start >= 0 && end > start, 'Translation dictionary missing: ' + language);
   const section = scriptSource.slice(start,end);
   for(const key of translationKeys) {
@@ -45,4 +45,7 @@ for (const language of ['it','en','fr']) {
 assert(html.includes('data-i18n="hero_intro"'), 'Hero introduction must be translated');
 assert(html.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 
+assert(!html.includes('data-lang="fr"'), 'French selector must be removed');
+assert(!html.includes('class="desktop-nav"'), 'Redundant project nav must be removed');
+assert(html.includes('srcset="portrait-black.webp?v=2"'), 'New portrait must be displayed');
 console.log('Site regression checks passed');
