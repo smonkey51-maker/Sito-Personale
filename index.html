@@ -72,7 +72,7 @@
 </head>
 <body>
 
-<a class="skip-link" href="#casi-studio" data-i18n="skip_to_content">Vai al contenuto</a>
+<a class="skip-link" href="#profilo" data-i18n="skip_to_content">Vai al contenuto</a>
 <div class="scroll-progress" aria-hidden="true"></div>
 <div class="visually-hidden" id="themeAnnouncer" role="status" aria-live="polite"></div>
 
@@ -138,29 +138,33 @@
   </nav>
 </section>
 
-<main class="wrap">
+<footer class="colophon"><div class="wrap colophon-inner"><p class="footer-note">© 2026 Nicolò Forcolin – Padova, Italia · <a href="privacy.html" data-i18n="footer_privacy_link">Informativa privacy</a></p></div></footer>
 
-  <h2 class="section-label" id="casi-studio"><span data-i18n="sec_work_title">Progetto in produzione</span></h2>
-  <div class="work-grid">
-    <div class="work-card">
-      <span class="work-meta live" data-i18n="c1_status">In produzione · 2026</span>
-      <h3 class="work-title" id="case-rag" data-i18n="case1_title">RAG aziendale</h3>
-      <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
-      <p class="work-context" data-i18n="c1_impact">Documentazione aziendale e storico Jira si consultavano separatamente. Con i due RAG e la loro unificazione, ricostruire il contesto di una richiesta operativa è più semplice.</p>
-      <p class="work-summary" data-i18n="c1_summary">Da un'idea sviluppata insieme al mio Responsabile, ho realizzato due sistemi RAG in produzione per la documentazione aziendale e lo storico Jira. Li ho poi unificati in un progetto più ampio, integrando ulteriori fonti di diversa provenienza.</p>
-    </div>
+<dialog id="casi-studio" class="info-dialog" aria-labelledby="ragDialogTitle">
+  <div class="dialog-head">
+    <h2 id="ragDialogTitle" data-i18n="case1_title">RAG aziendale</h2>
+    <button type="button" class="dialog-close" aria-label="Chiudi">×</button>
   </div>
+  <span class="work-meta live" data-i18n="c1_status">In produzione · 2026</span>
+  <p class="case-block-label" data-i18n="case_impact_label">Impatto</p>
+  <p class="work-context" data-i18n="c1_impact">Documentazione aziendale e storico Jira si consultavano separatamente. Con i due RAG e la loro unificazione, ricostruire il contesto di una richiesta operativa è più semplice.</p>
+  <p class="work-summary" data-i18n="c1_summary">Da un'idea sviluppata insieme al mio Responsabile, ho realizzato due sistemi RAG in produzione per la documentazione aziendale e lo storico Jira. Li ho poi unificati in un progetto più ampio, integrando ulteriori fonti di diversa provenienza.</p>
+</dialog>
 
-  <h2 class="section-label" id="local-ai"><span data-i18n="sec_localai_title">AI in locale</span></h2>
-  <div class="work-grid">
-    <div class="work-card">
-      <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
-      <h3 class="work-title" id="case-local" data-i18n="case2_title">AI in locale per dati sensibili</h3>
-      <p class="work-summary" data-i18n="c2_summary">Ho valutato l’AI su dati sensibili con modelli in locale, tra dataset, adattamenti e demo.</p>
-    </div>
+<dialog id="local-ai" class="info-dialog" aria-labelledby="localAiDialogTitle">
+  <div class="dialog-head">
+    <h2 id="localAiDialogTitle" data-i18n="case2_title">AI in locale per dati sensibili</h2>
+    <button type="button" class="dialog-close" aria-label="Chiudi">×</button>
   </div>
+  <span class="work-meta explore" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
+  <p class="work-summary" data-i18n="c2_summary">Ho valutato l’AI su dati sensibili con modelli in locale, tra dataset, adattamenti e demo.</p>
+</dialog>
 
-<h2 class="section-label" id="esperienze"><span data-i18n="sec_experiences">Iniziative</span></h2>
+<dialog id="esperienze" class="info-dialog" aria-labelledby="iniziativeDialogTitle">
+  <div class="dialog-head">
+    <h2 id="iniziativeDialogTitle" data-i18n="sec_experiences">Iniziative</h2>
+    <button type="button" class="dialog-close" aria-label="Chiudi">×</button>
+  </div>
   <div class="experience-grid">
     <div class="experience-card">
       <div class="job-overline"><span data-i18n="date_dabo">2026</span><span class="education-tag" data-i18n="dabo_tag">Advisory esterna</span></div>
@@ -183,9 +187,7 @@
       <div class="job-supp" data-i18n="club_desc">Community professionale dedicata a relazioni rispettose e a una leadership gentile.</div>
     </div>
   </div>
-
-</main>
-<footer class="colophon"><div class="wrap colophon-inner"><p class="footer-note">© 2026 Nicolò Forcolin – Padova, Italia · <a href="privacy.html" data-i18n="footer_privacy_link">Informativa privacy</a></p></div></footer>
+</dialog>
 
 
 
@@ -196,9 +198,6 @@
 
 
 </div></div>
-<script src="script.js"></script>
-
-
 
 <dialog id="contactDialog" class="contact-dialog" aria-labelledby="contactDialogTitle">
   <div class="contact-dialog-head"><h2 id="contactDialogTitle" data-i18n="colophon_title">Contatti</h2><button type="button" class="contact-close" aria-label="Chiudi">×</button></div>
@@ -209,6 +208,7 @@
     <div class="cm-row"><span class="cm-k">LinkedIn</span><span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener noreferrer">nicoloforcolin</a></span></div>
   </div>
 </dialog>
+<script src="script.js"></script>
 </body>
 </html>
 
