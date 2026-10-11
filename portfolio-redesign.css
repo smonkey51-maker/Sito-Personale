@@ -211,3 +211,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .filmstrip-tile{border-right:0;border-bottom:1px solid var(--line)}
  .filmstrip-tile:last-child{border-bottom:0}
 }
+
+/* Carry the hero's editorial serif into section and card headings, instead
+   of reverting to the plain sans of the earlier design system below the fold. */
+.section-label{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+.work-title{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+.job-title{font-family:var(--serif);font-weight:600;letter-spacing:-.005em}
