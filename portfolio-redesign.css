@@ -281,11 +281,15 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Timeline rail on the hero's right edge: ticks stacked, with the current
    year written horizontally beside the current (wider) tick, matching the
    concept rather than a vertical label pinned above the stack. */
-.hero-timeline{position:absolute;right:clamp(16px,3vw,40px);bottom:28px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+/* Right edge centered on the topbar/filmstrip accent columns (88px wide,
+   flush to the viewport edge), not on an arbitrary inset — the ticks read
+   as hanging off that same vertical line as the mail and arrow icons. */
+.hero-timeline{position:absolute;right:44px;bottom:28px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:9px}
 .hero-timeline-row{display:flex;align-items:center;gap:8px}
 .hero-timeline-year{font-size:.75rem;letter-spacing:.06em;color:rgba(245,241,236,.6);white-space:nowrap}
 .hero-timeline-tick{width:14px;height:1px;background:rgba(245,241,236,.35)}
 .hero-timeline-row .hero-timeline-tick{width:22px;height:2px;background:var(--accent)}
+@media(max-width:1050px){.hero-timeline{right:36px}}
 @media(max-width:700px){.hero-timeline{display:none}}
 
 /* Trailing arrow block closing the filmstrip, matching the concept's "more" tile. */
