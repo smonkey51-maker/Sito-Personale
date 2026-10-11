@@ -78,7 +78,13 @@
 
 <header class="topbar" id="topbar">
   <div class="topbar-inner"><a class="site-name" href="#profilo">Nicolò Forcolin</a>
+    <nav class="desktop-nav" id="desktopNav" aria-label="Navigazione principale" data-i18n-aria="nav_main_label">
+      <a href="#casi-studio" data-i18n="sec_lavori">Progetti</a>
+      <a href="#local-ai" data-i18n="sec_localai_title">AI in locale</a>
+      <a href="#esperienze" data-i18n="sec_experiences">Iniziative</a>
+    </nav>
     <div class="utilbar">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="desktopNav" data-i18n-aria="nav_toggle_label" aria-label="Menu">☰</button>
       <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
       <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
     </div>
@@ -87,8 +93,13 @@
 
 <div class="editorial-shell"><div class="editorial-content">
 <section class="hero" id="profilo" aria-labelledby="hero-name">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
+  <div class="hero-media">
+    <picture>
+      <source srcset="photo.webp?v=6" type="image/webp">
+      <img class="hero-bg-photo" id="avatarPhoto" src="photo.webp?v=6" alt="Nicolò Forcolin" width="1297" height="1536" fetchpriority="high">
+    </picture>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-overlay wrap">
       <p class="hero-eyebrow" data-i18n="hero_proof1">Service Desk Agent @ InfoCamere</p>
       <h1 class="hero-name" id="hero-name">Nicolò<br>Forcolin</h1>
       <p class="hero-intro" data-i18n="hero_intro">Lavoro nel Service Desk di InfoCamere, contribuendo al supporto operativo dell’infrastruttura IT del sistema camerale italiano. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.</p>
@@ -100,13 +111,21 @@
         <button class="hero-btn outline contact-trigger" type="button" aria-haspopup="dialog" aria-controls="contactDialog" data-i18n="colophon_title">Contatti</button>
       </div>
     </div>
-    <div class="hero-photo-col">
-      <picture>
-        <source srcset="photo.webp?v=6" type="image/webp">
-        <img class="avatar" id="avatarPhoto" src="photo.webp?v=6" alt="Nicolò Forcolin" width="1297" height="1536" fetchpriority="high">
-      </picture>
-    </div>
   </div>
+  <nav class="hero-filmstrip" aria-label="Sezioni del sito">
+    <a class="filmstrip-tile" href="#casi-studio">
+      <span class="filmstrip-meta" data-i18n="c1_status">In produzione · 2026</span>
+      <span class="filmstrip-title" data-i18n="case1_title">RAG aziendale</span>
+    </a>
+    <a class="filmstrip-tile" href="#local-ai">
+      <span class="filmstrip-meta" data-i18n="c2_status">Exploration · Mag – Giu 2026</span>
+      <span class="filmstrip-title" data-i18n="case2_title">AI in locale per dati sensibili</span>
+    </a>
+    <a class="filmstrip-tile" href="#esperienze">
+      <span class="filmstrip-meta" data-i18n="date_dabo">2026</span>
+      <span class="filmstrip-title" data-i18n="sec_experiences">Iniziative</span>
+    </a>
+  </nav>
 </section>
 
 <main class="wrap">
