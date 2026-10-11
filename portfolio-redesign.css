@@ -16,7 +16,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .topbar{background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
 .topbar-inner{min-height:86px;gap:32px}
 .site-name{font-family:var(--serif);font-weight:700;font-size:1.4rem;letter-spacing:-.02em}
-.desktop-nav a{font-size:.92rem;font-weight:600}
+.desktop-nav a{font-size:.9rem;font-weight:400;letter-spacing:.01em}
 .hero{padding:100px 0 125px;overflow:hidden}
 .hero-grid{grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);gap:58px;align-items:center}
 .hero-text{min-width:0}
@@ -227,7 +227,11 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    a scrim keeps the text reliably legible regardless of what's under it,
    fading out before the subject so the portrait itself stays unobscured. */
 .hero-photo-frame::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(10,9,8,.62) 0%,rgba(10,9,8,.32) 42%,rgba(10,9,8,0) 68%)}
-.hero-filmstrip{display:flex;border-top:1px solid var(--line)}
+/* Full-bleed row like the photo above it: .hero sits inside
+   .editorial-shell's centred, padded 1280px container, so without this
+   the filmstrip stops at that container's edges instead of reaching the
+   true viewport edges. */
+.hero-filmstrip{display:flex;border-top:1px solid var(--line);position:relative;width:100vw;left:50%;margin-left:-50vw}
 .filmstrip-tile{flex:1;min-width:0;padding:22px clamp(20px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg-2);transition:background var(--dur) var(--ease)}
 .filmstrip-tile:last-child{border-right:0}
 @media(hover:hover) and (pointer:fine){.filmstrip-tile:hover{background:color-mix(in srgb,var(--bg-2) 85%,var(--accent) 10%)}}
