@@ -412,3 +412,15 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-timeline{position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:3;width:var(--rail-width);padding-right:clamp(12px,1.8vw,24px);background:transparent}
  .hero-photo-frame .hero-portrait{object-position:center center}
 }
+
+/* Mobile: softly merge the portrait into the surrounding dark page. */
+@media(max-width:700px){
+ .hero-photo-frame{isolation:isolate;background:var(--bg)}
+ .hero-photo-frame::before{content:none}
+ .hero-photo-frame::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+   linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.28) 7%,transparent 20%,transparent 80%,rgba(23,22,27,.28) 93%,var(--bg) 100%),
+   linear-gradient(to bottom,transparent 68%,rgba(23,22,27,.22) 82%,var(--bg) 100%);
+ }
+}
