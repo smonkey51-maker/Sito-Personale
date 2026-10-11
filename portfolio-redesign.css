@@ -474,3 +474,14 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .dialog-close{position:absolute;top:-12px;right:-12px;width:32px;height:32px;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink);font-family:Arial,sans-serif;font-size:25px;font-weight:300;line-height:1;display:grid;place-items:center;transition:opacity .15s ease}
 .dialog-close:hover,.dialog-close:focus-visible{background:transparent;border:0;color:var(--ink);opacity:.65}
 @media(max-width:700px){.dialog-close{top:-8px;right:-8px;width:36px;height:36px}}
+
+/* Fade the actual portrait edge, rather than the viewport edge.
+   The desktop image has an intrinsic dark cutoff before the right rail. */
+@media(min-width:701px){
+ .hero-photo-frame::after{
+  background:
+   linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.96) 12%,rgba(23,22,27,.76) 24%,rgba(23,22,27,.36) 35%,rgba(23,22,27,.08) 45%,transparent 54%),
+   linear-gradient(to right,transparent 72%,rgba(23,22,27,.12) 76%,rgba(23,22,27,.45) 81%,rgba(23,22,27,.83) 86%,var(--bg) 91%,var(--bg) 100%),
+   linear-gradient(to bottom,rgba(23,22,27,.26) 0%,transparent 18%,transparent 74%,rgba(23,22,27,.12) 83%,rgba(23,22,27,.55) 94%,var(--bg) 100%);
+ }
+}
