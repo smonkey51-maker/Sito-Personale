@@ -553,3 +553,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* No inert grey scroll control: first project occupies its former slot. */
 .hero-filmstrip .filmstrip-tile:first-child{border-left:0}
 @media(max-width:700px){.topbar-contact{width:var(--rail-width)!important}}
+
+/* Match the empty leading rail to the orange trailing action rail. */
+.filmstrip-start,:root[data-theme="dark"] .filmstrip-start{background:var(--accent)}
