@@ -217,3 +217,27 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .section-label{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
 .work-title{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
 .job-title{font-family:var(--serif);font-weight:600;letter-spacing:-.005em}
+
+/* Restore the solid CTA pill the concept uses — an earlier pass had turned
+   every .hero-btn into a plain underlined link via !important overrides. */
+.hero-overlay .hero-btn{
+  border:0!important;border-radius:999px!important;
+  padding:15px 28px!important;font-size:.9rem!important;
+  text-decoration:none!important;min-height:0;
+}
+.hero-overlay .hero-btn.solid{background:var(--accent)!important;color:var(--on-accent)!important}
+@media(hover:hover) and (pointer:fine){.hero-overlay .hero-btn.solid:hover{background:var(--accent-hover)!important}}
+.hero-overlay .hero-btn.outline{background:transparent!important;color:#F5F1EC!important;border:1px solid rgba(245,241,236,.45)!important}
+@media(hover:hover) and (pointer:fine){.hero-overlay .hero-btn.outline:hover{border-color:#F5F1EC!important}}
+
+/* Timeline ticks on the hero's right edge, matching the concept's rail. */
+.hero-timeline{position:absolute;right:clamp(16px,3vw,40px);bottom:64px;z-index:1;display:flex;flex-direction:column;align-items:center;gap:9px}
+.hero-timeline-year{writing-mode:vertical-rl;font-size:.75rem;letter-spacing:.08em;color:rgba(245,241,236,.6);margin-bottom:4px}
+.hero-timeline-tick{width:14px;height:1px;background:rgba(245,241,236,.35)}
+.hero-timeline-tick.is-current{width:22px;height:2px;background:var(--accent)}
+@media(max-width:700px){.hero-timeline{display:none}}
+
+/* Trailing arrow block closing the filmstrip, matching the concept's "more" tile. */
+.filmstrip-more{flex:0 0 clamp(56px,7vw,88px);display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--on-accent);transition:background var(--dur) var(--ease)}
+@media(hover:hover) and (pointer:fine){.filmstrip-more:hover{background:var(--accent-hover)}}
+@media(max-width:700px){.filmstrip-more{flex-basis:auto;padding:18px}}
