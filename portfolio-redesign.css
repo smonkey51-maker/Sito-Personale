@@ -424,3 +424,11 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    linear-gradient(to bottom,transparent 68%,rgba(23,22,27,.22) 82%,var(--bg) 100%);
  }
 }
+
+/* Restore portrait visibility on desktop: keep fade confined to text side. */
+@media(min-width:701px){
+ .hero-photo-frame::after{
+  background:linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.88) 16%,rgba(23,22,27,.28) 38%,transparent 55%),linear-gradient(to bottom,transparent 88%,rgba(23,22,27,.25) 100%);
+ }
+ .hero-photo-frame .hero-portrait{object-position:right center;filter:brightness(1.15) contrast(1.04)}
+}
