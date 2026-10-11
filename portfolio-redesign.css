@@ -249,9 +249,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{display:flex;flex-direction:column;min-height:0;padding:0 0 40px;gap:28px}
  .hero-overlay{max-width:none}
  .hero-photo-frame{position:static;inset:auto;left:auto;right:auto;width:100%;height:min(420px,58vh);order:-1}
- /* The dedicated mobile crop is already framed correctly — fit it in
-    full rather than cover-cropping it again against a wider box. */
- .hero-portrait{object-fit:contain}
+ /* The mobile crop is pre-composed wider than the subject so a cover
+    fit reaches both edges without cutting into the face. */
+ .hero-portrait{object-fit:cover}
  .hero-filmstrip{flex-direction:column}
  .filmstrip-tile{border-right:0;border-bottom:1px solid var(--line)}
  .filmstrip-tile:last-child{border-bottom:0}
