@@ -371,108 +371,37 @@
   });
   paintTheme();
 
-  /* Native readers remain usable without JavaScript. Hashes open the
-     appropriate reader before navigation, including direct entry and Back. */
-  var readers = Array.prototype.slice.call(document.querySelectorAll(".case-reader"));
+  /* The site lives in a single screen: links to #ids that are <dialog>
+     elements (RAG, AI locale, Iniziative) open that dialog instead of
+     scrolling to a separate section. */
   function hashTarget(hash){
     try{ return hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; }
     catch(e){ return null; }
   }
-  var projectDialog = null;
-  var activeReader = null;
-  var activeLayout = null;
-  function restoreProject(){
-      if(!activeReader) return;
-      var reader = activeReader;
-      var target = hashTarget(location.hash);
-      if(target && projectDialog.contains(target)) history.replaceState(null,'','#'+reader.getAttribute('aria-labelledby'));
-      reader.appendChild(activeLayout);
-      reader.open = false;
-      activeReader = null; activeLayout = null;
-      root.classList.remove('reading-project');
-      reader.querySelector('summary').focus();
+  function openDialog(dlg){
+    if(!dlg || dlg.open) return;
+    if(typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
   }
-  function closeProject(){
-    if(!projectDialog || !projectDialog.open) return;
-    restoreProject();
-    projectDialog.close();
-  }
-  function openProject(reader){
-    if(!projectDialog || activeReader === reader) return;
-    if(activeReader) closeProject();
-    activeReader = reader;
-    activeLayout = reader.querySelector('.reader-layout');
-    var card = reader.closest('.work-card');
-    var title = card.querySelector('.work-title');
-    var status = card.querySelector('.work-meta');
-    var intro = card.querySelector('[data-i18n="c1_impact"], [data-i18n="c2_summary"]');
-    var head = projectDialog.querySelector('.project-reader-head');
-    head.textContent = '';
-    [status, title, intro].forEach(function(source){
-      if(!source) return;
-      var el = document.createElement(source === title ? 'h2' : 'p');
-      el.className = source === title ? 'project-reader-title' : source === status ? 'work-meta' : 'project-reader-intro';
-      el.textContent = source.textContent;
-      if(source.hasAttribute('data-i18n')) el.setAttribute('data-i18n', source.getAttribute('data-i18n'));
-      if(source === title) el.id = 'project-reader-title';
-      head.appendChild(el);
-    });
-    reader.open = true;
-    projectDialog.appendChild(activeLayout);
-    root.classList.add('reading-project');
-    projectDialog.showModal();
-    projectDialog.scrollTop = 0;
-    projectDialog.querySelector('.project-reader-back').focus();
-  }
-  if(typeof HTMLDialogElement !== 'undefined' && readers.length){
-    projectDialog = document.createElement('dialog');
-    projectDialog.className = 'project-reader';
-    projectDialog.setAttribute('aria-labelledby','project-reader-title');
-    projectDialog.innerHTML = '<button type="button" class="work-link project-reader-back" data-i18n="back_to_site">Torna al sito</button><header class="project-reader-head"></header>';
-    document.body.appendChild(projectDialog);
-    projectDialog.querySelector('button').addEventListener('click',closeProject);
-    projectDialog.addEventListener('close',function(){ if(!projectDialog.open) restoreProject(); });
-    readers.forEach(function(reader){
-      reader.querySelector('summary').addEventListener('click',function(event){
-        event.preventDefault(); openProject(reader);
-        history.pushState(null,'','#'+reader.id);
-      });
-    });
-  }
-  function expose(target){
-    if(!target) return;
-    var reader = target.closest(".case-reader");
-    if(reader){ reader.open = true; if(projectDialog) openProject(reader); }
-  }
-  function navigateHash(){
-    var target = hashTarget(location.hash);
-    if(activeReader && (!target || (!projectDialog.contains(target) && target !== activeReader))) closeProject();
-    expose(target);
-    if(target) requestAnimationFrame(function(){ target.scrollIntoView({block:"start", behavior:"instant"}); });
-  }
+  document.querySelectorAll(".info-dialog").forEach(function(dlg){
+    var closeBtn = dlg.querySelector(".dialog-close");
+    if(closeBtn) closeBtn.addEventListener("click", function(){ dlg.close(); });
+    dlg.addEventListener("click", function(event){ if(event.target === dlg) dlg.close(); });
+  });
   document.querySelectorAll('a[href^="#"]').forEach(function(link){
-    link.addEventListener("click", function(){
+    link.addEventListener("click", function(event){
       var target = hashTarget(link.getAttribute("href"));
-      if(activeReader && target && !projectDialog.contains(target) && target !== activeReader) closeProject();
-      expose(target);
-      if(target){
-        if(!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
-        requestAnimationFrame(function(){ target.focus({preventScroll:true}); });
+      if(target && target.tagName === "DIALOG"){
+        event.preventDefault();
+        openDialog(target);
       }
     });
   });
-  window.addEventListener("hashchange", navigateHash);
-  document.querySelectorAll("[data-reader-close]").forEach(function(button){
-    button.addEventListener("click", function(){
-      var reader = document.getElementById(button.getAttribute("data-reader-close"));
-      if(activeReader === reader){ closeProject(); return; }
-      reader.open = false;
-      if(hashTarget(location.hash) && reader.contains(hashTarget(location.hash))){
-        history.replaceState(null, "", "#" + reader.getAttribute("aria-labelledby"));
-      }
-      reader.querySelector("summary").focus();
-    });
-  });
+  function openDialogFromHash(){
+    var target = hashTarget(location.hash);
+    if(target && target.tagName === "DIALOG") openDialog(target);
+  }
+  window.addEventListener("hashchange", openDialogFromHash);
+  openDialogFromHash();
 
   /* Mobile nav toggle: desktop-nav doubles as the collapsible menu panel. */
   var navToggle = document.querySelector(".nav-toggle");
@@ -500,7 +429,7 @@
   var progress = document.querySelector(".scroll-progress");
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a'));
   var sectionIds = Array.from(new Set(navLinks.map(function(a){ return a.hash.slice(1); })));
-  var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(function(el){ return el && el.tagName !== "DIALOG"; });
   var queued = false;
   function updateNavigation(){
     queued = false;
@@ -515,35 +444,17 @@
       link.classList.toggle("active", selected);
       if(selected) link.setAttribute("aria-current", "location"); else link.removeAttribute("aria-current");
     });
-    document.querySelectorAll(".case-index a").forEach(function(link){ link.removeAttribute("aria-current"); });
-    readers.forEach(function(reader){
-      if(!reader.open) return;
-      var scope = activeReader === reader ? projectDialog : reader;
-      var links = Array.prototype.slice.call(scope.querySelectorAll(".case-index a"));
-      var selected = null;
-      links.forEach(function(link){ var target = hashTarget(link.hash); if(target && target.getBoundingClientRect().top <= top + 18) selected = link; });
-      if(selected) selected.setAttribute("aria-current", "location");
-    });
     var max = root.scrollHeight - root.clientHeight;
     if(progress) progress.style.width = (max > 0 ? root.scrollTop / max * 100 : 0) + "%";
   }
   function queueNavigation(){ if(!queued){ queued = true; requestAnimationFrame(updateNavigation); } }
   window.addEventListener("scroll", queueNavigation, {passive:true});
   window.addEventListener("resize", queueNavigation);
-  readers.forEach(function(reader){ reader.addEventListener("toggle", function(){
-    var target = hashTarget(location.hash);
-    if(!reader.open && target && reader.contains(target)){
-      history.replaceState(null, "", "#" + reader.getAttribute("aria-labelledby"));
-    }
-    queueNavigation();
-  }); });
   if("ResizeObserver" in window){
     var bar = document.getElementById("topbar");
     if(bar) new ResizeObserver(queueNavigation).observe(bar);
   }
-  if(projectDialog) projectDialog.addEventListener('scroll',queueNavigation,{passive:true});
   updateNavigation();
-  navigateHash();
 
   document.querySelectorAll('[data-copy-case]').forEach(function(button){
     button.addEventListener('click', async function(){
