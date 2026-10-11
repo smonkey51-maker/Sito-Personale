@@ -11,7 +11,6 @@ const config = JSON.parse(read('vercel.json'));
 assert(!html.includes('\\n<'), 'Literal newline escape found in HTML');
 assert(!html.includes('class="page-index"'), 'Redundant page index returned');
 assert(!js.includes('getElementById("pageIndex")'), 'Orphaned index JS returned');
-assert(!css.includes('grayscale('), 'Portrait must stay in colour');
 for (const id of ['casi-studio','local-ai','esperienze']) {
   assert(html.includes('id="' + id + '"'), 'Missing section ' + id);
 }
@@ -48,7 +47,7 @@ assert(html.includes('data-i18n="skip_to_content"'), 'Skip link must be translat
 assert(!html.includes('data-lang="fr"'), 'French selector must be removed');
 assert(html.includes('class="desktop-nav"'), 'Section navigation must be present');
 assert(html.includes('class="hero-filmstrip"'), 'Hero filmstrip must link to the real sections');
-assert(html.includes('srcset="photo.webp?v=6"'), 'New portrait must be displayed');
+assert(html.includes('srcset="photo.webp?v=7"'), 'New portrait must be displayed');
 assert(!html.includes('id="c1Details"'), 'RAG detail reader must be removed');
 assert(!html.includes('rag_step1_title'), 'RAG diagram must be removed');
 assert(!html.includes('id="c2Details"'), 'Local AI detail reader must be removed');

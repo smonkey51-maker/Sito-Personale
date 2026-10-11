@@ -3,33 +3,41 @@ const sizes=[{name:'mobile',width:375,height:812},{name:'tablet',width:768,heigh
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
-  test('layout and essential navigation',async({page})=>{
+  test('layout and hero essentials',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('#casi-studio')).toBeVisible();
-   await expect(page.locator('#local-ai')).toBeVisible();
+   await expect(page.locator('#hero-name')).toBeVisible();
    await expect(page.locator('#avatarPhoto')).toBeVisible();
-   await expect(page.locator('.system-map')).toHaveCount(2);
+   await expect(page.locator('.hero-filmstrip')).toBeVisible();
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBeTruthy();
-   await page.locator('.hero-btn[href="#casi-studio"]').click();
-   await expect(page).toHaveURL(/#casi-studio$/);
   });
-  test('case dialog opens and closes with keyboard',async({page})=>{
+  test('filmstrip and hero CTA open the matching dialog',async({page})=>{
    await page.goto('/');
-   const summary=page.locator('.case-reader > summary').first();
-   await summary.click();
-   const dialog=page.locator('dialog.project-reader');
+   await page.locator('.hero-btn[href="#casi-studio"]').click();
+   const ragDialog=page.locator('#casi-studio');
+   await expect(ragDialog).toBeVisible();
+   await ragDialog.locator('.dialog-close').click();
+   await expect(ragDialog).not.toBeVisible();
+   await page.locator('.filmstrip-tile[href="#local-ai"]').click();
+   await expect(page.locator('#local-ai')).toBeVisible();
+  });
+  test('dialog closes with Escape',async({page})=>{
+   await page.goto('/');
+   await page.locator('.filmstrip-tile[href="#esperienze"]').click();
+   const dialog=page.locator('#esperienze');
    await expect(dialog).toBeVisible();
    await page.keyboard.press('Escape');
    await expect(dialog).not.toBeVisible();
   });
+  test('deep link opens the matching dialog on load',async({page})=>{
+   await page.goto('/#local-ai');
+   await expect(page.locator('#local-ai')).toBeVisible();
+  });
   test('language switching preserves project copy',async({page})=>{
    await page.goto('/');
    await page.locator('[data-lang="en"]').click();
-   await expect(page.locator('[data-i18n="rag_map_title"]')).toHaveText('How the system evolved');
-   await page.locator('[data-lang="fr"]').click();
-   await expect(page.locator('[data-i18n="rag_map_title"]')).toHaveText('Évolution du système');
+   await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('Enterprise Knowledge Retrieval');
    await page.locator('[data-lang="it"]').click();
-   await expect(page.locator('[data-i18n="rag_map_title"]')).toHaveText('Come si è evoluto il sistema');
+   await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('RAG aziendale');
   });
   test('dark theme and portrait loading',async({page})=>{
    await page.goto('/');
@@ -41,24 +49,30 @@ for(const viewport of sizes){
   });
   test('contacts open in a dialog, not LinkedIn',async({page})=>{
    await page.goto('/');
-   await page.locator('.contact-trigger').click();
+   await page.locator('.contact-trigger').first().click();
    await expect(page.locator('#contactDialog')).toBeVisible();
    await expect(page.locator('#cmEmail .reveal-btn')).toBeVisible();
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
-  test('no page errors and accessible disclosure',async({page})=>{
+  test('no page errors when opening every dialog',async({page})=>{
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
    await page.goto('/');
-   const disclosure=page.locator('.system-insight').first();
-   await disclosure.locator('summary').click();
-   await expect(disclosure).toHaveAttribute('open','');
+   for(const id of ['casi-studio','local-ai','esperienze']){
+    await page.locator('.filmstrip-tile[href="#'+id+'"]').click();
+    await expect(page.locator('#'+id)).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#'+id)).not.toBeVisible();
+   }
    expect(errors).toEqual([]);
   });
   if(viewport.width<=700){
-   test('mobile project link remains visible',async({page})=>{
+   test('mobile nav opens via the toggle and links work',async({page})=>{
     await page.goto('/');
-    await expect(page.locator('.desktop-nav a[href="#casi-studio"]')).toBeVisible();
+    const navLink=page.locator('.desktop-nav a[href="#casi-studio"]');
+    await expect(navLink).toBeHidden();
+    await page.locator('.nav-toggle').click();
+    await expect(navLink).toBeVisible();
    });
   }
  });
