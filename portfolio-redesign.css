@@ -270,3 +270,11 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .info-dialog .experience-grid{padding:0;margin:0;max-width:none}
 .info-dialog .experience-card:first-child{padding-top:0}
 @media(max-width:700px){.info-dialog{padding:24px;border-radius:16px}}
+
+/* Grain texture over the hero photo, matching the concept's textured
+   concrete backdrop — a CSS overlay, not a claim about the photo itself. */
+.hero-media::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.1;mix-blend-mode:overlay;
+}
