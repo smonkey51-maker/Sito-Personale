@@ -242,7 +242,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
     behind it; on the stacked mobile layout it would just sit over a
     now-static photo block, so it goes back to a solid, in-flow bar. */
  .topbar{position:relative;background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
- .hero-inner{display:flex;flex-direction:column-reverse;min-height:0;padding:0 0 40px;gap:28px}
+ .hero-inner{display:flex;flex-direction:column;min-height:0;padding:0 0 40px;gap:28px}
  .hero-overlay{max-width:none}
  .hero-photo-frame{position:static;inset:auto;left:auto;right:auto;width:100%;height:min(320px,55vh);order:-1}
  .hero-filmstrip{flex-direction:column}
@@ -285,6 +285,13 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .filmstrip-more{flex:0 0 clamp(56px,7vw,88px);display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--on-accent);transition:background var(--dur) var(--ease)}
 @media(hover:hover) and (pointer:fine){.filmstrip-more:hover{background:var(--accent-hover)}}
 @media(max-width:700px){.filmstrip-more{flex-basis:auto;padding:18px}}
+
+/* Matching neutral cell at the opposite end of the filmstrip, mirroring the
+   concept's grey "scroll" block — decorative only, not a real scroll
+   target (the filmstrip is the last thing on the page), so it's a span,
+   never a button pretending to do something it can't. */
+.filmstrip-start{flex:0 0 clamp(56px,7vw,88px);display:flex;align-items:center;justify-content:center;background:#4F4B56;color:var(--ink-soft)}
+@media(max-width:700px){.filmstrip-start{display:none}}
 
 /* One screen, not a long scroll: RAG / AI locale / Iniziative open as
    overlays on top of the hero instead of separate sections below it. */
