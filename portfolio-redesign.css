@@ -524,3 +524,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .filmstrip-tile{height:auto;min-height:0}
  .filmstrip-more{height:var(--action-rail-height);min-height:0;padding:0;flex-basis:auto}
 }
+
+/* Exact optical centering in orange rails: avoid inherited grid/flex margins. */
+.topbar-contact,.filmstrip-more{position:relative;display:block;padding:0;line-height:0;text-align:center}
+.topbar-contact svg,.filmstrip-more svg{position:absolute;top:50%;left:50%;width:18px;height:18px;margin:0;transform:translate(-50%,-50%);display:block}
+/* The footer rule is the bottom closing line of the project strip. */
+.colophon{padding-top:0}
+.colophon-inner{padding-top:0}
+.footer-note{margin:0;border-top:1px solid var(--line);padding-top:12px}
+@media(max-width:700px){.colophon{padding-top:0}}
