@@ -239,23 +239,29 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .work-title{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
 .job-title{font-family:var(--serif);font-weight:600;letter-spacing:-.005em}
 
-/* Restore the solid CTA pill the concept uses — an earlier pass had turned
-   every .hero-btn into a plain underlined link via !important overrides. */
+/* Match the concept's small rounded-rect CTA (not a pill) with a trailing
+   chevron on the primary action; an earlier pass had turned every
+   .hero-btn into a plain underlined link via !important overrides. */
 .hero-overlay .hero-btn{
-  border:0!important;border-radius:999px!important;
-  padding:15px 28px!important;font-size:.9rem!important;
+  border:0!important;border-radius:6px!important;
+  padding:13px 18px!important;font-size:.88rem!important;font-weight:600;
   text-decoration:none!important;min-height:0;
+  display:inline-flex!important;align-items:center;gap:8px;
 }
 .hero-overlay .hero-btn.solid{background:var(--accent)!important;color:var(--on-accent)!important}
 @media(hover:hover) and (pointer:fine){.hero-overlay .hero-btn.solid:hover{background:var(--accent-hover)!important}}
-.hero-overlay .hero-btn.outline{background:transparent!important;color:#F5F1EC!important;border:1px solid rgba(245,241,236,.45)!important}
-@media(hover:hover) and (pointer:fine){.hero-overlay .hero-btn.outline:hover{border-color:#F5F1EC!important}}
+.hero-overlay .hero-btn.outline{background:transparent!important;color:#F5F1EC!important;border:0!important;padding-left:0!important;text-underline-offset:3px}
+@media(hover:hover) and (pointer:fine){.hero-overlay .hero-btn.outline:hover{text-decoration:underline!important}}
+.hero-btn-chevron{flex-shrink:0}
 
-/* Timeline ticks on the hero's right edge, matching the concept's rail. */
-.hero-timeline{position:absolute;right:clamp(16px,3vw,40px);bottom:64px;z-index:1;display:flex;flex-direction:column;align-items:center;gap:9px}
-.hero-timeline-year{writing-mode:vertical-rl;font-size:.75rem;letter-spacing:.08em;color:rgba(245,241,236,.6);margin-bottom:4px}
+/* Timeline rail on the hero's right edge: ticks stacked, with the current
+   year written horizontally beside the current (wider) tick, matching the
+   concept rather than a vertical label pinned above the stack. */
+.hero-timeline{position:absolute;right:clamp(16px,3vw,40px);bottom:64px;z-index:1;display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+.hero-timeline-row{display:flex;align-items:center;gap:8px}
+.hero-timeline-year{font-size:.75rem;letter-spacing:.06em;color:rgba(245,241,236,.6);white-space:nowrap}
 .hero-timeline-tick{width:14px;height:1px;background:rgba(245,241,236,.35)}
-.hero-timeline-tick.is-current{width:22px;height:2px;background:var(--accent)}
+.hero-timeline-row .hero-timeline-tick{width:22px;height:2px;background:var(--accent)}
 @media(max-width:700px){.hero-timeline{display:none}}
 
 /* Trailing arrow block closing the filmstrip, matching the concept's "more" tile. */
