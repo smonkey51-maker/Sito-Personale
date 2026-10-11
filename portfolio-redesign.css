@@ -458,3 +458,19 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .colophon{padding-top:12px;padding-bottom:16px}
 .footer-note{padding-top:12px;line-height:1.4;font-size:.85rem}
 @media(max-width:700px){.colophon{padding:12px 0 18px}.footer-note{padding-top:12px}}
+
+/* Feather the photograph's right edge; preserve the face and the timeline rail. */
+@media(min-width:701px){
+ .hero-photo-frame::after{
+  background:
+   linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.96) 12%,rgba(23,22,27,.76) 24%,rgba(23,22,27,.36) 35%,rgba(23,22,27,.08) 45%,transparent 54%),
+   linear-gradient(to left,var(--bg) 0%,rgba(23,22,27,.92) 5%,rgba(23,22,27,.58) 10%,rgba(23,22,27,.14) 15%,transparent 21%),
+   linear-gradient(to bottom,rgba(23,22,27,.26) 0%,transparent 18%,transparent 74%,rgba(23,22,27,.12) 83%,rgba(23,22,27,.55) 94%,var(--bg) 100%);
+ }
+}
+/* Minimal dialog dismiss control: corner-aligned, without circular chrome. */
+.info-dialog{position:relative}
+.dialog-head{position:relative;padding-right:36px}
+.dialog-close{position:absolute;top:-12px;right:-12px;width:32px;height:32px;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink);font-family:Arial,sans-serif;font-size:25px;font-weight:300;line-height:1;display:grid;place-items:center;transition:opacity .15s ease}
+.dialog-close:hover,.dialog-close:focus-visible{background:transparent;border:0;color:var(--ink);opacity:.65}
+@media(max-width:700px){.dialog-close{top:-8px;right:-8px;width:36px;height:36px}}
