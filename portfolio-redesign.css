@@ -222,7 +222,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    not just the centred wrap/editorial-shell ancestors) and reaches the
    top so it continues behind the floating header. */
 .hero-photo-frame{position:absolute;inset:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:1;overflow:hidden;pointer-events:none}
-.hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;filter:grayscale(1) contrast(1.05)}
+.hero-portrait{width:100%;height:100%;object-fit:cover;object-position:100% center;display:block;filter:grayscale(1) contrast(1.05)}
 /* The wall texture behind the text varies in tone, unlike a flat colour —
    a scrim keeps the text reliably legible regardless of what's under it,
    fading out before the subject so the portrait itself stays unobscured. */
@@ -249,9 +249,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{display:flex;flex-direction:column;min-height:0;padding:0 0 40px;gap:28px}
  .hero-overlay{max-width:none}
  .hero-photo-frame{position:static;inset:auto;left:auto;right:auto;width:100%;height:min(420px,58vh);order:-1}
- /* The dedicated mobile crop is already framed correctly — fit it in
-    full rather than cover-cropping it again against a wider box. */
- .hero-portrait{object-fit:contain}
+ /* The mobile crop is pre-composed wider than the subject so a cover
+    fit reaches both edges without cutting into the face. */
+ .hero-portrait{object-fit:cover}
  .hero-filmstrip{flex-direction:column}
  .filmstrip-tile{border-right:0;border-bottom:1px solid var(--line)}
  .filmstrip-tile:last-child{border-bottom:0}
@@ -317,4 +317,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .info-dialog .experience-grid{padding:0;margin:0;max-width:none}
 .info-dialog .experience-card:first-child{padding-top:0}
 @media(max-width:700px){.info-dialog{padding:24px;border-radius:16px}}
+
+/* The colophon section already has its own top border; the footer note's
+   own border-top on top of it read as two redundant parallel lines. */
+.footer-note{border-top:0;padding-top:0}
 
