@@ -207,14 +207,11 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:700px){.topbar-contact{width:64px}.topbar-inner{padding-right:88px}}
 @media(max-width:520px){.topbar-contact{width:56px}.topbar-inner{padding-right:76px}}
 
-.hero{padding:0}
-.hero-media{position:relative;width:100%;min-height:min(760px,86vh);display:flex;align-items:flex-end;overflow:hidden}
-.hero-media picture{position:absolute;inset:0;display:block;width:100%;height:100%}
-.hero-bg-photo{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,8,.32) 0%,rgba(10,9,8,.55) 48%,rgba(10,9,8,.92) 100%)}
-.hero-overlay{position:relative;z-index:1;width:100%;padding:56px 0 64px}
-.hero-overlay .hero-intro{color:#F5F1EC}
-.hero-overlay .hero-proof{color:#D8D2C9}
+.hero{padding:0;position:relative;background:var(--bg)}
+.hero-inner{display:flex;align-items:center;gap:clamp(32px,6vw,80px);padding:88px 0 72px;flex-wrap:wrap}
+.hero-overlay{flex:1 1 440px;min-width:280px}
+.hero-photo-frame{position:relative;flex:0 0 clamp(240px,28vw,360px);width:clamp(240px,28vw,360px);aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:var(--bg-2)}
+.hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
 .hero-filmstrip{display:flex;border-top:1px solid var(--line)}
 .filmstrip-tile{flex:1;min-width:0;padding:22px clamp(20px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg-2);transition:background var(--dur) var(--ease)}
 .filmstrip-tile:last-child{border-right:0}
@@ -223,11 +220,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .filmstrip-meta{font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
 .filmstrip-title{font-family:var(--serif);font-size:1.0625rem;color:var(--ink)}
 @media(max-width:820px){
- .hero-media{min-height:min(620px,78vh)}
+ .hero-inner{padding:64px 0 48px}
+ .hero-photo-frame{flex-basis:220px;width:220px}
 }
 @media(max-width:700px){
- .hero-media{min-height:min(560px,70vh)}
- .hero-overlay{padding:36px 0 40px}
+ .hero-inner{flex-direction:column-reverse;padding:40px 0 40px;gap:28px}
+ .hero-photo-frame{width:min(280px,70vw);flex-basis:auto;aspect-ratio:1/1}
  .hero-filmstrip{flex-direction:column}
  .filmstrip-tile{border-right:0;border-bottom:1px solid var(--line)}
  .filmstrip-tile:last-child{border-bottom:0}
@@ -257,7 +255,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Timeline rail on the hero's right edge: ticks stacked, with the current
    year written horizontally beside the current (wider) tick, matching the
    concept rather than a vertical label pinned above the stack. */
-.hero-timeline{position:absolute;right:clamp(16px,3vw,40px);bottom:64px;z-index:1;display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+.hero-timeline{position:absolute;right:clamp(16px,3vw,40px);bottom:28px;z-index:1;display:flex;flex-direction:column;align-items:flex-end;gap:9px}
 .hero-timeline-row{display:flex;align-items:center;gap:8px}
 .hero-timeline-year{font-size:.75rem;letter-spacing:.06em;color:rgba(245,241,236,.6);white-space:nowrap}
 .hero-timeline-tick{width:14px;height:1px;background:rgba(245,241,236,.35)}
@@ -287,9 +285,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .info-dialog .experience-card:first-child{padding-top:0}
 @media(max-width:700px){.info-dialog{padding:24px;border-radius:16px}}
 
-/* Grain texture over the hero photo, matching the concept's textured
+/* Grain texture over the portrait frame, matching the concept's textured
    concrete backdrop — a CSS overlay, not a claim about the photo itself. */
-.hero-media::after{
+.hero-photo-frame::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity:.1;mix-blend-mode:overlay;
