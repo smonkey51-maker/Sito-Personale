@@ -544,3 +544,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Keep lower arrow geometrically centered without absolute SVG offsets. */
 .filmstrip-more{position:relative;display:grid!important;place-items:center!important;padding:0!important}
 .filmstrip-more svg{position:static!important;transform:none!important;margin:0!important;display:block!important}
+
+/* Final rail geometry: center SVGs in the actual colored boxes. */
+.topbar-contact{position:absolute!important;inset:0 0 0 auto!important;width:var(--rail-width)!important;height:100%!important;min-height:0!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important}
+.topbar-contact svg{position:static!important;width:18px!important;height:18px!important;flex:none!important;transform:none!important;margin:0!important}
+.filmstrip-more{display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;min-width:var(--rail-width)!important;flex:0 0 var(--rail-width)!important}
+.filmstrip-more svg{position:static!important;width:18px!important;height:18px!important;flex:none!important;transform:none!important;margin:0!important}
+/* No inert grey scroll control: first project occupies its former slot. */
+.hero-filmstrip .filmstrip-tile:first-child{border-left:0}
+@media(max-width:700px){.topbar-contact{width:var(--rail-width)!important}}
