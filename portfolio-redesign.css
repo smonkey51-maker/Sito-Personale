@@ -182,9 +182,20 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Vignelli-concept hero: full-bleed portrait, nav restored, project filmstrip. */
 .topbar-inner{justify-content:flex-start}
-.desktop-nav{margin-left:auto;margin-right:28px}
-.utilbar{margin-left:0}
-@media(max-width:700px){.desktop-nav{margin-right:0}}
+.desktop-nav{margin-left:32px;margin-right:0}
+.utilbar{margin-left:auto}
+@media(max-width:700px){.desktop-nav{margin-left:0}}
+
+/* Solid accent square echoing the concept's corner block — a real
+   trigger for Contatti, not a decorative stand-in. */
+.topbar-contact{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;margin-left:8px;
+  background:var(--accent);color:var(--on-accent);border:0;cursor:pointer;
+  transition:background var(--dur) var(--ease);
+}
+@media(hover:hover) and (pointer:fine){.topbar-contact:hover{background:var(--accent-hover)}}
+@media(max-width:520px){.topbar-contact{width:40px;height:40px}}
 
 .hero{padding:0}
 .hero-media{position:relative;width:100%;min-height:min(760px,86vh);display:flex;align-items:flex-end;overflow:hidden}
