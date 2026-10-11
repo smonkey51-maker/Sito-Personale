@@ -389,3 +389,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .footer-note{margin:0;padding:18px 0 0;border-top:1px solid var(--line);line-height:1.5}
 @media(max-width:1050px){.topbar-inner{padding-right:calc(var(--rail-width) + 38px)}}
 @media(max-width:700px){.topbar-inner{padding-right:calc(var(--rail-width) + 16px)}.hero-timeline{display:none}.colophon{padding:20px 0 24px}}
+
+/* Mobile: make portrait flush with viewport, removing contain letterboxing. */
+@media(max-width:700px){
+ .hero-photo-frame{position:relative;left:50%;right:auto;width:100vw;max-width:none;margin-left:-50vw;height:clamp(330px,92vw,560px);overflow:hidden}
+ .hero-photo-frame picture{display:block;width:100%;height:100%}
+ .hero-photo-frame .hero-portrait{display:block;width:100%;height:100%;object-fit:cover;object-position:center 36%;max-width:none}
+}
