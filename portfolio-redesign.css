@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&display=swap');
 /* Figma-inspired portfolio treatment — keeps existing content and functionality. */
 :root{
  --bg:#F7F5F1;--bg-2:#EEEAE5;--ink:#1D1E22;--ink-soft:#606168;
@@ -328,8 +329,35 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 
 /* High-contrast editorial serif inspired by the supplied Vignelli reference. */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&display=swap');
 :root{--display-serif:"Bodoni Moda","Times New Roman",serif}
 .hero-name{font-family:var(--display-serif);font-weight:500;letter-spacing:-.055em;line-height:.91}
 .filmstrip-title,.dialog-head h2,.section-label,.work-title,.job-title{font-family:var(--display-serif);letter-spacing:-.025em}
 @media(max-width:700px){.hero-name{letter-spacing:-.05em;line-height:.96}}
+
+/* Editorial alignment and responsive polish. */
+:root{--editorial-gutter:clamp(24px,5vw,80px)}
+.hero-inner{width:min(100% - 2*var(--editorial-gutter),1280px);margin-inline:auto}
+.hero-overlay{width:min(100%,590px)}
+.hero-name{font-size:clamp(4.25rem,9vw,9rem);overflow-wrap:normal}
+.hero-intro{max-width:49ch;text-wrap:pretty}
+.hero-cta-row{align-items:center}
+.hero-filmstrip{margin-top:0}
+.filmstrip-tile{justify-content:center;min-height:112px}
+.filmstrip-title{font-size:clamp(1rem,1.35vw,1.3rem);line-height:1.2}
+.filmstrip-meta{line-height:1.45}
+.info-dialog{border-radius:4px;width:min(760px,calc(100% - 32px));padding:clamp(24px,4vw,48px)}
+.info-dialog .work-summary,.info-dialog .work-context{max-width:65ch}
+.dialog-head{align-items:center}
+.hero-portrait{filter:none}
+@media(min-width:701px){.hero-inner{min-height:min(800px,80vh)}.hero-overlay{padding-block:28px}.hero-photo-frame{inset-block:0}}
+@media(max-width:700px){
+ .hero-inner{width:100%;padding:0 0 36px;gap:0}
+ .hero-photo-frame{height:clamp(260px,53vw,420px);width:100%}
+ .hero-overlay{padding:28px var(--editorial-gutter) 0}
+ .hero-name{font-size:clamp(3.5rem,13vw,5.7rem);line-height:.94;margin-bottom:22px}
+ .hero-intro{font-size:1rem;line-height:1.6}
+ .hero-cta-row{flex-wrap:wrap;gap:10px 18px}
+ .filmstrip-tile{min-height:88px;padding:18px var(--editorial-gutter)}
+ .info-dialog{max-height:88dvh}
+}
+@media(max-width:380px){.hero-name{font-size:clamp(3.15rem,12.8vw,4rem)}.hero-overlay{padding-inline:20px}}
