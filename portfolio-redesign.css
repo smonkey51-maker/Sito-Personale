@@ -508,3 +508,18 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .topbar-contact svg,.filmstrip-more svg{display:block;flex-shrink:0;margin:auto}
 .hero-overlay .hero-btn.solid{gap:12px;line-height:1.2}
 .hero-overlay .hero-btn.solid svg,.hero-overlay .hero-btn.solid .icon{flex-shrink:0}
+
+/* Align orange rails to a shared height and truly center their SVGs. */
+:root{--action-rail-height:88px}
+.topbar,.topbar-inner{height:var(--action-rail-height);min-height:var(--action-rail-height)}
+.topbar-contact{height:var(--action-rail-height);min-height:var(--action-rail-height);padding:0;display:grid;place-items:center}
+.hero-filmstrip{min-height:var(--action-rail-height);align-items:stretch}
+.filmstrip-start,.filmstrip-more{height:auto;min-height:var(--action-rail-height);padding:0;display:grid;place-items:center;align-self:stretch}
+.topbar-contact svg,.filmstrip-more svg{display:block;width:18px;height:18px;margin:0;position:static;transform:none}
+.hero-name{font-weight:700}
+@media(max-width:700px){
+ :root{--action-rail-height:64px}
+ .topbar,.topbar-inner,.topbar-contact{height:var(--action-rail-height);min-height:var(--action-rail-height)}
+ .hero-filmstrip{min-height:0}
+ .filmstrip-more{height:var(--action-rail-height);min-height:var(--action-rail-height);padding:0;flex-basis:auto}
+}
