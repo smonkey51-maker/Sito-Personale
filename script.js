@@ -295,13 +295,15 @@
   try { localStorage.removeItem("nfTheme"); } catch(e) {}
 
   var contactDialog = document.getElementById("contactDialog");
-  var contactTrigger = document.querySelector(".contact-trigger");
-  if (contactDialog && contactTrigger) {
-    contactTrigger.addEventListener("click", function(){
-      if (typeof contactDialog.showModal === "function") contactDialog.showModal();
-      else contactDialog.setAttribute("open", "");
+  var contactTriggers = Array.prototype.slice.call(document.querySelectorAll(".contact-trigger"));
+  if (contactDialog && contactTriggers.length) {
+    contactTriggers.forEach(function(trigger){
+      trigger.addEventListener("click", function(){
+        if (typeof contactDialog.showModal === "function") contactDialog.showModal();
+        else contactDialog.setAttribute("open", "");
+      });
     });
-    contactDialog.querySelector(".contact-close").addEventListener("click", function(){ contactDialog.close(); contactTrigger.focus(); });
+    contactDialog.querySelector(".contact-close").addEventListener("click", function(){ contactDialog.close(); contactTriggers[0].focus(); });
     contactDialog.addEventListener("click", function(event){ if (event.target === contactDialog) contactDialog.close(); });
   }
 
