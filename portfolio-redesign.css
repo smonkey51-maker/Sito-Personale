@@ -533,3 +533,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .colophon-inner{padding-top:0}
 .footer-note{margin:0;border-top:1px solid var(--line);padding-top:12px}
 @media(max-width:700px){.colophon{padding-top:0}}
+
+/* Restore the envelope's orange surface and visible dark icon. */
+.topbar-contact{background:var(--accent)!important;color:#16121D!important;z-index:5}
+.topbar-contact svg{color:#16121D!important;stroke:#16121D!important;fill:none;opacity:1;visibility:visible;z-index:1;pointer-events:none}
