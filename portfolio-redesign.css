@@ -537,3 +537,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Restore the envelope's orange surface and visible dark icon. */
 .topbar-contact{background:var(--accent)!important;color:#16121D!important;z-index:5}
 .topbar-contact svg{color:#16121D!important;stroke:#16121D!important;fill:none;opacity:1;visibility:visible;z-index:1;pointer-events:none}
+
+/* Fix regression: header contact must be anchored to viewport right, not relative. */
+.topbar-contact{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:auto!important;display:grid!important;place-items:center!important;padding:0!important;background:var(--accent)!important;color:#16121D!important}
+.topbar-contact svg{position:static!important;transform:none!important;margin:0!important;display:block!important;stroke:currentColor!important;opacity:1!important}
+/* Keep lower arrow geometrically centered without absolute SVG offsets. */
+.filmstrip-more{position:relative;display:grid!important;place-items:center!important;padding:0!important}
+.filmstrip-more svg{position:static!important;transform:none!important;margin:0!important;display:block!important}
