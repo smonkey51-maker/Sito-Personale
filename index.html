@@ -97,13 +97,8 @@
 
 <div class="editorial-shell"><div class="editorial-content">
 <section class="hero" id="profilo" aria-labelledby="hero-name">
-  <div class="hero-media">
-    <picture>
-      <source srcset="photo.webp?v=6" type="image/webp">
-      <img class="hero-bg-photo" id="avatarPhoto" src="photo.webp?v=6" alt="Nicolò Forcolin" width="1297" height="1536" fetchpriority="high">
-    </picture>
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="hero-overlay wrap">
+  <div class="hero-inner wrap">
+    <div class="hero-overlay">
       <p class="hero-eyebrow" data-i18n="hero_proof1">Service Desk Agent @ InfoCamere</p>
       <h1 class="hero-name" id="hero-name">Nicolò<br>Forcolin</h1>
       <p class="hero-intro" data-i18n="hero_intro">Lavoro nel Service Desk di InfoCamere, contribuendo al supporto operativo dell’infrastruttura IT del sistema camerale italiano. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.</p>
@@ -115,12 +110,18 @@
         <button class="hero-btn outline contact-trigger" type="button" aria-haspopup="dialog" aria-controls="contactDialog" data-i18n="colophon_title">Contatti</button>
       </div>
     </div>
-    <div class="hero-timeline" aria-hidden="true">
-      <span class="hero-timeline-tick"></span>
-      <span class="hero-timeline-tick"></span>
-      <span class="hero-timeline-row is-current"><span class="hero-timeline-year" data-i18n="date_dabo">2026</span><span class="hero-timeline-tick"></span></span>
-      <span class="hero-timeline-tick"></span>
+    <div class="hero-photo-frame">
+      <picture>
+        <source srcset="photo.webp?v=6" type="image/webp">
+        <img class="hero-portrait" id="avatarPhoto" src="photo.webp?v=6" alt="Nicolò Forcolin" width="1297" height="1536" fetchpriority="high">
+      </picture>
     </div>
+  </div>
+  <div class="hero-timeline" aria-hidden="true">
+    <span class="hero-timeline-tick"></span>
+    <span class="hero-timeline-tick"></span>
+    <span class="hero-timeline-row is-current"><span class="hero-timeline-year" data-i18n="date_dabo">2026</span><span class="hero-timeline-tick"></span></span>
+    <span class="hero-timeline-tick"></span>
   </div>
   <nav class="hero-filmstrip" aria-label="Sezioni del sito">
     <a class="filmstrip-tile" href="#casi-studio">
