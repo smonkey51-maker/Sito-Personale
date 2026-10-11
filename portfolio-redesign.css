@@ -326,3 +326,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    own border-top on top of it read as two redundant parallel lines. */
 .footer-note{border-top:0;padding-top:0}
 
+
+/* High-contrast editorial serif inspired by the supplied Vignelli reference. */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&display=swap');
+:root{--display-serif:"Bodoni Moda","Times New Roman",serif}
+.hero-name{font-family:var(--display-serif);font-weight:500;letter-spacing:-.055em;line-height:.91}
+.filmstrip-title,.dialog-head h2,.section-label,.work-title,.job-title{font-family:var(--display-serif);letter-spacing:-.025em}
+@media(max-width:700px){.hero-name{letter-spacing:-.05em;line-height:.96}}
