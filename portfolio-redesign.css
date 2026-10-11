@@ -556,3 +556,5 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Match the empty leading rail to the orange trailing action rail. */
 .filmstrip-start,:root[data-theme="dark"] .filmstrip-start{background:var(--accent)}
+
+.hero-filmstrip .filmstrip-tile{align-items:center;justify-content:center;text-align:center}
