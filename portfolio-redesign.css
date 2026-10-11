@@ -224,8 +224,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    floating header, matching the reference. */
 .hero-photo-frame{position:absolute;top:0;right:calc(50% - 50vw);bottom:0;width:56%;z-index:1;overflow:hidden;pointer-events:none}
 .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;filter:grayscale(1) contrast(1.05) brightness(.8)}
-.hero-photo-frame::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 38%)}
-.hero-photo-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,transparent 30%)}
+/* The CSS "transparent" keyword is black at zero alpha, not "--bg at zero
+   alpha" — interpolating var(--bg) toward it muddies the fade through a
+   dark band instead of dissolving cleanly. Fading to an explicit
+   rgba() of the same colour keeps the blend clean. */
+.hero-photo-frame::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,0) 38%)}
+.hero-photo-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(23,22,27,0) 30%)}
 .hero-filmstrip{display:flex;border-top:1px solid var(--line)}
 .filmstrip-tile{flex:1;min-width:0;padding:22px clamp(20px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg-2);transition:background var(--dur) var(--ease)}
 .filmstrip-tile:last-child{border-right:0}
