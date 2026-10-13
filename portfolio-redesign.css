@@ -569,5 +569,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Desktop: slide the portrait left, closer to the headline. The right edge
    of photo.webp is already feathered into the page colour, so the strip it
    uncovers blends in with the background. */
-@media(min-width:701px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
+@media(min-width:701px) and (max-width:1099px){.hero-photo-frame .hero-portrait{transform:translateX(4vw)}}
+@media(min-width:701px) and (max-width:900px){.hero-photo-frame .hero-portrait{transform:translateX(8vw)}}
+@media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
 @media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
