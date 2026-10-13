@@ -95,7 +95,7 @@
       c1_impact:"Su più criticità, la gestione del Service Desk e l'analisi di Incident & Problem Management sono passate da ore a circa 30 minuti.",
       c1_responsibility:"Ho curato personalmente l'unificazione, le integrazioni, lo sviluppo della webapp, la logica delle risposte, il confronto con gli utenti, la raccolta dei feedback e la gestione dei problemi. Ho scritto anche il manuale operativo, da aggiornare per includere la nuova webapp.",
       c1_learning:"Dopo il rilascio, alcuni utenti continuavano a cercare a mano. Sono emersi rallentamenti e lacune nei dati: un modello funzionante non bastava. Ho lavorato sulla documentazione operativa e parlando direttamente con gli utenti. Prima di ampliare un RAG servono fonti affidabili e istruzioni chiare sul suo uso.",
-      case2_title:"AI in locale per dati sensibili",
+      case2_title:"Sperimentazione AI in locale",
       c2_status:"Exploration · Mag – Giu 2026",
       c2_problem:"Sperimentazione interna informale, avviata su richiesta, per valutare modelli AI specializzati su domande relative a InfoCamere. Obiettivi: contenere potenzialmente i costi, mantenere il controllo sui dati e ridurre la dipendenza dai fornitori.",
       c2_solution:"Ho selezionato modelli delle famiglie Qwen, Gemma, Llama e Kimi tramite Hugging Face, eseguito il fine-tuning su dataset specifici preparati con il gruppo usando Google Colab e Unsloth, e predisposto l'esecuzione locale con Ollama.",
