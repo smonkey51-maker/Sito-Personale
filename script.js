@@ -31,7 +31,7 @@
       local_step1_title:"Dataset controllati",
       local_step1_desc:"Dati preparati per le prove.",
       local_step2_kicker:"Adattamento",
-      local_step2_title:"Qwen e Gemma",
+      local_step2_title:"Qwen, Gemma, Llama e Kimi",
       local_step2_desc:"Esperimenti con fine-tuning dei modelli.",
       local_step3_kicker:"Esecuzione",
       local_step3_title:"Ollama e demo locali",
@@ -154,7 +154,7 @@
       local_step1_title:"Controlled datasets",
       local_step1_desc:"Data prepared for testing.",
       local_step2_kicker:"Adaptation",
-      local_step2_title:"Qwen and Gemma",
+      local_step2_title:"Qwen, Gemma, Llama and Kimi",
       local_step2_desc:"Experiments with model fine-tuning.",
       local_step3_kicker:"Execution",
       local_step3_title:"Ollama and local demos",
@@ -386,7 +386,7 @@
   }
   document.querySelectorAll(".info-dialog").forEach(function(dlg){
     var closeBtn = dlg.querySelector(".dialog-close");
-    if(closeBtn) closeBtn.addEventListener("click", function(){ dlg.close(); });
+    if(closeBtn) closeBtn.addEventListener("click", function(){ dlg.close(); if(dlg._opener && dlg._opener.isConnected) dlg._opener.focus(); });
     dlg.addEventListener("click", function(event){ if(event.target === dlg) dlg.close(); });
   });
   document.querySelectorAll('a[href^="#"]').forEach(function(link){
@@ -394,6 +394,7 @@
       var target = hashTarget(link.getAttribute("href"));
       if(target && target.tagName === "DIALOG"){
         event.preventDefault();
+        target._opener = link;
         openDialog(target);
       }
     });
