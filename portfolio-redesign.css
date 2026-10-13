@@ -558,3 +558,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .filmstrip-start,:root[data-theme="dark"] .filmstrip-start{background:var(--accent)}
 
 .hero-filmstrip .filmstrip-tile{align-items:center;justify-content:center;text-align:center}
+
+/* Case study readability and keyboard accessibility */
+.info-dialog{max-height:min(88dvh,900px);overflow-y:auto;overscroll-behavior:contain}
+.info-dialog .case-block-label{margin-top:1.4rem;margin-bottom:.35rem;letter-spacing:.04em}
+.info-dialog .work-context{font-size:clamp(1.1rem,2.2vw,1.4rem);line-height:1.45;font-weight:600;max-width:64ch}
+.info-dialog .work-summary{max-width:75ch;line-height:1.7;text-wrap:pretty}
+.info-dialog .dialog-close:focus-visible,.filmstrip-tile:focus-visible,.desktop-nav a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:700px){.info-dialog{width:calc(100% - 24px);max-height:90dvh;padding:clamp(18px,5vw,28px)}.info-dialog .work-context{font-size:1.14rem}}
+@media(prefers-reduced-motion:reduce){.info-dialog,.filmstrip-tile{scroll-behavior:auto;transition:none}}
