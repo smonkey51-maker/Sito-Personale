@@ -475,13 +475,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .dialog-close:hover,.dialog-close:focus-visible{background:transparent;border:0;color:var(--ink);opacity:.65}
 @media(max-width:700px){.dialog-close{top:-8px;right:-8px;width:36px;height:36px}}
 
-/* Fade the actual portrait edge, rather than the viewport edge.
-   The desktop image has an intrinsic dark cutoff before the right rail. */
+/* The portrait's right edge is feathered into the page colour inside
+   photo.webp itself, so no CSS fade is needed over the face. */
 @media(min-width:701px){
  .hero-photo-frame::after{
   background:
    linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.96) 12%,rgba(23,22,27,.76) 24%,rgba(23,22,27,.36) 35%,rgba(23,22,27,.08) 45%,transparent 54%),
-   linear-gradient(to right,transparent 72%,rgba(23,22,27,.12) 76%,rgba(23,22,27,.45) 81%,rgba(23,22,27,.83) 86%,var(--bg) 91%,var(--bg) 100%),
    linear-gradient(to bottom,rgba(23,22,27,.26) 0%,transparent 18%,transparent 74%,rgba(23,22,27,.12) 83%,rgba(23,22,27,.55) 94%,var(--bg) 100%);
  }
 }
@@ -497,7 +496,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Keep portrait fades calibrated to the new, unified background. */
 :root[data-theme="dark"] .hero-photo-frame::after{background:
  linear-gradient(to right,#111014 0%,rgba(17,16,20,.96) 12%,rgba(17,16,20,.76) 24%,rgba(17,16,20,.36) 35%,rgba(17,16,20,.08) 45%,transparent 54%),
- linear-gradient(to right,transparent 72%,rgba(17,16,20,.12) 76%,rgba(17,16,20,.45) 81%,rgba(17,16,20,.83) 86%,#111014 91%,#111014 100%),
  linear-gradient(to bottom,rgba(17,16,20,.26) 0%,transparent 18%,transparent 74%,rgba(17,16,20,.12) 83%,rgba(17,16,20,.55) 94%,#111014 100%)}
 @media(max-width:700px){:root[data-theme="dark"] .hero-photo-frame::after{background:linear-gradient(to right,#111014 0%,rgba(17,16,20,.28) 7%,transparent 20%,transparent 80%,rgba(17,16,20,.28) 93%,#111014 100%),linear-gradient(to bottom,transparent 68%,rgba(17,16,20,.22) 82%,#111014 100%)}}
 
@@ -567,3 +565,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .info-dialog .dialog-close:focus-visible,.filmstrip-tile:focus-visible,.desktop-nav a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media(max-width:700px){.info-dialog{width:calc(100% - 24px);max-height:90dvh;padding:clamp(18px,5vw,28px)}.info-dialog .work-context{font-size:1.14rem}}
 @media(prefers-reduced-motion:reduce){.info-dialog,.filmstrip-tile{scroll-behavior:auto;transition:none}}
+
+/* Desktop: slide the portrait left, closer to the headline. The right edge
+   of photo.webp is already feathered into the page colour, so the strip it
+   uncovers blends in with the background. */
+@media(min-width:701px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
+@media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
