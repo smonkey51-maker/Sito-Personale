@@ -47,8 +47,8 @@ assert(html.includes('data-i18n="skip_to_content"'), 'Skip link must be translat
 assert(!html.includes('data-lang="fr"'), 'French selector must be removed');
 assert(html.includes('class="desktop-nav"'), 'Section navigation must be present');
 assert(html.includes('class="hero-filmstrip"'), 'Hero filmstrip must link to the real sections');
-assert(html.includes('srcset="photo.webp?v=16"'), 'New portrait must be displayed');
-assert(html.includes('srcset="photo-mobile.webp?v=16"'), 'Mobile portrait crop must be displayed');
+assert(html.includes('srcset="photo.webp?v=17"'), 'New portrait must be displayed');
+assert(html.includes('srcset="photo-mobile.webp?v=17"'), 'Mobile portrait crop must be displayed');
 assert(!html.includes('id="c1Details"'), 'RAG detail reader must be removed');
 assert(!html.includes('rag_step1_title'), 'RAG diagram must be removed');
 assert(!html.includes('id="c2Details"'), 'Local AI detail reader must be removed');
