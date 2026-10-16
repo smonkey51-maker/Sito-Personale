@@ -1,0 +1,125 @@
+/* nforcolin.eu — pagine interne (progetti, iniziative, privacy).
+   Si appoggia alle variabili di style.css e portfolio-redesign.css. */
+
+/* Barra superiore: sulle pagine interne non sta sopra a una foto, quindi è solida */
+.inner .topbar {
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.desktop-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Link "Google Cloud Innovator" nell'hero */
+.hero-proof-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); text-underline-offset: 4px; }
+.hero-proof-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* Struttura pagina */
+.page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 96px) clamp(20px, 5vw, 80px) 0;
+}
+.page-head { max-width: 900px; margin-bottom: clamp(48px, 7vw, 88px); }
+.page-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; margin-bottom: 28px;
+  font-family: var(--sans); font-size: 0.875rem; color: var(--ink-soft); text-decoration: none;
+}
+.page-back:hover { color: var(--accent); }
+.page-head .work-meta { margin-bottom: 18px; }
+.page-title {
+  font-family: var(--display-serif, var(--serif));
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0 0 28px;
+  color: var(--ink);
+}
+.page-lead {
+  font-family: var(--sans);
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 62ch;
+  margin: 0;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Blocchi: etichetta a sinistra, contenuto a destra */
+.page-block {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px 48px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.page-block-label {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 4px 0 0;
+}
+.page-block-body { max-width: 74ch; }
+.page-block-body p { font-size: 1.0625rem; line-height: 1.78; color: var(--ink-soft); margin: 0 0 14px; }
+.page-block-body p:last-child { margin-bottom: 0; }
+.page-block-body a { color: var(--ink); text-underline-offset: 3px; }
+.page-block-body a:hover { color: var(--accent); }
+.page-block-wide .page-block-body { max-width: none; }
+.page-updated { font-size: 0.875rem !important; }
+
+/* Flusso in tre passi */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.flow-step { background: var(--bg); padding: 24px; display: flex; flex-direction: column; gap: 6px; }
+.flow-num { font-family: var(--display-serif, var(--serif)); font-size: 2rem; line-height: 1; color: var(--accent); margin-bottom: 10px; }
+.flow-kicker { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); }
+.flow-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+.flow-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); }
+
+/* Voci (iniziative) */
+.item + .item { margin-top: 28px; }
+.item-meta { font-family: var(--sans); font-size: 0.8125rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
+.item-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 600; line-height: 1.35; margin: 0 0 8px; color: var(--ink); }
+.item-title a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.item-title a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* Credenziali */
+.badge-list { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.badge { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; background: var(--bg-2); }
+.badge-title { font-family: var(--serif); font-size: 1.125rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.badge-meta { font-family: var(--sans); font-size: 0.8125rem; color: var(--ink-soft); }
+.badge-link a { font-family: var(--sans); font-size: 0.9375rem; color: var(--accent); text-decoration: none; }
+.badge-link a:hover { text-decoration: underline; }
+
+/* Continua a leggere */
+.page-next { margin-top: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); padding-top: 28px; }
+.page-next-label { font-family: var(--sans); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 16px; }
+.page-next-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.page-next-tile {
+  position: relative; display: flex; flex-direction: column; gap: 8px;
+  padding: 24px 64px 24px 24px; min-height: 120px; justify-content: flex-end;
+  border: 1px solid var(--line); text-decoration: none; color: var(--ink);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.page-next-tile:hover, .page-next-tile:focus-visible { border-color: var(--accent); background: var(--bg-2); }
+.page-next-tile .filmstrip-meta { color: var(--accent); }
+.page-next-arrow { position: absolute; right: 0; top: 0; bottom: 0; width: 56px; display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--on-accent); }
+
+.inner .colophon { margin-top: 80px; }
+
+@media (max-width: 820px) {
+  .page-block { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+  .flow, .badge-list, .page-next-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .inner .topbar { position: sticky; }
+}
+@media print {
+  .page-next, .page-back { display: none; }
+}

@@ -2,19 +2,9 @@
   var i18n = {
     it: {
       skip_to_content:"Vai al contenuto",
-      hero_intro:"Lavoro nel Service Desk di InfoCamere, contribuendo al supporto operativo dell’infrastruttura IT del sistema camerale italiano. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.",
-      tag_enterprise_ai:"AI aziendale",
-      tag_local_ai:"AI in locale",
-      tag_ai_governance:"Governance AI",
-      tag_data_protection:"Protezione dei dati",
-      tag_infra_control:"Controllo infrastrutturale",
-      tag_provider_dependency:"Dipendenza dai fornitori",
-      tag_operational_costs:"Costi operativi",
-      contact_email_label:"Email",
-      page_title:"Nicolò Forcolin | Progetti AI in produzione",
-      page_description:"Service Desk Agent @ InfoCamere. Progetti AI in produzione, RAG aziendale e AI in locale.",
-      rag_map_title:"Come si è evoluto il sistema",
-      map_note:"Schema concettuale, non infrastruttura reale",
+      hero_intro:"Contribuisco al supporto operativo dell’infrastruttura IT del sistema camerale italiano. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.",
+      page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | Progetti AI in produzione",
+      page_description:"Service Desk Agent @ InfoCamere. Progetti AI in produzione, dal RAG aziendale all’AI in locale. Google Cloud Innovator.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e Jira",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -24,120 +14,103 @@
       rag_step3_kicker:"Evoluzione",
       rag_step3_title:"Unificazione e nuove fonti",
       rag_step3_desc:"Un progetto più ampio per ricostruire il contesto.",
-      rag_insight_label:"Quale difficoltà è emersa dopo il rilascio?",
-      rag_insight_desc:"Rallentamenti, dati incompleti e abitudini di ricerca manuale hanno richiesto lavoro sulle fonti, sul manuale operativo e sul confronto con gli utenti.",
-      local_map_title:"Dentro la sperimentazione",
       local_step1_kicker:"Preparazione",
       local_step1_title:"Dataset controllati",
-      local_step1_desc:"Dati preparati per le prove.",
+      local_step1_desc:"Dati preparati con il gruppo per le prove.",
       local_step2_kicker:"Adattamento",
-      local_step2_title:"Qwen, Gemma, Llama e Kimi",
-      local_step2_desc:"Esperimenti con fine-tuning dei modelli.",
+      local_step2_title:"Qwen, Gemma e Llama",
+      local_step2_desc:"Fine-tuning su Colab aziendale con Unsloth.",
       local_step3_kicker:"Esecuzione",
       local_step3_title:"Ollama e demo locali",
       local_step3_desc:"Inferenza e dimostrazioni in locale.",
-      local_insight_label:"Quali aspetti vanno valutati oltre al modello?",
-      local_insight_desc:"Controllo dei dati, risorse infrastrutturali, costi operativi e governance.",
-      rag_map_aria:"Percorso delle informazioni nel progetto RAG",
-      local_map_aria:"Flusso della sperimentazione AI locale",
-      back_to_site:'Torna al sito',
-      contribution_label:"Il mio contributo",
-      c1_contribution:"Ho implementato e messo in produzione i due sistemi, poi ho integrato le fonti e scritto il manuale operativo.",
-      c2_contribution:"Ho fatto il fine-tuning dei modelli, li ho portati in locale e ho costruito le demo.",
-      copy_case:"Copia link al progetto",
-      case_copied:"Link copiato",
-      case_copy_failed:"Copia il link dalla barra degli indirizzi.",
-
-      page_index:'Indice', page_index_label:'Indice dei contenuti', case_index_label:'Indice del caso studio', related_label:'Contenuti collegati', theme_light:'Passa al tema chiaro', theme_dark:'Passa al tema scuro', theme_on_light:'Tema chiaro attivato', theme_on_dark:'Tema scuro attivato',
-      c2_map_prose:"Le demo usano dataset controllati e modelli eseguiti su infrastruttura locale.", work_close:'Chiudi il progetto', colophon_title:'Contatti', colophon_note:'Sito personale. Le attività descritte sono presentate a titolo personale.',
+      back_to_site:"Torna alla home",
+      colophon_title:"Contatti",
+      colophon_note:"Sito personale. Le attività descritte sono presentate a titolo personale.",
       new_tab_hint:" (si apre in una nuova scheda)",
-      copy_email:"Copia email", copy_phone:"Copia numero di telefono", copy_done:"Copiato negli appunti",
-      reveal_email:"Mostra email", reveal_phone:"Mostra telefono",
+      copy_phone:"Copia numero di telefono",
+      copy_done:"Copiato negli appunti",
+      reveal_phone:"Mostra telefono",
       footer_privacy_link:"Informativa privacy",
-      nav_home:"Home",
       privacy_title:"Informativa sulla privacy",
       privacy_intro:"Questo è il sito personale di Nicolò Forcolin. Non usa cookie né strumenti di analytics e non raccoglie dati tramite moduli. Qui sotto trovi cosa succede esattamente quando lo visiti.",
       privacy_s1_h:"Titolare del trattamento",
-      privacy_s1_pre:"Nicolò Forcolin, Padova, Italia. Per qualsiasi richiesta relativa a questa informativa puoi scrivere a ", privacy_s1_post:".",
+      privacy_s1_pre:"Nicolò Forcolin, Padova, Italia. Per qualsiasi richiesta relativa a questa informativa puoi scrivermi su ",
+      privacy_s1_post:".",
       privacy_s2_h:"Nessun cookie, nessun tracciamento",
       privacy_s2_p:"Il sito non usa cookie di alcun tipo, né tecnici né di profilazione. Non integra Google Analytics, Meta Pixel o strumenti simili e non ha moduli di raccolta dati. Per questo non c’è un banner di consenso.",
       privacy_s3_h:"Log tecnici del server",
-      privacy_s3_pre:"Il sito è ospitato su ", privacy_s3_post:", che per ragioni di sicurezza e funzionamento della rete registra in modo automatico i log tecnici standard di ogni richiesta HTTP (ad es. indirizzo IP, user agent, pagina richiesta, data e ora). Questi log sono gestiti direttamente da Vercel secondo la propria informativa privacy e non vengono utilizzati da questo sito per finalità di profilazione.",
+      privacy_s3_pre:"Il sito è ospitato su ",
+      privacy_s3_post:", che per ragioni di sicurezza e funzionamento della rete registra in modo automatico i log tecnici standard di ogni richiesta HTTP (ad es. indirizzo IP, user agent, pagina richiesta, data e ora). Questi log sono gestiti direttamente da Vercel secondo la propria informativa privacy e non vengono utilizzati da questo sito per finalità di profilazione.",
       privacy_s4_h:"Dati mostrati sul sito",
-      privacy_s4_p:"I recapiti (email, telefono, LinkedIn) pubblicati nella sezione Contatti sono dati personali dell'autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.",
+      privacy_s4_p:"I recapiti (telefono, LinkedIn) pubblicati nella sezione Contatti sono dati personali dell'autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.",
       privacy_s5_h:"I tuoi diritti",
-      privacy_s5_p:"In quanto non vengono raccolti dati personali dei visitatori, non ci sono trattamenti su cui esercitare i diritti previsti dagli articoli 15–22 del Regolamento (UE) 2016/679 (GDPR). Se ritieni comunque che qualcosa in questa pagina sia impreciso, scrivi all'indirizzo sopra indicato.",
+      privacy_s5_p:"In quanto non vengono raccolti dati personali dei visitatori, non ci sono trattamenti su cui esercitare i diritti previsti dagli articoli 15–22 del Regolamento (UE) 2016/679 (GDPR). Se ritieni comunque che qualcosa in questa pagina sia impreciso, scrivimi su LinkedIn.",
       privacy_s6_h:"Modifiche a questa informativa",
       privacy_s6_p:"Questa informativa può essere aggiornata se cambiano gli strumenti usati dal sito (ad es. l'introduzione futura di analytics). La versione in vigore è sempre quella pubblicata su questa pagina.",
-      privacy_updated:"Ultimo aggiornamento: ottobre 2026.", cm_phone:"Telefono", cm_cert:"Certificazioni",
-      nav_contatti:"Contatti",
+      privacy_updated:"Ultimo aggiornamento: ottobre 2026.",
+      cm_phone:"Telefono",
       hero_cta1:"Esplora il mio lavoro",
-      sec_chisono:"Bio",
-      chisono_p:"Lavoro nel Service Desk di InfoCamere, contribuendo al supporto operativo dell’infrastruttura IT del sistema camerale italiano. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.",
-      sec_work_title:"Progetto in produzione",
       sec_localai_title:"AI in locale",
-      sec_path_title:"Percorso",
       sec_lavori:"Progetti",
-      date_club:"2026",
-      club_tag:"Community e affiliazioni", club_desc:"Community professionale dedicata a relazioni rispettose e a una leadership gentile.",
-      work_view:"Vedi il progetto",
+      club_desc:"Community professionale dedicata a relazioni rispettose e a una leadership gentile.",
       c1_summary:"Ho unificato due sistemi RAG già funzionanti per offrire un unico punto di accesso. Ho integrato Jira, UCMDB, Confluence, una wiki operativa e altre fonti. Nella webapp gli utenti pongono domande in linguaggio naturale: la risposta presenta prima le informazioni utilizzabili subito, poi possibili cause, procedure, casi simili e link alle fonti.",
       c2_summary:"Nei test, le risposte erano corrette nella maggior parte dei casi e miglioravano rispetto ai modelli di partenza. Restavano informazioni inventate, meno frequenti nei modelli più performanti. La prova si è conclusa senza un piano aziendale di adozione.",
-      case_results_label:"Risultati e limiti", case_problem_label:"Problema", case_solution_label:"Soluzione", case_approach_label:"Approccio", case_impact_label:"Impatto", case_responsibility_label:"Responsabilità", case_learning_label:"Cosa ho imparato", case_focus_label:"Focus", case_stack_label:"Stack", case_context_label:"Contesto e vincoli", case_choices_label:"Scelte",
+      case_results_label:"Risultati e limiti",
+      case_problem_label:"Problema",
+      case_solution_label:"Soluzione",
+      case_responsibility_label:"Responsabilità",
+      case_learning_label:"Cosa ho imparato",
+      case_context_label:"Contesto e vincoli",
       case1_title:"RAG aziendale",
       c1_status:"In produzione · 2026",
       c1_problem:"Informazioni utili distribuite tra Jira, documentazione e altri strumenti. Ricostruire il contesto di una criticità richiedeva ricerche separate.",
-      c1_context:"I destinatari erano il Service Desk, l’Incident & Problem Management e il middle management, con esigenze diverse tra chi cerca una procedura e chi deve ricostruire il contesto di un’escalation. Il vincolo principale era restare dentro ai dati aziendali reali: il sistema doveva rispondere solo sulla base di documentazione e ticket effettivi, senza margine per contenuto inventato.",
-      c1_choices:"Per lo stesso obiettivo esistevano alternative più complesse, valutate e scartate: avrebbero richiesto più tempo di messa in produzione senza un beneficio proporzionato per chi doveva solo trovare la risposta più in fretta. Ho scelto l’approccio più diretto, poi corretto quando è servito: i primi rilasci erano lenti, e la causa principale era nella gestione delle fonti più che nel modello; ridisegnando come le fonti venivano indicizzate e recuperate, la velocità è migliorata.",
-      c1_solution_1:"Con il mio Responsabile ho definito le esigenze operative. Ne sono nati due sistemi RAG, che ho implementato e messo in produzione.",
-      c1_solution_2:"Il primo rende interrogabile la documentazione aziendale, anche per la comunicazione verso middle e top management. Il secondo rende interrogabile lo storico Jira, per il team di lavoro e per Incident & Problem Management.",
-      c1_solution_3:"Poi ho unito i due sistemi in un progetto più ampio, con altre fonti di diversa provenienza. Ho scritto anche un manuale operativo per Service Desk, Incident & Problem Management e Middle Management.",
       c1_impact:"In diverse criticità osservate, la gestione del Service Desk e l'analisi di Incident & Problem Management hanno richiesto circa 30 minuti anziché ore.",
       c1_responsibility:"Ho realizzato l'unificazione, le integrazioni, la webapp e la logica delle risposte. Seguo test, problemi, feedback e adozione con gli utenti. Ho redatto il manuale operativo; l'aggiornamento per la webapp è ancora da completare.",
       c1_learning:"Dopo il rilascio, alcuni utenti continuavano a cercare a mano. Sono emersi rallentamenti e lacune nei dati: un modello funzionante non bastava. Ho lavorato sulla documentazione operativa e parlando direttamente con gli utenti. Prima di ampliare un RAG servono fonti affidabili e istruzioni chiare sul suo uso.",
       case2_title:"Sperimentazione AI in locale",
       c2_status:"Sperimentazione conclusa · 2026",
       c2_problem:"Sperimentazione interna informale per valutare modelli specializzati su domande relative a InfoCamere. Le motivazioni erano esplorare un maggiore controllo sui dati, minori costi potenziali e meno dipendenza da fornitori esterni.",
-      c2_solution:"Ho selezionato modelli Qwen, Gemma, Llama e Kimi tramite Hugging Face. Con dataset specifici preparati insieme al gruppo ho svolto il fine-tuning usando Google Colab e Unsloth, poi eseguito i modelli in locale con Ollama.",
+      c2_solution:"Ho selezionato modelli Qwen, Gemma e Llama tramite Hugging Face. Con dataset specifici preparati insieme al gruppo ho svolto il fine-tuning con Unsloth su Google Colab in versione aziendale, predisposta per i dati interni sensibili, poi ho eseguito i modelli in locale con Ollama.",
       c2_learning:"Eseguire l’AI in locale significa gestire insieme infrastruttura, dati, costi e governance.",
-      sec_percorso:"Percorso", sec_experiences:"Iniziative",
-      job_current:"In corso",
-      date_current:"Set 2022 – oggi", date_social_ambassador:"Mag 2025 – oggi", date_ideagrip:"Feb 2022 – Set 2022", date_generali:"Ott 2020 – Feb 2022",
-      job_infocamere:"Service Desk Agent. Supporto operativo all'infrastruttura IT del sistema camerale, con focus su affidabilità operativa. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.",
-      social_ambassador_desc:"Porto la cultura digitale e l’adozione dell’AI in InfoCamere con advisory, formazione e comunicazione tecnologica. Ho contribuito alla formazione di oltre 35 professionisti.",
-      job_ideagrip:"Specialista IT in stage, primo ruolo operativo: supporto infrastrutturale, troubleshooting, passaggio dal business alla tecnologia. Borsa di studio Google (WorkInTech, prima edizione italiana).",
-      job_generali:"Consulente assicurativo, in contatto diretto con il cliente in un settore molto regolamentato.",
-      date_dabo:"2026",
-      dabo_tag:"Advisory esterna",
+      sec_experiences:"Iniziative",
       dabo_title:"DABO · Consulenza e candidatura internazionale",
-      dabo_desc:"Ho fornito advisory al CEO di DABO su temi AI. Sono stato nel team SCWL a “Sprint Forward”, a Shangcheng, in Cina. Il team non è stato selezionato per la finale del 9 settembre.",
-      date_politica:"2026",
-      politica_tag:"Formazione politica",
-      politica_title:"Meritare l'Europa, Scuola di Formazione Politica, Italia Viva",
-      politica_desc:"Partecipante all’edizione 2026 del programma di formazione politica di Italia Viva, su affari europei, istituzioni, economia, tecnologia e politiche pubbliche.",
-      date_pizz:"30 settembre 2026", pizz_tag:"Rete professionale", pizz_title:"Pizz'n'Meet, Padova", pizz_desc:"Serata di networking con professionisti di settori diversi: ci si presenta, si raccontano le proprie attività e si ascoltano esperienze lontane dalla propria. Guidata da una Pizz'n'Meet Ambassador. Sono tornato con nuovi contatti.",
+      dabo_desc:"Ho fornito advisory al CEO di DABO su temi AI e ho fatto parte del team SCWL a “Sprint Forward”, a Shangcheng, in Cina.",
       sec_badge:"Credenziali",
-      badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credenziale · 2026",
-      badge2_title:"Google Cloud Innovator", badge2_meta:"Programma community · 2025",
-      badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Stato del programma · 2026",
-      nav_main_label:"Navigazione principale", nav_toggle_label:"Menu", theme_toggle_label:"Cambia tema", hero_proof_label:"Profilo",
-      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
+      badge1_title:"Gemini Enterprise Agent Ready",
+      badge1_meta:"Credenziale · 2026",
+      badge2_title:"Google Cloud Innovator",
+      badge2_meta:"Programma community · 2025",
+      badge3_title:"Google Developer Program, Premium Tier",
+      badge3_meta:"Stato del programma · 2026",
+      nav_main_label:"Navigazione principale",
+      nav_toggle_label:"Menu",
+      hero_proof_label:"Profilo",
+      hero_proof1:"Service Desk Agent @ InfoCamere",
+      hero_proof3:"Google Cloud Innovator",
+      c2_lead:"Modelli open specializzati su domande relative a InfoCamere, addestrati su un ambiente aziendale ed eseguiti in locale.",
+      initiatives_status:"Advisory e community · 2026",
+      initiatives_lead:"Attività fuori dal ruolo principale: advisory sull’AI, community professionali e le credenziali che documentano il percorso su Google Cloud.",
+      advisory_label:"Advisory esterna",
+      community_label:"Community",
+      club_title:"Club degli Uomini Gentili",
+      badge_profile:"Vedi il profilo Google Developer",
+      case_flow_label:"Come si è evoluto",
+      next_label:"Continua a leggere",
+      close:"Chiudi",
+      page_title_rag:"RAG aziendale | Nicolò Forcolin",
+      page_description_rag:"Un unico punto di accesso a Jira, UCMDB, Confluence e alla wiki operativa per il Service Desk di InfoCamere, in produzione dal 2026.",
+      page_title_local:"Sperimentazione AI in locale | Nicolò Forcolin",
+      page_description_local:"Fine-tuning di modelli open (Qwen, Gemma, Llama) su domande relative a InfoCamere ed esecuzione in locale con Ollama.",
+      page_title_initiatives:"Iniziative e credenziali | Nicolò Forcolin",
+      page_description_initiatives:"Advisory esterna, community professionali e credenziali Google di Nicolò Forcolin.",
+      page_title_privacy:"Informativa sulla privacy | Nicolò Forcolin",
+      page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
       skip_to_content:"Skip to content",
-      hero_intro:"I work in InfoCamere’s Service Desk, helping support the IT infrastructure of the Italian Chambers of Commerce system. In parallel, I contribute to AI projects, including their integration into operational processes and adoption across the organization.",
-      tag_enterprise_ai:"Enterprise AI",
-      tag_local_ai:"Local AI",
-      tag_ai_governance:"AI Governance",
-      tag_data_protection:"Data protection",
-      tag_infra_control:"Infrastructure control",
-      tag_provider_dependency:"Provider dependency",
-      tag_operational_costs:"Operational costs",
-      contact_email_label:"Email",
-      page_title:"Nicolò Forcolin | AI Projects in Production",
-      page_description:"Service Desk Agent @ InfoCamere. AI projects in production, enterprise RAG and local AI.",
-      rag_map_title:"How the system evolved",
-      map_note:"Conceptual overview, not actual infrastructure",
+      hero_intro:"I help support the IT infrastructure of the Italian Chambers of Commerce system. In parallel, I contribute to AI projects, including their integration into operational processes and adoption across the organization.",
+      page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | AI Projects in Production",
+      page_description:"Service Desk Agent @ InfoCamere. AI projects in production, from enterprise RAG to local AI. Google Cloud Innovator.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and Jira",
       rag_step1_desc:"Two separate knowledge collections.",
@@ -147,106 +120,98 @@
       rag_step3_kicker:"Evolution",
       rag_step3_title:"Unified system and new sources",
       rag_step3_desc:"A broader project for reconstructing context.",
-      rag_insight_label:"What challenges emerged after release?",
-      rag_insight_desc:"Slowdowns, incomplete data and established manual search habits required work on sources, user guidance and direct conversations.",
-      local_map_title:"Inside the experiment",
       local_step1_kicker:"Preparation",
       local_step1_title:"Controlled datasets",
-      local_step1_desc:"Data prepared for testing.",
+      local_step1_desc:"Data prepared with the group for testing.",
       local_step2_kicker:"Adaptation",
-      local_step2_title:"Qwen, Gemma, Llama and Kimi",
-      local_step2_desc:"Experiments with model fine-tuning.",
+      local_step2_title:"Qwen, Gemma and Llama",
+      local_step2_desc:"Fine-tuning on enterprise Colab with Unsloth.",
       local_step3_kicker:"Execution",
       local_step3_title:"Ollama and local demos",
       local_step3_desc:"Local inference and demonstrations.",
-      local_insight_label:"What else matters beyond the model?",
-      local_insight_desc:"Data control, infrastructure resources, operational costs and governance.",
-      rag_map_aria:"Information flow in the RAG project",
-      local_map_aria:"Local AI experiment flow",
-      back_to_site:'Back to website',
-      contribution_label:"My contribution",
-      c1_contribution:"I implemented and put the two systems into production, then integrated the sources and wrote the operating manual.",
-      c2_contribution:"I ran the fine-tuning, moved the models to local infrastructure and built the demos.",
-      copy_case:"Copy project link",
-      case_copied:"Link copied",
-      case_copy_failed:"Copy the link from the address bar.",
-
-      page_index:'Index', page_index_label:'Contents index', case_index_label:'Case study index', related_label:'Related content', theme_light:'Switch to light theme', theme_dark:'Switch to dark theme', theme_on_light:'Light theme enabled', theme_on_dark:'Dark theme enabled',
-      c2_map_prose:"The demos use controlled datasets and models running on local infrastructure.", work_close:'Close project', colophon_title:'Contact', colophon_note:'Personal website. The activities described here are presented in a personal capacity.',
+      back_to_site:"Back to home",
+      colophon_title:"Contact",
+      colophon_note:"Personal website. The activities described here are presented in a personal capacity.",
       new_tab_hint:" (opens in a new tab)",
-      copy_email:"Copy email", copy_phone:"Copy phone number", copy_done:"Copied to clipboard",
-      reveal_email:"Show email", reveal_phone:"Show phone number",
+      copy_phone:"Copy phone number",
+      copy_done:"Copied to clipboard",
+      reveal_phone:"Show phone number",
       footer_privacy_link:"Privacy notice",
-      nav_home:"Home",
       privacy_title:"Privacy notice",
       privacy_intro:"This is the personal website of Nicolò Forcolin. It uses no cookies or analytics tools and collects no data through forms. Below you can see exactly what happens when you visit it.",
       privacy_s1_h:"Data controller",
-      privacy_s1_pre:"Nicolò Forcolin, Padua, Italy. For any request about this notice, write to ", privacy_s1_post:".",
+      privacy_s1_pre:"Nicolò Forcolin, Padua, Italy. For any request about this notice, message me on ",
+      privacy_s1_post:".",
       privacy_s2_h:"No cookies, no tracking",
       privacy_s2_p:"The site uses no cookies of any kind, technical or profiling. It does not integrate Google Analytics, Meta Pixel or similar tools, and has no data collection forms. That is why there is no consent banner.",
       privacy_s3_h:"Server technical logs",
-      privacy_s3_pre:"The site is hosted on ", privacy_s3_post:", which for security and network operation purposes automatically records standard technical logs for every HTTP request (e.g. IP address, user agent, requested page, date and time). These logs are managed directly by Vercel under its own privacy policy and are not used by this site for profiling purposes.",
+      privacy_s3_pre:"The site is hosted on ",
+      privacy_s3_post:", which for security and network operation purposes automatically records standard technical logs for every HTTP request (e.g. IP address, user agent, requested page, date and time). These logs are managed directly by Vercel under its own privacy policy and are not used by this site for profiling purposes.",
       privacy_s4_h:"Data shown on the site",
-      privacy_s4_p:"The contact details (email, phone, LinkedIn) published in the Contact section are the site author's own personal data, shown voluntarily so people can get in touch. The site doesn't collect or process them: they're simply printed on the page.",
+      privacy_s4_p:"The contact details (phone, LinkedIn) published in the Contact section are the site author's own personal data, shown voluntarily so people can get in touch. The site doesn't collect or process them: they're simply printed on the page.",
       privacy_s5_h:"Your rights",
-      privacy_s5_p:"Since no personal data is collected from visitors, there is no processing to exercise the rights under Articles 15–22 of Regulation (EU) 2016/679 (GDPR) for. If you still believe something on this page is inaccurate, write to the address above.",
+      privacy_s5_p:"Since no personal data is collected from visitors, there is no processing to exercise the rights under Articles 15–22 of Regulation (EU) 2016/679 (GDPR) for. If you still believe something on this page is inaccurate, message me on LinkedIn.",
       privacy_s6_h:"Changes to this notice",
       privacy_s6_p:"This notice may be updated if the tools used by the site change (e.g. the future introduction of analytics). The version in force is always the one published on this page.",
-      privacy_updated:"Last updated: October 2026.", cm_phone:"Phone", cm_cert:"Certifications",
-      nav_contatti:"Contact",
+      privacy_updated:"Last updated: October 2026.",
+      cm_phone:"Phone",
       hero_cta1:"Explore my work",
-      sec_chisono:"Bio",
-      chisono_p:"I work for the Service Desk of InfoCamere, contributing to the operational support of the IT infrastructure of the Italian Chamber system. In parallel, I take part in projects including AI integration into processes and its adoption across the organization.",
-      sec_work_title:"Production Project",
       sec_localai_title:"Local AI",
-      sec_path_title:"Career path",
       sec_lavori:"Projects",
-      date_club:"2026",
-      club_tag:"Community & affiliations", club_desc:"A professional community dedicated to respectful relationships and kind leadership.",
-      work_view:"View project",
+      club_desc:"A professional community dedicated to respectful relationships and kind leadership.",
       c1_summary:"I unified two working RAG systems into one access point, integrating Jira, UCMDB, Confluence, an operational wiki and other sources. Users ask questions in natural language through a web app. Responses prioritize actionable information, followed by possible causes, procedures, similar cases and links to original sources.",
       c2_summary:"In most tests, specialized models answered correctly and improved over their base versions. They still fabricated some information, less often with higher-performing models. The experiment ended without a company adoption plan.",
-      case_results_label:"Results and limitations", case_problem_label:"Problem", case_solution_label:"Solution", case_approach_label:"Approach", case_impact_label:"Impact", case_responsibility_label:"Responsibility", case_learning_label:"Learning", case_focus_label:"Focus", case_stack_label:"Stack", case_context_label:"Context and constraints", case_choices_label:"Choices",
+      case_results_label:"Results and limitations",
+      case_problem_label:"Problem",
+      case_solution_label:"Solution",
+      case_responsibility_label:"Responsibility",
+      case_learning_label:"Learning",
+      case_context_label:"Context and constraints",
       case1_title:"Enterprise Knowledge Retrieval",
       c1_status:"Production · 2026",
       c1_problem:"Useful information was scattered across Jira, documentation and other tools. Reconstructing an incident's context required separate searches.",
-      c1_context:"The audience was Service Desk, Incident & Problem Management and middle management, each with different needs: some looking for a procedure, others reconstructing the context of an escalation. The main constraint was staying inside real company data: the system had to answer only from actual documentation and tickets, with no room for invented content.",
-      c1_choices:"More complex alternatives for the same goal existed and were considered, then set aside: they would have taken longer to put into production without a proportional benefit for people who just needed to find an answer faster. I chose the more direct approach, then corrected it when needed: the first releases were slow, and the main cause was how sources were handled rather than the model itself; redesigning how sources were indexed and retrieved improved speed.",
-      c1_solution_1:"Together with my manager I defined the operational needs. Two RAG systems came out of it, which I implemented and put into production.",
-      c1_solution_2:"The first makes company documentation searchable, including for communication to middle and top management. The second makes the Jira history searchable, for the working team and for Incident & Problem Management.",
-      c1_solution_3:"I then merged the two systems into a broader project, adding other sources from different origins. I also wrote an operating manual for Service Desk, Incident & Problem Management and Middle Management.",
       c1_impact:"Across several observed incidents, Service Desk handling and Incident & Problem Management analysis took around 30 minutes instead of hours.",
       c1_responsibility:"I implemented the unification, source integrations, web app and response logic. I handle testing, issues, user feedback and adoption. I wrote the operating manual; its update for the web app is still pending.",
       c1_learning:"After the release, some users kept searching by hand. Slowdowns and gaps in the data came up: a working model was not enough. I worked on the operating documentation and talked directly with users. Before expanding a RAG you need reliable sources and clear instructions on how to use it.",
       case2_title:"Local AI Experiment",
       c2_status:"Experiment completed · 2026",
       c2_problem:"An informal internal experiment to evaluate models specialized in answering questions about InfoCamere, exploring data control, potential cost reductions and less reliance on external providers.",
-      c2_solution:"I selected Qwen, Gemma, Llama and Kimi models through Hugging Face. I fine-tuned them with Google Colab and Unsloth using task-specific datasets prepared with the group, then ran them locally with Ollama.",
+      c2_solution:"I selected Qwen, Gemma and Llama models through Hugging Face. Using task-specific datasets prepared with the group, I fine-tuned them with Unsloth on the enterprise edition of Google Colab, set up for sensitive internal data, then ran the models locally with Ollama.",
       c2_learning:"Running AI locally means managing infrastructure, data, cost and governance together.",
-      sec_percorso:"Career", sec_experiences:"Initiatives",
-      job_current:"Ongoing",
-      date_current:"Sep 2022 – today", date_social_ambassador:"May 2025 – today", date_ideagrip:"Feb 2022 – Sep 2022", date_generali:"Oct 2020 – Feb 2022",
-      job_infocamere:"Service Desk Agent. Operational support for the IT infrastructure of the Italian Chambers of Commerce system, with a focus on operational reliability. In parallel, I take part in AI projects, including their integration into processes and their adoption across the organization.",
-      social_ambassador_desc:"I bring digital culture and AI adoption to InfoCamere through advisory, training and technology communication. I have contributed to upskilling over 35 professionals.",
-      job_ideagrip:"IT specialist (internship), first operational role: infrastructure support, troubleshooting, moving from business to technology. Google scholarship (WorkInTech, first Italian edition).",
-      job_generali:"Insurance advisor, in direct contact with clients in a heavily regulated sector.",
-      date_dabo:"2026",
-      dabo_tag:"External advisory",
+      sec_experiences:"Initiatives",
       dabo_title:"DABO · Advisory & international bid",
-      dabo_desc:"I provided AI advisory to the CEO of DABO. I was part of the SCWL team at “Sprint Forward”, in Shangcheng, China. The team was not selected for the 9 September final.",
-      date_politica:"2026",
-      politica_tag:"Political education",
-      politica_title:"Meritare l'Europa, School of Political Education, Italia Viva",
-      politica_desc:"Participant in the 2026 edition of the political training programme run by Italia Viva, covering European affairs, institutions, economics, technology and public policy.",
-      date_pizz:"September 30, 2026", pizz_tag:"Networking", pizz_title:"Pizz'n'Meet, Padua", pizz_desc:"A networking evening with professionals from different sectors: you introduce yourself, say what you do, and hear experiences far from your own. Guided by a Pizz'n'Meet Ambassador. I came back with new contacts.",
+      dabo_desc:"I provided AI advisory to the CEO of DABO and was part of the SCWL team at “Sprint Forward”, in Shangcheng, China.",
       sec_badge:"Credentials",
-      badge1_title:"Gemini Enterprise Agent Ready", badge1_meta:"Credential · 2026",
-      badge2_title:"Google Cloud Innovator", badge2_meta:"Community program · 2025",
-      badge3_title:"Google Developer Program, Premium Tier", badge3_meta:"Program status · 2026",
-      nav_main_label:"Main navigation", nav_toggle_label:"Menu", theme_toggle_label:"Toggle theme", hero_proof_label:"Profile",
-      hero_proof1:"Service Desk Agent @ InfoCamere", hero_proof3:"Google Cloud Innovator",
-    },
-
+      badge1_title:"Gemini Enterprise Agent Ready",
+      badge1_meta:"Credential · 2026",
+      badge2_title:"Google Cloud Innovator",
+      badge2_meta:"Community program · 2025",
+      badge3_title:"Google Developer Program, Premium Tier",
+      badge3_meta:"Program status · 2026",
+      nav_main_label:"Main navigation",
+      nav_toggle_label:"Menu",
+      hero_proof_label:"Profile",
+      hero_proof1:"Service Desk Agent @ InfoCamere",
+      hero_proof3:"Google Cloud Innovator",
+      c2_lead:"Open models specialised in InfoCamere-related questions, trained in a company environment and run locally.",
+      initiatives_status:"Advisory and community · 2026",
+      initiatives_lead:"Work outside my main role: AI advisory, professional communities and the credentials that document my path on Google Cloud.",
+      advisory_label:"External advisory",
+      community_label:"Community",
+      club_title:"Club degli Uomini Gentili",
+      badge_profile:"View the Google Developer profile",
+      case_flow_label:"How it evolved",
+      next_label:"Keep reading",
+      close:"Close",
+      page_title_rag:"Enterprise Knowledge Retrieval | Nicolò Forcolin",
+      page_description_rag:"A single access point to Jira, UCMDB, Confluence and the operational wiki for InfoCamere's Service Desk, in production since 2026.",
+      page_title_local:"Local AI Experiment | Nicolò Forcolin",
+      page_description_local:"Fine-tuning open models (Qwen, Gemma, Llama) on InfoCamere-related questions and running them locally with Ollama.",
+      page_title_initiatives:"Initiatives and credentials | Nicolò Forcolin",
+      page_description_initiatives:"External advisory, professional communities and Google credentials of Nicolò Forcolin.",
+      page_title_privacy:"Privacy notice | Nicolò Forcolin",
+      page_description_privacy:"Privacy notice for Nicolò Forcolin's personal website: no cookies, no tracking, no data collected through forms.",
+    }
   };
 
   /* Contatti: costruiti a runtime e mostrati solo dopo un click, per limitare la raccolta automatica. */
@@ -274,17 +239,13 @@
     el.querySelector(".reveal-btn").addEventListener("click", function(){
       el.innerHTML = reveal();
       bindCopyButtons(el);
+      applyLang();
     }, { once: true });
   }
   (function(){
-    var eu = "nicolo.forcolin", ed = "infocamere.it";
-    var email = eu + "@" + ed;
     var pn = ["+39", "347", "908", "1966"];
     var phoneDisplay = pn.join(" ");
-    var phoneHref = "tel:" + pn.join("").replace(/\s/g, "");
-    revealRow("cmEmail", "reveal_email", "Mostra email", function(){
-      return '<a href="mailto:' + email + '">' + email + "</a>" + copyBtn(email, "copy_email");
-    });
+    var phoneHref = "tel:" + pn.join("");
     revealRow("cmPhone", "reveal_phone", "Mostra telefono", function(){
       return '<a href="' + phoneHref + '">' + phoneDisplay + "</a>" + copyBtn(phoneDisplay, "copy_phone");
     });
@@ -312,14 +273,17 @@
   var savedLang = null;
   try{ savedLang = localStorage.getItem(LANG_KEY); }catch(e){}
   var lang = (savedLang === "en") ? "en" : "it";
+  /* Ogni pagina dichiara data-page sul body; la home usa le chiavi senza suffisso. */
+  var page = document.body.getAttribute("data-page");
+  var suffix = (page && page !== "home") ? "_" + page : "";
 
   /* ---- lingua ---- */
   function applyLang(){
     root.lang = lang;
     var dict = i18n[lang];
-    document.title = dict.page_title;
+    if(dict["page_title" + suffix]) document.title = dict["page_title" + suffix];
     var pageDescription = document.querySelector('meta[name="description"]');
-    if(pageDescription) pageDescription.setAttribute("content", dict.page_description);
+    if(pageDescription && dict["page_description" + suffix]) pageDescription.setAttribute("content", dict["page_description" + suffix]);
     document.querySelectorAll("[data-i18n]").forEach(function(el){
       var k = el.getAttribute("data-i18n");
       if(dict[k] !== undefined){ el.textContent = dict[k]; }
@@ -333,7 +297,6 @@
       b.classList.toggle("on", selected);
       b.setAttribute("aria-pressed", String(selected));
     });
-    paintTheme();
   }
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){
@@ -342,69 +305,6 @@
       applyLang();
     });
   });
-
-  /* ---- tema ---- */
-  var toggles = Array.prototype.slice.call(document.querySelectorAll(".theme-toggle"));
-  function current(){
-    return root.getAttribute("data-theme") || "light";
-  }
-  var themeColorMeta = document.getElementById("themeColorMeta");
-  function paintTheme(){
-    var dark = current() === "dark";
-    toggles.forEach(function(t){
-      t.textContent = dark ? "☀" : "☾";
-      t.setAttribute("aria-label", i18n[lang][dark ? "theme_light" : "theme_dark"]);
-      t.setAttribute("aria-pressed", String(dark));
-    });
-    if(themeColorMeta) themeColorMeta.setAttribute("content", dark ? "#0A0A0A" : "#FFFFFF");
-  }
-  var themeAnnouncer = document.getElementById("themeAnnouncer");
-  function announceTheme(dark){
-    if(themeAnnouncer) themeAnnouncer.textContent = i18n[lang][dark ? "theme_on_dark" : "theme_on_light"];
-  }
-  toggles.forEach(function(t){
-    t.addEventListener("click", function(){
-      var next = current() === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      try{ localStorage.setItem("nfTheme", next); }catch(e){}
-      paintTheme();
-      announceTheme(next === "dark");
-    });
-  });
-  paintTheme();
-
-  /* The site lives in a single screen: links to #ids that are <dialog>
-     elements (RAG, AI locale, Iniziative) open that dialog instead of
-     scrolling to a separate section. */
-  function hashTarget(hash){
-    try{ return hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; }
-    catch(e){ return null; }
-  }
-  function openDialog(dlg){
-    if(!dlg || dlg.open) return;
-    if(typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
-  }
-  document.querySelectorAll(".info-dialog").forEach(function(dlg){
-    var closeBtn = dlg.querySelector(".dialog-close");
-    if(closeBtn) closeBtn.addEventListener("click", function(){ dlg.close(); if(dlg._opener && dlg._opener.isConnected) dlg._opener.focus(); });
-    dlg.addEventListener("click", function(event){ if(event.target === dlg) dlg.close(); });
-  });
-  document.querySelectorAll('a[href^="#"]').forEach(function(link){
-    link.addEventListener("click", function(event){
-      var target = hashTarget(link.getAttribute("href"));
-      if(target && target.tagName === "DIALOG"){
-        event.preventDefault();
-        target._opener = link;
-        openDialog(target);
-      }
-    });
-  });
-  function openDialogFromHash(){
-    var target = hashTarget(location.hash);
-    if(target && target.tagName === "DIALOG") openDialog(target);
-  }
-  window.addEventListener("hashchange", openDialogFromHash);
-  openDialogFromHash();
 
   /* Mobile nav toggle: desktop-nav doubles as the collapsible menu panel. */
   var navToggle = document.querySelector(".nav-toggle");
@@ -428,45 +328,5 @@
     });
   }
 
-  /* Keep desktop navigation and reading progress in sync with scroll position. */
-  var progress = document.querySelector(".scroll-progress");
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.desktop-nav a'));
-  var sectionIds = Array.from(new Set(navLinks.map(function(a){ return a.hash.slice(1); })));
-  var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(function(el){ return el && el.tagName !== "DIALOG"; });
-  var queued = false;
-  function updateNavigation(){
-    queued = false;
-    var bar = document.getElementById("topbar");
-    var offset = bar ? Math.ceil(bar.getBoundingClientRect().height) + 16 : 80;
-    root.style.setProperty("--nav-offset", offset + "px");
-    var top = offset + 12;
-    var active = null;
-    sections.forEach(function(section){ if(section.getBoundingClientRect().top <= top) active = section.id; });
-    navLinks.forEach(function(link){
-      var selected = link.hash === "#" + active;
-      link.classList.toggle("active", selected);
-      if(selected) link.setAttribute("aria-current", "location"); else link.removeAttribute("aria-current");
-    });
-    var max = root.scrollHeight - root.clientHeight;
-    if(progress) progress.style.width = (max > 0 ? root.scrollTop / max * 100 : 0) + "%";
-  }
-  function queueNavigation(){ if(!queued){ queued = true; requestAnimationFrame(updateNavigation); } }
-  window.addEventListener("scroll", queueNavigation, {passive:true});
-  window.addEventListener("resize", queueNavigation);
-  if("ResizeObserver" in window){
-    var bar = document.getElementById("topbar");
-    if(bar) new ResizeObserver(queueNavigation).observe(bar);
-  }
-  updateNavigation();
-
-  document.querySelectorAll('[data-copy-case]').forEach(function(button){
-    button.addEventListener('click', async function(){
-      var id = button.getAttribute('data-copy-case');
-      var url = new URL(location.href); url.hash = id;
-      var feedback = button.nextElementSibling;
-      try { await navigator.clipboard.writeText(url.href); feedback.textContent = i18n[lang].case_copied; }
-      catch(e) { location.hash = id; feedback.textContent = i18n[lang].case_copy_failed; }
-    });
-  });
   applyLang();
 })();

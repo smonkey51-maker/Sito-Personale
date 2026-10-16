@@ -1,5 +1,5 @@
 // Build di produzione: copia il sito statico in dist/, minificando
-// solo style.css e script.js. index.html resta invariato perché gli
+// style.css, pages.css e script.js. Gli HTML restano invariati perché gli
 // script inline in <head> sono ancorati via hash SHA-256 nella CSP
 // (vercel.json): minificarli cambierebbe quegli hash.
 const fs = require("fs");
@@ -29,6 +29,11 @@ execSync(
 
 execSync(
   `npx cleancss -o dist/style.css style.css`,
+  { cwd: root, stdio: "inherit" }
+);
+
+execSync(
+  `npx cleancss -o dist/pages.css pages.css`,
   { cwd: root, stdio: "inherit" }
 );
 
