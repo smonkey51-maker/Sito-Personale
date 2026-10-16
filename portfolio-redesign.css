@@ -176,16 +176,14 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero-btn-chevron{flex-shrink:0}
 
 /* Trailing arrow block closing the filmstrip, matching the concept's "more" tile. */
-.filmstrip-more{flex:0 0 clamp(56px,7vw,88px);display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--on-accent);transition:background var(--dur) var(--ease)}
-@media(hover:hover) and (pointer:fine){.filmstrip-more:hover{background:var(--accent-hover)}}
-@media(max-width:700px){.filmstrip-more{flex-basis:auto;padding:18px}}
+.filmstrip-more{flex:0 0 clamp(56px,7vw,88px);background:var(--accent)}
 
 /* Matching neutral cell at the opposite end of the filmstrip, mirroring the
    concept's grey "scroll" block — decorative only, not a real scroll
    target (the filmstrip is the last thing on the page), so it's a span,
    never a button pretending to do something it can't. */
 .filmstrip-start{flex:0 0 clamp(56px,7vw,88px);display:flex;align-items:center;justify-content:center;background:#4F4B56;color:var(--ink-soft)}
-@media(max-width:700px){.filmstrip-start{display:none}}
+@media(max-width:700px){.filmstrip-start,.filmstrip-more{display:none}}
 
 /* The colophon section already has its own top border; the footer note's
    own border-top on top of it read as two redundant parallel lines. */
@@ -342,10 +340,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:700px){:root[data-theme="dark"] .hero-photo-frame::after{background:linear-gradient(to right,#111014 0%,rgba(17,16,20,.28) 7%,transparent 20%,transparent 80%,rgba(17,16,20,.28) 93%,#111014 100%),linear-gradient(to bottom,transparent 68%,rgba(17,16,20,.22) 82%,#111014 100%)}}
 
 /* Center labels and icons in all orange action controls. */
-.topbar-contact,.filmstrip-more,.hero-overlay .hero-btn.solid{
+.topbar-contact,.hero-overlay .hero-btn.solid{
  display:inline-flex;align-items:center;justify-content:center;text-align:center;
 }
-.topbar-contact svg,.filmstrip-more svg{display:block;flex-shrink:0;margin:auto}
+.topbar-contact svg{display:block;flex-shrink:0;margin:auto}
 .hero-overlay .hero-btn.solid{gap:12px;line-height:1.2}
 .hero-overlay .hero-btn.solid svg{flex-shrink:0}
 
@@ -355,19 +353,18 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero-filmstrip{height:var(--action-rail-height);min-height:0;align-items:stretch}
 .filmstrip-tile,.filmstrip-start,.filmstrip-more{box-sizing:border-box;height:100%;min-height:0;align-self:stretch}
 .filmstrip-tile{justify-content:center;padding-top:8px;padding-bottom:8px}
-.filmstrip-start,.filmstrip-more{padding:0;display:grid;place-items:center}
-.topbar-contact svg,.filmstrip-more svg{display:block;width:18px;height:18px;margin:0;position:static;transform:none}
+.filmstrip-start{padding:0;display:grid;place-items:center}
+.filmstrip-more{padding:0}
+.topbar-contact svg{display:block;width:18px;height:18px;margin:0;position:static;transform:none}
 .hero-name{font-weight:700}
 @media(max-width:700px){
- :root{--action-rail-height:64px}
  .hero-filmstrip{height:auto;min-height:0}
  .filmstrip-tile{height:auto;min-height:0}
- .filmstrip-more{height:var(--action-rail-height);min-height:0;padding:0;flex-basis:auto}
 }
 
 /* Exact optical centering in orange rails: avoid inherited grid/flex margins. */
-.topbar-contact,.filmstrip-more{position:relative;display:block;padding:0;line-height:0;text-align:center}
-.topbar-contact svg,.filmstrip-more svg{position:absolute;top:50%;left:50%;width:18px;height:18px;margin:0;transform:translate(-50%,-50%);display:block}
+.topbar-contact{position:relative;display:block;padding:0;line-height:0;text-align:center}
+.topbar-contact svg{position:absolute;top:50%;left:50%;width:18px;height:18px;margin:0;transform:translate(-50%,-50%);display:block}
 /* The footer rule is the bottom closing line of the project strip. */
 .colophon{padding-top:0}
 .colophon-inner{padding-top:0}
@@ -382,14 +379,11 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .topbar-contact{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:auto!important;display:grid!important;place-items:center!important;padding:0!important;background:var(--accent)!important;color:#16121D!important}
 .topbar-contact svg{position:static!important;transform:none!important;margin:0!important;display:block!important;stroke:currentColor!important;opacity:1!important}
 /* Keep lower arrow geometrically centered without absolute SVG offsets. */
-.filmstrip-more{position:relative;display:grid!important;place-items:center!important;padding:0!important}
-.filmstrip-more svg{position:static!important;transform:none!important;margin:0!important;display:block!important}
 
 /* Final rail geometry: center SVGs in the actual colored boxes. */
 .topbar-contact{position:absolute!important;inset:0 0 0 auto!important;width:var(--rail-width)!important;height:100%!important;min-height:0!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important}
 .topbar-contact svg{position:static!important;width:18px!important;height:18px!important;flex:none!important;transform:none!important;margin:0!important}
-.filmstrip-more{display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;min-width:var(--rail-width)!important;flex:0 0 var(--rail-width)!important}
-.filmstrip-more svg{position:static!important;width:18px!important;height:18px!important;flex:none!important;transform:none!important;margin:0!important}
+.filmstrip-more{box-sizing:border-box!important;min-width:var(--rail-width)!important;flex:0 0 var(--rail-width)!important}
 /* No inert grey scroll control: first project occupies its former slot. */
 .hero-filmstrip .filmstrip-tile:first-child{border-left:0}
 @media(max-width:700px){.topbar-contact{width:var(--rail-width)!important}}
