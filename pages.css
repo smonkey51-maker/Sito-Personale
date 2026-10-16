@@ -102,14 +102,13 @@
 .page-next-label { font-family: var(--sans); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 16px; }
 .page-next-grid { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .page-next-tile {
-  position: relative; display: flex; flex-direction: column; gap: 8px;
-  padding: 20px 72px 20px 16px; min-height: 88px; justify-content: center;
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 20px 16px; min-height: 88px; justify-content: center;
   border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);
-  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+  transition: background var(--dur) var(--ease);
 }
 .page-next-tile:hover, .page-next-tile:focus-visible, .page-next-tile:active { background: var(--bg-2); }
 .page-next-tile .filmstrip-meta { color: var(--accent); }
-.page-next-arrow { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--on-accent); }
 
 .inner .colophon { margin-top: 80px; }
 
