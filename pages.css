@@ -74,13 +74,16 @@
 .page-block-wide .page-block-body { max-width: none; }
 .page-updated { font-size: 0.875rem !important; }
 
-/* Flusso in tre passi */
-.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.flow-step { background: var(--bg); padding: 24px; display: flex; flex-direction: column; gap: 6px; }
-.flow-num { font-family: var(--display-serif, var(--serif)); font-size: 2rem; line-height: 1; color: var(--accent); margin-bottom: 10px; }
-.flow-kicker { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); }
-.flow-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); }
-.flow-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); }
+/* Flusso in tre passi: elenco a righe, etichetta a sinistra */
+.flow { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.flow-step { display: grid; grid-template-columns: minmax(150px, 1fr) 3fr; column-gap: 32px; row-gap: 4px; padding: 20px 0; border-top: 1px solid var(--line); }
+.flow-kicker { grid-column: 1; grid-row: 1 / span 2; font-family: var(--sans); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); padding-top: 4px; }
+.flow-title { grid-column: 2; font-family: var(--serif); font-size: 1.25rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.flow-desc { grid-column: 2; font-size: 1.0625rem; line-height: 1.6; color: var(--ink-soft); }
+@media (max-width: 700px) {
+  .flow-step { grid-template-columns: 1fr; }
+  .flow-kicker, .flow-title, .flow-desc { grid-column: 1; grid-row: auto; padding-top: 0; }
+}
 
 /* Voci (iniziative) */
 .item-meta { font-family: var(--sans); font-size: 0.8125rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
