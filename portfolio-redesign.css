@@ -16,7 +16,7 @@ body{font-size:1.03rem;line-height:1.7}
 h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .topbar{background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
 .topbar-inner{min-height:86px;gap:32px}
-.site-name{font-family:var(--display-serif);font-weight:500;font-size:1.4rem;letter-spacing:-.02em}
+.site-name{font-family:var(--display-serif);font-weight:500;font-size:1.5rem;letter-spacing:-.02em}
 .desktop-nav a{font-size:.9rem;font-weight:400;letter-spacing:.01em}
 .hero{padding:100px 0 125px;overflow:hidden}
 .hero-btn{border-radius:12px;padding:15px 24px;font-size:.94rem}
@@ -59,7 +59,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 }
 @media(max-width:520px){
  .topbar-inner{justify-content:space-between}
- .site-name{display:inline-flex;font-size:.85rem}
+ .site-name{display:inline-flex}
  .desktop-nav a{font-size:.875rem}
  .utilbar{gap:8px}
  .lang-btn{font-size:.8125rem;min-width:30px}
@@ -71,7 +71,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .utilbar{margin-left:auto;display:flex;align-items:center;gap:12px}
 @media(max-width:520px){
  .topbar-inner{min-height:64px;padding:12px 20px;gap:10px;flex-wrap:nowrap}
- .site-name{font-size:.84rem}
+ .site-name{font-size:1.2rem}
  .utilbar{gap:8px}
 }
 
@@ -446,7 +446,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .editorial-shell{max-width:calc(1280*var(--u));padding:0 calc(64*var(--u))}
  .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u));padding-right:calc(152*var(--u))}
  .desktop-nav a{font-size:calc(14.4*var(--u))}
- body .lang-btn,body .site-name{font-size:calc(15*var(--u))}
+ body .lang-btn{font-size:calc(15*var(--u))}
+ body .site-name{font-size:calc(24*var(--u))}
  .topbar-contact svg{width:calc(18*var(--u))!important;height:calc(18*var(--u))!important}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
