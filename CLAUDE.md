@@ -46,8 +46,16 @@ tool di terze parti: basta leggere il codice):
   `ease-in`, niente loop infiniti senza significato, niente scroll
   hijacking o cursori custom. Le entrate in scroll avvengono una sola
   volta (IntersectionObserver). Gli stili `:hover` stanno dentro
-  `@media (hover:hover)`. Focus visibile su tutto ciò che è
-  interattivo.
+  `@media (hover:hover) and (pointer:fine)`. Focus visibile su tutto
+  ciò che è interattivo. Mai `transition: all`: elencare le proprietà.
+  Nessuna animazione d'interfaccia sopra i 300ms; l'uscita è più
+  veloce dell'entrata. I bottoni rispondono alla pressione con
+  `transform: scale(.97)` su `:active` (range .95-.98). Mai `scale(0)`
+  in entrata: partire da `scale(.95)` con `opacity:0`. Sfalsamento tra
+  elementi di 30-80ms. Niente animazione sulle azioni da tastiera o
+  che si ripetono decine di volte al giorno. Con
+  `prefers-reduced-motion` restano opacità e colore, si toglie il
+  movimento.
 - **Copy**: niente aggettivi da comunicato stampa ("cutting-edge",
   "seamless", "effortless"), niente false dicotomie ("non è solo X,
   è Y"), niente trattini lunghi usati come connettore di frase
