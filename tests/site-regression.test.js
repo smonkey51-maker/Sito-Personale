@@ -23,6 +23,7 @@ for (const file of pages) {
   assert(!html.includes('\\n<'), file + ': literal newline escape found');
   assert(!/<script>/.test(html), file + ': inline scripts are not allowed by the CSP');
   assert(!/<style/.test(html), file + ': inline styles are not allowed by the CSP');
+  assert(!/\sstyle="/.test(html), file + ': style attributes are not allowed by the CSP');
   assert(!html.includes('infocamere.it'), file + ': work email must not be published');
   assert(!html.includes('id="cmEmail"'), file + ': email row must stay removed');
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
