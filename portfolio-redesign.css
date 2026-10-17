@@ -386,30 +386,21 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
 @media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
 
-/* Mobile hero: the portrait fills the first screen and a word runs on a
-   diagonal across it, from near the top-left corner to near the bottom-right
-   (poster composition). Each letter is centred on its own point of the diagonal,
-   so the middle letter sits on the horizontal centre. Decorative only: the
-   name stays in the h1 below.
-   Positions come from nth-child because the CSP forbids inline style
-   attributes. The word fades out once the page scrolls (.nav-on). */
-.hero-stack{display:none}
+/* Mobile hero: the portrait fills most of the first screen and stops short of
+   the bottom edge, so the first lines of the heading show below it. A chevron
+   link jumps to them (the photo frame ignores the pointer, hence the explicit
+   pointer-events on the link); it hides once the page scrolls (.nav-on). */
+.scroll-cue{display:none}
 @media(max-width:700px){
- .hero-photo-frame{position:relative;height:100svh;min-height:520px;overflow:hidden}
+ .hero-photo-frame{position:relative;height:max(440px,calc(100svh - 88px));overflow:hidden}
  .hero-portrait{object-fit:cover;object-position:center 22%}
- .hero-stack{display:block;position:absolute;z-index:3;inset:12px 12px 20px;margin:0;pointer-events:none;
-  font-family:var(--display-serif);font-weight:500;font-size:min(17svh,38vw);line-height:1;color:#F5F1EC;text-shadow:0 0 16px rgba(17,16,20,.55)}
- .hero-stack span{position:absolute;left:calc(.45em + var(--i)*(100% - .9em)/4);top:calc(var(--i)*(100% - 1em)/4);transform:translateX(-50%)}
- .hero-stack span:nth-child(1){--i:0}
- .hero-stack span:nth-child(2){--i:1}
- .hero-stack span:nth-child(3){--i:2}
- .hero-stack span:nth-child(4){--i:3}
- .hero-stack span:nth-child(5){--i:4}
- .hero-stack{transition:opacity 160ms ease-out}
- body.nav-on .hero-stack{opacity:0}
+ .scroll-cue{display:flex;position:absolute;z-index:3;left:50%;bottom:8px;width:48px;height:48px;margin-left:-24px;align-items:center;justify-content:center;color:#F5F1EC;pointer-events:auto;transition:opacity 160ms ease-out,transform 120ms ease-out}
+ .scroll-cue svg{width:32px;height:32px}
+ .scroll-cue:active{transform:scale(.95)}
+ body.nav-on .scroll-cue{opacity:0;pointer-events:none}
 }
 
-/* Mobile landing: the first screen is only the portrait. The top bar slides in
+/* Mobile landing: the first screen is the portrait. The top bar slides in
    once the page scrolls (script.js toggles .nav-on), and shows whenever focus
    is inside it. Without script it stays in normal flow above the photo. */
 @media(max-width:700px){
@@ -434,7 +425,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .caret{display:inline-block;width:.06em;height:.9em;margin-left:.04em;background:var(--accent);vertical-align:-.08em;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.caret{animation:none}}
-@media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);margin-bottom:28px}}
+@media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);margin-bottom:28px;max-width:none}}
 
 /* Large screens (wider than 1920px): the layout of a 1920px window, scaled up
    with the width, so a big monitor shows the same composition larger instead

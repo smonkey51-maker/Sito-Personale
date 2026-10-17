@@ -83,13 +83,15 @@ for(const viewport of sizes){
    await expect(page.locator('#heroPhrases li').first()).toHaveText('I’m Service Desk Agent @ InfoCamere');
   });
   if(viewport.width<=700){
-   test('mobile landing is only the portrait until the page scrolls',async({page})=>{
+   test('mobile landing shows the portrait and a scroll cue until the page scrolls',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.topbar')).toHaveCSS('opacity','0');
-    await expect(page.locator('.hero-stack')).toHaveCSS('opacity','1');
+    await expect(page.locator('.scroll-cue')).toBeVisible();
+    const heading=await page.locator('#hero-name').boundingBox();
+    expect(heading.y).toBeLessThan(page.viewportSize().height);
     await page.evaluate(()=>window.scrollTo(0,200));
     await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
-    await expect(page.locator('.hero-stack')).toHaveCSS('opacity','0');
+    await expect(page.locator('.scroll-cue')).toHaveCSS('opacity','0');
    });
    test('mobile nav opens via the toggle and links work',async({page})=>{
     await page.goto('/iniziative.html');
