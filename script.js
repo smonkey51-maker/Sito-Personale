@@ -1,8 +1,17 @@
 (function(){
   var i18n = {
     it: {
+      hero_greeting:"Ciao, sono Nicolò Forcolin. E ",
+      hero_list_label:"Chi sono",
+      hero_phrases:[
+        [{t:"sono Service Desk Agent @ InfoCamere"}],
+        [{t:"sono "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"}],
+        [{t:"integro l’AI nei processi aziendali"}],
+        [{t:"faccio parte del Google Developer Program"}],
+        [{t:"sperimento con l’AI in locale"}],
+        [{t:"ho fatto advisory al CEO di DABO"}]
+      ],
       skip_to_content:"Vai al contenuto",
-      hero_intro:"Contribuisco al supporto operativo dell’infrastruttura IT del sistema camerale italiano. In parallelo, partecipo a progetti AI, occupandomi anche della loro integrazione nei processi e dell’adozione all’interno dell’organizzazione.",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | Progetti AI in produzione",
       page_description:"Service Desk Agent @ InfoCamere. Progetti AI in produzione, dal RAG aziendale all’AI in locale. Google Cloud Innovator.",
       rag_step1_kicker:"Fonti iniziali",
@@ -84,9 +93,6 @@
       badge3_meta:"Stato del programma · 2026",
       nav_main_label:"Navigazione principale",
       nav_toggle_label:"Menu",
-      hero_proof_label:"Profilo",
-      hero_proof1:"Service Desk Agent @ InfoCamere",
-      hero_proof3:"Google Cloud Innovator",
       c2_lead:"Modelli open specializzati su domande relative a InfoCamere, addestrati su un ambiente aziendale ed eseguiti in locale.",
       initiatives_status:"Advisory e community · 2026",
       initiatives_lead:"Attività fuori dal ruolo principale: advisory sull’AI, community professionali e le credenziali che documentano il percorso su Google Cloud.",
@@ -107,8 +113,17 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
+      hero_greeting:"Hi, I’m Nicolò Forcolin. And ",
+      hero_list_label:"About me",
+      hero_phrases:[
+        [{t:"I’m Service Desk Agent @ InfoCamere"}],
+        [{t:"I’m "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"}],
+        [{t:"I integrate AI into business processes"}],
+        [{t:"I’m part of the Google Developer Program"}],
+        [{t:"I experiment with local AI"}],
+        [{t:"I advised DABO’s CEO on AI"}]
+      ],
       skip_to_content:"Skip to content",
-      hero_intro:"I help support the IT infrastructure of the Italian Chambers of Commerce system. In parallel, I contribute to AI projects, including their integration into operational processes and adoption across the organization.",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | AI Projects in Production",
       page_description:"Service Desk Agent @ InfoCamere. AI projects in production, from enterprise RAG to local AI. Google Cloud Innovator.",
       rag_step1_kicker:"Initial sources",
@@ -190,9 +205,6 @@
       badge3_meta:"Program status · 2026",
       nav_main_label:"Main navigation",
       nav_toggle_label:"Menu",
-      hero_proof_label:"Profile",
-      hero_proof1:"Service Desk Agent @ InfoCamere",
-      hero_proof3:"Google Cloud Innovator",
       c2_lead:"Open models specialised in InfoCamere-related questions, trained in a company environment and run locally.",
       initiatives_status:"Advisory and community · 2026",
       initiatives_lead:"Work outside my main role: AI advisory, professional communities and the credentials that document my path on Google Cloud.",
@@ -277,6 +289,70 @@
   var page = document.body.getAttribute("data-page");
   var suffix = (page && page !== "home") ? "_" + page : "";
 
+  /* ---- frase che si scrive nella home ---- */
+  var typedEl = document.getElementById("typed");
+  var phrasesEl = document.getElementById("heroPhrases");
+  var typingTimer = null;
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function phraseLength(segs){
+    return segs.reduce(function(n, seg){ return n + seg.t.length; }, 0);
+  }
+  function renderPhrase(target, segs, count){
+    target.textContent = "";
+    var left = count;
+    segs.forEach(function(seg){
+      if(left <= 0) return;
+      var part = seg.t.slice(0, left);
+      left -= part.length;
+      if(seg.href){
+        var a = document.createElement("a");
+        a.href = seg.href;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = part;
+        target.appendChild(a);
+      }else{
+        target.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+  /* L'elenco completo resta nascosto alla vista ma leggibile da screen reader. */
+  function renderHeroPhrases(){
+    if(!phrasesEl) return;
+    phrasesEl.textContent = "";
+    i18n[lang].hero_phrases.forEach(function(segs){
+      var li = document.createElement("li");
+      renderPhrase(li, segs, phraseLength(segs));
+      phrasesEl.appendChild(li);
+    });
+  }
+  function startTyping(){
+    if(!typedEl) return;
+    clearTimeout(typingTimer);
+    var phrases = i18n[lang].hero_phrases;
+    if(reducedMotion){
+      renderPhrase(typedEl, phrases[0], phraseLength(phrases[0]));
+      return;
+    }
+    var p = 0, c = 0, deleting = false;
+    function tick(){
+      var segs = phrases[p], len = phraseLength(segs);
+      if(!deleting){
+        c++;
+        renderPhrase(typedEl, segs, c);
+        if(c === len){ deleting = true; typingTimer = setTimeout(tick, 1600); return; }
+        typingTimer = setTimeout(tick, 70);
+        return;
+      }
+      c--;
+      renderPhrase(typedEl, segs, c);
+      if(c === 0){ deleting = false; p = (p + 1) % phrases.length; typingTimer = setTimeout(tick, 300); return; }
+      typingTimer = setTimeout(tick, 40);
+    }
+    tick();
+  }
+
   /* ---- lingua ---- */
   function applyLang(){
     root.lang = lang;
@@ -296,7 +372,8 @@
       var selected = b.getAttribute("data-lang") === lang;
       b.classList.toggle("on", selected);
       b.setAttribute("aria-pressed", String(selected));
-    });
+    });    renderHeroPhrases();
+    startTyping();
   }
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){
