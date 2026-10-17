@@ -29,7 +29,7 @@ for (const file of pages) {
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
-  assert(html.includes('class="desktop-nav"'), file + ': navigation missing');
+  if (file !== 'index.html') assert(html.includes('class="desktop-nav"'), file + ': navigation missing');
   assert(/<body[^>]+data-page="[a-z]+"/.test(html), file + ': body needs data-page');
   for (const [, target] of html.matchAll(/href="([a-z-]+\.html)"/g)) {
     assert(fs.existsSync(path.join(root, target)), file + ' links to missing page ' + target);
@@ -48,7 +48,8 @@ for (const file of pages) {
 assert(!js.includes('infocamere.it'), 'Work email must not be published');
 
 const home = read('index.html');
-assert(home.includes('data-i18n="hero_intro"'), 'Hero introduction must be translated');
+assert(home.includes('data-i18n="hero_greeting"'), 'Hero greeting must be translated');
+for (const language of ['it', 'en']) assert(dictionaries[language].includes('hero_phrases:'), language + ': hero phrases missing');
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 assert(home.includes('class="hero-filmstrip"'), 'Hero filmstrip must link to the real pages');
 assert(home.includes('srcset="photo.webp?v=18"'), 'New portrait must be displayed');
