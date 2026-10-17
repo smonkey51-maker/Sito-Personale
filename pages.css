@@ -10,10 +10,6 @@
 }
 .desktop-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
 
-/* Link "Google Cloud Innovator" nell'hero */
-.hero-proof-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); text-underline-offset: 4px; }
-.hero-proof-link:active { color: var(--accent); text-decoration-color: var(--accent); }
-@media(hover:hover) and (pointer:fine){ .hero-proof-link:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 
 /* Struttura pagina */
 .page {
