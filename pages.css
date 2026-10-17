@@ -117,7 +117,7 @@
 
 .inner .colophon { margin-top: 80px; }
 .footer-note { font-size: 0.9375rem; }
-.lang-btn, .site-name { font-size: 0.9375rem; }
+.lang-btn { font-size: 0.9375rem; }
 
 @media (max-width: 820px) {
   .page-block { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
