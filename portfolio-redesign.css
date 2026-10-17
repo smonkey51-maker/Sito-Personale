@@ -405,14 +405,25 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
 @media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
 
-/* Mobile hero: the portrait fills the first screen and a word set upright,
-   one letter per line, runs down the centre of the face (poster composition).
-   Decorative only: the name stays in the h1 below the photo. */
+/* Mobile hero: the portrait fills the first screen and a word runs on a
+   diagonal across it, from near the top-left corner to near the bottom-right
+   (poster composition). Decorative only: the name stays in the h1 below. */
 .hero-stack{display:none}
 @media(max-width:700px){
- .hero-photo-frame{position:relative;height:min(78svh,720px);min-height:440px;overflow:hidden}
+ .hero-photo-frame{position:relative;height:100svh;min-height:520px;overflow:hidden}
  .hero-portrait{object-fit:cover;object-position:center 22%}
- .hero-stack{display:block;position:absolute;z-index:3;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;
-  writing-mode:vertical-rl;text-orientation:upright;font-family:var(--display-serif);font-weight:500;
-  font-size:min(9svh,20vw);line-height:1;color:#F5F1EC;text-shadow:0 0 16px rgba(17,16,20,.55)}
+ .hero-stack{display:block;position:absolute;z-index:3;inset:20px 20px 28px;margin:0;pointer-events:none;
+  font-family:var(--display-serif);font-weight:500;font-size:min(8svh,17vw);line-height:1;color:#F5F1EC;text-shadow:0 0 16px rgba(17,16,20,.55)}
+ .hero-stack span{position:absolute;left:calc(var(--i)*(100% - .85em)/4);top:calc(var(--i)*(100% - 1em)/4)}
+}
+
+/* Mobile landing: the first screen is only the portrait. The top bar slides in
+   once the page scrolls (script.js toggles .nav-on), and shows whenever focus
+   is inside it. Without script it stays in normal flow above the photo. */
+@media(max-width:700px){
+ body.nav-auto .topbar{position:fixed;top:0;left:0;right:0;z-index:30;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform 240ms ease-out,opacity 240ms ease-out}
+ body.nav-auto.nav-on .topbar,body.nav-auto .topbar:focus-within{transform:none;opacity:1;pointer-events:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ body.nav-auto .topbar{transform:none;transition:opacity 200ms ease-out}
 }
