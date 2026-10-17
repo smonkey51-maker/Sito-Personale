@@ -16,7 +16,7 @@ body{font-size:1.03rem;line-height:1.7}
 h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .topbar{background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
 .topbar-inner{min-height:86px;gap:32px}
-.site-name{font-family:var(--serif);font-weight:700;font-size:1.4rem;letter-spacing:-.02em}
+.site-name{font-family:var(--display-serif);font-weight:500;font-size:1.4rem;letter-spacing:-.02em}
 .desktop-nav a{font-size:.9rem;font-weight:400;letter-spacing:.01em}
 .hero{padding:100px 0 125px;overflow:hidden}
 .hero-btn{border-radius:12px;padding:15px 24px;font-size:.94rem}
