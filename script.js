@@ -85,7 +85,6 @@
       nav_main_label:"Navigazione principale",
       nav_toggle_label:"Menu",
       hero_proof_label:"Profilo",
-      hero_stack:"CLOUD",
       hero_proof1:"Service Desk Agent @ InfoCamere",
       hero_proof3:"Google Cloud Innovator",
       c2_lead:"Modelli open specializzati su domande relative a InfoCamere, addestrati su un ambiente aziendale ed eseguiti in locale.",
@@ -192,7 +191,6 @@
       nav_main_label:"Main navigation",
       nav_toggle_label:"Menu",
       hero_proof_label:"Profile",
-      hero_stack:"CLOUD",
       hero_proof1:"Service Desk Agent @ InfoCamere",
       hero_proof3:"Google Cloud Innovator",
       c2_lead:"Open models specialised in InfoCamere-related questions, trained in a company environment and run locally.",
@@ -328,6 +326,14 @@
         navToggle.focus();
       }
     });
+  }
+
+  /* Home su mobile: la barra in alto compare solo dopo un piccolo scroll */
+  if(document.body.getAttribute("data-page") === "home"){
+    document.body.classList.add("nav-auto");
+    var syncNav = function(){ document.body.classList.toggle("nav-on", window.scrollY > 24); };
+    window.addEventListener("scroll", syncNav, {passive:true});
+    syncNav();
   }
 
   applyLang();
