@@ -334,7 +334,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero-filmstrip{height:var(--action-rail-height);min-height:0;align-items:stretch}
 .filmstrip-tile,.filmstrip-start,.filmstrip-more{box-sizing:border-box;height:100%;min-height:0;align-self:stretch}
 .filmstrip-tile{justify-content:center;padding-top:8px;padding-bottom:8px}
-.filmstrip-start{padding:0;display:grid;place-items:center}
+.filmstrip-start{padding:0}
+@media(min-width:701px){.filmstrip-start{display:grid;place-items:center}}
 .filmstrip-more{padding:0}
 .topbar-contact svg{display:block;width:18px;height:18px;margin:0;position:static;transform:none}
 @media(max-width:700px){
@@ -426,13 +427,13 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Hero line: the name and a phrase that types itself (script.js).
    The animated phrase is aria-hidden; the full list is in #heroPhrases. */
-.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.75rem,5.5vw,4.25rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 40px;max-width:24ch;min-height:4.6em;color:var(--ink)}
+.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 40px;max-width:30ch;min-height:3.6em;color:var(--ink)}
 .hero-name .typed,.hero-name .typed a{color:var(--accent)}
 .hero-name .typed a{text-decoration:underline;text-underline-offset:.12em;text-decoration-thickness:.06em}
 .caret{display:inline-block;width:.06em;height:.9em;margin-left:.04em;background:var(--accent);vertical-align:-.08em;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.caret{animation:none}}
-@media(max-width:700px){.hero-name{font-size:clamp(1.9rem,8.4vw,3rem);margin-bottom:28px}}
+@media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);margin-bottom:28px}}
 
 /* Large screens (wider than 1920px): the layout of a 1920px window, scaled up
    with the width, so a big monitor shows the same composition larger instead
@@ -448,7 +449,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .topbar-contact svg{width:calc(18*var(--u))!important;height:calc(18*var(--u))!important}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
- .hero-name{font-size:calc(68*var(--u));margin-bottom:calc(40*var(--u))}
+ .hero-name{font-size:calc(44*var(--u));margin-bottom:calc(40*var(--u))}
  .hero-overlay .hero-btn{font-size:calc(14.08*var(--u))!important;padding:calc(13*var(--u)) calc(18*var(--u))!important;border-radius:calc(6*var(--u))!important;gap:calc(12*var(--u))}
  .hero-btn-chevron{width:calc(14*var(--u));height:calc(14*var(--u))}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}
