@@ -436,3 +436,21 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(prefers-reduced-motion:reduce){
  body.nav-auto .topbar{transform:none;transition:opacity 200ms ease-out}
 }
+
+/* Desktop hero: scales with the window so the portrait and the name nearly
+   fill the first screen at any size (photo and text may overlap a little).
+   The text block and the top bar start on the same left gutter. The portrait
+   is zoomed in steps on larger windows, around the face. */
+@media(min-width:701px){
+ .topbar-inner{max-width:none;padding-left:var(--editorial-gutter)}
+ .hero-inner{width:100vw;max-width:none;margin-left:calc(50% - 50vw);padding-left:0;padding-right:0;min-height:max(560px,calc(100svh - 86px))}
+ .hero-overlay{width:min(100% - var(--editorial-gutter),52vw);max-width:none;margin-left:var(--editorial-gutter)}
+ .hero-name{font-size:clamp(4.25rem,10vw,17rem)}
+ .hero-role{font-size:clamp(1.125rem,1.6vw,2.25rem)}
+ .hero-intro{font-size:clamp(1.02rem,1.45vw,1.9rem);max-width:40vw}
+ .hero-photo-frame .hero-portrait{transform:none;object-position:100% center;transform-origin:78% 40%}
+}
+@media(min-width:1280px){.hero-photo-frame .hero-portrait{transform:scale(1.15)}}
+@media(min-width:1600px){.hero-photo-frame .hero-portrait{transform:scale(1.3)}}
+@media(min-width:1920px){.hero-photo-frame .hero-portrait{transform:scale(1.45)}}
+@media(min-width:2400px){.hero-photo-frame .hero-portrait{transform:scale(1.6)}}
