@@ -4,6 +4,13 @@ const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
+  // Su mobile la home si apre con la sola foto: la barra compare dopo un piccolo scroll.
+  const revealBar=async page=>{
+   if(viewport.width<=700){
+    await page.evaluate(()=>window.scrollTo(0,200));
+    await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
+   }
+  };
   test('layout and hero essentials',async({page})=>{
    await page.goto('/');
    await expect(page.locator('#hero-name')).toBeVisible();
@@ -41,6 +48,7 @@ for(const viewport of sizes){
    await expect(page).toHaveTitle('Local AI Experiment | Nicolò Forcolin');
    await page.goto('/');
    await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('Enterprise Knowledge Retrieval');
+   await revealBar(page);
    await page.locator('[data-lang="it"]').click();
    await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('RAG aziendale');
   });
@@ -54,6 +62,7 @@ for(const viewport of sizes){
   });
   test('contacts open in a dialog with phone and LinkedIn only',async({page})=>{
    await page.goto('/');
+   await revealBar(page);
    await page.locator('.contact-trigger').first().click();
    await expect(page.locator('#contactDialog')).toBeVisible();
    await expect(page.locator('#cmEmail')).toHaveCount(0);
@@ -62,9 +71,28 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
+  test('home hero names me, types a phrase and has no menu',async({page})=>{
+   await page.goto('/');
+   await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
+   await expect(page.locator('#typed')).not.toBeEmpty();
+   await expect(page.locator('#heroPhrases li')).toHaveCount(6);
+   await expect(page.locator('.desktop-nav')).toHaveCount(0);
+   await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
+   await revealBar(page);
+   await page.locator('[data-lang="en"]').click();
+   await expect(page.locator('#heroPhrases li').first()).toHaveText('I’m Service Desk Agent @ InfoCamere');
+  });
   if(viewport.width<=700){
-   test('mobile nav opens via the toggle and links work',async({page})=>{
+   test('mobile landing is only the portrait until the page scrolls',async({page})=>{
     await page.goto('/');
+    await expect(page.locator('.topbar')).toHaveCSS('opacity','0');
+    await expect(page.locator('.hero-stack')).toHaveCSS('opacity','1');
+    await page.evaluate(()=>window.scrollTo(0,200));
+    await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
+    await expect(page.locator('.hero-stack')).toHaveCSS('opacity','0');
+   });
+   test('mobile nav opens via the toggle and links work',async({page})=>{
+    await page.goto('/iniziative.html');
     const navLink=page.locator('.desktop-nav a[href="rag-aziendale.html"]');
     await expect(navLink).toBeHidden();
     await page.locator('.nav-toggle').click();
