@@ -327,6 +327,34 @@
       phrasesEl.appendChild(li);
     });
   }
+  /* La frase animata riusa gli stessi nodi mentre si scrive: se il link venisse
+     ricostruito a ogni lettera, un click non lo raggiungerebbe mai. */
+  function buildPhrase(segs){
+    typedEl.textContent = "";
+    return segs.map(function(seg){
+      var node;
+      if(seg.href){
+        node = document.createElement("a");
+        node.href = seg.href;
+        node.target = "_blank";
+        node.rel = "noopener noreferrer";
+        node.tabIndex = -1; /* da tastiera si usa il link dell'elenco nascosto */
+        typedEl.appendChild(node);
+      }else{
+        node = document.createTextNode("");
+        typedEl.appendChild(node);
+      }
+      return node;
+    });
+  }
+  function paintPhrase(nodes, segs, count){
+    var left = count;
+    nodes.forEach(function(node, k){
+      var part = segs[k].t.slice(0, Math.max(left, 0));
+      left -= part.length;
+      if(node.nodeType === 3) node.nodeValue = part; else node.textContent = part;
+    });
+  }
   function startTyping(){
     if(!typedEl) return;
     clearTimeout(typingTimer);
@@ -335,21 +363,40 @@
       renderPhrase(typedEl, phrases[0], phraseLength(phrases[0]));
       return;
     }
-    var p = 0, c = 0, deleting = false;
+    var p = 0, c = 0, deleting = false, paused = false;
+    var segs = phrases[0], len = phraseLength(segs), nodes = buildPhrase(segs);
     function tick(){
-      var segs = phrases[p], len = phraseLength(segs);
+      if(paused) return;
       if(!deleting){
         c++;
-        renderPhrase(typedEl, segs, c);
+        paintPhrase(nodes, segs, c);
         if(c === len){ deleting = true; typingTimer = setTimeout(tick, 1600); return; }
         typingTimer = setTimeout(tick, 70);
         return;
       }
       c--;
-      renderPhrase(typedEl, segs, c);
-      if(c === 0){ deleting = false; p = (p + 1) % phrases.length; typingTimer = setTimeout(tick, 300); return; }
+      paintPhrase(nodes, segs, c);
+      if(c === 0){
+        deleting = false;
+        p = (p + 1) % phrases.length;
+        segs = phrases[p]; len = phraseLength(segs); nodes = buildPhrase(segs);
+        typingTimer = setTimeout(tick, 300);
+        return;
+      }
       typingTimer = setTimeout(tick, 40);
     }
+    /* Col puntatore sopra la frase si ferma completa, così si può cliccare. */
+    var line = document.getElementById("hero-name");
+    line.onpointerenter = function(){
+      paused = true;
+      clearTimeout(typingTimer);
+      c = len; deleting = true;
+      paintPhrase(nodes, segs, len);
+    };
+    line.onpointerleave = function(){
+      paused = false;
+      typingTimer = setTimeout(tick, 1600);
+    };
     tick();
   }
 

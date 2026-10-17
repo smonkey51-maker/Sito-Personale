@@ -427,7 +427,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Hero line: the name and a phrase that types itself (script.js).
    The animated phrase is aria-hidden; the full list is in #heroPhrases. */
-.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 40px;max-width:30ch;min-height:3.6em;color:var(--ink)}
+.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 40px;max-width:min(30ch,44vw);min-height:4.8em;color:var(--ink)}
+@media(min-width:1200px){.hero-name{min-height:3.6em}}
 .hero-name .typed,.hero-name .typed a{color:var(--accent)}
 .hero-name .typed a{text-decoration:underline;text-underline-offset:.12em;text-decoration-thickness:.06em}
 .caret{display:inline-block;width:.06em;height:.9em;margin-left:.04em;background:var(--accent);vertical-align:-.08em;animation:blink 1s steps(1) infinite}
