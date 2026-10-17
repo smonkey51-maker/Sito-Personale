@@ -407,7 +407,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Mobile hero: the portrait fills the first screen and a word runs on a
    diagonal across it, from near the top-left corner to near the bottom-right
-   (poster composition). Decorative only: the name stays in the h1 below.
+   (poster composition). Each letter is centred on its own point of the diagonal,
+   so the middle letter sits on the horizontal centre. Decorative only: the
+   name stays in the h1 below.
    Positions come from nth-child because the CSP forbids inline style
    attributes. The word fades out once the page scrolls (.nav-on). */
 .hero-stack{display:none}
@@ -416,7 +418,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-portrait{object-fit:cover;object-position:center 22%}
  .hero-stack{display:block;position:absolute;z-index:3;inset:12px 12px 20px;margin:0;pointer-events:none;
   font-family:var(--display-serif);font-weight:500;font-size:min(17svh,38vw);line-height:1;color:#F5F1EC;text-shadow:0 0 16px rgba(17,16,20,.55)}
- .hero-stack span{position:absolute;left:calc(var(--i)*(100% - .85em)/4);top:calc(var(--i)*(100% - 1em)/4)}
+ .hero-stack span{position:absolute;left:calc(.45em + var(--i)*(100% - .9em)/4);top:calc(var(--i)*(100% - 1em)/4);transform:translateX(-50%)}
  .hero-stack span:nth-child(1){--i:0}
  .hero-stack span:nth-child(2){--i:1}
  .hero-stack span:nth-child(3){--i:2}
@@ -441,3 +443,30 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    counts the vertical scrollbar, so the page would scroll sideways by a few
    pixels once the scrollbar shows. Clip that overflow on desktop. */
 @media(min-width:701px){body{overflow-x:clip}}
+
+/* Large screens (wider than 1920px): the layout of a 1920px window, scaled up
+   with the width, so a big monitor shows the same composition larger instead
+   of a small block in the middle. Each fixed pixel value below is the value it
+   has at 1920px, multiplied by the factor --u (one 1920px pixel). Nothing
+   changes up to 1920px. */
+@media(min-width:1921px){
+ :root{--u:.0520833vw;--rail-width:calc(88*var(--u));--editorial-gutter:calc(80*var(--u));--action-rail-height:calc(86*var(--u))}
+ .editorial-shell{max-width:calc(1280*var(--u));padding:0 calc(64*var(--u))}
+ .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u));padding-right:calc(152*var(--u))}
+ .desktop-nav a{font-size:calc(14.4*var(--u))}
+ body .lang-btn,body .site-name{font-size:calc(15*var(--u))}
+ .topbar-contact svg{width:calc(18*var(--u))!important;height:calc(18*var(--u))!important}
+ .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
+ .hero-overlay{max-width:min(47vw,calc(530*var(--u)));width:min(100%,calc(590*var(--u)));padding-block:calc(28*var(--u))}
+ .hero-name{font-size:calc(144*var(--u));margin-bottom:calc(40*var(--u))}
+ .hero-role{font-size:calc(18*var(--u));margin:calc(-12*var(--u)) 0 calc(28*var(--u))}
+ .hero-intro{font-size:calc(19.84*var(--u));margin-bottom:calc(30*var(--u))}
+ .hero-proof{font-size:calc(14*var(--u));margin-bottom:calc(34*var(--u))}
+ .hero-overlay .hero-btn{font-size:calc(14.08*var(--u))!important;padding:calc(13*var(--u)) calc(18*var(--u))!important;border-radius:calc(6*var(--u))!important;gap:calc(12*var(--u))}
+ .hero-btn-chevron{width:calc(14*var(--u));height:calc(14*var(--u))}
+ .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}
+ .filmstrip-meta{font-size:calc(14*var(--u))}
+ .filmstrip-title{font-size:calc(20.8*var(--u))}
+ body .footer-note{font-size:calc(15*var(--u));padding-top:calc(12*var(--u))}
+ .colophon{padding-bottom:calc(16*var(--u))}
+}
