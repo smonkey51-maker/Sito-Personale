@@ -407,14 +407,23 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Mobile hero: the portrait fills the first screen and a word runs on a
    diagonal across it, from near the top-left corner to near the bottom-right
-   (poster composition). Decorative only: the name stays in the h1 below. */
+   (poster composition). Decorative only: the name stays in the h1 below.
+   Positions come from nth-child because the CSP forbids inline style
+   attributes. The word fades out once the page scrolls (.nav-on). */
 .hero-stack{display:none}
 @media(max-width:700px){
  .hero-photo-frame{position:relative;height:100svh;min-height:520px;overflow:hidden}
  .hero-portrait{object-fit:cover;object-position:center 22%}
- .hero-stack{display:block;position:absolute;z-index:3;inset:20px 20px 28px;margin:0;pointer-events:none;
-  font-family:var(--display-serif);font-weight:500;font-size:min(8svh,17vw);line-height:1;color:#F5F1EC;text-shadow:0 0 16px rgba(17,16,20,.55)}
+ .hero-stack{display:block;position:absolute;z-index:3;inset:12px 12px 20px;margin:0;pointer-events:none;
+  font-family:var(--display-serif);font-weight:500;font-size:min(17svh,38vw);line-height:1;color:#F5F1EC;text-shadow:0 0 16px rgba(17,16,20,.55)}
  .hero-stack span{position:absolute;left:calc(var(--i)*(100% - .85em)/4);top:calc(var(--i)*(100% - 1em)/4)}
+ .hero-stack span:nth-child(1){--i:0}
+ .hero-stack span:nth-child(2){--i:1}
+ .hero-stack span:nth-child(3){--i:2}
+ .hero-stack span:nth-child(4){--i:3}
+ .hero-stack span:nth-child(5){--i:4}
+ .hero-stack{transition:opacity 160ms ease-out}
+ body.nav-on .hero-stack{opacity:0}
 }
 
 /* Mobile landing: the first screen is only the portrait. The top bar slides in
