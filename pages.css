@@ -12,7 +12,8 @@
 
 /* Link "Google Cloud Innovator" nell'hero */
 .hero-proof-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); text-underline-offset: 4px; }
-.hero-proof-link:hover, .hero-proof-link:active { color: var(--accent); text-decoration-color: var(--accent); }
+.hero-proof-link:active { color: var(--accent); text-decoration-color: var(--accent); }
+@media(hover:hover) and (pointer:fine){ .hero-proof-link:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 
 /* Struttura pagina */
 .page {
@@ -26,7 +27,8 @@
   min-height: 44px; margin-bottom: 28px;
   font-family: var(--sans); font-size: 0.875rem; color: var(--ink-soft); text-decoration: none;
 }
-.page-back:hover, .page-back:active { color: var(--accent); }
+.page-back:active { color: var(--accent); }
+@media(hover:hover) and (pointer:fine){ .page-back:hover { color: var(--accent); } }
 .page-head .work-meta { margin-bottom: 18px; }
 .page-title {
   font-family: var(--display-serif, var(--serif));
@@ -67,7 +69,8 @@
 .page-block-body p { font-size: 1.0625rem; line-height: 1.78; color: var(--ink-soft); margin: 0 0 14px; }
 .page-block-body p:last-child { margin-bottom: 0; }
 .page-block-body a { color: var(--ink); text-underline-offset: 3px; }
-.page-block-body a:hover, .page-block-body a:active { color: var(--accent); }
+.page-block-body a:active { color: var(--accent); }
+@media(hover:hover) and (pointer:fine){ .page-block-body a:hover { color: var(--accent); } }
 .page-block-wide .page-block-body { max-width: none; }
 .page-updated { font-size: 0.875rem !important; }
 
@@ -86,7 +89,8 @@
 .item-meta { font-family: var(--sans); font-size: 0.8125rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
 .item-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 600; line-height: 1.35; margin: 0 0 8px; color: var(--ink); }
 .item-title a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
-.item-title a:hover, .item-title a:active { color: var(--accent); text-decoration-color: var(--accent); }
+.item-title a:active { color: var(--accent); text-decoration-color: var(--accent); }
+@media(hover:hover) and (pointer:fine){ .item-title a:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 
 /* Credenziali: elenco semplice, una riga per credenziale */
 .badge-list { list-style: none; margin: 0 0 20px; padding: 0; }
@@ -95,7 +99,8 @@
 .badge-title { font-family: var(--serif); font-size: 1.125rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
 .badge-meta { font-family: var(--sans); font-size: 0.8125rem; color: var(--ink-soft); }
 .badge-link a { font-family: var(--sans); font-size: 0.9375rem; color: var(--accent); text-decoration: none; }
-.badge-link a:hover, .badge-link a:active { text-decoration: underline; }
+.badge-link a:active { text-decoration: underline; }
+@media(hover:hover) and (pointer:fine){ .badge-link a:hover { text-decoration: underline; } }
 
 /* Continua a leggere: elenco di righe, non una griglia di card */
 .page-next { margin-top: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); padding-top: 28px; }
@@ -107,7 +112,8 @@
   border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);
   transition: background var(--dur) var(--ease);
 }
-.page-next-tile:hover, .page-next-tile:focus-visible, .page-next-tile:active { background: var(--bg-2); }
+.page-next-tile:focus-visible, .page-next-tile:active { background: var(--bg-2); }
+@media(hover:hover) and (pointer:fine){ .page-next-tile:hover { background: var(--bg-2); } }
 .page-next-tile .filmstrip-meta { color: var(--accent); }
 
 .inner .colophon { margin-top: 80px; }
