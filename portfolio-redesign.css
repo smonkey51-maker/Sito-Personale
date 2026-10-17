@@ -406,14 +406,13 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
 
 /* Mobile hero: the portrait fills the first screen and a word set upright,
-   one letter per line, runs down the right side (poster composition).
+   one letter per line, runs down the centre of the face (poster composition).
    Decorative only: the name stays in the h1 below the photo. */
 .hero-stack{display:none}
 @media(max-width:700px){
  .hero-photo-frame{position:relative;height:min(78svh,720px);min-height:440px;overflow:hidden}
  .hero-portrait{object-fit:cover;object-position:center 22%}
- .hero-photo-frame::before{background:linear-gradient(to top,var(--bg) 0%,rgba(10,9,8,0) 16%)}
- .hero-stack{display:block;position:absolute;z-index:2;top:50%;right:16px;transform:translateY(-50%);margin:0;
+ .hero-stack{display:block;position:absolute;z-index:3;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;
   writing-mode:vertical-rl;text-orientation:upright;font-family:var(--display-serif);font-weight:500;
-  font-size:min(4.4svh,8.5vw);line-height:1;color:#F5F1EC}
+  font-size:min(9svh,20vw);line-height:1;color:#F5F1EC;text-shadow:0 0 16px rgba(17,16,20,.55)}
 }
