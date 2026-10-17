@@ -328,5 +328,13 @@
     });
   }
 
+  /* Home su mobile: la barra in alto compare solo dopo un piccolo scroll */
+  if(document.body.getAttribute("data-page") === "home"){
+    document.body.classList.add("nav-auto");
+    var syncNav = function(){ document.body.classList.toggle("nav-on", window.scrollY > 24); };
+    window.addEventListener("scroll", syncNav, {passive:true});
+    syncNav();
+  }
+
   applyLang();
 })();
