@@ -102,7 +102,7 @@ for(const viewport of sizes){
    });
    test('mobile nav opens via the toggle and links work',async({page})=>{
     await page.goto('/iniziative.html');
-    const navLink=page.locator('.desktop-nav a[href="rag-aziendale.html"]');
+    const navLink=page.locator('.desktop-nav a[href="progetti.html"]');
     await expect(navLink).toBeHidden();
     await page.locator('.nav-toggle').click();
     await expect(navLink).toBeVisible();

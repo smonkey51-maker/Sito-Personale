@@ -86,10 +86,11 @@
 /* Voci (iniziative) */
 .page-block-body .item + .item { margin-top: 32px; }
 .page-block-body .item + p { margin-top: 32px; }
-.page-block-body .item + p a { text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
+.page-block-body .item-link { margin-top: 12px; }
+.page-block-body .item + p a, .page-block-body .item-link a { text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .item-meta { font-family: var(--sans); font-size: 0.9375rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
 .item-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.35; margin: 0 0 8px; color: var(--ink); }
-.item-title a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.item-title a { color: inherit; text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .item-title a:active { color: var(--accent); text-decoration-color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .item-title a:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 
