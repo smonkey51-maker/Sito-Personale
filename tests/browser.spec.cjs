@@ -79,7 +79,7 @@ for(const viewport of sizes){
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
    await revealBar(page);
    await page.locator('[data-lang="en"]').click();
-   await expect(page.locator('#heroIntro')).toContainText('I work on the Service Desk');
+   await expect(page.locator('#heroIntro')).toContainText('from idea to concrete use');
   });
   if(viewport.width<=700){
    test('mobile landing shows only the portrait and an enter button until the page scrolls',async({page})=>{
