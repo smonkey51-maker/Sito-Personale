@@ -120,9 +120,6 @@ p{text-wrap:pretty}
 .hero-btn.solid{background:var(--accent);color:var(--on-accent);border:1px solid var(--accent)}
 @media(hover:hover) and (pointer:fine){.hero-btn.solid:hover{background:var(--accent-hover);border-color:var(--accent-hover)}}
 .hero-btn.solid:active{background:var(--accent-hover);border-color:var(--accent-hover);transform:scale(.97)}
-.hero-btn.outline{background:transparent;color:var(--ink);border:1px solid var(--line)}
-@media(hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--accent);color:var(--accent)}}
-.hero-btn.outline:active{border-color:var(--accent);color:var(--accent)}
 
 .lnk{
   display:inline-block;font-family:var(--sans);font-size:.875rem;font-weight:600;
@@ -246,7 +243,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 .desktop-nav{margin-left:auto;margin-right:0}
 .hero-btn{transition-duration:var(--dur)}
 .hero-btn{border-radius:6px}
-@media(hover:hover) and (pointer:fine){.hero-btn.outline:hover{border-color:var(--ink);color:var(--ink)}}
 @media(max-width:700px){.topbar-inner{flex-wrap:wrap}.desktop-nav{margin-left:0}}
 
 /* Project-first redesign: restrained product UI, no decorative section counters. */
