@@ -82,10 +82,10 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('I work on the Service Desk');
   });
   if(viewport.width<=700){
-   test('mobile landing shows only the portrait and a scroll cue until the page scrolls',async({page})=>{
+   test('mobile landing shows only the portrait and a sheet to pull up until the page scrolls',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.topbar')).toHaveCSS('opacity','0');
-    await expect(page.locator('.scroll-cue')).toBeVisible();
+    await expect(page.locator('.scroll-sheet')).toBeVisible();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(page.viewportSize().height-2);
     await page.evaluate(()=>window.scrollTo(0,200));
