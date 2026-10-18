@@ -105,8 +105,7 @@
 @media(hover:hover) and (pointer:fine){ .badge-link a:hover { text-decoration: underline; } }
 
 /* Continua a leggere: elenco di righe, non una griglia di card */
-.page-next { margin-top: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); padding-top: 28px; }
-.page-next-label { font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink-soft); margin: 0 0 16px; }
+.page-next { margin-top: clamp(56px, 8vw, 104px); }
 .page-next-grid { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .page-next-tile {
   display: flex; flex-direction: column; gap: 8px;
