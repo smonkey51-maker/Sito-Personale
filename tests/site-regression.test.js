@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
-const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'privacy.html'];
+const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'progetti.html', 'privacy.html'];
 const js = read('script.js');
 const config = JSON.parse(read('vercel.json'));
 assert(config.headers.some(group => group.headers.some(h => h.key === 'Content-Security-Policy')), 'Missing CSP');
@@ -59,7 +59,7 @@ assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by 
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');
 assert(read('ai-in-locale.html').includes('data-i18n="c2_summary"'), 'Local AI summary must remain');
-for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html']) {
+for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'progetti.html']) {
   assert(read('sitemap.xml').includes('https://nforcolin.eu/' + file), 'Sitemap missing ' + file);
 }
 console.log('Site regression checks passed');
