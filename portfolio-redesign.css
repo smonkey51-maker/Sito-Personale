@@ -390,7 +390,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    viewport. The rest of the page (text, project rows, footer) has an opaque
    background and slides up over it, so once the page has scrolled the portrait
    is gone. A word and a thin line at the bottom invite the scroll and jump to
-   the text; they hide once the page scrolls (.nav-on). The photo frame ignores
+   the text; they fade out together with the portrait as soon as the page scrolls (.nav-on). The photo frame ignores
    the pointer, hence pointer-events on the link. */
 .scroll-cue{display:none}
 @media(max-width:700px){
@@ -403,7 +403,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .scroll-cue-label{font-family:var(--display-serif);font-weight:500;font-size:1.125rem;line-height:1.2;letter-spacing:.02em}
  .scroll-cue-line{display:block;width:1px;height:44px;background:currentColor;transform-origin:top;animation:cue-line 300ms ease-out 500ms backwards}
  .scroll-cue:active{transform:scale(.97)}
- body.nav-on .scroll-cue{opacity:0;pointer-events:none}
+ .hero-photo-frame{transition:opacity 200ms ease-out,visibility 0s linear 200ms}
+ body.nav-on .hero-photo-frame{opacity:0;visibility:hidden}
 }
 @keyframes cue-line{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 @media(prefers-reduced-motion:reduce){.scroll-cue-line{animation:none}}
@@ -430,7 +431,7 @@ body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625
 /* Hero text: the name, then a short paragraph about me (script.js keeps it
    translated). */
 .hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 20px;max-width:min(30ch,44vw);color:var(--ink)}
-.hero-intro{font-family:var(--serif);font-size:1.125rem;line-height:1.55;margin:0 0 36px;max-width:min(40ch,44vw);color:var(--ink)}
+.hero-intro{font-family:var(--serif);font-size:1.125rem;line-height:1.55;margin:0 0 36px;max-width:min(46ch,46vw);color:var(--ink)}
 .hero-intro a{color:inherit;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.06em}
 @media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);max-width:none}.hero-intro{max-width:62ch;margin-bottom:28px}}
 
