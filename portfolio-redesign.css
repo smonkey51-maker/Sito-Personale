@@ -21,7 +21,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero{padding:100px 0 125px;overflow:hidden}
 .hero-btn{border-radius:12px;padding:15px 24px;font-size:.94rem}
 .hero-btn.solid{background:var(--accent);border-color:var(--accent)}
-.hero-btn.outline{border-color:var(--line)}
 .work-meta{color:var(--accent);font-size:.875rem}
 @media(max-width:820px){
  .topbar-inner{min-height:68px}
@@ -159,9 +158,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 }
 .hero-overlay .hero-btn.solid{background:var(--accent)!important;color:var(--on-accent)!important}
 @media(hover:hover) and (pointer:fine){.hero-overlay .hero-btn.solid:hover{background:var(--accent-hover)!important}}
-.hero-overlay .hero-btn.outline{background:transparent!important;color:#F5F1EC!important;border:0!important;padding-left:0!important;text-underline-offset:3px}
-@media(hover:hover) and (pointer:fine){.hero-overlay .hero-btn.outline:hover{text-decoration:underline!important}}
-.hero-btn-chevron{flex-shrink:0}
 
 /* Trailing arrow block closing the filmstrip, matching the concept's "more" tile. */
 .filmstrip-more{flex:0 0 clamp(56px,7vw,88px);background:var(--accent)}
@@ -454,7 +450,6 @@ body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625
  .hero-name{font-size:calc(44*var(--u));margin-bottom:calc(20*var(--u))}
  .hero-intro{font-size:calc(18*var(--u));margin-bottom:calc(36*var(--u))}
  .hero-overlay .hero-btn{font-size:calc(14.08*var(--u))!important;padding:calc(13*var(--u)) calc(18*var(--u))!important;border-radius:calc(6*var(--u))!important;gap:calc(12*var(--u))}
- .hero-btn-chevron{width:calc(14*var(--u));height:calc(14*var(--u))}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}
  .filmstrip-meta{font-size:calc(14*var(--u))}
  .filmstrip-title{font-size:calc(20.8*var(--u))}
