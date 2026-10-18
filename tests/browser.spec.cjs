@@ -1,6 +1,6 @@
 const {test,expect}=require('@playwright/test');
 const sizes=[{name:'mobile',width:375,height:812},{name:'tablet',width:768,height:1024},{name:'desktop',width:1440,height:900}];
-const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','/privacy.html'];
+const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','/progetti.html','/privacy.html'];
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
@@ -34,6 +34,14 @@ for(const viewport of sizes){
    await page.goto('/');
    await page.locator('.filmstrip-tile[href="ai-in-locale.html"]').click();
    await expect(page.locator('h1')).toHaveText('Sperimentazione AI in locale');
+  });
+  test('hero button opens the projects and initiatives page',async({page})=>{
+   await page.goto('/');
+   await page.locator('.hero-btn.solid').nth(1).click();
+   await expect(page).toHaveURL(/progetti\.html$/);
+   await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
+   await page.locator('.item-title a[href="rag-aziendale.html"]').click();
+   await expect(page.locator('h1')).toHaveText('RAG aziendale');
   });
   test('inner pages mark the current section and link onward',async({page})=>{
    await page.goto('/iniziative.html');
