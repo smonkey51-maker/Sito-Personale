@@ -124,6 +124,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero-filmstrip{display:flex;border-top:1px solid var(--line);position:relative;width:100vw;left:50%;margin-left:-50vw}
 .filmstrip-tile{flex:1;min-width:0;padding:22px clamp(20px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg-2);transition:background var(--dur) var(--ease)}
 .filmstrip-tile:last-child{border-right:0}
+.filmstrip-heading{display:none}
 @media(hover:hover) and (pointer:fine){.filmstrip-tile:hover{background:color-mix(in srgb,var(--bg-2) 85%,var(--accent) 10%)}}
 .filmstrip-tile:focus-visible{background:color-mix(in srgb,var(--bg-2) 85%,var(--accent) 10%)}
 .filmstrip-meta{font-size:.875rem;color:var(--accent)}
@@ -399,6 +400,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{padding-top:100svh;padding-bottom:0}
  .hero-overlay{background:var(--bg);min-height:calc(100svh - 300px);width:100vw;max-width:none;margin-left:calc(50% - 50vw);padding:28px var(--editorial-gutter) 36px}
  .hero-filmstrip,.colophon{position:relative;z-index:2;background:var(--bg)}
+ .filmstrip-heading{display:block;margin:0;padding:36px var(--editorial-gutter) 18px;font-family:var(--display-serif);font-weight:500;font-size:1.5rem;line-height:1.2;letter-spacing:-.01em;text-align:center;color:var(--ink)}
  .hero-portrait{object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
  .scroll-btn{display:inline-flex;align-items:center;justify-content:center;position:absolute;z-index:3;left:50%;bottom:36px;transform:translateX(-50%);min-height:48px;padding:14px 22px;border-radius:6px;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;pointer-events:auto;transition:transform 120ms ease-out}
  .scroll-btn:active{transform:translateX(-50%) scale(.97)}
