@@ -11,9 +11,9 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_greeting:"Ciao, sono Nicolò Forcolin.",
       hero_intro:[
-        {t:"Lavoro nel Service Desk di InfoCamere e da lì porto l’AI nei processi aziendali: uno dei miei progetti è un sistema RAG che aiuta a ritrovare le informazioni nella documentazione e in Jira. Sono "},
-        {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
-        {t:" e faccio parte del Google Developer Program. Sperimento anche con l’AI in locale e racconto quello che imparo negli incontri interni sull’AI."}
+        [{t:"In InfoCamere porto l’AI dall’idea all’utilizzo concreto, seguendo progetti E2E: dall’analisi delle esigenze alla progettazione, sviluppo e adozione delle soluzioni. Tra questi, un sistema RAG che riduce i tempi di ricerca delle informazioni, supporta la risoluzione delle criticità e facilita l’accesso alla conoscenza aziendale, dal Service Desk al Middle e Top Management."}],
+        [{t:"Sono "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},{t:" e membro del Google Developer Program. Sperimento con modelli AI in locale e collaboro con il Top Management a iniziative interne dedicate alla diffusione della cultura AI e delle sue applicazioni concrete."}],
+        [{t:"Come Social Ambassador di InfoCamere, contribuisco a raccontare l’azienda, valorizzandone le persone, la cultura e i valori."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | Progetti AI in produzione",
@@ -128,9 +128,9 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_greeting:"Hi, I’m Nicolò Forcolin.",
       hero_intro:[
-        {t:"I work on the Service Desk at InfoCamere and from there I bring AI into business processes: one of my projects is a RAG system that helps people find answers in documentation and Jira. I’m a "},
-        {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
-        {t:" and part of the Google Developer Program. I also experiment with local AI and share what I learn in internal AI sessions."}
+        [{t:"At InfoCamere I take AI from idea to concrete use, following end-to-end projects: from needs analysis to design, development and adoption of the solutions. These include a RAG system that cuts the time spent searching for information, supports troubleshooting and makes company knowledge easier to reach, from the Service Desk to Middle and Top Management."}],
+        [{t:"I’m a "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},{t:" and a member of the Google Developer Program. I experiment with local AI models and work with Top Management on internal initiatives to spread AI culture and its concrete applications."}],
+        [{t:"As an InfoCamere Social Ambassador, I help tell the story of the company, highlighting its people, culture and values."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | AI Projects in Production",
@@ -304,17 +304,21 @@
   function renderIntro(){
     if(!introEl) return;
     introEl.textContent = "";
-    i18n[lang].hero_intro.forEach(function(seg){
-      if(seg.href){
-        var a = document.createElement("a");
-        a.href = seg.href;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        a.textContent = seg.t;
-        introEl.appendChild(a);
-      }else{
-        introEl.appendChild(document.createTextNode(seg.t));
-      }
+    i18n[lang].hero_intro.forEach(function(segs){
+      var para = document.createElement("p");
+      segs.forEach(function(seg){
+        if(seg.href){
+          var a = document.createElement("a");
+          a.href = seg.href;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.textContent = seg.t;
+          para.appendChild(a);
+        }else{
+          para.appendChild(document.createTextNode(seg.t));
+        }
+      });
+      introEl.appendChild(para);
     });
   }
 
