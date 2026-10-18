@@ -79,7 +79,7 @@ for(const viewport of sizes){
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
    await revealBar(page);
    await page.locator('[data-lang="en"]').click();
-   await expect(page.locator('#heroIntro')).toContainText('I work as a Service Desk Agent');
+   await expect(page.locator('#heroIntro')).toContainText('I work on the Service Desk');
   });
   if(viewport.width<=700){
    test('mobile landing shows only the portrait and a scroll cue until the page scrolls',async({page})=>{
@@ -90,7 +90,7 @@ for(const viewport of sizes){
     expect(heading.y).toBeGreaterThanOrEqual(page.viewportSize().height-2);
     await page.evaluate(()=>window.scrollTo(0,200));
     await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
-    await expect(page.locator('.scroll-cue')).toHaveCSS('opacity','0');
+    await expect(page.locator('.hero-portrait')).toBeHidden();
    });
    test('mobile nav opens via the toggle and links work',async({page})=>{
     await page.goto('/iniziative.html');

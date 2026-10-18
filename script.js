@@ -11,9 +11,9 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_greeting:"Ciao, sono Nicolò Forcolin.",
       hero_intro:[
-        {t:"Lavoro come Service Desk Agent in InfoCamere e porto l’AI nei processi aziendali. Sono "},
+        {t:"Lavoro nel Service Desk di InfoCamere e da lì porto l’AI nei processi aziendali: uno dei miei progetti è un sistema RAG che aiuta a ritrovare le informazioni nella documentazione e in Jira. Sono "},
         {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
-        {t:" e faccio parte del Google Developer Program. Sperimento anche con l’AI in locale e ho fatto advisory al CEO di DABO."}
+        {t:" e faccio parte del Google Developer Program. Sperimento anche con l’AI in locale, racconto quello che imparo negli incontri interni sull’AI e ho fatto advisory al CEO di DABO."}
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | Progetti AI in produzione",
@@ -129,9 +129,9 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_greeting:"Hi, I’m Nicolò Forcolin.",
       hero_intro:[
-        {t:"I work as a Service Desk Agent at InfoCamere and bring AI into business processes. I’m a "},
+        {t:"I work on the Service Desk at InfoCamere and from there I bring AI into business processes: one of my projects is a RAG system that helps people find answers in documentation and Jira. I’m a "},
         {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
-        {t:" and part of the Google Developer Program. I also experiment with local AI and have advised DABO’s CEO."}
+        {t:" and part of the Google Developer Program. I also experiment with local AI, share what I learn in internal AI sessions, and have advised DABO’s CEO."}
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | AI Projects in Production",
