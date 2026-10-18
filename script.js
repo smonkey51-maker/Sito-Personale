@@ -390,8 +390,8 @@
       if(!deleting){
         c++;
         paintPhrase(nodes, segs, c);
-        if(c === len){ deleting = true; typingTimer = setTimeout(tick, 1600); return; }
-        typingTimer = setTimeout(tick, 70);
+        if(c === len){ deleting = true; typingTimer = setTimeout(tick, 4000); return; }
+        typingTimer = setTimeout(tick, 100);
         return;
       }
       c--;
@@ -400,7 +400,7 @@
         deleting = false;
         p = (p + 1) % phrases.length;
         segs = phrases[p]; len = phraseLength(segs); nodes = buildPhrase(segs);
-        typingTimer = setTimeout(tick, 300);
+        typingTimer = setTimeout(tick, 600);
         return;
       }
       typingTimer = setTimeout(tick, 40);
