@@ -28,7 +28,7 @@ for(const viewport of sizes){
   });
   test('filmstrip and hero CTA lead to the project pages',async({page})=>{
    await page.goto('/');
-   await page.locator('.hero-btn.solid').click();
+   await page.locator('.hero-btn.solid').first().click();
    await expect(page).toHaveURL(/rag-aziendale\.html$/);
    await expect(page.locator('h1')).toHaveText('RAG aziendale');
    await page.goto('/');
