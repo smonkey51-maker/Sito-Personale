@@ -399,7 +399,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{padding-top:100svh;padding-bottom:0}
  .hero-overlay{background:var(--bg);min-height:calc(100svh - 300px);width:100vw;max-width:none;margin-left:calc(50% - 50vw);padding:28px var(--editorial-gutter) 36px}
  .hero-filmstrip,.colophon{position:relative;z-index:2;background:var(--bg)}
- .hero-portrait{object-fit:cover;object-position:center 22%}
+ .hero-portrait{object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
  .scroll-btn{display:inline-flex;align-items:center;justify-content:center;position:absolute;z-index:3;left:50%;bottom:36px;transform:translateX(-50%);min-height:48px;padding:14px 22px;border-radius:6px;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;pointer-events:auto;transition:transform 120ms ease-out}
  .scroll-btn:active{transform:translateX(-50%) scale(.97)}
  .hero-photo-frame{transition:opacity 200ms ease-out,visibility 0s linear 200ms}
