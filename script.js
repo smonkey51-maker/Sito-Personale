@@ -13,7 +13,7 @@
       hero_intro:[
         {t:"Lavoro nel Service Desk di InfoCamere e da lì porto l’AI nei processi aziendali: uno dei miei progetti è un sistema RAG che aiuta a ritrovare le informazioni nella documentazione e in Jira. Sono "},
         {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
-        {t:" e faccio parte del Google Developer Program. Sperimento anche con l’AI in locale, racconto quello che imparo negli incontri interni sull’AI e ho fatto da advisor al CEO di un’azienda."}
+        {t:" e faccio parte del Google Developer Program. Sperimento anche con l’AI in locale e racconto quello che imparo negli incontri interni sull’AI."}
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | Progetti AI in produzione",
@@ -130,7 +130,7 @@
       hero_intro:[
         {t:"I work on the Service Desk at InfoCamere and from there I bring AI into business processes: one of my projects is a RAG system that helps people find answers in documentation and Jira. I’m a "},
         {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
-        {t:" and part of the Google Developer Program. I also experiment with local AI, share what I learn in internal AI sessions, and have advised a company’s CEO."}
+        {t:" and part of the Google Developer Program. I also experiment with local AI and share what I learn in internal AI sessions."}
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | AI Projects in Production",
