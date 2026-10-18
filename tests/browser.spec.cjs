@@ -71,16 +71,15 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
-  test('home hero names me, types a phrase and has no menu',async({page})=>{
+  test('home hero names me, introduces me and has no menu',async({page})=>{
    await page.goto('/');
    await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
-   await expect(page.locator('#typed')).not.toBeEmpty();
-   await expect(page.locator('#heroPhrases li')).toHaveCount(6);
+   await expect(page.locator('#heroIntro')).toContainText('InfoCamere');
    await expect(page.locator('.desktop-nav')).toHaveCount(0);
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
    await revealBar(page);
    await page.locator('[data-lang="en"]').click();
-   await expect(page.locator('#heroPhrases li').first()).toHaveText('I’m Service Desk Agent @ InfoCamere');
+   await expect(page.locator('#heroIntro')).toContainText('I work as a Service Desk Agent');
   });
   if(viewport.width<=700){
    test('mobile landing shows only the portrait and a scroll cue until the page scrolls',async({page})=>{
