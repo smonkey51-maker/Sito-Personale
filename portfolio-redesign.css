@@ -386,13 +386,18 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
 @media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
 
-/* Mobile hero: the first screen is the portrait alone, the heading starts
-   right below the fold. A word and a thin line at the bottom invite the
-   scroll and jump to the heading; they hide once the page scrolls (.nav-on).
-   The photo frame ignores the pointer, hence pointer-events on the link. */
+/* Mobile landing: the first screen is the portrait alone, fixed to the
+   viewport. The rest of the page (text, project rows, footer) has an opaque
+   background and slides up over it, so once the page has scrolled the portrait
+   is gone. A word and a thin line at the bottom invite the scroll and jump to
+   the text; they hide once the page scrolls (.nav-on). The photo frame ignores
+   the pointer, hence pointer-events on the link. */
 .scroll-cue{display:none}
 @media(max-width:700px){
- .hero-photo-frame{position:relative;height:max(440px,100svh);overflow:hidden}
+ .hero-photo-frame{position:fixed;top:0;left:0;right:0;width:100%;max-width:none;margin:0;height:100svh;z-index:1;overflow:hidden}
+ .hero-inner{padding-top:100svh;padding-bottom:0}
+ .hero-overlay{background:var(--bg);min-height:calc(100svh - 300px);width:100vw;max-width:none;margin-left:calc(50% - 50vw);padding:28px var(--editorial-gutter) 36px}
+ .hero-filmstrip,.colophon{position:relative;z-index:2;background:var(--bg)}
  .hero-portrait{object-fit:cover;object-position:center 22%}
  .scroll-cue{display:flex;flex-direction:column;align-items:center;gap:8px;position:absolute;z-index:3;left:50%;bottom:20px;width:88px;margin-left:-44px;padding:8px 0;color:#F5F1EC;text-decoration:none;pointer-events:auto;transition:opacity 160ms ease-out,transform 120ms ease-out}
  .scroll-cue-label{font-family:var(--display-serif);font-weight:500;font-size:1.125rem;line-height:1.2;letter-spacing:.02em}
@@ -419,16 +424,15 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    pixels once the scrollbar shows. Clip that overflow on desktop. */
 @media(min-width:701px){body{overflow-x:clip}}
 
-/* Hero line: the name and a phrase that types itself (script.js).
-   The animated phrase is aria-hidden; the full list is in #heroPhrases. */
-.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 40px;max-width:min(30ch,44vw);min-height:4.8em;color:var(--ink)}
-@media(min-width:1200px){.hero-name{min-height:3.6em}}
-.hero-name .typed,.hero-name .typed a{color:var(--accent)}
-.hero-name .typed a{text-decoration:underline;text-underline-offset:.12em;text-decoration-thickness:.06em}
-.caret{display:inline-block;width:.06em;height:.9em;margin-left:.04em;background:var(--accent);vertical-align:-.08em;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-@media(prefers-reduced-motion:reduce){.caret{animation:none}}
-@media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);margin-bottom:28px;max-width:none}}
+/* Language switch in the same display serif as the site name. */
+body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625rem}
+
+/* Hero text: the name, then a short paragraph about me (script.js keeps it
+   translated). */
+.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 20px;max-width:min(30ch,44vw);color:var(--ink)}
+.hero-intro{font-family:var(--serif);font-size:1.125rem;line-height:1.55;margin:0 0 36px;max-width:min(40ch,44vw);color:var(--ink)}
+.hero-intro a{color:inherit;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.06em}
+@media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);max-width:none}.hero-intro{max-width:62ch;margin-bottom:28px}}
 
 /* Large screens (wider than 1920px): the layout of a 1920px window, scaled up
    with the width, so a big monitor shows the same composition larger instead
@@ -445,7 +449,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .topbar-contact svg{width:calc(18*var(--u))!important;height:calc(18*var(--u))!important}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
- .hero-name{font-size:calc(44*var(--u));margin-bottom:calc(40*var(--u))}
+ .hero-name{font-size:calc(44*var(--u));margin-bottom:calc(20*var(--u))}
+ .hero-intro{font-size:calc(18*var(--u));margin-bottom:calc(36*var(--u))}
  .hero-overlay .hero-btn{font-size:calc(14.08*var(--u))!important;padding:calc(13*var(--u)) calc(18*var(--u))!important;border-radius:calc(6*var(--u))!important;gap:calc(12*var(--u))}
  .hero-btn-chevron{width:calc(14*var(--u));height:calc(14*var(--u))}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}

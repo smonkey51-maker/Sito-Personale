@@ -9,15 +9,11 @@
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI e accompagnato professionisti nell’uso di questi strumenti. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
-      hero_greeting:"Ciao, sono Nicolò Forcolin. E ",
-      hero_list_label:"Chi sono",
-      hero_phrases:[
-        [{t:"sono Service Desk Agent @ InfoCamere"}],
-        [{t:"sono "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"}],
-        [{t:"integro l’AI nei processi aziendali"}],
-        [{t:"faccio parte del Google Developer Program"}],
-        [{t:"sperimento con l’AI in locale"}],
-        [{t:"ho fatto advisory al CEO di DABO"}]
+      hero_greeting:"Ciao, sono Nicolò Forcolin.",
+      hero_intro:[
+        {t:"Lavoro come Service Desk Agent in InfoCamere e porto l’AI nei processi aziendali. Sono "},
+        {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
+        {t:" e faccio parte del Google Developer Program. Sperimento anche con l’AI in locale e ho fatto advisory al CEO di DABO."}
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | Progetti AI in produzione",
@@ -131,15 +127,11 @@
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions and helped professionals use these tools. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
-      hero_greeting:"Hi, I’m Nicolò Forcolin. And ",
-      hero_list_label:"About me",
-      hero_phrases:[
-        [{t:"I’m Service Desk Agent @ InfoCamere"}],
-        [{t:"I’m "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"}],
-        [{t:"I integrate AI into business processes"}],
-        [{t:"I’m part of the Google Developer Program"}],
-        [{t:"I experiment with local AI"}],
-        [{t:"I advised DABO’s CEO on AI"}]
+      hero_greeting:"Hi, I’m Nicolò Forcolin.",
+      hero_intro:[
+        {t:"I work as a Service Desk Agent at InfoCamere and bring AI into business processes. I’m a "},
+        {t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},
+        {t:" and part of the Google Developer Program. I also experiment with local AI and have advised DABO’s CEO."}
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin, Service Desk Agent @ InfoCamere | AI Projects in Production",
@@ -309,115 +301,23 @@
   var page = document.body.getAttribute("data-page");
   var suffix = (page && page !== "home") ? "_" + page : "";
 
-  /* ---- frase che si scrive nella home ---- */
-  var typedEl = document.getElementById("typed");
-  var phrasesEl = document.getElementById("heroPhrases");
-  var typingTimer = null;
-  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  function phraseLength(segs){
-    return segs.reduce(function(n, seg){ return n + seg.t.length; }, 0);
-  }
-  function renderPhrase(target, segs, count){
-    target.textContent = "";
-    var left = count;
-    segs.forEach(function(seg){
-      if(left <= 0) return;
-      var part = seg.t.slice(0, left);
-      left -= part.length;
+  /* ---- paragrafo di presentazione nella home ---- */
+  var introEl = document.getElementById("heroIntro");
+  function renderIntro(){
+    if(!introEl) return;
+    introEl.textContent = "";
+    i18n[lang].hero_intro.forEach(function(seg){
       if(seg.href){
         var a = document.createElement("a");
         a.href = seg.href;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        a.textContent = part;
-        target.appendChild(a);
+        a.textContent = seg.t;
+        introEl.appendChild(a);
       }else{
-        target.appendChild(document.createTextNode(part));
+        introEl.appendChild(document.createTextNode(seg.t));
       }
     });
-  }
-  /* L'elenco completo resta nascosto alla vista ma leggibile da screen reader. */
-  function renderHeroPhrases(){
-    if(!phrasesEl) return;
-    phrasesEl.textContent = "";
-    i18n[lang].hero_phrases.forEach(function(segs){
-      var li = document.createElement("li");
-      renderPhrase(li, segs, phraseLength(segs));
-      phrasesEl.appendChild(li);
-    });
-  }
-  /* La frase animata riusa gli stessi nodi mentre si scrive: se il link venisse
-     ricostruito a ogni lettera, un click non lo raggiungerebbe mai. */
-  function buildPhrase(segs){
-    typedEl.textContent = "";
-    return segs.map(function(seg){
-      var node;
-      if(seg.href){
-        node = document.createElement("a");
-        node.href = seg.href;
-        node.target = "_blank";
-        node.rel = "noopener noreferrer";
-        node.tabIndex = -1; /* da tastiera si usa il link dell'elenco nascosto */
-        typedEl.appendChild(node);
-      }else{
-        node = document.createTextNode("");
-        typedEl.appendChild(node);
-      }
-      return node;
-    });
-  }
-  function paintPhrase(nodes, segs, count){
-    var left = count;
-    nodes.forEach(function(node, k){
-      var part = segs[k].t.slice(0, Math.max(left, 0));
-      left -= part.length;
-      if(node.nodeType === 3) node.nodeValue = part; else node.textContent = part;
-    });
-  }
-  function startTyping(){
-    if(!typedEl) return;
-    clearTimeout(typingTimer);
-    var phrases = i18n[lang].hero_phrases;
-    if(reducedMotion){
-      renderPhrase(typedEl, phrases[0], phraseLength(phrases[0]));
-      return;
-    }
-    var p = 0, c = 0, deleting = false, paused = false;
-    var segs = phrases[0], len = phraseLength(segs), nodes = buildPhrase(segs);
-    function tick(){
-      if(paused) return;
-      if(!deleting){
-        c++;
-        paintPhrase(nodes, segs, c);
-        if(c === len){ deleting = true; typingTimer = setTimeout(tick, 4000); return; }
-        typingTimer = setTimeout(tick, 100);
-        return;
-      }
-      c--;
-      paintPhrase(nodes, segs, c);
-      if(c === 0){
-        deleting = false;
-        p = (p + 1) % phrases.length;
-        segs = phrases[p]; len = phraseLength(segs); nodes = buildPhrase(segs);
-        typingTimer = setTimeout(tick, 600);
-        return;
-      }
-      typingTimer = setTimeout(tick, 40);
-    }
-    /* Col puntatore sopra la frase si ferma completa, così si può cliccare. */
-    var line = document.getElementById("hero-name");
-    line.onpointerenter = function(){
-      paused = true;
-      clearTimeout(typingTimer);
-      c = len; deleting = true;
-      paintPhrase(nodes, segs, len);
-    };
-    line.onpointerleave = function(){
-      paused = false;
-      typingTimer = setTimeout(tick, 1600);
-    };
-    tick();
   }
 
   /* ---- lingua ---- */
@@ -439,8 +339,8 @@
       var selected = b.getAttribute("data-lang") === lang;
       b.classList.toggle("on", selected);
       b.setAttribute("aria-pressed", String(selected));
-    });    renderHeroPhrases();
-    startTyping();
+    });
+    renderIntro();
   }
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){

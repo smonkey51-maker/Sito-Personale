@@ -49,7 +49,8 @@ assert(!js.includes('infocamere.it'), 'Work email must not be published');
 
 const home = read('index.html');
 assert(home.includes('data-i18n="hero_greeting"'), 'Hero greeting must be translated');
-for (const language of ['it', 'en']) assert(dictionaries[language].includes('hero_phrases:'), language + ': hero phrases missing');
+assert(home.includes('id="heroIntro"'), 'Hero intro paragraph missing');
+for (const language of ['it', 'en']) assert(dictionaries[language].includes('hero_intro:'), language + ': hero intro missing');
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 assert(home.includes('class="hero-filmstrip"'), 'Hero filmstrip must link to the real pages');
 assert(home.includes('srcset="photo.webp?v=18"'), 'New portrait must be displayed');
