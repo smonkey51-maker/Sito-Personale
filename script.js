@@ -122,6 +122,7 @@
       projects_lead:"I progetti AI che seguo in InfoCamere e le iniziative di advisory, formazione e community che li affiancano.",
       c1_lead:"Un unico punto di accesso a Jira, documentazione e altre fonti, per ritrovare le informazioni quando si gestisce una criticità.",
       projects_initiatives_link:"Tutte le iniziative e le credenziali",
+      project_read:"Leggi il progetto",
       page_title_privacy:"Informativa sulla privacy | Nicolò Forcolin",
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
@@ -247,6 +248,7 @@
       projects_lead:"The AI projects I work on at InfoCamere and the advisory, training and community initiatives alongside them.",
       c1_lead:"A single access point to Jira, documentation and other sources, to find information when handling an incident.",
       projects_initiatives_link:"All initiatives and credentials",
+      project_read:"Read the project",
       page_title_privacy:"Privacy notice | Nicolò Forcolin",
       page_description_privacy:"Privacy notice for Nicolò Forcolin's personal website: no cookies, no tracking, no data collected through forms.",
     }
