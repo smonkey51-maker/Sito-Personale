@@ -62,4 +62,7 @@ assert(read('ai-in-locale.html').includes('data-i18n="c2_summary"'), 'Local AI s
 for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'progetti.html']) {
   assert(read('sitemap.xml').includes('https://nforcolin.eu/' + file), 'Sitemap missing ' + file);
 }
+const redesign = read('portfolio-redesign.css');
+assert(/@media\(prefers-reduced-motion:no-preference\)\{\s*@view-transition\{navigation:auto\}/.test(redesign), 'Page transitions must be limited to no-preference motion');
+assert(/@media\(prefers-reduced-motion:reduce\)\{\.hero-portrait\{animation-name:portrait-fade\}\}/.test(redesign), 'Portrait reveal needs a reduced-motion fallback');
 console.log('Site regression checks passed');
