@@ -432,6 +432,21 @@ body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625
 .hero-intro a{color:inherit;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.06em}
 @media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);max-width:none}.hero-intro{max-width:62ch;margin-bottom:28px}}
 
+/* Motion: the portrait is revealed once when the page loads, and browsers that
+   support cross-document view transitions fade between pages while the top bar
+   stays in place. With reduced motion the portrait only fades in and pages
+   change without a transition. */
+@keyframes portrait-reveal{from{clip-path:inset(0 0 100% 0);opacity:0}to{clip-path:inset(0);opacity:1}}
+@keyframes portrait-fade{from{opacity:0}to{opacity:1}}
+.hero-portrait{animation:portrait-reveal 300ms ease-out backwards}
+@media(prefers-reduced-motion:reduce){.hero-portrait{animation-name:portrait-fade}}
+@media(prefers-reduced-motion:no-preference){
+ @view-transition{navigation:auto}
+ .topbar{view-transition-name:topbar}
+ ::view-transition-old(root){animation-duration:120ms;animation-timing-function:ease-out}
+ ::view-transition-new(root){animation-duration:200ms;animation-timing-function:ease-out}
+}
+
 /* Large screens (wider than 1920px): the layout of a 1920px window, scaled up
    with the width, so a big monitor shows the same composition larger instead
    of a small block in the middle. Each fixed pixel value below is the value it
