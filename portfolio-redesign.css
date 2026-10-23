@@ -123,7 +123,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero-filmstrip{display:flex;border-top:1px solid var(--line);position:relative;width:100vw;left:50%;margin-left:-50vw}
 .filmstrip-tile{flex:1;min-width:0;padding:22px clamp(20px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg-2);transition:background var(--dur) var(--ease)}
 .filmstrip-tile:last-child{border-right:0}
-.filmstrip-heading{display:none}
 @media(hover:hover) and (pointer:fine){.filmstrip-tile:hover{background:color-mix(in srgb,var(--bg-2) 85%,var(--accent) 10%)}}
 .filmstrip-tile:focus-visible{background:color-mix(in srgb,var(--bg-2) 85%,var(--accent) 10%)}
 .filmstrip-meta{font-size:.875rem;color:var(--accent)}
@@ -142,9 +141,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  /* The mobile crop is pre-composed wider than the subject so a cover
     fit reaches both edges without cutting into the face. */
  .hero-portrait{object-fit:cover}
- .hero-filmstrip{flex-direction:column}
- .filmstrip-tile{border-right:0;border-bottom:1px solid var(--line)}
- .filmstrip-tile:last-child{border-bottom:0}
 }
 
 /* Match the concept's small rounded-rect CTA (not a pill) with a trailing
@@ -167,7 +163,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    target (the filmstrip is the last thing on the page), so it's a span,
    never a button pretending to do something it can't. */
 .filmstrip-start{flex:0 0 clamp(56px,7vw,88px);display:flex;align-items:center;justify-content:center;background:#4F4B56;color:var(--ink-soft)}
-@media(max-width:700px){.filmstrip-start,.filmstrip-more{display:none}}
+/* Mobile: the home is only the intro and its two buttons, which already
+   lead to the same pages as the filmstrip. */
+@media(max-width:700px){.hero-filmstrip{display:none}}
 
 /* The colophon section already has its own top border; the footer note's
    own border-top on top of it read as two redundant parallel lines. */
@@ -195,7 +193,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-photo-frame{height:clamp(260px,53vw,420px);width:100%}
  .hero-overlay{padding:28px var(--editorial-gutter) 0}
  .hero-cta-row{flex-wrap:wrap;gap:10px 18px}
- .filmstrip-tile{min-height:88px;padding:18px var(--editorial-gutter)}
 }
 @media(max-width:380px){.hero-overlay{padding-inline:20px}}
 
@@ -335,10 +332,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(min-width:701px){.filmstrip-start{display:grid;place-items:center}}
 .filmstrip-more{padding:0}
 .topbar-contact svg{display:block;width:18px;height:18px;margin:0;position:static;transform:none}
-@media(max-width:700px){
- .hero-filmstrip{height:auto;min-height:0}
- .filmstrip-tile{height:auto;min-height:0}
-}
 
 /* Exact optical centering in orange rails: avoid inherited grid/flex margins. */
 .topbar-contact{position:relative;display:block;padding:0;line-height:0;text-align:center}
@@ -395,8 +388,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-photo-frame{position:fixed;top:0;left:0;right:0;width:100%;max-width:none;margin:0;height:100svh;z-index:1;overflow:hidden}
  .hero-inner{padding-top:100svh;padding-bottom:0}
  .hero-overlay{background:var(--bg);min-height:calc(100svh - 300px);width:100vw;max-width:none;margin-left:calc(50% - 50vw);padding:28px var(--editorial-gutter) 36px}
- .hero-filmstrip,.colophon{position:relative;z-index:2;background:var(--bg)}
- .filmstrip-heading{display:block;margin:0;padding:36px var(--editorial-gutter) 18px;font-family:var(--display-serif);font-weight:500;font-size:1.5rem;line-height:1.2;letter-spacing:-.01em;text-align:center;color:var(--ink)}
+ .colophon{position:relative;z-index:2;background:var(--bg)}
  .hero-portrait{object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
  .scroll-btn{display:inline-flex;align-items:center;justify-content:center;position:absolute;z-index:3;left:50%;bottom:36px;transform:translateX(-50%);min-height:48px;padding:14px 22px;border-radius:6px;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;pointer-events:auto;transition:transform 120ms ease-out}
  .scroll-btn:active{transform:translateX(-50%) scale(.97)}
