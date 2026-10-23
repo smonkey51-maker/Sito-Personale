@@ -1,18 +1,46 @@
 (function(){
   var i18n = {
     it: {
-      rag_how5_desc:"Ogni risposta riporta i link alle fonti originali, così chi la legge può controllarla prima di agire.",
-      rag_how5_title:"Verifica",
-      rag_how4_desc:"Il modello compone la risposta a partire dai passaggi recuperati, mettendo prima le informazioni utilizzabili subito.",
-      rag_how4_title:"Risposta",
-      rag_how3_desc:"L’utente fa una domanda in linguaggio naturale nella webapp; il sistema recupera i passaggi più pertinenti da tutte le fonti insieme.",
-      rag_how3_title:"Ricerca",
-      rag_how2_desc:"I contenuti vengono divisi in passaggi brevi e indicizzati, per ritrovarli in base al significato e non solo alle parole esatte.",
-      rag_how2_title:"Indicizzazione",
-      rag_how1_desc:"Documentazione, storico delle criticità e altre fonti aziendali, che prima andavano consultate una per una.",
-      rag_how1_title:"Fonti",
-      rag_how_aria:"Fasi del sistema RAG",
-      rag_how_note:"Schema semplificato: le fasi tipiche di un sistema RAG, senza dettagli interni.",
+      how5_l3:"Verifica e approfondimento",
+      how5_l2:"Riferimenti alle fonti",
+      how5_l1:"Risposta",
+      how5_p2:"Chi la legge può controllare da dove arriva ogni informazione e approfondire prima di agire.",
+      how5_p1:"Ogni risposta include i riferimenti alle fonti originali.",
+      how5_short:"Ogni risposta include riferimenti alle fonti originali per consentire la verifica e l’approfondimento.",
+      how5_title:"Verifica",
+      how4_l3:"Riferimenti",
+      how4_l2:"Approfondimenti",
+      how4_l1:"Informazioni utilizzabili subito",
+      how4_p2:"Prima arrivano le informazioni utilizzabili subito, poi gli elementi utili ad approfondire.",
+      how4_p1:"Il sistema genera una risposta sintetica e contestualizzata, basata sui passaggi trovati.",
+      how4_short:"Il sistema genera una risposta sintetica e contestualizzata, basata sui contenuti trovati.",
+      how4_title:"Risposta",
+      how3_l3:"Passaggi pertinenti",
+      how3_l2:"Confronto con l’indice",
+      how3_l1:"Domanda in linguaggio naturale",
+      how3_p2:"Il sistema la confronta con l’indice e recupera i passaggi più pertinenti da tutte le fonti insieme, invece di cercarli una fonte alla volta.",
+      how3_p1:"L’utente scrive la domanda in linguaggio naturale, come la porrebbe a un collega.",
+      how3_short:"La richiesta dell’utente viene confrontata con gli indici per individuare i passaggi più pertinenti.",
+      how3_title:"Ricerca",
+      how2_l3:"Indice ricercabile",
+      how2_l2:"Passaggi brevi",
+      how2_l1:"Contenuti eterogenei",
+      how2_p2:"Così si possono ritrovare in base al significato e non solo alle parole esatte, anche quando arrivano da fonti con formati diversi.",
+      how2_p1:"I contenuti vengono divisi in passaggi brevi e indicizzati.",
+      how2_short:"I contenuti vengono elaborati e indicizzati per consentire una ricerca efficace all’interno di informazioni eterogenee.",
+      how2_title:"Elaborazione",
+      how1_l4:"Altre fonti autorizzate",
+      how1_l3:"Sistemi di gestione operativa",
+      how1_l2:"Knowledge base",
+      how1_l1:"Documentazione tecnica",
+      how1_p2:"Queste fonti includono documentazione tecnica, procedure, conoscenza operativa e altre risorse già presenti in azienda, rese accessibili attraverso un unico punto di ricerca.",
+      how1_p1:"Il sistema utilizza contenuti aziendali autorizzati, provenienti da diversi sistemi di documentazione e gestione operativa.",
+      how1_short:"Contenuti autorizzati provenienti da diversi sistemi di documentazione e gestione operativa.",
+      how1_title:"Fonti",
+      how_stepper_aria:"Scegli una fase",
+      how_steps_aria:"Fasi del sistema RAG",
+      how_note:"Lo schema mostra il funzionamento in termini generali, senza dettagli interni o informazioni riservate.",
+      how_lead:"Il sistema integra contenuti aziendali autorizzati, li rende ricercabili e fornisce risposte con riferimenti alle fonti.",
       case_how_label:"Come funziona",
       c1_feedback:"Oggi lo strumento è usato da alcuni colleghi, che ne danno un riscontro positivo.",
       case_issues_label:"Problematiche e feedback",
@@ -169,18 +197,46 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
-      rag_how5_desc:"Each answer links to the original sources, so readers can check it before acting.",
-      rag_how5_title:"Verification",
-      rag_how4_desc:"The model writes the answer from the retrieved passages, putting immediately usable information first.",
-      rag_how4_title:"Answer",
-      rag_how3_desc:"The user asks a question in natural language in the web app; the system retrieves the most relevant passages across all sources at once.",
-      rag_how3_title:"Retrieval",
-      rag_how2_desc:"Content is split into short passages and indexed, so it can be found by meaning, not only by exact words.",
-      rag_how2_title:"Indexing",
-      rag_how1_desc:"Documentation, incident history and other company sources that used to be searched one by one.",
-      rag_how1_title:"Sources",
-      rag_how_aria:"Stages of the RAG system",
-      rag_how_note:"Simplified diagram: the typical stages of a RAG system, without internal details.",
+      how5_l3:"Checking and further reading",
+      how5_l2:"References to the sources",
+      how5_l1:"Answer",
+      how5_p2:"Readers can see where each piece of information comes from and look deeper before acting.",
+      how5_p1:"Every answer includes references to the original sources.",
+      how5_short:"Every answer includes references to the original sources, for checking and further reading.",
+      how5_title:"Verification",
+      how4_l3:"References",
+      how4_l2:"Further detail",
+      how4_l1:"Immediately usable information",
+      how4_p2:"Immediately usable information comes first, followed by what helps to dig deeper.",
+      how4_p1:"The system generates a concise, contextual answer based on the passages found.",
+      how4_short:"The system generates a concise, contextual answer based on the content found.",
+      how4_title:"Answer",
+      how3_l3:"Relevant passages",
+      how3_l2:"Matching against the index",
+      how3_l1:"Natural-language question",
+      how3_p2:"The system matches it against the index and retrieves the most relevant passages from all sources at once, instead of one source at a time.",
+      how3_p1:"The user writes the question in natural language, as they would ask a colleague.",
+      how3_short:"The user’s request is matched against the indexes to find the most relevant passages.",
+      how3_title:"Retrieval",
+      how2_l3:"Searchable index",
+      how2_l2:"Short passages",
+      how2_l1:"Heterogeneous content",
+      how2_p2:"That way it can be found by meaning, not only by exact words, even when it comes from sources in different formats.",
+      how2_p1:"Content is split into short passages and indexed.",
+      how2_short:"Content is processed and indexed for effective search across heterogeneous information.",
+      how2_title:"Processing",
+      how1_l4:"Other authorised sources",
+      how1_l3:"Operations management systems",
+      how1_l2:"Knowledge base",
+      how1_l1:"Technical documentation",
+      how1_p2:"These sources include technical documentation, procedures, operational knowledge and other resources already in the company, made reachable through a single search point.",
+      how1_p1:"The system uses authorised company content from several documentation and operations systems.",
+      how1_short:"Authorised content from several documentation and operations systems.",
+      how1_title:"Sources",
+      how_stepper_aria:"Choose a stage",
+      how_steps_aria:"Stages of the RAG system",
+      how_note:"The diagram shows how it works in general terms, without internal details or confidential information.",
+      how_lead:"The system brings together authorised company content, makes it searchable and answers with references to the sources.",
       case_how_label:"How it works",
       c1_feedback:"Today several colleagues use the tool, and their feedback is positive.",
       case_issues_label:"Issues and feedback",
@@ -484,38 +540,38 @@
     syncNav();
   }
 
-  /* Schema "Come funziona" del RAG: da 821px le fasi diventano pulsanti e si
-     legge una fase alla volta; sotto quella larghezza resta l'elenco completo. */
-  var how = document.getElementById("ragHow");
-  if(how){
-    var howSteps = Array.prototype.slice.call(how.querySelectorAll(".how-step"));
+  /* Come funziona (RAG): da 821px l'elenco delle fasi sceglie il dettaglio
+     da leggere e la panoramica in alto lo apre; sotto quella larghezza, o
+     senza JavaScript, i dettagli restano tutti visibili in sequenza. */
+  var howSection = document.querySelector(".how-section");
+  if(howSection){
+    var howDetails = Array.prototype.slice.call(howSection.querySelectorAll(".how-detail"));
+    var howTabs = Array.prototype.slice.call(howSection.querySelectorAll(".how-tab"));
+    var howLinks = Array.prototype.slice.call(howSection.querySelectorAll(".how-step-link"));
+    var howStepper = howSection.querySelector(".how-stepper");
+    var howExplorer = document.getElementById("howExplorer");
+    var howWide = window.matchMedia("(min-width: 821px)");
     var howActive = 0;
-    var howButtons = howSteps.map(function(step, i){
-      var title = step.querySelector(".how-title");
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "how-btn";
-      btn.setAttribute("aria-controls", step.querySelector(".how-desc").id);
-      while(title.firstChild) btn.appendChild(title.firstChild);
-      title.appendChild(btn);
-      btn.addEventListener("click", function(){ selectHow(i); });
-      return btn;
-    });
     var selectHow = function(i){
       howActive = i;
-      howSteps.forEach(function(step, j){
-        step.classList.toggle("is-active", j === i);
-        howButtons[j].setAttribute("aria-expanded", String(j === i));
-      });
+      howDetails.forEach(function(d, j){ d.hidden = j !== i; });
+      howTabs.forEach(function(t, j){ t.setAttribute("aria-pressed", String(j === i)); });
     };
-    var howWide = window.matchMedia("(min-width: 821px)");
-    var syncHow = function(){
-      how.classList.toggle("is-interactive", howWide.matches);
-      howButtons.forEach(function(btn){
-        btn.disabled = !howWide.matches;
-        if(!howWide.matches) btn.removeAttribute("aria-expanded");
+    howTabs.forEach(function(t, i){ t.addEventListener("click", function(){ selectHow(i); }); });
+    howLinks.forEach(function(a, i){
+      a.addEventListener("click", function(e){
+        if(!howWide.matches) return;
+        e.preventDefault();
+        selectHow(i);
+        howExplorer.scrollIntoView({block: "nearest"});
+        howTabs[i].focus({preventScroll: true});
       });
+    });
+    var syncHow = function(){
+      howSection.classList.toggle("is-interactive", howWide.matches);
+      howStepper.hidden = !howWide.matches;
       if(howWide.matches) selectHow(howActive);
+      else howDetails.forEach(function(d){ d.hidden = false; });
     };
     syncHow();
     howWide.addEventListener("change", syncHow);

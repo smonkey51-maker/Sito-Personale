@@ -97,32 +97,144 @@
         <p data-i18n="c1_summary">Ho unificato due sistemi RAG già funzionanti per offrire un unico punto di accesso. Ho integrato diverse fonti aziendali. Nella webapp gli utenti pongono domande in linguaggio naturale: la risposta presenta prima le informazioni utilizzabili subito, poi possibili cause, procedure, casi simili e link alle fonti. Lo strumento scelto ha costo contenuto.</p>
       </div>
     </section>
-    <section class="page-block page-block-wide">
-      <h2 class="page-block-label" data-i18n="case_how_label">Come funziona</h2>
-      <div class="page-block-body">
-        <p class="how-note" data-i18n="rag_how_note">Schema semplificato: le fasi tipiche di un sistema RAG, senza dettagli interni.</p>
-        <ol class="how" id="ragHow" aria-label="Fasi del sistema RAG" data-i18n-aria="rag_how_aria">
-          <li class="how-step">
-            <h3 class="how-title"><span data-i18n="rag_how1_title">Fonti</span></h3>
-            <p class="how-desc" id="howDesc1" data-i18n="rag_how1_desc">Documentazione, storico delle criticità e altre fonti aziendali, che prima andavano consultate una per una.</p>
-          </li>
-          <li class="how-step">
-            <h3 class="how-title"><span data-i18n="rag_how2_title">Indicizzazione</span></h3>
-            <p class="how-desc" id="howDesc2" data-i18n="rag_how2_desc">I contenuti vengono divisi in passaggi brevi e indicizzati, per ritrovarli in base al significato e non solo alle parole esatte.</p>
-          </li>
-          <li class="how-step">
-            <h3 class="how-title"><span data-i18n="rag_how3_title">Ricerca</span></h3>
-            <p class="how-desc" id="howDesc3" data-i18n="rag_how3_desc">L’utente fa una domanda in linguaggio naturale nella webapp; il sistema recupera i passaggi più pertinenti da tutte le fonti insieme.</p>
-          </li>
-          <li class="how-step">
-            <h3 class="how-title"><span data-i18n="rag_how4_title">Risposta</span></h3>
-            <p class="how-desc" id="howDesc4" data-i18n="rag_how4_desc">Il modello compone la risposta a partire dai passaggi recuperati, mettendo prima le informazioni utilizzabili subito.</p>
-          </li>
-          <li class="how-step">
-            <h3 class="how-title"><span data-i18n="rag_how5_title">Verifica</span></h3>
-            <p class="how-desc" id="howDesc5" data-i18n="rag_how5_desc">Ogni risposta riporta i link alle fonti originali, così chi la legge può controllarla prima di agire.</p>
-          </li>
-        </ol>
+    <section class="how-section" aria-labelledby="howTitle">
+      <div class="how-intro">
+        <h2 class="how-heading" id="howTitle" data-i18n="case_how_label">Come funziona</h2>
+        <p class="how-lead" data-i18n="how_lead">Il sistema integra contenuti aziendali autorizzati, li rende ricercabili e fornisce risposte con riferimenti alle fonti.</p>
+        <p class="how-note" data-i18n="how_note">Lo schema mostra il funzionamento in termini generali, senza dettagli interni o informazioni riservate.</p>
+      </div>
+      <ol class="how-overview" aria-label="Fasi del sistema RAG" data-i18n-aria="how_steps_aria">
+        <li class="how-step">
+          <a class="how-step-link" href="#howStep1">
+            <span class="how-step-title" data-i18n="how1_title">Fonti</span>
+            <span class="how-step-ill"><svg class="how-icon" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path class="o" d="M40 8h28l10 10v46H40z"/><path d="M68 8v10h10"/><rect class="o" x="20" y="28" width="38" height="52"/><path d="M28 42h20M28 50h14M28 58h20"/><rect class="o" x="52" y="48" width="34" height="46"/><path d="M60 60h18M60 68h12M60 76h18"/></svg>
+            <span class="how-arrow" aria-hidden="true">→</span></span>
+            <span class="how-step-short" data-i18n="how1_short">Contenuti autorizzati provenienti da diversi sistemi di documentazione e gestione operativa.</span>
+          </a>
+        </li>
+        <li class="how-step">
+          <a class="how-step-link" href="#howStep2">
+            <span class="how-step-title" data-i18n="how2_title">Elaborazione</span>
+            <span class="how-step-ill"><svg class="how-icon" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect class="o" x="48" y="6" width="44" height="66"/><rect class="o" x="38" y="15" width="44" height="66"/><rect class="o" x="27" y="24" width="48" height="70"/><path d="M35 38h30M35 46h22M35 54h30M35 62h18M35 70h30M35 78h14"/></svg>
+            <span class="how-arrow" aria-hidden="true">→</span></span>
+            <span class="how-step-short" data-i18n="how2_short">I contenuti vengono elaborati e indicizzati per consentire una ricerca efficace all’interno di informazioni eterogenee.</span>
+          </a>
+        </li>
+        <li class="how-step">
+          <a class="how-step-link" href="#howStep3">
+            <span class="how-step-title" data-i18n="how3_title">Ricerca</span>
+            <span class="how-step-ill"><svg class="how-icon" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="38" cy="36" r="16"/><path d="M26 48 10 64"/><path class="s" d="M64 28h42M64 38h34M64 48h42M64 58h28M64 68h42M64 78h22"/></svg>
+            <span class="how-arrow" aria-hidden="true">→</span></span>
+            <span class="how-step-short" data-i18n="how3_short">La richiesta dell’utente viene confrontata con gli indici per individuare i passaggi più pertinenti.</span>
+          </a>
+        </li>
+        <li class="how-step">
+          <a class="how-step-link" href="#howStep4">
+            <span class="how-step-title" data-i18n="how4_title">Risposta</span>
+            <span class="how-step-ill"><svg class="how-icon" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="16" y="20" width="88" height="60"/><path d="M28 34h58M28 44h46M28 54h54M28 64h36"/></svg>
+            <span class="how-arrow" aria-hidden="true">→</span></span>
+            <span class="how-step-short" data-i18n="how4_short">Il sistema genera una risposta sintetica e contestualizzata, basata sui contenuti trovati.</span>
+          </a>
+        </li>
+        <li class="how-step">
+          <a class="how-step-link" href="#howStep5">
+            <span class="how-step-title" data-i18n="how5_title">Verifica</span>
+            <span class="how-step-ill"><svg class="how-icon" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="22" y="8" width="76" height="84"/><path d="M22 36h76M22 64h76"/><path d="M32 14h9l4 4v12H32z"/><path d="M32 42h9l4 4v12H32z"/><path d="M32 70h9l4 4v12H32z"/><path class="s" d="M54 20h34M54 26h22M54 48h34M54 54h22M54 76h34M54 82h22"/></svg></span>
+            <span class="how-step-short" data-i18n="how5_short">Ogni risposta include riferimenti alle fonti originali per consentire la verifica e l’approfondimento.</span>
+          </a>
+        </li>
+      </ol>
+      <div class="how-explorer" id="howExplorer">
+        <nav class="how-stepper" aria-label="Scegli una fase" data-i18n-aria="how_stepper_aria" hidden>
+          <ol>
+          <li><button type="button" class="how-tab" aria-controls="howStep1"><span class="how-num">01</span> <span data-i18n="how1_title">Fonti</span></button></li>
+          <li><button type="button" class="how-tab" aria-controls="howStep2"><span class="how-num">02</span> <span data-i18n="how2_title">Elaborazione</span></button></li>
+          <li><button type="button" class="how-tab" aria-controls="howStep3"><span class="how-num">03</span> <span data-i18n="how3_title">Ricerca</span></button></li>
+          <li><button type="button" class="how-tab" aria-controls="howStep4"><span class="how-num">04</span> <span data-i18n="how4_title">Risposta</span></button></li>
+          <li><button type="button" class="how-tab" aria-controls="howStep5"><span class="how-num">05</span> <span data-i18n="how5_title">Verifica</span></button></li>
+          </ol>
+        </nav>
+        <article class="how-detail" id="howStep1" aria-labelledby="howStep1Title">
+          <div class="how-detail-text">
+            <p class="how-count">01 / 05</p>
+            <h3 class="how-detail-title" id="howStep1Title" data-i18n="how1_title">Fonti</h3>
+            <p data-i18n="how1_p1">Il sistema utilizza contenuti aziendali autorizzati, provenienti da diversi sistemi di documentazione e gestione operativa.</p>
+            <p data-i18n="how1_p2">Queste fonti includono documentazione tecnica, procedure, conoscenza operativa e altre risorse già presenti in azienda, rese accessibili attraverso un unico punto di ricerca.</p>
+          </div>
+          <div class="how-detail-ill">
+            <svg class="how-ill-big" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path class="o" d="M40 8h28l10 10v46H40z"/><path d="M68 8v10h10"/><rect class="o" x="20" y="28" width="38" height="52"/><path d="M28 42h20M28 50h14M28 58h20"/><rect class="o" x="52" y="48" width="34" height="46"/><path d="M60 60h18M60 68h12M60 76h18"/></svg>
+            <ul class="how-labels">
+              <li data-i18n="how1_l1">Documentazione tecnica</li>
+              <li data-i18n="how1_l2">Knowledge base</li>
+              <li data-i18n="how1_l3">Sistemi di gestione operativa</li>
+              <li data-i18n="how1_l4">Altre fonti autorizzate</li>
+            </ul>
+          </div>
+        </article>
+        <article class="how-detail" id="howStep2" aria-labelledby="howStep2Title">
+          <div class="how-detail-text">
+            <p class="how-count">02 / 05</p>
+            <h3 class="how-detail-title" id="howStep2Title" data-i18n="how2_title">Elaborazione</h3>
+            <p data-i18n="how2_p1">I contenuti vengono divisi in passaggi brevi e indicizzati.</p>
+            <p data-i18n="how2_p2">Così si possono ritrovare in base al significato e non solo alle parole esatte, anche quando arrivano da fonti con formati diversi.</p>
+          </div>
+          <div class="how-detail-ill">
+            <svg class="how-ill-big" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect class="o" x="48" y="6" width="44" height="66"/><rect class="o" x="38" y="15" width="44" height="66"/><rect class="o" x="27" y="24" width="48" height="70"/><path d="M35 38h30M35 46h22M35 54h30M35 62h18M35 70h30M35 78h14"/></svg>
+            <ul class="how-labels">
+              <li data-i18n="how2_l1">Contenuti eterogenei</li>
+              <li data-i18n="how2_l2">Passaggi brevi</li>
+              <li data-i18n="how2_l3">Indice ricercabile</li>
+            </ul>
+          </div>
+        </article>
+        <article class="how-detail" id="howStep3" aria-labelledby="howStep3Title">
+          <div class="how-detail-text">
+            <p class="how-count">03 / 05</p>
+            <h3 class="how-detail-title" id="howStep3Title" data-i18n="how3_title">Ricerca</h3>
+            <p data-i18n="how3_p1">L’utente scrive la domanda in linguaggio naturale, come la porrebbe a un collega.</p>
+            <p data-i18n="how3_p2">Il sistema la confronta con l’indice e recupera i passaggi più pertinenti da tutte le fonti insieme, invece di cercarli una fonte alla volta.</p>
+          </div>
+          <div class="how-detail-ill">
+            <svg class="how-ill-big" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="38" cy="36" r="16"/><path d="M26 48 10 64"/><path class="s" d="M64 28h42M64 38h34M64 48h42M64 58h28M64 68h42M64 78h22"/></svg>
+            <ul class="how-labels">
+              <li data-i18n="how3_l1">Domanda in linguaggio naturale</li>
+              <li data-i18n="how3_l2">Confronto con l’indice</li>
+              <li data-i18n="how3_l3">Passaggi pertinenti</li>
+            </ul>
+          </div>
+        </article>
+        <article class="how-detail" id="howStep4" aria-labelledby="howStep4Title">
+          <div class="how-detail-text">
+            <p class="how-count">04 / 05</p>
+            <h3 class="how-detail-title" id="howStep4Title" data-i18n="how4_title">Risposta</h3>
+            <p data-i18n="how4_p1">Il sistema genera una risposta sintetica e contestualizzata, basata sui passaggi trovati.</p>
+            <p data-i18n="how4_p2">Prima arrivano le informazioni utilizzabili subito, poi gli elementi utili ad approfondire.</p>
+          </div>
+          <div class="how-detail-ill">
+            <svg class="how-ill-big" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="16" y="20" width="88" height="60"/><path d="M28 34h58M28 44h46M28 54h54M28 64h36"/></svg>
+            <ul class="how-labels">
+              <li data-i18n="how4_l1">Informazioni utilizzabili subito</li>
+              <li data-i18n="how4_l2">Approfondimenti</li>
+              <li data-i18n="how4_l3">Riferimenti</li>
+            </ul>
+          </div>
+        </article>
+        <article class="how-detail" id="howStep5" aria-labelledby="howStep5Title">
+          <div class="how-detail-text">
+            <p class="how-count">05 / 05</p>
+            <h3 class="how-detail-title" id="howStep5Title" data-i18n="how5_title">Verifica</h3>
+            <p data-i18n="how5_p1">Ogni risposta include i riferimenti alle fonti originali.</p>
+            <p data-i18n="how5_p2">Chi la legge può controllare da dove arriva ogni informazione e approfondire prima di agire.</p>
+          </div>
+          <div class="how-detail-ill">
+            <svg class="how-ill-big" viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="22" y="8" width="76" height="84"/><path d="M22 36h76M22 64h76"/><path d="M32 14h9l4 4v12H32z"/><path d="M32 42h9l4 4v12H32z"/><path d="M32 70h9l4 4v12H32z"/><path class="s" d="M54 20h34M54 26h22M54 48h34M54 54h22M54 76h34M54 82h22"/></svg>
+            <ul class="how-labels">
+              <li data-i18n="how5_l1">Risposta</li>
+              <li data-i18n="how5_l2">Riferimenti alle fonti</li>
+              <li data-i18n="how5_l3">Verifica e approfondimento</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
     <section class="page-block">

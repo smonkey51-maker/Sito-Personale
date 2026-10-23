@@ -63,19 +63,23 @@ for(const viewport of sizes){
    await page.locator('[data-lang="it"]').click();
    await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('RAG aziendale');
   });
-  test('RAG diagram: one stage at a time on wide screens, full list on small ones',async({page})=>{
+  test('RAG how-it-works: stepper on wide screens, full sequence on small ones',async({page})=>{
    await page.goto('/rag-aziendale.html');
-   const descs=page.locator('#ragHow .how-desc');
-   await expect(descs).toHaveCount(5);
+   const details=page.locator('.how-detail');
+   await expect(details).toHaveCount(5);
+   await expect(page.locator('.how-step-link')).toHaveCount(5);
    if(viewport.width>820){
-    await expect(page.locator('#ragHow .how-desc:visible')).toHaveCount(1);
-    await expect(descs.nth(0)).toBeVisible();
-    await page.locator('#ragHow .how-btn').nth(2).click();
-    await expect(descs.nth(2)).toBeVisible();
-    await expect(descs.nth(0)).toBeHidden();
-    await expect(page.locator('#ragHow .how-btn').nth(2)).toHaveAttribute('aria-expanded','true');
+    await expect(page.locator('.how-stepper')).toBeVisible();
+    await expect(page.locator('.how-detail:visible')).toHaveCount(1);
+    await page.locator('.how-tab').nth(3).click();
+    await expect(page.locator('#howStep4')).toBeVisible();
+    await expect(page.locator('.how-tab').nth(3)).toHaveAttribute('aria-pressed','true');
+    await page.locator('.how-step-link').nth(1).click();
+    await expect(page.locator('#howStep2')).toBeVisible();
+    await expect(page.locator('#howStep4')).toBeHidden();
    }else{
-    await expect(page.locator('#ragHow .how-desc:visible')).toHaveCount(5);
+    await expect(page.locator('.how-stepper')).toBeHidden();
+    await expect(page.locator('.how-detail:visible')).toHaveCount(5);
    }
   });
   test('dark theme and portrait loading',async({page})=>{
