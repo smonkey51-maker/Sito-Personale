@@ -53,6 +53,12 @@ for (const file of pages) {
   }
 }
 assert(!js.includes('infocamere.it'), 'Work email must not be published');
+// The installed app paints Android's system bars from the manifest: keep it on the page colour.
+const manifest = JSON.parse(read('manifest.json'));
+for (const file of pages) {
+  const themeColor = (read(file).match(/name="theme-color" content="([^"]+)"/) || [])[1];
+  assert(themeColor === manifest.theme_color && themeColor === manifest.background_color, file + ': theme-color must match manifest colours');
+}
 for (const language of ['it', 'en']) assert(!dictionaries[language].includes('·'), language + ': no middle-dot joined strings');
 
 const home = read('index.html');
