@@ -11,6 +11,30 @@
 .desktop-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--ink); }
 
 
+/* Barra in alto: lingue e menu a tre lineette su ogni larghezza. La lingua
+   attiva è sottolineata nel colore del testo; il menu si apre sotto la barra
+   con le pagine e Contatti. */
+.topbar { position: relative; }
+.lang-btn { color: var(--ink-soft); }
+.lang-btn.on { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 10px; }
+.menu-toggle { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 8px; color: var(--ink); cursor: pointer; transition: transform var(--dur) var(--ease); }
+.menu-toggle:active { transform: scale(.97); }
+.menu-toggle:focus-visible, .site-menu a:focus-visible, .site-menu button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.site-menu { position: absolute; top: 100%; right: clamp(16px, 5vw, 64px); z-index: 40; min-width: 240px; padding: 8px 20px; background: var(--bg-2); box-shadow: 0 12px 32px rgb(0 0 0 / .45); }
+.site-menu[hidden] { display: none; }
+.site-menu ul { list-style: none; margin: 0; padding: 0; }
+.site-menu li + li { border-top: 1px solid var(--line); }
+.site-menu a, .site-menu button { all: unset; box-sizing: border-box; display: flex; align-items: center; width: 100%; min-height: 48px; font-family: var(--sans); font-size: 1.0625rem; color: var(--ink); cursor: pointer; }
+.site-menu a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.site-menu a:active, .site-menu button:active { color: var(--accent); }
+@media (hover: hover) and (pointer: fine) {
+  .menu-toggle:hover, .lang-btn:hover { color: var(--ink); }
+  .site-menu a:hover, .site-menu button:hover { color: var(--accent); }
+}
+@media (max-width: 700px) {
+  .site-menu { left: 0; right: 0; min-width: 0; padding: 4px 20px 12px; }
+}
+
 /* Struttura pagina */
 .page {
   max-width: 1160px;
