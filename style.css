@@ -84,8 +84,8 @@ p{text-wrap:pretty}
   border-bottom:1px solid transparent;
   transition:color var(--dur) var(--ease),border-color var(--dur) var(--ease);
 }
-.desktop-nav a:active,.desktop-nav a.active{color:var(--accent);border-bottom-color:var(--accent)}
-@media(hover:hover) and (pointer:fine){.desktop-nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}}
+.desktop-nav a:active,.desktop-nav a.active{color:var(--accent);border-bottom-color:var(--ink)}
+@media(hover:hover) and (pointer:fine){.desktop-nav a:hover{color:var(--accent);border-bottom-color:var(--ink)}}
 
 .utilbar{display:flex;align-items:center;gap:10px;flex:none}
 .lang-btn{
@@ -141,12 +141,6 @@ p{text-wrap:pretty}
 main{padding-bottom:40px}
 
 /* ---- Progetti ---- */
-.work-meta{
-  display:block;font-family:var(--sans);font-size:.875rem;font-weight:600;
-  color:var(--ink-soft);margin-bottom:10px;
-}
-.work-meta::before{content:"• ";color:var(--accent-alt)}
-.work-meta.live::before{color:var(--accent)}
 
 /* ---- Colophon ---- */
 .colophon{background:var(--bg-2);border-top:1px solid var(--line);margin-top:72px;padding:48px 0 28px;scroll-margin-top:72px}
@@ -209,9 +203,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 
 
 /* Project overviews use the same reading measure as their detailed text. */
-.work-meta::before{content:none}
-.work-meta.live{color:var(--accent)}
-.work-meta.explore{color:var(--accent-alt)}
 
 
 /* Figma editorial layout: one reading column, persistent contents rail. */
@@ -255,7 +246,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 .editorial-shell{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,64px)}
 .hero{padding:clamp(44px,7vw,104px) 0 clamp(48px,7vw,88px)}
 .hero-btn{min-height:46px;padding:11px 20px;font-size:.875rem;border-radius:7px}
-.work-meta{font-size:.8125rem}
 
 @media(max-width:700px){
  .editorial-shell{padding:0 20px}
