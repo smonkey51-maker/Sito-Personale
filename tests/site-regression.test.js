@@ -8,6 +8,9 @@ const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'iniziat
 const js = read('script.js');
 const config = JSON.parse(read('vercel.json'));
 assert(config.headers.some(group => group.headers.some(h => h.key === 'Content-Security-Policy')), 'Missing CSP');
+for (const css of ['style.css', 'portfolio-redesign.css', 'pages.css']) {
+  assert(!/@import|fonts\.googleapis|fonts\.gstatic/.test(read(css)), css + ': no blocking @import or Google Fonts');
+}
 
 // Translation coverage: every key used in any page must exist in both dictionaries.
 const dictionaries = {};
@@ -29,6 +32,7 @@ for (const file of pages) {
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
+  assert(!/fonts\.googleapis|fonts\.gstatic/.test(html), file + ': fonts must be served from the site, not Google Fonts');
   if (file !== 'index.html') assert(html.includes('class="desktop-nav"'), file + ': navigation missing');
   assert(/<body[^>]+data-page="[a-z]+"/.test(html), file + ': body needs data-page');
   for (const [, target] of html.matchAll(/href="([a-z-]+\.html)"/g)) {
