@@ -43,7 +43,7 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_greeting:"Ciao, sono Nicolò Forcolin.",
       hero_intro:[
-        [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management. Tra queste, un sistema RAG che su una criticità tipica fa risparmiare circa tempo di ricerca e facilita l’accesso alla conoscenza aziendale."}],
+        [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management. Tra queste, un sistema RAG che sulla gestione di una criticità tipica fa risparmiare ore e sulla sua analisi post evento fa risparmiare tempo, facilitando l’accesso allo storico ed alla conoscenza aziendali."}],
         [{t:"Sono "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},{t:" e membro del Google Developer Program. Sperimento con modelli AI in locale e collaboro con il Top Management a iniziative interne dedicate alla diffusione della cultura AI e delle sue applicazioni concrete."}],
         [{t:"Come Social Ambassador di InfoCamere, contribuisco a raccontare l’azienda, valorizzandone le persone, la cultura e i valori."}]
       ],
@@ -198,7 +198,7 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_greeting:"Hi, I’m Nicolò Forcolin.",
       hero_intro:[
-        [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs. These include a RAG system that saves about time of searching on a typical incident and makes company knowledge easier to reach."}],
+        [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs. These include a RAG system that saves hours when handling a typical incident and time in its post-incident analysis, making company history and knowledge easier to reach."}],
         [{t:"I’m a "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},{t:" and a member of the Google Developer Program. I experiment with local AI models and work with Top Management on internal initiatives to spread AI culture and its concrete applications."}],
         [{t:"As an InfoCamere Social Ambassador, I help tell the story of the company, highlighting its people, culture and values."}]
       ],
