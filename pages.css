@@ -67,69 +67,39 @@
 .page-block-body a:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-block-body a:hover { color: var(--accent); } }
 .page-block-wide .page-block-body { max-width: none; }
-/* Come funziona (RAG): introduzione, panoramica delle cinque fasi con
-   illustrazioni e dettaglio di una fase. Senza JavaScript o sotto gli 821px
-   i dettagli sono tutti visibili uno dopo l'altro; da 821px un elenco di fasi
-   a sinistra sceglie quale dettaglio leggere. */
+/* Come funziona (RAG): intestazione, primo paragrafo accanto allo schema
+   fisso in quattro fasi, poi il resto del testo. Su mobile lo schema va in
+   colonna, con una freccia verso il basso tra le fasi. */
 .how-section { padding: 40px 0; border-top: 1px solid var(--line); }
-.how-intro { max-width: 62ch; }
-.how-heading { font-family: var(--display-serif, var(--serif)); font-weight: 500; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.1; margin: 0 0 20px; color: var(--ink); }
-.how-lead { font-family: var(--serif); font-size: 1.25rem; line-height: 1.5; color: var(--ink); margin: 0 0 14px; }
-.how-note { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); margin: 0; }
-.how-section svg { overflow: visible; }
+.how-heading { font-family: var(--display-serif, var(--serif)); font-weight: 400; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; margin: 0 0 20px; color: var(--ink); }
+.how-lead { font-size: 1.25rem; line-height: 1.5; color: var(--ink); margin: 0 0 16px; max-width: 52ch; }
+.how-note { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 46ch; }
+.how-body { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+.how-body p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
+.how-body p:last-child { margin-bottom: 0; }
+
+.how-flow { list-style: none; margin: 28px 0; padding: 0; }
+.how-stage { position: relative; display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; column-gap: 20px; padding-bottom: 28px; }
+.how-stage:last-child { padding-bottom: 0; }
+.how-stage:not(:last-child)::after { content: "↓" / ""; position: absolute; left: 40px; bottom: 2px; color: var(--ink-soft); }
+.how-stage svg { display: block; width: 96px; height: auto; color: var(--ink); overflow: visible; }
+.how-caption { font-size: 1rem; line-height: 1.4; color: var(--ink-soft); }
 .how-section .o { fill: var(--bg); }
-.how-section .s { color: var(--ink-soft); }
-
-.how-overview { list-style: none; margin: 40px 0 0; padding: 0; display: grid; gap: 4px; }
-.how-step-link { display: grid; grid-template-columns: 64px minmax(0, 1fr); align-items: center; column-gap: 16px; min-height: 56px; color: var(--ink); text-decoration: none; }
-.how-step-ill { grid-column: 1; grid-row: 1; position: relative; display: block; }
-.how-step-title { grid-column: 2; grid-row: 1; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; }
-.how-icon { display: block; width: 64px; height: auto; color: var(--ink); }
-.how-arrow, .how-step-short { display: none; }
-.how-step-link:focus-visible, .how-tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-
-.how-explorer { margin-top: 48px; }
-.how-detail { padding: 28px 0; border-top: 1px solid var(--line); }
-.how-count { font-size: 1rem; color: var(--ink-soft); margin: 0 0 8px; font-variant-numeric: tabular-nums; }
-.how-detail-title { font-family: var(--display-serif, var(--serif)); font-weight: 500; font-size: 2rem; line-height: 1.15; margin: 0 0 16px; color: var(--ink); }
-.how-detail-text p:not(.how-count) { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
-.how-ill-big { display: none; }
-.how-labels { list-style: none; margin: 8px 0 0; padding: 0; }
-.how-labels li { position: relative; padding: 6px 0 6px 32px; font-size: 1rem; color: var(--ink-soft); }
-.how-labels li::before { content: ""; position: absolute; left: 0; top: 50%; width: 20px; border-top: 1px solid var(--line); }
+.how-section .s { color: color-mix(in srgb, var(--ink) 45%, var(--bg)); }
+.how-section .h { color: var(--ink); }
 
 @media (min-width: 821px) {
-  .how-overview { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
-  .how-step-link { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; height: 100%; }
-  .how-step-title { font-size: 1.1875rem; }
-  .how-step-ill { width: 100%; }
-  .how-icon { width: min(100%, 120px); }
-  .how-arrow { display: block; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); }
-  .how-step-short { display: block; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
-
-  .how-section.is-interactive .how-explorer { display: grid; grid-template-columns: 190px minmax(0, 1fr); column-gap: 32px; border-top: 1px solid var(--line); padding-top: 32px; }
-  .how-stepper ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
-  .how-tab { all: unset; box-sizing: border-box; display: flex; gap: 14px; align-items: baseline; width: 100%; min-height: 48px; padding: 10px 0 10px 20px; margin-left: -1px; border-left: 2px solid transparent; font-family: var(--serif); font-size: 1.125rem; color: var(--ink-soft); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }
-  .how-num { font-family: var(--sans); font-size: .9375rem; font-variant-numeric: tabular-nums; }
-  .how-tab[aria-pressed="true"] { color: var(--ink); border-left-color: var(--ink); }
-  .how-tab:active { transform: scale(.97); }
-  .how-section.is-interactive .how-detail { padding: 0; border-top: 0; animation: how-in 200ms var(--ease); }
-  .how-section.is-interactive .how-detail[hidden] { display: none; }
-  .how-section.is-interactive .how-labels { margin-top: 0; }
+  .how-head { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: 48px; align-items: end; }
+  .how-heading { grid-column: 1 / -1; }
+  .how-lead { margin: 0; }
+  .how-body { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: 48px; align-items: start; }
+  .how-text { grid-column: 1; grid-row: 1; }
+  .how-flow { grid-column: 2; grid-row: 1; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 28px; }
+  .how-stage { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding-bottom: 0; }
+  .how-stage:not(:last-child)::after { content: "→" / ""; left: auto; right: -22px; top: 62px; bottom: auto; }
+  .how-stage svg { width: 100%; max-width: 110px; }
+  .how-more { grid-column: 1 / -1; grid-row: 2; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
 }
-@media (min-width: 821px) and (hover: hover) and (pointer: fine) {
-  .how-tab:hover, .how-step-link:hover .how-step-title { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
-}
-@media (min-width: 1024px) {
-  .how-section.is-interactive .how-detail:not([hidden]) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 380px); column-gap: 32px; align-items: center; }
-  .how-section.is-interactive .how-detail-ill { display: flex; align-items: center; gap: 20px; }
-  .how-section.is-interactive .how-ill-big { display: block; width: 120px; flex: none; color: var(--ink); }
-}
-@keyframes how-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .how-section.is-interactive .how-detail { animation-name: how-fade; }
-}
-@keyframes how-fade { from { opacity: 0; } to { opacity: 1; } }
 
 /* Percorso: le fasi sono una vera sequenza, quindi un elenco ordinato */
 .career { list-style: none; margin: 0; padding: 0; }
