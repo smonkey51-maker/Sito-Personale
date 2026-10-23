@@ -1,6 +1,8 @@
 (function(){
   var i18n = {
     it: {
+      c1_feedback:"Oggi lo strumento è usato da 13 colleghi, che ne danno un riscontro positivo.",
+      case_issues_label:"Problematiche e feedback",
       outside_desc:"Audiofilo e musicista.",
       outside_label:"Fuori dal lavoro",
       page_description_experience:"Il percorso di Nicolò Forcolin: dal Service Desk di InfoCamere alla responsabilità del RAG aziendale e all’advisory sull’AI.",
@@ -156,6 +158,8 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
+      c1_feedback:"Today 13 colleagues use the tool, and their feedback is positive.",
+      case_issues_label:"Issues and feedback",
       outside_desc:"Audiophile and musician.",
       outside_label:"Outside work",
       page_description_experience:"Nicolò Forcolin’s path: from InfoCamere’s Service Desk to owning the enterprise RAG and advising on AI.",
