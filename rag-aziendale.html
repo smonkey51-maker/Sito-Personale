@@ -97,6 +97,34 @@
         <p data-i18n="c1_summary">Ho unificato due sistemi RAG già funzionanti per offrire un unico punto di accesso. Ho integrato Jira, UCMDB, Confluence, una wiki operativa e altre fonti. Nella webapp gli utenti pongono domande in linguaggio naturale: la risposta presenta prima le informazioni utilizzabili subito, poi possibili cause, procedure, casi simili e link alle fonti. Lo strumento scelto ha costo nullo.</p>
       </div>
     </section>
+    <section class="page-block page-block-wide">
+      <h2 class="page-block-label" data-i18n="case_how_label">Come funziona</h2>
+      <div class="page-block-body">
+        <p class="how-note" data-i18n="rag_how_note">Schema semplificato: le fasi tipiche di un sistema RAG, senza dettagli interni.</p>
+        <ol class="how" id="ragHow" aria-label="Fasi del sistema RAG" data-i18n-aria="rag_how_aria">
+          <li class="how-step">
+            <h3 class="how-title"><span data-i18n="rag_how1_title">Fonti</span></h3>
+            <p class="how-desc" id="howDesc1" data-i18n="rag_how1_desc">Jira, UCMDB, Confluence, una wiki operativa e altre fonti aziendali, che prima andavano consultate una per una.</p>
+          </li>
+          <li class="how-step">
+            <h3 class="how-title"><span data-i18n="rag_how2_title">Indicizzazione</span></h3>
+            <p class="how-desc" id="howDesc2" data-i18n="rag_how2_desc">I contenuti vengono divisi in passaggi brevi e indicizzati, per ritrovarli in base al significato e non solo alle parole esatte.</p>
+          </li>
+          <li class="how-step">
+            <h3 class="how-title"><span data-i18n="rag_how3_title">Ricerca</span></h3>
+            <p class="how-desc" id="howDesc3" data-i18n="rag_how3_desc">L’utente fa una domanda in linguaggio naturale nella webapp; il sistema recupera i passaggi più pertinenti da tutte le fonti insieme.</p>
+          </li>
+          <li class="how-step">
+            <h3 class="how-title"><span data-i18n="rag_how4_title">Risposta</span></h3>
+            <p class="how-desc" id="howDesc4" data-i18n="rag_how4_desc">Il modello compone la risposta a partire dai passaggi recuperati, mettendo prima le informazioni utilizzabili subito.</p>
+          </li>
+          <li class="how-step">
+            <h3 class="how-title"><span data-i18n="rag_how5_title">Verifica</span></h3>
+            <p class="how-desc" id="howDesc5" data-i18n="rag_how5_desc">Ogni risposta riporta i link alle fonti originali, così chi la legge può controllarla prima di agire.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
     <section class="page-block">
       <h2 class="page-block-label" data-i18n="case_role_label">Il mio ruolo</h2>
       <div class="page-block-body">
