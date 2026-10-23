@@ -33,6 +33,7 @@ for (const file of pages) {
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
   assert(!/fonts\.googleapis|fonts\.gstatic/.test(html), file + ': fonts must be served from the site, not Google Fonts');
+  assert(!/\b(Jira|UCMDB|Confluence|wiki)\b/i.test(html), file + ': internal source tools must not be named');
   assert((html.match(/<main[\s>]/g) || []).length === 1, file + ': exactly one <main> landmark');
   assert(!html.includes('class="work-meta'), file + ': no eyebrow label above the title');
   assert(!html.replace(/<script[\s\S]*?<\/script>/g, '').includes('·'), file + ': no middle-dot joined strings');
@@ -53,6 +54,7 @@ for (const file of pages) {
   }
 }
 assert(!js.includes('infocamere.it'), 'Work email must not be published');
+assert(!/\b(Jira|UCMDB|Confluence|wiki)\b/i.test(js), 'Internal source tools must not be named');
 // The installed app paints Android's system bars from the manifest: keep it on the page colour.
 const manifest = JSON.parse(read('manifest.json'));
 for (const file of pages) {
