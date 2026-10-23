@@ -33,6 +33,9 @@ for (const file of pages) {
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
   assert(!/fonts\.googleapis|fonts\.gstatic/.test(html), file + ': fonts must be served from the site, not Google Fonts');
+  assert((html.match(/<main[\s>]/g) || []).length === 1, file + ': exactly one <main> landmark');
+  assert(!html.includes('class="work-meta'), file + ': no eyebrow label above the title');
+  assert(!html.replace(/<script[\s\S]*?<\/script>/g, '').includes('·'), file + ': no middle-dot joined strings');
   if (file !== 'index.html') assert(html.includes('class="desktop-nav"'), file + ': navigation missing');
   assert(/<body[^>]+data-page="[a-z]+"/.test(html), file + ': body needs data-page');
   for (const [, target] of html.matchAll(/href="([a-z-]+\.html)"/g)) {
@@ -50,6 +53,7 @@ for (const file of pages) {
   }
 }
 assert(!js.includes('infocamere.it'), 'Work email must not be published');
+for (const language of ['it', 'en']) assert(!dictionaries[language].includes('·'), language + ': no middle-dot joined strings');
 
 const home = read('index.html');
 assert(home.includes('data-i18n="hero_greeting"'), 'Hero greeting must be translated');
