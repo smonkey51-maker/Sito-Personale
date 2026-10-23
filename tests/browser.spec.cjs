@@ -15,7 +15,8 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toBeVisible();
    await expect(page.locator('#avatarPhoto')).toBeVisible();
-   await expect(page.locator('.hero-filmstrip')).toBeVisible();
+   if(viewport.width>700) await expect(page.locator('.hero-filmstrip')).toBeVisible();
+   else await expect(page.locator('.hero-filmstrip')).toBeHidden();
   });
   test('every page loads without errors or horizontal scroll',async({page})=>{
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
@@ -31,9 +32,11 @@ for(const viewport of sizes){
    await page.locator('.hero-btn.solid').first().click();
    await expect(page).toHaveURL(/rag-aziendale\.html$/);
    await expect(page.locator('h1')).toHaveText('RAG aziendale');
-   await page.goto('/');
-   await page.locator('.filmstrip-tile[href="ai-in-locale.html"]').click();
-   await expect(page.locator('h1')).toHaveText('Sperimentazione AI in locale');
+   if(viewport.width>700){
+    await page.goto('/');
+    await page.locator('.filmstrip-tile[href="ai-in-locale.html"]').click();
+    await expect(page.locator('h1')).toHaveText('Sperimentazione AI in locale');
+   }
   });
   test('hero button opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
