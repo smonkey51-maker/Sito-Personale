@@ -8,7 +8,7 @@
   background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
-.desktop-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+.desktop-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--ink); }
 
 
 /* Struttura pagina */
@@ -25,7 +25,6 @@
 }
 .page-back:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-back:hover { color: var(--accent); } }
-.page-head .work-meta { margin-bottom: 18px; font-size: 1rem; }
 .page-title {
   font-family: var(--display-serif, var(--serif));
   font-weight: 500;
@@ -43,8 +42,6 @@
   color: var(--ink);
   max-width: 62ch;
   margin: 0;
-  padding-left: 20px;
-  border-left: 3px solid var(--accent);
 }
 
 /* Blocchi: etichetta a sinistra, contenuto a destra */
@@ -63,10 +60,10 @@
   color: var(--ink);
   margin: 2px 0 0;
 }
-.page-block-body { max-width: 74ch; }
-.page-block-body p { font-size: 1.125rem; line-height: 1.7; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; }
+.page-block-body { max-width: 62ch; }
+.page-block-body p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; }
 .page-block-body p:last-child { margin-bottom: 0; }
-.page-block-body a { color: var(--ink); text-underline-offset: 3px; }
+.page-block-body a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 3px; }
 .page-block-body a:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-block-body a:hover { color: var(--accent); } }
 .page-block-wide .page-block-body { max-width: none; }
@@ -97,7 +94,7 @@
 .page-block-body .item + p a, .page-block-body .item-link a { text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .item-meta { font-family: var(--sans); font-size: 0.9375rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
 .item-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.35; margin: 0 0 8px; color: var(--ink); }
-.item-title a { color: inherit; text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
+.item-title a { display: inline-block; padding-block: 6px; color: inherit; text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .item-title a:active { color: var(--accent); text-decoration-color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .item-title a:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 
