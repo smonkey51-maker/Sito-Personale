@@ -63,6 +63,21 @@ for(const viewport of sizes){
    await page.locator('[data-lang="it"]').click();
    await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('RAG aziendale');
   });
+  test('RAG diagram: one stage at a time on wide screens, full list on small ones',async({page})=>{
+   await page.goto('/rag-aziendale.html');
+   const descs=page.locator('#ragHow .how-desc');
+   await expect(descs).toHaveCount(5);
+   if(viewport.width>820){
+    await expect(page.locator('#ragHow .how-desc:visible')).toHaveCount(1);
+    await expect(descs.nth(0)).toBeVisible();
+    await page.locator('#ragHow .how-btn').nth(2).click();
+    await expect(descs.nth(2)).toBeVisible();
+    await expect(descs.nth(0)).toBeHidden();
+    await expect(page.locator('#ragHow .how-btn').nth(2)).toHaveAttribute('aria-expanded','true');
+   }else{
+    await expect(page.locator('#ragHow .how-desc:visible')).toHaveCount(5);
+   }
+  });
   test('dark theme and portrait loading',async({page})=>{
    await page.goto('/');
    await expect(page.locator('html')).toHaveAttribute('data-theme','dark');

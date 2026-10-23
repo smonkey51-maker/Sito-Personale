@@ -1,6 +1,19 @@
 (function(){
   var i18n = {
     it: {
+      rag_how5_desc:"Ogni risposta riporta i link alle fonti originali, così chi la legge può controllarla prima di agire.",
+      rag_how5_title:"Verifica",
+      rag_how4_desc:"Il modello compone la risposta a partire dai passaggi recuperati, mettendo prima le informazioni utilizzabili subito.",
+      rag_how4_title:"Risposta",
+      rag_how3_desc:"L’utente fa una domanda in linguaggio naturale nella webapp; il sistema recupera i passaggi più pertinenti da tutte le fonti insieme.",
+      rag_how3_title:"Ricerca",
+      rag_how2_desc:"I contenuti vengono divisi in passaggi brevi e indicizzati, per ritrovarli in base al significato e non solo alle parole esatte.",
+      rag_how2_title:"Indicizzazione",
+      rag_how1_desc:"Jira, UCMDB, Confluence, una wiki operativa e altre fonti aziendali, che prima andavano consultate una per una.",
+      rag_how1_title:"Fonti",
+      rag_how_aria:"Fasi del sistema RAG",
+      rag_how_note:"Schema semplificato: le fasi tipiche di un sistema RAG, senza dettagli interni.",
+      case_how_label:"Come funziona",
       c1_feedback:"Oggi lo strumento è usato da 13 colleghi, che ne danno un riscontro positivo.",
       case_issues_label:"Problematiche e feedback",
       outside_desc:"Audiofilo e musicista.",
@@ -156,6 +169,19 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
+      rag_how5_desc:"Each answer links to the original sources, so readers can check it before acting.",
+      rag_how5_title:"Verification",
+      rag_how4_desc:"The model writes the answer from the retrieved passages, putting immediately usable information first.",
+      rag_how4_title:"Answer",
+      rag_how3_desc:"The user asks a question in natural language in the web app; the system retrieves the most relevant passages across all sources at once.",
+      rag_how3_title:"Retrieval",
+      rag_how2_desc:"Content is split into short passages and indexed, so it can be found by meaning, not only by exact words.",
+      rag_how2_title:"Indexing",
+      rag_how1_desc:"Jira, UCMDB, Confluence, an operational wiki and other company sources that used to be searched one by one.",
+      rag_how1_title:"Sources",
+      rag_how_aria:"Stages of the RAG system",
+      rag_how_note:"Simplified diagram: the typical stages of a RAG system, without internal details.",
+      case_how_label:"How it works",
       c1_feedback:"Today 13 colleagues use the tool, and their feedback is positive.",
       case_issues_label:"Issues and feedback",
       outside_desc:"Audiophile and musician.",
@@ -456,6 +482,43 @@
     var syncNav = function(){ document.body.classList.toggle("nav-on", window.scrollY > 24); };
     window.addEventListener("scroll", syncNav, {passive:true});
     syncNav();
+  }
+
+  /* Schema "Come funziona" del RAG: da 821px le fasi diventano pulsanti e si
+     legge una fase alla volta; sotto quella larghezza resta l'elenco completo. */
+  var how = document.getElementById("ragHow");
+  if(how){
+    var howSteps = Array.prototype.slice.call(how.querySelectorAll(".how-step"));
+    var howActive = 0;
+    var howButtons = howSteps.map(function(step, i){
+      var title = step.querySelector(".how-title");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "how-btn";
+      btn.setAttribute("aria-controls", step.querySelector(".how-desc").id);
+      while(title.firstChild) btn.appendChild(title.firstChild);
+      title.appendChild(btn);
+      btn.addEventListener("click", function(){ selectHow(i); });
+      return btn;
+    });
+    var selectHow = function(i){
+      howActive = i;
+      howSteps.forEach(function(step, j){
+        step.classList.toggle("is-active", j === i);
+        howButtons[j].setAttribute("aria-expanded", String(j === i));
+      });
+    };
+    var howWide = window.matchMedia("(min-width: 821px)");
+    var syncHow = function(){
+      how.classList.toggle("is-interactive", howWide.matches);
+      howButtons.forEach(function(btn){
+        btn.disabled = !howWide.matches;
+        if(!howWide.matches) btn.removeAttribute("aria-expanded");
+      });
+      if(howWide.matches) selectHow(howActive);
+    };
+    syncHow();
+    howWide.addEventListener("change", syncHow);
   }
 
   applyLang();
