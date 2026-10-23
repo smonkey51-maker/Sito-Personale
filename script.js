@@ -1,6 +1,8 @@
 (function(){
   var i18n = {
     it: {
+      outside_desc:"Audiofilo e musicista.",
+      outside_label:"Fuori dal lavoro",
       page_description_experience:"Il percorso di Nicolò Forcolin: dal Service Desk di InfoCamere alla responsabilità del RAG aziendale e all’advisory sull’AI.",
       page_title_experience:"Percorso | Nicolò Forcolin",
       experience_lead:"Dal lavoro a contatto con i clienti al Service Desk di InfoCamere, fino alla responsabilità del RAG aziendale e all’advisory sull’AI.",
@@ -155,6 +157,8 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
+      outside_desc:"Audiophile and musician.",
+      outside_label:"Outside work",
       page_description_experience:"Nicolò Forcolin’s path: from InfoCamere’s Service Desk to owning the enterprise RAG and advising on AI.",
       page_title_experience:"Experience | Nicolò Forcolin",
       experience_lead:"From client-facing work to InfoCamere’s Service Desk, to owning the enterprise RAG and advising on AI.",
