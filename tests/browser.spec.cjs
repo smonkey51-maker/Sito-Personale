@@ -63,15 +63,11 @@ for(const viewport of sizes){
    await page.locator('[data-lang="it"]').click();
    await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('RAG aziendale');
   });
-  test('RAG how-it-works: stages pick one detail at a time',async({page})=>{
+  test('RAG how-it-works: static four-stage diagram with all text visible',async({page})=>{
    await page.goto('/rag-aziendale.html');
-   await expect(page.locator('.how-detail')).toHaveCount(5);
-   await expect(page.locator('.how-detail:visible')).toHaveCount(1);
-   await expect(page.locator('#howStep1')).toBeVisible();
-   await page.locator('.how-step-link').nth(2).click();
-   await expect(page.locator('#howStep3')).toBeVisible();
-   await expect(page.locator('#howStep1')).toBeHidden();
-   await expect(page.locator('.how-step-link').nth(2)).toHaveAttribute('aria-pressed','true');
+   await expect(page.locator('.how-flow .how-stage')).toHaveCount(4);
+   await expect(page.locator('.how-section p:visible')).toHaveCount(5);
+   await expect(page.locator('.how-section button')).toHaveCount(0);
   });
   test('dark theme and portrait loading',async({page})=>{
    await page.goto('/');

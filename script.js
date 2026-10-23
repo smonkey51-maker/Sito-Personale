@@ -1,28 +1,14 @@
 (function(){
   var i18n = {
     it: {
-      how3_c3:"Passaggi rilevanti per la risposta",
-      how3_c2:"Ricerca nei contenuti indicizzati",
-      how3_c1:"Contenuti aziendali autorizzati",
-      how3_p2:"Il sistema seleziona le informazioni utili da fonti diverse, valutando la pertinenza rispetto al contesto della richiesta, in modo da basare la risposta su contenuti affidabili e aggiornati.",
-      how3_p1:"La richiesta dell’utente viene analizzata e confrontata con i contenuti indicizzati per individuare i passaggi più rilevanti e pertinenti.",
-      how5_short:"Ogni risposta include riferimenti alle fonti originali.",
-      how5_title:"Verifica",
-      how4_short:"Il sistema genera una risposta sintetica e contestualizzata.",
-      how4_title:"Risposta",
-      how3_short:"La richiesta dell’utente viene confrontata con i contenuti indicizzati.",
-      how3_title:"Ricerca",
-      how2_short:"I contenuti vengono preparati per la ricerca.",
-      how2_title:"Elaborazione",
-      how1_l4:"Altre fonti autorizzate",
-      how1_l3:"Sistemi di gestione operativa",
-      how1_l2:"Knowledge base",
-      how1_l1:"Documentazione tecnica",
-      how1_p2:"Queste fonti includono documentazione tecnica, procedure, conoscenza operativa e altre risorse già presenti in azienda, rese accessibili attraverso un unico punto di ricerca.",
-      how1_p1:"Il sistema utilizza contenuti aziendali autorizzati, provenienti da diversi sistemi di documentazione e gestione operativa.",
-      how1_short:"Contenuti autorizzati da diverse aree.",
-      how1_title:"Fonti",
-      how_steps_aria:"Fasi del sistema RAG",
+      how_flow_aria:"Schema del funzionamento",
+      how_c4:"Risposta con riferimenti alle fonti",
+      how_c3:"Ricerca nei contenuti indicizzati",
+      how_c2:"Elaborazione e indicizzazione",
+      how_c1:"Contenuti aziendali autorizzati",
+      how_p3:"Il sistema genera una risposta sintetica e contestualizzata, basata sui contenuti trovati, con riferimenti alle fonti originali per consentire la verifica e l’approfondimento.",
+      how_p2:"I contenuti vengono elaborati e indicizzati per consentire una ricerca efficace. La richiesta dell’utente viene confrontata con gli indici per individuare i passaggi più rilevanti e pertinenti.",
+      how_p1:"Il sistema utilizza contenuti aziendali autorizzati, provenienti da diverse aree, come documentazione tecnica, knowledge base e sistemi di gestione operativa.",
       how_note:"Lo schema mostra il funzionamento in termini generali, senza dettagli interni o informazioni riservate.",
       how_lead:"Il sistema integra contenuti aziendali autorizzati, li rende ricercabili e fornisce risposte con riferimenti alle fonti.",
       case_how_label:"Come funziona",
@@ -181,28 +167,14 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
-      how3_c3:"Relevant passages for the answer",
-      how3_c2:"Search across indexed content",
-      how3_c1:"Authorised company content",
-      how3_p2:"The system selects useful information from different sources, weighing its relevance to the context of the request, so that the answer rests on reliable, up-to-date content.",
-      how3_p1:"The user’s request is analysed and matched against the indexed content to find the most relevant passages.",
-      how5_short:"Every answer includes references to the original sources.",
-      how5_title:"Verification",
-      how4_short:"The system generates a concise, contextual answer.",
-      how4_title:"Answer",
-      how3_short:"The user’s request is matched against the indexed content.",
-      how3_title:"Retrieval",
-      how2_short:"Content is prepared for search.",
-      how2_title:"Processing",
-      how1_l4:"Other authorised sources",
-      how1_l3:"Operations management systems",
-      how1_l2:"Knowledge base",
-      how1_l1:"Technical documentation",
-      how1_p2:"These sources include technical documentation, procedures, operational knowledge and other resources already in the company, made reachable through a single search point.",
-      how1_p1:"The system uses authorised company content from several documentation and operations systems.",
-      how1_short:"Authorised content from different areas.",
-      how1_title:"Sources",
-      how_steps_aria:"Stages of the RAG system",
+      how_flow_aria:"How-it-works diagram",
+      how_c4:"Answer with references to the sources",
+      how_c3:"Search across indexed content",
+      how_c2:"Processing and indexing",
+      how_c1:"Authorised company content",
+      how_p3:"The system generates a concise, contextual answer based on the content found, with references to the original sources for checking and further reading.",
+      how_p2:"Content is processed and indexed for effective search. The user’s request is matched against the indexes to find the most relevant passages.",
+      how_p1:"The system uses authorised company content from different areas, such as technical documentation, knowledge bases and operations management systems.",
       how_note:"The diagram shows how it works in general terms, without internal details or confidential information.",
       how_lead:"The system brings together authorised company content, makes it searchable and answers with references to the sources.",
       case_how_label:"How it works",
@@ -506,32 +478,6 @@
     var syncNav = function(){ document.body.classList.toggle("nav-on", window.scrollY > 24); };
     window.addEventListener("scroll", syncNav, {passive:true});
     syncNav();
-  }
-
-  /* Come funziona (RAG): le fasi diventano pulsanti che mostrano un dettaglio
-     alla volta; senza JavaScript restano link e i dettagli sono tutti visibili. */
-  var howSection = document.querySelector(".how-section");
-  if(howSection){
-    var howDetails = Array.prototype.slice.call(howSection.querySelectorAll(".how-detail"));
-    var howButtons = Array.prototype.slice.call(howSection.querySelectorAll(".how-step-link")).map(function(link, i){
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "how-step-link";
-      btn.setAttribute("aria-controls", link.getAttribute("href").slice(1));
-      while(link.firstChild) btn.appendChild(link.firstChild);
-      link.parentNode.replaceChild(btn, link);
-      btn.addEventListener("click", function(){
-        selectHow(i);
-        if(!window.matchMedia("(min-width: 821px)").matches) howDetails[i].scrollIntoView({block: "nearest"});
-      });
-      return btn;
-    });
-    var selectHow = function(i){
-      howDetails.forEach(function(d, j){ d.hidden = j !== i; });
-      howButtons.forEach(function(b, j){ b.setAttribute("aria-pressed", String(j === i)); });
-    };
-    howSection.classList.add("is-interactive");
-    selectHow(0);
   }
 
   applyLang();

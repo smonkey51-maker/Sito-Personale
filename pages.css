@@ -67,43 +67,23 @@
 .page-block-body a:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-block-body a:hover { color: var(--accent); } }
 .page-block-wide .page-block-body { max-width: none; }
-/* Come funziona (RAG): intestazione, le cinque fasi in riga (in colonna su
-   mobile) e il dettaglio della fase scelta con il suo disegno. Senza
-   JavaScript le fasi sono link e i dettagli restano tutti visibili. */
+/* Come funziona (RAG): intestazione, primo paragrafo accanto allo schema
+   fisso in quattro fasi, poi il resto del testo. Su mobile lo schema va in
+   colonna, con una freccia verso il basso tra le fasi. */
 .how-section { padding: 40px 0; border-top: 1px solid var(--line); }
 .how-heading { font-family: var(--display-serif, var(--serif)); font-weight: 400; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; margin: 0 0 20px; color: var(--ink); }
 .how-lead { font-size: 1.25rem; line-height: 1.5; color: var(--ink); margin: 0 0 16px; max-width: 52ch; }
 .how-note { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 46ch; }
+.how-body { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+.how-body p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
+.how-body p:last-child { margin-bottom: 0; }
 
-.how-steps { list-style: none; margin: 32px 0 0; padding: 0; border-top: 1px solid var(--line); }
-.how-step { position: relative; border-bottom: 1px solid var(--line); }
-.how-step-link { all: unset; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-start; width: 100%; padding: 14px 0 14px 20px; border-left: 2px solid var(--line); color: var(--ink-soft); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
-.how-step-title { display: block; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; line-height: 1.3; color: var(--ink-soft); transition: color var(--dur) var(--ease); }
-.how-step-short { display: block; margin-top: 4px; font-size: 1rem; line-height: 1.45; }
-.how-step-link[aria-pressed="true"] { border-left-color: var(--ink); color: color-mix(in srgb, var(--ink) 85%, var(--bg)); }
-.how-step-link[aria-pressed="true"] .how-step-title { color: var(--ink); }
-.how-step-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.how-arrow { display: none; }
-
-.how-details { margin-top: 32px; }
-.how-detail + .how-detail { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
-.how-section.is-interactive .how-detail + .how-detail { margin-top: 0; padding-top: 0; border-top: 0; }
-.how-section.is-interactive .how-detail { animation: how-in 200ms var(--ease); }
-.how-detail[hidden] { display: none; }
-.how-detail-title { font-family: var(--display-serif, var(--serif)); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 16px; color: var(--ink); }
-.how-detail-text p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
-.how-detail-text p:last-child { margin-bottom: 0; }
-
-.how-visual { display: none; }
-.how-labels { list-style: none; margin: 0; padding: 0; }
-.how-labels li { position: relative; padding: 6px 0 6px 32px; font-size: 1rem; color: var(--ink-soft); }
-.how-labels li::before { content: ""; position: absolute; left: 0; top: 50%; width: 20px; border-top: 1px solid var(--ink-soft); }
-.how-visual-sources { display: block; margin-top: 16px; }
-.how-visual-sources .how-fig { display: none; }
-.how-fig { margin: 0; flex: 1 1 0; min-width: 0; }
-.how-fig svg { display: block; width: 100%; max-width: 150px; height: auto; color: var(--ink); overflow: visible; }
-.how-fig figcaption { margin-top: 14px; font-size: 1rem; line-height: 1.4; color: var(--ink-soft); }
-.how-fig-arrow { flex: none; color: var(--ink-soft); }
+.how-flow { list-style: none; margin: 28px 0; padding: 0; }
+.how-stage { position: relative; display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; column-gap: 20px; padding-bottom: 28px; }
+.how-stage:last-child { padding-bottom: 0; }
+.how-stage:not(:last-child)::after { content: "↓" / ""; position: absolute; left: 40px; bottom: 2px; color: var(--ink-soft); }
+.how-stage svg { display: block; width: 96px; height: auto; color: var(--ink); overflow: visible; }
+.how-caption { font-size: 1rem; line-height: 1.4; color: var(--ink-soft); }
 .how-section .o { fill: var(--bg); }
 .how-section .s { color: color-mix(in srgb, var(--ink) 45%, var(--bg)); }
 .how-section .h { color: var(--ink); }
@@ -112,28 +92,14 @@
   .how-head { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: 48px; align-items: end; }
   .how-heading { grid-column: 1 / -1; }
   .how-lead { margin: 0; }
-  .how-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 40px; padding: 28px 0; border-bottom: 1px solid var(--line); }
-  .how-step { border-bottom: 0; }
-  .how-step-link { position: relative; height: 100%; padding: 18px 0 0; border-left: 0; }
-  .how-step-link::before { content: ""; position: absolute; left: 0; top: 0; width: 32px; border-top: 2px solid transparent; transition: border-color var(--dur) var(--ease); }
-  .how-step-link[aria-pressed="true"]::before { border-top-color: var(--ink); }
-  .how-arrow { display: block; position: absolute; right: -30px; top: 20px; color: var(--ink-soft); }
-  .how-details { margin-top: 48px; }
-  .how-detail:not([hidden]) { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: 56px; align-items: center; }
-  .how-visual { display: flex; align-items: center; gap: 16px; }
-  .how-visual-sources { margin-top: 0; }
-  .how-visual-sources .how-fig { display: block; flex: none; width: 150px; }
-  .how-visual-sources .how-labels { flex: 1; }
+  .how-body { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: 48px; align-items: start; }
+  .how-text { grid-column: 1; grid-row: 1; }
+  .how-flow { grid-column: 2; grid-row: 1; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 28px; }
+  .how-stage { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding-bottom: 0; }
+  .how-stage:not(:last-child)::after { content: "→" / ""; left: auto; right: -22px; top: 62px; bottom: auto; }
+  .how-stage svg { width: 100%; max-width: 110px; }
+  .how-more { grid-column: 1 / -1; grid-row: 2; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
 }
-@media (hover: hover) and (pointer: fine) {
-  .how-step-link:hover .how-step-title { color: var(--ink); }
-}
-.how-step-link:active { transform: scale(.98); }
-@keyframes how-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .how-section.is-interactive .how-detail { animation-name: how-fade; }
-}
-@keyframes how-fade { from { opacity: 0; } to { opacity: 1; } }
 
 /* Percorso: le fasi sono una vera sequenza, quindi un elenco ordinato */
 .career { list-style: none; margin: 0; padding: 0; }
