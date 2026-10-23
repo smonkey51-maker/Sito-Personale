@@ -41,7 +41,7 @@
       xp5_title:"Advisory e adozione dell’AI",
       xp5_period:"Dal 2025",
       xp4_link:"Leggi il progetto RAG",
-      xp4_desc:"Con il mio Responsabile ho definito le esigenze operative; poi ho realizzato e messo in produzione due sistemi RAG, li ho unificati e ne seguo fonti, webapp, test e adozione con gli utenti. Su una criticità tipica fa risparmiare ore nella gestione e tempo nell’analisi post evento. In parallelo ho condotto una sperimentazione di modelli AI in locale.",
+      xp4_desc:"Con il mio Responsabile ho definito le esigenze operative; poi ho realizzato e messo in produzione due sistemi RAG, li ho unificati e ne seguo fonti, webapp, test e adozione con gli utenti. Su una criticità fa risparmiare ore nella gestione e tempo nell’analisi post evento. In parallelo ho condotto una sperimentazione di modelli AI in locale.",
       xp4_title:"Responsabile del RAG aziendale, InfoCamere",
       xp4_period:"Dal 2026",
       xp3_desc:"Supporto operativo all’infrastruttura IT del sistema camerale italiano, con attenzione all’affidabilità del servizio.",
@@ -71,7 +71,7 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_greeting:"Ciao, sono Nicolò Forcolin.",
       hero_intro:[
-        [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management. Tra queste, un sistema RAG che sulla gestione di una criticità tipica fa risparmiare ore e sulla sua analisi post evento fa risparmiare tempo, facilitando l’accesso allo storico ed alla conoscenza aziendali."}],
+        [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management. Tra queste, un sistema RAG che sulla gestione di una criticità fa risparmiare ore e sull’analisi post evento fa risparmiare tempo, facilitando l’accesso allo storico ed alla conoscenza aziendali."}],
         [{t:"Sono "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},{t:" e membro del Google Developer Program. Sperimento con modelli AI in locale e collaboro con il Top Management a iniziative interne dedicate alla diffusione della cultura AI e delle sue applicazioni concrete."}],
         [{t:"Come Social Ambassador di InfoCamere, contribuisco a raccontare l’azienda, valorizzandone le persone, la cultura e i valori."}]
       ],
@@ -133,7 +133,7 @@
       case1_title:"RAG aziendale",
       c1_status:"In produzione dal 2026",
       c1_problem:"Informazioni utili distribuite tra strumenti diversi. Ricostruire il contesto di una criticità richiedeva ricerche separate e tempo, mentre la risoluzione doveva essere rapida. Il costo andava contenuto, rispetto ad alternative disponibili.",
-      c1_impact:"ore risparmiate sulla gestione di una criticità tipica e tempo sulla sua analisi post evento, per il Service Desk e l’Incident & Problem Management.",
+      c1_impact:"ore risparmiate sulla gestione di una criticità e tempo sull’analisi post evento, per il Service Desk e l’Incident & Problem Management.",
       c1_learning:"Dopo il rilascio, alcuni utenti continuavano a cercare a mano. Sono emersi rallentamenti e lacune nei dati: un modello funzionante non bastava. Ho lavorato sulla documentazione operativa e parlando direttamente con gli utenti. Prima di ampliare un RAG servono fonti affidabili e istruzioni chiare sul suo uso.",
       case2_title:"Sperimentazione AI in locale",
       c2_status:"Sperimentazione conclusa nel 2026",
@@ -219,7 +219,7 @@
       xp5_title:"AI advisory and adoption",
       xp5_period:"Since 2025",
       xp4_link:"Read the RAG project",
-      xp4_desc:"With my manager I defined the operational needs; I then built two RAG systems, put them into production and unified them, and I look after their sources, web app, testing and user adoption. On a typical incident it saves hours in handling and time in post-incident analysis. In parallel I ran an experiment with local AI models.",
+      xp4_desc:"With my manager I defined the operational needs; I then built two RAG systems, put them into production and unified them, and I look after their sources, web app, testing and user adoption. On an incident it saves hours in handling and time in post-incident analysis. In parallel I ran an experiment with local AI models.",
       xp4_title:"Owner of the enterprise RAG, InfoCamere",
       xp4_period:"Since 2026",
       xp3_desc:"Operational support for the IT infrastructure of the Italian Chambers of Commerce system, with a focus on service reliability.",
@@ -249,7 +249,7 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_greeting:"Hi, I’m Nicolò Forcolin.",
       hero_intro:[
-        [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs. These include a RAG system that saves hours when handling a typical incident and time in its post-incident analysis, making company history and knowledge easier to reach."}],
+        [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs. These include a RAG system that saves hours when handling an incident and time in post-incident analysis, making company history and knowledge easier to reach."}],
         [{t:"I’m a "},{t:"Google Cloud Innovator",href:"https://me.developers.google.com/u/nforcolin"},{t:" and a member of the Google Developer Program. I experiment with local AI models and work with Top Management on internal initiatives to spread AI culture and its concrete applications."}],
         [{t:"As an InfoCamere Social Ambassador, I help tell the story of the company, highlighting its people, culture and values."}]
       ],
@@ -311,7 +311,7 @@
       case1_title:"Enterprise Knowledge Retrieval",
       c1_status:"In production since 2026",
       c1_problem:"Useful information was scattered across different tools. Reconstructing an incident's context took separate searches and time, while resolution had to be fast. Cost had to stay low compared with other alternatives.",
-      c1_impact:"hours saved when handling a typical incident and time in its post-incident analysis, for the Service Desk and Incident & Problem Management.",
+      c1_impact:"hours saved when handling an incident and time in post-incident analysis, for the Service Desk and Incident & Problem Management.",
       c1_learning:"After the release, some users kept searching by hand. Slowdowns and gaps in the data came up: a working model was not enough. I worked on the operating documentation and talked directly with users. Before expanding a RAG you need reliable sources and clear instructions on how to use it.",
       case2_title:"Local AI Experiment",
       c2_status:"Experiment completed in 2026",
