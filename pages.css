@@ -73,8 +73,7 @@
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   gap: 16px 48px;
-  padding: 32px 0;
-  border-top: 1px solid var(--line);
+  padding: 48px 0 0;
 }
 .page-block-label {
   font-family: var(--sans);
@@ -93,11 +92,11 @@
 .page-block-wide .page-block-body { max-width: none; }
 /* Come funziona (RAG): intestazione, primo paragrafo accanto allo schema
    fisso in quattro fasi, poi il resto del testo (desktop). */
-.how-section { padding: 40px 0; border-top: 1px solid var(--line); }
+.how-section { padding: 64px 0 0; }
 .how-heading { font-family: var(--display-serif, var(--serif)); font-weight: 400; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; margin: 0 0 20px; color: var(--ink); }
 .how-lead { font-size: 1.25rem; line-height: 1.5; color: var(--ink); margin: 0 0 16px; max-width: 52ch; }
 .how-note { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 46ch; }
-.how-body { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+.how-body { margin-top: 40px; }
 .how-body p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
 .how-body p:last-child { margin-bottom: 0; }
 
@@ -114,7 +113,7 @@
   .how-head { display: contents; }
   .how-body { display: none; }
   .how-steps-m { display: block; order: 2; list-style: none; margin: 24px 0 0; padding: 0; }
-  .how-note { order: 3; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); max-width: none; }
+  .how-note { order: 3; margin-top: 32px; max-width: none; }
   .how-s { position: relative; display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 20px; align-items: start; padding-bottom: 44px; }
   .how-s:last-child { padding-bottom: 0; }
   .how-s:not(:last-child)::after { content: "↓" / ""; position: absolute; left: 46px; bottom: 10px; color: var(--ink-soft); font-size: 1.125rem; }
@@ -134,18 +133,18 @@
   .how-stage:not(:last-child)::after { content: "→" / ""; position: absolute; right: -22px; top: 62px; color: var(--ink-soft); }
   .how-stage svg { display: block; width: 100%; max-width: 110px; height: auto; color: var(--ink); overflow: visible; }
   .how-caption { font-size: 1rem; line-height: 1.4; color: var(--ink-soft); }
-  .how-more { grid-column: 1 / -1; grid-row: 2; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+  .how-more { grid-column: 1 / -1; grid-row: 2; margin-top: 48px; }
 }
 
 /* AI in locale: "Come funziona" con lo schema in tre fasi accanto al testo,
    poi "Perché farlo" e "Risultati e limiti" affiancati e "Cosa ho imparato".
    Su mobile tutto in colonna, schema con freccia verso il basso. */
-.lab-section { padding: 40px 0; border-top: 1px solid var(--line); }
+.lab-section { padding: 56px 0 0; }
 .lab-heading { font-family: var(--display-serif, var(--serif)); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 16px; color: var(--ink); }
 .lab-section p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
 .lab-section p:last-child { margin-bottom: 0; }
 .lab-section .lab-note { font-size: 1rem; color: var(--ink-soft); }
-.lab-pair section + section { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+.lab-pair section + section { margin-top: 48px; }
 .lab-flow { list-style: none; margin: 28px 0 0; padding: 0; }
 .lab-stage { position: relative; display: grid; grid-template-columns: 88px minmax(0, 1fr); column-gap: 20px; align-items: center; padding-bottom: 40px; }
 .lab-stage:last-child { padding-bottom: 0; }
@@ -160,7 +159,7 @@
   .lab-stage:not(:last-child)::after { content: "→" / ""; left: auto; bottom: auto; right: -28px; top: 44px; }
   .lab-stage svg { width: 100%; max-width: 104px; }
   .lab-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 56px; }
-  .lab-pair section + section { margin-top: 0; padding-top: 0; border-top: 0; }
+  .lab-pair section + section { margin-top: 0; }
 }
 
 /* Percorso: le fasi sono una vera sequenza, quindi un elenco ordinato */
@@ -173,8 +172,8 @@
 .page-updated { font-size: 0.875rem !important; }
 
 /* Flusso in tre passi: elenco a righe, etichetta a sinistra */
-.flow { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
-.flow-step { display: grid; grid-template-columns: minmax(150px, 1fr) 3fr; column-gap: 32px; row-gap: 4px; padding: 20px 0; border-top: 1px solid var(--line); }
+.flow { list-style: none; margin: 0; padding: 0; }
+.flow-step { display: grid; grid-template-columns: minmax(150px, 1fr) 3fr; column-gap: 32px; row-gap: 4px; padding: 12px 0; }
 .flow-kicker { grid-column: 1; grid-row: 1 / span 2; font-family: var(--sans); font-size: 0.9375rem; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
 .flow-title { grid-column: 2; font-family: var(--serif); font-size: 1.375rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
 .flow-desc { grid-column: 2; font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); }
@@ -196,8 +195,7 @@
 
 /* Credenziali: elenco semplice, una riga per credenziale */
 .badge-list { list-style: none; margin: 0 0 20px; padding: 0; }
-.badge { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 14px 0; border-top: 1px solid var(--line); }
-.badge:last-child { border-bottom: 1px solid var(--line); }
+.badge { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 10px 0; }
 .badge-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
 .badge-meta { font-family: var(--sans); font-size: 0.9375rem; color: var(--ink-soft); }
 .badge-link a { font-family: var(--sans); font-size: 1.0625rem; color: var(--accent); text-decoration: none; }
@@ -206,11 +204,11 @@
 
 /* Continua a leggere: elenco di righe, non una griglia di card */
 .page-next { margin-top: clamp(56px, 8vw, 104px); }
-.page-next-grid { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.page-next-grid { display: flex; flex-direction: column; gap: 4px; }
 .page-next-tile {
   display: flex; flex-direction: column; gap: 8px;
   padding: 20px 16px; min-height: 88px; justify-content: center;
-  border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);
+  text-decoration: none; color: var(--ink);
   transition: background var(--dur) var(--ease);
 }
 .page-next-tile:focus-visible, .page-next-tile:active { background: var(--bg-2); }
@@ -223,7 +221,7 @@
 .lang-btn { font-size: 0.9375rem; }
 
 @media (max-width: 820px) {
-  .page-block { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+  .page-block { grid-template-columns: 1fr; gap: 12px; padding: 40px 0 0; }
   .flow { grid-template-columns: 1fr; }
 }
 @media print {
