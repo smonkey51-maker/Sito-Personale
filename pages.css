@@ -70,6 +70,11 @@
 .page-block-body a:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-block-body a:hover { color: var(--accent); } }
 .page-block-wide .page-block-body { max-width: none; }
+/* Ruolo nel progetto: chi ha fatto cosa, una riga per interlocutore */
+.role-list { list-style: none; margin: 0; padding: 0; max-width: 62ch; }
+.role-list li { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); }
+.role-list li + li { margin-top: 12px; }
+.role-list strong { font-weight: 600; color: var(--ink); }
 .page-updated { font-size: 0.875rem !important; }
 
 /* Flusso in tre passi: elenco a righe, etichetta a sinistra */
