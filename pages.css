@@ -101,9 +101,9 @@
 .how-body p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
 .how-body p:last-child { margin-bottom: 0; }
 
-.how-section .o { fill: var(--bg); }
-.how-section .s { color: color-mix(in srgb, var(--ink) 45%, var(--bg)); }
-.how-section .h { color: var(--ink); }
+.how-section .o, .lab-section .o { fill: var(--bg); }
+.how-section .s, .lab-section .s { color: color-mix(in srgb, var(--ink) 45%, var(--bg)); }
+.how-section .h, .lab-section .h { color: var(--ink); }
 
 /* Su mobile (mockup dedicato): titolo, introduzione, le cinque fasi in
    colonna con il disegno a sinistra e la freccia verso il basso, poi la nota
@@ -135,6 +135,32 @@
   .how-stage svg { display: block; width: 100%; max-width: 110px; height: auto; color: var(--ink); overflow: visible; }
   .how-caption { font-size: 1rem; line-height: 1.4; color: var(--ink-soft); }
   .how-more { grid-column: 1 / -1; grid-row: 2; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+}
+
+/* AI in locale: "Come funziona" con lo schema in tre fasi accanto al testo,
+   poi "Perché farlo" e "Risultati e limiti" affiancati e "Cosa ho imparato".
+   Su mobile tutto in colonna, schema con freccia verso il basso. */
+.lab-section { padding: 40px 0; border-top: 1px solid var(--line); }
+.lab-heading { font-family: var(--display-serif, var(--serif)); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 16px; color: var(--ink); }
+.lab-section p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 62ch; }
+.lab-section p:last-child { margin-bottom: 0; }
+.lab-section .lab-note { font-size: 1rem; color: var(--ink-soft); }
+.lab-pair section + section { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+.lab-flow { list-style: none; margin: 28px 0 0; padding: 0; }
+.lab-stage { position: relative; display: grid; grid-template-columns: 88px minmax(0, 1fr); column-gap: 20px; align-items: center; padding-bottom: 40px; }
+.lab-stage:last-child { padding-bottom: 0; }
+.lab-stage:not(:last-child)::after { content: "↓" / ""; position: absolute; left: 38px; bottom: 8px; color: var(--ink-soft); }
+.lab-stage svg { display: block; width: 88px; height: auto; color: var(--ink); overflow: visible; }
+.lab-section .lab-caption { margin: 0; font-size: 1rem; line-height: 1.4; color: var(--ink); }
+.lab-caption-desc { display: block; margin-top: 2px; color: var(--ink-soft); }
+@media (min-width: 821px) {
+  .lab-how { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 56px; align-items: center; }
+  .lab-flow { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 36px; }
+  .lab-stage { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; padding-bottom: 0; }
+  .lab-stage:not(:last-child)::after { content: "→" / ""; left: auto; bottom: auto; right: -28px; top: 44px; }
+  .lab-stage svg { width: 100%; max-width: 104px; }
+  .lab-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 56px; }
+  .lab-pair section + section { margin-top: 0; padding-top: 0; border-top: 0; }
 }
 
 /* Percorso: le fasi sono una vera sequenza, quindi un elenco ordinato */
