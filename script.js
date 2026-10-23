@@ -1,6 +1,7 @@
 (function(){
   var i18n = {
     it: {
+      menu_label:"Menu del sito",
       how_flow_aria:"Schema del funzionamento",
       how_c4:"Risposta con riferimenti alle fonti",
       how_c3:"Ricerca nei contenuti indicizzati",
@@ -167,6 +168,7 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
+      menu_label:"Site menu",
       how_flow_aria:"How-it-works diagram",
       how_c4:"Answer with references to the sources",
       how_c3:"Search across indexed content",
@@ -384,7 +386,13 @@
         else contactDialog.setAttribute("open", "");
       });
     });
-    contactDialog.querySelector(".contact-close").addEventListener("click", function(){ contactDialog.close(); contactTriggers[0].focus(); });
+    contactDialog.querySelector(".contact-close").addEventListener("click", function(){ contactDialog.close(); });
+    /* Contatti sta nel menu, che si chiude all'apertura della finestra: alla
+       chiusura il focus torna al pulsante del menu. */
+    contactDialog.addEventListener("close", function(){
+      var toggle = document.querySelector(".menu-toggle");
+      if(toggle) toggle.focus();
+    });
     contactDialog.addEventListener("click", function(event){ if (event.target === contactDialog) contactDialog.close(); });
   }
 
@@ -450,24 +458,27 @@
     });
   });
 
-  /* Mobile nav toggle: desktop-nav doubles as the collapsible menu panel. */
-  var navToggle = document.querySelector(".nav-toggle");
-  var navPanel = document.getElementById("desktopNav");
-  if(navToggle && navPanel){
-    function setNavOpen(open){
-      navPanel.classList.toggle("open", open);
-      navToggle.setAttribute("aria-expanded", String(open));
-    }
-    navToggle.addEventListener("click", function(){
-      setNavOpen(!navPanel.classList.contains("open"));
+  /* Menu a tre lineette: si apre sotto la barra; si chiude con Esc, con un
+     clic fuori o scegliendo una voce (Contatti apre la sua finestra). */
+  var menuToggle = document.querySelector(".menu-toggle");
+  var siteMenu = document.getElementById("siteMenu");
+  if(menuToggle && siteMenu){
+    var setMenuOpen = function(open){
+      siteMenu.hidden = !open;
+      menuToggle.setAttribute("aria-expanded", String(open));
+      if(open) siteMenu.querySelector("a, button").focus();
+    };
+    menuToggle.addEventListener("click", function(){ setMenuOpen(siteMenu.hidden); });
+    siteMenu.addEventListener("click", function(e){
+      if(e.target.closest("a, button")) setMenuOpen(false);
     });
-    navPanel.addEventListener("click", function(e){
-      if(e.target.tagName === "A") setNavOpen(false);
+    document.addEventListener("click", function(e){
+      if(!siteMenu.hidden && !siteMenu.contains(e.target) && !menuToggle.contains(e.target)) setMenuOpen(false);
     });
     document.addEventListener("keydown", function(e){
-      if(e.key === "Escape" && navPanel.classList.contains("open")){
-        setNavOpen(false);
-        navToggle.focus();
+      if(e.key === "Escape" && !siteMenu.hidden){
+        setMenuOpen(false);
+        menuToggle.focus();
       }
     });
   }

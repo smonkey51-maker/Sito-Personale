@@ -87,18 +87,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Solid accent block filling the full topbar height and bleeding to the
    right edge, matching the concept's corner block — a real trigger for
    Contatti, not a decorative stand-in. */
-.topbar-contact{
-  position:absolute;top:0;right:0;bottom:0;
-  display:inline-flex;align-items:center;justify-content:center;
-  width:88px;margin:0;border-radius:0;
-  background:var(--accent);color:var(--on-accent);border:0;cursor:pointer;
-  transition:background var(--dur) var(--ease);
-}
-@media(hover:hover) and (pointer:fine){.topbar-contact:hover{background:var(--accent-hover)}}
-.topbar-inner{padding-right:152px}
-@media(max-width:1050px){.topbar-contact{width:72px}.topbar-inner{padding-right:112px}}
-@media(max-width:700px){.topbar-contact{width:64px}.topbar-inner{padding-right:88px}}
-@media(max-width:520px){.topbar-contact{width:56px}.topbar-inner{padding-right:76px}}
+@media(max-width:1050px){}
+@media(max-width:700px){}
+@media(max-width:520px){}
 
 .hero{padding:0;background:var(--bg);overflow:visible}
 .hero-inner{position:relative;min-height:80vh;display:flex;align-items:center;padding:132px 0 72px}
@@ -202,14 +193,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Reference-aligned right rail and compact colophon, 2026-10. */
 :root{--rail-width:clamp(56px,7vw,88px)}
-.topbar-contact{width:var(--rail-width)}
-.topbar-inner{padding-right:calc(var(--rail-width) + 64px)}
 .filmstrip-more,.filmstrip-start{flex:0 0 var(--rail-width)}
 .colophon{margin-top:0;padding:24px 0 30px;border-top:0;background:transparent}
 .colophon-inner{gap:0}
 .footer-note{margin:0;padding:18px 0 0;border-top:1px solid var(--line);line-height:1.5}
-@media(max-width:1050px){.topbar-inner{padding-right:calc(var(--rail-width) + 38px)}}
-@media(max-width:700px){.topbar-inner{padding-right:calc(var(--rail-width) + 16px)}.colophon{padding:20px 0 24px}}
+@media(max-width:1050px){}
+@media(max-width:700px){.colophon{padding:20px 0 24px}}
 
 /* Mobile: make portrait flush with viewport, removing contain letterboxing. */
 @media(max-width:700px){
@@ -313,26 +302,21 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:700px){:root[data-theme="dark"] .hero-photo-frame::after{background:linear-gradient(to right,#111014 0%,rgba(17,16,20,.28) 7%,transparent 20%,transparent 80%,rgba(17,16,20,.28) 93%,#111014 100%),linear-gradient(to bottom,transparent 68%,rgba(17,16,20,.22) 82%,#111014 100%)}}
 
 /* Center labels and icons in all orange action controls. */
-.topbar-contact,.hero-overlay .hero-btn.solid{
+.hero-overlay .hero-btn.solid{
  display:inline-flex;align-items:center;justify-content:center;text-align:center;
 }
-.topbar-contact svg{display:block;flex-shrink:0;margin:auto}
 .hero-overlay .hero-btn.solid{gap:12px;line-height:1.2}
 
 /* Keep the original header dimensions; size the lower strip to match it. */
 :root{--action-rail-height:86px}
-.topbar-contact{padding:0;display:grid;place-items:center}
 .hero-filmstrip{height:var(--action-rail-height);min-height:0;align-items:stretch}
 .filmstrip-tile,.filmstrip-start,.filmstrip-more{box-sizing:border-box;height:100%;min-height:0;align-self:stretch}
 .filmstrip-tile{justify-content:center;padding-top:8px;padding-bottom:8px}
 .filmstrip-start{padding:0}
 @media(min-width:701px){.filmstrip-start{display:grid;place-items:center}}
 .filmstrip-more{padding:0}
-.topbar-contact svg{display:block;width:18px;height:18px;margin:0;position:static;transform:none}
 
 /* Exact optical centering in orange rails: avoid inherited grid/flex margins. */
-.topbar-contact{position:relative;display:block;padding:0;line-height:0;text-align:center}
-.topbar-contact svg{position:absolute;top:50%;left:50%;width:18px;height:18px;margin:0;transform:translate(-50%,-50%);display:block}
 /* The footer rule is the bottom closing line of the project strip. */
 .colophon{padding-top:0}
 .colophon-inner{padding-top:0}
@@ -340,21 +324,14 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:700px){.colophon{padding-top:0}}
 
 /* Restore the envelope's orange surface and visible dark icon. */
-.topbar-contact{background:var(--accent)!important;color:#16121D!important;z-index:5}
-.topbar-contact svg{color:#16121D!important;stroke:#16121D!important;fill:none;opacity:1;visibility:visible;z-index:1;pointer-events:none}
 
 /* Fix regression: header contact must be anchored to viewport right, not relative. */
-.topbar-contact{position:absolute!important;top:0!important;right:0!important;bottom:0!important;left:auto!important;display:grid!important;place-items:center!important;padding:0!important;background:var(--accent)!important;color:#16121D!important}
-.topbar-contact svg{position:static!important;transform:none!important;margin:0!important;display:block!important;stroke:currentColor!important;opacity:1!important}
 /* Keep lower arrow geometrically centered without absolute SVG offsets. */
 
 /* Final rail geometry: center SVGs in the actual colored boxes. */
-.topbar-contact{position:absolute!important;inset:0 0 0 auto!important;width:var(--rail-width)!important;height:100%!important;min-height:0!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important}
-.topbar-contact svg{position:static!important;width:18px!important;height:18px!important;flex:none!important;transform:none!important;margin:0!important}
 .filmstrip-more{box-sizing:border-box!important;min-width:var(--rail-width)!important;flex:0 0 var(--rail-width)!important}
 /* No inert grey scroll control: first project occupies its former slot. */
 .hero-filmstrip .filmstrip-tile:first-child{border-left:0}
-@media(max-width:700px){.topbar-contact{width:var(--rail-width)!important}}
 
 /* Match the empty leading rail to the orange trailing action rail. */
 .filmstrip-start,:root[data-theme="dark"] .filmstrip-start{background:var(--accent)}
@@ -444,11 +421,10 @@ body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625
 @media(min-width:1921px){
  :root{--u:.0520833vw;--rail-width:calc(88*var(--u));--editorial-gutter:calc(80*var(--u));--action-rail-height:calc(86*var(--u))}
  .editorial-shell{max-width:calc(1280*var(--u));padding:0 calc(64*var(--u))}
- .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u));padding-right:calc(152*var(--u))}
+ .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u))}
  .desktop-nav a{font-size:calc(14.4*var(--u))}
  body .lang-btn{font-size:calc(15*var(--u))}
  body .site-name{font-size:calc(24*var(--u))}
- .topbar-contact svg{width:calc(18*var(--u))!important;height:calc(18*var(--u))!important}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
  .hero-name{font-size:calc(44*var(--u));margin-bottom:calc(20*var(--u))}
