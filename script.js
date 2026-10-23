@@ -37,7 +37,7 @@
       experience_lead:"Dal lavoro a contatto con i clienti al Service Desk di InfoCamere, fino alla responsabilità del RAG aziendale e all’advisory sull’AI.",
       sec_percorso:"Percorso",
       xp5_link:"Vedi le iniziative",
-      xp5_desc:"Su richiesta di alcuni colleghi li ho affiancati, in gruppo e singolarmente, nell’uso dell’AI: i loro tool in produzione sono migliorati e sono arrivate nuove richieste. Sono Social Ambassador di InfoCamere e nel 2026 ho fornito advisory sull’AI al CEO di DABO.",
+      xp5_desc:"Su richiesta di alcuni colleghi li ho affiancati, in gruppo e singolarmente, nell’uso dell’AI: i loro tool in produzione sono migliorati, più strumenti sono stati riuniti in uno solo e sono arrivate nuove richieste. Sono Social Ambassador di InfoCamere e nel 2026 ho fornito advisory sull’AI al CEO di DABO.",
       xp5_title:"Advisory e adozione dell’AI",
       xp5_period:"Dal 2025",
       xp4_link:"Leggi il progetto RAG",
@@ -53,7 +53,7 @@
       xp1_desc:"In contatto diretto con il cliente, in un settore molto regolamentato.",
       xp1_title:"Consulente assicurativo, Assicurazioni Generali",
       xp1_period:"Ott 2020 – Feb 2022",
-      adv_internal_desc:"Su loro richiesta, in incontri di gruppo e individuali, ho mostrato come usare i propri strumenti di lavoro e l’AI per rendere più efficaci i tool in produzione. Dopo gli incontri i loro tool sono migliorati e sono arrivate nuove richieste.",
+      adv_internal_desc:"Su loro richiesta, in incontri di gruppo e individuali, ho mostrato come usare i propri strumenti di lavoro e l’AI per rendere più efficaci i tool in produzione. Dopo gli incontri i loro tool sono migliorati, più strumenti sono stati riuniti in uno solo e sono arrivate nuove richieste.",
       adv_internal_title:"Consulenza interna sull’AI per alcuni colleghi",
       adv_internal_meta:"Dal 2025",
       advisory_internal_label:"Advisory interna",
@@ -77,7 +77,7 @@
       hero_intro:[
         [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management. Tra queste, un sistema RAG che sulla gestione di una criticità fa risparmiare ore e sull’analisi post evento fa risparmiare tempo, facilitando l’accesso allo storico ed alla conoscenza aziendali."}],
         [{t:"Del RAG sono responsabile: ho scelto lo strumento e oggi lo usa un’intera Unità Operativa, alcuni persone compreso il Responsabile."}],
-        [{t:"Lavoro con colleghi di altre Unità e con il middle e top management, anche su iniziative interne per diffondere la cultura AI. Su richiesta di alcuni colleghi li ho affiancati nell’uso dell’AI: i loro tool sono migliorati e sono arrivate nuove richieste."}]
+        [{t:"Lavoro con colleghi di altre Unità e con il middle e top management, anche su iniziative interne per diffondere la cultura AI. Su richiesta di alcuni colleghi li ho affiancati nell’uso dell’AI: i loro tool sono migliorati, più strumenti sono stati riuniti in uno solo e sono arrivate nuove richieste."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | Responsabile del RAG aziendale, InfoCamere",
@@ -219,7 +219,7 @@
       experience_lead:"From client-facing work to InfoCamere’s Service Desk, to owning the enterprise RAG and advising on AI.",
       sec_percorso:"Experience",
       xp5_link:"See the initiatives",
-      xp5_desc:"At the request of several colleagues I supported them, in groups and one to one, in using AI: their production tools improved and new requests came in. I am an InfoCamere Social Ambassador, and in 2026 I advised the CEO of DABO on AI.",
+      xp5_desc:"At the request of several colleagues I supported them, in groups and one to one, in using AI: their production tools improved, several tools were merged into one and new requests came in. I am an InfoCamere Social Ambassador, and in 2026 I advised the CEO of DABO on AI.",
       xp5_title:"AI advisory and adoption",
       xp5_period:"Since 2025",
       xp4_link:"Read the RAG project",
@@ -235,7 +235,7 @@
       xp1_desc:"Working directly with clients in a heavily regulated sector.",
       xp1_title:"Insurance advisor, Assicurazioni Generali",
       xp1_period:"Oct 2020 – Feb 2022",
-      adv_internal_desc:"At their request, in group and one-to-one sessions, I showed how to use their own work tools and AI to make production tools more effective. Afterwards their tools improved and new requests came in.",
+      adv_internal_desc:"At their request, in group and one-to-one sessions, I showed how to use their own work tools and AI to make production tools more effective. Afterwards their tools improved, several tools were merged into one and new requests came in.",
       adv_internal_title:"Internal AI advisory for several colleagues",
       adv_internal_meta:"Since 2025",
       advisory_internal_label:"Internal advisory",
@@ -259,7 +259,7 @@
       hero_intro:[
         [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs. These include a RAG system that saves hours when handling an incident and time in post-incident analysis, making company history and knowledge easier to reach."}],
         [{t:"I’m responsible for the RAG: I chose the tool, and today an entire Operating Unit uses it, several people including its Manager."}],
-        [{t:"I work with colleagues from other units and with middle and top management, including on internal initiatives to spread AI culture. At the request of several colleagues I supported them in using AI: their tools improved and new requests came in."}]
+        [{t:"I work with colleagues from other units and with middle and top management, including on internal initiatives to spread AI culture. At the request of several colleagues I supported them in using AI: their tools improved, several tools were merged into one and new requests came in."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Enterprise RAG Lead, InfoCamere",
