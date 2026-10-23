@@ -80,8 +80,12 @@ for(const viewport of sizes){
   test('contacts open in a dialog with phone and LinkedIn only',async({page})=>{
    await page.goto('/');
    await revealBar(page);
-   await page.locator('.contact-trigger').first().click();
+   await expect(page.locator('.topbar-contact')).toHaveCount(0);
+   await page.locator('.menu-toggle').click();
+   await expect(page.locator('#siteMenu')).toBeVisible();
+   await page.locator('#siteMenu .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
+   await expect(page.locator('#siteMenu')).toBeHidden();
    await expect(page.locator('#cmEmail')).toHaveCount(0);
    await page.locator('#cmPhone .reveal-btn').click();
    await expect(page.locator('#cmPhone a')).toHaveText('+39 347 908 1966');
@@ -109,12 +113,15 @@ for(const viewport of sizes){
     await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
     await expect(page.locator('.hero-portrait')).toBeHidden();
    });
-   test('mobile nav opens via the toggle and links work',async({page})=>{
+   test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
     await page.goto('/iniziative.html');
-    const navLink=page.locator('.desktop-nav a[href="progetti.html"]');
-    await expect(navLink).toBeHidden();
-    await page.locator('.nav-toggle').click();
-    await expect(navLink).toBeVisible();
+    await expect(page.locator('.desktop-nav')).toBeHidden();
+    await page.locator('.menu-toggle').click();
+    await expect(page.locator('#siteMenu a[href="progetti.html"]')).toBeVisible();
+    await expect(page.locator('#siteMenu a[aria-current="page"]')).toHaveAttribute('href','iniziative.html');
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#siteMenu')).toBeHidden();
+    await expect(page.locator('.menu-toggle')).toBeFocused();
    });
   }
  });
