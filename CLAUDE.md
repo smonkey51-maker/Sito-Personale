@@ -14,8 +14,10 @@ tool di terze parti: basta leggere il codice):
 
 - **Colori**: niente gradienti viola/blu da default Tailwind, niente
   nero/bianco puro per il testo — palette e neutri reali.
-  Niente viola/indigo, niente crema con terracotta. Accento sotto il 5%
-  di una schermata e non su titoli, icone, puntini o bordi. Contrasto
+  Niente viola/indigo, niente crema con terracotta. L'arancione di
+  accento va sui titoli di pagina e di sezione, sul titolo della home
+  e su «Torna alla home» (scelta dell'autore); altrove con parsimonia
+  e mai su icone, puntini o bordi. Contrasto
   ≥4.5:1 per il corpo, ≥3:1 per il testo grande; il testo secondario
   non scende sotto questi valori. Superfici distinte da un passo di
   tono, non da linee o ombre.
