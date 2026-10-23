@@ -71,51 +71,40 @@
     <p class="page-lead" data-i18n="c2_lead">Fine-tuning di modelli open su domande specifiche relative a InfoCamere, seguito da prove di esecuzione in locale.</p>
   </header>
   <div class="page-body">
-    <section class="page-block">
-      <h2 class="page-block-label" data-i18n="case_context_label">Contesto e vincoli</h2>
-      <div class="page-block-body">
-        <p data-i18n="c2_problem">Sperimentazione interna informale per valutare modelli specializzati su domande relative a InfoCamere. Le motivazioni erano esplorare un maggiore controllo sui dati, minori costi potenziali e meno dipendenza da fornitori esterni.</p>
-      </div>
-    </section>
-    <section class="page-block page-block-wide">
-      <h2 class="page-block-label" data-i18n="case_flow_label">Come si è evoluto</h2>
-      <div class="page-block-body">
-        <ol class="flow">
-        <li class="flow-step">
-          <span class="flow-kicker" data-i18n="local_step1_kicker">Preparazione</span>
-          <span class="flow-title" data-i18n="local_step1_title">Dataset controllati</span>
-          <span class="flow-desc" data-i18n="local_step1_desc">Dati preparati con il gruppo per le prove.</span>
-        </li>
-        <li class="flow-step">
-          <span class="flow-kicker" data-i18n="local_step2_kicker">Adattamento</span>
-          <span class="flow-title" data-i18n="local_step2_title">Qwen, Gemma e Llama</span>
-          <span class="flow-desc" data-i18n="local_step2_desc">Fine-tuning con Unsloth in un ambiente aziendale.</span>
-        </li>
-        <li class="flow-step">
-          <span class="flow-kicker" data-i18n="local_step3_kicker">Esecuzione</span>
-          <span class="flow-title" data-i18n="local_step3_title">Ollama e demo locali</span>
-          <span class="flow-desc" data-i18n="local_step3_desc">Inferenza e dimostrazioni in locale.</span>
-        </li>
-        </ol>
-      </div>
-    </section>
-    <section class="page-block">
-      <h2 class="page-block-label" data-i18n="case_solution_label">Soluzione</h2>
-      <div class="page-block-body">
+    <section class="lab-section lab-how" aria-labelledby="labHowTitle">
+      <div class="lab-how-text">
+        <h2 class="lab-heading" id="labHowTitle" data-i18n="case_how_label">Come funziona</h2>
         <p data-i18n="c2_solution">Ho selezionato modelli Qwen, Gemma e Llama tramite Hugging Face. Con dataset specifici preparati insieme al gruppo ho svolto il fine-tuning con Unsloth in un ambiente aziendale, poi ho eseguito i modelli in locale con Ollama.</p>
+        <p class="lab-note" data-i18n="local_how_note">Lo schema riassume le fasi della sperimentazione, senza riferimenti a configurazioni interne.</p>
       </div>
+      <ol class="lab-flow" aria-label="Fasi della sperimentazione" data-i18n-aria="local_flow_aria">
+          <li class="lab-stage">
+            <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" focusable="false"><path class="o s" d="M56 6h26l8 8v50H56z"/><path class="s" d="M82 6v8h8"/><path class="o" d="M44 14h26l8 8v50H44z"/><path d="M70 14v8h8"/><path class="o" d="M32 24h30l8 8v56H32z"/><path d="M62 24v8h8"/><path class="s" d="M40 44h22M40 52h18M40 60h22M40 68h14"/></svg>
+            <p class="lab-caption"><span data-i18n="local_step1_title">Dataset controllati</span> <span class="lab-caption-desc" data-i18n="local_step1_desc">Dati preparati con il gruppo per le prove.</span></p>
+          </li>
+          <li class="lab-stage">
+            <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" focusable="false"><rect class="o" x="40" y="6" width="40" height="88" rx="2"/><path class="s" d="M50 22h20M50 32h20M50 52h20M50 62h20M50 72h14"/><path class="h" d="M50 42h20"/></svg>
+            <p class="lab-caption"><span data-i18n="local_step2_title">Qwen, Gemma e Llama</span> <span class="lab-caption-desc" data-i18n="local_step2_desc">Fine-tuning con Unsloth in un ambiente aziendale.</span></p>
+          </li>
+          <li class="lab-stage">
+            <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" focusable="false"><rect class="o" x="22" y="14" width="76" height="52" rx="2"/><path d="M12 76h96l-6 8H18z"/><path class="s" d="M34 30h40M34 50h28"/><path class="h" d="M34 40h52"/></svg>
+            <p class="lab-caption"><span data-i18n="local_step3_title">Ollama e demo locali</span> <span class="lab-caption-desc" data-i18n="local_step3_desc">Inferenza e dimostrazioni in locale.</span></p>
+          </li>
+      </ol>
     </section>
-    <section class="page-block">
-      <h2 class="page-block-label" data-i18n="case_results_label">Risultati e limiti</h2>
-      <div class="page-block-body">
+    <div class="lab-section lab-pair">
+      <section aria-labelledby="labWhyTitle">
+        <h2 class="lab-heading" id="labWhyTitle" data-i18n="local_why_label">Perché farlo</h2>
+        <p data-i18n="c2_problem">Sperimentazione interna informale per valutare modelli specializzati su domande relative a InfoCamere. Le motivazioni erano esplorare un maggiore controllo sui dati, minori costi potenziali e meno dipendenza da fornitori esterni.</p>
+      </section>
+      <section aria-labelledby="labResultsTitle">
+        <h2 class="lab-heading" id="labResultsTitle" data-i18n="case_results_label">Risultati e limiti</h2>
         <p data-i18n="c2_summary">Nelle prove esplorative, le risposte miglioravano rispetto ai modelli di partenza e risultavano corrette nella maggior parte delle situazioni osservate. Restavano informazioni inventate, meno frequenti nei modelli più performanti. Queste osservazioni non costituiscono una misura di accuratezza generalizzabile. La sperimentazione si è conclusa senza un piano aziendale di adozione.</p>
-      </div>
-    </section>
-    <section class="page-block">
-      <h2 class="page-block-label" data-i18n="case_learning_label">Cosa ho imparato</h2>
-      <div class="page-block-body">
-        <p data-i18n="c2_learning">Il fine-tuning ha migliorato le risposte sui temi provati, ma non ha eliminato le informazioni inventate. Il limite emerso è stato distinguere una risposta plausibile da una corretta. Per valutare un impiego operativo servirebbero prove ripetibili, criteri di accettazione e una verifica delle risposte rispetto alle fonti.</p>
-      </div>
+      </section>
+    </div>
+    <section class="lab-section" aria-labelledby="labLearnTitle">
+      <h2 class="lab-heading" id="labLearnTitle" data-i18n="case_learning_label">Cosa ho imparato</h2>
+      <p data-i18n="c2_learning">Il fine-tuning ha migliorato le risposte sui temi provati, ma non ha eliminato le informazioni inventate. Il limite emerso è stato distinguere una risposta plausibile da una corretta. Per valutare un impiego operativo servirebbero prove ripetibili, criteri di accettazione e una verifica delle risposte rispetto alle fonti.</p>
     </section>
   </div>
   <nav class="page-next" aria-label="Continua a leggere" data-i18n-aria="next_label">

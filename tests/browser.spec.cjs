@@ -75,6 +75,12 @@ for(const viewport of sizes){
    }
    await expect(page.locator('.how-note')).toBeVisible();
   });
+  test('local AI page: three-stage diagram and every section visible',async({page})=>{
+   await page.goto('/ai-in-locale.html');
+   await expect(page.locator('.lab-flow .lab-stage')).toHaveCount(3);
+   for(const key of ['c2_solution','c2_problem','c2_summary','c2_learning']) await expect(page.locator('[data-i18n="'+key+'"]')).toBeVisible();
+   await expect(page.locator('.lab-heading')).toHaveCount(4);
+  });
   test('dark theme and portrait loading',async({page})=>{
    await page.goto('/');
    await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
