@@ -1,5 +1,5 @@
 // Build di produzione: copia il sito statico in dist/, minificando
-// style.css, pages.css e script.js. Gli HTML restano invariati.
+// i CSS e script.js. Gli HTML restano invariati.
 const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
@@ -32,6 +32,11 @@ execSync(
 
 execSync(
   `npx cleancss -o dist/pages.css pages.css`,
+  { cwd: root, stdio: "inherit" }
+);
+
+execSync(
+  `npx cleancss -o dist/portfolio-redesign.css portfolio-redesign.css`,
   { cwd: root, stdio: "inherit" }
 );
 
