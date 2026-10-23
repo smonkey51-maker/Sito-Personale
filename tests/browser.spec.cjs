@@ -1,6 +1,6 @@
 const {test,expect}=require('@playwright/test');
 const sizes=[{name:'mobile',width:375,height:812},{name:'tablet',width:768,height:1024},{name:'desktop',width:1440,height:900}];
-const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','/progetti.html','/privacy.html'];
+const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','/progetti.html','/percorso.html','/privacy.html'];
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
