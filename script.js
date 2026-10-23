@@ -1,6 +1,7 @@
 (function(){
   var i18n = {
     it: {
+      local_how_privacy:"Le richieste vengono elaborate in locale, senza inviare dati all’esterno.",
       local_flow_aria:"Fasi della sperimentazione",
       local_how_note:"Lo schema riassume le fasi della sperimentazione, senza riferimenti a configurazioni interne.",
       local_why_label:"Perché farlo",
@@ -178,6 +179,7 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
+      local_how_privacy:"Requests are processed locally, without sending data outside.",
       local_flow_aria:"Stages of the experiment",
       local_how_note:"The diagram summarises the stages of the experiment, without references to internal configurations.",
       local_why_label:"Why do it",
