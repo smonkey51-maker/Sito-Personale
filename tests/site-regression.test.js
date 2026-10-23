@@ -27,7 +27,7 @@ for (const file of pages) {
   assert(!/<script>/.test(html), file + ': inline scripts are not allowed by the CSP');
   assert(!/<style/.test(html), file + ': inline styles are not allowed by the CSP');
   assert(!/\sstyle="/.test(html), file + ': style attributes are not allowed by the CSP');
-  assert(html.includes('href="mailto:nicolo.forcolin@infocamere.it"'), file + ': requested professional email missing');
+  assert(!html.includes('infocamere.it'), file + ': work email must not be published');
   assert(!html.includes('id="cmEmail"'), file + ': email row must stay removed');
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
