@@ -391,7 +391,7 @@ body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625
 
 /* Hero text: the name, then a short paragraph about me (script.js keeps it
    translated). */
-.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 20px;max-width:min(30ch,44vw);color:var(--accent)}
+.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 20px;max-width:min(30ch,44vw);color:var(--ink)}
 .hero-intro{font-family:var(--serif);font-size:1.125rem;line-height:1.55;margin:0 0 36px;max-width:min(54ch,48vw);color:var(--ink)}
 .hero-intro p{margin:0 0 1em}
 .hero-intro p:last-child{margin-bottom:0}
