@@ -75,9 +75,9 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_greeting:"Ciao, sono Nicolò Forcolin.",
       hero_intro:[
-        [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management. Tra queste, un sistema RAG che sulla gestione di una criticità fa risparmiare 4 ore e sull’analisi post evento fa risparmiare 2 ore e mezza, facilitando l’accesso allo storico ed alla conoscenza aziendali."}],
-        [{t:"Del RAG sono responsabile: ho scelto lo strumento e oggi lo usa un’intera Unità Operativa, 13 persone compreso il Responsabile."}],
-        [{t:"Lavoro con colleghi di altre Unità e con il middle e top management, anche su iniziative interne per diffondere la cultura AI. Su richiesta di 35 colleghi li ho affiancati nell’uso dell’AI: i loro tool sono migliorati, più strumenti sono stati riuniti in uno solo e sono arrivate nuove richieste."}]
+        [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management."}],
+        [{t:"Sono responsabile del RAG aziendale: ho scelto lo strumento e oggi lo usa un’intera Unità Operativa, 13 persone compreso il Responsabile. Sulla gestione di una criticità fa risparmiare 4 ore e sull’analisi post evento 2 ore e mezza."}],
+        [{t:"Lavoro anche con colleghi di altre Unità: su richiesta di 35 colleghi li ho affiancati nell’uso dell’AI e più strumenti sono stati riuniti in uno solo."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | Responsabile del RAG aziendale, InfoCamere",
@@ -257,9 +257,9 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_greeting:"Hi, I’m Nicolò Forcolin.",
       hero_intro:[
-        [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs. These include a RAG system that saves 4 hours when handling an incident and 2.5 hours in post-incident analysis, making company history and knowledge easier to reach."}],
-        [{t:"I’m responsible for the RAG: I chose the tool, and today an entire Operating Unit uses it, 13 people including its Manager."}],
-        [{t:"I work with colleagues from other units and with middle and top management, including on internal initiatives to spread AI culture. At the request of 35 colleagues I supported them in using AI: their tools improved, several tools were merged into one and new requests came in."}]
+        [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs."}],
+        [{t:"I’m responsible for the enterprise RAG: I chose the tool, and today an entire Operating Unit uses it, 13 people including its Manager. It saves 4 hours when handling an incident and 2.5 hours in post-incident analysis."}],
+        [{t:"I also work with colleagues from other units: at the request of 35 colleagues I supported them in using AI, and several tools were merged into one."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Enterprise RAG Lead, InfoCamere",
