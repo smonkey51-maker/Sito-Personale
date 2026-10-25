@@ -430,7 +430,9 @@
   var LANG_KEY = "nfLang";
   var savedLang = null;
   try{ savedLang = localStorage.getItem(LANG_KEY); }catch(e){}
-  var lang = (savedLang === "en") ? "en" : "it";
+  /* Senza una scelta salvata, chi non ha il browser in italiano vede il sito in inglese. */
+  var browserLang = ((navigator.languages && navigator.languages[0]) || navigator.language || "it").toLowerCase();
+  var lang = (savedLang === "en" || savedLang === "it") ? savedLang : (browserLang.indexOf("it") === 0 ? "it" : "en");
   /* Ogni pagina dichiara data-page sul body; la home usa le chiavi senza suffisso. */
   var page = document.body.getAttribute("data-page");
   var suffix = (page && page !== "home") ? "_" + page : "";
