@@ -138,3 +138,12 @@ for(const viewport of sizes){
   }
  });
 }
+test.describe('browser language',()=>{
+ test.use({locale:'en-US',viewport:{width:375,height:812}});
+ test('a non-Italian browser opens the site in English with an arrow on the enter button',async({page})=>{
+  await page.goto('/');
+  await expect(page.locator('.scroll-btn')).toHaveText('Enter the site');
+  await expect(page.locator('.scroll-btn svg')).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('lang','en');
+ });
+});
