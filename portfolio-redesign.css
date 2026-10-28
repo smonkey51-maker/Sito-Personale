@@ -49,7 +49,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(hover:hover) and (pointer:fine){.contact-close:hover{color:var(--accent-hover)}}
 .contact-dialog-note{color:var(--ink-soft);font-size:.92rem;margin:12px 0 24px}
 .contact-dialog .colophon-links{display:block}
-.contact-dialog .cm-row{display:flex;flex-wrap:wrap;gap:8px 18px;padding:16px 0}
+.contact-dialog .cm-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:8px 0}
+.contact-dialog .cm-v{display:flex;align-items:center;min-height:44px}
 .contact-dialog .cm-k{min-width:75px}
 .contact-dialog a,.contact-dialog button{color:var(--accent)}
 @media(max-width:820px){
