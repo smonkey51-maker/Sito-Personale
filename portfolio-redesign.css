@@ -197,7 +197,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Final mobile image treatment: flush crop, controlled headroom, brighter midtones. */
 @media(max-width:700px){
  .hero-inner{width:100%;max-width:none;margin:0}
- .hero-photo-frame{left:auto;right:auto;margin:0;width:100%;max-width:100%;height:clamp(350px,105vw,580px);background:#17161B}
+ .hero-photo-frame{left:auto;right:auto;margin:0;width:100%;max-width:100%;height:clamp(350px,105vw,580px)}
  .hero-photo-frame picture{width:100%;height:100%}
  .hero-photo-frame .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:brightness(1.22) contrast(1.04)}
 }
@@ -275,23 +275,30 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 }
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
-:root[data-theme="dark"]{--bg:#111014;--bg-2:#111014;--line:#29262D}
+:root[data-theme="dark"]{--bg:#1E2023;--bg-2:#1E2023;--line:#35383C}
 :root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon,:root[data-theme="dark"] .hero-filmstrip,:root[data-theme="dark"] .filmstrip-tile{background:var(--bg)}
 :root[data-theme="dark"] .filmstrip-tile{border-color:var(--line)}
 :root[data-theme="dark"] .footer-note{border-color:var(--line)}
-@media(hover:hover) and (pointer:fine){:root[data-theme="dark"] .filmstrip-tile:hover{background:#1C1A20}}
-:root[data-theme="dark"] .filmstrip-tile:focus-visible{background:#1C1A20}
+@media(hover:hover) and (pointer:fine){:root[data-theme="dark"] .filmstrip-tile:hover{background:#272A2E}}
+:root[data-theme="dark"] .filmstrip-tile:focus-visible{background:#272A2E}
+/* The portrait's near-black backdrop is darker than the anthracite page.
+   Desktop: the photo's edges fade out into the page, so no darker box shows.
+   Mobile: the full-screen photo lets the page colour show through its
+   darkest areas instead. */
+.hero-photo-frame{background:var(--bg)}
+@media(min-width:701px){.hero-photo-frame .hero-portrait{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 18%,#000 76%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 18%,#000 76%,transparent 100%);mask-composite:intersect}}
+@media(max-width:700px){.hero-photo-frame .hero-portrait{mix-blend-mode:lighten}}
 /* Keep portrait fades calibrated to the new, unified background. */
 :root[data-theme="dark"] .hero-photo-frame::after{background:
- linear-gradient(to right,#111014 0%,rgba(17,16,20,.96) 12%,rgba(17,16,20,.76) 24%,rgba(17,16,20,.36) 35%,rgba(17,16,20,.08) 45%,transparent 54%),
- linear-gradient(to bottom,rgba(17,16,20,.26) 0%,transparent 18%,transparent 74%,rgba(17,16,20,.12) 83%,rgba(17,16,20,.55) 94%,#111014 100%)}
-@media(max-width:700px){:root[data-theme="dark"] .hero-photo-frame::after{background:linear-gradient(to right,#111014 0%,rgba(17,16,20,.28) 7%,transparent 20%,transparent 80%,rgba(17,16,20,.28) 93%,#111014 100%),linear-gradient(to bottom,transparent 68%,rgba(17,16,20,.22) 82%,#111014 100%)}}
+ linear-gradient(to right,#1E2023 0%,rgba(30,32,35,.96) 12%,rgba(30,32,35,.76) 24%,rgba(30,32,35,.36) 35%,rgba(30,32,35,.08) 45%,transparent 54%),
+ linear-gradient(to bottom,rgba(30,32,35,.26) 0%,transparent 18%,transparent 74%,rgba(30,32,35,.12) 83%,rgba(30,32,35,.55) 94%,#1E2023 100%)}
+@media(max-width:700px){:root[data-theme="dark"] .hero-photo-frame::after{background:linear-gradient(to right,#1E2023 0%,rgba(30,32,35,.28) 7%,transparent 20%,transparent 80%,rgba(30,32,35,.28) 93%,#1E2023 100%),linear-gradient(to bottom,transparent 68%,rgba(30,32,35,.22) 82%,#1E2023 100%)}}
 
 
 /* Keep the original header dimensions; size the lower strip to match it. */
 :root{--action-rail-height:86px}
-.hero-filmstrip{height:var(--action-rail-height);min-height:0;align-items:stretch}
-.filmstrip-tile{box-sizing:border-box;height:100%;min-height:0;align-self:stretch}
+.hero-filmstrip{min-height:var(--action-rail-height);align-items:stretch}
+.filmstrip-tile{box-sizing:border-box;min-height:0;align-self:stretch}
 .filmstrip-tile{justify-content:center;padding-top:8px;padding-bottom:8px}
 
 /* Exact optical centering in orange rails: avoid inherited grid/flex margins. */
