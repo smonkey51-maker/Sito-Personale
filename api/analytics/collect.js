@@ -19,6 +19,7 @@ module.exports=async(req,res)=>{
    redis(['PFADD','nf:unique:'+day,visitor]),
    redis(['HINCRBY','nf:pages:'+day,path,1]),
   ]);
+  await Promise.all(['nf:views:','nf:unique:','nf:pages:'].map(prefix=>redis(['EXPIRE',prefix+day,90*86400])));
   return res.status(204).end();
  }catch(e){return res.status(503).end();}
 };
