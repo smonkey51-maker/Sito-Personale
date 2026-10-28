@@ -73,7 +73,7 @@
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
-      hero_greeting:"Ciao, sono Nicolò Forcolin.",
+      hero_greeting:"Ciao, sono Nicolò Forcolin",
       hero_intro:[
         [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management."}],
         [{t:"Sono responsabile di un RAG aziendale: ho scelto lo strumento e oggi lo usa un’intera Unità Operativa, 13 persone compreso il Responsabile. Sulla gestione di una criticità fa risparmiare 4 ore e sull’analisi post evento 2 ore e mezza."}],
@@ -255,7 +255,7 @@
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
-      hero_greeting:"Hi, I’m Nicolò Forcolin.",
+      hero_greeting:"Hi, I’m Nicolò Forcolin",
       hero_intro:[
         [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs."}],
         [{t:"I’m responsible for an enterprise RAG: I chose the tool, and today an entire Operating Unit uses it, 13 people including its Manager. It saves 4 hours when handling an incident and 2.5 hours in post-incident analysis."}],
