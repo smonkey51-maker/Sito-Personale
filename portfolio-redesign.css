@@ -199,7 +199,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{width:100%;max-width:none;margin:0}
  .hero-photo-frame{left:auto;right:auto;margin:0;width:100%;max-width:100%;height:clamp(350px,105vw,580px);background:#17161B}
  .hero-photo-frame picture{width:100%;height:100%}
- .hero-photo-frame .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 32%}
+ .hero-photo-frame .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:brightness(1.22) contrast(1.04)}
 }
 
 /* Desktop: use one viewport-aligned rail, with a soft portrait-to-page fade. */
@@ -226,7 +226,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-photo-frame::after{
   background:linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.88) 16%,rgba(23,22,27,.28) 38%,transparent 55%),linear-gradient(to bottom,transparent 88%,rgba(23,22,27,.25) 100%);
  }
- .hero-photo-frame .hero-portrait{object-position:right center}
+ .hero-photo-frame .hero-portrait{object-position:right center;filter:brightness(1.15) contrast(1.04)}
 }
 
 /* Desktop final: progressive feathering around the portrait, not over the face. */
