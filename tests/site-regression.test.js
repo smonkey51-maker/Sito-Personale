@@ -70,7 +70,7 @@ for (const language of ['it', 'en']) assert(dictionaries[language].includes('her
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 assert(home.includes('class="hero-filmstrip"'), 'Hero filmstrip must link to the real pages');
 assert(home.includes('srcset="photo.webp?v=24"'), 'New portrait must be displayed');
-assert(home.includes('srcset="photo-mobile.webp?v=24"'), 'Mobile portrait crop must be displayed');
+assert(home.includes('srcset="photo-mobile.webp?v=25"'), 'Mobile portrait crop must be displayed');
 assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by pages');
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');
