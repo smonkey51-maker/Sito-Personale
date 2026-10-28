@@ -15,7 +15,7 @@ body{font-size:1.03rem;line-height:1.6}
 h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .topbar{background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
 .topbar-inner{min-height:86px;gap:32px}
-.site-name{font-family:var(--display-serif);font-weight:500;font-size:1.5rem;letter-spacing:-.02em}
+.site-name{font-family:var(--signature);font-weight:400;font-size:1.75rem}
 .desktop-nav a{font-size:.9rem;font-weight:400;letter-spacing:.01em}
 .hero{padding:100px 0 125px;overflow:hidden}
 .hero-btn{border-radius:12px;padding:15px 24px;font-size:.94rem}
@@ -68,7 +68,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .utilbar{margin-left:auto;display:flex;align-items:center;gap:12px}
 @media(max-width:520px){
  .topbar-inner{min-height:64px;padding:12px 20px;gap:10px;flex-wrap:nowrap}
- .site-name{font-size:1.2rem}
+ .site-name{font-size:1.4rem}
  .utilbar{gap:8px}
 }
 
@@ -163,6 +163,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* High-contrast editorial serif inspired by the supplied Vignelli reference. */
 :root{--display-serif:"Bodoni Moda","Times New Roman",serif}
+/* Handwritten signature, only for my name in the top bar and the home greeting. */
+:root{--signature:"Destiny Signature","Bodoni Moda",serif}
 .filmstrip-title{font-family:var(--display-serif);letter-spacing:-.025em}
 
 
@@ -386,17 +388,17 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    pixels once the scrollbar shows. Clip that overflow on desktop. */
 @media(min-width:701px){body{overflow-x:clip}}
 
-/* Language switch in the same display serif as the site name. */
+/* Language switch in the display serif of the titles. */
 body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625rem}
 
 /* Hero text: the name, then a short paragraph about me (script.js keeps it
    translated). */
-.hero-name{font-family:var(--display-serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.75rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 20px;max-width:min(30ch,44vw);color:var(--ink)}
+.hero-name{font-family:var(--signature);font-weight:400;font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.35;margin:0 0 20px;max-width:min(30ch,44vw);color:var(--ink)}
 .hero-intro{font-family:var(--serif);font-size:1.125rem;line-height:1.55;margin:0 0 36px;max-width:min(54ch,48vw);color:var(--ink)}
 .hero-intro p{margin:0 0 1em}
 .hero-intro p:last-child{margin-bottom:0}
 .hero-intro a{color:inherit;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.06em}
-@media(max-width:700px){.hero-name{font-size:clamp(1.5rem,6.4vw,2.1rem);max-width:none}.hero-intro{max-width:62ch;margin-bottom:28px}}
+@media(max-width:700px){.hero-name{font-size:clamp(2rem,8vw,2.65rem);max-width:none}.hero-intro{max-width:62ch;margin-bottom:28px}}
 
 /* Motion: the portrait is revealed once when the page loads, and browsers that
    support cross-document view transitions fade between pages while the top bar
@@ -424,10 +426,10 @@ body .lang-btn{font-family:var(--display-serif);font-weight:500;font-size:1.0625
  .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u))}
  .desktop-nav a{font-size:calc(14.4*var(--u))}
  body .lang-btn{font-size:calc(15*var(--u))}
- body .site-name{font-size:calc(24*var(--u))}
+ body .site-name{font-size:calc(28*var(--u))}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
- .hero-name{font-size:calc(44*var(--u));margin-bottom:calc(20*var(--u))}
+ .hero-name{font-size:calc(56*var(--u));margin-bottom:calc(20*var(--u))}
  .hero-intro{font-size:calc(18*var(--u));margin-bottom:calc(36*var(--u))}
  .hero-overlay .hero-btn{font-size:calc(14.08*var(--u))!important;padding:calc(13*var(--u)) calc(18*var(--u))!important;border-radius:calc(6*var(--u))!important;gap:calc(12*var(--u))}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}

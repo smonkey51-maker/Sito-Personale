@@ -48,6 +48,7 @@ Il sito usa una direzione monocromatica sobria, con priorità ai progetti concre
 ### Tipografia e comportamento
 
 - Sans di sistema (Segoe UI / fallback), Source Serif 4 dove già previsto. Non usare Inter.
+- Destiny Signature (licenza demo, uso non commerciale) solo come firma: il nome nella barra in alto e il saluto in home. Gli altri titoli restano in Bodoni Moda.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
 - Navigazione unica, senza indici duplicati.
 - I dettagli espandibili devono funzionare anche da tastiera.
