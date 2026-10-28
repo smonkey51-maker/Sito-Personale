@@ -7,7 +7,6 @@
    niente connessioni a Google Fonts prima di mostrare i testi. */
 @font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/bodoni-moda-latin.woff2") format("woff2")}
 @font-face{font-family:"Destiny Signature";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/destiny-signature-latin.woff2") format("woff2")}
-@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/source-serif-4-latin.woff2") format("woff2")}
 
 :root{
   color-scheme:light;
@@ -22,7 +21,7 @@
   --accent-alt-hover:#805600;
   --on-accent:#FFFFFF;
 
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --serif:"Bodoni Moda","Times New Roman",serif;
   --sans:"Segoe UI",Tahoma,"Helvetica Neue",Arial,sans-serif;
 
   --content-w:760px;
@@ -61,7 +60,7 @@ a{color:inherit;text-decoration:none}
   position:fixed;left:16px;top:10px;z-index:1000;
   transform:translateY(-160%);
   background:var(--ink);color:var(--bg);
-  padding:10px 16px;min-height:44px;box-sizing:border-box;font-family:var(--sans);font-weight:600;font-size:.875rem;
+  padding:10px 16px;min-height:44px;box-sizing:border-box;font-family:var(--sans);font-weight:600;font-size:.9375rem;
 }
 .skip-link:focus{transform:none;transition:transform var(--dur) var(--ease)}
 
