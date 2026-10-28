@@ -29,7 +29,7 @@ for(const viewport of sizes){
   });
   test('filmstrip and hero CTA lead to the project pages',async({page})=>{
    await page.goto('/');
-   await page.locator('.hero-btn.solid').first().click();
+   await page.locator('.hero-link').first().click();
    await expect(page).toHaveURL(/rag-aziendale\.html$/);
    await expect(page.locator('h1')).toHaveText('RAG aziendale');
    if(viewport.width>700){
@@ -38,9 +38,9 @@ for(const viewport of sizes){
     await expect(page.locator('h1')).toHaveText('Sperimentazione AI in locale');
    }
   });
-  test('hero button opens the projects and initiatives page',async({page})=>{
+  test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
-   await page.locator('.hero-btn.solid').nth(1).click();
+   await page.locator('.hero-link').nth(1).click();
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
