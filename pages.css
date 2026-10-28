@@ -60,6 +60,8 @@
   margin: 0 0 28px;
   color: var(--ink);
 }
+/* Narrow phones: long titles ("Enterprise Knowledge Retrieval") stay on two lines. */
+@media (max-width: 520px) { .page-title { font-size: max(1.75rem, 8.5vw); } }
 .page-lead {
   font-family: var(--sans);
   font-size: clamp(1.125rem, 1.8vw, 1.5rem);
@@ -198,7 +200,7 @@
 .page-block-body .item + p a, .page-block-body .item-link a { text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .item-meta { font-family: var(--sans); font-size: 0.9375rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
 .item-title { font-family: var(--serif); font-size: 1.3125rem; font-weight: 600; line-height: 1.35; margin: 0 0 8px; color: var(--ink); }
-.item-title a { display: inline-block; padding-block: 6px; color: inherit; text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
+.item-title a { display: inline-block; padding-block: 8px; color: inherit; text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .item-title a:active { color: var(--accent); text-decoration-color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .item-title a:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 
