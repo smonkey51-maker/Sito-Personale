@@ -40,7 +40,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .contact-dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
 .contact-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .contact-dialog-head h2{font-size:1.65rem;margin:0}
-.contact-close{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:50%;width:42px;height:42px;font-size:1.5rem;cursor:pointer}
+/* Close button: a bare × in the dialog's top-right corner, 44px to tap. */
+.contact-close{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:transparent;font-size:1.75rem;line-height:1;cursor:pointer;transition:transform var(--dur) var(--ease),color var(--dur) var(--ease)}
+.contact-close:active{transform:scale(.97);color:var(--accent-hover)}
+@media(hover:hover) and (pointer:fine){.contact-close:hover{color:var(--accent-hover)}}
 .contact-dialog-note{color:var(--ink-soft);font-size:.92rem;margin:12px 0 24px}
 .contact-dialog .colophon-links{display:block}
 .contact-dialog .cm-row{display:flex;flex-wrap:wrap;gap:8px 18px;padding:16px 0;border-top:1px solid var(--line)}
