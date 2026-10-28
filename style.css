@@ -131,7 +131,7 @@ main{padding-bottom:40px}
 .colophon{background:var(--bg-2);border-top:1px solid var(--line);margin-top:72px;padding:48px 0 28px;scroll-margin-top:72px}
 .colophon-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px 64px}
 .colophon-links{min-width:0}
-.cm-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.cm-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:12px 0}
 .cm-k{font-size:.875rem;font-weight:600;color:var(--ink-soft)}
 .cm-v{font-size:.875rem;overflow-wrap:anywhere}
 .cm-v a{color:var(--accent);text-underline-offset:3px}
