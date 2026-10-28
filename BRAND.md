@@ -47,7 +47,8 @@ Il sito usa una direzione monocromatica sobria, con priorità ai progetti concre
 
 ### Tipografia e comportamento
 
-- Sans di sistema (Segoe UI / fallback), Source Serif 4 dove già previsto. Non usare Inter.
+- Due famiglie: Bodoni Moda per tutti i titoli (pagina, sezione, voci), sans di sistema (Segoe UI / fallback) per testo, menu ed etichette. Non usare Inter.
+- Cinque dimensioni: 15px (menu, etichette, date, note), 18px (testo), 22px (titoli delle voci), 24px (sottotitolo di pagina), 40px (titoli di sezione); il titolo di pagina scala fino a 76px.
 - Destiny Signature (licenza demo, uso non commerciale) solo come firma: il nome nella barra in alto e il saluto in home. Gli altri titoli restano in Bodoni Moda.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
 - Navigazione unica, senza indici duplicati.
