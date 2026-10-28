@@ -1,0 +1,1 @@
+(function(){if(location.pathname.startsWith('/admin'))return;function send(){fetch('/api/analytics/collect',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname}),keepalive:true}).catch(function(){});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',send,{once:true});else send();})();
