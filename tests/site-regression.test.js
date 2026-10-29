@@ -81,4 +81,7 @@ for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html'
 const redesign = read('portfolio-redesign.css');
 assert(/@media\(prefers-reduced-motion:no-preference\)\{\s*@view-transition\{navigation:auto\}/.test(redesign), 'Page transitions must be limited to no-preference motion');
 assert(/@media\(prefers-reduced-motion:reduce\)\{\.hero-portrait\{animation-name:portrait-fade\}\}/.test(redesign), 'Portrait reveal needs a reduced-motion fallback');
+const admin = read('admin.html');
+assert(!/<style|\sstyle="|<script>/.test(admin), 'admin.html: inline styles and scripts are blocked by the CSP');
+assert(admin.includes('href="/admin.css"'), 'admin.html: admin.css missing');
 console.log('Site regression checks passed');

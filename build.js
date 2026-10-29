@@ -40,6 +40,11 @@ execSync(
   { cwd: root, stdio: "inherit" }
 );
 
+execSync(
+  `npx cleancss -o dist/admin.css admin.css`,
+  { cwd: root, stdio: "inherit" }
+);
+
 // Track page views on public pages only; keep the private admin page untracked.
 for (const name of fs.readdirSync(dist)) {
  if (!name.endsWith(".html") || name === "admin.html") continue;
