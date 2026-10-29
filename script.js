@@ -77,7 +77,7 @@
       hero_intro:[
         [{t:"Lavoro in InfoCamere, dove contribuisco alla progettazione, allo sviluppo e all’adozione di soluzioni AI a supporto dei flussi operativi, della conoscenza organizzativa e delle esigenze del middle e top management."}],
         [{t:"Sono responsabile di un RAG aziendale: ho scelto lo strumento e oggi lo usa un’intera Unità Operativa, 13 persone compreso il Responsabile. Sulla gestione di una criticità fa risparmiare 4 ore e sull’analisi post evento 2 ore e mezza."}],
-        [{t:"Lavoro anche con colleghi di altre Unità: su richiesta di 35 colleghi li ho affiancati nell’uso dell’AI e più strumenti sono stati riuniti in uno solo."}]
+        [{t:"Lavoro anche con colleghi di altre Unità: su richiesta di 35 colleghi li ho affiancati nell’uso dell’AI."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | Responsabile di un RAG aziendale, InfoCamere",
@@ -260,7 +260,7 @@
       hero_intro:[
         [{t:"I work at InfoCamere, where I contribute to the design, development and adoption of AI solutions that support operational workflows, organizational knowledge and middle and top management needs."}],
         [{t:"I’m responsible for an enterprise RAG: I chose the tool, and today an entire Operating Unit uses it, 13 people including its Manager. It saves 4 hours when handling an incident and 2.5 hours in post-incident analysis."}],
-        [{t:"I also work with colleagues from other units: at the request of 35 colleagues I supported them in using AI, and several tools were merged into one."}]
+        [{t:"I also work with colleagues from other units: at the request of 35 colleagues I supported them in using AI."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Enterprise RAG Lead, InfoCamere",
