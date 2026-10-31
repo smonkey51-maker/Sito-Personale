@@ -230,6 +230,7 @@
 .page-next-tile .filmstrip-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 500; letter-spacing: 0; }
 
 .inner .colophon { margin-top: 80px; }
+.inner .colophon-inner { max-width: 1160px; padding-left: clamp(20px, 5vw, 80px); padding-right: clamp(20px, 5vw, 80px); }
 /* Padova skyline above the footer of inner pages, where the footer names the
    city. Lighten drops the drawing's near-black background into the page's. */
 .inner .colophon::before { content: ""; display: block; width: min(100%, 1100px); margin: 0 auto; aspect-ratio: 1482 / 355; background: url("padova-skyline.webp") center bottom / contain no-repeat; mix-blend-mode: lighten; opacity: .75; }
