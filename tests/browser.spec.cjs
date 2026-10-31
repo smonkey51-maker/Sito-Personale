@@ -46,6 +46,22 @@ for(const viewport of sizes){
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
    await expect(page.locator('h1')).toHaveText('RAG aziendale');
   });
+  test('RAG figure follows the chosen source and is translated',async({page})=>{
+   const errors=[];
+   page.on('pageerror',e=>errors.push(String(e)));
+   page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+   await page.goto('/rag-aziendale.html');
+   const readout=page.locator('[data-figure-readout]');
+   await expect(readout).toHaveText('Un solo punto di accesso per le fonti aziendali.');
+   const before=await page.locator('[data-part="carriage"]').getAttribute('transform');
+   await page.locator('[data-pick="3"]').click();
+   await expect(page.locator('[data-pick="3"]')).toHaveAttribute('aria-pressed','true');
+   await expect(readout).toHaveText('La testina sta leggendo Procedure.');
+   await expect.poll(()=>page.locator('[data-part="carriage"]').getAttribute('transform')).not.toBe(before);
+   await page.locator('[data-lang="en"]').click();
+   await expect(readout).toHaveText('The head is reading Procedures.');
+   expect(errors).toEqual([]);
+  });
   test('inner pages mark the current section and link onward',async({page})=>{
    await page.goto('/iniziative.html');
    await expect(page.locator('.desktop-nav a[aria-current="page"]')).toHaveAttribute('href','iniziative.html');
