@@ -162,7 +162,7 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 .topbar-inner{gap:24px;flex-wrap:wrap}
 .desktop-nav{margin-right:auto}
 .desktop-nav a,.lang-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
-.lang-btn{min-width:32px}
+.lang-btn{min-width:44px}
 .copy-btn{min-height:44px;min-width:44px}
 .reveal-btn{min-height:44px}
 .footer-note,.cm-k{font-size:.875rem}

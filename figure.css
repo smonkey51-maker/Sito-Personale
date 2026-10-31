@@ -64,10 +64,6 @@
 .iso-dots[data-tone="mid"] circle{opacity:.45}
 .iso-dots[data-tone="lo"] circle{opacity:.22}
 .iso-dots[data-tone="faint"] circle{opacity:.12}
-.iso-face-text{fill:var(--anatomy-mid);font-family:var(--sans);font-weight:600;letter-spacing:0}
-.iso-face-text[data-tone="hi"]{fill:var(--anatomy-hi)}
-.iso-face-text[data-tone="lo"]{fill:var(--anatomy-lo)}
-.iso-face-text[data-tone="faint"]{fill:var(--anatomy-faint)}
 .tb-body{fill:var(--anatomy-shade-2);stroke:none}
 .tb-shine{fill:var(--anatomy-top);stroke:none}
 .tb-shade{fill:var(--anatomy-shade-0);stroke:none}
@@ -81,4 +77,3 @@
 .rag-figure-pick:active{transform:scale(.97)}
 .rag-figure-pick:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(hover:hover) and (pointer:fine){.rag-figure-pick:hover{background:var(--bg-2)}}
-@media(max-width:700px){.rag-figure .iso-face-text{display:none}}
