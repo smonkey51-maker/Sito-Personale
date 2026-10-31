@@ -40,7 +40,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Padova skyline, very faint, behind the lower part of the contacts. */
 .contact-dialog{isolation:isolate}
 .contact-dialog::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:url("padova-skyline.webp") center bottom 20px/min(92%,860px) auto no-repeat;mix-blend-mode:lighten;opacity:.12;pointer-events:none;z-index:-1}
-.contact-dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
+.contact-dialog::backdrop{background:rgba(0,0,0,.78)}
 .contact-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .contact-dialog-head h2{font-family:var(--serif);font-weight:400;letter-spacing:0;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0}
 /* Close button: a bare × in the dialog's top-right corner, 44px to tap. */
@@ -102,7 +102,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    trick — it covers the whole hero edge to edge (true viewport edges,
    not just the centred wrap/editorial-shell ancestors) and reaches the
    top so it continues behind the floating header. */
-.hero-photo-frame{position:absolute;inset:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:1;overflow:hidden;pointer-events:none}
+.hero-photo-frame{position:absolute;inset:0;left:calc(50% - 50vw + var(--sb,0px)/2);right:calc(50% - 50vw + var(--sb,0px)/2);z-index:1;overflow:hidden;pointer-events:none}
 .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:100% center;display:block;filter:none}
 /* The wall texture behind the text varies in tone, unlike a flat colour —
    a scrim keeps the text reliably legible regardless of what's under it,
@@ -112,7 +112,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    .editorial-shell's centred, padded 1280px container, so without this
    the filmstrip stops at that container's edges instead of reaching the
    true viewport edges. */
-.hero-filmstrip{display:flex;border-top:1px solid var(--line);position:relative;width:100vw;left:50%;margin-left:-50vw}
+.hero-filmstrip{display:flex;border-top:1px solid var(--line);position:relative;width:calc(100vw - var(--sb,0px));left:50%;margin-left:calc((var(--sb,0px) - 100vw)/2)}
 .filmstrip-tile{flex:1;min-width:0;padding:22px clamp(20px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg-2);transition:background var(--dur) var(--ease)}
 .filmstrip-tile:last-child{border-right:0}
 @media(hover:hover) and (pointer:fine){.filmstrip-tile:hover{background:color-mix(in srgb,var(--bg-2) 85%,var(--accent) 10%)}}
@@ -189,7 +189,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Mobile: make portrait flush with viewport, removing contain letterboxing. */
 @media(max-width:700px){
- .hero-photo-frame{position:relative;left:50%;right:auto;width:100vw;max-width:none;margin-left:-50vw;height:clamp(330px,92vw,560px);overflow:hidden}
+ .hero-photo-frame{position:relative;left:50%;right:auto;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc((var(--sb,0px) - 100vw)/2);height:clamp(330px,92vw,560px);overflow:hidden}
  .hero-photo-frame picture{display:block;width:100%;height:100%}
  .hero-photo-frame .hero-portrait{display:block;width:100%;height:100%;object-fit:cover;object-position:center 36%;max-width:none}
 }
@@ -204,7 +204,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Desktop: use one viewport-aligned rail, with a soft portrait-to-page fade. */
 @media(min-width:701px){
- .hero-photo-frame{left:calc(50% - 50vw);right:calc(50% - 50vw);width:100vw;max-width:none;overflow:hidden}
+ .hero-photo-frame{left:calc(50% - 50vw + var(--sb,0px)/2);right:calc(50% - 50vw + var(--sb,0px)/2);width:calc(100vw - var(--sb,0px));max-width:none;overflow:hidden}
  .hero-photo-frame::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.96) 8%,rgba(23,22,27,.35) 29%,transparent 51%),linear-gradient(to bottom,transparent 74%,var(--bg) 100%)}
  .hero-photo-frame .hero-portrait{object-position:center center}
 }
@@ -334,7 +334,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:700px){
  .hero-photo-frame{position:fixed;top:0;left:0;right:0;width:100%;max-width:none;margin:0;height:100svh;z-index:1;overflow:hidden}
  .hero-inner{padding-top:100svh;padding-bottom:0}
- .hero-overlay{background:var(--bg);min-height:100svh;width:100vw;max-width:none;margin-left:calc(50% - 50vw);padding:28px var(--editorial-gutter) 36px}
+ .hero-overlay{background:var(--bg);min-height:100svh;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc(50% - 50vw + var(--sb,0px)/2);padding:28px var(--editorial-gutter) 36px}
  .colophon{position:relative;z-index:2;background:var(--bg)}
  .hero-portrait{object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
  .scroll-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;position:absolute;z-index:3;left:50%;bottom:36px;transform:translateX(-50%);min-height:48px;padding:14px 22px;border-radius:6px;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;pointer-events:auto;transition:transform 120ms ease-out}
@@ -355,8 +355,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 }
 
 /* The full-bleed rows (hero photo, project strip) are 100vw wide, and 100vw
-   counts the vertical scrollbar, so the page would scroll sideways by a few
-   pixels once the scrollbar shows. Clip that overflow on desktop. */
+   counts the vertical scrollbar. script.js sets --sb to the scrollbar width and
+   the rows subtract it; the clip below stays as a safety net on desktop. */
 @media(min-width:701px){body{overflow-x:clip}}
 
 /* Language switch in the same sans and size as the navigation. */

@@ -449,6 +449,10 @@
   }
 
   var root = document.documentElement;
+  /* Larghezza della barra di scorrimento, per le righe a tutta larghezza (100vw). */
+  function syncScrollbar(){ root.style.setProperty("--sb", (window.innerWidth - root.clientWidth) + "px"); }
+  syncScrollbar();
+  window.addEventListener("resize", syncScrollbar);
   var LANG_KEY = "nfLang";
   var savedLang = null;
   try{ savedLang = localStorage.getItem(LANG_KEY); }catch(e){}
