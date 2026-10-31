@@ -84,4 +84,7 @@ assert(/@media\(prefers-reduced-motion:reduce\)\{\.hero-portrait\{animation-name
 const admin = read('admin.html');
 assert(!/<style|\sstyle="|<script>/.test(admin), 'admin.html: inline styles and scripts are blocked by the CSP');
 assert(admin.includes('href="/admin.css"'), 'admin.html: admin.css missing');
+const ragPage = read('rag-aziendale.html');
+assert(ragPage.includes('data-figure') && ragPage.includes('src="figure.js"') && ragPage.includes('href="figure.css"'), 'RAG figure must be wired to its own CSS and script files');
+assert(!/<svg[^>]*\sstyle=/.test(ragPage), 'RAG figure must not use style attributes');
 console.log('Site regression checks passed');
