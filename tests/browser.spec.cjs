@@ -1,6 +1,7 @@
 const {test,expect}=require('@playwright/test');
+const fs=require('node:fs');
 const sizes=[{name:'mobile',width:375,height:812},{name:'tablet',width:768,height:1024},{name:'desktop',width:1440,height:900}];
-const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','/progetti.html','/percorso.html','/privacy.html'];
+const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','/progetti.html','/percorso.html','/privacy.html','/404.html'];
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
@@ -61,6 +62,19 @@ for(const viewport of sizes){
    await page.locator('[data-lang="en"]').click();
    await expect(readout).toHaveText('The head is reading Procedures.');
    expect(errors).toEqual([]);
+  });
+  test('404 page loads its files from a deep address and offers the way back',async({page})=>{
+   const html=fs.readFileSync('404.html','utf8');
+   await page.route('**/no/such/page',route=>route.fulfill({status:404,contentType:'text/html; charset=utf-8',body:html}));
+   const broken=[];
+   page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('/no/such/page'))broken.push(r.url())});
+   await page.goto('/no/such/page');
+   await expect(page.locator('h1')).toHaveText('Pagina non trovata');
+   await expect(page.locator('.nf-links a')).toHaveCount(5);
+   await expect(page.locator('.nf-links a').first()).toHaveAttribute('href','index.html');
+   await page.locator('.nf-contact').click();
+   await expect(page.locator('#contactDialog')).toBeVisible();
+   expect(broken).toEqual([]);
   });
   test('inner pages mark the current section and link onward',async({page})=>{
    await page.goto('/iniziative.html');
