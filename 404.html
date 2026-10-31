@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0D0D0E">
+<title>Pagina non trovata | Nicolò Forcolin</title>
+<meta name="description" content="La pagina che cercavi non esiste o è stata spostata.">
+<meta name="robots" content="noindex">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+
+
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="portfolio-redesign.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="inner" data-page="notfound">
+
+<a class="skip-link" href="#contenuto" data-i18n="skip_to_content">Vai al contenuto</a>
+<div class="visually-hidden" id="themeAnnouncer" role="status" aria-live="polite"></div>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner"><a class="site-name" href="index.html" aria-label="Nicolò Forcolin, home">Nicolò Forcolin</a>
+    <nav class="desktop-nav" id="desktopNav" aria-label="Navigazione principale" data-i18n-aria="nav_main_label">
+      <a href="progetti.html" data-i18n="sec_lavori">Progetti</a>
+      <a href="ai-in-locale.html" data-i18n="sec_localai_title">AI in locale</a>
+      <a href="iniziative.html" data-i18n="sec_experiences">Iniziative</a>
+      <a href="percorso.html" data-i18n="sec_percorso">Percorso</a>
+    </nav>
+    <div class="utilbar">
+      <button class="lang-btn on" data-lang="it" aria-label="Italiano">IT</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Menu" data-i18n-aria="nav_toggle_label">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true"><path d="M0 1h24M0 9h24M0 17h24" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="site-menu" id="siteMenu" aria-label="Menu del sito" data-i18n-aria="menu_label" hidden>
+    <ul>
+      <li><a href="progetti.html" data-i18n="sec_lavori">Progetti</a></li>
+      <li><a href="ai-in-locale.html" data-i18n="sec_localai_title">AI in locale</a></li>
+      <li><a href="iniziative.html" data-i18n="sec_experiences">Iniziative</a></li>
+      <li><a href="percorso.html" data-i18n="sec_percorso">Percorso</a></li>
+      <li><button type="button" class="contact-trigger" aria-haspopup="dialog" aria-controls="contactDialog" data-i18n="colophon_title">Contatti</button></li>
+    </ul>
+  </nav>
+</header>
+<main class="page" id="contenuto">
+  <header class="page-head">
+    <h1 class="page-title" data-i18n="nf_title">Pagina non trovata</h1>
+    <p class="page-lead" data-i18n="nf_lead">L’indirizzo non esiste o la pagina è stata spostata.</p>
+  </header>
+  <div class="page-body">
+    <section class="page-block">
+      <h2 class="page-block-label" data-i18n="nf_where">Dove andare</h2>
+      <div class="page-block-body">
+        <ul class="nf-links">
+          <li><a href="index.html" data-i18n="nf_home">Home</a></li>
+          <li><a href="progetti.html" data-i18n="sec_lavori">Progetti</a></li>
+          <li><a href="ai-in-locale.html" data-i18n="sec_localai_title">AI in locale</a></li>
+          <li><a href="iniziative.html" data-i18n="sec_experiences">Iniziative</a></li>
+          <li><a href="percorso.html" data-i18n="sec_percorso">Percorso</a></li>
+        </ul>
+        <p><span data-i18n="nf_error">Se pensi che sia un errore, scrivimi:</span> <button type="button" class="nf-contact contact-trigger" aria-haspopup="dialog" aria-controls="contactDialog" data-i18n="colophon_title">Contatti</button></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="colophon"><div class="wrap colophon-inner"><p class="footer-note"><span data-i18n="footer_place">© 2026 Nicolò Forcolin, Padova, Italia.</span> <a href="privacy.html" data-i18n="footer_privacy_link">Informativa privacy</a></p></div></footer>
+
+<dialog id="contactDialog" class="contact-dialog" aria-labelledby="contactDialogTitle">
+  <div class="contact-dialog-head"><h2 id="contactDialogTitle" data-i18n="colophon_title">Contatti</h2><button type="button" class="contact-close" aria-label="Chiudi" data-i18n-aria="close">×</button></div>
+  <p class="contact-dialog-note" data-i18n="colophon_note">Sito personale. Le attività descritte sono presentate a titolo personale.</p>
+  <div class="colophon-links">
+    <div class="cm-row"><span class="cm-k" data-i18n="cm_phone">Telefono</span><span class="cm-v" id="cmPhone"></span></div>
+    <div class="cm-row"><span class="cm-k">LinkedIn</span><span class="cm-v"><a href="https://www.linkedin.com/in/nicoloforcolin/" target="_blank" rel="noopener noreferrer">nicoloforcolin<span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a></span></div>
+  </div>
+</dialog>
+<script src="script.js"></script>
+</body>
+</html>
