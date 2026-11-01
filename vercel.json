@@ -54,5 +54,18 @@
       "source": "/admin",
       "destination": "/admin.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.nforcolin.eu"
+        }
+      ],
+      "destination": "https://nforcolin.eu/:path",
+      "permanent": true
+    }
   ]
 }
