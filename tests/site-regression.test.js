@@ -93,6 +93,6 @@ assert(fs.statSync(path.join(root, ogMatch[1])).size < 300 * 1024, 'og:image mus
 const vercel = JSON.parse(read('vercel.json'));
 assert((vercel.redirects || []).some(r => r.has?.some(h => h.type === 'host' && h.value === 'www.nforcolin.eu') && r.destination.startsWith('https://nforcolin.eu/') && r.permanent), 'www must redirect permanently to the apex domain');
 // Internal InfoCamere metrics are not approved for publication.
-const internalData = /13 (persone|people)|4 (ore|hours)|ore e mezza|2\.5 hours|35 (colleghi|colleagues)|costo nullo|at no cost|esose|more expensive alternatives/;
+const internalData = /\b(13|25|35) (persone|people|colleghi|colleagues)\b|\b[234](\.5)? (ore|hours)\b|ore\s+e\s+mezza|mezz.ora|half\s+an\s+hour|\b30 (minuti|minutes)\b|costo\s+nullo|at\s+no\s+cost|esos[ei]|more\s+expensive/;
 for (const file of [...pages, 'script.js']) assert(!internalData.test(read(file)), file + ': contains unapproved internal metrics');
 console.log('Site regression checks passed');
