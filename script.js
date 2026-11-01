@@ -92,12 +92,12 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_greeting:"Ciao, sono Nicolò Forcolin",
       hero_intro:[
-        [{t:"Porto l’AI generativa nel lavoro quotidiano di InfoCamere. Ho scelto e messo in produzione l’assistente AI che oggi usa un’intera Unità Operativa per ritrovare in fretta le informazioni quando gestisce una criticità."}],
+        [{t:"Porto l’AI generativa nel lavoro quotidiano di InfoCamere. Ho scelto e messo in produzione l’assistente AI che oggi usa un’intera Unità Operativa: riduce i tempi di gestione delle criticità e dell’analisi post evento."}],
         [{t:"Su richiesta di colleghi di altre Unità li ho affiancati nell’uso dell’AI."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI generativa in InfoCamere",
-      page_description:"Porto l’AI generativa nel lavoro quotidiano di InfoCamere. L’assistente AI che ho scelto e messo in produzione oggi lo usa un’intera Unità Operativa per gestire le criticità.",
+      page_description:"Porto l’AI generativa nel lavoro quotidiano di InfoCamere. L’assistente AI che ho scelto e messo in produzione oggi lo usa un’intera Unità Operativa e riduce i tempi di gestione delle criticità e dell’analisi post evento.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -293,12 +293,12 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_greeting:"Hi, I’m Nicolò Forcolin",
       hero_intro:[
-        [{t:"I bring generative AI into everyday work at InfoCamere. I chose and put into production the AI assistant an entire Operating Unit now uses to find information quickly when handling an incident."}],
+        [{t:"I bring generative AI into everyday work at InfoCamere. I chose and put into production the AI assistant an entire Operating Unit now uses: it cuts the time spent handling incidents and on post-incident analysis."}],
         [{t:"At the request of colleagues from other units, I supported them in using AI."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Generative AI at InfoCamere",
-      page_description:"I bring generative AI into everyday work at InfoCamere. The AI assistant I chose and put into production is now used by an entire Operating Unit to handle incidents.",
+      page_description:"I bring generative AI into everyday work at InfoCamere. The AI assistant I chose and put into production is now used by an entire Operating Unit and cuts the time spent handling incidents and on post-incident analysis.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
