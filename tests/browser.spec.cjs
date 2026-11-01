@@ -142,7 +142,7 @@ for(const viewport of sizes){
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
    await revealBar(page);
    await page.locator('[data-lang="en"]').click();
-   await expect(page.locator('#heroIntro')).toContainText('middle and top management needs');
+   await expect(page.locator('#heroIntro')).toContainText('generative AI into everyday work');
   });
   if(viewport.width<=700){
    test('mobile landing shows only the portrait and an enter button until the page scrolls',async({page})=>{
