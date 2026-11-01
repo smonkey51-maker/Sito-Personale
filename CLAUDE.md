@@ -3,6 +3,7 @@
 ## Merge
 
 Le modifiche si pubblicano con una PR verso `main`, che si mergia subito dopo la creazione senza attendere una conferma preventiva.
+Eccezione: le PR che cambiano testi visibili (copy in italiano o inglese, titoli, meta description, testo delle immagini di anteprima) restano aperte finché Nicolò non le legge e le approva.
 Se una modifica è ambigua, rischiosa o va oltre quanto richiesto, chiedere prima di procedere.
 
 ## Niente "AI slop"
