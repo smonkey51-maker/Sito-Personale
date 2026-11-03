@@ -3,13 +3,14 @@ const stage = document.querySelector("[data-figure]");
 if (!stage) return;
 const carriage = stage.querySelector('[data-part="carriage"]');
 const boxes = [...stage.querySelectorAll('[data-part="box"]')];
+const discs = boxes.map((node) => node.querySelector('[data-part="disc"]'));
 const readout = document.querySelector("[data-figure-readout]");
 const startText = document.querySelector("[data-figure-start]");
 const template = document.querySelector("[data-figure-template]");
 const picks = [...document.querySelectorAll("[data-pick]")];
-const centres = [-74,-16,42,100];
-const X = [1.2549, 0.6969], Y = [-1.3937, 0.6275];
-const OUT = 12;
+const centres = [0,24,48,72];
+const X = [0.866, 0.5], Y = [0, -1];
+const OUT = 40, DISC = 0.85;
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 let x = centres[0], target = x, selected = -1;
 const slide = boxes.map(() => 0);
@@ -20,7 +21,10 @@ function say() {
 }
 function draw() {
   move(carriage, x * X[0], x * X[1]);
-  boxes.forEach((node, i) => move(node, slide[i] * Y[0], slide[i] * Y[1]));
+  boxes.forEach((node, i) => {
+    move(node, slide[i] * Y[0], slide[i] * Y[1]);
+    move(discs[i], 0, -slide[i] * DISC);
+  });
 }
 function tick(now) {
   const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60;
@@ -45,10 +49,15 @@ function go(index) {
   picks.forEach((button, i) => button.setAttribute("aria-pressed", String(i === index)));
   if (!frame) { last = 0; frame = requestAnimationFrame(tick); }
 }
+/* Over the drawing the nearest sleeve wins. */
 function indexAt(event) {
-  const box = stage.querySelector("svg").getBoundingClientRect();
-  const share = (event.clientX - box.left) / box.width;
-  return Math.min(boxes.length - 1, Math.max(0, Math.round((share - 0.2) / 0.6 * (boxes.length - 1))));
+  let best = 0, gap = Infinity;
+  boxes.forEach((node, i) => {
+    const r = node.getBoundingClientRect();
+    const d = Math.abs(event.clientX - (r.left + r.right) / 2);
+    if (d < gap) { gap = d; best = i; }
+  });
+  return best;
 }
 /* With a mouse the figure follows the pointer: over a button it picks that button, over the drawing it picks the box under the pointer. */
 if (matchMedia("(hover:hover) and (pointer:fine)").matches) stage.addEventListener("pointermove", (event) => {
