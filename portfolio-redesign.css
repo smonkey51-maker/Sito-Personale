@@ -312,10 +312,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Desktop: slide the portrait left, closer to the headline. The right edge
    of photo.webp is already feathered into the page colour, so the strip it
    uncovers blends in with the background. */
-@media(min-width:701px) and (max-width:1099px){.hero-photo-frame .hero-portrait{transform:translateX(4vw)}}
-@media(min-width:701px) and (max-width:900px){.hero-photo-frame .hero-portrait{transform:translateX(17vw)}}
-@media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
-@media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
+@media(min-width:701px) and (max-width:1099px){.hero-photo-frame .hero-portrait{transform:translate(4vw,-6%)}}
+@media(min-width:701px) and (max-width:900px){.hero-photo-frame .hero-portrait{transform:translate(17vw,-6%)}}
+@media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translate(-4vw,-6%)}}
+@media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translate(-9vw,-6%)}}
 
 /* Mobile landing: the first screen is the portrait alone, fixed to the
    viewport. The rest of the page (text, project rows, footer) has an opaque
@@ -437,3 +437,13 @@ main.editorial-content{padding-bottom:0}
 /* The header and the footer use the same column as the page (1280px max,
    same side padding), so their edges line up with the hero text. */
 .topbar-inner,.colophon-inner{max-width:1280px;margin-inline:auto;padding-inline:clamp(20px,4vw,64px)}
+
+/* Desktop: the portrait is a little taller and sits higher; the extra height
+   keeps its bottom edge past the bottom of the frame. */
+@media(min-width:701px){.hero-photo-frame .hero-portrait{height:108%}}
+
+/* Very large screens: the header, hero and footer share the scaled column. */
+@media(min-width:1921px){
+ .topbar-inner,.colophon-inner{max-width:calc(1280*var(--u));padding-inline:calc(64*var(--u))}
+ .hero-inner{width:100%}
+}
