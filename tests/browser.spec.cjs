@@ -155,6 +155,12 @@ for(const viewport of sizes){
     await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
     await expect(page.locator('.hero-portrait')).toBeHidden();
    });
+   test('on mobile a tap anywhere on the landing enters the site',async({page})=>{
+    await page.goto('/');
+    await page.mouse.click(page.viewportSize().width/2,80);
+    await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
+    await expect(page.locator('#hero-name')).toBeInViewport();
+   });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
     await page.goto('/iniziative.html');
     await expect(page.locator('.desktop-nav')).toBeHidden();
@@ -170,11 +176,10 @@ for(const viewport of sizes){
 }
 test.describe('browser language',()=>{
  test.use({locale:'en-US',viewport:{width:375,height:812}});
- test('a non-Italian browser opens the site in English with an arrow on the enter button',async({page})=>{
+ test('a non-Italian browser opens the site in English with the enter button translated',async({page})=>{
   await page.goto('/');
-  await expect(page.locator('.scroll-btn-hint')).toHaveText('Enter the site');
-  await expect(page.locator('.scroll-btn-name')).toHaveText('Nicolò Forcolin');
-  await expect(page.locator('.scroll-btn svg')).toBeVisible();
+  await expect(page.locator('.scroll-btn')).toHaveText('Enter the site');
+  await expect(page.locator('.hero-entry-name')).toHaveText('Nicolò Forcolin');
   await expect(page.locator('html')).toHaveAttribute('lang','en');
  });
 });
