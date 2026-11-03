@@ -341,10 +341,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .colophon{position:relative;z-index:2;background:var(--bg)}
  .hero-portrait{height:108%!important;object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
  .hero-entry{display:flex;flex-direction:column;align-items:center;gap:24px;position:absolute;z-index:3;left:0;right:0;bottom:32px;padding:0 20px;pointer-events:none}
- .hero-entry-name{font-family:var(--signature);font-size:min(2.65rem,10vw);line-height:1.25;color:var(--accent);white-space:nowrap}
+ .hero-entry-name{font-family:var(--signature);font-size:min(3.25rem,12.5vw);line-height:1.25;color:var(--accent);white-space:nowrap}
  .scroll-btn{pointer-events:auto;text-decoration:none}
  .scroll-btn::before{content:"";position:fixed;inset:0}
- .scroll-btn-label{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 22px;border-radius:14px;background:#26282B;color:var(--accent);font-family:var(--sans);font-size:1.0625rem;font-weight:500;line-height:1.2;text-transform:uppercase;white-space:nowrap;transition:transform 120ms ease-out,background-color 120ms ease-out}
+ .scroll-btn-label{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:12px;background:#26282B;color:var(--accent);font-family:var(--sans);font-size:.9375rem;font-weight:500;line-height:1.2;text-transform:uppercase;white-space:nowrap;transition:transform 120ms ease-out,background-color 120ms ease-out}
  .scroll-btn:active .scroll-btn-label{transform:scale(.97);background:#2E3034}
  .hero-photo-frame{transition:opacity 200ms ease-out,visibility 0s linear 200ms}
  body.nav-on .hero-photo-frame{opacity:0;visibility:hidden}
