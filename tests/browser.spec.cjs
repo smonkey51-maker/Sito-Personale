@@ -16,8 +16,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toBeVisible();
    await expect(page.locator('#avatarPhoto')).toBeVisible();
-   if(viewport.width>700) await expect(page.locator('.hero-filmstrip')).toBeVisible();
-   else await expect(page.locator('.hero-filmstrip')).toBeHidden();
+   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toBeVisible();
   });
   test('every page loads without errors or horizontal scroll',async({page})=>{
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
@@ -28,16 +27,14 @@ for(const viewport of sizes){
    }
    expect(errors).toEqual([]);
   });
-  test('filmstrip and hero CTA lead to the project pages',async({page})=>{
+  test('hero links lead to the project pages',async({page})=>{
    await page.goto('/');
    await page.locator('.hero-link').first().click();
    await expect(page).toHaveURL(/rag-aziendale\.html$/);
    await expect(page.locator('h1')).toHaveText('RAG aziendale');
-   if(viewport.width>700){
-    await page.goto('/');
-    await page.locator('.filmstrip-tile[href="ai-in-locale.html"]').click();
-    await expect(page.locator('h1')).toHaveText('Sperimentazione AI in locale');
-   }
+   await page.goto('/');
+   await page.locator('.hero-cta-row a[href="ai-in-locale.html"]').click();
+   await expect(page.locator('h1')).toHaveText('Sperimentazione AI in locale');
   });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
@@ -88,10 +85,10 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Local AI Experiment');
    await expect(page).toHaveTitle('Local AI Experiment | Nicolò Forcolin');
    await page.goto('/');
-   await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('Enterprise Knowledge Retrieval');
+   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toHaveText('Local AI Experiment');
    await revealBar(page);
    await page.locator('[data-lang="it"]').click();
-   await expect(page.locator('[data-i18n="case1_title"]').first()).toHaveText('RAG aziendale');
+   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toHaveText('Sperimentazione AI in locale');
   });
   test('RAG how-it-works: four-stage diagram on desktop, five stages on mobile',async({page})=>{
    await page.goto('/rag-aziendale.html');
