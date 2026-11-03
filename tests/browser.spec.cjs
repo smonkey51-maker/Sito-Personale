@@ -143,7 +143,7 @@ for(const viewport of sizes){
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await revealBar(page);
    await page.locator('[data-lang="en"]').click();
-   await expect(page.locator('#heroIntro')).toContainText('generative AI into everyday work');
+   await expect(page.locator('#heroIntro')).toContainText('I bring AI into everyday work');
   });
   if(viewport.width<=700){
    test('mobile landing shows only the portrait and an enter button until the page scrolls',async({page})=>{

@@ -92,7 +92,8 @@ assert(ogMatch && !/%20|\s/.test(ogMatch[1]), 'og:image must point to a file wit
 assert(fs.statSync(path.join(root, ogMatch[1])).size < 300 * 1024, 'og:image must stay under 300 KB for social previews');
 const vercel = JSON.parse(read('vercel.json'));
 assert((vercel.redirects || []).some(r => r.has?.some(h => h.type === 'host' && h.value === 'www.nforcolin.eu') && r.destination.startsWith('https://nforcolin.eu/') && r.permanent), 'www must redirect permanently to the apex domain');
-// Internal InfoCamere metrics are not approved for publication.
-const internalData = /\b(13|25|35) (persone|people|colleghi|colleagues)\b|\b[234](\.5)? (ore|hours)\b|ore\s+e\s+mezza|mezz.ora|half\s+an\s+hour|\b30 (minuti|minutes)\b|costo\s+nullo|at\s+no\s+cost|esos[ei]|more\s+expensive/;
+// Internal InfoCamere metrics are not approved for publication; "35 colleghi"
+// (the colleagues supported on AI) was approved by Nicolò in November 2026.
+const internalData = /\b(13|25) (persone|people|colleghi|colleagues)\b|\b35 (persone|people)\b|\b[234](\.5)? (ore|hours)\b|ore\s+e\s+mezza|mezz.ora|half\s+an\s+hour|\b30 (minuti|minutes)\b|costo\s+nullo|at\s+no\s+cost|esos[ei]|more\s+expensive/;
 for (const file of [...pages, 'script.js']) assert(!internalData.test(read(file)), file + ': contains unapproved internal metrics');
 console.log('Site regression checks passed');
