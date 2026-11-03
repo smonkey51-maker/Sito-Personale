@@ -386,6 +386,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
 .hero-intro p:last-child{margin-bottom:0}
 .hero-intro a{color:inherit;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.06em}
 @media(max-width:700px){.hero-name{font-size:clamp(1.75rem,9vw,2.9rem);max-width:none}.hero-intro{max-width:29em;margin-bottom:28px}}
+.hero-name{scroll-margin-top:28px}
 
 /* Motion: the portrait is revealed once when the page loads, and browsers that
    support cross-document view transitions fade between pages while the top bar
