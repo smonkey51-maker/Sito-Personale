@@ -26,12 +26,12 @@ function tick(now) {
   const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60;
   last = now;
   const calm = still.matches;
-  x = calm ? target : x + (target - x) * (1 - Math.exp(-dt / 0.14));
+  x = calm ? target : x + (target - x) * (1 - Math.exp(-dt / 0.08));
   if (Math.abs(target - x) < 0.02) x = target;
   let busy = x !== target;
   boxes.forEach((_, i) => {
-    const want = i === selected && Math.abs(target - x) < 6 ? OUT : 0;
-    slide[i] = calm ? want : slide[i] + (want - slide[i]) * (1 - Math.exp(-dt / 0.12));
+    const want = i === selected ? OUT : 0;
+    slide[i] = calm ? want : slide[i] + (want - slide[i]) * (1 - Math.exp(-dt / 0.07));
     if (Math.abs(want - slide[i]) < 0.02) slide[i] = want; else busy = true;
   });
   draw();
@@ -51,7 +51,11 @@ function indexAt(event) {
   return Math.min(boxes.length - 1, Math.max(0, Math.round((share - 0.2) / 0.6 * (boxes.length - 1))));
 }
 if (matchMedia("(hover:hover) and (pointer:fine)").matches) stage.addEventListener("pointermove", (event) => go(indexAt(event)));
-picks.forEach((button) => button.addEventListener("click", () => go(Number(button.dataset.pick))));
+/* The press starts the move (pointerdown), so touch does not wait for the release. */
+picks.forEach((button) => {
+  button.addEventListener("pointerdown", () => go(Number(button.dataset.pick)));
+  button.addEventListener("click", () => go(Number(button.dataset.pick)));
+});
 new MutationObserver(say).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
 say();
 draw();
