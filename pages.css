@@ -259,3 +259,17 @@
 .nf-links a:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 @media(hover:hover) and (pointer:fine){ .nf-links a:hover { background: var(--bg-2); } }
 .nf-contact { font: inherit; color: var(--ink); background: none; border: 0; padding: 0; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+
+/* Ricerca nel sito: lente accanto alla lingua, pannello sotto la barra. */
+.search-btn { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: var(--ink); cursor: pointer; }
+.search-btn:focus-visible, .search-panel input:focus-visible, .search-results a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.search-panel { position: absolute; top: 100%; left: 0; right: 0; z-index: 40; padding: 16px clamp(20px, 4vw, 64px) 20px; background: var(--bg-2); border-bottom: 1px solid var(--line); box-shadow: 0 12px 32px rgb(0 0 0 / .45); }
+.search-panel[hidden] { display: none; }
+.search-panel input { display: block; width: 100%; min-height: 48px; box-sizing: border-box; padding: 10px 14px; font: inherit; font-size: 1.0625rem; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; }
+.search-results { list-style: none; margin: 12px 0 0; padding: 0; max-height: 60vh; overflow-y: auto; }
+.search-results li + li { border-top: 1px solid var(--line); }
+.search-results a { display: block; padding: 12px 0; color: var(--ink); text-decoration: none; }
+.search-results .s-page { display: block; font-size: .875rem; color: var(--ink-soft); }
+.search-results .s-text { display: block; font-size: 1rem; line-height: 1.5; }
+.search-results .search-empty { padding: 12px 0; color: var(--ink-soft); }
+@media (hover: hover) and (pointer: fine) { .search-results a:hover { color: var(--accent); } .search-btn:hover { color: var(--accent); } }
