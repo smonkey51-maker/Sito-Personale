@@ -45,8 +45,9 @@
 .page-back {
   display: inline-flex; align-items: center; gap: 8px;
   min-height: 44px; margin-bottom: 28px;
-  font-family: var(--sans); font-size: 0.9375rem; color: var(--ink-soft); text-decoration: none;
+  font-family: var(--sans); font-size: 1.0625rem; color: var(--ink); text-decoration: none;
 }
+.page-back > span:last-child { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
 .page-back:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-back:hover { color: var(--accent); } }
 .page-title {
