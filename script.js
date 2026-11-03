@@ -92,8 +92,9 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_greeting:"Ciao, sono Nicolò Forcolin",
       hero_intro:[
-        [{t:"Porto l’AI generativa nel lavoro quotidiano di InfoCamere. Ho scelto e messo in produzione l’assistente AI che oggi usano un’intera Unità Operativa e il middle e top management: riduce i tempi di gestione delle criticità e dell’analisi post evento."}],
-        [{t:"Su richiesta di colleghi di altre Unità li ho affiancati nell’uso dell’AI."}]
+        [{t:"Porto l’AI nel lavoro quotidiano di InfoCamere."}],
+        [{t:"Ho guidato il processo E2E di selezione, analisi, progettazione e deployment dell’assistente AI attualmente in uso da un’intera Unità Operativa, dal suo Responsabile e dal Middle Management. In qualità di PLM Owner, ne governo l’intero PLC attraverso una gestione continua dei feedback degli utenti (MOL) finalizzata all’ottimizzazione quotidiana delle performance. Questa soluzione riduce drasticamente i tempi di gestione operativa delle criticità e di analisi post-evento."}],
+        [{t:"Ho affiancato personalmente più di 35 colleghi e il CEO di un’azienda esterna nell’adozione degli strumenti, ottenendo ottimi risultati nella gestione dei processi. Questa consulenza esterna mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI generativa in InfoCamere",
@@ -293,8 +294,9 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_greeting:"Hi, I’m Nicolò Forcolin",
       hero_intro:[
-        [{t:"I bring generative AI into everyday work at InfoCamere. I chose and put into production the AI assistant that an entire Operating Unit and middle and top management now use: it cuts the time spent handling incidents and on post-incident analysis."}],
-        [{t:"At the request of colleagues from other units, I supported them in using AI."}]
+        [{t:"I bring AI into everyday work at InfoCamere."}],
+        [{t:"I led the E2E process of selecting, analysing, designing and deploying the AI assistant now in use by an entire Operating Unit, its Manager and Middle Management. As PLM Owner, I govern its entire PLC through continuous management of user feedback (MOL), aimed at optimising its performance every day. This solution drastically reduces the time spent on operational incident handling and post-incident analysis."}],
+        [{t:"I personally supported more than 35 colleagues and the CEO of an external company in adopting the tools, achieving excellent results in process management. This external advisory earned me a place as AI expert in the SCWL team, a candidate for Sprint Forward, an international initiative in Shangcheng, China."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Generative AI at InfoCamere",
