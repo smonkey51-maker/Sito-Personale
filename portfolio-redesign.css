@@ -448,3 +448,13 @@ main.editorial-content{padding-bottom:0}
  .topbar-inner,.colophon-inner{max-width:calc(1280*var(--u));padding-inline:calc(64*var(--u))}
  .hero-inner{width:100%}
 }
+
+/* Mobile: the four links form a bar fixed to the bottom once the landing is left. */
+.hero-link .lbl-short{display:none}
+@media(max-width:700px){
+ .hero-link .lbl-long{display:none}
+ .hero-link .lbl-short{display:inline}
+ .hero-cta-row{position:fixed;left:0;right:0;bottom:0;z-index:50;margin:0;gap:0 20px;flex-wrap:nowrap;justify-content:flex-start;background:var(--bg);border-top:1px solid var(--line);padding:2px var(--editorial-gutter) calc(10px + env(safe-area-inset-bottom))}
+ body[data-page="home"]:not(.nav-on) .hero-cta-row{opacity:0;pointer-events:none}
+ body[data-page="home"]{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+}
