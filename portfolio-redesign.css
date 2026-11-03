@@ -448,3 +448,11 @@ main.editorial-content{padding-bottom:0}
  .topbar-inner,.colophon-inner{max-width:calc(1280*var(--u));padding-inline:calc(64*var(--u))}
  .hero-inner{width:100%}
 }
+
+/* Mobile: the four links come right after the greeting, so they are visible without scrolling through the bio. */
+@media(max-width:700px){
+ .hero-overlay{display:flex;flex-direction:column}
+ .hero-name{order:0;margin-bottom:20px}
+ .hero-cta-row{order:1;margin:0 0 28px}
+ .hero-intro{order:2;margin-bottom:0}
+}
