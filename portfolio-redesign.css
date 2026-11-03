@@ -13,7 +13,7 @@
 }
 body{font-size:1.03rem;line-height:1.6}
 h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
-.topbar{background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
+.topbar{background:var(--bg);border-bottom:1px solid var(--line)}
 .topbar-inner{min-height:86px;gap:32px}
 .site-name{font-family:var(--signature);font-weight:400;font-size:1.75rem}
 .desktop-nav a{font-size:.9375rem;font-weight:400;letter-spacing:.01em}
@@ -126,7 +126,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  /* The floating transparent header only works once the photo bleeds
     behind it; on the stacked mobile layout it would just sit over a
     now-static photo block, so it goes back to a solid, in-flow bar. */
- .topbar{position:relative;background:color-mix(in srgb,var(--bg) 93%,transparent);border-bottom:1px solid var(--line)}
+ .topbar{position:relative;background:var(--bg);border-bottom:1px solid var(--line)}
  .hero-inner{display:flex;flex-direction:column;min-height:0;padding:0 0 40px;gap:28px}
  .hero-overlay{max-width:none}
  .hero-photo-frame{position:static;inset:auto;left:auto;right:auto;width:100%;height:min(420px,58vh);order:-1}
