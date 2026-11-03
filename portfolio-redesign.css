@@ -136,7 +136,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 }
 
 /* Home links to the project pages: orange text, at least 44px tall to tap. */
-.hero-link{display:inline-flex;align-items:center;min-height:44px;font-family:var(--sans);font-size:1.125rem;font-weight:600;color:var(--accent);text-decoration:underline;text-decoration-thickness:.06em;text-underline-offset:5px;transition:color var(--dur) var(--ease)}
+.hero-link{display:inline-flex;align-items:center;min-height:44px;font-family:var(--sans);font-size:1rem;font-weight:600;color:var(--accent);text-decoration:underline;text-decoration-thickness:.06em;text-underline-offset:5px;transition:color var(--dur) var(--ease)}
 .hero-link:active{color:var(--accent-hover)}
 @media(hover:hover) and (pointer:fine){.hero-link:hover{color:var(--accent-hover)}}
 
@@ -156,7 +156,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Editorial alignment and responsive polish. */
 :root{--editorial-gutter:clamp(24px,5vw,80px)}
-.hero-inner{width:min(100% - 2*var(--editorial-gutter),1280px);margin-inline:auto}
+.hero-inner{width:100%;margin-inline:auto}
 .hero-overlay{width:min(100%,800px)}
 .hero-cta-row{align-items:center}
 .filmstrip-tile{justify-content:center;min-height:112px}
@@ -421,7 +421,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
  .hero-name{font-size:calc(56*var(--u));margin-bottom:calc(20*var(--u))}
  .hero-intro{font-size:calc(18*var(--u));margin-bottom:calc(36*var(--u))}
- .hero-link{font-size:calc(18*var(--u))}
+ .hero-link{font-size:calc(16*var(--u))}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}
  .filmstrip-meta{font-size:calc(15*var(--u))}
  .filmstrip-title{font-size:calc(22*var(--u))}
@@ -432,3 +432,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
 /* Home: <main> is the editorial column, without the extra bottom space
    inner pages use. */
 main.editorial-content{padding-bottom:0}
+
+/* The header and the footer use the same column as the page (1280px max,
+   same side padding), so their edges line up with the hero text. */
+.topbar-inner,.colophon-inner{max-width:1280px;margin-inline:auto;padding-inline:clamp(20px,4vw,64px)}
