@@ -89,7 +89,7 @@
 }
 .page-body > :first-child { padding-top: 0; }
 .page-block-body { max-width: 29em; }
-.page-block-body p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; }
+.page-block-body p { font-size: 1.125rem; line-height: 1.6; color: var(--ink); margin: 0 0 14px; }
 .page-block-body p:last-child { margin-bottom: 0; }
 .page-block-body a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 3px; }
 .page-block-body a:active { color: var(--accent); }
@@ -100,9 +100,9 @@
 .how-section { padding: 72px 0 0; }
 .how-heading { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 20px; color: var(--accent); }
 .how-lead { font-size: clamp(1.125rem, 1.8vw, 1.5rem); line-height: 1.5; color: var(--ink); margin: 0 0 16px; max-width: 52ch; }
-.how-note { font-size: 0.9375rem; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 46ch; }
+.how-note { font-size: 01rem; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 46ch; }
 .how-body { margin-top: 40px; }
-.how-body p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 29em; }
+.how-body p { font-size: 1.125rem; line-height: 1.6; color: var(--ink); margin: 0 0 14px; max-width: 29em; }
 .how-body p:last-child { margin-bottom: 0; }
 
 .how-section .o, .lab-section .o { fill: var(--bg); }
@@ -137,7 +137,7 @@
   .how-stage { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
   .how-stage:not(:last-child)::after { content: "→" / ""; position: absolute; right: -22px; top: 62px; color: var(--ink-soft); }
   .how-stage svg { display: block; width: 100%; max-width: 110px; height: auto; color: var(--ink); overflow: visible; }
-  .how-caption { font-size: 0.9375rem; line-height: 1.4; color: var(--ink-soft); }
+  .how-caption { font-size: 01rem; line-height: 1.5; color: var(--ink-soft); }
   .how-more { grid-column: 1 / -1; grid-row: 2; margin-top: 48px; }
 }
 
@@ -146,16 +146,16 @@
    Su mobile tutto in colonna, schema con freccia verso il basso. */
 .lab-section { padding: 72px 0 0; }
 .lab-heading { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 16px; color: var(--accent); }
-.lab-section p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 29em; }
+.lab-section p { font-size: 1.125rem; line-height: 1.6; color: var(--ink); margin: 0 0 14px; max-width: 29em; }
 .lab-section p:last-child { margin-bottom: 0; }
-.lab-section .lab-note { font-size: 0.9375rem; color: var(--ink-soft); }
+.lab-section .lab-note { font-size: 01rem; color: var(--ink-soft); }
 .lab-pair section + section { margin-top: 48px; }
 .lab-flow { list-style: none; margin: 28px 0 0; padding: 0; }
 .lab-stage { position: relative; display: grid; grid-template-columns: 88px minmax(0, 1fr); column-gap: 20px; align-items: center; padding-bottom: 40px; }
 .lab-stage:last-child { padding-bottom: 0; }
 .lab-stage:not(:last-child)::after { content: "↓" / ""; position: absolute; left: 38px; bottom: 8px; color: var(--ink-soft); }
 .lab-stage svg { display: block; width: 88px; height: auto; color: var(--ink); overflow: visible; }
-.lab-section .lab-caption { margin: 0; font-size: 0.9375rem; line-height: 1.4; color: var(--ink); }
+.lab-section .lab-caption { margin: 0; font-size: 01rem; line-height: 1.5; color: var(--ink); }
 .lab-caption-desc { display: block; margin-top: 2px; color: var(--ink-soft); }
 @media (min-width: 821px) {
   .lab-how { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 56px; align-items: center; }
@@ -173,22 +173,22 @@
 .career .page-block { padding-top: 40px; }
 .career .page-block:first-child { padding-top: 0; }
 .career .page-block + .page-block { margin-top: 40px; border-top: 1px solid var(--line); }
-.career .page-block-label { font-family: var(--sans); font-size: 0.9375rem; font-weight: 600; line-height: 1.4; color: var(--ink-soft); padding-top: 4px; }
+.career .page-block-label { font-family: var(--sans); font-size: 01rem; font-weight: 600; line-height: 1.5; color: var(--ink-soft); padding-top: 4px; }
 @media (min-width: 821px) { .career .page-block { grid-template-columns: 180px minmax(0, 1fr); column-gap: 32px; } }
 @media (max-width: 820px) { .career .page-block-label { padding-top: 0; } .career .page-block { gap: 8px; padding-top: 28px; } .career .page-block + .page-block { margin-top: 28px; } }
 /* Ruolo nel progetto: chi ha fatto cosa, una riga per interlocutore */
 .role-list { list-style: none; margin: 0; padding: 0; max-width: 29em; }
-.role-list li { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); }
+.role-list li { font-size: 1.125rem; line-height: 1.6; color: var(--ink); }
 .role-list li + li { margin-top: 12px; }
 .role-list strong { font-weight: 600; color: var(--ink); }
-.page-updated { font-size: 0.9375rem !important; }
+.page-updated { font-size: 01rem !important; }
 
 /* Flusso in tre passi: elenco a righe, etichetta a sinistra */
 .flow { list-style: none; margin: 0; padding: 0; }
 .flow-step { display: grid; grid-template-columns: minmax(150px, 1fr) 3fr; column-gap: 32px; row-gap: 4px; padding: 12px 0; }
-.flow-kicker { grid-column: 1; grid-row: 1 / span 2; font-family: var(--sans); font-size: 0.9375rem; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+.flow-kicker { grid-column: 1; grid-row: 1 / span 2; font-family: var(--sans); font-size: 01rem; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
 .flow-title { grid-column: 2; font-family: var(--serif); font-size: 1.375rem; font-weight: 500; line-height: 1.35; color: var(--ink); }
-.flow-desc { grid-column: 2; font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); }
+.flow-desc { grid-column: 2; font-size: 1.125rem; line-height: 1.6; color: var(--ink); }
 @media (max-width: 700px) {
   .flow-step { grid-template-columns: 1fr; }
   .flow-kicker, .flow-title, .flow-desc { grid-column: 1; grid-row: auto; padding-top: 0; }
@@ -200,7 +200,7 @@
 .page-block-body .item + p { margin-top: 32px; }
 .page-block-body .item-link { margin-top: 12px; }
 .page-block-body .item + p a, .page-block-body .item-link a { text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
-.item-meta { font-family: var(--sans); font-size: 0.9375rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
+.item-meta { font-family: var(--sans); font-size: 01rem !important; font-weight: 600; color: var(--ink-soft) !important; margin: 0 0 6px !important; }
 .item-title + .item-meta { margin: -4px 0 8px !important; }
 .item-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 500; line-height: 1.35; margin: 0 0 8px; color: var(--ink); }
 .item-title a { display: inline-block; padding-block: 8px; color: inherit; text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
@@ -211,7 +211,7 @@
 .badge-list { list-style: none; margin: 0 0 20px; padding: 0; }
 .badge { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 10px 0; }
 .badge-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 500; line-height: 1.35; color: var(--ink); }
-.badge-meta { font-family: var(--sans); font-size: 0.9375rem; color: var(--ink-soft); }
+.badge-meta { font-family: var(--sans); font-size: 01rem; color: var(--ink-soft); }
 .badge a.badge-title { display: inline-block; padding-block: 8px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .badge a.badge-title:active { color: var(--accent); text-decoration-color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .badge a.badge-title:hover { color: var(--accent); text-decoration-color: var(--accent); } }
@@ -230,7 +230,7 @@
 }
 .page-next-tile:focus-visible, .page-next-tile:active { background: var(--bg-2); }
 @media(hover:hover) and (pointer:fine){ .page-next-tile:hover { background: var(--bg-2); } }
-.page-next-tile .filmstrip-meta { color: var(--accent); font-size: 0.9375rem; }
+.page-next-tile .filmstrip-meta { color: var(--accent); font-size: 01rem; }
 .page-next-tile .filmstrip-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 500; letter-spacing: 0; }
 
 .inner .colophon { margin-top: 80px; }
@@ -238,8 +238,8 @@
 /* Padova skyline above the footer of inner pages, where the footer names the
    city. Lighten drops the drawing's near-black background into the page's. */
 .inner .colophon::before { content: ""; display: block; width: min(100%, 1100px); margin: 0 auto; aspect-ratio: 1482 / 355; background: url("padova-skyline.webp") center bottom / contain no-repeat; mix-blend-mode: lighten; opacity: .75; }
-.footer-note { font-size: 0.9375rem; }
-.lang-btn { font-size: 0.9375rem; }
+.footer-note { font-size: 01rem; }
+.lang-btn { font-size: 01rem; }
 
 @media (max-width: 820px) {
   .page-block, .how-section, .lab-section { padding-top: 56px; }
