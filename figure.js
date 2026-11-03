@@ -50,7 +50,12 @@ function indexAt(event) {
   const share = (event.clientX - box.left) / box.width;
   return Math.min(boxes.length - 1, Math.max(0, Math.round((share - 0.2) / 0.6 * (boxes.length - 1))));
 }
-if (matchMedia("(hover:hover) and (pointer:fine)").matches) stage.addEventListener("pointermove", (event) => go(indexAt(event)));
+/* With a mouse the figure follows the pointer: over a button it picks that button, over the drawing it picks the box under the pointer. */
+if (matchMedia("(hover:hover) and (pointer:fine)").matches) stage.addEventListener("pointermove", (event) => {
+  const pick = event.target.closest("[data-pick]");
+  if (pick) go(Number(pick.dataset.pick));
+  else if (event.target.closest("svg")) go(indexAt(event));
+});
 /* The press starts the move (pointerdown), so touch does not wait for the release. */
 picks.forEach((button) => {
   button.addEventListener("pointerdown", () => go(Number(button.dataset.pick)));
