@@ -155,6 +155,12 @@ for(const viewport of sizes){
     await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
     await expect(page.locator('.hero-portrait')).toBeHidden();
    });
+   test('on mobile a tap anywhere on the landing enters the site',async({page})=>{
+    await page.goto('/');
+    await page.mouse.click(page.viewportSize().width/2,80);
+    await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
+    await expect(page.locator('#hero-name')).toBeInViewport();
+   });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
     await page.goto('/iniziative.html');
     await expect(page.locator('.desktop-nav')).toBeHidden();
