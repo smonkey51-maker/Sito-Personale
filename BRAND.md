@@ -46,7 +46,7 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 | `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
 | `--ink-soft` | `#C3BEC7` | Testo secondario |
 | `--line` | `#262628` | Separazioni |
-| `--accent` | `#FF4A11` | Arancione: firma, link, date e stati, segno d'ingresso su mobile |
+| `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati, segno d'ingresso su mobile |
 | `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
 
 Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio; `#0D0D0E` anche come `theme-color` delle pagine e nel manifest dell'app.
