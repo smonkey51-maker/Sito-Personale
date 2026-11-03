@@ -471,7 +471,11 @@
   window.addEventListener("resize", syncScrollbar);
   var LANG_KEY = "nfLang";
   var savedLang = null;
-  try{ savedLang = localStorage.getItem(LANG_KEY); }catch(e){}
+  /* La scelta IT/EN vale solo per la visita in corso (sessionStorage): a ogni
+     nuova visita il sito segue di nuovo la lingua del browser. Le scelte salvate
+     in modo permanente dalle versioni precedenti vengono cancellate. */
+  try{ localStorage.removeItem(LANG_KEY); }catch(e){}
+  try{ savedLang = sessionStorage.getItem(LANG_KEY); }catch(e){}
   /* Senza una scelta salvata, chi non ha il browser in italiano vede il sito in inglese. */
   var browserLang = ((navigator.languages && navigator.languages[0]) || navigator.language || "it").toLowerCase();
   var lang = (savedLang === "en" || savedLang === "it") ? savedLang : (browserLang.indexOf("it") === 0 ? "it" : "en");
@@ -527,7 +531,7 @@
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){
       lang = b.getAttribute("data-lang");
-      try{ localStorage.setItem(LANG_KEY, lang); }catch(e){}
+      try{ sessionStorage.setItem(LANG_KEY, lang); }catch(e){}
       applyLang();
     });
   });
