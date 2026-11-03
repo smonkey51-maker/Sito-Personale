@@ -279,3 +279,10 @@
 .for-whom-block{display:none}
 .page:has(#per-chi:target) .projects-view{display:none}
 .page:has(#per-chi:target) .for-whom-block{display:block}
+
+/* The three lines turn into a cross while the menu is open. */
+.menu-toggle .bar { transform-box: fill-box; transform-origin: center; transition: transform 180ms var(--ease), opacity 120ms var(--ease); }
+.menu-toggle[aria-expanded="true"] .bar-1 { transform: translateY(8px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .bar-2 { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .bar-3 { transform: translateY(-8px) rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .menu-toggle .bar { transition: opacity 120ms linear; } }
