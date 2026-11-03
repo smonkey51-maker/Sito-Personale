@@ -52,7 +52,7 @@ function render() {
     snippet.className = "s-text";
     const at = norm(hit.text).indexOf(q);
     const from = Math.max(0, at - 60);
-    snippet.textContent = (from > 0 ? "…" : "") + hit.text.slice(from, from + 160);
+    snippet.textContent = (from > 0 ? "…" : "") + hit.text.slice(from, from + 160) + (from + 160 < hit.text.length ? "…" : "");
     a.append(page, snippet);
     li.appendChild(a);
     results.appendChild(li);
