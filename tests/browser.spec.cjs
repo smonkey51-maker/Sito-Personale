@@ -27,6 +27,15 @@ for(const viewport of sizes){
    }
    expect(errors).toEqual([]);
   });
+  test('the search lens finds a page by its text',async({page})=>{
+   await page.goto('/progetti.html');
+   await page.locator('.search-btn').click();
+   await page.locator('#siteSearch').fill('sperimentazione');
+   await expect(page.locator('.search-results a').first()).toBeVisible();
+   await expect(page.locator('.search-results a').first()).toHaveAttribute('href',/\.html$/);
+   await page.keyboard.press('Escape');
+   await expect(page.locator('.search-panel')).toBeHidden();
+  });
   test('hero links lead to the project pages',async({page})=>{
    await page.goto('/');
    await page.locator('.hero-link').first().click();

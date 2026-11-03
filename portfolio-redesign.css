@@ -361,7 +361,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
     and they open the menu at once; the name and the languages stay hidden. */
  body.nav-auto:not(.nav-on) .topbar{opacity:1;transform:none;background:transparent;border-bottom:0}
  body.nav-auto:not(.nav-on) .topbar-inner > .site-name,
- body.nav-auto:not(.nav-on) .utilbar > .lang-btn{visibility:hidden}
+ body.nav-auto:not(.nav-on) .utilbar > .lang-btn,
+ body.nav-auto:not(.nav-on) .utilbar > .search-btn{visibility:hidden}
  body.nav-auto:not(.nav-on) .menu-toggle,
  body.nav-auto:not(.nav-on) .site-menu{pointer-events:auto}
 }
