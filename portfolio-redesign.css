@@ -199,7 +199,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{width:100%;max-width:none;margin:0}
  .hero-photo-frame{left:auto;right:auto;margin:0;width:100%;max-width:100%;height:clamp(350px,105vw,580px);background:#17161B}
  .hero-photo-frame picture{width:100%;height:100%}
- .hero-photo-frame .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:brightness(1.15) contrast(1.04)}
+ .hero-photo-frame .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 32%}
 }
 
 /* Desktop: use one viewport-aligned rail, with a soft portrait-to-page fade. */
@@ -226,7 +226,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-photo-frame::after{
   background:linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.88) 16%,rgba(23,22,27,.28) 38%,transparent 55%),linear-gradient(to bottom,transparent 88%,rgba(23,22,27,.25) 100%);
  }
- .hero-photo-frame .hero-portrait{object-position:right center;filter:brightness(1.15) contrast(1.04)}
+ .hero-photo-frame .hero-portrait{object-position:right center}
 }
 
 /* Desktop final: progressive feathering around the portrait, not over the face. */
@@ -328,7 +328,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    background and slides up over it, so once the page has scrolled the portrait
    is gone. My name in the orange signature (an identity mark, with no
    interaction of its own) sits at the bottom edge above a short orange line
-   ending in a dot; "Entra nel sito" stays for screen readers. The link's
+   ending in a dot; "Entra nel sito" stays for screen readers. The script's
+   tall N and F weigh its ink to the left, so the name is nudged right by
+   .12em to sit optically on the same axis as the mark; the block keeps
+   clear of the phone's home indicator. The link's
    ::before stretches over the whole screen (the press effect is on the inner
    mark, since a transform on the link would shrink it), so a tap
    anywhere on the landing jumps to the text. Everything fades out
@@ -341,8 +344,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-overlay{background:var(--bg);min-height:100svh;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc(50% - 50vw + var(--sb,0px)/2);padding:28px var(--editorial-gutter) 36px}
  .colophon{position:relative;z-index:2;background:var(--bg)}
  .hero-portrait{height:108%!important;object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
- .hero-entry{display:flex;flex-direction:column;align-items:center;gap:14px;position:absolute;z-index:3;left:0;right:0;bottom:32px;padding:0 20px;pointer-events:none}
- .hero-entry-name{font-family:var(--signature);font-size:min(3.25rem,12.5vw);line-height:1.25;color:var(--accent);white-space:nowrap}
+ .hero-entry{display:flex;flex-direction:column;align-items:center;gap:18px;position:absolute;z-index:3;left:0;right:0;bottom:max(52px,calc(env(safe-area-inset-bottom) + 28px));padding:0 20px;pointer-events:none}
+ .hero-entry-name{font-family:var(--signature);font-size:min(3.25rem,12.5vw);line-height:1.25;color:var(--accent);white-space:nowrap;transform:translateX(.12em)}
  .scroll-btn{pointer-events:auto;text-decoration:none}
  .scroll-btn::before{content:"";position:fixed;inset:0}
  .entry-mark{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:48px;height:48px;color:var(--accent);transition:transform 120ms ease-out}
