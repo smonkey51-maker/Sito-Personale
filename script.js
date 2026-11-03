@@ -568,12 +568,35 @@
   var menuToggle = document.querySelector(".menu-toggle");
   var siteMenu = document.getElementById("siteMenu");
   if(menuToggle && siteMenu){
-    var setMenuOpen = function(open){
+    var hoverOpened = false, hoverTimer = 0;
+    var setMenuOpen = function(open, quiet){
       siteMenu.hidden = !open;
       menuToggle.setAttribute("aria-expanded", String(open));
-      if(open) siteMenu.querySelector("a, button").focus();
+      if(!open) hoverOpened = false;
+      if(open && !quiet) siteMenu.querySelector("a, button").focus();
     };
-    menuToggle.addEventListener("click", function(){ setMenuOpen(siteMenu.hidden); });
+    menuToggle.addEventListener("click", function(){
+      /* Aperto dal passaggio del mouse: il clic lo lascia aperto invece di chiuderlo. */
+      if(hoverOpened){ hoverOpened = false; siteMenu.querySelector("a, button").focus(); return; }
+      setMenuOpen(siteMenu.hidden);
+    });
+    /* Con il mouse il menu si apre passando sulle tre lineette e si chiude
+       quando il puntatore esce dal pulsante e dal menu. */
+    if(matchMedia("(hover:hover) and (pointer:fine)").matches){
+      var hoverIn = function(e){
+        if(e.pointerType && e.pointerType !== "mouse") return;
+        clearTimeout(hoverTimer);
+        if(siteMenu.hidden){ hoverOpened = true; setMenuOpen(true, true); }
+      };
+      var hoverOut = function(){
+        clearTimeout(hoverTimer);
+        if(hoverOpened) hoverTimer = setTimeout(function(){ setMenuOpen(false); }, 250);
+      };
+      menuToggle.addEventListener("pointerenter", hoverIn);
+      siteMenu.addEventListener("pointerenter", hoverIn);
+      menuToggle.addEventListener("pointerleave", hoverOut);
+      siteMenu.addEventListener("pointerleave", hoverOut);
+    }
     siteMenu.addEventListener("click", function(e){
       if(e.target.closest("a, button")) setMenuOpen(false);
     });
