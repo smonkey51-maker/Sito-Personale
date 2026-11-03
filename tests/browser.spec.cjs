@@ -139,7 +139,8 @@ for(const viewport of sizes){
    await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('InfoCamere');
    await expect(page.locator('.desktop-nav')).toHaveCount(0);
-   await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
+   await expect(page.locator('.site-name')).toHaveText('NForcolin');
+   await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await revealBar(page);
    await page.locator('[data-lang="en"]').click();
    await expect(page.locator('#heroIntro')).toContainText('generative AI into everyday work');
