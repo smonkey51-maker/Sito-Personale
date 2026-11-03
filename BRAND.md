@@ -33,23 +33,30 @@ Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
 
 ## 3. Sistema visivo
 
-Il sito usa una direzione monocromatica sobria, con priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. La fotografia è in bianco e nero di origine e non riceve filtri CSS. Evitare effetti decorativi gratuiti e slogan.
+Il sito usa una direzione scura e sobria, con un solo accento arancione e priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. Il ritratto in home è a colori, scontornato sul nero del sito; tono e luminosità sono già nell'immagine, senza filtri CSS. Evitare effetti decorativi gratuiti e slogan.
 
 ### Palette
 
-| Token | Light | Dark | Uso |
-|---|---|---|---|
-| `--bg` | `#FFFFFF` | `#0A0A0A` | Sfondo principale |
-| `--bg-2` | `#FAFAFA` | `#141414` | Superficie secondaria |
-| `--ink` | `#111111` | `#FAFAFA` | Testo principale |
-| `--ink-soft` | `#626262` | `#A3A3A3` | Testo secondario |
-| `--line` | `#E5E5E5` | `#2B2B2B` | Separazioni |
+Un solo tema, scuro: il sito non cambia colori in base alle preferenze del sistema.
+
+| Token | Valore | Uso |
+|---|---|---|
+| `--bg` | `#0D0D0E` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto |
+| `--bg-2` | `#0D0D0E` | Superficie secondaria (uguale allo sfondo) |
+| `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
+| `--ink-soft` | `#C3BEC7` | Testo secondario |
+| `--line` | `#262628` | Separazioni |
+| `--accent` | `#FF4A11` | Arancione: firma, link, date e stati, segno d'ingresso su mobile |
+| `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
+
+Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio; `#0D0D0E` anche come `theme-color` delle pagine e nel manifest dell'app.
 
 ### Tipografia e comportamento
 
 - Due famiglie: Bodoni Moda per tutti i titoli (pagina, sezione, voci), sans di sistema (Segoe UI / fallback) per testo, menu ed etichette. Non usare Inter.
 - Cinque dimensioni: 15px (menu, etichette, date, note), 18px (testo), 22px (titoli delle voci), 24px (sottotitolo di pagina), 40px (titoli di sezione); il titolo di pagina scala fino a 76px.
-- Destiny Signature (licenza demo, uso non commerciale) solo come firma: il nome nella barra in alto e il saluto in home. Gli altri titoli restano in Bodoni Moda.
+- Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco), il saluto in home e il nome sulla schermata d'ingresso su mobile (arancione). Gli altri titoli restano in Bodoni Moda.
+- Arancione su un segno grafico: eccezione voluta solo per il segno d'ingresso su mobile (linea corta con punto).
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
 - Navigazione unica, senza indici duplicati.
 - I dettagli espandibili devono funzionare anche da tastiera.
