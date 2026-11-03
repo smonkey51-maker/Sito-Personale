@@ -312,10 +312,10 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Desktop: slide the portrait left, closer to the headline. The right edge
    of photo.webp is already feathered into the page colour, so the strip it
    uncovers blends in with the background. */
-@media(min-width:701px) and (max-width:1099px){.hero-photo-frame .hero-portrait{transform:translateX(4vw)}}
-@media(min-width:701px) and (max-width:900px){.hero-photo-frame .hero-portrait{transform:translateX(17vw)}}
-@media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translateX(-4vw)}}
-@media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translateX(-9vw)}}
+@media(min-width:701px) and (max-width:1099px){.hero-photo-frame .hero-portrait{transform:translate(4vw,-6%)}}
+@media(min-width:701px) and (max-width:900px){.hero-photo-frame .hero-portrait{transform:translate(17vw,-6%)}}
+@media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translate(-4vw,-6%)}}
+@media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translate(-9vw,-6%)}}
 
 /* Mobile landing: the first screen is the portrait alone, fixed to the
    viewport. The rest of the page (text, project rows, footer) has an opaque
@@ -380,7 +380,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
 
 /* Hero text: the name, then a short paragraph about me (script.js keeps it
    translated). */
-.hero-name{font-family:var(--signature);font-weight:400;font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.35;margin:0 0 36px;max-width:min(30ch,44vw);color:var(--accent)}
+.hero-name{font-family:var(--signature);font-weight:400;font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.35;margin:0 0 44px;max-width:min(30ch,44vw);color:var(--accent)}
 .hero-intro{font-family:var(--sans);font-size:1.125rem;line-height:1.55;margin:0 0 36px;max-width:min(29em,48vw);color:var(--ink)}
 .hero-intro p{margin:0 0 1em}
 .hero-intro p:last-child{margin-bottom:0}
@@ -420,7 +420,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
  body .site-name{font-size:calc(28*var(--u))}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
- .hero-name{font-size:calc(56*var(--u));margin-bottom:calc(36*var(--u))}
+ .hero-name{font-size:calc(56*var(--u));margin-bottom:calc(44*var(--u))}
  .hero-intro{font-size:calc(18*var(--u));margin-bottom:calc(36*var(--u))}
  .hero-link{font-size:calc(16*var(--u))}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}
@@ -437,3 +437,13 @@ main.editorial-content{padding-bottom:0}
 /* The header and the footer use the same column as the page (1280px max,
    same side padding), so their edges line up with the hero text. */
 .topbar-inner,.colophon-inner{max-width:1280px;margin-inline:auto;padding-inline:clamp(20px,4vw,64px)}
+
+/* Desktop: the portrait is a little taller and sits higher; the extra height
+   keeps its bottom edge past the bottom of the frame. */
+@media(min-width:701px){.hero-photo-frame .hero-portrait{height:108%}}
+
+/* Very large screens: the header, hero and footer share the scaled column. */
+@media(min-width:1921px){
+ .topbar-inner,.colophon-inner{max-width:calc(1280*var(--u));padding-inline:calc(64*var(--u))}
+ .hero-inner{width:100%}
+}
