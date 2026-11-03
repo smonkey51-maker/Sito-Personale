@@ -343,7 +343,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{padding-top:100svh;padding-bottom:0}
  .hero-overlay{background:var(--bg);min-height:100svh;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc(50% - 50vw + var(--sb,0px)/2);padding:28px var(--editorial-gutter) 36px}
  .colophon{position:relative;z-index:2;background:var(--bg)}
- .hero-portrait{height:108%!important;object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
+ .hero-portrait{height:113%!important;object-fit:cover;object-position:center 22%;transform:translateY(-12%)}
+ .hero-photo-frame{background:var(--bg)}
  .hero-entry{display:flex;flex-direction:column;align-items:center;gap:18px;position:absolute;z-index:3;left:0;right:0;bottom:max(52px,calc(env(safe-area-inset-bottom) + 28px));padding:0 20px;pointer-events:none}
  .hero-entry-name{font-family:var(--signature);font-size:min(3.25rem,12.5vw);line-height:1.25;color:var(--accent);white-space:nowrap;transform:translateX(.12em)}
  .scroll-btn{pointer-events:auto;text-decoration:none}
