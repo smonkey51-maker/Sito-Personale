@@ -326,8 +326,9 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Mobile landing: the first screen is the portrait alone, fixed to the
    viewport. The rest of the page (text, project rows, footer) has an opaque
    background and slides up over it, so once the page has scrolled the portrait
-   is gone. My name in the orange signature, with a small "Entra nel sito ↓"
-   under it, sits at the bottom edge: it invites the scroll, jumps to the text when tapped and fades out
+   is gone. My name in the orange signature, underlined, with an orange arrow under
+   it, sits at the bottom edge (the words "Entra nel sito" stay for screen
+   readers): it invites the scroll, jumps to the text when tapped and fades out
    together with the portrait as soon as the page scrolls (.nav-on). The photo
    frame ignores the pointer, hence pointer-events on the link. */
 .scroll-btn{display:none}
@@ -336,10 +337,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .hero-inner{padding-top:100svh;padding-bottom:0}
  .hero-overlay{background:var(--bg);min-height:100svh;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc(50% - 50vw + var(--sb,0px)/2);padding:28px var(--editorial-gutter) 36px}
  .colophon{position:relative;z-index:2;background:var(--bg)}
- .hero-portrait{object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
+ .hero-portrait{height:108%!important;object-fit:cover;object-position:center 22%;transform:translateY(-7%)}
  .scroll-btn{display:flex;flex-direction:column;align-items:center;gap:2px;position:absolute;z-index:3;left:50%;bottom:28px;transform:translateX(-50%);padding:4px 16px;color:var(--accent);text-decoration:none;white-space:nowrap;pointer-events:auto;transition:transform 120ms ease-out}
  .scroll-btn-name{font-family:var(--signature);font-size:min(2.9rem,11vw);line-height:1.25}
- .scroll-btn-hint{display:inline-flex;align-items:center;gap:6px;min-height:28px;font-family:var(--sans);font-size:.9375rem;color:var(--ink)}
+ .scroll-btn-name{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:12px}
+ .scroll-btn-hint{display:grid;place-items:center;width:44px;height:44px;margin-top:6px}
+ .scroll-btn-hint svg{width:26px;height:26px;stroke-width:1.75}
  .scroll-btn:active{transform:translateX(-50%) scale(.97)}
  .hero-photo-frame{transition:opacity 200ms ease-out,visibility 0s linear 200ms}
  body.nav-on .hero-photo-frame{opacity:0;visibility:hidden}
