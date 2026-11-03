@@ -380,7 +380,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
 
 /* Hero text: the name, then a short paragraph about me (script.js keeps it
    translated). */
-.hero-name{font-family:var(--signature);font-weight:400;font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.35;margin:0 0 20px;max-width:min(30ch,44vw);color:var(--accent)}
+.hero-name{font-family:var(--signature);font-weight:400;font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.35;margin:0 0 36px;max-width:min(30ch,44vw);color:var(--accent)}
 .hero-intro{font-family:var(--sans);font-size:1.125rem;line-height:1.55;margin:0 0 36px;max-width:min(29em,48vw);color:var(--ink)}
 .hero-intro p{margin:0 0 1em}
 .hero-intro p:last-child{margin-bottom:0}
@@ -420,7 +420,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
  body .site-name{font-size:calc(28*var(--u))}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
- .hero-name{font-size:calc(56*var(--u));margin-bottom:calc(20*var(--u))}
+ .hero-name{font-size:calc(56*var(--u));margin-bottom:calc(36*var(--u))}
  .hero-intro{font-size:calc(18*var(--u));margin-bottom:calc(36*var(--u))}
  .hero-link{font-size:calc(16*var(--u))}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}
