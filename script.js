@@ -94,12 +94,12 @@
       hero_greeting:"Ciao, sono Nicolò Forcolin",
       hero_intro:[
         [{t:"Porto l’AI nel lavoro quotidiano di InfoCamere."}],
-        [{t:"Ho guidato la selezione, l’analisi, la progettazione e la messa in produzione dell’assistente AI che oggi usa un’intera Unità Operativa, dal suo Responsabile e dal middle management. Ne seguo l’evoluzione: raccolgo di continuo i riscontri degli utenti e lo miglioro ogni giorno. Riduce i tempi di gestione operativa delle criticità e di analisi post-evento."}],
-        [{t:"Ho affiancato personalmente più di 35 colleghi e il CEO di un’azienda esterna nell’adozione degli strumenti, con ottimi risultati nella gestione dei processi. Questa consulenza mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
+        [{t:"Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usa un’intera Unità Operativa. Lo miglioro ogni giorno con i riscontri degli utenti e riduce i tempi di gestione delle criticità e di analisi post-evento."}],
+        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nell’adozione degli strumenti. Questa consulenza mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI generativa in InfoCamere",
-      page_description:"Porto l’AI nel lavoro quotidiano di InfoCamere. Ho guidato selezione, progettazione e messa in produzione dell’assistente AI in uso da un’intera Unità Operativa, dal suo Responsabile e dal middle management: riduce i tempi di gestione delle criticità e di analisi post-evento.",
+      page_description:"Porto l’AI nel lavoro quotidiano di InfoCamere. Ho guidato progettazione e messa in produzione dell’assistente AI in uso da un’intera Unità Operativa, dal suo Responsabile e dal middle management: riduce i tempi di gestione delle criticità e di analisi post-evento.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -307,12 +307,12 @@
       hero_greeting:"Hi, I’m Nicolò Forcolin",
       hero_intro:[
         [{t:"I bring AI into everyday work at InfoCamere."}],
-        [{t:"I led the selection, analysis, design and rollout of the AI assistant now used by an entire Operating Unit, its Manager and middle management. I keep improving it: I collect user feedback continuously and refine it every day. It cuts the operational time spent on incidents and on post-incident analysis."}],
-        [{t:"I personally supported more than 35 colleagues and the CEO of an external company in adopting the tools, with excellent results in process management. This consulting work led me to join the SCWL team as an AI expert, a candidate for Sprint Forward, an international initiative in Shangcheng, China."}]
+        [{t:"I led the design and rollout of the AI assistant now used by an entire Operating Unit. I improve it every day with user feedback, and it cuts the time spent handling incidents and on post-incident analysis."}],
+        [{t:"I supported more than 35 colleagues and the CEO of an external company in adopting the tools. This consulting work led me to join the SCWL team as an AI expert, a candidate for Sprint Forward, an international initiative in Shangcheng, China."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Generative AI at InfoCamere",
-      page_description:"I bring AI into everyday work at InfoCamere. I led the selection, design and deployment of the AI assistant now used by an entire Operating Unit, its Manager and middle management: it cuts the time spent handling incidents and on post-incident analysis.",
+      page_description:"I bring AI into everyday work at InfoCamere. I led the design and deployment of the AI assistant now used by an entire Operating Unit, its Manager and middle management: it cuts the time spent handling incidents and on post-incident analysis.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
