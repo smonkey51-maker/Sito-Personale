@@ -527,6 +527,8 @@
     if(pageDescription && dict["page_description" + suffix]) pageDescription.setAttribute("content", dict["page_description" + suffix]);
     document.querySelectorAll("[data-i18n]").forEach(function(el){
       var k = el.getAttribute("data-i18n");
+      var alt = (el.getAttribute("data-i18n-hash") || "").split(":");
+      if(alt[0] && location.hash === "#" + alt[0]) k = alt[1];
       if(dict[k] !== undefined){ el.textContent = dict[k]; }
     });
     document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
@@ -540,6 +542,7 @@
     });
     renderIntro();
   }
+  if(document.querySelector("[data-i18n-hash]")) window.addEventListener("hashchange", applyLang);
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){
       lang = b.getAttribute("data-lang");

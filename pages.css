@@ -274,3 +274,8 @@
 .search-results .search-empty { padding: 12px 0; color: var(--ink-soft); }
 @media (hover: hover) and (pointer: fine) { .search-results a:hover { color: var(--accent); } .search-btn:hover { color: var(--accent); } }
 .page-grant { margin: 0 0 36px; padding-top: 8px; }
+
+/* progetti.html shows either the projects and initiatives, or only "Per chi" (#per-chi). */
+.for-whom-block{display:none}
+.page:has(#per-chi:target) .projects-view{display:none}
+.page:has(#per-chi:target) .for-whom-block{display:block}
