@@ -42,7 +42,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .contact-dialog::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:url("padova-skyline.webp") center bottom 20px/min(92%,860px) auto no-repeat;mix-blend-mode:lighten;opacity:.12;pointer-events:none;z-index:-1}
 .contact-dialog::backdrop{background:rgba(0,0,0,.78)}
 .contact-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.contact-dialog-head h2{font-family:var(--serif);font-weight:400;letter-spacing:0;font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0}
+.contact-dialog-head h2{font-family:var(--serif);font-weight:400;letter-spacing:0;color:var(--accent);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0}
 /* Close button: a bare × in the dialog's top-right corner, 44px to tap. */
 .contact-close{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:transparent;font-size:1.75rem;line-height:1;cursor:pointer;transition:transform var(--dur) var(--ease),color var(--dur) var(--ease)}
 .contact-close:active{transform:scale(.97);color:var(--accent-hover)}

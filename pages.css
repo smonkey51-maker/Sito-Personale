@@ -59,7 +59,7 @@
   text-wrap: balance;
   letter-spacing: -0.01em;
   margin: 0 0 28px;
-  color: var(--ink);
+  color: var(--accent);
 }
 /* Narrow phones: long titles ("Enterprise Knowledge Retrieval") stay on two lines. */
 @media (max-width: 520px) { .page-title { font-size: max(1.75rem, 8.5vw); } }
@@ -84,7 +84,7 @@
   font-weight: 400;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   line-height: 1.1;
-  color: var(--ink);
+  color: var(--accent);
   margin: 0;
 }
 .page-body > :first-child { padding-top: 0; }
@@ -98,7 +98,7 @@
 /* Come funziona (RAG): intestazione, primo paragrafo accanto allo schema
    fisso in quattro fasi, poi il resto del testo (desktop). */
 .how-section { padding: 72px 0 0; }
-.how-heading { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 20px; color: var(--ink); }
+.how-heading { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 20px; color: var(--accent); }
 .how-lead { font-size: clamp(1.125rem, 1.8vw, 1.5rem); line-height: 1.5; color: var(--ink); margin: 0 0 16px; max-width: 52ch; }
 .how-note { font-size: 0.9375rem; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 46ch; }
 .how-body { margin-top: 40px; }
@@ -145,7 +145,7 @@
    poi "Perché farlo" e "Risultati e limiti" affiancati e "Cosa ho imparato".
    Su mobile tutto in colonna, schema con freccia verso il basso. */
 .lab-section { padding: 72px 0 0; }
-.lab-heading { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 16px; color: var(--ink); }
+.lab-heading { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0 0 16px; color: var(--accent); }
 .lab-section p { font-size: 1.125rem; line-height: 1.6; color: color-mix(in srgb, var(--ink) 90%, var(--bg)); margin: 0 0 14px; max-width: 29em; }
 .lab-section p:last-child { margin-bottom: 0; }
 .lab-section .lab-note { font-size: 0.9375rem; color: var(--ink-soft); }
@@ -212,7 +212,7 @@
 .badge { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 10px 0; }
 .badge-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 500; line-height: 1.35; color: var(--ink); }
 .badge-meta { font-family: var(--sans); font-size: 0.9375rem; color: var(--ink-soft); }
-.badge a.badge-title { display: inline-block; padding-block: 7px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
+.badge a.badge-title { display: inline-block; padding-block: 8px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .badge a.badge-title:active { color: var(--accent); text-decoration-color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .badge a.badge-title:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 .badge-link a { font-family: var(--sans); font-size: 1.125rem; color: var(--accent); text-decoration: none; }

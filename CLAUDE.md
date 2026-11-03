@@ -19,7 +19,9 @@ tool di terze parti: basta leggere il codice):
   di una schermata e non su titoli, icone, puntini o bordi. Contrasto
   ≥4.5:1 per il corpo, ≥3:1 per il testo grande; il testo secondario
   non scende sotto questi valori. Superfici distinte da un passo di
-  tono, non da linee o ombre.
+  tono, non da linee o ombre. Eccezione voluta da Nicolò: l'arancione
+  colora anche i titoli di pagina e di sezione, la firma, i link della
+  hero e il segno d'ingresso su mobile.
 - **Tipografia**: niente Inter/Roboto/Geist su tutto senza un titolo
   con carattere distintivo; corpo testo leggibile ≥16px, nessun testo
   sotto i 13px. Massimo due famiglie e cinque dimensioni. Niente
