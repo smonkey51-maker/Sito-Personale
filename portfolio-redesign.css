@@ -113,7 +113,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
    .editorial-shell's centred, padded 1280px container, so without this
    the filmstrip stops at that container's edges instead of reaching the
    true viewport edges. */
-.hero-filmstrip{display:flex;border-top:1px solid var(--line);position:relative;width:calc(100vw - var(--sb,0px));left:50%;margin-left:calc((var(--sb,0px) - 100vw)/2)}
 .filmstrip-tile{flex:1;min-width:0;padding:22px clamp(20px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--bg-2);transition:background var(--dur) var(--ease)}
 .filmstrip-tile:last-child{border-right:0}
 @media(hover:hover) and (pointer:fine){.filmstrip-tile:hover{background:color-mix(in srgb,var(--bg-2) 85%,var(--accent) 10%)}}
@@ -143,7 +142,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Mobile: the home is only the intro and its two buttons, which already
    lead to the same pages as the filmstrip. */
-@media(max-width:700px){.hero-filmstrip{display:none}}
 
 /* The colophon section already has its own top border; the footer note's
    own border-top on top of it read as two redundant parallel lines. */
@@ -161,7 +159,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero-inner{width:min(100% - 2*var(--editorial-gutter),1280px);margin-inline:auto}
 .hero-overlay{width:min(100%,800px)}
 .hero-cta-row{align-items:center}
-.hero-filmstrip{margin-top:0}
 .filmstrip-tile{justify-content:center;min-height:112px}
 .filmstrip-title{font-size:1.375rem;font-weight:500;line-height:1.2}
 .filmstrip-meta{line-height:1.45}
@@ -277,7 +274,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
 :root[data-theme="dark"]{--bg:#0D0D0E;--bg-2:#0D0D0E;--line:#262628}
-:root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon,:root[data-theme="dark"] .hero-filmstrip,:root[data-theme="dark"] .filmstrip-tile{background:var(--bg)}
+:root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon,:root[data-theme="dark"] .filmstrip-tile{background:var(--bg)}
 :root[data-theme="dark"] .filmstrip-tile{border-color:var(--line)}
 :root[data-theme="dark"] .footer-note{border-color:var(--line)}
 @media(hover:hover) and (pointer:fine){:root[data-theme="dark"] .filmstrip-tile:hover{background:#18181A}}
@@ -290,8 +287,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 
 
 /* Keep the original header dimensions; size the lower strip to match it. */
-:root{--action-rail-height:86px}
-.hero-filmstrip{min-height:var(--action-rail-height);align-items:stretch}
 .filmstrip-tile{box-sizing:border-box;min-height:0;align-self:stretch}
 .filmstrip-tile{justify-content:center;padding-top:8px;padding-bottom:8px}
 
@@ -308,9 +303,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Keep lower arrow geometrically centered without absolute SVG offsets. */
 
 /* No inert grey scroll control: first project occupies its former slot. */
-.hero-filmstrip .filmstrip-tile:first-child{border-left:0}
 
-.hero-filmstrip .filmstrip-tile{align-items:center;justify-content:center;text-align:center}
 
 /* Case study readability and keyboard accessibility */
 .filmstrip-tile:focus-visible,.desktop-nav a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
@@ -418,7 +411,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:.9375rem}
    has at 1920px, multiplied by the factor --u (one 1920px pixel). Nothing
    changes up to 1920px. */
 @media(min-width:1921px){
- :root{--u:.0520833vw;--editorial-gutter:calc(80*var(--u));--action-rail-height:calc(86*var(--u))}
+ :root{--u:.0520833vw;--editorial-gutter:calc(80*var(--u))}
  .editorial-shell{max-width:calc(1280*var(--u));padding:0 calc(64*var(--u))}
  .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u))}
  .desktop-nav a{font-size:calc(15*var(--u))}
