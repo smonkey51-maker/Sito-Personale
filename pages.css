@@ -212,7 +212,7 @@
 .badge { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 10px 0; }
 .badge-title { font-family: var(--serif); font-size: 1.375rem; font-weight: 500; line-height: 1.35; color: var(--ink); }
 .badge-meta { font-family: var(--sans); font-size: 0.9375rem; color: var(--ink-soft); }
-.badge a.badge-title { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
+.badge a.badge-title { display: inline-block; padding-block: 7px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
 .badge a.badge-title:active { color: var(--accent); text-decoration-color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .badge a.badge-title:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 .badge-link a { font-family: var(--sans); font-size: 1.125rem; color: var(--accent); text-decoration: none; }
@@ -273,3 +273,4 @@
 .search-results .s-text { display: block; font-size: 1rem; line-height: 1.5; }
 .search-results .search-empty { padding: 12px 0; color: var(--ink-soft); }
 @media (hover: hover) and (pointer: fine) { .search-results a:hover { color: var(--accent); } .search-btn:hover { color: var(--accent); } }
+.page-grant { margin: 0 0 36px; padding-top: 8px; }
