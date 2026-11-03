@@ -136,7 +136,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 }
 
 /* Home links to the project pages: orange text, at least 44px tall to tap. */
-.hero-link{display:inline-flex;align-items:center;min-height:44px;font-family:var(--sans);font-size:1rem;font-weight:600;color:var(--accent);text-decoration:underline;text-decoration-thickness:.06em;text-underline-offset:5px;transition:color var(--dur) var(--ease)}
+.hero-link{display:inline-flex;align-items:center;min-height:44px;font-family:var(--sans);font-size:1rem;font-weight:600;color:var(--accent);text-decoration:none;transition:color var(--dur) var(--ease)}
 .hero-link:active{color:var(--accent-hover)}
 @media(hover:hover) and (pointer:fine){.hero-link:hover{color:var(--accent-hover)}}
 
