@@ -11,6 +11,12 @@
 .vn-top{fill:var(--vn-top)}
 .vn-front{fill:var(--vn-face)}
 .vn-side{fill:var(--vn-side)}
+.vn-side.vn-tone0{fill:#1F1E24}
+.vn-side.vn-tone1{fill:#202125}
+.vn-side.vn-tone2{fill:#232124}
+.vn-side.vn-tone3{fill:#1E2023}
+.vn-title{font-family:var(--serif);font-size:10px;fill:var(--vn-hi);stroke:none}
+.vn-dot{fill:var(--vn-mid);stroke:none}
 .vn-disc{fill:var(--vn-disc);stroke:none}
 .vn-edge,.vn-edge-soft,.vn-groove{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:.6}
 .vn-edge{stroke:var(--vn-hi)}
