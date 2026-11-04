@@ -43,17 +43,24 @@ function drawTrend(){
  if(active>=rows.length)active=-1;if(active>=0)show(active);
 }
 
-function drawPages(){
- const pages=Object.entries(data.totals.pages).sort((a,b)=>b[1]-a[1]).slice(0,8);
- const top=pages[0]?.[1]||1,total=data.totals.views||1;
- $('pages-empty').hidden=pages.length>0;
- $('pages').replaceChildren(...pages.map(([path,n])=>{
+function drawList(listId,emptyId,counts,label){
+ const entries=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,8);
+ const top=entries[0]?.[1]||1,total=Object.values(counts).reduce((s,n)=>s+n,0)||1;
+ $(emptyId).hidden=entries.length>0;
+ $(listId).replaceChildren(...entries.map(([key,n])=>{
   const li=document.createElement('li'),name=document.createElement('span'),count=document.createElement('span'),track=document.createElement('span'),fill=document.createElement('span');
-  name.className='name';name.textContent=path==='/'?'Home':path.replace(/^\//,'').replace(/\.html$/,'');name.title=path;
+  name.className='name';name.textContent=label(key);name.title=key;
   count.className='count';count.textContent=`${num(n)} (${Math.round(n/total*100)}%)`;
   track.className='track';fill.className='fill';fill.style.transform=`scaleX(${n/top})`;track.append(fill);
   li.append(name,count,track);return li;
  }));
+}
+function drawPages(){drawList('pages','pages-empty',data.totals.pages,path=>path==='/'?'Home':path.replace(/^\//,''));}
+function drawSources(){
+ const counts={...(data.totals.sources||{})},known=Object.values(counts).reduce((s,n)=>s+n,0);
+ /* Visits recorded before sources existed have no source: show them as direct. */
+ const rest=data.totals.views-known;if(rest>0)counts['Diretto o non indicato']=(counts['Diretto o non indicato']||0)+rest;
+ drawList('sources','sources-empty',counts,name=>name);
 }
 
 function drawWeek(){
@@ -79,7 +86,7 @@ function render(){
  const peak=rows.reduce((a,b)=>b.views>a.views?b:a,rows[0]);
  $('peak').textContent=peak&&peak.views?`${fmt(peak.day,{day:'numeric',month:'short'})}, ${num(peak.views)}`:'Nessuna visita';
  $('days').replaceChildren(...rows.slice().reverse().map(r=>{const tr=document.createElement('tr');for(const v of [fmt(r.day,{weekday:'short',day:'numeric',month:'short',year:'numeric'}),num(r.views),num(r.unique)]){const td=document.createElement('td');td.textContent=v;tr.append(td);}return tr;}));
- drawTrend();drawPages();drawWeek();
+ drawTrend();drawPages();drawSources();drawWeek();
 }
 
 async function load(){

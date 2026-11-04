@@ -56,6 +56,9 @@
 .admin-tip span em{font-style:normal;color:var(--ink);font-variant-numeric:tabular-nums}
 
 /* Pagine e settimana affiancate */
+.admin-sources{margin-top:96px;max-width:36rem}
+.admin-sources h2{margin-bottom:24px}
+.admin-sources .admin-label{margin-top:24px}
 .admin-split{display:grid;grid-template-columns:3fr 2fr;gap:48px 64px;margin-top:96px}
 .admin-split h2{margin-bottom:24px}
 .admin-pages{list-style:none;display:grid;gap:16px}
@@ -93,7 +96,7 @@
   .admin-facts{grid-template-columns:1fr;gap:16px}
   .admin-facts div{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
   .admin-facts dd{margin-top:0;font-size:1rem}
-  .admin-trend,.admin-split,.admin-table{margin-top:64px}
+  .admin-trend,.admin-split,.admin-sources,.admin-table{margin-top:64px}
   .admin-table th,.admin-table td{padding:10px 12px}
 }
 @media (prefers-reduced-motion:reduce){
