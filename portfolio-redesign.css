@@ -357,14 +357,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:700px){
  body.nav-auto .topbar{position:fixed;top:0;left:0;right:0;z-index:30;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform 240ms ease-out,opacity 240ms ease-out}
  body.nav-auto.nav-on .topbar,body.nav-auto .topbar:focus-within{transform:none;opacity:1;pointer-events:auto}
- /* Before the first scroll only the three menu lines show, over the portrait,
-    and they open the menu at once; the name and the languages stay hidden. */
- body.nav-auto:not(.nav-on) .topbar{opacity:1;transform:none;background:transparent;border-bottom:0}
- body.nav-auto:not(.nav-on) .topbar-inner > .site-name,
- body.nav-auto:not(.nav-on) .utilbar > .lang-btn,
- body.nav-auto:not(.nav-on) .utilbar > .search-btn{visibility:hidden}
- body.nav-auto:not(.nav-on) .menu-toggle,
- body.nav-auto:not(.nav-on) .site-menu{pointer-events:auto}
 }
 @media(prefers-reduced-motion:reduce){
  body.nav-auto .topbar{transform:none;transition:opacity 200ms ease-out}
