@@ -41,7 +41,7 @@ for(const viewport of sizes){
    await revealBar(page);
    await page.locator('.hero-link').first().click();
    await expect(page).toHaveURL(/rag-aziendale\.html$/);
-   await expect(page.locator('h1')).toHaveText('RAG aziendale');
+   await expect(page.locator('h1')).toHaveText('RAG');
    await page.goto('/');
    await revealBar(page);
    await page.locator('.hero-cta-row a[href="ai-in-locale.html"]').click();
@@ -54,7 +54,7 @@ for(const viewport of sizes){
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
-   await expect(page.locator('h1')).toHaveText('RAG aziendale');
+   await expect(page.locator('h1')).toHaveText('RAG');
   });
   test('RAG figure follows the chosen source and is translated',async({page})=>{
    const errors=[];
@@ -89,7 +89,7 @@ for(const viewport of sizes){
    await page.goto('/iniziative.html');
    await expect(page.locator('.desktop-nav a[aria-current="page"]')).toHaveAttribute('href','iniziative.html');
    await page.locator('.page-next-tile[href="rag-aziendale.html"]').click();
-   await expect(page.locator('h1')).toHaveText('RAG aziendale');
+   await expect(page.locator('h1')).toHaveText('RAG');
   });
   test('language switching keeps per-page titles',async({page})=>{
    await page.goto('/ai-in-locale.html');
