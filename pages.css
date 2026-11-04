@@ -291,11 +291,11 @@
 @media (min-width: 1921px) { .page { max-width: calc(1280 * var(--u)); padding-inline: calc(64 * var(--u)); } }
 
 /* RAG page: text and facts on the left, the interactive figure on the right; below 821px they stack. */
-.case-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); grid-template-areas: "text art"; column-gap: clamp(32px, 5vw, 64px); align-items: start; margin-bottom: clamp(48px, 7vw, 88px); }
+.case-hero { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-areas: "text art"; column-gap: 48px; align-items: start; margin-bottom: clamp(48px, 7vw, 88px); }
 .case-hero > .page-head { grid-area: text; max-width: none; margin-bottom: 0; }
 .case-hero > .rag-figure { grid-area: art; margin: 0; }
-.case-hero .page-lead { max-width: 34em; }
-.case-facts { display: grid; grid-template-columns: repeat(2, auto); justify-content: start; gap: 16px 48px; margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
+.case-hero .page-lead { max-width: none; }
+.case-facts { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
 .case-facts dt { font-size: 1rem; color: var(--ink-soft); margin-bottom: 4px; }
 .case-facts dd { margin: 0; font-size: 1.125rem; color: var(--ink); }
 @media (max-width: 820px) {
