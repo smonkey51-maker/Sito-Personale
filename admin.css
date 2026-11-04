@@ -8,7 +8,7 @@
 
 .admin h1{font-size:clamp(2.25rem,6vw,2.75rem);line-height:1.1}
 .admin h2{font-size:1.5rem;line-height:1.2;font-weight:500}
-.admin-label,.admin dt,.admin-note,.admin-legend,.admin-pages .count,.admin-week text,.admin-chart text,.admin-tip,.admin-table summary,.admin-table th,.admin-table td{font-size:.875rem}
+.admin-label,.admin dt,.admin-note,.admin-delta,.admin-pages .count,.admin-week text,.admin-chart text,.admin-tip,.admin-table summary,.admin-table th,.admin-table td{font-size:1rem}
 .admin-label,.admin dt,.admin-note{color:var(--ink-soft)}
 .admin-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;margin:32px 0 64px}
 
@@ -30,25 +30,20 @@
 .admin-summary{display:grid;grid-template-columns:minmax(220px,1fr) 2fr;gap:32px 48px;align-items:end}
 .admin-total{display:flex;flex-direction:column;gap:4px}
 .admin-total strong{font-size:2.75rem;line-height:1;font-weight:600;font-variant-numeric:tabular-nums}
-.admin-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.admin-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.admin-delta{color:var(--ink);margin-top:4px}
 .admin-facts dd{font-size:1.5rem;line-height:1.2;margin-top:6px;font-variant-numeric:tabular-nums}
 
 /* Grafico andamento */
 .admin-trend{margin-top:96px}
 .admin-section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 24px;margin-bottom:24px}
-.admin-legend{list-style:none;display:flex;gap:20px;color:var(--ink-soft)}
-.admin-legend li{display:flex;align-items:center;gap:8px}
-.admin-legend li::before{content:"";width:18px;height:0;border-top:2px solid var(--ink)}
-.admin-legend .is-unique::before{border-top:2px dashed var(--ink-soft)}
 .admin-chart{position:relative;height:var(--chart-h);background:var(--bg-2);padding:20px 16px 8px 8px;cursor:crosshair;touch-action:pan-y}
 .admin-chart svg{display:block;width:100%;height:100%;overflow:visible}
 .admin-chart .grid{stroke:var(--bg-3);stroke-width:1}
+.admin-chart .bar{fill:var(--ink-soft);opacity:.55}
+.admin-chart .bar.is-peak{fill:var(--ink);opacity:1}
+.admin-chart .bar.is-active{fill:var(--ink);opacity:1}
 .admin-chart text{fill:var(--ink-soft)}
-.admin-chart .area{fill:var(--ink);opacity:.08}
-.admin-chart .views{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
-.admin-chart .unique{fill:none;stroke:var(--ink-soft);stroke-width:1.5;stroke-dasharray:5 4;stroke-linejoin:round}
-.admin-chart .cursor{stroke:var(--ink-soft);stroke-width:1}
-.admin-chart .dot{fill:var(--ink);stroke:var(--bg-2);stroke-width:2}
 #chart-help{margin-top:12px}
 .admin-tip{position:absolute;top:12px;left:0;z-index:2;min-width:150px;padding:10px 12px;background:var(--bg-3);box-shadow:0 8px 24px rgba(0,0,0,.45);pointer-events:none;line-height:1.45;white-space:nowrap}
 .admin-tip b{display:block;font-weight:600;margin-bottom:2px}
@@ -56,9 +51,9 @@
 .admin-tip span em{font-style:normal;color:var(--ink);font-variant-numeric:tabular-nums}
 
 /* Pagine e settimana affiancate */
-.admin-sources{margin-top:96px;max-width:36rem}
-.admin-sources h2{margin-bottom:24px}
-.admin-split{display:grid;grid-template-columns:3fr 2fr;gap:48px 64px;margin-top:96px}
+.admin-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 64px;margin-top:96px}
+.admin-weekday{margin-top:96px}
+.admin-weekday h2{margin-bottom:24px}
 .admin-split h2{margin-bottom:24px}
 .admin-pages{list-style:none;display:grid;gap:16px}
 .admin-pages li{display:grid;grid-template-columns:1fr auto;gap:6px 16px}
@@ -69,7 +64,7 @@
 .admin-pages .fill{height:100%;background:var(--ink-soft);transform-origin:left;transition:transform 240ms var(--ease)}
 .admin-pages li:first-child .fill{background:var(--ink)}
 .admin-empty{color:var(--ink-soft)}
-.admin-week{height:220px}
+.admin-week{height:180px}
 .admin-week svg{display:block;width:100%;height:100%;overflow:visible}
 .admin-week rect{fill:var(--ink-soft)}
 .admin-week rect.is-top{fill:var(--ink)}
@@ -92,10 +87,10 @@
   .admin{--chart-h:240px}
   .admin-head{margin:16px 0 40px}
   .admin-summary,.admin-split{grid-template-columns:1fr}
-  .admin-facts{grid-template-columns:1fr;gap:16px}
+  .admin-facts{grid-template-columns:1fr;gap:12px}
   .admin-facts div{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
   .admin-facts dd{margin-top:0;font-size:1rem}
-  .admin-trend,.admin-split,.admin-sources,.admin-table{margin-top:64px}
+  .admin-trend,.admin-split,.admin-weekday,.admin-table{margin-top:64px}
   .admin-table th,.admin-table td{padding:10px 12px}
 }
 @media (prefers-reduced-motion:reduce){
