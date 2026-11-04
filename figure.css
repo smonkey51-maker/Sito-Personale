@@ -18,11 +18,12 @@
 .vn-title{font-family:var(--serif);font-size:10px;fill:var(--vn-hi);stroke:none}
 .vn-dot{fill:var(--vn-mid);stroke:none}
 .vn-disc{fill:var(--vn-disc);stroke:none}
+.vn-accent{fill:var(--accent);stroke:none}
 .vn-edge,.vn-edge-soft,.vn-groove{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:.6}
 .vn-edge{stroke:var(--vn-hi)}
 .vn-edge-soft{stroke:var(--vn-mid)}
 .vn-groove{stroke:var(--vn-faint)}
-.vn-ring{fill:var(--vn-bg);stroke:var(--vn-hi);stroke-width:.8}
+.vn-ring{fill:var(--vn-bg);stroke:var(--accent);stroke-width:1.2}
 .rag-figure-text{max-width:62ch;margin:20px 0 0}
 .rag-figure-hint{font-size:1rem;line-height:1.5;color:var(--ink-soft);margin:0 0 6px}
 .rag-figure-readout{font-size:1.125rem;line-height:1.5;color:var(--ink);margin:0 0 14px;min-height:3em}
