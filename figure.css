@@ -3,7 +3,7 @@
  --vn-hi:#D9D4CE;--vn-mid:#807B86;--vn-lo:#4F4A55;--vn-faint:#35313B;--vn-shadow:#0A090C;--vn-bg:#0D0D0E;
  margin:8px 0 0;display:block;
 }
-.rag-figure .iso-svg{display:block;width:100%;max-width:380px;height:auto;margin:0 auto;overflow:visible}
+.rag-figure .iso-svg{display:block;width:100%;max-width:340px;height:auto;margin:0;overflow:visible}
 .iso-svg polygon,.iso-svg polyline,.iso-svg circle{vector-effect:non-scaling-stroke}
 .vn-shadow{fill:var(--vn-shadow);opacity:.6}
 .vn-floor{fill:var(--vn-floor);stroke:var(--vn-lo);stroke-width:.6;stroke-linejoin:round}
@@ -17,7 +17,7 @@
 .vn-edge-soft{stroke:var(--vn-mid)}
 .vn-groove{stroke:var(--vn-faint)}
 .vn-ring{fill:var(--vn-bg);stroke:var(--vn-hi);stroke-width:.8}
-.rag-figure-text{max-width:62ch;margin:20px auto 0}
+.rag-figure-text{max-width:62ch;margin:20px 0 0}
 .rag-figure-hint{font-size:1rem;line-height:1.5;color:var(--ink-soft);margin:0 0 6px}
 .rag-figure-readout{font-size:1.125rem;line-height:1.5;color:var(--ink);margin:0 0 14px;min-height:3em}
 .rag-figure-picks{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
