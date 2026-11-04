@@ -157,20 +157,14 @@ for(const viewport of sizes){
   if(viewport.width<=700){
    test('mobile landing shows only the portrait and an enter button until the page scrolls',async({page})=>{
     await page.goto('/');
-    await expect(page.locator('.menu-toggle')).toBeVisible();
-    await expect(page.locator('.site-name')).toHaveCSS('visibility','hidden');
+    await expect(page.locator('.menu-toggle')).not.toBeInViewport();
+    await expect(page.locator('.topbar')).toHaveCSS('opacity','0');
     await expect(page.locator('.scroll-btn')).toBeVisible();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(page.viewportSize().height-2);
     await page.evaluate(()=>window.scrollTo(0,200));
     await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
     await expect(page.locator('.hero-portrait')).toBeHidden();
-   });
-   test('on mobile the menu lines open the menu straight from the landing',async({page})=>{
-    await page.goto('/');
-    await page.locator('.menu-toggle').click();
-    await expect(page.locator('#siteMenu')).toBeVisible();
-    await expect(page.locator('#siteMenu a[href="progetti.html"]')).toBeVisible();
    });
    test('on mobile a tap anywhere on the landing enters the site',async({page})=>{
     await page.goto('/');
