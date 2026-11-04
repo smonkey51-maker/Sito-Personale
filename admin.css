@@ -58,7 +58,6 @@
 /* Pagine e settimana affiancate */
 .admin-sources{margin-top:96px;max-width:36rem}
 .admin-sources h2{margin-bottom:24px}
-.admin-sources .admin-label{margin-top:24px}
 .admin-split{display:grid;grid-template-columns:3fr 2fr;gap:48px 64px;margin-top:96px}
 .admin-split h2{margin-bottom:24px}
 .admin-pages{list-style:none;display:grid;gap:16px}
