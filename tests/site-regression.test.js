@@ -30,6 +30,7 @@ for (const file of pages) {
   assert(!html.includes('infocamere.it'), file + ': work email must not be published');
   assert(!html.includes('id="cmEmail"'), file + ': email row must stay removed');
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
+  for (const code of ['it', 'en', 'zh', 'tw']) assert(html.includes('data-lang="' + code + '"'), file + ': language button ' + code + ' missing');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
   assert(!/fonts\.googleapis|fonts\.gstatic/.test(html), file + ': fonts must be served from the site, not Google Fonts');
@@ -97,3 +98,20 @@ assert((vercel.redirects || []).some(r => r.has?.some(h => h.type === 'host' && 
 const internalData = /\b(13|25) (persone|people|colleghi|colleagues)\b|\b35 (persone|people)\b|\b[234](\.5)? (ore|hours)\b|ore\s+e\s+mezza|mezz.ora|half\s+an\s+hour|\b30 (minuti|minutes)\b|costo\s+nullo|at\s+no\s+cost|esos[ei]|more\s+expensive/;
 for (const file of [...pages, 'script.js']) assert(!internalData.test(read(file)), file + ': contains unapproved internal metrics');
 console.log('Site regression checks passed');
+
+/* Cinese e twi: stesse chiavi dell'inglese, stessi segnaposto, nessuno strumento interno. */
+{
+  const vm = require('node:vm');
+  const load = name => { const sandbox = { window: {} }; vm.runInNewContext(read(name), sandbox); return sandbox.window.NF_I18N; };
+  const start = js.indexOf('en: {');
+  const enBlock = vm.runInNewContext('({' + js.slice(start, js.indexOf('\n    }\n  };', start) + 6).replace(/^en:/, 'en:') + '})');
+  const en = enBlock.en;
+  for (const [code, file] of [['zh', 'i18n-zh.js'], ['tw', 'i18n-tw.js']]) {
+    const dict = load(file)[code];
+    assert(dict, file + ': dictionary missing');
+    assert.deepEqual(Object.keys(dict).sort(), Object.keys(en).sort(), file + ': keys differ from the English dictionary');
+    assert.equal(dict.hero_intro.length, en.hero_intro.length, file + ': hero_intro paragraphs differ');
+    assert(dict.rag_fig_reading.includes('{name}'), file + ': {name} placeholder missing');
+    assert(!/\b(Jira|UCMDB|Confluence|wiki)\b/i.test(read(file)), file + ': internal source tools must not be named');
+  }
+}
