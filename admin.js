@@ -27,15 +27,11 @@ function drawTrend(){
  box.setAttribute('aria-label',`Grafico delle visualizzazioni giornaliere: ${num(data.totals.views)} in ${rows.length} giorni.`);
  box.prepend(svg);
  const show=i=>{
-  active=i;const tip=$('tip');
+  active=i;const info=$('chart-info');
   bars.forEach((r,k)=>r.classList.toggle('is-active',k===i));
-  if(i<0){tip.hidden=true;return;}
+  if(i<0){info.textContent='';return;}
   const r=rows[i];
-  const b=document.createElement('b');b.textContent=fmt(r.day,{weekday:'short',day:'numeric',month:'long'});
-  const row=(label,v)=>{const s=document.createElement('span'),e=document.createElement('em');s.textContent=label;e.textContent=num(v);s.append(e);return s;};
-  tip.replaceChildren(b,row('Visualizzazioni',r.views),row('Unici stimati',r.unique));tip.hidden=false;
-  const px=cx(i)+8,tw=tip.offsetWidth;let pos=px+12;if(pos+tw>box.clientWidth-8)pos=px-tw-12;
-  tip.style.transform=`translateX(${Math.max(8,pos)}px)`;
+  info.textContent=`${fmt(r.day,{weekday:'short',day:'numeric',month:'short'})}: ${num(r.views)} visualizzazioni, ${num(r.unique)} unici stimati`;
  };
  const pick=e=>{const r=box.getBoundingClientRect(),px=(e.clientX-r.left-8)*w/(r.width-24);show(Math.max(0,Math.min(rows.length-1,Math.floor((px-left)/slot))));};
  box.onpointermove=pick;box.onpointerdown=pick;box.onpointerleave=()=>show(-1);box.onblur=()=>show(-1);
@@ -75,6 +71,7 @@ function drawWeek(){
    el('text',{x:cx,y:h-6,'text-anchor':'middle'},names[i]));
  });
  box.replaceChildren(svg);
+ $('week-peak').textContent=max?'Picco: '+names[avg.indexOf(max)]:'';
 }
 
 function totalsOf(rows){
@@ -86,16 +83,19 @@ function totalsOf(rows){
 function render(){
  const rows=data.days,t=data.totals;
  $('views').textContent=num(t.views);
- $('range').textContent=rows.length?`dal ${fmt(rows[0].day,{day:'numeric',month:'long'})} al ${fmt(rows[rows.length-1].day,{day:'numeric',month:'long'})}`:'';
+ $('range').textContent=rows.length?`${fmt(rows[0].day,{day:'numeric',month:'short'})} – ${fmt(rows[rows.length-1].day,{day:'numeric',month:'short',year:'numeric'})}`:'';
  const delta=$('delta');
- if(data.prev&&data.prev.views>0){const d=Math.round((t.views-data.prev.views)/data.prev.views*100);delta.textContent=`${d>0?'+':''}${d}% rispetto ai ${rows.length} giorni precedenti (${num(data.prev.views)})`;delta.hidden=false;}
- else if(data.prev){delta.textContent=`Nei ${rows.length} giorni precedenti: nessuna visita`;delta.hidden=false;}
- else delta.hidden=true;
- $('today').textContent=num(rows[rows.length-1]?.views||0);
+ if(data.prev&&data.prev.views>0){const d=Math.round((t.views-data.prev.views)/data.prev.views*100);delta.textContent=`${d>0?'+':''}${d}% sul periodo precedente (${num(data.prev.views)})`;}
+ else if(data.prev)delta.textContent='Nessuna visita nel periodo precedente';
+ else delta.textContent='Totale periodo';
+ const last=rows[rows.length-1],before=rows[rows.length-2];
+ $('today').textContent=num(last?.views||0);
+ $('today-sub').textContent=before?`ieri ${num(before.views)}`:'';
  $('unique').textContent=num(t.uniqueDaily);
  $('average').textContent=(t.views/Math.max(1,rows.length)).toLocaleString('it-IT',{maximumFractionDigits:1});
  const peak=rows.reduce((a,b)=>b.views>a.views?b:a,rows[0]);
- $('peak').textContent=peak&&peak.views?`${fmt(peak.day,{day:'numeric',month:'short'})}, ${num(peak.views)}`:'Nessuna visita';
+ $('peak').textContent=peak&&peak.views?num(peak.views):'0';
+ $('peak-date').textContent=peak&&peak.views?fmt(peak.day,{day:'numeric',month:'short'})+' (record)':'Nessuna visita';
  $('days').replaceChildren(...rows.slice().reverse().map(r=>{const tr=document.createElement('tr');for(const v of [fmt(r.day,{weekday:'short',day:'numeric',month:'short',year:'numeric'}),num(r.views),num(r.unique)]){const td=document.createElement('td');td.textContent=v;tr.append(td);}return tr;}));
  drawTrend();drawPages();drawSources();drawWeek();
 }
