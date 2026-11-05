@@ -102,6 +102,24 @@ for(const viewport of sizes){
    await page.locator('[data-lang="it"]').click();
    await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"] .lbl-long')).toHaveText('Sperimentazione AI in locale');
   });
+  test('Chinese and Twi are selectable, translate the page and fit the header',async({page})=>{
+   const errors=[];
+   page.on('pageerror',e=>errors.push(String(e)));
+   page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+   await page.goto('/percorso.html');
+   await page.locator('[data-lang="zh"]').click();
+   await expect(page.locator('html')).toHaveAttribute('lang','zh-Hans');
+   await expect(page.locator('h1')).toHaveText('经历');
+   await expect(page).toHaveTitle('经历 | Nicolò Forcolin');
+   await page.locator('[data-lang="tw"]').click();
+   await expect(page.locator('html')).toHaveAttribute('lang','tw');
+   await expect(page.locator('h1')).toHaveText('Adwuma mu suahu');
+   await page.locator('[data-lang="it"]').click();
+   await expect(page.locator('h1')).toHaveText('Percorso');
+   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-btn,.topbar .search-btn,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
+   expect(fits).toBe(true);
+   expect(errors).toEqual([]);
+  });
   test('RAG how-it-works: four-stage diagram on desktop, five stages on mobile',async({page})=>{
    await page.goto('/rag-aziendale.html');
    await expect(page.locator('.how-section button')).toHaveCount(0);
