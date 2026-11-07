@@ -51,7 +51,7 @@
       out_artists_desc:"Tra i miei artisti preferiti ci sono Miles Davis, Marcus Miller, YES, Bach, Black Sabbath, Jean-Luc Ponty, Igorrr e Jack White.",
       out_audio_desc:"Sono un audiofilo. In cuffia ascolto con modelli Sony e HiFiMan, a casa con un impianto Sony.",
       out_photo_label:"Fotografia",
-      out_photo_desc:"Sto ampliando il mio profilo Instagram con sole foto scattate da me, sistemate con preset in Lightroom Mobile. Mi piacerebbe avere una Leica.",
+      out_photo_desc:"Sto ampliando il mio profilo Instagram con sole foto scattate da me, sistemate con preset in Lightroom Mobile. Mi piacerebbe avere una Leica Q3.",
       out_photo_link:"Vedi il profilo Instagram",
       out_books_label:"Letture",
       out_books_desc:"Leggo soprattutto biografie e autobiografie.",
