@@ -97,10 +97,10 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Local AI Experiment');
    await expect(page).toHaveTitle('Local AI Experiment | Nicolò Forcolin');
    await page.goto('/');
-   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"] .lbl-long')).toHaveText('Local AI Experiment');
+   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toHaveText('Local AI');
    await revealBar(page);
    await page.locator('[data-lang="it"]').click();
-   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"] .lbl-long')).toHaveText('Sperimentazione AI in locale');
+   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toHaveText('AI in locale');
   });
   test('Chinese and Twi are selectable, translate the page and fit the header',async({page})=>{
    const errors=[];
