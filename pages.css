@@ -298,6 +298,21 @@
 .for-whom-block{display:none}
 .page:has(#per-chi:target) .projects-view{display:none}
 .page:has(#per-chi:target) .for-whom-block{display:block}
+/* "Per chi" su telefono: titolo, testo, link e invito a contattarmi stanno in una sola schermata. */
+@media (max-width: 700px) {
+  .page:has(#per-chi:target) { padding-top: 16px; }
+  .page:has(#per-chi:target) .page-back { margin-bottom: 4px; }
+  .page:has(#per-chi:target) .page-head { margin-bottom: 20px; }
+  .page:has(#per-chi:target) .page-title { font-size: 2rem; }
+  .page:has(#per-chi:target) .for-whom-block { padding-top: 0; }
+  .page:has(#per-chi:target) .for-whom-block .page-block-body p { font-size: 1rem; line-height: 1.5; margin-bottom: 10px; }
+  .page:has(#per-chi:target) .for-whom-block .item-link { margin: 0; }
+  .page:has(#per-chi:target) .for-whom-block .item-link a { display: inline-flex; align-items: center; min-height: 44px; }
+  .page:has(#per-chi:target) .page-cta { margin-top: 12px; gap: 4px; }
+  .page:has(#per-chi:target) .page-cta p { font-size: 1rem; }
+  .page:has(#per-chi:target) + .colophon { margin-top: 16px; padding: 12px 0 16px; }
+  .page:has(#per-chi:target) + .colophon::before { display: none; }
+}
 
 /* The three lines turn into a cross while the menu is open. */
 .menu-toggle .bar { transform-box: fill-box; transform-origin: center; transition: transform 200ms cubic-bezier(.3,0,.2,1), opacity 140ms linear; }
