@@ -1,3 +1,5 @@
+/* Il sito è scuro per scelta: i browser non devono ricolorarlo. */
+html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Figma-inspired portfolio treatment — keeps existing content and functionality. */
 :root{
  --bg:#F7F5F1;--bg-2:#EEEAE5;--ink:#1D1E22;--ink-soft:#606168;
@@ -138,6 +140,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 /* Home links to the project pages: orange text, at least 44px tall to tap. */
 .hero-link{display:inline-flex;align-items:center;min-height:44px;font-family:var(--sans);font-size:1rem;font-weight:600;color:var(--accent);text-decoration:none;transition:color var(--dur) var(--ease)}
 .hero-link:active{color:var(--accent-hover)}
+button.hero-link{padding:0;border:0;background:none;cursor:pointer}
+.hero-link{line-height:1.5}
 @media(hover:hover) and (pointer:fine){.hero-link:hover{color:var(--accent-hover)}}
 
 /* Mobile: the home is only the intro and its two buttons, which already
@@ -442,14 +446,36 @@ main.editorial-content{padding-bottom:0}
 }
 
 /* Mobile: the four links form a bar fixed to the bottom once the landing is left. */
-.hero-link .lbl-short{display:none}
 @media(max-width:700px){
- .hero-link .lbl-long{display:none}
- .hero-link .lbl-short{display:inline}
  .hero-cta-row{position:fixed;left:0;right:0;bottom:0;z-index:50;margin:0;gap:0 20px;flex-wrap:nowrap;justify-content:flex-start;background:var(--bg);border-top:1px solid var(--line);padding:2px clamp(20px,4vw,64px) calc(10px + env(safe-area-inset-bottom))}
  body[data-page="home"]:not(.nav-on) .hero-cta-row{opacity:0;pointer-events:none}
  body[data-page="home"]{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
 }
 
-/* Tablet: the larger menu text still fits on one line. */
-@media(min-width:701px) and (max-width:900px){.desktop-nav{gap:12px;margin-left:16px}}
+/* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
+@media(max-width:1099px){.desktop-nav{display:none}}
+
+/* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
+.contact-trigger.cta-primary{display:inline-flex;align-items:center;min-height:48px;padding:6px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font-family:var(--serif);font-size:1.625rem;font-weight:500;line-height:1.2;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color var(--dur) var(--ease)}
+.contact-trigger.cta-primary:active{text-decoration-color:var(--accent-hover)}
+.contact-trigger.cta-primary:focus-visible{outline:3px solid var(--ink);outline-offset:6px}
+@media(hover:hover) and (pointer:fine){.contact-trigger.cta-primary:hover{text-decoration-color:var(--accent-hover)}}
+.page-cta{margin-top:clamp(72px,9vw,120px);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
+
+/* Mobile: saluto su due righe; spazio sotto il testo per la barra fissa dei link. */
+@media(max-width:700px){.hero-name{font-size:min(11.5vw,3.75rem);line-height:1.12;margin-bottom:32px}.hero-overlay{padding-bottom:96px}}
+
+/* Schermi medi e grandi: saluto grande su due righe (nome sotto "Ciao, sono"); meno spazio sopra, perché Contattami resti raggiungibile. */
+@media(min-width:701px){.hero-name{font-size:min(7.7vw,4.5rem,8.5vh);line-height:1.12;max-width:none;margin-bottom:36px}.hero-inner{padding-top:clamp(56px,7vh,132px)}}
+@media(min-width:1921px){.hero-name{font-size:calc(72*var(--u));margin-bottom:calc(36*var(--u))}.hero-inner{padding-top:calc(132*var(--u))}}
+/* "Ciao, sono" più piccolo del nome, sempre su due righe. */
+.hero-hi,.hero-fn{display:block}
+.hero-hi{font-size:.78em;line-height:1.25}
+
+/* Progetti, Per chi, Contattami: stessa misura del testo (18px), distanza dal testo e tra le voci ampie; su mobile la barra le centra con poco spazio tra le voci. */
+@media(min-width:701px){.hero-cta-row{margin-top:clamp(56px,9vh,96px);gap:32px}.hero-link{font-size:1.125rem;min-height:48px}}
+@media(min-width:1921px){.hero-cta-row{margin-top:calc(88*var(--u));gap:calc(32*var(--u))}.hero-link{font-size:calc(18*var(--u));min-height:calc(48*var(--u))}}
+@media(max-width:700px){.hero-cta-row{justify-content:center;gap:0 clamp(14px,5vw,28px)}}
+
+@media(max-width:340px){.hero-link{font-size:.9375rem}}

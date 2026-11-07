@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
-const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'progetti.html', 'percorso.html', 'privacy.html', '404.html'];
+const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'progetti.html', 'percorso.html', 'fuori-dal-lavoro.html', 'privacy.html', '404.html'];
 const js = read('script.js');
 const config = JSON.parse(read('vercel.json'));
 assert(config.headers.some(group => group.headers.some(h => h.key === 'Content-Security-Policy')), 'Missing CSP');
@@ -32,6 +32,7 @@ for (const file of pages) {
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
   for (const code of ['it', 'en', 'zh', 'tw']) assert(html.includes('data-lang="' + code + '"'), file + ': language button ' + code + ' missing');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
+  assert(html.includes('name="color-scheme" content="dark"') && html.includes('name="darkreader-lock"'), file + ': dark colour scheme must be declared so browsers do not recolour the site');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
   assert(!/fonts\.googleapis|fonts\.gstatic/.test(html), file + ': fonts must be served from the site, not Google Fonts');
   assert(!/\b(Jira|UCMDB|Confluence|wiki)\b/i.test(html), file + ': internal source tools must not be named');
@@ -65,18 +66,18 @@ for (const file of pages) {
 for (const language of ['it', 'en']) assert(!dictionaries[language].includes('·'), language + ': no middle-dot joined strings');
 
 const home = read('index.html');
-assert(home.includes('data-i18n="hero_greeting"'), 'Hero greeting must be translated');
+assert(home.includes('data-i18n="hero_hi"'), 'Hero greeting must be translated');
 assert(home.includes('id="heroIntro"'), 'Hero intro paragraph missing');
 for (const language of ['it', 'en']) assert(dictionaries[language].includes('hero_intro:'), language + ': hero intro missing');
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
-assert(home.includes('href="ai-in-locale.html"') && home.includes('class="hero-link"'), 'Hero links must reach the project pages');
+assert(home.includes('href="progetti.html"') && home.includes('class="hero-link"') && home.includes('hero-link contact-trigger'), 'Hero links must reach the projects page and open the contacts');
 assert(home.includes('srcset="photo.webp?v=31"'), 'New portrait must be displayed');
 assert(home.includes('srcset="photo-mobile.webp?v=31"'), 'Mobile portrait crop must be displayed');
 assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by pages');
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');
 assert(read('ai-in-locale.html').includes('data-i18n="c2_summary"'), 'Local AI summary must remain');
-for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'percorso.html', 'progetti.html']) {
+for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'iniziative.html', 'percorso.html', 'progetti.html', 'fuori-dal-lavoro.html']) {
   assert(read('sitemap.xml').includes('https://nforcolin.eu/' + file), 'Sitemap missing ' + file);
 }
 const redesign = read('portfolio-redesign.css');
