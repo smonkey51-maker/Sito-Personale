@@ -298,6 +298,13 @@
 .for-whom-block{display:none}
 .page:has(#per-chi:target) .projects-view{display:none}
 .page:has(#per-chi:target) .for-whom-block{display:block}
+/* In "Per chi" l'invito è un terzo link, «Contattami», come «AI in locale» e «Google Developer». */
+.page:has(#per-chi:target) .page-cta [data-i18n="cta_before"], .page:has(#per-chi:target) .page-cta [data-i18n="cta_after"] { display: none; }
+.page:has(#per-chi:target) .page-cta { margin-top: 4px; }
+.page:has(#per-chi:target) .page-cta .cta-inline { display: inline-block; min-height: 44px; padding: 0; margin: 0; line-height: 44px; color: var(--accent); text-decoration-thickness: auto; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+.page:has(#per-chi:target) .page-cta .cta-inline::first-letter { text-transform: uppercase; }
+.page:has(#per-chi:target) .page-cta .cta-inline:active { color: var(--accent-hover); text-decoration-color: var(--accent-hover); }
+@media (hover: hover) and (pointer: fine) { .page:has(#per-chi:target) .page-cta .cta-inline:hover { color: var(--accent-hover); text-decoration-color: var(--accent-hover); } }
 /* "Per chi" su telefono: titolo, testo, link e invito a contattarmi stanno in una sola schermata. */
 @media (max-width: 700px) {
   .page:has(#per-chi:target) { padding-top: 8px; }
@@ -308,9 +315,8 @@
   .page:has(#per-chi:target) .for-whom-block .page-block-body p { font-size: 1rem; line-height: 1.5; margin-bottom: 8px; }
   .page:has(#per-chi:target) .for-whom-block .page-block-body p.item-link { margin: 0 0 4px; }
   .page:has(#per-chi:target) .for-whom-block .item-link a { display: inline-flex; align-items: center; min-height: 44px; }
-  .page:has(#per-chi:target) .page-cta { margin-top: 13px; }
-  .page:has(#per-chi:target) .page-cta p { font-size: 1rem; }
-  .page:has(#per-chi:target) + .colophon { margin-top: 8px; padding: 0 0 6px; }
+  .page:has(#per-chi:target) .page-cta p { font-size: 1rem; line-height: 44px; }
+  .page:has(#per-chi:target) + .colophon { margin-top: 6px; padding: 0 0 6px; }
 }
 
 /* The three lines turn into a cross while the menu is open. */

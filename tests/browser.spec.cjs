@@ -161,6 +161,14 @@ for(const viewport of sizes){
    await page.locator('.page-cta .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
+  test('in Per chi the last invitation is a plain Contattami link next to the other two',async({page})=>{
+   await page.goto('/progetti.html#per-chi');
+   await expect(page.locator('.page-cta .cta-inline')).toHaveText('contattami');
+   await expect(page.locator('.page-cta [data-i18n="cta_before"]')).toBeHidden();
+   await expect(page.locator('.page-cta .cta-inline')).toBeVisible();
+   await page.locator('.page-cta .cta-inline').click();
+   await expect(page.locator('#contactDialog')).toBeVisible();
+  });
   test('contacts open in a dialog with phone and LinkedIn only',async({page})=>{
    await page.goto('/');
    await revealBar(page);
