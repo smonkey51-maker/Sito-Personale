@@ -23,7 +23,7 @@
 .site-menu:not([hidden]) { animation: menu-in 160ms ease-out; }
 @keyframes menu-in { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: none; } }
 .site-menu ul { list-style: none; margin: 0; padding: 0; }
-.site-menu a, .site-menu button { all: unset; box-sizing: border-box; display: flex; align-items: center; justify-content: flex-end; width: 100%; min-height: 48px; padding: 0 14px; border-radius: 12px; text-align: right; font-family: var(--sans); font-size: 1.0625rem; color: var(--ink); cursor: pointer; transition: background-color 120ms ease-out; }
+.site-menu a, .site-menu button { all: unset; box-sizing: border-box; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 0 14px; border-radius: 12px; text-align: center; font-family: var(--sans); font-size: 1.0625rem; color: var(--ink); cursor: pointer; transition: background-color 120ms ease-out; }
 .site-menu a[aria-current="page"] { background: #242427; }
 .site-menu a:active, .site-menu button:active { background: #2A2A2D; }
 @media (hover: hover) and (pointer: fine) {
