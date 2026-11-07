@@ -110,7 +110,7 @@ window.NF_I18N.tw = {
   enablement_title: "Suahu a ɛyɛ adwuma a wɔkyɛ",
   enablement_desc: "Mekasaa wɔ AI nhyiam ahorow a ɛwɔ fie mu so. Firi 2025, meyɛ InfoCamere Social Ambassador nso, na mɛkyerɛ digital amammerɛ ho na mekyɛ suahu a efi me adwuma mu.",
   credentials_note: "Nkyerɛkyerɛ yi ma wohu nsonsonoe a ɛda adansedi, mpɔtam nhyehyɛe ne akuwakuw ahorow mu. Adwuma a wɔayɛ no wɔ adwuma no nwoma ahorow so.",
-  hero_greeting: "Me din ne Nicolò Forcolin",
+  hero_hi: "Me din ne",
   hero_intro: [
     [{ t: "Mede AI hyɛ da biara adwuma mu wɔ InfoCamere." }],
     [{ t: "Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa de di dwuma seesei no nhyehyɛe ne ne siesie anim." }],
@@ -166,9 +166,7 @@ window.NF_I18N.tw = {
   privacy_s6_p: "Wɔbɛyɛ amanneɛ yi foforo sɛ nnwinnade a website no de di dwuma sakra a. Nsɛm a ɛwɔ ha ara na ɛyɛ nea ɛwɔ ho.",
   privacy_updated: "Nsakraeɛ a ɛtwa to: 11/2026.",
   cm_phone: "Telefon",
-  hero_cta1: "RAG",
   hero_cta2_short: "Nnwuma",
-  hero_cta3_short: "AI a ɛwɔ ha ara",
   hero_cta2: "Nnwuma ne nneɛma a wɔyɛ",
   sec_localai_title: "AI a ɛwɔ ha ara",
   for_whom_label: "Ma hena",

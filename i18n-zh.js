@@ -110,7 +110,7 @@ window.NF_I18N.zh = {
   enablement_title: "分享实践经验",
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
   credentials_note: "这些参考信息区分了资质证书、社区项目和会员身份。实际工作成果记录在各项目页面中。",
-  hero_greeting: "你好，我是 Nicolò Forcolin",
+  hero_hi: "你好，我是",
   hero_intro: [
     [{ t: "我在 InfoCamere 把 AI 带入日常工作。" }],
     [{ t: "我主导了 AI 助手的设计和上线，现在整个运营单元都在使用它。" }],
@@ -165,9 +165,7 @@ window.NF_I18N.zh = {
   privacy_s6_p: "如果网站使用的工具发生变化，本声明会随之更新。以本页面发布的版本为准。",
   privacy_updated: "最后更新：2026 年 11 月。",
   cm_phone: "电话",
-  hero_cta1: "RAG",
   hero_cta2_short: "项目",
-  hero_cta3_short: "本地 AI",
   hero_cta2: "项目与活动",
   sec_localai_title: "本地 AI",
   for_whom_label: "适合谁",
