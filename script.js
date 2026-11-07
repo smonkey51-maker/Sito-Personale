@@ -640,13 +640,32 @@
   var langList = document.getElementById("langList");
   if(langToggle && langList){
     var langItems = langList.querySelectorAll(".lang-btn");
-    var setLangOpen = function(open, back){
+    var langHoverOpened = false, langHoverTimer = 0;
+    var setLangOpen = function(open, back, quiet){
       langList.hidden = !open;
       langToggle.setAttribute("aria-expanded", String(open));
-      if(open) langList.querySelector(".lang-btn:not(.on)").focus();
-      else if(back) langToggle.focus();
+      if(!open) langHoverOpened = false;
+      if(open && !quiet) langList.querySelector(".lang-btn:not(.on)").focus();
+      else if(!open && back) langToggle.focus();
     };
-    langToggle.addEventListener("click", function(){ setLangOpen(langList.hidden); });
+    langToggle.addEventListener("click", function(){
+      /* Aperto dal passaggio del mouse: il clic lo lascia aperto invece di chiuderlo. */
+      if(langHoverOpened){ langHoverOpened = false; langList.querySelector(".lang-btn:not(.on)").focus(); return; }
+      setLangOpen(langList.hidden);
+    });
+    /* Con il mouse l'elenco si apre passando sulla lingua e si chiude quando il puntatore esce. */
+    if(matchMedia("(hover:hover) and (pointer:fine)").matches){
+      var langIn = function(e){
+        if(e.pointerType && e.pointerType !== "mouse") return;
+        clearTimeout(langHoverTimer);
+        if(langList.hidden){ langHoverOpened = true; setLangOpen(true, false, true); }
+      };
+      var langOut = function(){
+        clearTimeout(langHoverTimer);
+        if(langHoverOpened) langHoverTimer = setTimeout(function(){ setLangOpen(false); }, 250);
+      };
+      [langToggle, langList].forEach(function(el){ el.addEventListener("pointerenter", langIn); el.addEventListener("pointerleave", langOut); });
+    }
     langList.addEventListener("click", function(e){ if(e.target.closest(".lang-btn")) setLangOpen(false, true); });
     document.addEventListener("click", function(e){
       if(!langList.hidden && !langList.contains(e.target) && !langToggle.contains(e.target)) setLangOpen(false);

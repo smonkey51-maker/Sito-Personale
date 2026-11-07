@@ -478,10 +478,12 @@ main.editorial-content{padding-bottom:0}
 
 @media(max-width:340px){.hero-link{font-size:.9375rem}}
 
-/* Lingua: resta solo la sigla della lingua attiva, come lente e menu; l'elenco sotto mostra le altre. */
+/* Lingua: la sigla della lingua attiva con una freccia che invita a cambiarla; l'elenco sotto mostra le altre. */
 .lang-menu{position:relative}
-.lang-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:44px;padding:0 6px;border:0;background:none;color:var(--ink);font-family:var(--sans);font-size:1rem;font-weight:400;cursor:pointer;transition:transform 120ms ease-out}
+.lang-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;height:44px;padding:0 6px;border:0;background:none;color:var(--ink);font-family:var(--sans);font-size:1rem;font-weight:400;cursor:pointer;transition:transform 120ms ease-out}
 .lang-toggle:active{transform:scale(.97)}
+.lang-chevron{flex:none;transition:transform 160ms ease-out}
+.lang-toggle[aria-expanded="true"] .lang-chevron{transform:rotate(180deg)}
 .lang-toggle:focus-visible,.lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .lang-list{position:absolute;top:calc(100% + 8px);left:50%;translate:-50% 0;z-index:60;box-sizing:border-box;width:max-content;min-width:4.5rem;padding:4px;border:1px solid var(--line);border-radius:16px;background:#18181A;box-shadow:0 16px 40px #000a;transform-origin:top center}
 .lang-list[hidden]{display:none}
@@ -491,7 +493,7 @@ main.editorial-content{padding-bottom:0}
 .lang-btn.on{display:none}
 .lang-btn:active{background:#2A2A2D}
 @media(hover:hover) and (pointer:fine){.lang-btn:hover{background:#242427}}
-@media(prefers-reduced-motion:reduce){.lang-toggle,.lang-btn{transition:none}.lang-list:not([hidden]){animation:none}}
+@media(prefers-reduced-motion:reduce){.lang-toggle,.lang-btn,.lang-chevron{transition:none}.lang-list:not([hidden]){animation:none}}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
 @media(min-width:1200px){body .footer-note{font-size:1.0625rem}}
