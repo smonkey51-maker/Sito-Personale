@@ -48,6 +48,7 @@ window.NF_I18N.tw = {
   out_music_label: "Nnwom ne hi-fi",
   out_music_desc: "Mebɔ gitaa, na m’ahome bere mu no mebɔ drum.",
   out_artists_desc: "Nnwomtofo a mepɛ no mu bi ne Miles Davis, Marcus Miller, YES, Bach, Black Sabbath, Jean-Luc Ponty, Igorrr ne Jack White.",
+  out_music_link: "Hwɛ Spotify profile no",
   out_audio_desc: "Mepɛ nnwom a ɛte yie. Mede Sony ne HiFiMan headphones tie nnwom, na wɔ fie no, mede Sony nhyehyɛe tie.",
   out_photo_label: "Mfonini",
   out_photo_desc: "Mereyɛ me Instagram profile no kɛse denam mfonini a mene ankasa metwae so, a mede Lightroom Mobile presets asiesie. Mepɛ sɛ mewɔ Leica Q3.",
