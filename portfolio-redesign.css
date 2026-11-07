@@ -454,10 +454,10 @@ main.editorial-content{padding-bottom:0}
 @media(max-width:1099px){.desktop-nav{display:none}}
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.contact-trigger.cta-inline{display:inline;padding:10px 0;margin:-10px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px;cursor:pointer}
-.contact-trigger.cta-inline:active{text-decoration-color:var(--accent-hover)}
+.contact-trigger.cta-inline{display:inline-block;min-height:44px;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:var(--accent);font:inherit;line-height:44px;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;cursor:pointer}
+.contact-trigger.cta-inline:active{color:var(--accent-hover);text-decoration-color:var(--accent-hover)}
 .contact-trigger.cta-inline:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:2px}
-@media(hover:hover) and (pointer:fine){.contact-trigger.cta-inline:hover{text-decoration-color:var(--accent-hover)}}
+@media(hover:hover) and (pointer:fine){.contact-trigger.cta-inline:hover{color:var(--accent-hover);text-decoration-color:var(--accent-hover)}}
 .page-cta{margin-top:clamp(72px,9vw,120px)}
 .page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
 
