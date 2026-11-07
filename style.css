@@ -225,3 +225,17 @@ html{scroll-padding-top:var(--nav-offset,80px)}
  .hero{padding:36px 0 48px}
  .hero-cta-row{justify-content:flex-start;gap:10px}
 }
+
+/* Cinese (semplificato) e twi: caratteri di sistema, perché i font del sito coprono solo il latino di base. */
+html:lang(zh){--serif:"Bodoni Moda","Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
+html:lang(zh) body *{letter-spacing:normal}
+html:lang(zh) body{line-height:1.75}
+
+/* Quattro lingue: su desktop il gruppo non cambia la barra, su telefono stretto va su una riga propria. */
+.lang-group{display:contents}
+@media(max-width:480px){
+ .topbar-inner{flex-wrap:wrap!important;gap:0 8px!important;padding-bottom:4px!important}
+ .topbar .utilbar{display:contents!important}
+ .site-name{order:-1;margin-right:auto}
+ .lang-group{display:flex;order:9;flex-basis:100%;gap:0;margin-left:-8px}
+}

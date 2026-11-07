@@ -444,7 +444,7 @@
         if(navigator.clipboard && navigator.clipboard.writeText){
           navigator.clipboard.writeText(value).then(function(){
             var announcer = document.getElementById("themeAnnouncer");
-            if(announcer) announcer.textContent = i18n[lang].copy_done || "Copiato";
+            if(announcer) announcer.textContent = activeDict().copy_done || "Copiato";
           }).catch(function(){});
         }
       });
@@ -506,7 +506,29 @@
   try{ savedLang = sessionStorage.getItem(LANG_KEY); }catch(e){}
   /* Senza una scelta salvata, chi non ha il browser in italiano vede il sito in inglese. */
   var browserLang = ((navigator.languages && navigator.languages[0]) || navigator.language || "it").toLowerCase();
-  var lang = (savedLang === "en" || savedLang === "it") ? savedLang : (browserLang.indexOf("it") === 0 ? "it" : "en");
+  /* Italiano e inglese stanno in questo file; cinese e twi sono in file a parte,
+     caricati solo quando servono. Il cinese tradizionale non c'è: chi lo usa vede l'inglese. */
+  var EXTRA_LANGS = { zh: "i18n-zh.js", tw: "i18n-tw.js" };
+  var HTML_LANG = { it: "it", en: "en", zh: "zh-Hans", tw: "tw" };
+  function browserChoice(){
+    if(browserLang.indexOf("it") === 0) return "it";
+    if(/^zh(-(cn|sg|hans))?$/.test(browserLang)) return "zh";
+    if(/^(tw|ak)(-|$)/.test(browserLang)) return "tw";
+    return "en";
+  }
+  var lang = HTML_LANG[savedLang] ? savedLang : browserChoice();
+  function activeDict(){
+    return i18n[lang] || (window.NF_I18N && window.NF_I18N[lang]) || i18n.en;
+  }
+  function setLang(next){
+    lang = next;
+    if(i18n[lang] || !EXTRA_LANGS[lang] || (window.NF_I18N && window.NF_I18N[lang])){ applyLang(); return; }
+    var tag = document.createElement("script");
+    tag.src = EXTRA_LANGS[lang];
+    tag.onload = applyLang;
+    tag.onerror = function(){ lang = "en"; applyLang(); };
+    document.head.appendChild(tag);
+  }
   /* Ogni pagina dichiara data-page sul body; la home usa le chiavi senza suffisso. */
   var page = document.body.getAttribute("data-page");
   var suffix = (page && page !== "home") ? "_" + page : "";
@@ -516,7 +538,7 @@
   function renderIntro(){
     if(!introEl) return;
     introEl.textContent = "";
-    i18n[lang].hero_intro.forEach(function(segs){
+    activeDict().hero_intro.forEach(function(segs){
       var para = document.createElement("p");
       segs.forEach(function(seg){
         if(seg.href){
@@ -536,8 +558,8 @@
 
   /* ---- lingua ---- */
   function applyLang(){
-    root.lang = lang;
-    var dict = i18n[lang];
+    root.lang = HTML_LANG[lang];
+    var dict = activeDict();
     if(dict["page_title" + suffix]) document.title = dict["page_title" + suffix];
     var pageDescription = document.querySelector('meta[name="description"]');
     if(pageDescription && dict["page_description" + suffix]) pageDescription.setAttribute("content", dict["page_description" + suffix]);
@@ -561,9 +583,8 @@
   if(document.querySelector("[data-i18n-hash]")) window.addEventListener("hashchange", applyLang);
   document.querySelectorAll(".lang-btn").forEach(function(b){
     b.addEventListener("click", function(){
-      lang = b.getAttribute("data-lang");
-      try{ sessionStorage.setItem(LANG_KEY, lang); }catch(e){}
-      applyLang();
+      try{ sessionStorage.setItem(LANG_KEY, b.getAttribute("data-lang")); }catch(e){}
+      setLang(b.getAttribute("data-lang"));
     });
   });
 
@@ -623,5 +644,5 @@
     syncNav();
   }
 
-  applyLang();
+  setLang(lang);
 })();
