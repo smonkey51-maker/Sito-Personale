@@ -454,10 +454,14 @@ main.editorial-content{padding-bottom:0}
 @media(max-width:1099px){.desktop-nav{display:none}}
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.contact-trigger.cta-primary{display:inline-flex;align-items:center;min-height:48px;padding:6px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font-family:var(--serif);font-size:1.625rem;font-weight:500;line-height:1.2;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:8px;transition:color var(--dur) var(--ease),text-decoration-color var(--dur) var(--ease)}
-.contact-trigger.cta-primary:active{color:var(--accent);text-decoration-color:var(--accent-hover)}
+.contact-trigger.cta-primary{display:inline-flex;align-items:center;min-height:48px;padding:6px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font-family:var(--serif);font-size:1.625rem;font-weight:500;line-height:1.2;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color var(--dur) var(--ease)}
+.contact-trigger.cta-primary:active{text-decoration-color:var(--accent-hover)}
 .contact-trigger.cta-primary:focus-visible{outline:3px solid var(--ink);outline-offset:6px}
-@media(hover:hover) and (pointer:fine){.contact-trigger.cta-primary:hover{color:var(--accent);text-decoration-color:var(--accent-hover)}}
+@media(hover:hover) and (pointer:fine){.contact-trigger.cta-primary:hover{text-decoration-color:var(--accent-hover)}}
 .hero-cta{margin:16px 0 0}
 .page-cta{margin-top:clamp(72px,9vw,120px);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
+
+/* Mobile: saluto più grande su due righe, Contattami in basso sopra la barra dei link. */
+@media(max-width:700px){.hero-name{font-size:min(14.5vw,4.25rem);line-height:1.12;margin-bottom:32px}.hero-overlay{display:flex;flex-direction:column}.hero-cta{margin-top:auto;padding:40px 0 96px}}
+@media(max-width:360px){.hero-cta-row{gap:0 14px}}
