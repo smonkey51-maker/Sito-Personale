@@ -471,7 +471,7 @@ main.editorial-content{padding-bottom:0}
 @media(min-width:1921px){.hero-name{font-size:calc(72*var(--u));margin-bottom:calc(36*var(--u))}.hero-inner{padding-top:calc(132*var(--u))}}
 /* "Ciao, sono" più piccolo del nome, sempre su due righe. */
 .hero-hi,.hero-fn{display:block}
-.hero-hi{font-size:.65em;line-height:1.3}
+.hero-hi{font-size:.78em;line-height:1.25}
 
 /* Progetti, Per chi, Contattami: stessa misura del testo (18px), distanza dal testo e tra le voci ampie; su mobile la barra le distribuisce su tutta la larghezza. */
 @media(min-width:701px){.hero-cta-row{margin-top:40px;gap:32px}.hero-link{font-size:1.125rem;min-height:48px}}
