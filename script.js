@@ -630,6 +630,33 @@
     });
   });
 
+  /* Menu della lingua: la bandiera apre l'elenco; si chiude con Esc, con un clic fuori o scegliendo una lingua. */
+  var langToggle = document.querySelector(".lang-toggle");
+  var langList = document.getElementById("langList");
+  if(langToggle && langList){
+    var langItems = langList.querySelectorAll(".lang-btn");
+    var setLangOpen = function(open, back){
+      langList.hidden = !open;
+      langToggle.setAttribute("aria-expanded", String(open));
+      if(open) (langList.querySelector(".lang-btn.on") || langItems[0]).focus();
+      else if(back) langToggle.focus();
+    };
+    langToggle.addEventListener("click", function(){ setLangOpen(langList.hidden); });
+    langList.addEventListener("click", function(e){ if(e.target.closest(".lang-btn")) setLangOpen(false, true); });
+    document.addEventListener("click", function(e){
+      if(!langList.hidden && !langList.contains(e.target) && !langToggle.contains(e.target)) setLangOpen(false);
+    });
+    document.addEventListener("keydown", function(e){
+      if(langList.hidden) return;
+      if(e.key === "Escape"){ setLangOpen(false, true); return; }
+      var step = {ArrowDown:1, ArrowUp:-1}[e.key];
+      if(!step) return;
+      e.preventDefault();
+      var at = Array.prototype.indexOf.call(langItems, document.activeElement);
+      langItems[(at + step + langItems.length) % langItems.length].focus();
+    });
+  }
+
   /* Menu a tre lineette: si apre sotto la barra; si chiude con Esc, con un
      clic fuori o scegliendo una voce (Contatti apre la sua finestra). */
   var menuToggle = document.querySelector(".menu-toggle");

@@ -88,12 +88,6 @@ p{text-wrap:pretty}
 @media(hover:hover) and (pointer:fine){.desktop-nav a:hover{color:var(--accent);border-bottom-color:var(--ink)}}
 
 .utilbar{display:flex;align-items:center;gap:10px;flex:none}
-.lang-btn{
-  background:none;border:0;cursor:pointer;
-  font-family:var(--sans);font-size:.875rem;font-weight:600;
-  color:var(--ink-soft);padding:4px 2px;
-}
-.lang-btn.on{color:var(--ink)}
 
 @media(max-width:700px){
   .topbar-inner{height:auto;padding:16px 20px;flex-wrap:wrap;justify-content:center;gap:12px 20px}
@@ -161,8 +155,7 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 .colophon{scroll-margin-top:0}
 .topbar-inner{gap:24px;flex-wrap:wrap}
 .desktop-nav{margin-right:auto}
-.desktop-nav a,.lang-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
-.lang-btn{min-width:44px}
+.desktop-nav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 .copy-btn{min-height:44px;min-width:44px}
 .reveal-btn{min-height:44px}
 .footer-note,.cm-k{font-size:1rem}
@@ -230,12 +223,3 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 html:lang(zh){--serif:"Bodoni Moda","Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
 html:lang(zh) body *{letter-spacing:normal}
 html:lang(zh) body{line-height:1.75}
-
-/* Quattro lingue: su desktop il gruppo non cambia la barra, su telefono stretto va su una riga propria. */
-.lang-group{display:contents}
-@media(max-width:480px){
- .topbar-inner{flex-wrap:wrap!important;gap:0 8px!important;padding-bottom:4px!important}
- .topbar .utilbar{display:contents!important}
- .site-name{order:-1;margin-right:auto}
- .lang-group{display:flex;order:9;flex-basis:100%;gap:0;margin-left:-8px}
-}

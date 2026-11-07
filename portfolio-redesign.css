@@ -64,7 +64,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
  .site-name{display:inline-flex}
  .desktop-nav a{font-size:.875rem}
  .utilbar{gap:8px}
- .lang-btn{font-size:1rem;min-width:44px}
 }
 
 /* Minimal two-language header without redundant projects navigation. */
@@ -339,7 +338,7 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
 @media(max-width:700px){
  .hero-photo-frame{position:fixed;top:0;left:0;right:0;width:100%;max-width:none;margin:0;height:100svh;z-index:1;overflow:hidden}
  .hero-inner{padding-top:100svh;padding-bottom:0}
- .hero-overlay{align-self:flex-start;background:var(--bg);min-height:100svh;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc(50% - 50vw + var(--sb,0px)/2);padding:28px clamp(20px,4vw,64px) 36px}
+ .hero-overlay{align-self:flex-start;display:flex;flex-direction:column;justify-content:center;background:var(--bg);min-height:100svh;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc(50% - 50vw + var(--sb,0px)/2);padding:72px clamp(20px,4vw,64px) calc(32px + env(safe-area-inset-bottom))}
  .colophon{position:relative;z-index:2;background:var(--bg)}
  .hero-portrait{height:113%!important;object-fit:cover;object-position:center 22%;transform:translateY(-12%)}
  .hero-photo-frame{background:var(--bg)}
@@ -372,7 +371,6 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
 @media(min-width:701px){body{overflow-x:clip}}
 
 /* Language switch in the same sans and size as the navigation. */
-body .lang-btn{font-family:var(--sans);font-weight:400;font-size:1rem}
 
 /* Hero text: the name, then a short paragraph about me (script.js keeps it
    translated). */
@@ -383,6 +381,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:1rem}
 .hero-intro a{color:inherit;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.06em}
 @media(max-width:700px){.hero-name{font-size:clamp(1.75rem,9vw,2.9rem);max-width:none}.hero-intro{max-width:29em;margin-bottom:28px}}
 .hero-name{scroll-margin-top:28px}
+#hero-text{scroll-margin-top:calc(0px - var(--nav-offset,80px))}
 
 /* Motion: the portrait is revealed once when the page loads, and browsers that
    support cross-document view transitions fade between pages while the top bar
@@ -413,8 +412,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:1rem}
  .editorial-shell{max-width:calc(1280*var(--u));padding:0 calc(64*var(--u))}
  .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u))}
  .desktop-nav a{font-size:calc(16*var(--u))}
- body .lang-btn{font-size:calc(15*var(--u))}
- body .site-name{font-size:calc(28*var(--u))}
+  body .site-name{font-size:calc(28*var(--u))}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
  .hero-name{font-size:calc(56*var(--u));margin-bottom:calc(44*var(--u))}
@@ -464,7 +462,7 @@ main.editorial-content{padding-bottom:0}
 .page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
 
 /* Mobile: saluto su due righe; spazio sotto il testo per la barra fissa dei link. */
-@media(max-width:700px){.hero-name{font-size:min(11.5vw,3.75rem);line-height:1.12;margin-bottom:32px}.hero-overlay{padding-bottom:96px}}
+@media(max-width:700px){.hero-name{font-size:min(11.5vw,3.75rem);line-height:1.12;margin-bottom:32px}}
 
 /* Schermi medi e grandi: saluto grande su due righe (nome sotto "Ciao, sono"); meno spazio sopra, perché Contattami resti raggiungibile. */
 @media(min-width:701px){.hero-name{font-size:min(7.7vw,4.5rem,8.5vh);line-height:1.12;max-width:none;margin-bottom:36px}.hero-inner{padding-top:clamp(56px,7vh,132px)}}
@@ -479,6 +477,19 @@ main.editorial-content{padding-bottom:0}
 @media(max-width:700px){.hero-cta-row{justify-content:center;gap:0 clamp(14px,5vw,28px)}}
 
 @media(max-width:340px){.hero-link{font-size:.9375rem}}
+
+/* Lingua: un'icona a bandiera apre l'elenco delle lingue. */
+.lang-menu{position:relative}
+.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;background:none;color:var(--ink);cursor:pointer;transition:transform 120ms ease-out}
+.lang-toggle:active{transform:scale(.97)}
+.lang-toggle:focus-visible,.lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.lang-list{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:11rem;padding:4px;border:1px solid var(--line);border-radius:8px;background:var(--bg);box-shadow:0 16px 40px #000a}
+.lang-list[hidden]{display:none}
+.lang-btn{display:flex;align-items:center;width:100%;min-height:44px;padding:0 14px;border:0;border-radius:6px;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:1rem;font-weight:400;text-align:left;cursor:pointer;transition:background-color 120ms ease-out,color 120ms ease-out}
+.lang-btn.on{background:#18181A;color:var(--ink)}
+.lang-btn:active{background:#18181A;color:var(--ink)}
+@media(hover:hover) and (pointer:fine){.lang-btn:hover{background:#18181A;color:var(--ink)}}
+@media(prefers-reduced-motion:reduce){.lang-toggle,.lang-btn{transition:none}}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
 @media(min-width:1200px){body .footer-note{font-size:1.0625rem}}
