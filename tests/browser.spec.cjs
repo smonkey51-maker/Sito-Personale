@@ -42,6 +42,21 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('.search-panel')).toBeHidden();
   });
+  test('the search closes and clears itself after a result is chosen or the page is restored',async({page})=>{
+   await page.goto('/progetti.html');
+   await page.locator('.search-btn').click();
+   await page.locator('.search-panel input').fill('rag');
+   await expect(page.locator('.search-results a').first()).toBeVisible();
+   await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));
+   await expect(page.locator('.search-panel')).toBeHidden();
+   await expect(page.locator('.search-panel input')).toHaveValue('');
+   await expect(page.locator('.search-results a')).toHaveCount(0);
+   await page.locator('.search-btn').click();
+   await page.locator('.search-panel input').fill('rag');
+   await page.locator('.search-results a').first().click();
+   await page.goBack();
+   await expect(page.locator('.search-panel')).toBeHidden();
+  });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
    await revealBar(page);

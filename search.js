@@ -66,6 +66,15 @@ function setOpen(open) {
     input.focus();
   }
 }
+/* Dopo aver scelto un risultato, o tornando indietro con la cronologia (la pagina può essere ripristinata com'era), la ricerca si richiude e si svuota. */
+function reset() {
+  input.value = "";
+  results.textContent = "";
+  setOpen(false);
+}
+results.addEventListener("click", (e) => { if (e.target.closest("a")) reset(); });
+window.addEventListener("pagehide", reset);
+window.addEventListener("pageshow", (e) => { if (e.persisted) reset(); });
 button.addEventListener("click", () => setOpen(panel.hidden));
 input.addEventListener("input", () => { load().then(render); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) { setOpen(false); button.focus(); } });
