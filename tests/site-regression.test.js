@@ -32,6 +32,7 @@ for (const file of pages) {
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
   for (const code of ['it', 'en', 'zh', 'tw']) assert(html.includes('data-lang="' + code + '"'), file + ': language button ' + code + ' missing');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
+  assert(html.includes('name="color-scheme" content="dark"') && html.includes('name="darkreader-lock"'), file + ': dark colour scheme must be declared so browsers do not recolour the site');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
   assert(!/fonts\.googleapis|fonts\.gstatic/.test(html), file + ': fonts must be served from the site, not Google Fonts');
   assert(!/\b(Jira|UCMDB|Confluence|wiki)\b/i.test(html), file + ': internal source tools must not be named');
