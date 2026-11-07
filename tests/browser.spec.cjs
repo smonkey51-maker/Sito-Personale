@@ -153,17 +153,18 @@ for(const viewport of sizes){
    await expect(image).toHaveJSProperty('complete',true);
    expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
   });
-  test('the invitation to get in touch is a plain orange Contattami link that opens the contacts',async({page})=>{
+  test('the invitation to get in touch is one sentence with a clickable link that opens the contacts',async({page})=>{
    await page.goto('/progetti.html');
-   await expect(page.locator('.page-cta p')).toHaveText('Contattami');
-   await expect(page.locator('.page-cta .contact-trigger')).toHaveText('Contattami');
+   await expect(page.locator('.page-cta p')).toHaveText('Per parlare di un progetto, contattami.');
+   await expect(page.locator('.page-cta .contact-trigger')).toHaveText('contattami');
    await expect(page.locator('.page-cta .cta-primary')).toHaveCount(0);
    await page.locator('.page-cta .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
   test('in Per chi the last invitation is a plain Contattami link next to the other two',async({page})=>{
    await page.goto('/progetti.html#per-chi');
-   await expect(page.locator('.page-cta .cta-inline')).toHaveText('Contattami');
+   await expect(page.locator('.page-cta .cta-inline')).toHaveText('contattami');
+   await expect(page.locator('.page-cta [data-i18n="cta_before"]')).toBeHidden();
    await expect(page.locator('.page-cta .cta-inline')).toBeVisible();
    await page.locator('.page-cta .cta-inline').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
