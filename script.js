@@ -619,6 +619,11 @@
       var selected = b.getAttribute("data-lang") === lang;
       b.classList.toggle("on", selected);
       b.setAttribute("aria-pressed", String(selected));
+      if(selected){
+        var shown = document.querySelector(".lang-current"), opener = document.querySelector(".lang-toggle");
+        if(shown) shown.textContent = b.textContent;
+        if(opener) opener.setAttribute("aria-label", "Lingua / Language: " + b.getAttribute("aria-label"));
+      }
     });
     renderIntro();
   }
@@ -638,7 +643,7 @@
     var setLangOpen = function(open, back){
       langList.hidden = !open;
       langToggle.setAttribute("aria-expanded", String(open));
-      if(open) (langList.querySelector(".lang-btn.on") || langItems[0]).focus();
+      if(open) langList.querySelector(".lang-btn:not(.on)").focus();
       else if(back) langToggle.focus();
     };
     langToggle.addEventListener("click", function(){ setLangOpen(langList.hidden); });
@@ -652,8 +657,9 @@
       var step = {ArrowDown:1, ArrowUp:-1}[e.key];
       if(!step) return;
       e.preventDefault();
-      var at = Array.prototype.indexOf.call(langItems, document.activeElement);
-      langItems[(at + step + langItems.length) % langItems.length].focus();
+      var shown = Array.prototype.filter.call(langItems, function(b){ return !b.classList.contains("on"); });
+      var at = shown.indexOf(document.activeElement);
+      shown[(at + step + shown.length) % shown.length].focus();
     });
   }
 

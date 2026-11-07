@@ -72,7 +72,8 @@ for(const viewport of sizes){
    await expect(page.locator('#langList')).toBeHidden();
    await page.locator('.lang-toggle').click();
    await expect(page.locator('#langList')).toBeVisible();
-   await expect(page.locator('#langList .lang-btn')).toHaveCount(4);
+   await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
+   await expect(page.locator('.lang-current')).toHaveText('IT');
    await page.keyboard.press('Escape');
    await expect(page.locator('#langList')).toBeHidden();
    await expect(page.locator('.lang-toggle')).toBeFocused();
@@ -98,7 +99,8 @@ for(const viewport of sizes){
    const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .search-btn,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(fits).toBe(true);
    await page.locator('.lang-toggle').click();
-   const listFits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('#langList .lang-btn')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
+   await page.waitForTimeout(250);
+   const listFits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('#langList .lang-btn:not(.on)')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(listFits).toBe(true);
    expect(errors).toEqual([]);
   });
