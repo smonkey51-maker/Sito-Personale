@@ -56,7 +56,7 @@ window.NF_I18N.tw = {
   out_photo_desc: "Mereyɛ me Instagram profile no kɛse denam mfonini a mene ankasa metwae so, a mede Lightroom Mobile presets asiesie. Mepɛ sɛ mewɔ Leica Q3.",
   out_photo_link: "Hwɛ Instagram profile no",
   out_books_label: "Nwoma",
-  out_books_desc: "Ne titiriw no, mekenkan nnipa asetena ho nwoma ne nwoma a nnipa kyerɛw wɔn ankasa wɔn asetena ho.",
+  out_books_desc: "Ne titiriw no, mekenkan nnipa asetena ho nwoma ne nwoma a nnipa twerɛ wɔn ankasa asetena ho.",
   out_watch_label: "Dɔnhwerew",
   out_watch_desc: "Mepɛ dɔnhwerew. Nea mepɛ sen biara ne Omega Speedmaster, ɛdan a ɛtaa wɔ hɔ ne First Omega In Space nyinaa.",
   out_pets_label: "Mmoa",
