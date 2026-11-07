@@ -47,7 +47,7 @@ window.NF_I18N.zh = {
   page_description_outside: "音乐与高保真、摄影、读书和动物：Nicolò Forcolin 工作之外的爱好。",
   out_music_label: "音乐与高保真",
   out_music_desc: "我弹吉他，空闲时也打鼓。",
-  out_artists_desc: "我最喜欢的艺术家有 Miles Davis、Marcus Miller、YES、巴赫、Black Sabbath、Jean-Luc Ponty 和 Igorrr。",
+  out_artists_desc: "我最喜欢的艺术家有 Miles Davis、Marcus Miller、YES、巴赫、Black Sabbath、Jean-Luc Ponty、Igorrr 和 Jack White。",
   out_audio_desc: "我是音响发烧友。我用索尼和 HiFiMan 的耳机听音乐，家里有一套索尼音响系统。",
   out_photo_label: "摄影",
   out_photo_desc: "我正在用自己拍摄的照片丰富我的 Instagram 主页，照片用 Lightroom Mobile 预设调色。我很想拥有一台徕卡相机。",

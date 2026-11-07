@@ -47,7 +47,7 @@ window.NF_I18N.tw = {
   page_description_outside: "Music and hi-fi, photography, books and animals: Nicolò Forcolin’s hobbies outside work.",
   out_music_label: "Music and hi-fi",
   out_music_desc: "I play guitar and, in my spare time, drums.",
-  out_artists_desc: "Among my favourite artists are Miles Davis, Marcus Miller, YES, Bach, Black Sabbath, Jean-Luc Ponty and Igorrr.",
+  out_artists_desc: "Among my favourite artists are Miles Davis, Marcus Miller, YES, Bach, Black Sabbath, Jean-Luc Ponty, Igorrr and Jack White.",
   out_audio_desc: "I am an audiophile. I listen on Sony and HiFiMan headphones, and at home on a Sony system.",
   out_photo_label: "Photography",
   out_photo_desc: "I am growing my Instagram profile with photos I take myself, edited with Lightroom Mobile presets. I would like to own a Leica.",
