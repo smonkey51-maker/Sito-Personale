@@ -455,3 +455,7 @@ main.editorial-content{padding-bottom:0}
 
 /* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
 @media(max-width:1099px){.desktop-nav{display:none}}
+
+/* Tablet e schermi medi: i quattro link della hero stanno su due righe da due, non tre più uno. */
+@media(min-width:701px) and (max-width:999px){.hero-cta-row{display:grid;grid-template-columns:repeat(2,minmax(0,max-content));justify-content:start;column-gap:24px;row-gap:0;align-items:start}}
+@media(min-width:701px) and (max-width:800px){.hero-link .lbl-long{display:none}.hero-link .lbl-short{display:inline}}
