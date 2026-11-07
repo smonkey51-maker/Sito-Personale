@@ -480,8 +480,9 @@ main.editorial-content{padding-bottom:0}
 
 /* Lingua: la sigla della lingua attiva con una freccia che invita a cambiarla; l'elenco sotto mostra le altre. */
 .lang-menu{position:relative}
-.lang-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;height:44px;padding:0 6px;border:0;background:none;color:var(--ink);font-family:var(--sans);font-size:1rem;font-weight:400;cursor:pointer;transition:transform 120ms ease-out}
+.lang-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;height:44px;padding:0 4px;border:0;background:none;color:var(--ink);font-family:var(--sans);font-size:1rem;font-weight:400;cursor:pointer;transition:transform 120ms ease-out}
 .lang-toggle:active{transform:scale(.97)}
+.lang-flag{flex:none}
 .lang-chevron{flex:none;transition:transform 160ms ease-out}
 .lang-toggle[aria-expanded="true"] .lang-chevron{transform:rotate(180deg)}
 .lang-toggle:focus-visible,.lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
