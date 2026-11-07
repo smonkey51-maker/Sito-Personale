@@ -243,6 +243,18 @@
 .footer-note { font-size: 1rem; }
 .lang-btn { font-size: 1rem; }
 
+/* Griglia a due colonne (solo desktop): il primo blocco e un eventuale ultimo blocco solitario occupano
+   tutta la riga con il titolo a sinistra; gli altri blocchi stanno a coppie. Su mobile resta una colonna. */
+@media (min-width: 821px) {
+  .page-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 72px; }
+  .page-grid > .page-block { align-content: start; }
+  .page-grid > .page-block:first-child,
+  .page-grid > .page-block:last-child:nth-child(even) { grid-column: 1 / -1; grid-template-columns: 260px minmax(0, 1fr); column-gap: 48px; align-items: baseline; }
+  .page-grid > .page-block:first-child .page-block-body,
+  .page-grid > .page-block:last-child:nth-child(even) .page-block-body { max-width: 34em; }
+  .page-grid > .page-block:not(:first-child):not(:last-child:nth-child(even)) .page-block-label { font-size: 2rem; }
+}
+
 @media (max-width: 820px) {
   .page-block, .how-section, .lab-section { padding-top: 56px; }
   .page-block { gap: 16px; }
