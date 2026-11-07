@@ -454,11 +454,11 @@ main.editorial-content{padding-bottom:0}
 @media(max-width:1099px){.desktop-nav{display:none}}
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.contact-trigger.cta-primary{display:inline-flex;align-items:center;min-height:48px;padding:6px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font-family:var(--serif);font-size:1.625rem;font-weight:500;line-height:1.2;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color var(--dur) var(--ease)}
-.contact-trigger.cta-primary:active{text-decoration-color:var(--accent-hover)}
-.contact-trigger.cta-primary:focus-visible{outline:3px solid var(--ink);outline-offset:6px}
-@media(hover:hover) and (pointer:fine){.contact-trigger.cta-primary:hover{text-decoration-color:var(--accent-hover)}}
-.page-cta{margin-top:clamp(72px,9vw,120px);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.contact-trigger.cta-inline{display:inline;padding:10px 0;margin:-10px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px;cursor:pointer}
+.contact-trigger.cta-inline:active{text-decoration-color:var(--accent-hover)}
+.contact-trigger.cta-inline:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:2px}
+@media(hover:hover) and (pointer:fine){.contact-trigger.cta-inline:hover{text-decoration-color:var(--accent-hover)}}
+.page-cta{margin-top:clamp(72px,9vw,120px)}
 .page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
 
 /* Mobile: saluto su due righe; spazio sotto il testo per la barra fissa dei link. */

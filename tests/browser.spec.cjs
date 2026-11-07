@@ -153,6 +153,14 @@ for(const viewport of sizes){
    await expect(image).toHaveJSProperty('complete',true);
    expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
   });
+  test('the invitation to get in touch is one sentence with a clickable link that opens the contacts',async({page})=>{
+   await page.goto('/progetti.html');
+   await expect(page.locator('.page-cta p')).toHaveText('Per parlare di un progetto, contattami.');
+   await expect(page.locator('.page-cta .contact-trigger')).toHaveText('contattami');
+   await expect(page.locator('.page-cta .cta-primary')).toHaveCount(0);
+   await page.locator('.page-cta .contact-trigger').click();
+   await expect(page.locator('#contactDialog')).toBeVisible();
+  });
   test('contacts open in a dialog with phone and LinkedIn only',async({page})=>{
    await page.goto('/');
    await revealBar(page);

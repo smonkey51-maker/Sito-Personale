@@ -308,7 +308,7 @@
   .page:has(#per-chi:target) .for-whom-block .page-block-body p { font-size: 1rem; line-height: 1.5; margin-bottom: 10px; }
   .page:has(#per-chi:target) .for-whom-block .item-link { margin: 0; }
   .page:has(#per-chi:target) .for-whom-block .item-link a { display: inline-flex; align-items: center; min-height: 44px; }
-  .page:has(#per-chi:target) .page-cta { margin-top: 12px; gap: 4px; }
+  .page:has(#per-chi:target) .page-cta { margin-top: 12px; }
   .page:has(#per-chi:target) .page-cta p { font-size: 1rem; }
   .page:has(#per-chi:target) + .colophon { margin-top: 16px; padding: 12px 0 16px; }
   .page:has(#per-chi:target) + .colophon::before { display: none; }
