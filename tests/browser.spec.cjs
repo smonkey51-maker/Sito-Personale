@@ -12,6 +12,12 @@ for(const viewport of sizes){
     await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
    }
   };
+  // La lingua si sceglie dal menu a bandiera: lo si apre e si tocca la voce.
+  const pickLang=async(page,code)=>{
+   await revealBar(page);
+   await page.locator('.lang-toggle').click();
+   await page.locator('[data-lang="'+code+'"]').click();
+  };
   test('layout and hero essentials',async({page})=>{
    await page.goto('/');
    await expect(page.locator('#hero-name')).toBeVisible();
@@ -53,31 +59,47 @@ for(const viewport of sizes){
   });
   test('language switching keeps per-page titles',async({page})=>{
    await page.goto('/ai-in-locale.html');
-   await page.locator('[data-lang="en"]').click();
+   await pickLang(page,'en');
    await expect(page.locator('h1')).toHaveText('Local AI Experiment');
    await expect(page).toHaveTitle('Local AI Experiment | Nicolò Forcolin');
    await page.goto('/');
    await expect(page.locator('.hero-cta-row .hero-link').first()).toHaveText('Projects');
-   await revealBar(page);
-   await page.locator('[data-lang="it"]').click();
+   await pickLang(page,'it');
    await expect(page.locator('.hero-cta-row .hero-link').first()).toHaveText('Progetti');
+  });
+  test('language menu opens from the flag, lists four languages and closes with Esc or a choice',async({page})=>{
+   await page.goto('/progetti.html');
+   await expect(page.locator('#langList')).toBeHidden();
+   await page.locator('.lang-toggle').click();
+   await expect(page.locator('#langList')).toBeVisible();
+   await expect(page.locator('#langList .lang-btn')).toHaveCount(4);
+   await page.keyboard.press('Escape');
+   await expect(page.locator('#langList')).toBeHidden();
+   await expect(page.locator('.lang-toggle')).toBeFocused();
+   await page.locator('.lang-toggle').click();
+   await page.locator('[data-lang="en"]').click();
+   await expect(page.locator('#langList')).toBeHidden();
+   await expect(page.locator('h1')).toHaveText('Projects and Initiatives');
   });
   test('Chinese and Twi are selectable, translate the page and fit the header',async({page})=>{
    const errors=[];
    page.on('pageerror',e=>errors.push(String(e)));
    page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
    await page.goto('/percorso.html');
-   await page.locator('[data-lang="zh"]').click();
+   await pickLang(page,'zh');
    await expect(page.locator('html')).toHaveAttribute('lang','zh-Hans');
    await expect(page.locator('h1')).toHaveText('经历');
    await expect(page).toHaveTitle('经历 | Nicolò Forcolin');
-   await page.locator('[data-lang="tw"]').click();
+   await pickLang(page,'tw');
    await expect(page.locator('html')).toHaveAttribute('lang','tw');
    await expect(page.locator('h1')).toHaveText('Adwuma mu suahu');
-   await page.locator('[data-lang="it"]').click();
+   await pickLang(page,'it');
    await expect(page.locator('h1')).toHaveText('Percorso');
-   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-btn,.topbar .search-btn,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
+   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .search-btn,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(fits).toBe(true);
+   await page.locator('.lang-toggle').click();
+   const listFits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('#langList .lang-btn')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
+   expect(listFits).toBe(true);
    expect(errors).toEqual([]);
   });
   test('RAG how-it-works: four-stage diagram on desktop, five stages on mobile',async({page})=>{
@@ -128,8 +150,7 @@ for(const viewport of sizes){
    await expect(page.locator('.desktop-nav')).toHaveCount(0);
    await expect(page.locator('.site-name')).toHaveText('NForcolin');
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
-   await revealBar(page);
-   await page.locator('[data-lang="en"]').click();
+   await pickLang(page,'en');
    await expect(page.locator('#heroIntro')).toContainText('I bring AI into everyday work');
   });
   if(viewport.width<=700){
