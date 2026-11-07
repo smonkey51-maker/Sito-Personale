@@ -115,11 +115,11 @@
       hero_intro:[
         [{t:"Porto l’AI nel lavoro quotidiano di InfoCamere."}],
         [{t:"Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usa un’intera Unità Operativa."}],
-        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nel percorso di scelta, training ed adozione dell’AI in azienda e progetti. Questa consulenza mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
+        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nel percorso di scelta, training e adozione dell’AI in azienda e nei progetti. Questa consulenza mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI generativa in InfoCamere",
-      page_description:"Porto l’AI nel lavoro quotidiano di InfoCamere. Ho guidato progettazione e messa in produzione dell’assistente AI in uso da un’intera Unità Operativa, dal suo Responsabile e dal middle management: riduce i tempi di gestione delle criticità e di analisi post-evento.",
+      page_description:"Porto l’AI nel lavoro quotidiano di InfoCamere. Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usa un’intera Unità Operativa.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -357,7 +357,7 @@
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Generative AI at InfoCamere",
-      page_description:"I bring AI into everyday work at InfoCamere. I led the design and deployment of the AI assistant now used by an entire Operating Unit, its Manager and middle management: it cuts the time spent handling incidents and on post-incident analysis.",
+      page_description:"I bring AI into everyday work at InfoCamere. I led the design and rollout of the AI assistant now used by an entire Operating Unit.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",

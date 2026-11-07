@@ -119,7 +119,7 @@ window.NF_I18N.tw = {
 
   skip_to_content: "Kɔ nsɛm no so tẽẽ",
   page_title: "Nicolò Forcolin | Generative AI wɔ InfoCamere",
-  page_description: "Mede AI hyɛ da biara adwuma mu wɔ InfoCamere. Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa, ne Manager no ne mpanyimfo a wɔwɔ mfimfini no de di dwuma seesei no nhyehyɛe ne ne siesie anim: ɛtew bere a wɔde yɛ asɛm ahorow ne bere a wɔhwehwɛ mu akyi no so.",
+  page_description: "Mede AI hyɛ da biara adwuma mu wɔ InfoCamere. Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa de di dwuma seesei no nhyehyɛe ne ne siesie anim.",
   rag_step1_kicker: "Nsɛm fibea a edi kan",
   rag_step1_title: "Nwoma ne asɛm ahorow a atwam",
   rag_step1_desc: "Nimdeɛ boaboa abien a ɛda nsam.",

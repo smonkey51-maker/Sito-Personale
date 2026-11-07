@@ -118,7 +118,7 @@ window.NF_I18N.zh = {
   ],
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | InfoCamere 的生成式 AI",
-  page_description: "我在 InfoCamere 把 AI 带入日常工作。我主导了 AI 助手的设计和部署，现在整个运营单元、其负责人和中层管理人员都在使用它：它缩短了处理事件和事后分析所需的时间。",
+  page_description: "我在 InfoCamere 把 AI 带入日常工作。我主导了 AI 助手的设计和上线，现在整个运营单元都在使用它。",
   rag_step1_kicker: "最初的来源",
   rag_step1_title: "文档与事件历史",
   rag_step1_desc: "两个相互独立的知识库。",
