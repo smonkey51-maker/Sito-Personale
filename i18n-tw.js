@@ -113,8 +113,8 @@ window.NF_I18N.tw = {
   hero_greeting: "Me din ne Nicolò Forcolin",
   hero_intro: [
     [{ t: "Mede AI hyɛ da biara adwuma mu wɔ InfoCamere." }],
-    [{ t: "Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa de di dwuma seesei no nhyehyɛe ne ne siesie anim. Da biara mehyɛ no den denam nsɛm a wɔn a wɔde di dwuma ka so, na ɛtew bere a wɔde yɛ asɛm ahorow ne bere a wɔhwehwɛ mu akyi no so." }],
-    [{ t: "Meboaa adwumayɛ nnamfo a wɔboro 35 ne adwumakuo foforo bi CEO wɔ nnwinnade no a wɔde bedi dwuma mu." }]
+    [{ t: "Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa de di dwuma seesei no nhyehyɛe ne ne siesie anim." }],
+    [{ t: "Meboaa adwumayɛ nnamfo a wɔboro 35 ne adwumakuo foforo bi CEO wɔ AI a wɔbɛpaw, wɔn nkyerɛkyerɛ ne ɔkwan a wɔfa so de di dwuma wɔ adwumakuo ne nhyehyɛe mu. Afotuo adwuma yi maa meko SCWL kuw no mu sɛ AI nimdefo, ɔbarima a wɔapaw no ma Sprint Forward, ɛyɛ amanaman nsɛm bi a ɛwɔ Shangcheng, China." }]
   ],
 
   skip_to_content: "Kɔ nsɛm no so tẽẽ",

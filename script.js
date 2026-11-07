@@ -114,8 +114,8 @@
       hero_greeting:"Ciao, sono Nicolò Forcolin",
       hero_intro:[
         [{t:"Porto l’AI nel lavoro quotidiano di InfoCamere."}],
-        [{t:"Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usa un’intera Unità Operativa. Lo miglioro ogni giorno con i riscontri degli utenti e riduce i tempi di gestione delle criticità e di analisi post-evento."}],
-        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nell’adozione degli strumenti."}]
+        [{t:"Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usa un’intera Unità Operativa."}],
+        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nel percorso di scelta, training ed adozione dell’AI in azienda e progetti. Questa consulenza mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI generativa in InfoCamere",
@@ -352,8 +352,8 @@
       hero_greeting:"Hi, I’m Nicolò Forcolin",
       hero_intro:[
         [{t:"I bring AI into everyday work at InfoCamere."}],
-        [{t:"I led the design and rollout of the AI assistant now used by an entire Operating Unit. I improve it every day with user feedback, and it cuts the time spent handling incidents and on post-incident analysis."}],
-        [{t:"I supported more than 35 colleagues and the CEO of an external company in adopting the tools."}]
+        [{t:"I led the design and rollout of the AI assistant now used by an entire Operating Unit."}],
+        [{t:"I supported more than 35 colleagues and the CEO of an external company in choosing, training on and adopting AI in the company and in projects. This consulting work led me to join the SCWL team as an AI expert, a candidate for Sprint Forward, an international initiative in Shangcheng, China."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Generative AI at InfoCamere",
