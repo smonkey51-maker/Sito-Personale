@@ -113,12 +113,12 @@ window.NF_I18N.zh = {
   hero_hi: "你好，我是",
   hero_intro: [
     [{ t: "我在 InfoCamere 把 AI 带入日常工作。" }],
-    [{ t: "我主导了 AI 助手的设计和上线，现在整个运营单元都在使用它。" }],
+    [{ t: "我主导了 AI 助手的设计和上线，现在整个运营单元及其负责人都在使用它。" }],
     [{ t: "我帮助了 35 多位同事和一家外部公司的 CEO 完成 AI 在公司和项目中的选择、培训和采用。这段咨询工作让我以 AI 专家的身份加入 SCWL 团队，参与申请“Sprint Forward”，这是一项在中国上城区举办的国际活动。" }]
   ],
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | InfoCamere 的生成式 AI",
-  page_description: "我在 InfoCamere 把 AI 带入日常工作。我主导了 AI 助手的设计和上线，现在整个运营单元都在使用它。",
+  page_description: "我在 InfoCamere 把 AI 带入日常工作。我主导了 AI 助手的设计和上线，现在整个运营单元及其负责人都在使用它。",
   rag_step1_kicker: "最初的来源",
   rag_step1_title: "文档与事件历史",
   rag_step1_desc: "两个相互独立的知识库。",
