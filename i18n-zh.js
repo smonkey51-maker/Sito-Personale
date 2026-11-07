@@ -114,7 +114,7 @@ window.NF_I18N.zh = {
   hero_intro: [
     [{ t: "我在 InfoCamere 把 AI 带入日常工作。" }],
     [{ t: "我主导了 AI 助手的设计和上线，现在整个运营单元都在使用它。我每天根据用户反馈改进它，它缩短了处理事件和事后分析所需的时间。" }],
-    [{ t: "我帮助了 35 多位同事和一家外部公司的 CEO 采用这些工具。这段咨询工作让我以 AI 专家的身份加入 SCWL 团队，参与申请“Sprint Forward”，这是一项在中国上城区举办的国际活动。" }]
+    [{ t: "我帮助了 35 多位同事和一家外部公司的 CEO 采用这些工具。" }]
   ],
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | InfoCamere 的生成式 AI",
@@ -136,6 +136,8 @@ window.NF_I18N.zh = {
   local_step3_desc: "本地推理与演示。",
   back_to_site: "返回首页",
   colophon_title: "联系方式",
+  cta_contact: "联系我",
+  cta_text: "如需讨论项目，请联系我。",
   colophon_note: "个人网站。这里介绍的活动均以个人身份呈现。",
   new_tab_hint: "（在新标签页中打开）",
   copy_phone: "复制电话号码",
