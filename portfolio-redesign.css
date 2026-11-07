@@ -423,7 +423,7 @@ body .lang-btn{font-family:var(--sans);font-weight:400;font-size:1rem}
  .hero-cta-row{margin-top:calc(16*var(--u));gap:calc(24*var(--u))}
  .filmstrip-meta{font-size:calc(15*var(--u))}
  .filmstrip-title{font-size:calc(22*var(--u))}
- body .footer-note{font-size:calc(15*var(--u));padding-top:calc(12*var(--u))}
+ body .footer-note{padding-top:calc(12*var(--u))}
  .colophon{padding-bottom:calc(16*var(--u))}
 }
 
@@ -479,3 +479,7 @@ main.editorial-content{padding-bottom:0}
 @media(max-width:700px){.hero-cta-row{justify-content:center;gap:0 clamp(14px,5vw,28px)}}
 
 @media(max-width:340px){.hero-link{font-size:.9375rem}}
+
+/* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
+@media(min-width:1200px){body .footer-note{font-size:1.0625rem}}
+@media(min-width:1921px){body .footer-note{font-size:calc(18*var(--u))}}
