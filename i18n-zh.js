@@ -51,6 +51,7 @@ window.NF_I18N.zh = {
   out_audio_desc: "我是音响发烧友。我用索尼和 HiFiMan 的耳机听音乐，家里有一套索尼音响系统。",
   out_photo_label: "摄影",
   out_photo_desc: "我正在用自己拍摄的照片丰富我的 Instagram 主页，照片用 Lightroom Mobile 预设调色。我很想拥有一台徕卡相机。",
+  out_photo_link: "查看 Instagram 主页",
   out_books_label: "阅读",
   out_books_desc: "我主要读传记和自传。",
   out_pets_label: "动物",
