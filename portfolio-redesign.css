@@ -474,7 +474,7 @@ main.editorial-content{padding-bottom:0}
 /* Progetti, Per chi, Contattami: stessa misura del testo (18px), distanza dal testo e tra le voci ampie; su mobile la barra le centra con poco spazio tra le voci. */
 @media(min-width:701px){.hero-cta-row{margin-top:clamp(56px,9vh,96px);gap:32px}.hero-link{font-size:1.125rem;min-height:48px}}
 @media(min-width:1921px){.hero-cta-row{margin-top:clamp(calc(56*var(--u)),9vh,calc(88*var(--u)));gap:calc(32*var(--u))}.hero-link{font-size:calc(18*var(--u));min-height:calc(48*var(--u))}}
-@media(max-width:700px){.hero-cta-row{justify-content:center;gap:0 clamp(14px,5vw,28px)}}
+@media(max-width:700px){.hero-cta-row{justify-content:center;gap:0 clamp(28px,11vw,64px);padding-inline:12px}.hero-link{font-size:clamp(.9375rem,4.1vw,1rem)}}
 
 @media(max-width:340px){.hero-link{font-size:.9375rem}}
 
