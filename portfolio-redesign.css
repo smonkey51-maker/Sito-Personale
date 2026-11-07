@@ -1,3 +1,5 @@
+/* Il sito è scuro per scelta: i browser non devono ricolorarlo. */
+html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Figma-inspired portfolio treatment — keeps existing content and functionality. */
 :root{
  --bg:#F7F5F1;--bg-2:#EEEAE5;--ink:#1D1E22;--ink-soft:#606168;
