@@ -463,9 +463,9 @@ main.editorial-content{padding-bottom:0}
 .page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
 
 /* Mobile: saluto più grande su due righe, Contattami subito dopo il testo. */
-@media(max-width:700px){.hero-name{font-size:min(14.5vw,4.25rem);line-height:1.12;margin-bottom:32px}.hero-overlay{display:flex;flex-direction:column}.hero-cta{margin-top:0;padding:20px 0 96px}}
+@media(max-width:700px){.hero-name{font-size:min(11.5vw,3.75rem);line-height:1.12;margin-bottom:32px;max-width:6.4em}.hero-overlay{display:flex;flex-direction:column}.hero-cta{margin-top:0;padding:20px 0 96px}}
 @media(max-width:360px){.hero-cta-row{gap:0 14px}}
 
 /* Schermi medi e grandi: saluto grande su due righe (nome sotto "Ciao, sono"); meno spazio sopra, perché Contattami resti raggiungibile. */
-@media(min-width:701px){.hero-name{font-size:min(7.7vw,6.5rem,8.5vh);line-height:1.12;max-width:6.4em;margin-bottom:36px}.hero-inner{padding-top:clamp(56px,7vh,132px)}}
-@media(min-width:1921px){.hero-name{font-size:calc(104*var(--u));margin-bottom:calc(36*var(--u))}.hero-inner{padding-top:calc(132*var(--u))}}
+@media(min-width:701px){.hero-name{font-size:min(7.7vw,4.5rem,8.5vh);line-height:1.12;max-width:6.4em;margin-bottom:36px}.hero-inner{padding-top:clamp(56px,7vh,132px)}}
+@media(min-width:1921px){.hero-name{font-size:calc(72*var(--u));margin-bottom:calc(36*var(--u))}.hero-inner{padding-top:calc(132*var(--u))}}
