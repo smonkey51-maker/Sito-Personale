@@ -49,7 +49,7 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 | `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati, segno d'ingresso su mobile |
 | `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
 
-Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio; `#0D0D0E` anche come `theme-color` delle pagine e nel manifest dell'app.
+Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio e dei pannelli che si aprono dalla barra (menu, lingue, ricerca), con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0D0D0E` anche come `theme-color` delle pagine e nel manifest dell'app.
 
 ### Tipografia e comportamento
 
@@ -58,7 +58,7 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 - Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco), il saluto in home e il nome sulla schermata d'ingresso su mobile (arancione). Gli altri titoli restano in Bodoni Moda.
 - Arancione su un segno grafico: eccezione voluta solo per il segno d'ingresso su mobile (linea corta con punto).
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
-- Navigazione unica, senza indici duplicati.
+- Navigazione unica, senza indici duplicati. Lente, lingua (sigla attiva con freccia) e tre lineette sono icone semplici senza riquadro; i pannelli che aprono hanno tutti lo stesso aspetto e le voci dei menu sono centrate.
 - I dettagli espandibili devono funzionare anche da tastiera.
 - Layout fluido per desktop e mobile, con rispetto per `prefers-reduced-motion`.
 - Non inventare metriche, impatti o caratteristiche tecniche.
