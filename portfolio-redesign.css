@@ -451,5 +451,5 @@ main.editorial-content{padding-bottom:0}
  body[data-page="home"]{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
 }
 
-/* Tablet: the larger menu text still fits on one line. */
-@media(min-width:701px) and (max-width:900px){.desktop-nav{gap:12px;margin-left:16px}}
+/* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
+@media(max-width:1099px){.desktop-nav{display:none}}
