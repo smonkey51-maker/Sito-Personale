@@ -458,10 +458,10 @@ main.editorial-content{padding-bottom:0}
 .contact-trigger.cta-primary:active{text-decoration-color:var(--accent-hover)}
 .contact-trigger.cta-primary:focus-visible{outline:3px solid var(--ink);outline-offset:6px}
 @media(hover:hover) and (pointer:fine){.contact-trigger.cta-primary:hover{text-decoration-color:var(--accent-hover)}}
-.hero-cta{margin:32px 0 0}
+.hero-cta{margin:clamp(32px,calc(32px + (100vh - 800px)*.2),72px) 0 0}
 .page-cta{margin-top:clamp(72px,9vw,120px);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
 
 /* Mobile: saluto più grande su due righe, Contattami subito dopo il testo. */
-@media(max-width:700px){.hero-name{font-size:min(14.5vw,4.25rem);line-height:1.12;margin-bottom:32px}.hero-overlay{display:flex;flex-direction:column}.hero-cta{margin-top:0;padding:36px 0 96px}}
+@media(max-width:700px){.hero-name{font-size:min(14.5vw,4.25rem);line-height:1.12;margin-bottom:32px}.hero-overlay{display:flex;flex-direction:column}.hero-cta{margin-top:0;padding:20px 0 96px}}
 @media(max-width:360px){.hero-cta-row{gap:0 14px}}
