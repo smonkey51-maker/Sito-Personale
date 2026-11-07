@@ -97,6 +97,14 @@ for(const viewport of sizes){
    await expect(page.locator('#langList')).toBeHidden();
    await expect(page.locator('h1')).toHaveText('Projects and Initiatives');
   });
+  test('with a mouse the language list opens on hover and the flag arrow invites to change language',async({page})=>{
+   await page.goto('/progetti.html');
+   await expect(page.locator('.lang-toggle .lang-chevron')).toBeVisible();
+   await page.locator('.lang-toggle').hover();
+   await expect(page.locator('#langList')).toBeVisible();
+   await page.mouse.move(5,300);
+   await expect(page.locator('#langList')).toBeHidden();
+  });
   test('Chinese and Twi are selectable, translate the page and fit the header',async({page})=>{
    const errors=[];
    page.on('pageerror',e=>errors.push(String(e)));
