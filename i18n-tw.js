@@ -51,6 +51,7 @@ window.NF_I18N.tw = {
   out_audio_desc: "I am an audiophile. I listen on Sony and HiFiMan headphones, and at home on a Sony system.",
   out_photo_label: "Photography",
   out_photo_desc: "I am growing my Instagram profile with photos I take myself, edited with Lightroom Mobile presets. I would like to own a Leica.",
+  out_photo_link: "See the Instagram profile",
   out_books_label: "Reading",
   out_books_desc: "I mostly read biographies and autobiographies.",
   out_pets_label: "Animals",
