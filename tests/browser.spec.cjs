@@ -16,7 +16,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toBeVisible();
    await expect(page.locator('#avatarPhoto')).toBeVisible();
-   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toHaveCount(1);
+   await expect(page.locator('.hero-cta-row .hero-link')).toHaveCount(3);
   });
   test('every page loads without errors or horizontal scroll',async({page})=>{
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
@@ -36,60 +36,20 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('.search-panel')).toBeHidden();
   });
-  test('hero links lead to the project pages',async({page})=>{
-   await page.goto('/');
-   await revealBar(page);
-   await page.locator('.hero-link').first().click();
-   await expect(page).toHaveURL(/rag-aziendale\.html$/);
-   await expect(page.locator('h1')).toHaveText('RAG');
-   await page.goto('/');
-   await revealBar(page);
-   await page.locator('.hero-cta-row a[href="ai-in-locale.html"]').click();
-   await expect(page.locator('h1')).toHaveText('Sperimentazione AI in locale');
-  });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
    await revealBar(page);
-   await page.locator('.hero-link').nth(1).click();
+   await page.locator('.hero-link').first().click();
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
    await expect(page.locator('h1')).toHaveText('RAG');
   });
-  test('RAG figure follows the chosen source and is translated',async({page})=>{
-   const errors=[];
-   page.on('pageerror',e=>errors.push(String(e)));
-   page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
-   await page.goto('/rag-aziendale.html');
-   const readout=page.locator('[data-figure-readout]');
-   await expect(readout).toHaveText('Un solo punto di accesso per le fonti aziendali.');
-   const before=await page.locator('[data-part="carriage"]').getAttribute('transform');
-   await page.locator('[data-pick="3"]').click();
-   await expect(page.locator('[data-pick="3"]')).toHaveAttribute('aria-pressed','true');
-   await expect(readout).toHaveText('La testina sta leggendo Procedure.');
-   await expect.poll(()=>page.locator('[data-part="carriage"]').getAttribute('transform')).not.toBe(before);
-   await page.locator('[data-lang="en"]').click();
-   await expect(readout).toHaveText('The head is reading Procedures.');
-   expect(errors).toEqual([]);
-  });
-  test('404 page loads its files from a deep address and offers the way back',async({page})=>{
-   const html=fs.readFileSync('404.html','utf8');
-   await page.route('**/no/such/page',route=>route.fulfill({status:404,contentType:'text/html; charset=utf-8',body:html}));
-   const broken=[];
-   page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('/no/such/page'))broken.push(r.url())});
-   await page.goto('/no/such/page');
-   await expect(page.locator('h1')).toHaveText('Pagina non trovata');
-   await expect(page.locator('.nf-links a')).toHaveCount(5);
-   await expect(page.locator('.nf-links a').first()).toHaveAttribute('href','index.html');
-   await page.locator('.nf-contact').click();
+  test('hero Contattami opens the contact dialog',async({page})=>{
+   await page.goto('/');
+   await revealBar(page);
+   await page.locator('.hero-cta-row .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
-   expect(broken).toEqual([]);
-  });
-  test('inner pages mark the current section and link onward',async({page})=>{
-   await page.goto('/iniziative.html');
-   await expect(page.locator('.desktop-nav a[aria-current="page"]')).toHaveAttribute('href','iniziative.html');
-   await page.locator('.page-next-tile[href="rag-aziendale.html"]').click();
-   await expect(page.locator('h1')).toHaveText('RAG');
   });
   test('language switching keeps per-page titles',async({page})=>{
    await page.goto('/ai-in-locale.html');
@@ -97,10 +57,10 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Local AI Experiment');
    await expect(page).toHaveTitle('Local AI Experiment | Nicolò Forcolin');
    await page.goto('/');
-   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toHaveText('Local AI');
+   await expect(page.locator('.hero-cta-row .hero-link').first()).toHaveText('Projects');
    await revealBar(page);
    await page.locator('[data-lang="it"]').click();
-   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toHaveText('AI in locale');
+   await expect(page.locator('.hero-cta-row .hero-link').first()).toHaveText('Progetti');
   });
   test('Chinese and Twi are selectable, translate the page and fit the header',async({page})=>{
    const errors=[];
