@@ -115,7 +115,7 @@
       hero_intro:[
         [{t:"Porto l’AI nel lavoro quotidiano di InfoCamere."}],
         [{t:"Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usa un’intera Unità Operativa. Lo miglioro ogni giorno con i riscontri degli utenti e riduce i tempi di gestione delle criticità e di analisi post-evento."}],
-        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nell’adozione degli strumenti. Questa consulenza mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
+        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nell’adozione degli strumenti."}]
       ],
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI generativa in InfoCamere",
@@ -137,6 +137,8 @@
       local_step3_desc:"Inferenza e dimostrazioni in locale.",
       back_to_site:"Torna alla home",
       colophon_title:"Contatti",
+      cta_contact:"Contattami",
+      cta_text:"Per parlare di un progetto, contattami.",
       colophon_note:"Sito personale. Le attività descritte sono presentate a titolo personale.",
       new_tab_hint:" (si apre in una nuova scheda)",
       copy_phone:"Copia numero di telefono",
@@ -351,7 +353,7 @@
       hero_intro:[
         [{t:"I bring AI into everyday work at InfoCamere."}],
         [{t:"I led the design and rollout of the AI assistant now used by an entire Operating Unit. I improve it every day with user feedback, and it cuts the time spent handling incidents and on post-incident analysis."}],
-        [{t:"I supported more than 35 colleagues and the CEO of an external company in adopting the tools. This consulting work led me to join the SCWL team as an AI expert, a candidate for Sprint Forward, an international initiative in Shangcheng, China."}]
+        [{t:"I supported more than 35 colleagues and the CEO of an external company in adopting the tools."}]
       ],
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | Generative AI at InfoCamere",
@@ -373,6 +375,8 @@
       local_step3_desc:"Local inference and demonstrations.",
       back_to_site:"Back to home",
       colophon_title:"Contact",
+      cta_contact:"Contact me",
+      cta_text:"To talk about a project, get in touch.",
       colophon_note:"Personal website. The activities described here are presented in a personal capacity.",
       new_tab_hint:" (opens in a new tab)",
       copy_phone:"Copy phone number",
