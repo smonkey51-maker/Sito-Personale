@@ -18,20 +18,22 @@
 .menu-toggle { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 8px; color: var(--ink); cursor: pointer; transition: transform var(--dur) var(--ease); }
 .menu-toggle:active { transform: scale(.97); }
 .menu-toggle:focus-visible, .site-menu a:focus-visible, .site-menu button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.site-menu { position: absolute; top: 100%; right: clamp(16px, 5vw, 64px); z-index: 40; min-width: 240px; padding: 8px 20px; background: var(--bg-2); box-shadow: 0 12px 32px rgb(0 0 0 / .45); }
+.site-menu { position: absolute; top: calc(100% + 8px); right: clamp(16px, 5vw, 64px); z-index: 40; box-sizing: border-box; min-width: 240px; padding: 6px; border: 1px solid var(--line); border-radius: 18px; background: #18181A; box-shadow: 0 16px 40px #000a; transform-origin: top right; }
 .site-menu[hidden] { display: none; }
+.site-menu:not([hidden]) { animation: menu-in 160ms ease-out; }
+@keyframes menu-in { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: none; } }
 .site-menu ul { list-style: none; margin: 0; padding: 0; }
-.site-menu li + li { border-top: 1px solid var(--line); }
-.site-menu a, .site-menu button { all: unset; box-sizing: border-box; display: flex; align-items: center; width: 100%; min-height: 48px; font-family: var(--sans); font-size: 1.0625rem; color: var(--ink); cursor: pointer; }
-.site-menu a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
-.site-menu a:active, .site-menu button:active { color: var(--accent); }
+.site-menu a, .site-menu button { all: unset; box-sizing: border-box; display: flex; align-items: center; width: 100%; min-height: 48px; padding: 0 14px; border-radius: 12px; font-family: var(--sans); font-size: 1.0625rem; color: var(--ink); cursor: pointer; transition: background-color 120ms ease-out; }
+.site-menu a[aria-current="page"] { background: #242427; }
+.site-menu a:active, .site-menu button:active { background: #2A2A2D; }
 @media (hover: hover) and (pointer: fine) {
   .menu-toggle:hover, .lang-toggle:hover { color: var(--ink); }
-  .site-menu a:hover, .site-menu button:hover { color: var(--accent); }
+  .site-menu a:hover, .site-menu button:hover { background: #242427; }
 }
 @media (max-width: 700px) {
-  .site-menu { left: 0; right: 0; min-width: 0; padding: 4px 20px 12px; }
+  .site-menu { left: 16px; right: 16px; min-width: 0; }
 }
+@media (prefers-reduced-motion: reduce) { .site-menu:not([hidden]) { animation: none; } .site-menu a, .site-menu button { transition: none; } }
 
 /* Struttura pagina */
 .page {
