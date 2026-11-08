@@ -177,7 +177,7 @@ window.NF_I18N.tw = {
   sec_localai_title: "AI a ɛwɔ ha ara",
   for_whom_label: "Ma hena",
   for_whom_text: "Ma adwumakuo ne aban adwumayɛ ahorow a wɔpɛ sɛ wɔhwɛ wɔn data so yie na wɔmmfa wɔn ho nto AI adwumakuo ahorow a ɛwɔ akyi so pii. Meyɛɛ sɔhwɛ bi wɔ model ahorow a ɛwɔ ha ara so wɔ nsɛmmisa ne data pɔtee so: mekyerɛ ne mfaso ne ne ano ahorow.",
-  for_whom_text2: "Ma wɔn a wɔkyerɛ digital nsakraeɛ anim na wɔpɛ sɛ AI kɔ adwuma ankasa mu. Wɔ InfoCamere, mefirii adwuma no huhuw so, de adwumayɛ adeɛ no kɔɔ adwuma mu, na mehyɛ no den da biara firi adwumayɛfo nsɛm so. Meboaa adwumayɛ nnamfo ne adwumakuo foforo bi CEO nso wɔ nnwinnade no a wɔde bedi dwuma mu.",
+  for_whom_text2: "Ma wɔn a wɔkyerɛ digital nsakraeɛ anim na wɔpɛ sɛ AI kɔ adwuma ankasa mu. Wɔ InfoCamere, mefirii adwuma no huhuw so, de adwumayɛ adeɛ no kɔɔ adwuma mu, na mehyɛ no den da biara firi adwumayɛfo nsɛm so. Meboaa adwumayɛ nnamfo ne adwumakuo foforo bi CEO nso wɔ AI adwuma ahorow mu.",
   for_whom_link: "AI a ɛwɔ ha ara",
   for_whom_profile: "Google Developer",
   sec_lavori: "Nnwuma",

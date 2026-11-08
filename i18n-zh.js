@@ -176,7 +176,7 @@ window.NF_I18N.zh = {
   sec_localai_title: "本地 AI",
   for_whom_label: "适合谁",
   for_whom_text: "适合希望更好地掌控数据、减少对外部 AI 服务商依赖的公司和公共机构。我针对特定问题和数据集，对本地模型做了一次实验：我在此介绍它的结果和局限。",
-  for_whom_text2: "适合负责数字化转型、希望让 AI 进入真实工作流程的人。在 InfoCamere，我从运营需求出发，把工具投入生产，并每天根据用户反馈改进它。我还帮助同事和一家外部公司的 CEO 采用这些工具。",
+  for_whom_text2: "适合负责数字化转型、希望让 AI 进入真实工作流程的人。在 InfoCamere，我从运营需求出发，把工具投入生产，并每天根据用户反馈改进它。我还帮助同事和一家外部公司的 CEO 参与 AI 项目。",
   for_whom_link: "本地 AI",
   for_whom_profile: "Google Developer",
   sec_lavori: "项目",
