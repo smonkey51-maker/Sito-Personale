@@ -180,6 +180,8 @@ window.NF_I18N.zh = {
   for_whom_link: "本地 AI",
   for_whom_profile: "Google Developer",
   sec_lavori: "项目",
+  sec_at_infocamere: "在 InfoCamere",
+  sec_outside_infocamere: "InfoCamere 之外",
   club_desc: "一个致力于相互尊重的关系和温和领导力的专业社群。",
   c1_summary: "我把两套已在运行的 RAG 系统合并成一个统一入口，整合了多个公司内部来源。用户通过网页应用，用自然语言提问。回答优先给出可执行的信息，其后依次是可能的原因、处理规程、类似案例以及原始来源的链接。",
   c2_summary: "在探索性试验中，回答比基础模型有所改善，在大多数观察到的情形中是正确的。编造信息的现象依然存在，不过在性能更高的模型上出现得较少。这些观察结果并不是可以推广的准确率指标。这只是一次测试：目前的决定是不再继续推进。",

@@ -213,11 +213,12 @@ for(const viewport of sizes){
     await expect(page.locator('#hero-name')).toBeInViewport();
    });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
-    await page.goto('/iniziative.html');
+    await page.goto('/percorso.html');
     await expect(page.locator('.desktop-nav')).toBeHidden();
     await page.locator('.menu-toggle').click();
     await expect(page.locator('#siteMenu a[href="progetti.html"]')).toBeVisible();
-    await expect(page.locator('#siteMenu a[aria-current="page"]')).toHaveAttribute('href','iniziative.html');
+    await expect(page.locator('#siteMenu a')).toHaveCount(3);
+    await expect(page.locator('#siteMenu a[aria-current="page"]')).toHaveAttribute('href','percorso.html');
     await page.keyboard.press('Escape');
     await expect(page.locator('#siteMenu')).toBeHidden();
     await expect(page.locator('.menu-toggle')).toBeFocused();
