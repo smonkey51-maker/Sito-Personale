@@ -1,7 +1,7 @@
 # Agents in Action: pagina di demo su nforcolin.eu
 
 * Author: Nic Forcolin
-* Status: Fase 1 pubblicata (rev. 3, dopo la revisione su lingue, avvio e tastiera)
+* Status: In pausa. La fase 1 è stata pubblicata e poi ritirata il 2026-11-09 finché non è deciso se produrre le trace; per ripartire, il suo contenuto è nel commit 9152da2.
 * Date: 2026-11-09
 
 ## Overview
