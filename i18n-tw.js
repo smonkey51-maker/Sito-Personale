@@ -181,6 +181,8 @@ window.NF_I18N.tw = {
   for_whom_link: "AI a ɛwɔ ha ara",
   for_whom_profile: "Google Developer",
   sec_lavori: "Nnwuma",
+  sec_at_infocamere: "Wɔ InfoCamere",
+  sec_outside_infocamere: "InfoCamere akyi",
   club_desc: "Adwumayɛfo kuw a ɛde ne ho ma abusuabɔ a ɛwɔ obu ne ɔhoɔdɔ nkɔso.",
   c1_summary: "Mede RAG nhyehyɛe abien a ɛyɛ adwuma boaa bom yɛɛ ɛkwan biako, na mede adwumakuo nsɛm fibea pii bom. Adwumayɛfo bisa nsɛm wɔ kasa a ɛyɛ mmerɛ mu denam web app so. Mmuae no di nsɛm a wobetumi de adi dwuma kan, na ɛdan akyi no ɛbɔ nsɛm a ɛbɛyɛ ɛkwan, mmara, nsɛm a ɛte saa ne nsɛm fibea mu links.",
   c2_summary: "Wɔ sɔhwɛ a wɔrehwehwɛ mu no, mmuae no yɛɛ papa sene model a edi kan no, na na ɛyɛ nokware wɔ tebea pii a wohui mu. Nsɛm a wɔbɔ atoro no kɔɔ so, nanso ɛnyɛ pii wɔ model a ɛyɛ adwuma pa mu. Nhwɛ mu yi nyɛ nokwaredi susudua a wobetumi de adi dwuma baabiara. Ɛyɛ sɔhwɛ: seesei gyinaeɛ no ne sɛ wɔrenkɔ so.",
