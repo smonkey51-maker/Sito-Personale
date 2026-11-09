@@ -1,7 +1,7 @@
 # Agents in Action: pagina di demo su nforcolin.eu
 
 * Author: Nic Forcolin
-* Status: Proposed (rev. 3, dopo la revisione su lingue, avvio e tastiera)
+* Status: Fase 1 pubblicata (rev. 3, dopo la revisione su lingue, avvio e tastiera)
 * Date: 2026-11-09
 
 ## Overview
@@ -116,13 +116,13 @@ Un file per demo (3 file), per esempio `data/agents/triage-ticket.json`:
 
 ### Interazione e stato
 
-Ogni voce ha uno stato in `data-state` sull'`<article>`, impostato da `agents.js` (l'HTML non lo contiene): `collapsed`, `light`, `technical`, più `loading` ed `error` durante e dopo il caricamento del JSON.
+Ogni voce ha uno stato in `data-state` sulla `<section>`, impostato da `agents.js` (l'HTML non lo contiene): `collapsed`, `light`, `technical`, più `loading` ed `error` durante e dopo il caricamento del JSON.
 
 * **Apertura:** un `<button>` nativo, creato da `agents.js`, con `aria-expanded` e `aria-controls` apre e chiude la voce. Riapertura: torna sempre al livello descrittivo, passo 1.
 * **Cambio livello:** un secondo `<button>` dentro la voce aperta ("Vedi la trace" / "Torna alla descrizione").
 * **Passi:** pulsanti "Passo precedente" e "Passo successivo", più `ArrowLeft` e `ArrowRight` quando il focus è dentro la voce. Ai limiti il pulsante corrispondente diventa `disabled`; se aveva il focus, il focus passa all'altro pulsante. Nessun giro dall'ultimo al primo passo.
 * **Annuncio:** una regione con `role="status"` e `aria-live="polite"` dentro la voce annuncia "Passo 2 di 6" e il titolo del passo.
-* **Esc:** il gestore sta sull'`<article>`, non su `document`, e agisce solo se il focus è dentro la voce e menu del sito, menu della lingua e finestra contatti sono chiusi; in quel caso chiama `stopPropagation()`. Dal livello tecnico torna al descrittivo; dal descrittivo chiude la voce. In entrambi i casi il focus torna al pulsante che ha aperto il livello appena lasciato.
+* **Esc:** il gestore sta sulla `<section>` della voce, non su `document`, e agisce solo se il focus è dentro la voce e menu del sito, menu della lingua e finestra contatti sono chiusi; in quel caso chiama `stopPropagation()`. Dal livello tecnico torna al descrittivo; dal descrittivo chiude la voce. In entrambi i casi il focus torna al pulsante che ha aperto il livello appena lasciato.
 * **Clic ripetuti:** mentre lo stato è `loading` i clic sul pulsante del livello tecnico vengono ignorati.
 * **Lingua all'avvio e cambio lingua:** a fine `applyLang()` `script.js` emette `document.dispatchEvent(new CustomEvent("nf:langchange", { detail: { lang } }))`, dove `lang` è la chiave interna (`it`, `en`, `zh`, `tw`), non il valore di `HTML_LANG`. Il primo evento parte prima che `agents.js` (con `defer`) sia in ascolto: all'avvio `agents.js` ricava quindi la lingua da `document.documentElement.lang` (`zh-Hans` → `zh`, gli altri invariati), e da lì in poi segue `nf:langchange` per ridisegnare il passo corrente della voce aperta.
 * **Inserimento nel DOM:** solo `createElement` e `textContent`, mai `innerHTML` con dati del JSON.
@@ -153,9 +153,9 @@ Nessuno li ascolta oggi. Altri eventi (cambio livello, avanzamento dei passi) si
 ### Composizione della pagina
 
 * Scheletro delle pagine interne (`<body class="inner" data-page="agents">`, barra, menu, finestra contatti, `colophon`), copiato da `progetti.html`.
-* Titolo di pagina in Bodoni Moda, arancione, come le altre pagine. Proposta: "Agenti al lavoro" / "Agents at work" (da confermare).
+* Titolo di pagina in Bodoni Moda, arancione, come le altre pagine: "Agents" in IT, EN e TW, "智能体" in ZH (chiave `sec_agents`, usata anche nel menu).
 * Una frase introduttiva che dichiara lo stato: esplorazione su dati sintetici, trace registrate e non eseguite dal vivo.
-* Le 3 demo come voci `.item` in colonna, senza icone. La pagina non ha sezioni, quindi il titolo della voce è un `<h2 class="item-title">` (in `progetti.html` è `h3` perché sta sotto un `h2` di sezione). Le voci differiscono per contenuto, non per decorazione, e restano una lista: niente bordi, ombre o sfondi che le facciano diventare card identiche.
+* Le 3 demo come blocchi `.page-block` dentro `.page-body.page-grid`, la stessa composizione di Hobby e Iniziative: il primo blocco su tutta la riga con il titolo a sinistra, gli altri due affiancati (da 821px in su; su mobile una colonna). Il titolo della demo è `<h2 class="page-block-label">`, lo stato è `<p class="item-meta">` ("In preparazione" finché la trace non è pubblicata), senza icone. Niente bordi, ombre o sfondi che facciano diventare i blocchi card identiche.
 * In fondo un blocco `.page-cta` con il pulsante che apre la finestra contatti (come in `progetti.html`).
 
 ```text
@@ -242,10 +242,10 @@ Tre fasi; ognuna lascia il sito in uno stato pubblicabile e con `npm test` verde
 
 ### Fase 1: pagina statica (pubblicabile subito)
 
-1. **`agenti.html` (Create):** scheletro da `progetti.html`, `data-page="agents"`, titolo, frase introduttiva, 3 `<article class="item" data-demo-id="…">` con titolo e descrizione sempre visibili (nessun pulsante e nessun `data-state`: li aggiunge `agents.js` nella fase 3), blocco `.page-cta`. Meta description, `og:image`, canonical come le altre pagine.
+1. **`agenti.html` (Create):** scheletro da `progetti.html`, `data-page="agents"`, titolo, frase introduttiva, 3 `<section class="page-block" data-demo-id="…">` con titolo, stato e descrizione sempre visibili (nessun pulsante e nessun `data-state`: li aggiunge `agents.js` nella fase 3), blocco `.page-cta`. Meta description, `og:image`, canonical come le altre pagine.
 2. **`script.js` (Modify):** chiavi `*_agents` nei dizionari `it` ed `en`; voce di menu con la chiave `sec_agents`, come le altre `sec_*`.
-3. **`i18n-zh.js`, `i18n-tw.js` (Modify):** stesse chiavi.
-4. **Menu (Modify):** voce `agenti.html` nel `<nav class="site-menu">` di `index.html`, `progetti.html`, `ai-in-locale.html`, `rag-aziendale.html`, `iniziative.html`, `percorso.html`, `fuori-dal-lavoro.html`, `privacy.html`, `404.html`.
+3. **`i18n-zh.js`, `i18n-tw.js` (Modify):** stesse chiavi. In TW il testo è per ora in inglese, come i paragrafi tecnici già presenti nel dizionario twi, finché non c'è un revisore twi (Q3).
+4. **Menu (Modify):** voce `agenti.html`, dopo "AI in locale", nella barra (`.desktop-nav`), nel `<nav class="site-menu">` e nell'elenco "Dove andare" di `404.html`, di `index.html`, `progetti.html`, `ai-in-locale.html`, `rag-aziendale.html`, `iniziative.html`, `percorso.html`, `fuori-dal-lavoro.html`, `privacy.html`, `404.html`.
 5. **`sitemap.xml`, `search.js` (Modify):** aggiungere `agenti.html`.
 6. **`tests/site-regression.test.js`, `tests/browser.spec.cjs` (Modify):** aggiungere `agenti.html` agli elenchi `pages`.
 7. **`og-agenti.jpg` (Create):** immagine di anteprima come le altre `og-*.jpg`.
