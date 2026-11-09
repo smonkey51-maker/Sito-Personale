@@ -9,7 +9,7 @@ const dist = path.join(root, "dist");
 
 const skip = new Set([
   "node_modules", ".git", ".github", "tests", "dist", "package.json", "package-lock.json", "playwright.config.cjs",
-  "build.js", "README.md", "CLAUDE.md", "BRAND.md", "api", "ANALYTICS_SETUP.md",
+  "build.js", "README.md", "CLAUDE.md", "BRAND.md", "api", "ANALYTICS_SETUP.md", "docs",
 ]);
 
 fs.rmSync(dist, { recursive: true, force: true });
