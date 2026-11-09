@@ -1,7 +1,7 @@
 # Agents in Action: pagina di demo su nforcolin.eu
 
 * Author: Nic Forcolin
-* Status: Proposed (rev. 2, dopo la Goldfish Review e la verifica sul repository)
+* Status: Proposed (rev. 3, dopo la revisione su lingue, avvio e tastiera)
 * Date: 2026-11-09
 
 ## Overview
@@ -19,7 +19,7 @@ La soluzione: 3 demo con trace pre-registrate, prodotte una volta su un dataset 
 * Mostrare 3 demo (triage di ticket, sintesi di documenti, automazione di un workflow) come trace registrate e riproducibili a passi.
 * Servire due livelli di profondità nella stessa voce, senza duplicare la pagina per pubblico.
 * Restare statica: nessun backend nuovo, nessuna chiamata a un LLM a runtime.
-* Coprire le stesse quattro lingue del sito (IT, EN, ZH, TW), compreso il testo delle trace.
+* Coprire le stesse quattro lingue del sito (IT, EN, ZH cinese semplificato, TW twi), compreso il testo delle trace.
 * Riusare ciò che il sito ha già: scheletro delle pagine interne, voci `.item` di `progetti.html`, token di `portfolio-redesign.css`, sistema `data-i18n`, finestra contatti, test esistenti.
 * Emettere due eventi client-side (apertura demo, clic su contatti), pronti per un collegamento futuro alla dashboard di `admin.html`.
 
@@ -39,7 +39,7 @@ Valgono per tutti e tre i file di trace (`data/agents/*.json`): finché non sono
 
 * **Q1. Scenari delle trace.** I casi d'uso sono fissati; lo scenario dentro ciascuno (quale ticket, quale documento, quale workflow) va scritto in fase di autoring.
 * **Q2. Strumento per registrare le trace.** Da decidere (script Python con un framework agentico, oppure chiamate dirette una tantum a un'API LLM). È una scelta di produzione dei dati, non di rendering. Token e latenze nel JSON devono venire dalla registrazione reale (BRAND.md: "Non inventare metriche").
-* **Q3. Traduzione delle trace in ZH e TW.** Le trace vengono registrate in una lingua; le versioni nelle altre lingue sono traduzioni dello stesso run. Va dichiarato nella pagina che il testo è tradotto, e va deciso chi rivede ZH e TW.
+* **Q3. Traduzione delle trace in ZH e TW.** Le trace vengono registrate in una lingua; le versioni nelle altre lingue sono traduzioni dello stesso run. Va dichiarato nella pagina che il testo è tradotto e che token e latenze si riferiscono al run originale. Va deciso chi rivede ZH (cinese semplificato) e TW. TW è il twi, non il cinese di Taiwan (`script.js`: il cinese tradizionale non c'è): trovare un revisore twi è il punto più lento e blocca la fase 2.
 
 ## Critical User Journeys (CUJs)
 
@@ -72,7 +72,9 @@ Valgono per tutti e tre i file di trace (`data/agents/*.json`): finché non sono
 ### Come funziona oggi il sito (verificato sul repository)
 
 * Una pagina HTML per URL, nella cartella principale. Il testo è in italiano nell'HTML e viene sostituito lato client: `script.js` contiene i dizionari `it` ed `en`, `i18n-zh.js` e `i18n-tw.js` vengono caricati solo quando servono. Le chiavi si legano con `data-i18n` e `data-i18n-aria`; le pagine interne usano un suffisso dato da `data-page` sul `<body>`.
-* La lingua attiva è `document.documentElement.lang`: `it`, `en`, `zh-Hans` o `tw`.
+* La lingua attiva è `document.documentElement.lang`: `it`, `en`, `zh-Hans` o `tw` (twi). Internamente `script.js` usa le chiavi `it`, `en`, `zh`, `tw`.
+* `script.js` è caricato senza `defer` in fondo al `<body>` e chiama `applyLang()` subito; `script.js` registra già su `document` gestori `keydown` per Esc (menu della lingua e menu del sito), e il `<dialog>` dei contatti gestisce Esc da solo.
+* Le voci del menu riusano le chiavi `sec_*` delle sezioni (es. `sec_lavori`).
 * La build esiste: Vercel esegue `npm test && npm run build`. `build.js` copia in `dist/` tutto ciò che non è nell'elenco `skip`, minifica `script.js` e i CSS principali, e aggiunge `analytics.js` a ogni pagina pubblica.
 * La CSP (`vercel.json`) permette script, stili e `connect-src` solo dallo stesso dominio; `tests/site-regression.test.js` boccia script e stili inline.
 * I contatti sono una finestra (`<dialog id="contactDialog">`) aperta da `.contact-trigger`, presente su ogni pagina.
@@ -81,9 +83,11 @@ Valgono per tutti e tre i file di trace (`data/agents/*.json`): finché non sono
 
 `agenti.html` contiene le 3 voci come markup statico in italiano, con chiavi `data-i18n` (suffisso `_agents`) tradotte nei quattro dizionari. È lo stesso meccanismo del resto del sito: una sola fonte per lingua, nessuna copia della pagina, testo indicizzabile e visibile senza JS (in italiano).
 
+Nell'HTML il livello descrittivo è sempre visibile e non c'è nessun pulsante: è `agents.js` a creare il pulsante di apertura, a impostare `data-state="collapsed"` e a chiudere la voce. Senza JS la pagina resta una lista leggibile, senza controlli che non fanno nulla.
+
 ### Livello tecnico: JSON caricato al bisogno
 
-Al primo passaggio al livello tecnico, `agents.js` carica `data/agents/<demo-id>.json?v=<AGENTS_DATA_VERSION>` con `fetch`, legge il blocco della lingua attiva (se manca, usa `en`) e costruisce i passi nel contenitore della voce. Il JSON resta in memoria per il resto della visita. Senza JS il livello tecnico non è disponibile; il pulsante che lo apre è creato da JS, quindi senza JS non compare.
+Al primo passaggio al livello tecnico, `agents.js` carica `data/agents/<demo-id>.json?v=<AGENTS_DATA_VERSION>` con `fetch`, legge il blocco della lingua attiva (se manca, usa `en`: è solo una difesa, perché il test della fase 2 pretende le quattro lingue in ogni file) e costruisce i passi nel contenitore della voce. Il JSON resta in memoria per il resto della visita. Senza JS il livello tecnico non è disponibile; il pulsante che lo apre è creato da JS, quindi senza JS non compare.
 
 Perché JSON e non dizionari `data-i18n`: le trace sono lunghe e strutturate (tipo di passo, contenuto, metriche); messe nei dizionari peserebbero su ogni pagina del sito, mentre il JSON si scarica solo da chi apre il livello tecnico di quella demo.
 
@@ -106,21 +110,21 @@ Un file per demo (3 file), per esempio `data/agents/triage-ticket.json`:
 }
 ```
 
-* Le chiavi di lingua sono quelle di `script.js` (`it`, `en`, `zh`, `tw`); `agents.js` converte `zh-Hans` in `zh`.
-* `metrics` è facoltativo su `input`, obbligatorio su `tool_call` e `output`.
+* Le chiavi di lingua sono quelle interne di `script.js` (`it`, `en`, `zh`, `tw`); `agents.js` le riceve già in questa forma (vedi "Lingua all'avvio e cambio lingua").
+* `metrics` è facoltativo su `input`, obbligatorio su `tool_call` e `output`. I valori sono gli stessi in tutte le lingue: vengono dal run originale, non dal testo tradotto.
 * Nessun campo per il livello descrittivo: la sua unica fonte è l'HTML con le chiavi `data-i18n`.
 
 ### Interazione e stato
 
-Ogni voce ha uno stato in `data-state` sull'`<article>`: `collapsed`, `light`, `technical`, più `loading` ed `error` durante e dopo il caricamento del JSON.
+Ogni voce ha uno stato in `data-state` sull'`<article>`, impostato da `agents.js` (l'HTML non lo contiene): `collapsed`, `light`, `technical`, più `loading` ed `error` durante e dopo il caricamento del JSON.
 
-* **Apertura:** un `<button>` nativo con `aria-expanded` e `aria-controls` apre e chiude la voce. Riapertura: torna sempre al livello descrittivo, passo 1.
+* **Apertura:** un `<button>` nativo, creato da `agents.js`, con `aria-expanded` e `aria-controls` apre e chiude la voce. Riapertura: torna sempre al livello descrittivo, passo 1.
 * **Cambio livello:** un secondo `<button>` dentro la voce aperta ("Vedi la trace" / "Torna alla descrizione").
 * **Passi:** pulsanti "Passo precedente" e "Passo successivo", più `ArrowLeft` e `ArrowRight` quando il focus è dentro la voce. Ai limiti il pulsante corrispondente diventa `disabled`; se aveva il focus, il focus passa all'altro pulsante. Nessun giro dall'ultimo al primo passo.
 * **Annuncio:** una regione con `role="status"` e `aria-live="polite"` dentro la voce annuncia "Passo 2 di 6" e il titolo del passo.
-* **Esc:** dal livello tecnico torna al descrittivo; dal descrittivo chiude la voce. In entrambi i casi il focus torna al pulsante che ha aperto il livello appena lasciato.
+* **Esc:** il gestore sta sull'`<article>`, non su `document`, e agisce solo se il focus è dentro la voce e menu del sito, menu della lingua e finestra contatti sono chiusi; in quel caso chiama `stopPropagation()`. Dal livello tecnico torna al descrittivo; dal descrittivo chiude la voce. In entrambi i casi il focus torna al pulsante che ha aperto il livello appena lasciato.
 * **Clic ripetuti:** mentre lo stato è `loading` i clic sul pulsante del livello tecnico vengono ignorati.
-* **Cambio lingua:** a fine `applyLang()` `script.js` emette `document.dispatchEvent(new CustomEvent("nf:langchange", { detail: { lang } }))`; `agents.js` lo ascolta e ridisegna il passo corrente della voce aperta.
+* **Lingua all'avvio e cambio lingua:** a fine `applyLang()` `script.js` emette `document.dispatchEvent(new CustomEvent("nf:langchange", { detail: { lang } }))`, dove `lang` è la chiave interna (`it`, `en`, `zh`, `tw`), non il valore di `HTML_LANG`. Il primo evento parte prima che `agents.js` (con `defer`) sia in ascolto: all'avvio `agents.js` ricava quindi la lingua da `document.documentElement.lang` (`zh-Hans` → `zh`, gli altri invariati), e da lì in poi segue `nf:langchange` per ridisegnare il passo corrente della voce aperta.
 * **Inserimento nel DOM:** solo `createElement` e `textContent`, mai `innerHTML` con dati del JSON.
 
 ### Errori di caricamento
@@ -151,7 +155,7 @@ Nessuno li ascolta oggi. Altri eventi (cambio livello, avanzamento dei passi) si
 * Scheletro delle pagine interne (`<body class="inner" data-page="agents">`, barra, menu, finestra contatti, `colophon`), copiato da `progetti.html`.
 * Titolo di pagina in Bodoni Moda, arancione, come le altre pagine. Proposta: "Agenti al lavoro" / "Agents at work" (da confermare).
 * Una frase introduttiva che dichiara lo stato: esplorazione su dati sintetici, trace registrate e non eseguite dal vivo.
-* Le 3 demo come voci `.item` in colonna, `<h2>` per il titolo della voce, senza icone. Le voci differiscono per contenuto, non per decorazione.
+* Le 3 demo come voci `.item` in colonna, senza icone. La pagina non ha sezioni, quindi il titolo della voce è un `<h2 class="item-title">` (in `progetti.html` è `h3` perché sta sotto un `h2` di sezione). Le voci differiscono per contenuto, non per decorazione, e restano una lista: niente bordi, ombre o sfondi che le facciano diventare card identiche.
 * In fondo un blocco `.page-cta` con il pulsante che apre la finestra contatti (come in `progetti.html`).
 
 ```text
@@ -216,7 +220,7 @@ agenti.html (lingua attiva)
 * **Security:** nessun `innerHTML` con dati del JSON; nessuna origine esterna (la CSP esistente non va toccata); nessuno script o stile inline.
 * **Accessibilità:** pulsanti nativi con `aria-expanded`/`aria-controls`, regione `aria-live` per i passi, tastiera completa, focus visibile, bersagli ≥44px su mobile, contrasto secondo CLAUDE.md.
 * **i18n:** tutte le chiavi `_agents` presenti nei quattro dizionari; tutti i JSON con le quattro lingue.
-* **Rollout:** pagina additiva; l'unica modifica a codice esistente è l'evento `nf:langchange` in `script.js` e la voce di menu nelle pagine.
+* **Rollout:** pagina additiva. File esistenti modificati: `script.js` (evento `nf:langchange` e chiavi `_agents`), `i18n-zh.js`, `i18n-tw.js`, la voce di menu nelle 9 pagine, `sitemap.xml`, `search.js`, `tests/site-regression.test.js`, `tests/browser.spec.cjs`, `pages.css`, `build.js`. Solo `nf:langchange` cambia il comportamento di codice esistente; il resto aggiunge voci.
 * **Rollback:** rimuovere `agenti.html`, `agents.js`, `data/agents/`, gli stili in `pages.css`, la voce di menu e le registrazioni (sitemap, ricerca, test). Le versioni dei JSON in cache non hanno effetto senza la pagina.
 * **Privacy:** solo dati sintetici; gli eventi non contengono dati personali.
 
@@ -228,7 +232,7 @@ agenti.html (lingua attiva)
 | JSON non valido o lingua mancante | eccezione JS | `try/catch` sul parsing; fallback a `en`; altrimenti stato `error`. Test che valida i 3 file |
 | Iniezione di contenuto | XSS da dati del JSON | solo `textContent`; la CSP blocca script esterni e inline |
 | JSON vecchio in cache dopo un aggiornamento | trace non allineata al testo | `?v=AGENTS_DATA_VERSION` in `agents.js`, da incrementare a ogni modifica dei dati |
-| Traduzioni ZH/TW non riviste | errori nel testo delle trace | dichiarare nella pagina che il testo è tradotto; revisione prima della pubblicazione (Q3) |
+| Traduzioni ZH/TW (twi) non riviste | errori nel testo delle trace | dichiarare nella pagina che il testo è tradotto; revisione di un madrelingua cinese e di un madrelingua twi prima della pubblicazione (Q3) |
 | Metriche non reali | perdita di credibilità | token e latenze solo dalla registrazione (Q2) |
 | `docs/` pubblicata per errore | documenti interni online | `"docs"` aggiunto a `skip` in `build.js` |
 
@@ -238,15 +242,15 @@ Tre fasi; ognuna lascia il sito in uno stato pubblicabile e con `npm test` verde
 
 ### Fase 1: pagina statica (pubblicabile subito)
 
-1. **`agenti.html` (Create):** scheletro da `progetti.html`, `data-page="agents"`, titolo, frase introduttiva, 3 `<article class="item" data-demo-id="…" data-state="collapsed">` con titolo, descrizione e pulsante di apertura, blocco `.page-cta`. Meta description, `og:image`, canonical come le altre pagine.
-2. **`script.js` (Modify):** chiavi `*_agents` nei dizionari `it` ed `en`; voce di menu `nav_agents`.
+1. **`agenti.html` (Create):** scheletro da `progetti.html`, `data-page="agents"`, titolo, frase introduttiva, 3 `<article class="item" data-demo-id="…">` con titolo e descrizione sempre visibili (nessun pulsante e nessun `data-state`: li aggiunge `agents.js` nella fase 3), blocco `.page-cta`. Meta description, `og:image`, canonical come le altre pagine.
+2. **`script.js` (Modify):** chiavi `*_agents` nei dizionari `it` ed `en`; voce di menu con la chiave `sec_agents`, come le altre `sec_*`.
 3. **`i18n-zh.js`, `i18n-tw.js` (Modify):** stesse chiavi.
 4. **Menu (Modify):** voce `agenti.html` nel `<nav class="site-menu">` di `index.html`, `progetti.html`, `ai-in-locale.html`, `rag-aziendale.html`, `iniziative.html`, `percorso.html`, `fuori-dal-lavoro.html`, `privacy.html`, `404.html`.
 5. **`sitemap.xml`, `search.js` (Modify):** aggiungere `agenti.html`.
 6. **`tests/site-regression.test.js`, `tests/browser.spec.cjs` (Modify):** aggiungere `agenti.html` agli elenchi `pages`.
 7. **`og-agenti.jpg` (Create):** immagine di anteprima come le altre `og-*.jpg`.
 
-Punto stabile: la pagina mostra le 3 demo al livello descrittivo; nessun JS nuovo.
+Punto stabile: la pagina mostra le 3 demo al livello descrittivo come lista statica; nessun JS nuovo e nessun controllo inattivo.
 
 ### Fase 2: dati
 
@@ -258,16 +262,17 @@ Punto stabile: dati validati dai test, non ancora usati dalla pagina.
 ### Fase 3: interazione
 
 10. **`agents.js` (Create)**, caricato solo da `agenti.html` con `defer`. Responsabilità:
+    * creazione dei pulsanti di apertura e del livello tecnico, stato iniziale `collapsed`;
     * apertura e chiusura delle voci (`aria-expanded`, `data-state`);
-    * creazione del pulsante del livello tecnico;
+    * lingua iniziale da `document.documentElement.lang`;
     * caricamento del JSON con `?v=`, cache in memoria, stati `loading` ed `error`;
     * costruzione di stack e passi con `textContent`;
     * navigazione tra i passi (pulsanti, frecce, limiti disabilitati);
     * annuncio del passo nella regione `aria-live`;
-    * Esc e ritorno del focus;
+    * Esc (solo con focus nella voce e menu e finestra chiusi) e ritorno del focus;
     * ascolto di `nf:langchange`;
     * emissione di `nf:event` (`agents_open`, `agents_contact`).
-11. **`script.js` (Modify):** emettere `nf:langchange` a fine `applyLang()`; chiavi per pulsanti, messaggi di errore e annuncio dei passi.
+11. **`script.js` (Modify):** emettere `nf:langchange` con la chiave interna della lingua a fine `applyLang()`; chiavi per pulsanti, messaggi di errore e annuncio dei passi.
 12. **`pages.css` (Modify):** stili della voce aperta, dei passi e dei pulsanti con i token esistenti (`--ink`, `--ink-soft`, `--line`, `--accent`, `--dur`, `--ease`); blocco `prefers-reduced-motion`.
 13. **`build.js` (Modify):** minificare `agents.js` con `terser`, come `script.js`.
 
@@ -279,12 +284,15 @@ Punto stabile: dati validati dai test, non ancora usati dalla pagina.
   * livello tecnico → passo 1 di N, "Passo precedente" disabilitato;
   * `ArrowRight` fino all'ultimo passo → "Passo successivo" disabilitato, il focus resta su un pulsante attivo;
   * Esc dal livello tecnico → livello descrittivo, focus sul pulsante della trace; secondo Esc → voce chiusa, focus sul pulsante della voce;
+  * menu del sito aperto con una voce aperta, Esc → si chiude il menu, la voce resta aperta;
+  * pagina caricata con lingua salvata `zh` → apertura della trace direttamente in cinese, senza cambio lingua;
+  * JavaScript disattivato → titoli e descrizioni visibili, nessun pulsante;
   * JSON intercettato con 404 → messaggio di errore e "Riprova"; "Riprova" con risposta valida → passo 1;
   * cambio lingua a EN con la trace aperta → stesso passo, testo in inglese;
   * `prefers-reduced-motion: reduce` → nessun `transform` sulle transizioni, interazione invariata;
   * viewport 390px → nessuno scorrimento orizzontale, pulsanti ≥44px.
 * Controllo manuale con uno screen reader dell'annuncio dei passi.
-* Prima di pubblicare la fase 2: revisione umana dei testi ZH e TW (Q3).
+* Prima di pubblicare la fase 2: revisione umana dei testi ZH (cinese semplificato) e TW (twi) (Q3).
 
 ## Additional Resources
 
