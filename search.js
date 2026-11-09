@@ -4,7 +4,7 @@
 const button = document.querySelector(".search-btn");
 const topbar = document.querySelector(".topbar");
 if (!button || !topbar) return;
-const pages = ["index.html", "progetti.html", "ai-in-locale.html", "agenti.html", "rag-aziendale.html", "iniziative.html", "percorso.html", "fuori-dal-lavoro.html", "privacy.html"];
+const pages = ["index.html", "progetti.html", "ai-in-locale.html", "rag-aziendale.html", "iniziative.html", "percorso.html", "fuori-dal-lavoro.html", "privacy.html"];
 const panel = document.createElement("div");
 panel.className = "search-panel";
 panel.hidden = true;
