@@ -2,16 +2,8 @@
 html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Figma-inspired portfolio treatment — keeps existing content and functionality. */
 :root{
- --bg:#F7F5F1;--bg-2:#EEEAE5;--ink:#1D1E22;--ink-soft:#606168;
- --line:#DEDAD5;--accent:#9A6700;--accent-hover:#805600;
- --accent-alt:#9A6700;--accent-alt-hover:#805600;--on-accent:#FFFFFF;
  --sans:"Segoe UI",Tahoma,"Helvetica Neue",Arial,sans-serif;
  --wide-w:1240px;--content-w:900px;
-}
-:root[data-theme="dark"]{
- --bg:#17161B;--bg-2:#232129;--ink:#F5F1EC;--ink-soft:#D2CED6;
- --line:#3C3741;--accent:#FF4A11;--accent-hover:#FF6B3D;
- --accent-alt:#FF4A11;--accent-alt-hover:#FF6B3D;--on-accent:#16121D;
 }
 body{font-size:1.03rem;line-height:1.6}
 h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
@@ -33,7 +25,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 :root, :root[data-theme="dark"]{
  --bg:#17161B;--bg-2:#232129;--ink:#F5F1EC;--ink-soft:#D2CED6;
  --line:#3C3741;--accent:#FF4A11;--accent-hover:#FF6B3D;
- --accent-alt:#FF4A11;--accent-alt-hover:#FF6B3D;--on-accent:#16121D;
+ --on-accent:#16121D;
  color-scheme:dark;
 }
 .contact-trigger{font-family:inherit;cursor:pointer;color:var(--accent);text-decoration:underline;text-underline-offset:5px}

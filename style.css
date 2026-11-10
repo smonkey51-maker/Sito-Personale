@@ -17,8 +17,6 @@
   --line:#E5E5E5;       /* hairline */
   --accent:#171717;     /* primary action */
   --accent-hover:#404040;
-  --accent-alt:#9A6700; /* secondary accent */
-  --accent-alt-hover:#805600;
   --on-accent:#FFFFFF;
 
   --serif:"Bodoni Moda","Times New Roman",serif;
@@ -38,8 +36,6 @@
   --line:#2B2B2B;
   --accent:#FAFAFA;
   --accent-hover:#D4D4D4;
-  --accent-alt:#E5B45B;
-  --accent-alt-hover:#F1C879;
   --on-accent:#0A0A0A;
 }
 
