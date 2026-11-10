@@ -143,11 +143,13 @@
       cta_before:"Per parlare di un progetto, ",
       cta_link:"contattami",
       cta_after:".",
-      colophon_note:"Sito personale. Le attività descritte sono presentate a titolo personale.",
+      colophon_note:"Sito personale. Le attività descritte sono presentate a titolo personale. Sono disponibile per consulenze e progetti sull’AI.",
       new_tab_hint:" (si apre in una nuova scheda)",
       copy_phone:"Copia numero di telefono",
+      copy_email:"Copia indirizzo email",
       copy_done:"Copiato negli appunti",
       reveal_phone:"Mostra telefono",
+      reveal_email:"Mostra email",
       footer_place:"© 2026 Nicolò Forcolin, Padova, Italia.",
       footer_privacy_link:"Informativa privacy",
       privacy_title:"Informativa sulla privacy",
@@ -163,13 +165,14 @@
       privacy_s3b_h:"Base giuridica e conservazione",
       privacy_s3b_p:"Tratto questi dati in base al legittimo interesse a sapere quante persone visitano il sito e a tenerlo sicuro (art. 6, par. 1, lett. f, GDPR). Le statistiche aggregate sono conservate per 90 giorni e poi cancellate automaticamente. I log tecnici sono conservati da Vercel secondo la sua informativa. Vercel e Upstash possono trattare i dati anche fuori dallo Spazio economico europeo: le garanzie che adottano sono descritte nelle loro informative.",
       privacy_s4_h:"Dati mostrati sul sito",
-      privacy_s4_p:"I recapiti (telefono, LinkedIn) pubblicati nella sezione Contatti sono dati personali dell’autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.",
+      privacy_s4_p:"I recapiti (telefono, email, LinkedIn) pubblicati nella sezione Contatti sono dati personali dell’autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.",
       privacy_s5_h:"I tuoi diritti",
-      privacy_s5_p:"Puoi chiedermi accesso, cancellazione, rettifica e opposizione scrivendomi su LinkedIn, nei limiti in cui si applicano a dati pseudonimi che non posso ricollegare a una persona. Hai anche il diritto di presentare reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).",
+      privacy_s5_p:"Puoi chiedermi accesso, cancellazione, rettifica e opposizione scrivendomi via email o su LinkedIn, nei limiti in cui si applicano a dati pseudonimi che non posso ricollegare a una persona. Hai anche il diritto di presentare reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).",
       privacy_s6_h:"Modifiche a questa informativa",
       privacy_s6_p:"Questa informativa viene aggiornata se cambiano gli strumenti usati dal sito. La versione in vigore è sempre quella pubblicata su questa pagina.",
       privacy_updated:"Ultimo aggiornamento: novembre 2026.",
       cm_phone:"Telefono",
+      cm_email:"Email",
       hero_cta2_short:"Progetti",
       hero_cta2:"Progetti ed Iniziative",
       sec_localai_title:"AI in locale",
@@ -383,11 +386,13 @@
       cta_before:"To talk about a project, ",
       cta_link:"get in touch",
       cta_after:".",
-      colophon_note:"Personal website. The activities described here are presented in a personal capacity.",
+      colophon_note:"Personal website. The activities described here are presented in a personal capacity. I am available for AI consulting and projects.",
       new_tab_hint:" (opens in a new tab)",
       copy_phone:"Copy phone number",
+      copy_email:"Copy email address",
       copy_done:"Copied to clipboard",
       reveal_phone:"Show phone number",
+      reveal_email:"Show email",
       footer_place:"© 2026 Nicolò Forcolin, Padua, Italy.",
       footer_privacy_link:"Privacy notice",
       privacy_title:"Privacy notice",
@@ -403,13 +408,14 @@
       privacy_s3b_h:"Legal basis and retention",
       privacy_s3b_p:"I process this data on the basis of my legitimate interest in knowing how many people visit the site and keeping it secure (Art. 6(1)(f) GDPR). Aggregate statistics are kept for 90 days and then deleted automatically. Technical logs are kept by Vercel under its own policy. Vercel and Upstash may process data outside the European Economic Area: the safeguards they use are described in their privacy policies.",
       privacy_s4_h:"Data shown on the site",
-      privacy_s4_p:"The contact details (phone, LinkedIn) published in the Contact section are the site author’s own personal data, shown voluntarily so people can get in touch. The site doesn’t collect or process them: they’re simply printed on the page.",
+      privacy_s4_p:"The contact details (phone, email, LinkedIn) published in the Contact section are the site author’s own personal data, shown voluntarily so people can get in touch. The site doesn’t collect or process them: they’re simply printed on the page.",
       privacy_s5_h:"Your rights",
-      privacy_s5_p:"You can ask me for access, deletion, correction or to object by messaging me on LinkedIn, to the extent these apply to pseudonymous data I cannot link back to a person. You also have the right to complain to the Italian data protection authority, the Garante (garanteprivacy.it).",
+      privacy_s5_p:"You can ask me for access, deletion, correction or to object by email or by messaging me on LinkedIn, to the extent these apply to pseudonymous data I cannot link back to a person. You also have the right to complain to the Italian data protection authority, the Garante (garanteprivacy.it).",
       privacy_s6_h:"Changes to this notice",
       privacy_s6_p:"This notice is updated if the tools used by the site change. The version in force is always the one published on this page.",
       privacy_updated:"Last updated: November 2026.",
       cm_phone:"Phone",
+      cm_email:"Email",
       hero_cta2_short:"Projects",
       hero_cta2:"Projects and Initiatives",
       sec_localai_title:"Local AI",
@@ -516,6 +522,10 @@
     var phoneHref = "tel:" + pn.join("");
     revealRow("cmPhone", "reveal_phone", "Mostra telefono", function(){
       return '<a href="' + phoneHref + '">' + phoneDisplay + "</a>" + copyBtn(phoneDisplay, "copy_phone");
+    });
+    var em = ["nic.forcolin", "gmail.com"].join("@");
+    revealRow("cmEmail", "reveal_email", "Mostra email", function(){
+      return '<a href="mailto:' + em + '">' + em + "</a>" + copyBtn(em, "copy_email");
     });
   })();
 
