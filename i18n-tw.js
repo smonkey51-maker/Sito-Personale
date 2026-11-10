@@ -36,6 +36,7 @@ window.NF_I18N.tw = {
   c1_feedback: "Ɛnnɛ, Operating Unit a ɛyɛ nyinaa, ne Manager no ne mpanyimfo a wɔwɔ mfimfini no de di dwuma, na nsɛm a wɔka yɛ papa.",
   case_issues_label: "Ɔhaw ahorow ne nsɛm a wɔka",
   c1_impact4_v: "sɛnea adwumayɛfo ka no, mmuae no yɛ nokware na ɛka ɔhaw a atwam no nsɛm nso ho.",
+  c1_impact_note: "2026 nsɛm, wɔayɛ no foforo kɔsi November 10.",
   c1_impact4_k: "Mmuae:",
   c1_impact3_v: "nnipa 13, Operating Unit biako ne ne Manager, kɔsi nsɛmmisa 15 da biara.",
   c1_impact3_k: "Dwumadie:",
