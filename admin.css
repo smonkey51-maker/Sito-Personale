@@ -82,7 +82,7 @@
 .admin-table tbody tr:nth-child(odd){background:var(--bg-3)}
 .admin-note{max-width:62ch;margin-top:20px}
 .admin-login p{max-width:62ch}
-.admin-error:not(:empty){margin-top:24px;color:var(--accent-alt)}
+.admin-error:not(:empty){margin-top:24px;color:var(--accent)}
 
 @media (max-width:900px){
   .admin-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
