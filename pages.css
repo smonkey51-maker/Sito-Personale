@@ -95,7 +95,6 @@
 .page-block-body a:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-block-body a:hover { color: var(--accent); } }
 .page-block-wide .page-block-body { max-width: none; }
-.page-block-body .block-note { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); margin: 16px 0 0; }
 /* Come funziona (RAG): intestazione, primo paragrafo accanto allo schema
    fisso in quattro fasi, poi il resto del testo (desktop). */
 .how-section { padding: 72px 0 0; }
