@@ -28,7 +28,6 @@ for (const file of pages) {
   assert(!/<style/.test(html), file + ': inline styles are not allowed by the CSP');
   assert(!/\sstyle="/.test(html), file + ': style attributes are not allowed by the CSP');
   assert(!html.includes('infocamere.it'), file + ': work email must not be published');
-  assert(!html.includes('id="cmEmail"'), file + ': email row must stay removed');
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
   for (const code of ['it', 'en', 'zh', 'tw']) assert(html.includes('data-lang="' + code + '"'), file + ': language button ' + code + ' missing');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');

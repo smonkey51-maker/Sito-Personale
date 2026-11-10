@@ -169,7 +169,7 @@ for(const viewport of sizes){
    await page.locator('.page-cta .cta-inline').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
-  test('contacts open in a dialog with phone and LinkedIn only',async({page})=>{
+  test('contacts open in a dialog with phone, email and LinkedIn',async({page})=>{
    await page.goto('/');
    await revealBar(page);
    await expect(page.locator('.topbar-contact')).toHaveCount(0);
@@ -178,7 +178,9 @@ for(const viewport of sizes){
    await page.locator('#siteMenu .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
    await expect(page.locator('#siteMenu')).toBeHidden();
-   await expect(page.locator('#cmEmail')).toHaveCount(0);
+   await page.locator('#cmEmail .reveal-btn').click();
+   await expect(page.locator('#cmEmail a')).toHaveText('nic.forcolin@gmail.com');
+   await expect(page.locator('#cmEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
    await page.locator('#cmPhone .reveal-btn').click();
    await expect(page.locator('#cmPhone a')).toHaveText('+39 347 908 1966');
    await page.keyboard.press('Escape');
