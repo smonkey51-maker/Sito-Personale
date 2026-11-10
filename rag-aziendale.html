@@ -95,7 +95,7 @@
               </figcaption>
             </figure>
   </div>
-  <div class="page-body">
+  <div class="page-body page-grid">
     <section class="page-block">
       <h2 class="page-block-label" data-i18n="case_problem_label">Problema</h2>
       <div class="page-block-body">
@@ -142,7 +142,7 @@
         </ol>
       </div>
     </section>
-    <section class="page-block">
+    <section class="page-block page-block-row">
       <h2 class="page-block-label" data-i18n="case_issues_label">Problematiche e feedback</h2>
       <div class="page-block-body">
         <p data-i18n="c1_learning">Dopo il rilascio, alcuni utenti continuavano a cercare a mano. Sono emersi rallentamenti e lacune nei dati: un modello funzionante non bastava. Ho lavorato sulla documentazione operativa e parlando direttamente con gli utenti. Prima di ampliare un RAG servono fonti affidabili e istruzioni chiare sul suo uso.</p>
@@ -193,7 +193,7 @@
         </li>
       </ol>
       <div class="how-body">
-        <p class="how-text" data-i18n="how_p1">Il sistema utilizza contenuti aziendali autorizzati, provenienti da diverse aree, come documentazione tecnica, knowledge base e sistemi di gestione operativa.</p>
+        <p class="how-text" data-i18n="tech_p1">Le fonti si aggiornano tutte insieme. Lo strumento è utilizzabile da ogni utente che ha l’accesso aziendale.</p>
         <ol class="how-flow" aria-label="Schema del funzionamento" data-i18n-aria="how_flow_aria">
           <li class="how-stage">
             <svg viewBox="0 0 120 140" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" focusable="false"><path class="o" d="M8 8h20l6 6v32H8z"/><path d="M28 8v6h6"/><path class="s" d="M13 20h14M13 26h10M13 32h14M13 38h8"/><path class="o" d="M34 52h20l6 6v32H34z"/><path d="M54 52v6h6"/><path class="s" d="M39 64h14M39 70h10M39 76h14M39 82h8"/><path class="o" d="M8 96h20l6 6v32H8z"/><path d="M28 96v6h6"/><path class="s" d="M13 108h14M13 114h10M13 120h14M13 126h8"/><path d="M74 10h6a4 4 0 0 1 4 4v46a6 6 0 0 0 6 6 6 6 0 0 0-6 6v46a4 4 0 0 1-4 4h-6"/></svg>
@@ -213,17 +213,9 @@
           </li>
         </ol>
         <div class="how-more">
-          <p data-i18n="how_p2">I contenuti vengono elaborati e indicizzati per consentire una ricerca efficace. La richiesta dell’utente viene confrontata con gli indici per individuare i passaggi più rilevanti e pertinenti.</p>
-          <p data-i18n="how_p3">Il sistema genera una risposta sintetica e contestualizzata, basata sui contenuti trovati, con riferimenti alle fonti originali per consentire la verifica e l’approfondimento.</p>
+          <p data-i18n="tech_p2">Divido i documenti in porzioni per paragrafo, lunghezza e sezione. Oggi la ricerca funziona per parole; sto implementando la ricerca vettoriale, per significato, non ancora in uso.</p>
+          <p data-i18n="tech_p3">La risposta è generata da un modello in cloud, guidato da istruzioni scritte per questo uso. Controllo ogni giorno i feedback degli utenti e analizzo i log. Se lo strumento non trova risposte, sistemo il percorso verso le fonti e le istruzioni.</p>
         </div>
-      </div>
-    </section>
-    <section class="page-block">
-      <h2 class="page-block-label" data-i18n="case_tech_label">Fonti, ricerca e risposta</h2>
-      <div class="page-block-body">
-        <p data-i18n="tech_p1">Le fonti si aggiornano tutte insieme. Lo strumento è utilizzabile da ogni utente che ha l’accesso aziendale.</p>
-        <p data-i18n="tech_p2">Divido i documenti in porzioni per paragrafo, lunghezza e sezione. Oggi la ricerca funziona per parole; sto implementando la ricerca vettoriale, per significato, non ancora in uso.</p>
-        <p data-i18n="tech_p3">La risposta è generata da un modello in cloud, guidato da istruzioni scritte per questo uso. Controllo ogni giorno i feedback degli utenti e analizzo i log. Se lo strumento non trova risposte, sistemo il percorso verso le fonti e le istruzioni.</p>
       </div>
     </section>
   </div>
