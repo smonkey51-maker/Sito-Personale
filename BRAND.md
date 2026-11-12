@@ -9,9 +9,20 @@ Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
 
 **Obiettivo:** lasciare un lettore che vuole saperne di più e decide di contattare l'autore. Non sembrare affidabili in astratto.
 
-**Positioning statement (v1):**
+**Chi è il protagonista:** l'autore. Il sito racconta Nicolò, il suo saper fare, i suoi risultati e i suoi obiettivi. InfoCamere è il luogo dove le cose sono accadute e la garanzia che lo certifica; non è la sua personalità e non è lui.
 
-> Per chi deve decidere se un professionista IT sa portare l'AI dalla demo alla produzione: il lavoro al Service Desk di InfoCamere e i progetti AI in produzione sono la prova concreta.
+**Positioning statement (v2):**
+
+> Per chi deve decidere se un professionista IT sa portare l'AI dalla demo alla produzione: i progetti AI portati in produzione sono la prova concreta, e l'azienda dove sono avvenuti ne è la garanzia.
+
+La v1 metteva al centro "il lavoro al Service Desk di InfoCamere"; è superata.
+
+**Dove InfoCamere compare e dove no:**
+
+- Compare dove è un dato, un ruolo o un progetto: ruoli nel Percorso ("Service Desk, InfoCamere", "Referente operativo del RAG Aziendale, InfoCamere"), pagine dei progetti (RAG, AI in locale), ruolo di Social Ambassador, dati strutturati (`worksFor`), sezioni "In InfoCamere" e "Fuori da InfoCamere" in Progetti.
+- Non compare nel titolo della scheda del browser ("Nicolò Forcolin | AI nel lavoro quotidiano"), nella prima frase della bio ("Porto l'AI nel lavoro quotidiano."), nelle introduzioni e descrizioni di Percorso e Progetti, nella descrizione del manifest, nella copertina LinkedIn.
+- Nelle frasi l'ordine è prima l'autore, poi il luogo: "In InfoCamere sono partito dalle esigenze operative", non "InfoCamere ha…".
+- Non usare "AI generativa" come titolo.
 
 **Tre differenziatori:**
 
@@ -35,6 +46,8 @@ Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
 
 Il sito usa una direzione scura e sobria, con un solo accento arancione e priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. Il ritratto in home è a colori, scontornato sul nero del sito; tono e luminosità sono già nell'immagine, senza filtri CSS. Evitare effetti decorativi gratuiti e slogan.
 
+Palette valutata e scartata: sfondo "Gunmetal Night" (`#161A1F`), testi "Fog Silver" (`#D9DEE3`), accento "Molten Orange" (`#FF5A1F`). Più fredda e più tecnica, ma con meno impatto sul ritratto; resta il nero attuale.
+
 ### Palette
 
 Un solo tema, scuro: il sito non cambia colori in base alle preferenze del sistema.
@@ -57,6 +70,9 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 - Cinque dimensioni: 16px (menu, etichette, date, note), 18px (testo), 22px (titoli delle voci), 24px (sottotitolo di pagina), 40px (titoli di sezione); il titolo di pagina scala fino a 76px.
 - Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco), il saluto in home e il nome sulla schermata d'ingresso su mobile (arancione). Gli altri titoli restano in Bodoni Moda.
 - Arancione su un segno grafico: eccezione voluta solo per il segno d'ingresso su mobile (linea corta con punto).
+- Home: saluto su due righe, "Ciao, sono" al 78% del nome e sopra di esso (entrambi nel carattere della firma, arancione); bio in tre frasi; sotto, una sola riga con Progetti, Per chi e Contattami, solo testo arancione, su ogni larghezza (su mobile centrate nella barra in basso). Niente sezioni aggiuntive: la home resta il più minimale possibile.
+- "Contattami" a fine pagina: testo nel carattere dei titoli, chiaro, con sottolineatura arancione; un solo invito per schermata.
+- Pagina Hobby: musica, audiofilia, fotografia, orologi, libri e animali, con i link ai profili personali; testi solo con ciò che l'autore ha detto, nessun anno o dato non fornito.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
 - Navigazione unica, senza indici duplicati. Lente, lingua (sigla attiva con freccia) e tre lineette sono icone semplici senza riquadro; i pannelli che aprono hanno tutti lo stesso aspetto e le voci dei menu sono centrate.
 - I dettagli espandibili devono funzionare anche da tastiera.
@@ -65,4 +81,8 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 
 ## 4. Profili social
 
-LinkedIn è allineato al positioning statement v1. Non ci sono altri profili pubblici attivi da allineare.
+LinkedIn va allineato al positioning statement v2.
+
+- **Copertina (1584×396):** sfondo nero del sito, "Nicolò Forcolin" nel carattere della firma in arancione, sotto la riga "Google Cloud Innovator • Porto l'AI nel lavoro quotidiano" con nome e riga della stessa lunghezza, serigrafia di Padova a destra (sfuma verso sinistra per non attraversare il testo). Nessun riferimento a InfoCamere. Il pallino centrale è ammesso solo qui: sul sito le stringhe unite da puntini centrali restano vietate.
+- **Foto profilo:** resta quella attuale.
+- Non ci sono altri profili pubblici attivi da allineare. Instagram e Spotify sono profili personali e hanno un link nella pagina Hobby.
