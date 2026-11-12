@@ -119,14 +119,14 @@ window.NF_I18N.tw = {
   credentials_note: "Nkyerɛkyerɛ yi ma wohu nsonsonoe a ɛda adansedi, mpɔtam nhyehyɛe ne akuwakuw ahorow mu. Adwuma a wɔayɛ no wɔ adwuma no nwoma ahorow so.",
   hero_hi: "Me din ne",
   hero_intro: [
-    [{ t: "Mede AI hyɛ da biara adwuma mu wɔ InfoCamere." }],
+    [{ t: "Mede AI hyɛ da biara adwuma mu." }],
     [{ t: "Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa ne ne Manager no de di dwuma seesei no nhyehyɛe ne ne siesie anim." }],
     [{ t: "Meboaa adwumayɛ nnamfo a wɔboro 35 ne adwumakuo foforo bi CEO wɔ AI a wɔbɛpaw, wɔn nkyerɛkyerɛ ne ɔkwan a wɔfa so de di dwuma wɔ adwumakuo ne nhyehyɛe mu. Afotuo adwuma yi maa meko SCWL kuw no mu sɛ AI nimdefo, ɔbarima a wɔapaw no ma Sprint Forward, ɛyɛ amanaman nsɛm bi a ɛwɔ Shangcheng, China." }]
   ],
 
   skip_to_content: "Kɔ nsɛm no so tẽẽ",
   page_title: "Nicolò Forcolin | Generative AI wɔ InfoCamere",
-  page_description: "Mede AI hyɛ da biara adwuma mu wɔ InfoCamere. Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa ne ne Manager no de di dwuma seesei no nhyehyɛe ne ne siesie anim.",
+  page_description: "Mede AI hyɛ da biara adwuma mu. Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa ne ne Manager no de di dwuma seesei no nhyehyɛe ne ne siesie anim.",
   rag_step1_kicker: "Nsɛm fibea a edi kan",
   rag_step1_title: "Nwoma ne asɛm ahorow a atwam",
   rag_step1_desc: "Nimdeɛ boaboa abien a ɛda nsam.",
