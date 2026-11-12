@@ -189,7 +189,8 @@ for(const viewport of sizes){
   test('home hero names me, introduces me and has no menu',async({page})=>{
    await page.goto('/');
    await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
-   await expect(page.locator('#heroIntro')).toContainText('InfoCamere');
+   await expect(page.locator('#heroIntro')).toContainText('Porto l’AI nel lavoro quotidiano');
+   await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.desktop-nav')).toHaveCount(0);
    await expect(page.locator('.site-name')).toHaveText('NForcolin');
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
