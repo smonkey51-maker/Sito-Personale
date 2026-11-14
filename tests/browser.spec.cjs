@@ -81,7 +81,7 @@ for(const viewport of sizes){
    await page.mouse.move(5,300);
    await expect(page.locator('#langList')).toBeHidden();
   });
-  test('Chinese and Twi are selectable, translate the page and fit the header',async({page})=>{
+  test('Chinese is selectable, translate the page and fit the header',async({page})=>{
    const errors=[];
    page.on('pageerror',e=>errors.push(String(e)));
    page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
@@ -90,9 +90,6 @@ for(const viewport of sizes){
    await expect(page.locator('html')).toHaveAttribute('lang','zh-Hans');
    await expect(page.locator('h1')).toHaveText('经历');
    await expect(page).toHaveTitle('经历 | Nicolò Forcolin');
-   await pickLang(page,'tw');
-   await expect(page.locator('html')).toHaveAttribute('lang','tw');
-   await expect(page.locator('h1')).toHaveText('Adwuma mu suahu');
    await pickLang(page,'it');
    await expect(page.locator('h1')).toHaveText('Percorso');
    const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
@@ -174,7 +171,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
-   await expect(page.locator('#heroIntro')).toContainText('sistemi RAG in produzione, modelli locali on-premise');
+   await expect(page.locator('#heroIntro')).toContainText('assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.desktop-nav')).toHaveCount(0);
    await expect(page.locator('.site-name')).toHaveText('NForcolin');

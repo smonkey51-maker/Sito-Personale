@@ -123,14 +123,14 @@
       hero_hi:"Ciao, sono",
       hero_intro:[
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
-        [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: sistemi RAG in produzione, modelli locali on-premise e adozione guidata sul campo."}]
+        [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
       ],
       home_adoption_k:"Adozione:",
       home_adoption_v:"più di 35 colleghi e il CEO di un’azienda esterna affiancati nella scelta e nell’uso dell’AI.",
       home_contact_text:"Mandami contesto, obiettivo e tempi, e ti rispondo io.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
-      page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali: sistemi RAG in produzione, modelli locali on-premise e adozione guidata sul campo.",
+      page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -207,7 +207,7 @@
       case_fact_users:"Chi lo usa",
       case_fact_users_v:"13 persone: un’Unità Operativa e il suo Responsabile",
       c1_problem:"Ridurre il tempo per ricostruire il contesto di un problema, partendo da informazioni sparse tra strumenti diversi e con costi contenuti.",
-      c1_impact:"Un assistente AI (RAG) che risponde alle domande dei team usando i documenti dell’azienda, con le fonti a vista. Meno tempo per ritrovare le informazioni e per gestire un problema, dal Service Desk al middle management.",
+      c1_impact:"Un assistente AI (RAG) che risponde alle domande dei team usando i documenti dell’azienda, con le fonti a vista. Gestisce più in fretta i problemi operativi e le analisi del middle management.",
       c1_learning:"Dopo il lancio, alcuni utenti continuavano a cercare a mano. Sono emersi rallentamenti e lacune nei dati: uno strumento che funziona non basta. Ho lavorato sul manuale d’uso e parlando direttamente con gli utenti. Prima di estendere un assistente così servono fonti affidabili e istruzioni chiare su come usarlo.",
       case2_title:"Sperimentazione AI in locale",
       c2_status:"Sperimentazione conclusa nel 2026",
@@ -239,7 +239,7 @@
       next_label:"Continua a leggere",
       close:"Chiudi",
       page_title_rag:"RAG | Nicolò Forcolin",
-      page_description_rag:"Un assistente AI che risponde dai documenti dell’azienda e cita le fonti: in produzione dal 2026, usato da un’intera Unità Operativa.",
+      page_description_rag:"Un assistente AI che risponde dai documenti dell’azienda e cita le fonti, per gestire più in fretta problemi operativi e analisi del middle management. In produzione dal 2026.",
       page_title_local:"Sperimentazione AI in locale | Nicolò Forcolin",
       page_description_local:"Un test su modelli AI aperti (Qwen, Gemma, Llama), addestrati su domande specifiche e usati in locale con Ollama, senza inviare dati all’esterno.",
       page_title_initiatives:"Credenziali | Nicolò Forcolin",
@@ -247,7 +247,7 @@
       page_title_projects:"Progetti ed Iniziative | Nicolò Forcolin",
       page_description_projects:"I progetti AI e le iniziative di consulenza, formazione e community di Nicolò Forcolin.",
       projects_lead:"I progetti AI che seguo e le iniziative di consulenza, formazione e community che li accompagnano.",
-      c1_lead:"Un assistente AI che risponde dai documenti dell’azienda e cita le fonti, per gestire più in fretta i problemi operativi.",
+      c1_lead:"Un assistente AI che risponde dai documenti dell’azienda e cita le fonti, per gestire più in fretta i problemi operativi e le analisi del middle management.",
       project_read:"Leggi il progetto",
       page_title_privacy:"Informativa sulla privacy | Nicolò Forcolin",
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
@@ -375,14 +375,14 @@
       hero_hi:"Hi, I’m",
       hero_intro:[
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
-        [{t:"I bring artificial intelligence into real operational workflows: RAG systems in production, local on-premise models and guided adoption in the field."}]
+        [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
       ],
       home_adoption_k:"Adoption:",
       home_adoption_v:"more than 35 colleagues and the CEO of an external company supported in choosing and using AI.",
       home_contact_text:"Send me the context, the goal and the timing, and I will reply myself.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
-      page_description:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows: RAG systems in production, local on-premise models and guided adoption in the field.",
+      page_description:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
@@ -459,7 +459,7 @@
       case_fact_users:"Used by",
       case_fact_users_v:"13 people: an Operating Unit and its Manager",
       c1_problem:"Cut the time needed to rebuild the context of an issue, starting from information scattered across different tools and keeping costs down.",
-      c1_impact:"An AI assistant (RAG) that answers teams’ questions from the company’s own documents, with the sources in view. Less time to find information and to handle an issue, from the Service Desk to middle management.",
+      c1_impact:"An AI assistant (RAG) that answers teams’ questions from the company’s own documents, with the sources in view. It handles operational issues and middle-management analyses faster.",
       c1_learning:"After the launch, some users kept searching by hand. Slowdowns and gaps in the data came up: a tool that works is not enough. I worked on the user manual and on talking directly with users. Before extending an assistant like this you need reliable sources and clear instructions on how to use it.",
       case2_title:"Local AI Experiment",
       c2_status:"Experiment completed in 2026",
@@ -491,7 +491,7 @@
       next_label:"Keep reading",
       close:"Close",
       page_title_rag:"RAG | Nicolò Forcolin",
-      page_description_rag:"An AI assistant that answers from company documents and cites its sources: in production since 2026, used by an entire Operating Unit.",
+      page_description_rag:"An AI assistant that answers from company documents and cites its sources, to handle operational issues and middle-management analyses faster. In production since 2026.",
       page_title_local:"Local AI Experiment | Nicolò Forcolin",
       page_description_local:"A test of open AI models (Qwen, Gemma, Llama) trained on specific questions and run locally with Ollama, without sending data outside.",
       page_title_initiatives:"Credentials | Nicolò Forcolin",
@@ -499,7 +499,7 @@
       page_title_projects:"Projects and Initiatives | Nicolò Forcolin",
       page_description_projects:"Nicolò Forcolin’s AI projects and consulting, training and community initiatives.",
       projects_lead:"The AI projects I follow and the consulting, training and community initiatives that go with them.",
-      c1_lead:"An AI assistant that answers from the company’s documents and cites its sources, to handle operational issues faster.",
+      c1_lead:"An AI assistant that answers from the company’s documents and cites its sources, to handle operational issues and middle-management analyses faster.",
       project_read:"Read the project",
       page_title_privacy:"Privacy notice | Nicolò Forcolin",
       page_description_privacy:"Privacy notice for Nicolò Forcolin’s personal website: no cookies, no tracking, no data collected through forms.",
@@ -586,14 +586,13 @@
   try{ savedLang = sessionStorage.getItem(LANG_KEY); }catch(e){}
   /* Senza una scelta salvata, chi non ha il browser in italiano vede il sito in inglese. */
   var browserLang = ((navigator.languages && navigator.languages[0]) || navigator.language || "it").toLowerCase();
-  /* Italiano e inglese stanno in questo file; cinese e twi sono in file a parte,
-     caricati solo quando servono. Il cinese tradizionale non c'è: chi lo usa vede l'inglese. */
-  var EXTRA_LANGS = { zh: "i18n-zh.js", tw: "i18n-tw.js" };
-  var HTML_LANG = { it: "it", en: "en", zh: "zh-Hans", tw: "tw" };
+  /* Italiano e inglese stanno in questo file; il cinese è in un file a parte,
+     caricato solo quando serve. Il cinese tradizionale non c'è: chi lo usa vede l'inglese. */
+  var EXTRA_LANGS = { zh: "i18n-zh.js" };
+  var HTML_LANG = { it: "it", en: "en", zh: "zh-Hans" };
   function browserChoice(){
     if(browserLang.indexOf("it") === 0) return "it";
     if(/^zh(-(cn|sg|hans))?$/.test(browserLang)) return "zh";
-    if(/^(tw|ak)(-|$)/.test(browserLang)) return "tw";
     return "en";
   }
   var lang = HTML_LANG[savedLang] ? savedLang : browserChoice();

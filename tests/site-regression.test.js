@@ -29,7 +29,7 @@ for (const file of pages) {
   assert(!/\sstyle="/.test(html), file + ': style attributes are not allowed by the CSP');
   assert(!html.includes('infocamere.it'), file + ': work email must not be published');
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
-  for (const code of ['it', 'en', 'zh', 'tw']) assert(html.includes('data-lang="' + code + '"'), file + ': language button ' + code + ' missing');
+  for (const code of ['it', 'en', 'zh']) assert(html.includes('data-lang="' + code + '"'), file + ': language button ' + code + ' missing');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
   assert(html.includes('name="color-scheme" content="dark"') && html.includes('name="darkreader-lock"'), file + ': dark colour scheme must be declared so browsers do not recolour the site');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
@@ -100,14 +100,14 @@ const internalData = /\b25 (persone|people|colleghi|colleagues)\b|\b13 (colleghi
 for (const file of [...pages, 'script.js']) assert(!internalData.test(read(file)), file + ': contains unapproved internal metrics');
 console.log('Site regression checks passed');
 
-/* Cinese e twi: stesse chiavi dell'inglese, stessi segnaposto, nessuno strumento interno. */
+/* Cinese: stesse chiavi dell'inglese, stessi segnaposto, nessuno strumento interno. */
 {
   const vm = require('node:vm');
   const load = name => { const sandbox = { window: {} }; vm.runInNewContext(read(name), sandbox); return sandbox.window.NF_I18N; };
   const start = js.indexOf('en: {');
   const enBlock = vm.runInNewContext('({' + js.slice(start, js.indexOf('\n    }\n  };', start) + 6).replace(/^en:/, 'en:') + '})');
   const en = enBlock.en;
-  for (const [code, file] of [['zh', 'i18n-zh.js'], ['tw', 'i18n-tw.js']]) {
+  for (const [code, file] of [['zh', 'i18n-zh.js']]) {
     const dict = load(file)[code];
     assert(dict, file + ': dictionary missing');
     assert.deepEqual(Object.keys(dict).sort(), Object.keys(en).sort(), file + ': keys differ from the English dictionary');
