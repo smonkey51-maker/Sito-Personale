@@ -1,6 +1,5 @@
 window.NF_I18N = window.NF_I18N || {};
 window.NF_I18N.zh = {
-  hero_am:"我是",
   home_ceo_note:"随后加入该 CEO 的团队，担任 Sprint Forward（中国）项目的 AI 专家。",
   home_rag_title:"企业 RAG",
   home_rag_desc:"基于企业文档和知识的 AI 助手，已投入生产使用。",
@@ -137,7 +136,7 @@ window.NF_I18N.zh = {
   enablement_title: "分享实践经验",
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
   credentials_note: "这些参考信息区分了资质证书、社区项目和会员身份。实际工作成果记录在各项目页面中。",
-  hero_hi: "你好。",
+  hero_hi: "你好，我是",
   hero_intro: [
     [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
     [{ t: "我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。" }]

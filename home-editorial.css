@@ -9,21 +9,17 @@ body[data-page="home"] .colophon-inner,
 .editorial-content{padding:0}
 body[data-page="home"] .site-name{font-size:2rem}
 
-/* Hero: titolo in sans, firma riservata al marchio; la foto è il file originale. */
+/* Hero: saluto originale nel carattere della firma; foto originale. */
 .hero{padding:0;background:transparent}
 .hero-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:16px;min-height:0;padding-block:48px 0}
 .hero-overlay{width:auto;max-width:none;padding-block:0 40px}
-.hero-name{font-family:var(--sans);font-size:clamp(3.25rem,6vw,4.75rem);font-weight:700;letter-spacing:-.045em;line-height:1.02;max-width:none;margin:0 0 28px;color:var(--ink);text-wrap:balance}
-.hero-hi{display:block;font-size:inherit;line-height:inherit}
-.hero-identity{display:block;white-space:nowrap}
-.hero-fn{display:inline;color:var(--accent)}
+.hero-name{font-family:var(--signature);font-size:clamp(3.25rem,6vw,4.5rem);font-weight:400;letter-spacing:normal;line-height:1.12;max-width:none;margin:0 0 28px;color:var(--accent);text-wrap:balance}
+.hero-hi{display:block;font-size:.78em;line-height:1.25}
+.hero-fn{display:block;color:inherit}
 .hero-intro{font-size:1.125rem;line-height:1.55;max-width:44ch;margin:0}
 .hero-intro p:first-child{font-size:1.375rem;line-height:1.45;margin:0 0 18px}
 .hero-intro p:last-child{font-size:1.125rem;line-height:1.55;color:var(--ink-soft);margin:0}
 .hero-intro strong{font-weight:700}
-.hero-cta-row{position:static;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:4px 28px;margin:24px 0 0;padding:0;border:0;background:transparent}
-.hero-link{font-size:1rem;min-height:44px;color:var(--ink)}
-.hero-link:active{color:var(--accent)}
 .hero-photo-frame{position:static;inset:auto;order:0;align-self:end;width:100%;min-height:0;max-height:none;margin:0;pointer-events:none}
 .hero-portrait{display:block;width:100%;height:auto;max-height:500px;object-fit:contain;object-position:center bottom;animation:none;mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
 
@@ -59,13 +55,13 @@ body[data-page="home"] .site-name{font-size:2rem}
 .home-collab-faq summary{display:flex;align-items:center;gap:16px;min-height:48px;font-size:1.125rem;font-weight:600;line-height:1.45;color:var(--ink);cursor:pointer;list-style:none}
 .home-collab-faq summary::-webkit-details-marker{display:none}
 .home-collab-faq summary::after{content:"+";font-size:1.375rem;font-weight:400;color:var(--ink-soft)}
-.home-collab-faq[open] > summary::after,.faq-list details[open] > summary::after{content:"\2212"}
+.home-collab-faq[open] > summary::after{content:"\2212"}
 .home-collab-faq summary:active{color:var(--accent)}
 .faq-list{margin-top:16px}
-.faq-list details{border-top:1px solid var(--line)}
-.faq-list details:last-child{border-bottom:1px solid var(--line)}
-.faq-list summary{justify-content:space-between;padding:12px 0;font-size:1rem}
-.faq-list details p{margin:0 0 20px;font-size:1rem;line-height:1.55;color:var(--ink-soft);max-width:56ch}
+.faq-item{padding:20px 0;border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item h3{margin:0 0 10px;font-size:1rem;font-weight:600;line-height:1.45;color:var(--ink)}
+.faq-item p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink-soft);max-width:56ch}
 .home-collab-links{display:flex;flex-wrap:wrap;gap:0 28px;margin:28px 0 0;padding:0;list-style:none}
 .home-collab-links a{display:inline-flex;align-items:center;min-height:44px;font-size:1rem;color:var(--ink)}
 .home-collab-links a:active{color:var(--accent)}
@@ -73,7 +69,7 @@ body[data-page="home"] .colophon-inner{display:block}
 body[data-page="home"] .footer-note{font-size:1rem;padding-top:20px;line-height:1.5}
 body[data-page="home"] .colophon{padding-bottom:24px}
 @media(hover:hover) and (pointer:fine){
- .hero-link:hover,.home-text-link:hover,.home-collab-links a:hover,.home-collab-faq summary:hover{color:var(--accent)}
+ .home-text-link:hover,.home-collab-links a:hover,.home-collab-faq summary:hover{color:var(--accent)}
  .home-project-grid h3 a:hover{text-decoration-color:var(--accent)}
 }
 @media(min-width:701px) and (max-width:1000px){
@@ -81,7 +77,6 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .hero-name{font-size:clamp(2.6rem,6vw,3.5rem)}
  .hero-intro p:first-child{font-size:1.125rem}
  .hero-intro p:last-child{font-size:1rem}
- .hero-cta-row{gap:0 20px}
  .home-stats-list li{display:block}
  .home-stats-list strong{display:block;margin-bottom:6px}
 }
@@ -90,14 +85,12 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  body[data-page="home"] .site-name{font-size:1.75rem}
  .hero-inner{display:grid;grid-template-columns:1fr;gap:0;padding-block:28px 0;min-height:0}
  .hero-overlay{display:contents}
- .hero-name{grid-row:1;font-size:clamp(2.75rem,10.6vw,4rem);margin:0 0 24px}
- .hero-intro{grid-row:2;max-width:38ch}
+ .hero-name{grid-row:2;font-size:clamp(2.5rem,10.6vw,4rem);margin:0 0 24px}
+ .hero-intro{grid-row:3;max-width:38ch}
  .hero-intro p:first-child{font-size:1.125rem;margin-bottom:14px}
  .hero-intro p:last-child{font-size:1rem;line-height:1.55}
- .hero-photo-frame{grid-row:3;width:min(100%,330px);height:240px;margin:18px auto 0;min-height:0;max-height:none;order:0}
+ .hero-photo-frame{grid-row:1;width:min(100%,330px);height:240px;margin:0 auto 24px;min-height:0;max-height:none;order:0}
  .hero-portrait{width:100%;height:100%;max-height:none;object-fit:contain;object-position:center bottom}
- .hero-cta-row{grid-row:4;position:static;gap:0 24px;justify-content:flex-start;padding:0;margin:8px 0 16px}
- .hero-link{font-size:1rem;min-height:44px}
  .home-stats-list{grid-template-columns:1fr;gap:0;padding:10px 0}
  .home-stats-list li{display:flex;align-items:baseline;gap:16px;padding:10px 0}
  .home-stats-list strong{min-width:64px;font-size:1.75rem;margin:0}

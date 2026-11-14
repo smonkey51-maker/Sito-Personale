@@ -14,7 +14,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toBeVisible();
    await expect(page.locator('#avatarPhoto')).toBeVisible();
-   await expect(page.locator('.hero-cta-row .hero-link:visible')).toHaveCount(3);
+   await expect(page.locator('.hero-cta-row')).toHaveCount(0);
   });
   test('every page loads without errors or horizontal scroll',async({page})=>{
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
@@ -27,15 +27,16 @@ for(const viewport of sizes){
   });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
-   await page.locator('.hero-link').first().click();
+   await page.locator('.home-projects > .wrap > a[href="progetti.html"]').click();
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
    await expect(page.locator('h1')).toHaveText('RAG');
   });
-  test('hero Contattami opens the contact dialog',async({page})=>{
+  test('menu contacts opens the contact dialog',async({page})=>{
    await page.goto('/');
-   await page.locator('.hero-cta-row .contact-trigger').click();
+   await page.locator('.menu-toggle').click();
+   await page.locator('#siteMenu .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
   test('language switching keeps per-page titles',async({page})=>{
@@ -44,9 +45,9 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Local AI Experiment');
    await expect(page).toHaveTitle('Local AI Experiment | Nicolò Forcolin');
    await page.goto('/');
-   await expect(page.locator('.hero-cta-row .hero-link').first()).toHaveText('Projects');
+   await expect(page.locator('#homeProjectsTitle')).toHaveText('Projects');
    await pickLang(page,'it');
-   await expect(page.locator('.hero-cta-row .hero-link').first()).toHaveText('Progetti');
+   await expect(page.locator('#homeProjectsTitle')).toHaveText('Progetti');
   });
   test('language menu opens from the flag, lists the other two languages and closes with Esc or a choice',async({page})=>{
    await page.goto('/progetti.html');
@@ -148,15 +149,14 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
-  test('home exposes the two projects and keeps the three working hero links',async({page})=>{
+  test('home exposes the two projects without redundant hero links',async({page})=>{
    await page.goto('/');
    await expect(page.locator('.home-proof')).toHaveCount(0);
    await expect(page.locator('.home-projects')).toHaveCount(1);
    await expect(page.locator('.home-project-grid h3 a')).toHaveCount(2);
    await expect(page.locator('.home-services')).toBeVisible();
-   await expect(page.locator('.hero-cta-row .hero-link:visible')).toHaveCount(3);
+   await expect(page.locator('.hero-cta-row')).toHaveCount(0);
    await expect(page.locator('.home-project-grid a[href="rag-aziendale.html"]')).toBeVisible();
-   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toBeVisible();
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await expect(page.locator('.home-contact')).toHaveCount(0);
   });
@@ -172,13 +172,15 @@ for(const viewport of sizes){
    await expect(page.locator('.home-reach')).toContainText('InfoCamere, DABO, IdeaGrip');
    await expect(page.locator('#homeEmail a').first()).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
    await page.locator('.home-collab-faq > summary').click();
-   await expect(page.locator('.faq-list details')).toHaveCount(4);
-   await page.locator('.faq-list summary').first().click();
-   await expect(page.locator('.faq-list details').first()).toHaveAttribute('open','');
+   await expect(page.locator('.faq-list .faq-item')).toHaveCount(4);
+   await expect(page.locator('.faq-list details, .faq-list summary')).toHaveCount(0);
+   for(const answer of await page.locator('.faq-list .faq-item p').all()) await expect(answer).toBeVisible();
+   await page.locator('.home-collab-faq > summary').click();
+   await expect(page.locator('.faq-list')).toBeHidden();
   });
   test('home hero uses the approved greeting and keeps the real introduction',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('#hero-name')).toHaveText('Ciao.Sono Nicolò.');
+   await expect(page.locator('#hero-name')).toHaveText('Ciao, sono Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
    await expect(page.locator('#heroIntro')).toContainText('assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
@@ -189,15 +191,15 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
   if(viewport.width<=700){
-   test('on mobile the greeting precedes the portrait and the links stay in page flow',async({page})=>{
+   test('on mobile the portrait precedes the signature without a fixed link bar',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.topbar')).toBeVisible();
     await expect(page.locator('.menu-toggle')).toBeInViewport();
     await expect(page.locator('.hero-portrait')).toBeVisible();
     const photo=await page.locator('.hero-portrait').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
-    expect(photo.y).toBeGreaterThanOrEqual(heading.y+heading.height-2);
-    expect(await page.locator('.hero-cta-row').evaluate(el=>getComputedStyle(el).position)).toBe('static');
+    expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
+    await expect(page.locator('.hero-cta-row')).toHaveCount(0);
     await expect(page.locator('#hero-name')).toBeInViewport();
    });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
