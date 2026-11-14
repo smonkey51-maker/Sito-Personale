@@ -168,9 +168,10 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('.home-reach')).toContainText('InfoCamere, DABO, IdeaGrip');
    await expect(page.locator('#homeEmail a').first()).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
-   await expect(page.locator('.home-collab-faq details')).toHaveCount(5);
-   await page.locator('.home-collab-faq summary').first().click();
-   await expect(page.locator('.home-collab-faq details').first()).toHaveAttribute('open','');
+   await page.locator('.home-collab-faq > summary').click();
+   await expect(page.locator('.faq-list details')).toHaveCount(5);
+   await page.locator('.faq-list summary').first().click();
+   await expect(page.locator('.faq-list details').first()).toHaveAttribute('open','');
   });
   test('home hero names me, introduces me and has no menu',async({page})=>{
    await page.goto('/');
