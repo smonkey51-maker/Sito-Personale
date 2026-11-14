@@ -14,7 +14,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toBeVisible();
    await expect(page.locator('#avatarPhoto')).toBeVisible();
-   await expect(page.locator('.hero-cta-row .hero-link')).toHaveCount(3);
+   await expect(page.locator('.hero-cta-row .hero-link:visible')).toHaveCount(3);
   });
   test('every page loads without errors or horizontal scroll',async({page})=>{
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
@@ -48,12 +48,12 @@ for(const viewport of sizes){
    await pickLang(page,'it');
    await expect(page.locator('.hero-cta-row .hero-link').first()).toHaveText('Progetti');
   });
-  test('language menu opens from the flag, lists four languages and closes with Esc or a choice',async({page})=>{
+  test('language menu opens from the flag, lists the other two languages and closes with Esc or a choice',async({page})=>{
    await page.goto('/progetti.html');
    await expect(page.locator('#langList')).toBeHidden();
    await page.locator('.lang-toggle').click();
    await expect(page.locator('#langList')).toBeVisible();
-   await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
+   await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(2);
    await expect(page.locator('.lang-current')).toHaveText('IT');
    await page.keyboard.press('Escape');
    await expect(page.locator('#langList')).toBeHidden();
@@ -152,7 +152,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('.home-proof')).toHaveCount(0);
    await expect(page.locator('.home-projects')).toHaveCount(0);
-   await expect(page.locator('.hero-cta-row .hero-link')).toHaveCount(3);
+   await expect(page.locator('.hero-cta-row .hero-link:visible')).toHaveCount(3);
    await expect(page.locator('.home-results-link')).toHaveAttribute('href','rag-aziendale.html#risultati');
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await expect(page.locator('.home-contact')).toHaveCount(0);
