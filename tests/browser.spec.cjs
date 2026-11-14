@@ -200,7 +200,8 @@ for(const viewport of sizes){
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
     expect(heading.y-photo.y-photo.height).toBeLessThanOrEqual(40);
-    expect(photo.height).toBeLessThanOrEqual(300);
+    expect(photo.height).toBeGreaterThanOrEqual(300);
+    expect(photo.height).toBeLessThanOrEqual(420);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
     await expect(page.locator('#hero-name')).toBeInViewport();
     expect(await page.locator('.home-stats').evaluate(el=>el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(810);
