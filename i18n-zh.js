@@ -136,7 +136,7 @@ window.NF_I18N.zh = {
   home_clients: "我曾与 InfoCamere、DABO、IdeaGrip 和 Assicurazioni Generali 合作。",
   collab_title:"一起合作",
   collab_ask:"把你的行业和问题发给我。",
-  collab_reply:"我以人的方式回复，讲求常识与实际。",
+  collab_reply:"我回复真人。",
   faq_title:"快速解答",
   collab_mail:"邮件",
   faq1_q:"Nicolò Forcolin 是谁？",
