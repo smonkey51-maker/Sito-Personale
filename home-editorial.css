@@ -1,11 +1,12 @@
 /* Home: ritratto e presentazione, nient'altro. Risultati e Progetti stanno nelle loro pagine, dai tre link. */
 
-/* Mobile: niente riga sotto la barra; il ritratto prende lo spazio che resta tra la barra e la barra dei link, così tutto il testo sta nella prima schermata. */
+/* Mobile: niente riga sotto la barra in alto né sopra il piè di pagina (c'è già quella della barra dei link); il ritratto prende lo spazio che resta tra la barra e la barra dei link, così tutto il testo sta nella prima schermata. */
 @media(max-width:700px){
   .topbar{border-bottom:0}
   .hero-inner{min-height:calc(100svh - 68px - 56px - env(safe-area-inset-bottom));padding-bottom:8px}
   .hero-overlay{padding-top:8px}
   .hero-name{margin-bottom:14px}
+  .footer-note{border-top:0}
 }
 
 /* Desktop e schermi medi: tre livelli. Saluto grande, una frase d'apertura più grande (22px) e una secondaria più piccola e in grigio (16px). */
