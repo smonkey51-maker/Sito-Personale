@@ -138,8 +138,7 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_hi:"Ciao, sono",
       hero_intro:[
-        [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
-        [{t:"Nel "},{t:"2026",b:true},{t:" esperto AI al concorso cinese Sprint Forward, fino alla tappa di Singapore."}],
+        [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:". Nel "},{t:"2026",b:true},{t:", esperto AI nel team del CEO di DABO per “Sprint Forward in Golden Boots” al Saichuang Weilai Southeast Asia InnoTech Center, Cina."}],
         [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
       ],
       stats_label:"In numeri",
@@ -422,8 +421,7 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_hi:"Hi, I’m",
       hero_intro:[
-        [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
-        [{t:"In "},{t:"2026",b:true},{t:", AI expert at the Chinese Sprint Forward competition, up to the Singapore stage."}],
+        [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:". In "},{t:"2026",b:true},{t:", AI expert in the team of the CEO of DABO for “Sprint Forward in Golden Boots” at the Saichuang Weilai Southeast Asia InnoTech Center, China."}],
         [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
       ],
       stats_label:"In numbers",

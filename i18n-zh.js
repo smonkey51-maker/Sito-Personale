@@ -137,8 +137,7 @@ window.NF_I18N.zh = {
   credentials_note: "这些参考信息区分了资质证书、社区项目和会员身份。实际工作成果记录在各项目页面中。",
   hero_hi: "你好，我是",
   hero_intro: [
-    [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
-    [{ t: "" }, { t: "2026", b: true }, { t: " 年，作为 AI 专家参加中国 Sprint Forward 竞赛，止步于新加坡赛段。" }],
+    [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }, { t: "" }, { t: "2026", b: true }, { t: " 年，作为 AI 专家加入 DABO CEO 的团队，参与 Saichuang Weilai Southeast Asia InnoTech Center（中国）的“Sprint Forward in Golden Boots”。" }],
     [{ t: "我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。" }]
   ],
   stats_label: "数据一览",
