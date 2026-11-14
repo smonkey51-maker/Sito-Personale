@@ -125,7 +125,6 @@
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
         [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
       ],
-      home_contact_text:"Mandami contesto, obiettivo e tempi, e ti rispondo io.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
       page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo.",
@@ -374,7 +373,6 @@
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
         [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
       ],
-      home_contact_text:"Send me the context, the goal and the timing, and I will reply myself.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
       page_description:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field.",
@@ -540,7 +538,6 @@
       return '<a href="mailto:' + em + '">' + em + "</a>" + copyBtn(em, "copy_email");
     }
     revealRow("cmEmail", "reveal_email", "Mostra email", emailLink);
-    revealRow("homeEmail", "reveal_email", "Mostra email", emailLink);
   })();
 
   /* One permanent visual theme; disregard preferences saved by older releases. */

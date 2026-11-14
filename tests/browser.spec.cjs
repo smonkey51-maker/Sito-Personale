@@ -148,15 +148,14 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
-  test('home has no results or projects sections: they are reached from the three links',async({page})=>{
+  test('home has no results, projects or contact sections: they are reached from the three links',async({page})=>{
    await page.goto('/');
    await expect(page.locator('.home-proof')).toHaveCount(0);
    await expect(page.locator('.home-projects')).toHaveCount(0);
    await expect(page.locator('.hero-cta-row .hero-link')).toHaveCount(3);
    await expect(page.locator('.home-results-link')).toHaveAttribute('href','rag-aziendale.html#risultati');
    await expect(page.locator('.search-btn')).toHaveCount(0);
-   await page.locator('#homeEmail .reveal-btn').click();
-   await expect(page.locator('#homeEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
+   await expect(page.locator('.home-contact')).toHaveCount(0);
   });
   test('home hero names me, introduces me and has no menu',async({page})=>{
    await page.goto('/');
