@@ -88,7 +88,7 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .hero-intro{grid-row:3;max-width:38ch}
  .hero-intro p:first-child{font-size:1.125rem;margin-bottom:14px}
  .hero-intro p:last-child{font-size:1rem;line-height:1.55}
- .hero-photo-frame{grid-row:1;align-self:center;width:min(78%,280px);height:clamp(180px,28svh,270px);min-height:0;max-height:none;margin:0 auto 24px;order:0}
+ .hero-photo-frame{grid-row:1;align-self:center;width:min(86%,310px);height:clamp(200px,32svh,300px);min-height:0;max-height:none;margin:0 auto 32px;order:0}
  .hero-portrait{width:100%;height:100%;max-height:none;object-fit:contain;object-position:center bottom}
  .home-stats-list{grid-template-columns:1fr;gap:0;padding:10px 0}
  .home-stats-list li{display:flex;align-items:baseline;gap:16px;padding:10px 0}
