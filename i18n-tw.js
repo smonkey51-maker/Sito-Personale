@@ -91,7 +91,7 @@ window.NF_I18N.tw = {
   xp4_desc: "Me ne me panin hyɛɛ adwuma no huhuw ho, na mepaw adwumayɛ adeɛ no. Mehwɛ nsɛm fibea, web app, sɔhwɛ ne nkyerɛkyerɛ so, na meyɛ adwuma ne akuw foforo ne mpanyimfo a wɔwɔ mfimfini no. Ɛtew bere a ɛfa asɛm bi ho ne bere a wɔhwehwɛ mu akyi no so. Bere koro mu no, mede AI nhyehyɛe a ɛyɛ adwuma wɔ ha ara yɛɛ sɔhwɛ bi.",
   xp4_title: "Adwumakuo RAG adwumayɛ ho ɔkasamafo, InfoCamere",
   xp4_period: "Firi 2026",
-  xp3_desc: "Mehwɛ IT nhyehyɛe a ɛwɔ Italy Chambers of Commerce nhyehyɛe no mu so, na mede m’ani si adwuma no nokwaredi so.",
+  xp3_desc: "Meyɛ adwuma ne IT nhyehyɛe a ɛwɔ Italy Chambers of Commerce nhyehyɛe no mu, na mede m’ani si adwuma no nokwaredi so.",
   xp3_title: "Service Desk, InfoCamere",
   xp3_period: "Firi 2022",
   xp2_desc: "Me IT adwuma a edi kan: mmoa a mede maa nhyehyɛe ne ɔhaw ahorow a mesiesiee.",
