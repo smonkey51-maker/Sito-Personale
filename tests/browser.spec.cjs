@@ -157,6 +157,13 @@ for(const viewport of sizes){
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await expect(page.locator('.home-contact')).toHaveCount(0);
   });
+  test('home has a strip of ten numbers under the portrait, translated',async({page})=>{
+   await page.goto('/');
+   await expect(page.locator('.home-stats-list li')).toHaveCount(10);
+   await expect(page.locator('.home-stats-list li').first()).toContainText('dal 2022');
+   await pickLang(page,'en');
+   await expect(page.locator('.home-stats-list li').first()).toContainText('since 2022');
+  });
   test('home hero names me, introduces me and has no menu',async({page})=>{
    await page.goto('/');
    await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');

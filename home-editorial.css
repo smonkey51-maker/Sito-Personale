@@ -47,4 +47,22 @@
   .home-for-whom-link{display:inline-flex}
 }
 
+/* Fascia di numeri sotto il ritratto: il numero in grassetto con l'etichetta accanto, su colonne allineate. Su mobile numero sopra l'etichetta, in due colonne. */
+.home-stats{padding-bottom:8px}
+.home-stats-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px clamp(32px,5vw,72px);margin:0;padding:28px 0 36px;border-top:1px solid var(--line);list-style:none}
+.home-stats-list li{display:flex;align-items:baseline;gap:10px}
+.home-stats-list strong{flex:none;font-size:1.375rem;font-weight:700;line-height:1.3;white-space:nowrap;color:var(--ink)}
+.home-stats-list span{font-size:1rem;line-height:1.4;color:var(--ink-soft)}
+@media(max-width:700px){
+  .home-stats{padding-inline:20px}
+  .home-stats .wrap{padding:0}
+  .home-stats-list{gap:22px 20px;padding:20px 0 28px;border-top:0}
+  .home-stats-list li{display:block}
+  .home-stats-list strong{display:block;margin-bottom:2px}
+}
+@media(min-width:1921px){
+  .home-stats-list strong{font-size:calc(22*var(--u))}
+  .home-stats-list span{font-size:calc(16*var(--u))}
+}
+
 .hero-intro strong{font-weight:700}
