@@ -69,9 +69,35 @@
 
 .hero-intro strong{font-weight:700}
 
-/* Chi mi ha avuto in squadra e come scrivermi: due frasi in chiaro sotto i numeri, con la mail già visibile. */
-.home-reach{display:grid;gap:12px;padding:0 0 56px;max-width:62ch}
+/* Con chi ho lavorato: una frase in chiaro sotto i numeri. */
+.home-reach{padding:0 0 72px;max-width:62ch}
 .home-reach p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink-soft)}
-.home-reach a{color:var(--ink);font-weight:600}
-@media(max-width:700px){.home-reach{padding-bottom:96px}}
-@media(min-width:1921px){.home-reach p{font-size:calc(16*var(--u))}}
+
+/* Collaboriamo: a sinistra come scrivermi, a destra le risposte rapide a scomparsa, sotto i link. */
+.home-collab{padding:0 0 96px}
+.home-collab-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px clamp(32px,6vw,96px);align-items:start}
+.home-collab-main h2{font-size:clamp(2rem,4vw,2.75rem);line-height:1.15;margin:0 0 20px;color:var(--accent);text-wrap:balance}
+.home-collab-main p{margin:0 0 8px;font-size:1.125rem;line-height:1.55;color:var(--ink-soft);max-width:44ch}
+.home-collab-main .home-email{font-size:1.375rem;line-height:1.4;font-weight:700;color:var(--ink);margin-bottom:20px}
+.home-collab a{color:var(--ink)}
+.home-collab-faq h3{margin:0 0 8px;font-size:1.375rem;line-height:1.3}
+.home-collab-faq details{border-top:1px solid var(--line)}
+.home-collab-faq details:last-child{border-bottom:1px solid var(--line)}
+.home-collab-faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;padding:10px 0;font-size:1rem;font-weight:600;line-height:1.4;color:var(--ink);cursor:pointer;list-style:none}
+.home-collab-faq summary::-webkit-details-marker{display:none}
+.home-collab-faq summary::after{content:"+";flex:none;font-size:1.5rem;font-weight:400;line-height:1;color:var(--ink-soft)}
+.home-collab-faq details[open] summary::after{content:"\2212"}
+.home-collab-faq summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.home-collab-faq summary:active{color:var(--ink-soft)}
+.home-collab-faq details p{margin:0 0 14px;font-size:1rem;line-height:1.55;color:var(--ink-soft);max-width:56ch}
+.home-collab-links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:0 32px;margin:0;padding:0;list-style:none}
+.home-collab-links a{display:inline-flex;align-items:center;min-height:44px;font-size:1.125rem;font-weight:600;text-decoration:none}
+.home-collab-links a:active{color:var(--ink-soft)}
+@media(hover:hover) and (pointer:fine){.home-collab-links a:hover{color:var(--accent)}.home-collab-faq summary:hover{color:var(--accent)}}
+@media(max-width:900px){.home-collab-grid{grid-template-columns:1fr}}
+@media(max-width:700px){
+  .home-reach{padding-bottom:56px}
+  .home-collab{padding:0 20px 120px}
+  .home-collab .wrap{padding:0}
+  .home-collab-links{gap:0 24px}
+}

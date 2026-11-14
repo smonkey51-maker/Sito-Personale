@@ -135,7 +135,21 @@
       stat3_v:"1",
       stat3_k:"CEO affiancato (DABO), poi esperto AI nel suo team per Sprint Forward in Cina",
       home_clients:"Ho lavorato con InfoCamere, DABO, IdeaGrip e Assicurazioni Generali.",
-      home_write:"Per collaborare, scrivimi con contesto, obiettivo e tempi.",
+      collab_title:"Collaboriamo",
+      collab_ask:"Mandami settore e problema.",
+      collab_reply:"Rispondo da essere umano, con buon senso e concretezza.",
+      faq_title:"Risposte rapide",
+      collab_mail:"Mail",
+      faq1_q:"Chi è Nicolò Forcolin?",
+      faq1_a:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali.",
+      faq2_q:"Di cosa parla?",
+      faq2_a:"Di AI applicata al lavoro: assistenti che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo.",
+      faq3_q:"In che lingua sono i video?",
+      faq3_a:"Non ci sono video. Il sito è in italiano, inglese e cinese.",
+      faq4_q:"Come si collabora?",
+      faq4_a:"Scrivimi settore e problema. Sono disponibile per consulenze e progetti sull’AI.",
+      faq5_q:"Qualcosa prima della tecnologia?",
+      faq5_a:"Sì: dal 2020 al 2022 ho fatto il consulente assicurativo in Assicurazioni Generali, con clienti veri in un settore molto regolamentato.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
       page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo.",
@@ -394,7 +408,21 @@
       stat3_v:"1",
       stat3_k:"CEO advised (DABO), then AI expert in the CEO’s team for Sprint Forward in China",
       home_clients:"I have worked with InfoCamere, DABO, IdeaGrip and Assicurazioni Generali.",
-      home_write:"To work together, write to me with the context, the goal and the timing.",
+      collab_title:"Let’s work together",
+      collab_ask:"Send me your sector and your problem.",
+      collab_reply:"I reply as a human being, with common sense and concrete answers.",
+      faq_title:"Quick answers",
+      collab_mail:"Mail",
+      faq1_q:"Who is Nicolò Forcolin?",
+      faq1_a:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows.",
+      faq2_q:"What does he talk about?",
+      faq2_a:"AI applied to work: assistants that answer from company documents, models that run in-house and teams trained in the field.",
+      faq3_q:"What language are the videos in?",
+      faq3_a:"There are no videos. The site is in Italian, English and Chinese.",
+      faq4_q:"How do we work together?",
+      faq4_a:"Write to me with your sector and your problem. I am available for AI consulting and projects.",
+      faq5_q:"Anything before technology?",
+      faq5_a:"Yes: from 2020 to 2022 I was an insurance advisor at Assicurazioni Generali, with real clients in a heavily regulated sector.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
       page_description:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field.",
@@ -562,6 +590,8 @@
     revealRow("cmEmail", "reveal_email", "Mostra email", emailLink);
     var homeEmail = document.getElementById("homeEmail");
     if(homeEmail){ homeEmail.innerHTML = emailLink(); bindCopyButtons(homeEmail); }
+    var homeMailLink = document.getElementById("homeMailLink");
+    if(homeMailLink) homeMailLink.setAttribute("href", "mailto:" + em);
   })();
 
   /* One permanent visual theme; disregard preferences saved by older releases. */
