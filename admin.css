@@ -40,7 +40,7 @@
 /* KPI */
 .admin-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .admin-kpi{display:flex;flex-direction:column;justify-content:space-between;gap:4px;padding:14px 16px;transition:border-color var(--dur) var(--ease)}
-.admin-kpi strong{font-family:var(--serif);font-size:2rem;line-height:1.1;font-weight:400;font-variant-numeric:tabular-nums}
+.admin-kpi strong{font-family:inherit;font-size:2rem;line-height:1.1;font-weight:400;font-variant-numeric:tabular-nums}
 .admin-kpi .is-accent{color:var(--accent)}
 .admin-kpi .admin-sub{margin:0}
 

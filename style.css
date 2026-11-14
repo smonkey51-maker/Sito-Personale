@@ -5,7 +5,6 @@
 
 /* Font serviti dal sito stesso (file variabili, solo alfabeto latino):
    niente connessioni a Google Fonts prima di mostrare i testi. */
-@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/bodoni-moda-latin.woff2") format("woff2")}
 @font-face{font-family:"Destiny Signature";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/destiny-signature-latin.woff2") format("woff2")}
 
 :root{
@@ -18,8 +17,6 @@
   --accent:#171717;     /* primary action */
   --accent-hover:#404040;
   --on-accent:#FFFFFF;
-
-  --serif:"Bodoni Moda","Times New Roman",serif;
   --dur:160ms;
   --ease:cubic-bezier(0.2,0,0,1);
 }
@@ -54,7 +51,7 @@ a{color:inherit;text-decoration:none}
 .skip-link:focus{transform:none;transition:transform var(--dur) var(--ease)}
 
 /* ---- Tipografia ---- */
-h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
+h1,h2,h3{font-family:var(--sans);font-weight:600;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
 p{text-wrap:pretty}
 /* ============ Topbar ============ */
 .topbar-inner{margin:0 auto;display:flex;
@@ -186,6 +183,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 }
 
 /* Cinese (semplificato): caratteri di sistema, perché i font del sito coprono solo il latino di base. */
-html:lang(zh){--serif:"Bodoni Moda","Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
+html:lang(zh){--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
 html:lang(zh) body *{letter-spacing:normal}
 html:lang(zh) body{line-height:1.75}

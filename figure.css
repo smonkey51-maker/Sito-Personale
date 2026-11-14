@@ -15,7 +15,7 @@
 .vn-side.vn-tone1{fill:#202125}
 .vn-side.vn-tone2{fill:#232124}
 .vn-side.vn-tone3{fill:#1E2023}
-.vn-title{font-family:var(--serif);font-size:10px;fill:var(--vn-hi);stroke:none}
+.vn-title{font-family:var(--sans);font-size:10px;fill:var(--vn-hi);stroke:none}
 .vn-dot{fill:var(--vn-mid);stroke:none}
 .vn-disc{fill:var(--vn-disc);stroke:none}
 .vn-accent{fill:var(--accent);stroke:none}
