@@ -55,13 +55,13 @@ body[data-page="home"] .site-name{font-size:2rem}
 .home-collab-faq summary{display:flex;align-items:center;gap:16px;min-height:48px;font-size:1.125rem;font-weight:600;line-height:1.45;color:var(--ink);cursor:pointer;list-style:none}
 .home-collab-faq summary::-webkit-details-marker{display:none}
 .home-collab-faq summary::after{content:"+";font-size:1.375rem;font-weight:400;color:var(--ink-soft)}
-.home-collab-faq[open] > summary::after,.faq-list details[open] > summary::after{content:"\2212"}
+.home-collab-faq[open] > summary::after{content:"\2212"}
 .home-collab-faq summary:active{color:var(--accent)}
 .faq-list{margin-top:16px}
-.faq-list details{border-top:1px solid var(--line)}
-.faq-list details:last-child{border-bottom:1px solid var(--line)}
-.faq-list summary{justify-content:space-between;padding:12px 0;font-size:1rem}
-.faq-list details p{margin:0 0 20px;font-size:1rem;line-height:1.55;color:var(--ink-soft);max-width:56ch}
+.faq-item{padding:20px 0;border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item h3{margin:0 0 10px;font-size:1rem;font-weight:600;line-height:1.45;color:var(--ink)}
+.faq-item p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink-soft);max-width:56ch}
 .home-collab-links{display:flex;flex-wrap:wrap;gap:0 28px;margin:28px 0 0;padding:0;list-style:none}
 .home-collab-links a{display:inline-flex;align-items:center;min-height:44px;font-size:1rem;color:var(--ink)}
 .home-collab-links a:active{color:var(--accent)}
