@@ -95,7 +95,7 @@ const vercel = JSON.parse(read('vercel.json'));
 assert((vercel.redirects || []).some(r => r.has?.some(h => h.type === 'host' && h.value === 'www.nforcolin.eu') && r.destination.startsWith('https://nforcolin.eu/') && r.permanent), 'www must redirect permanently to the apex domain');
 // Internal InfoCamere metrics are not approved for publication. Approved by Nicolò in
 // November 2026: "35 colleghi" (colleagues supported on AI) and the RAG results
-// (13 people using it, incidents in under 15 minutes, analysis in under 2 hours, up to 15 questions a day).
+// (14 users of the RAG, incidents in under 15 minutes, analysis in under 2 hours, up to 15 questions a day).
 const internalData = /\b25 (persone|people|colleghi|colleagues)\b|\b13 (colleghi|colleagues)\b|\b35 (persone|people)\b|\b([34](\.5)?|2\.5) (ore|hours)\b|ore\s+e\s+mezza|mezz.ora|half\s+an\s+hour|\b30 (minuti|minutes)\b|costo\s+nullo|at\s+no\s+cost|esos[ei]|more\s+expensive/;
 for (const file of [...pages, 'script.js']) assert(!internalData.test(read(file)), file + ': contains unapproved internal metrics');
 console.log('Site regression checks passed');
