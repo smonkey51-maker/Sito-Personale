@@ -74,7 +74,6 @@ p{text-wrap:pretty}
 }
 
 /* ============ Hero ============ */
-.hero-cta-row{display:flex;flex-wrap:wrap}
 
 /* ============ Link ============ */
 
@@ -116,7 +115,7 @@ main{padding-bottom:40px}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 @media print{
-  .topbar,.skip-link,.visually-hidden,.hero-cta-row,.copy-btn{display:none!important}
+  .topbar,.skip-link,.visually-hidden,.copy-btn{display:none!important}
   * {box-shadow:none!important}
   body{background:#fff;color:#000}
   a{color:inherit;text-decoration:underline}
@@ -139,7 +138,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
   .desktop-nav{display:none}
   .utilbar{order:0;gap:4px}
   .wrap{padding:0 20px}
-  .hero-cta-row{gap:8px}
 }
 
 
@@ -152,8 +150,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 .topbar-inner{max-width:1440px;padding:12px 64px}
 .editorial-content{min-width:0}
 .editorial-content .wrap{padding-left:0;padding-right:0}
-.hero-cta-row{margin-top:16px}
-.hero-cta-row{gap:24px}
 .colophon-inner{grid-template-columns:1fr}
 @media(max-width:1050px){
  .editorial-shell{grid-template-columns:minmax(0,1fr);padding:0 40px}
@@ -161,7 +157,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 }
 @media(max-width:700px){
  .topbar-inner{padding:8px 24px;gap:12px}.site-name{display:none}
- .hero-cta-row{width:100%}
 }
 @media print{.editorial-shell{display:block;padding:0}.site-name{display:none}}
 
@@ -179,7 +174,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 @media(max-width:700px){
  .editorial-shell{padding:0 20px}
  .hero{padding:36px 0 48px}
- .hero-cta-row{gap:10px}
 }
 
 /* Cinese (semplificato): caratteri di sistema, perché i font del sito coprono solo il latino di base. */

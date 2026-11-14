@@ -93,7 +93,6 @@
 .page-block-body a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 3px; }
 .page-block-body a:active { color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .page-block-body a:hover { color: var(--accent); } }
-.page-block-wide .page-block-body { max-width: none; }
 /* Come funziona (RAG): intestazione, primo paragrafo accanto allo schema
    fisso in quattro fasi, poi il resto del testo (desktop). */
 .how-section { padding: 72px 0 0; }
@@ -260,11 +259,8 @@
   .page-grid > .page-block:last-child:nth-child(even) { grid-column: 1 / -1; grid-template-columns: 260px minmax(0, 1fr); column-gap: 48px; align-items: baseline; }
   .page-grid > .page-block:first-child .page-block-body,
   .page-grid > .page-block:last-child:nth-child(even) .page-block-body { max-width: 34em; }
-  .page-grid > .page-block-row,
-  .page-grid > .page-block-wide { grid-column: 1 / -1; grid-template-columns: 260px minmax(0, 1fr); column-gap: 48px; align-items: baseline; }
-  .page-grid > .page-block-row .page-block-body { max-width: 34em; }
   .page-grid > :not(.page-block) { grid-column: 1 / -1; }
-  .page-grid > .page-block:not(:first-child):not(:last-child:nth-child(even)):not(.page-block-row):not(.page-block-wide) .page-block-label { font-size: 2rem; }
+  .page-grid > .page-block:not(:first-child):not(:last-child:nth-child(even)) .page-block-label { font-size: 2rem; }
 }
 
 /* Pagine dei casi (RAG): tutte le sezioni a coppie su due colonne, con il titolo sopra il testo; lo schema "Come funziona" resta a tutta larghezza. */

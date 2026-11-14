@@ -62,7 +62,7 @@ body[data-page="home"] .site-name{font-size:2rem}
 .faq-item h3{margin:0 0 10px;font-size:1rem;font-weight:600;line-height:1.45;color:var(--ink)}
 .faq-item p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink-soft);max-width:56ch}
 .home-collab-links{display:flex;flex-wrap:wrap;gap:0 28px;margin:28px 0 0;padding:0;list-style:none}
-.home-collab-links a{display:inline-flex;align-items:center;min-height:44px;font-size:1rem;color:var(--ink)}
+.home-collab-links a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;font-size:1rem;color:var(--ink)}
 .home-collab-links a:active{color:var(--accent)}
 body[data-page="home"] .colophon-inner{display:block}
 body[data-page="home"] .footer-note{font-size:1rem;padding-top:20px;line-height:1.5}
