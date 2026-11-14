@@ -5,7 +5,7 @@ Tutto ciò che è scritto qui corrisponde a scelte già presenti nel sito.
 
 ## 1. Posizionamento
 
-**Pubblico principale:** top management. Il sito lo legge anche chi non è del settore, quindi ogni termine tecnico va usato con precisione e spiegato solo quando serve.
+**Pubblico:** tutti, non più solo il top management (cambio di target di novembre 2026). Il sito lo legge anche chi non è del settore, quindi ogni termine tecnico va usato con precisione e spiegato solo quando serve.
 
 **Obiettivo:** lasciare un lettore che vuole saperne di più e decide di contattare l'autore. Non sembrare affidabili in astratto.
 
@@ -32,6 +32,7 @@ La v1 metteva al centro "il lavoro al Service Desk di InfoCamere"; è superata.
 
 ## 2. Tono
 
+0. **Leggero quando serve.** Il tono scherzoso è ammesso (per esempio "Tech Lover dal 1992"), purché i fatti restino precisi.
 1. **Fattuale.** Nessun superlativo ("rivoluzionario", "innovativo", "cutting-edge"). Un esito non ideale si dichiara.
 2. **Stato esplicito.** Ogni risultato è marcato come prodotto, in corso o esplorazione. Non lasciare l'etichetta ambigua.
 3. **Prima persona attiva.** "Ho realizzato", "ho seguito". Niente passivi del tipo "è stato fatto".
@@ -70,11 +71,11 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 - Cinque dimensioni: 16px (menu, etichette, date, note), 18px (testo), 22px (titoli delle voci), 24px (sottotitolo di pagina), 40px (titoli di sezione); il titolo di pagina scala fino a 76px.
 - Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco), il saluto in home e il nome sulla schermata d'ingresso su mobile (arancione). Gli altri titoli restano in Bodoni Moda.
 - Arancione su un segno grafico: eccezione voluta solo per il segno d'ingresso su mobile (linea corta con punto).
-- Home: saluto su due righe, "Ciao, sono" al 78% del nome e sopra di esso (entrambi nel carattere della firma, arancione); bio in tre frasi; sotto, una sola riga con Progetti, Per chi e Contattami, solo testo arancione, su ogni larghezza (su mobile centrate nella barra in basso). Niente sezioni aggiuntive: la home resta il più minimale possibile.
+- Home: saluto su due righe, "Ciao, sono" al 78% del nome e sopra di esso (entrambi nel carattere della firma, arancione); sotto, due righe: "IT per le PA dal 2022, Tech Lover dal 1992." (anni in grassetto) e la frase sul lavoro con RAG, modelli locali on-premise e adozione guidata; poi una riga con Progetti, Risultati (Per chi su mobile) e Contattami, solo testo arancione (su mobile centrate nella barra in basso). Sotto l'hero: Risultati in tre voci (due tempi di gestione, più di 35 colleghi affiancati), Progetti come elenco, e un blocco contatti con la mail da mostrare con un clic. Il ritratto resta a colori.
 - "Contattami" a fine pagina: testo nel carattere dei titoli, chiaro, con sottolineatura arancione; un solo invito per schermata.
 - Pagina Hobby: musica, audiofilia, fotografia, orologi, libri e animali, con i link ai profili personali; testi solo con ciò che l'autore ha detto, nessun anno o dato non fornito.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
-- Navigazione unica, senza indici duplicati. Lente, lingua (sigla attiva con freccia) e tre lineette sono icone semplici senza riquadro; i pannelli che aprono hanno tutti lo stesso aspetto e le voci dei menu sono centrate.
+- Navigazione unica, senza indici duplicati. Lingua (sigla attiva con freccia) e tre lineette sono icone semplici senza riquadro; la ricerca nel sito è stata tolta; i pannelli che aprono hanno tutti lo stesso aspetto e le voci dei menu sono centrate.
 - I dettagli espandibili devono funzionare anche da tastiera.
 - Layout fluido per desktop e mobile, con rispetto per `prefers-reduced-motion`.
 - Non inventare metriche, impatti o caratteristiche tecniche.
