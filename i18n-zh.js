@@ -133,6 +133,8 @@ window.NF_I18N.zh = {
   stat2_k: "位企业 RAG 用户",
   stat3_v: "1",
   stat3_k: "位 CEO 获得咨询（DABO），随后加入其团队担任 AI 专家，参与 Sprint Forward（中国）",
+  home_clients: "我曾与 InfoCamere、DABO、IdeaGrip 和 Assicurazioni Generali 合作。",
+  home_write: "如需合作，请把背景、目标和时间安排发给我。",
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | 日常工作中的 AI",
   page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。",

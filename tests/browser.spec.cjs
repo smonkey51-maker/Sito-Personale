@@ -164,6 +164,11 @@ for(const viewport of sizes){
    await pickLang(page,'en');
    await expect(page.locator('.home-stats-list li').first()).toContainText('colleagues supported');
   });
+  test('home lists who I worked with and shows the email under the numbers',async({page})=>{
+   await page.goto('/');
+   await expect(page.locator('.home-reach')).toContainText('InfoCamere, DABO, IdeaGrip');
+   await expect(page.locator('#homeEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
+  });
   test('home hero names me, introduces me and has no menu',async({page})=>{
    await page.goto('/');
    await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
