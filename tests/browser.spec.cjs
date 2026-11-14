@@ -148,12 +148,15 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
-  test('home has no results, projects or contact sections: they are reached from the three links',async({page})=>{
+  test('home exposes the two projects and keeps the three working hero links',async({page})=>{
    await page.goto('/');
    await expect(page.locator('.home-proof')).toHaveCount(0);
-   await expect(page.locator('.home-projects')).toHaveCount(0);
+   await expect(page.locator('.home-projects')).toHaveCount(1);
+   await expect(page.locator('.home-project-grid h3 a')).toHaveCount(2);
+   await expect(page.locator('.home-services')).toBeVisible();
    await expect(page.locator('.hero-cta-row .hero-link:visible')).toHaveCount(3);
-   await expect(page.locator('.home-results-link')).toHaveAttribute('href','rag-aziendale.html#risultati');
+   await expect(page.locator('.home-project-grid a[href="rag-aziendale.html"]')).toBeVisible();
+   await expect(page.locator('.hero-cta-row a[href="ai-in-locale.html"]')).toBeVisible();
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await expect(page.locator('.home-contact')).toHaveCount(0);
   });
@@ -173,9 +176,9 @@ for(const viewport of sizes){
    await page.locator('.faq-list summary').first().click();
    await expect(page.locator('.faq-list details').first()).toHaveAttribute('open','');
   });
-  test('home hero names me, introduces me and has no menu',async({page})=>{
+  test('home hero uses the approved greeting and keeps the real introduction',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
+   await expect(page.locator('#hero-name')).toHaveText('Ciao.Sono Nicolò.');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
    await expect(page.locator('#heroIntro')).toContainText('assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
@@ -186,14 +189,15 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
   if(viewport.width<=700){
-   test('on mobile the bar is always visible and the portrait sits above the greeting',async({page})=>{
+   test('on mobile the greeting precedes the portrait and the links stay in page flow',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.topbar')).toBeVisible();
     await expect(page.locator('.menu-toggle')).toBeInViewport();
     await expect(page.locator('.hero-portrait')).toBeVisible();
     const photo=await page.locator('.hero-portrait').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
-    expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
+    expect(photo.y).toBeGreaterThanOrEqual(heading.y+heading.height-2);
+    expect(await page.locator('.hero-cta-row').evaluate(el=>getComputedStyle(el).position)).toBe('static');
     await expect(page.locator('#hero-name')).toBeInViewport();
    });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
