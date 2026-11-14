@@ -86,17 +86,17 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero{padding:0;background:var(--bg);overflow:visible}
 .hero-inner{position:relative;min-height:80vh;display:flex;align-items:center;padding:132px 0 72px}
 .hero-overlay{position:relative;z-index:2;max-width:560px}
-/* True full-bleed background: this photo already has its own wide dark
-   backdrop on the left for the text to sit on, so it needs no CSS fade
-   trick — it covers the whole hero edge to edge (true viewport edges,
-   not just the centred wrap/editorial-shell ancestors) and reaches the
-   top so it continues behind the floating header. */
-.hero-photo-frame{position:absolute;inset:0;left:calc(50% - 50vw + var(--sb,0px)/2);right:calc(50% - 50vw + var(--sb,0px)/2);z-index:1;overflow:hidden;pointer-events:none}
-.hero-portrait{width:100%;height:100%;object-fit:cover;object-position:100% center;display:block}
-/* The wall texture behind the text varies in tone, unlike a flat colour —
-   a scrim keeps the text reliably legible regardless of what's under it,
-   fading out before the subject so the portrait itself stays unobscured. */
-.hero-photo-frame::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(10,9,8,.62) 0%,rgba(10,9,8,.32) 42%,rgba(10,9,8,0) 68%)}
+/* Ritratto ritagliato, senza sfondo: sta sul nero del sito, a destra nella colonna.
+   Sotto i 700px sta sopra il testo, a tutta larghezza. */
+.hero-photo-frame{position:absolute;top:88px;right:0;bottom:0;width:clamp(240px,34vw,560px);z-index:1;pointer-events:none}
+.hero-portrait{display:block;width:100%;height:100%;object-fit:contain;object-position:right bottom}
+@media(min-width:1100px){.hero-photo-frame{width:min(44%,560px)}}
+@media(max-width:700px){
+ .topbar{position:relative;background:var(--bg);border-bottom:1px solid var(--line)}
+ .hero-inner{display:flex;flex-direction:column;min-height:0}
+ .hero-photo-frame{position:static;width:100%;order:-1}
+ .hero-portrait{height:auto;object-fit:fill}
+}
 /* Full-bleed row like the photo above it: .hero sits inside
    .editorial-shell's centred, padded 1280px container, so without this
    the filmstrip stops at that container's edges instead of reaching the
@@ -105,16 +105,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .filmstrip-title{color:var(--ink)}
 @media(max-width:820px){
  .hero-inner{padding:96px 0 48px;min-height:70vh}
-}
-@media(max-width:700px){
- /* The floating transparent header only works once the photo bleeds
-    behind it; on the stacked mobile layout it would just sit over a
-    now-static photo block, so it goes back to a solid, in-flow bar. */
- .topbar{position:relative;background:var(--bg);border-bottom:1px solid var(--line)}
- .hero-inner{display:flex;flex-direction:column;min-height:0}
- .hero-photo-frame{inset:auto;height:min(420px,58vh);order:-1}
- /* The mobile crop is pre-composed wider than the subject so a cover
-    fit reaches both edges without cutting into the face. */
 }
 
 /* Home links to the project pages: orange text, at least 44px tall to tap. */
@@ -144,99 +134,42 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
 .hero-cta-row{align-items:center}
 .filmstrip-title{font-size:1.375rem;font-weight:500;line-height:1.2}
 .filmstrip-meta{line-height:1.45}
-.hero-portrait{filter:none}
-@media(min-width:701px){.hero-inner{min-height:min(800px,80vh)}.hero-overlay{padding-block:28px}.hero-photo-frame{inset-block:0}}
+@media(min-width:701px){.hero-inner{min-height:min(800px,80vh)}.hero-overlay{padding-block:28px}}
 @media(max-width:700px){
  .hero-inner{padding:0 0 36px;gap:0}
- .hero-photo-frame{height:clamp(260px,53vw,420px)}
  .hero-overlay{padding:28px var(--editorial-gutter) 0}
  .hero-cta-row{gap:10px 18px}
 }
 @media(max-width:380px){.hero-overlay{padding-inline:20px}}
 
-/* Mobile portrait: preserve headroom without affecting desktop composition. */
-@media(max-width:700px){
- .hero-photo-frame{height:clamp(300px,68vw,480px)}
- .hero-portrait{width:100%}
-}
 
 /* Compact colophon, 2026-10. */
 .colophon{margin-top:0;padding:24px 0 30px;border-top:0;background:transparent}
 .colophon-inner{gap:0}
 .footer-note{padding:18px 0 0}
 
-/* Mobile: make portrait flush with viewport, removing contain letterboxing. */
-@media(max-width:700px){
- .hero-photo-frame{margin-left:calc((var(--sb,0px) - 100vw)/2);height:clamp(330px,92vw,560px)}
- .hero-photo-frame picture{display:block}
- .hero-photo-frame .hero-portrait{display:block;max-width:none}
-}
 
 /* Final mobile image treatment: flush crop, controlled headroom, brighter midtones. */
 @media(max-width:700px){
  .hero-inner{width:100%;max-width:none;margin:0}
- .hero-photo-frame{height:clamp(350px,105vw,580px)}
- .hero-photo-frame picture{width:100%;height:100%}
- .hero-photo-frame .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 32%}
 }
 
-/* Desktop: use one viewport-aligned rail, with a soft portrait-to-page fade. */
-@media(min-width:701px){
- .hero-photo-frame{left:calc(50% - 50vw + var(--sb,0px)/2);right:calc(50% - 50vw + var(--sb,0px)/2);width:calc(100vw - var(--sb,0px));max-width:none;overflow:hidden}
-}
 
-/* Mobile: softly merge the portrait into the surrounding dark page. */
-@media(max-width:700px){
- .hero-photo-frame{isolation:isolate}
- .hero-photo-frame::before{content:none}
- .hero-photo-frame::after{
-  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:
-   linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.28) 7%,transparent 20%,transparent 80%,rgba(23,22,27,.28) 93%,var(--bg) 100%),
-   linear-gradient(to bottom,transparent 68%,rgba(23,22,27,.22) 82%,var(--bg) 100%);
- }
-}
-
-/* Restore portrait visibility on desktop: keep fade confined to text side. */
-@media(min-width:701px){
- .hero-photo-frame .hero-portrait{object-position:right center}
-}
-
-/* Desktop final: progressive feathering around the portrait, not over the face. */
 
 /* Final editorial refinements: real progressive fades, restrained copy and footer. */
 @media(min-width:701px){
  .hero-overlay{max-width:min(56vw,800px)}
- .hero-photo-frame::after{
-  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
- }
 }
 
 .colophon{padding-bottom:16px}
 .footer-note{line-height:1.4}
 @media(max-width:700px){.colophon{padding:12px 0 18px}.footer-note{padding-top:12px}}
 
-/* Feather the photograph's right edge; preserve the face and the timeline rail. */
-
-/* The portrait's right edge is feathered into the page colour inside
-   photo.webp itself, so no CSS fade is needed over the face. */
-@media(min-width:701px){
- .hero-photo-frame::after{
-  background:
-   linear-gradient(to right,var(--bg) 0%,rgba(23,22,27,.96) 12%,rgba(23,22,27,.76) 24%,rgba(23,22,27,.36) 35%,rgba(23,22,27,.08) 45%,transparent 54%),
-   linear-gradient(to bottom,rgba(23,22,27,.26) 0%,transparent 18%,transparent 74%,rgba(23,22,27,.12) 83%,rgba(23,22,27,.55) 94%,var(--bg) 100%);
- }
-}
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
 :root[data-theme="dark"]{--bg:#0D0D0E;--bg-2:#0D0D0E;--line:#262628}
 :root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon{background:var(--bg)}
 :root[data-theme="dark"] .footer-note{border-color:var(--line)}
-/* Keep portrait fades calibrated to the new, unified background. */
-:root[data-theme="dark"] .hero-photo-frame::after{background:
- linear-gradient(to right,#0D0D0E 0%,rgba(13,13,14,.96) 12%,rgba(13,13,14,.76) 24%,rgba(13,13,14,.36) 35%,rgba(13,13,14,.08) 45%,transparent 54%),
- linear-gradient(to bottom,rgba(13,13,14,.26) 0%,transparent 18%,transparent 74%,rgba(13,13,14,.12) 83%,rgba(13,13,14,.55) 94%,#0D0D0E 100%)}
-@media(max-width:700px){:root[data-theme="dark"] .hero-photo-frame::after{background:linear-gradient(to right,#0D0D0E 0%,rgba(13,13,14,.28) 7%,transparent 20%,transparent 80%,rgba(13,13,14,.28) 93%,#0D0D0E 100%),linear-gradient(to bottom,transparent 68%,rgba(13,13,14,.22) 82%,#0D0D0E 100%)}}
 
 
 /* Keep the original header dimensions; size the lower strip to match it. */
@@ -259,58 +192,7 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
 /* Case study readability and keyboard accessibility */
 .desktop-nav a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 
-/* Desktop: slide the portrait left, closer to the headline. The right edge
-   of photo.webp is already feathered into the page colour, so the strip it
-   uncovers blends in with the background. */
-@media(min-width:701px) and (max-width:1099px){.hero-photo-frame .hero-portrait{transform:translate(4vw,-6%)}}
-@media(min-width:701px) and (max-width:900px){.hero-photo-frame .hero-portrait{transform:translate(17vw,-6%)}}
-@media(min-width:1100px){.hero-photo-frame .hero-portrait{transform:translate(-4vw,-6%)}}
-@media(min-width:1400px){.hero-photo-frame .hero-portrait{transform:translate(-9vw,-6%)}}
 
-/* Mobile landing: the first screen is the portrait alone, fixed to the
-   viewport. The rest of the page (text, project rows, footer) has an opaque
-   background and slides up over it, so once the page has scrolled the portrait
-   is gone. My name in the orange signature (an identity mark, with no
-   interaction of its own) sits at the bottom edge above a short orange line
-   ending in a dot; "Entra nel sito" stays for screen readers. The script's
-   tall N and F weigh its ink to the left, so the name is nudged right by
-   .12em to sit optically on the same axis as the mark; the block keeps
-   clear of the phone's home indicator. The link's
-   ::before stretches over the whole screen (the press effect is on the inner
-   mark, since a transform on the link would shrink it), so a tap
-   anywhere on the landing jumps to the text. Everything fades out
-   together with the portrait as soon as the page scrolls (.nav-on). The photo
-   frame ignores the pointer, hence pointer-events on the link. */
-.hero-entry{display:none}
-@media(max-width:700px){
- .hero-photo-frame{position:fixed;top:0;left:0;right:0;width:100%;max-width:none;margin:0;height:100svh;z-index:1;overflow:hidden}
- .hero-inner{padding-top:100svh;padding-bottom:0}
- .hero-overlay{align-self:flex-start;display:flex;flex-direction:column;justify-content:center;background:var(--bg);min-height:100svh;width:calc(100vw - var(--sb,0px));max-width:none;margin-left:calc(50% - 50vw + var(--sb,0px)/2);padding:72px clamp(20px,4vw,64px) calc(32px + env(safe-area-inset-bottom))}
- .colophon{position:relative;z-index:2;background:var(--bg)}
- .hero-portrait{height:113%!important;object-fit:cover;object-position:center 22%;transform:translateY(-12%)}
- .hero-photo-frame{background:var(--bg)}
- .hero-entry{display:flex;flex-direction:column;align-items:center;gap:18px;position:absolute;z-index:3;left:0;right:0;bottom:max(52px,calc(env(safe-area-inset-bottom) + 28px));padding:0 20px;pointer-events:none}
- .hero-entry-name{font-family:var(--signature);font-size:min(3.25rem,12.5vw);line-height:1.25;color:var(--accent);white-space:nowrap;transform:translateX(.12em)}
- .scroll-btn{pointer-events:auto;text-decoration:none}
- .scroll-btn::before{content:"";position:fixed;inset:0}
- .entry-mark{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:48px;height:48px;color:var(--accent);transition:transform 120ms ease-out}
- .entry-line{width:1.5px;height:18px;border-radius:1px;background:currentColor;animation:entry-line 280ms ease-out both}
- .entry-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:entry-dot 160ms ease-out 240ms both}
- .scroll-btn:active .entry-mark{transform:scale(.97)}
- .hero-photo-frame{transition:opacity 200ms ease-out,visibility 0s linear 200ms}
- body.nav-on .hero-photo-frame{opacity:0;visibility:hidden}
-}
-
-/* Mobile landing: the first screen is the portrait. The top bar slides in
-   once the page scrolls (script.js toggles .nav-on), and shows whenever focus
-   is inside it. Without script it stays in normal flow above the photo. */
-@media(max-width:700px){
- body.nav-auto .topbar{position:fixed;top:0;left:0;right:0;z-index:30;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform 240ms ease-out,opacity 240ms ease-out}
- body.nav-auto.nav-on .topbar,body.nav-auto .topbar:focus-within{transform:none;opacity:1;pointer-events:auto}
-}
-@media(prefers-reduced-motion:reduce){
- body.nav-auto .topbar{transform:none;transition:opacity 200ms ease-out}
-}
 
 /* The full-bleed rows (hero photo, project strip) are 100vw wide, and 100vw
    counts the vertical scrollbar. script.js sets --sb to the scrollbar width and
@@ -328,7 +210,6 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
 .hero-intro a{color:inherit;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:.06em}
 @media(max-width:700px){.hero-name{font-size:clamp(1.75rem,9vw,2.9rem);max-width:none}.hero-intro{max-width:29em;margin-bottom:28px}}
 .hero-name{scroll-margin-top:28px}
-#hero-text{scroll-margin-top:calc(0px - var(--nav-offset,80px))}
 
 /* Motion: the portrait is revealed once when the page loads, and browsers that
    support cross-document view transitions fade between pages while the top bar
@@ -336,10 +217,6 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
    change without a transition. */
 @keyframes portrait-reveal{from{clip-path:inset(0 0 100% 0);opacity:0}to{clip-path:inset(0);opacity:1}}
 @keyframes portrait-fade{from{opacity:0}to{opacity:1}}
-/* Mobile entry mark: the line draws downward once, then the dot appears. */
-@keyframes entry-line{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
-@keyframes entry-dot{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.entry-line{animation:none}.entry-dot{animation-name:portrait-fade}}
 .hero-portrait{animation:portrait-reveal 300ms ease-out backwards}
 @media(prefers-reduced-motion:reduce){.hero-portrait{animation-name:portrait-fade}}
 @media(prefers-reduced-motion:no-preference){
@@ -378,9 +255,6 @@ main.editorial-content{padding-bottom:0}
    same side padding), so their edges line up with the hero text. */
 .topbar-inner,.colophon-inner{max-width:1280px;margin-inline:auto;padding-inline:clamp(20px,4vw,64px)}
 
-/* Desktop: the portrait is a little taller and sits higher; the extra height
-   keeps its bottom edge past the bottom of the frame. */
-@media(min-width:701px){.hero-photo-frame .hero-portrait{height:108%}}
 
 /* Very large screens: the header, hero and footer share the scaled column. */
 @media(min-width:1921px){
@@ -391,7 +265,6 @@ main.editorial-content{padding-bottom:0}
 /* Mobile: the four links form a bar fixed to the bottom once the landing is left. */
 @media(max-width:700px){
  .hero-cta-row{position:fixed;left:0;right:0;bottom:0;z-index:50;margin:0;gap:0 20px;flex-wrap:nowrap;background:var(--bg);border-top:1px solid var(--line);padding:2px clamp(20px,4vw,64px) calc(10px + env(safe-area-inset-bottom))}
- body[data-page="home"]:not(.nav-on) .hero-cta-row{opacity:0;pointer-events:none}
  body[data-page="home"]{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
 }
 

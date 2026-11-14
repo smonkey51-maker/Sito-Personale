@@ -228,7 +228,6 @@
       badge3_meta:"Stato del programma, 2026",
       nav_main_label:"Navigazione principale",
       nav_toggle_label:"Menu",
-      scroll_btn:"Entra nel sito",
       c2_lead:"Un test su modelli AI aperti, addestrati su domande specifiche e usati in locale, senza inviare dati all’esterno.",
       initiatives_lead:"Le credenziali e i programmi Google a cui partecipo, con il loro stato.",
       advisory_label:"Advisory esterna",
@@ -480,7 +479,6 @@
       badge3_meta:"Program status, 2026",
       nav_main_label:"Main navigation",
       nav_toggle_label:"Menu",
-      scroll_btn:"Enter the site",
       c2_lead:"A test of open AI models trained on specific questions and run locally, without sending data outside.",
       initiatives_lead:"The Google credentials and programmes I take part in, with their status.",
       advisory_label:"External advisory",
@@ -769,14 +767,6 @@
         menuToggle.focus();
       }
     });
-  }
-
-  /* Home su mobile: la barra in alto compare solo dopo un piccolo scroll */
-  if(document.body.getAttribute("data-page") === "home"){
-    document.body.classList.add("nav-auto");
-    var syncNav = function(){ document.body.classList.toggle("nav-on", window.scrollY > 24); };
-    window.addEventListener("scroll", syncNav, {passive:true});
-    syncNav();
   }
 
   setLang(lang);

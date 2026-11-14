@@ -61,7 +61,7 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 | `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
 | `--ink-soft` | `#D2CED6` | Testo secondario |
 | `--line` | `#262628` | Separazioni |
-| `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati, segno d'ingresso su mobile |
+| `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati |
 | `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
 
 Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio e dei pannelli che si aprono dalla barra (menu, lingue, ricerca), con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0D0D0E` anche come `theme-color` delle pagine e nel manifest dell'app.
@@ -70,9 +70,8 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 
 - Due famiglie: Bodoni Moda per tutti i titoli (pagina, sezione, voci), sans di sistema (Segoe UI / fallback) per testo, menu ed etichette. Non usare Inter.
 - Cinque dimensioni: 16px (menu, etichette, date, note), 18px (testo), 22px (titoli delle voci), 24px (sottotitolo di pagina), 40px (titoli di sezione); il titolo di pagina scala fino a 76px.
-- Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco), il saluto in home e il nome sulla schermata d'ingresso su mobile (arancione). Gli altri titoli restano in Bodoni Moda.
-- Arancione su un segno grafico: eccezione voluta solo per il segno d'ingresso su mobile (linea corta con punto).
-- Home: saluto su due righe, "Ciao, sono" al 78% del nome e sopra di esso (entrambi nel carattere della firma, arancione); sotto, due righe: "IT per le PA dal 2022, Tech Lover dal 1992." (anni in grassetto) e la frase sul lavoro con RAG, modelli locali on-premise e adozione guidata; poi una riga con Progetti, Risultati (Per chi su mobile) e Contattami, solo testo arancione (su mobile centrate nella barra in basso). Sotto l'hero: Risultati in tre voci (due tempi di gestione, più di 35 colleghi affiancati), Progetti come elenco, e un blocco contatti con la mail da mostrare con un clic. Il ritratto resta a colori.
+- Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco) e il saluto in home (arancione). Gli altri titoli restano in Bodoni Moda.
+- Home: in alto la barra, sempre visibile; poi il ritratto a colori (foto con il giubbotto di pelle), ritagliato e appoggiato sul nero, con i bordi e il fondo sfumati. Su schermi larghi sta a destra del testo, su mobile sopra. Il testo: saluto su due righe, "Ciao, sono" al 78% del nome e sopra di esso (entrambi nel carattere della firma, arancione); sotto, "IT per le PA dal 2022, Tech Lover dal 1992." (anni in grassetto) e la frase sul lavoro con assistenti AI, modelli in casa e team formati sul campo; poi una riga con Progetti, Risultati (Per chi su mobile) e Contattami, solo testo arancione (su mobile centrate nella barra in basso). Sotto: Risultati in tre voci, Progetti come elenco, e un blocco contatti con la mail da mostrare con un clic. Niente schermata d'ingresso a tutto schermo.
 - "Contattami" a fine pagina: testo nel carattere dei titoli, chiaro, con sottolineatura arancione; un solo invito per schermata.
 - Pagina Hobby: musica, audiofilia, fotografia, orologi, libri e animali, con i link ai profili personali; testi solo con ciò che l'autore ha detto, nessun anno o dato non fornito.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.

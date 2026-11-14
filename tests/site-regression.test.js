@@ -70,8 +70,8 @@ assert(home.includes('id="heroIntro"'), 'Hero intro paragraph missing');
 for (const language of ['it', 'en']) assert(dictionaries[language].includes('hero_intro:'), language + ': hero intro missing');
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 assert(home.includes('href="progetti.html"') && home.includes('class="hero-link"') && home.includes('hero-link contact-trigger'), 'Hero links must reach the projects page and open the contacts');
-assert(home.includes('srcset="photo.webp?v=31"'), 'New portrait must be displayed');
-assert(home.includes('srcset="photo-mobile.webp?v=31"'), 'Mobile portrait crop must be displayed');
+assert(home.includes('src="photo.webp?v=32"'), 'New portrait must be displayed');
+assert(!fs.existsSync(path.join(root, 'photo-mobile.webp')), 'The mobile crop is no longer used');
 assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by pages');
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');
