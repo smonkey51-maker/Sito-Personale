@@ -82,14 +82,14 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 @media(max-width:700px){
  body[data-page="home"] .topbar-inner{padding-block:8px;min-height:68px}
  body[data-page="home"] .site-name{font-size:1.75rem}
- .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto;align-content:center;gap:0;padding-block:12px 24px;min-height:calc(100svh - 68px)}
+ .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(200px,1fr) auto auto;align-content:stretch;gap:0;padding-block:4px 20px;min-height:calc(100svh - 68px)}
  .hero-overlay{display:contents}
  .hero-name{grid-row:2;font-size:clamp(2.5rem,10.6vw,4rem);margin:0 0 24px}
  .hero-intro{grid-row:3;max-width:38ch}
  .hero-intro p:first-child{font-size:1.125rem;margin-bottom:14px}
  .hero-intro p:last-child{font-size:1rem;line-height:1.55}
- .hero-photo-frame{grid-row:1;align-self:center;width:100%;height:clamp(200px,41svh,480px);min-height:0;max-height:none;margin:0 0 20px;overflow:hidden;order:0}
- .hero-portrait{width:124%;max-width:none;height:100%;margin-left:-12%;max-height:none;object-fit:contain;object-position:center bottom}
+ .hero-photo-frame{grid-row:1;align-self:stretch;width:100%;height:auto;min-height:0;max-height:none;margin:0 0 16px;overflow:hidden;position:relative;order:0}
+ .hero-portrait{position:absolute;top:0;left:-12%;width:124%;max-width:none;height:100%;max-height:none;object-fit:contain;object-position:center bottom}
  .home-stats-list{grid-template-columns:1fr;gap:0;padding:10px 0}
  .home-stats-list li{display:flex;align-items:baseline;gap:16px;padding:10px 0}
  .home-stats-list strong{min-width:64px;font-size:1.75rem;margin:0}
