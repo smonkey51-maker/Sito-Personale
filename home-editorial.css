@@ -32,3 +32,16 @@
   .home-contact{padding-top:12px;padding-bottom:52px}
 }
 @media(max-width:380px){.home-section-inner{width:calc(100% - 32px)}}
+
+/* Make the next content visible and reachable from the first screen. */
+.home-proof{scroll-margin-top:84px;padding-top:clamp(32px,4vw,56px)}
+@media(min-width:701px){
+  .hero-inner{min-height:min(640px,66svh);padding-top:clamp(48px,6vh,88px);padding-bottom:clamp(24px,4vh,48px)}
+  .hero-name{margin-bottom:24px}
+  .hero-intro{margin-bottom:24px}
+  .hero-cta-row{margin-top:clamp(24px,4vh,40px)}
+}
+@media(max-width:700px){
+  .scroll-hint{color:var(--ink);font-size:1rem;line-height:1.45}
+  .home-proof{scroll-margin-top:72px;padding-top:44px}
+}
