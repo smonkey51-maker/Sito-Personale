@@ -172,7 +172,7 @@ for(const viewport of sizes){
    await expect(page.locator('.home-reach')).toContainText('InfoCamere, DABO, IdeaGrip');
    await expect(page.locator('#homeEmail a').first()).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
    await page.locator('.home-collab-faq > summary').click();
-   await expect(page.locator('.faq-list .faq-item')).toHaveCount(4);
+   await expect(page.locator('.faq-list .faq-item')).toHaveCount(3);
    await expect(page.locator('.faq-list details, .faq-list summary')).toHaveCount(0);
    for(const answer of await page.locator('.faq-list .faq-item p').all()) await expect(answer).toBeVisible();
    await page.locator('.home-collab-faq > summary').click();
