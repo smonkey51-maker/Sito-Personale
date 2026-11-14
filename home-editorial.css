@@ -4,7 +4,7 @@ body[data-page="home"]{padding-bottom:0}
 body[data-page="home"] .topbar{position:relative;background:var(--bg);border:0}
 body[data-page="home"] .topbar-inner,
 body[data-page="home"] .colophon-inner,
-.editorial-shell{width:100%;max-width:1120px;margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
+.editorial-shell{width:100%;max-width:1280px;margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
 .editorial-content > section > .wrap{width:100%;max-width:none;padding-inline:0;margin-inline:0}
 .editorial-content{padding:0}
 body[data-page="home"] .site-name{font-size:2rem}
@@ -13,7 +13,7 @@ body[data-page="home"] .site-name{font-size:2rem}
 .hero{padding:0;background:transparent}
 .hero-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:16px;min-height:0;padding-block:48px 0}
 .hero-overlay{width:auto;max-width:none;padding-block:0 40px}
-.hero-name{font-family:var(--signature);font-size:clamp(3.25rem,6vw,4.5rem);font-weight:400;letter-spacing:normal;line-height:1.12;max-width:none;margin:0 0 28px;color:var(--accent);text-wrap:balance}
+.hero-name{font-family:var(--signature);font-size:clamp(3.25rem,6vw,5rem);font-weight:400;letter-spacing:normal;line-height:1.12;max-width:none;margin:0 0 28px;color:var(--accent);text-wrap:balance}
 .hero-hi{display:block;font-size:.78em;line-height:1.25}
 .hero-fn{display:block;color:inherit}
 .hero-intro{font-size:1.125rem;line-height:1.55;max-width:44ch;margin:0}
@@ -22,6 +22,8 @@ body[data-page="home"] .site-name{font-size:2rem}
 .hero-intro strong{font-weight:700}
 .hero-photo-frame{position:static;inset:auto;order:0;align-self:end;width:100%;min-height:0;max-height:none;margin:0;pointer-events:none}
 .hero-portrait{display:block;width:100%;height:auto;max-height:500px;object-fit:contain;object-position:center bottom;animation:none;mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
+
+@media(min-width:1280px){.hero-portrait{max-height:560px}}
 
 /* Tre dati, separati dalla bio; la nota DABO resta accanto ai numeri. */
 .home-stats{padding:0}
