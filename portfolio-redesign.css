@@ -88,7 +88,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .hero-overlay{position:relative;z-index:2;max-width:560px}
 /* Ritratto ritagliato, senza sfondo: sta sul nero del sito, a destra nella colonna.
    Sotto i 700px sta sopra il testo, a tutta larghezza. */
-.hero-photo-frame{position:absolute;top:88px;right:0;bottom:0;width:clamp(240px,34vw,560px);z-index:1;pointer-events:none}
+.hero-photo-frame{position:absolute;top:88px;right:0;bottom:0;width:clamp(260px,40vw,560px);z-index:1;pointer-events:none}
 .hero-portrait{display:block;width:100%;height:100%;object-fit:contain;object-position:right bottom}
 @media(min-width:1100px){.hero-photo-frame{width:min(44%,560px)}}
 @media(max-width:700px){
