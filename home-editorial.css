@@ -10,6 +10,26 @@
   .hero-cta-row{border-top:0}
 }
 
+/* Schermi medi (701-1099 px): due colonne che si bilanciano. Il testo a sinistra e il ritratto a destra stanno insieme al centro dello schermo, il saluto si ridimensiona per la colonna e l'hero riempie l'altezza tra la barra e il piè di pagina. */
+@media(min-width:701px) and (max-width:1099px){
+  .hero-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,44%);align-items:center;column-gap:clamp(16px,3vw,32px);min-height:calc(100svh - 72px - 100px);padding-top:24px;padding-bottom:24px}
+  .hero-overlay{max-width:none;padding-block:0}
+  .hero-name{font-size:clamp(2.25rem,6.4vw,3.75rem);margin-bottom:24px}
+  .hero-intro{max-width:none}
+  .hero-cta-row{margin-top:32px}
+  .hero-photo-frame{position:static;width:auto}
+  .hero-portrait{height:auto;object-fit:fill}
+}
+
+/* Tablet in verticale: schermo alto e stretto, quindi il ritratto sta sopra il testo e prende l'altezza che resta, come su mobile. */
+@media(min-width:701px) and (max-width:1099px) and (orientation:portrait){
+  .hero-inner{display:flex;flex-direction:column;align-items:stretch;padding-top:0}
+  .hero-photo-frame{flex:1 1 0;width:100%;min-height:260px;max-height:600px;order:-1}
+  .hero-portrait{height:100%;object-fit:contain;object-position:center bottom}
+  .hero-overlay{padding-top:8px}
+  .hero-name{font-size:clamp(2.5rem,8vw,4.25rem)}
+}
+
 /* Desktop e schermi medi: tre livelli. Saluto grande, una frase d'apertura più grande (22px) e una secondaria più piccola e in grigio (16px). */
 @media(min-width:701px){
   .hero-intro p:first-child{font-size:1.375rem;line-height:1.4;margin-bottom:20px}
