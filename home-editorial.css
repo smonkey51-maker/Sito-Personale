@@ -20,9 +20,6 @@ body[data-page="home"] .site-name{font-size:2rem}
 .hero-intro p:first-child{font-size:1.375rem;line-height:1.45;margin:0 0 18px}
 .hero-intro p:last-child{font-size:1.125rem;line-height:1.55;color:var(--ink-soft);margin:0}
 .hero-intro strong{font-weight:700}
-.hero-cta-row{position:static;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:4px 28px;margin:24px 0 0;padding:0;border:0;background:transparent}
-.hero-link{font-size:1rem;min-height:44px;color:var(--ink)}
-.hero-link:active{color:var(--accent)}
 .hero-photo-frame{position:static;inset:auto;order:0;align-self:end;width:100%;min-height:0;max-height:none;margin:0;pointer-events:none}
 .hero-portrait{display:block;width:100%;height:auto;max-height:500px;object-fit:contain;object-position:center bottom;animation:none;mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
 
@@ -72,7 +69,7 @@ body[data-page="home"] .colophon-inner{display:block}
 body[data-page="home"] .footer-note{font-size:1rem;padding-top:20px;line-height:1.5}
 body[data-page="home"] .colophon{padding-bottom:24px}
 @media(hover:hover) and (pointer:fine){
- .hero-link:hover,.home-text-link:hover,.home-collab-links a:hover,.home-collab-faq summary:hover{color:var(--accent)}
+ .home-text-link:hover,.home-collab-links a:hover,.home-collab-faq summary:hover{color:var(--accent)}
  .home-project-grid h3 a:hover{text-decoration-color:var(--accent)}
 }
 @media(min-width:701px) and (max-width:1000px){
@@ -80,7 +77,6 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .hero-name{font-size:clamp(2.6rem,6vw,3.5rem)}
  .hero-intro p:first-child{font-size:1.125rem}
  .hero-intro p:last-child{font-size:1rem}
- .hero-cta-row{gap:0 20px}
  .home-stats-list li{display:block}
  .home-stats-list strong{display:block;margin-bottom:6px}
 }
@@ -95,8 +91,6 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .hero-intro p:last-child{font-size:1rem;line-height:1.55}
  .hero-photo-frame{grid-row:1;width:min(100%,330px);height:240px;margin:0 auto 24px;min-height:0;max-height:none;order:0}
  .hero-portrait{width:100%;height:100%;max-height:none;object-fit:contain;object-position:center bottom}
- .hero-cta-row{grid-row:4;position:static;gap:0 24px;justify-content:flex-start;padding:0;margin:8px 0 16px}
- .hero-link{font-size:1rem;min-height:44px}
  .home-stats-list{grid-template-columns:1fr;gap:0;padding:10px 0}
  .home-stats-list li{display:flex;align-items:baseline;gap:16px;padding:10px 0}
  .home-stats-list strong{min-width:64px;font-size:1.75rem;margin:0}
