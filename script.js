@@ -134,6 +134,8 @@
       stat2_k:"utenti del RAG aziendale",
       stat3_v:"1",
       stat3_k:"CEO affiancato (DABO), poi esperto AI nel suo team per Sprint Forward in Cina",
+      home_clients:"Ho lavorato con InfoCamere, DABO, IdeaGrip e Assicurazioni Generali.",
+      home_write:"Per collaborare, scrivimi con contesto, obiettivo e tempi.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
       page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo.",
@@ -391,6 +393,8 @@
       stat2_k:"users of the enterprise RAG",
       stat3_v:"1",
       stat3_k:"CEO advised (DABO), then AI expert in the CEO’s team for Sprint Forward in China",
+      home_clients:"I have worked with InfoCamere, DABO, IdeaGrip and Assicurazioni Generali.",
+      home_write:"To work together, write to me with the context, the goal and the timing.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
       page_description:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field.",
@@ -556,6 +560,8 @@
       return '<a href="mailto:' + em + '">' + em + "</a>" + copyBtn(em, "copy_email");
     }
     revealRow("cmEmail", "reveal_email", "Mostra email", emailLink);
+    var homeEmail = document.getElementById("homeEmail");
+    if(homeEmail){ homeEmail.innerHTML = emailLink(); bindCopyButtons(homeEmail); }
   })();
 
   /* One permanent visual theme; disregard preferences saved by older releases. */

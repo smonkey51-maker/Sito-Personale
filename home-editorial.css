@@ -68,3 +68,10 @@
 }
 
 .hero-intro strong{font-weight:700}
+
+/* Chi mi ha avuto in squadra e come scrivermi: due frasi in chiaro sotto i numeri, con la mail già visibile. */
+.home-reach{display:grid;gap:12px;padding:0 0 56px;max-width:62ch}
+.home-reach p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink-soft)}
+.home-reach a{color:var(--ink);font-weight:600}
+@media(max-width:700px){.home-reach{padding-bottom:96px}}
+@media(min-width:1921px){.home-reach p{font-size:calc(16*var(--u))}}
