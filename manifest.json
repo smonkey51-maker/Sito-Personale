@@ -8,8 +8,8 @@
   "display": "standalone",
   "orientation": "portrait-primary",
   "lang": "it",
-  "background_color": "#0D0D0E",
-  "theme_color": "#0D0D0E",
+  "background_color": "#0E0E0F",
+  "theme_color": "#0E0E0F",
   "icons": [
     {
       "src": "icon-192-v3.png",

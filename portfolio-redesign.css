@@ -166,7 +166,7 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
 
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
-:root[data-theme="dark"]{--bg:#0D0D0E;--bg-2:#0D0D0E;--line:#262628}
+:root[data-theme="dark"]{--bg:#0E0E0F;--bg-2:#0E0E0F;--line:#262628}
 :root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon{background:var(--bg)}
 :root[data-theme="dark"] .footer-note{border-color:var(--line)}
 

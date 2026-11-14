@@ -1,6 +1,6 @@
 /* Dashboard privata delle statistiche: stessi token di style.css,
    un file a parte perché la CSP non permette stili inline. */
-.admin{--bg-3:#1E1E1E;--chart-h:200px;--bar:#3A3A3E;--accent:#FF4A11;--accent-hover:#FF6B3D;--on-accent:#0D0D0E;font-size:1rem;line-height:1.55}
+.admin{--bg-3:#1E1E1E;--chart-h:200px;--bar:#3A3A3E;--accent:#FF4A11;--accent-hover:#FF6B3D;--on-accent:#0E0E0F;font-size:1rem;line-height:1.55}
 .admin-bar,.admin-main{max-width:1120px;margin:0 auto;padding-left:clamp(16px,4vw,48px);padding-right:clamp(16px,4vw,48px)}
 .admin-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:72px}
 .admin-home{display:flex;align-items:center;min-height:44px;color:var(--ink-soft)}

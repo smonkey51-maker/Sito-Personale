@@ -1,6 +1,6 @@
 .rag-figure{
  --vn-top:#2A2830;--vn-face:#232129;--vn-side:#1C1B21;--vn-floor:#131217;--vn-disc:#0B0B0D;
- --vn-hi:#D9D4CE;--vn-mid:#807B86;--vn-lo:#4F4A55;--vn-faint:#35313B;--vn-shadow:#0A090C;--vn-bg:#0D0D0E;
+ --vn-hi:#D9D4CE;--vn-mid:#807B86;--vn-lo:#4F4A55;--vn-faint:#35313B;--vn-shadow:#0A090C;--vn-bg:#0E0E0F;
  margin:8px 0 0;display:block;
 }
 .rag-figure .iso-svg{display:block;width:100%;max-width:300px;height:auto;margin:0;overflow:visible}
