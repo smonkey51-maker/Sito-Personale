@@ -189,14 +189,14 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
   if(viewport.width<=700){
-   test('on mobile the greeting precedes the portrait and the links stay in page flow',async({page})=>{
+   test('on mobile the portrait precedes the signature and the links stay in page flow',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.topbar')).toBeVisible();
     await expect(page.locator('.menu-toggle')).toBeInViewport();
     await expect(page.locator('.hero-portrait')).toBeVisible();
     const photo=await page.locator('.hero-portrait').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
-    expect(photo.y).toBeGreaterThanOrEqual(heading.y+heading.height-2);
+    expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
     expect(await page.locator('.hero-cta-row').evaluate(el=>getComputedStyle(el).position)).toBe('static');
     await expect(page.locator('#hero-name')).toBeInViewport();
    });
