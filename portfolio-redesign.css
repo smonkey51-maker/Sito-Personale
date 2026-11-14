@@ -6,7 +6,7 @@ html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact
  --wide-w:1240px;--content-w:900px;
 }
 body{font-size:1.03rem;line-height:1.6}
-h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
+h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 .topbar-inner{gap:32px}
 .site-name{font-family:var(--signature);font-weight:400;font-size:1.75rem}
 .desktop-nav a{font-size:1rem;font-weight:400;letter-spacing:.01em}
@@ -33,7 +33,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 .contact-dialog::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:url("padova-skyline.webp") center bottom 20px/min(92%,860px) auto no-repeat;mix-blend-mode:lighten;opacity:.12;pointer-events:none;z-index:-1}
 .contact-dialog::backdrop{background:rgba(0,0,0,.78)}
 .contact-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.contact-dialog-head h2{font-family:var(--serif);font-weight:400;letter-spacing:0;color:var(--accent);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0}
+.contact-dialog-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.01em;color:var(--accent);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0}
 /* Close button: a bare × in the dialog's top-right corner, 44px to tap. */
 .contact-close{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:transparent;font-size:1.75rem;line-height:1;cursor:pointer;transition:transform var(--dur) var(--ease),color var(--dur) var(--ease)}
 .contact-close:active{transform:scale(.97);color:var(--accent-hover)}
@@ -121,10 +121,9 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
    own border-top on top of it read as two redundant parallel lines. */
 
 
-/* High-contrast editorial serif inspired by the supplied Vignelli reference. */
 /* Handwritten signature, only for my name in the top bar and the home greeting. */
-:root{--signature:"Destiny Signature",var(--serif)}
-.filmstrip-title{font-family:var(--serif);letter-spacing:-.01em}
+:root{--signature:"Destiny Signature",var(--sans)}
+.filmstrip-title{letter-spacing:-.01em}
 
 
 /* Editorial alignment and responsive polish. */
@@ -132,7 +131,7 @@ button.hero-link{padding:0;border:0;background:none;cursor:pointer}
 .hero-inner{width:100%;margin-inline:auto}
 .hero-overlay{width:min(100%,800px)}
 .hero-cta-row{align-items:center}
-.filmstrip-title{font-size:1.375rem;font-weight:500;line-height:1.2}
+.filmstrip-title{font-size:1.375rem;font-weight:600;line-height:1.2}
 .filmstrip-meta{line-height:1.45}
 @media(min-width:701px){.hero-inner{min-height:min(800px,80vh)}.hero-overlay{padding-block:28px}}
 @media(max-width:700px){
