@@ -157,9 +157,9 @@ for(const viewport of sizes){
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await expect(page.locator('.home-contact')).toHaveCount(0);
   });
-  test('home has a strip of four numbers under the portrait, translated',async({page})=>{
+  test('home has a strip of three numbers under the portrait, translated',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('.home-stats-list li')).toHaveCount(4);
+   await expect(page.locator('.home-stats-list li')).toHaveCount(3);
    await expect(page.locator('.home-stats-list li').first()).toContainText('colleghi affiancati');
    await pickLang(page,'en');
    await expect(page.locator('.home-stats-list li').first()).toContainText('colleagues supported');
