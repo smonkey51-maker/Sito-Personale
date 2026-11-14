@@ -146,7 +146,7 @@ window.NF_I18N.zh = {
   stat2_v: "14",
   stat2_k: "位企业 RAG 用户",
   stat3_v: "1",
-  stat3_k: "位 CEO 获得咨询（DABO），随后加入其团队担任 AI 专家，参与在 Saichuang Weilai（SCWL）Southeast Asia InnoTech Center（中国）的 Sprint Forward。",
+  stat3_k: "位 CEO 获得咨询（DABO），随后加入其团队担任 AI 专家，参与 Sprint Forward in Golden Boots。",
   home_clients: "我曾与 InfoCamere、DABO、IdeaGrip 和 Assicurazioni Generali 合作。",
   collab_title:"一起合作",
   collab_ask:"把你的行业和问题发给我。",
