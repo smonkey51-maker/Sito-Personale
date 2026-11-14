@@ -8,6 +8,16 @@
   .hero-name{margin-bottom:14px}
 }
 
+/* Desktop e schermi medi: tre livelli. Saluto grande, una frase d'apertura più grande (22px) e una secondaria più piccola e in grigio (16px). */
+@media(min-width:701px){
+  .hero-intro p:first-child{font-size:1.375rem;line-height:1.4;margin-bottom:20px}
+  .hero-intro p:last-child{font-size:1rem;line-height:1.6;color:var(--ink-soft)}
+}
+@media(min-width:1921px){
+  .hero-intro p:first-child{font-size:calc(22*var(--u));margin-bottom:calc(20*var(--u))}
+  .hero-intro p:last-child{font-size:calc(16*var(--u))}
+}
+
 /* Su mobile Per chi prende il posto di Risultati. */
 @media(min-width:701px){.home-for-whom-link{display:none}}
 @media(max-width:700px){
