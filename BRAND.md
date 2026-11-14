@@ -56,15 +56,15 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 
 | Token | Valore | Uso |
 |---|---|---|
-| `--bg` | `#0D0D0E` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto |
-| `--bg-2` | `#0D0D0E` | Superficie secondaria (uguale allo sfondo) |
+| `--bg` | `#0E0E0F` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto |
+| `--bg-2` | `#0E0E0F` | Superficie secondaria (uguale allo sfondo) |
 | `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
 | `--ink-soft` | `#D2CED6` | Testo secondario |
 | `--line` | `#262628` | Separazioni |
 | `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati |
 | `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
 
-Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio e dei pannelli che si aprono dalla barra (menu, lingue, ricerca), con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0D0D0E` anche come `theme-color` delle pagine e nel manifest dell'app.
+Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio e dei pannelli che si aprono dalla barra (menu, lingue, ricerca), con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0E0E0F` anche come `theme-color` delle pagine e nel manifest dell'app.
 
 ### Tipografia e comportamento
 
