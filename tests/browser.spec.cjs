@@ -148,10 +148,12 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
-  test('home results list three results and the contact block reveals the email',async({page})=>{
+  test('home has no results or projects sections: they are reached from the three links',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('.home-proof-item')).toHaveCount(3);
-   await expect(page.locator('.home-proof')).toContainText('più di 35 colleghi');
+   await expect(page.locator('.home-proof')).toHaveCount(0);
+   await expect(page.locator('.home-projects')).toHaveCount(0);
+   await expect(page.locator('.hero-cta-row .hero-link')).toHaveCount(3);
+   await expect(page.locator('.home-results-link')).toHaveAttribute('href','rag-aziendale.html#risultati');
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await page.locator('#homeEmail .reveal-btn').click();
    await expect(page.locator('#homeEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');

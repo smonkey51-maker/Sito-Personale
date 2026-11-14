@@ -124,8 +124,6 @@ window.NF_I18N.zh = {
     [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
     [{ t: "我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。" }]
   ],
-  home_adoption_k: "推广应用：",
-  home_adoption_v: "我帮助了 35 多位同事和一家外部公司的 CEO 选择并使用 AI。",
   home_contact_text: "请把背景、目标和时间安排发给我，我会亲自回复。",
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | 日常工作中的 AI",

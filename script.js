@@ -125,8 +125,6 @@
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
         [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
       ],
-      home_adoption_k:"Adozione:",
-      home_adoption_v:"più di 35 colleghi e il CEO di un’azienda esterna affiancati nella scelta e nell’uso dell’AI.",
       home_contact_text:"Mandami contesto, obiettivo e tempi, e ti rispondo io.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
@@ -376,8 +374,6 @@
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
         [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
       ],
-      home_adoption_k:"Adoption:",
-      home_adoption_v:"more than 35 colleagues and the CEO of an external company supported in choosing and using AI.",
       home_contact_text:"Send me the context, the goal and the timing, and I will reply myself.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
