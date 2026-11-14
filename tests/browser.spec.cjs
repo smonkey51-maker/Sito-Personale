@@ -201,6 +201,7 @@ for(const viewport of sizes){
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
     await expect(page.locator('#hero-name')).toBeInViewport();
+    expect(await page.locator('.home-stats').evaluate(el=>el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(810);
    });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
     await page.goto('/percorso.html');

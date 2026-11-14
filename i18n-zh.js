@@ -1,6 +1,5 @@
 window.NF_I18N = window.NF_I18N || {};
 window.NF_I18N.zh = {
-  home_ceo_note:"随后加入该 CEO 的团队，担任 Sprint Forward（中国）项目的 AI 专家。",
   home_rag_title:"企业 RAG",
   home_rag_desc:"基于企业文档和知识的 AI 助手，已投入生产使用。",
   home_local_desc:"在组织内部基础设施上运行模型的实验。",
@@ -147,7 +146,7 @@ window.NF_I18N.zh = {
   stat2_v: "14",
   stat2_k: "位企业 RAG 用户",
   stat3_v: "1",
-  stat3_k: "位 CEO 获得咨询（DABO）",
+  stat3_k: "位 CEO 获得咨询（DABO），随后加入其团队担任 AI 专家，参与 Sprint Forward（中国）。",
   home_clients: "我曾与 InfoCamere、DABO、IdeaGrip 和 Assicurazioni Generali 合作。",
   collab_title:"一起合作",
   collab_ask:"把你的行业和问题发给我。",

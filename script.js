@@ -1,7 +1,6 @@
 (function(){
   var i18n = {
     it: {
-      home_ceo_note:"Poi esperto AI nel suo team per Sprint Forward in Cina.",
       home_rag_title:"RAG aziendale",
       home_rag_desc:"Assistenti AI sui documenti e sulla conoscenza aziendale, in produzione.",
       home_local_desc:"Sperimentazione di modelli eseguiti nell’infrastruttura dell’organizzazione.",
@@ -148,7 +147,7 @@
       stat2_v:"14",
       stat2_k:"utenti del RAG aziendale",
       stat3_v:"1",
-      stat3_k:"CEO affiancato (DABO)",
+      stat3_k:"CEO affiancato (DABO), poi esperto AI nel suo team per Sprint Forward in Cina.",
       home_clients:"Ho lavorato con InfoCamere, DABO, IdeaGrip e Assicurazioni Generali.",
       collab_title:"Collaboriamo",
       collab_ask:"Mandami settore e problema.",
@@ -287,7 +286,6 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
-      home_ceo_note:"Then AI expert in the CEO’s team for Sprint Forward in China.",
       home_rag_title:"Enterprise RAG",
       home_rag_desc:"AI assistants for company documents and knowledge, in production.",
       home_local_desc:"Experiments with models running within the organization’s infrastructure.",
@@ -434,7 +432,7 @@
       stat2_v:"14",
       stat2_k:"users of the enterprise RAG",
       stat3_v:"1",
-      stat3_k:"CEO advised (DABO)",
+      stat3_k:"CEO advised (DABO), then AI expert in the CEO’s team for Sprint Forward in China.",
       home_clients:"I have worked with InfoCamere, DABO, IdeaGrip and Assicurazioni Generali.",
       collab_title:"Let’s work together",
       collab_ask:"Send me your sector and your problem.",
