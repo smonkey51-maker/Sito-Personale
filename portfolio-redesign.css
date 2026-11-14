@@ -94,8 +94,8 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.045em}
 @media(max-width:700px){
  .topbar{position:relative;background:var(--bg);border-bottom:1px solid var(--line)}
  .hero-inner{display:flex;flex-direction:column;min-height:0}
- .hero-photo-frame{position:static;width:100%;order:-1}
- .hero-portrait{height:auto;object-fit:fill}
+ .hero-photo-frame{position:static;flex:1 1 0;width:100%;min-height:140px;max-height:440px;order:-1}
+ .hero-portrait{object-position:center bottom}
 }
 /* Full-bleed row like the photo above it: .hero sits inside
    .editorial-shell's centred, padded 1280px container, so without this

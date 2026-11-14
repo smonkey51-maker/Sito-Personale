@@ -7,6 +7,13 @@
 .home-contact-email a{color:var(--accent);font-weight:600;text-underline-offset:5px}
 .home-contact-email .reveal-btn:active{color:var(--accent-hover);transform:scale(.97)}
 @media(hover:hover) and (pointer:fine){.home-contact-email a:hover{color:var(--accent-hover)}}
+/* Mobile: niente riga sotto la barra; il ritratto prende lo spazio che resta tra la barra e la barra dei link, così tutto il testo sta nella prima schermata. */
+@media(max-width:700px){
+  .topbar{border-bottom:0}
+  .hero-inner{min-height:calc(100svh - 68px - 56px - env(safe-area-inset-bottom));padding-bottom:8px}
+  .hero-overlay{padding-top:12px}
+  .hero-name{margin-bottom:18px}
+}
 @media(max-width:700px){
   .home-section-inner{width:calc(100% - 40px)}
   .home-contact{padding-top:12px;padding-bottom:52px}
