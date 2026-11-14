@@ -32,6 +32,7 @@ La v1 metteva al centro "il lavoro al Service Desk di InfoCamere"; è superata.
 
 ## 2. Tono
 
+00. **Linguaggio da chi compra e misura.** Il sito parla come media planner e direttori marketing: obiettivo, cosa ho fatto, risultati, tempi, lancio, adozione. Gli stessi fatti di prima, senza gergo da sistemista ("criticità" diventa "problema", "rilascio" diventa "lancio"). I termini tecnici restano dove servono, con il loro equivalente di business accanto. I dati sono solo quelli già approvati.
 0. **Leggero quando serve.** Il tono scherzoso è ammesso (per esempio "Tech Lover dal 1992"), purché i fatti restino precisi.
 1. **Fattuale.** Nessun superlativo ("rivoluzionario", "innovativo", "cutting-edge"). Un esito non ideale si dichiara.
 2. **Stato esplicito.** Ogni risultato è marcato come prodotto, in corso o esplorazione. Non lasciare l'etichetta ambigua.
