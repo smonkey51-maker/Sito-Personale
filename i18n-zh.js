@@ -122,14 +122,14 @@ window.NF_I18N.zh = {
   hero_hi: "你好，我是",
   hero_intro: [
     [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
-    [{ t: "我把人工智能带入真实的业务流程：已投入生产的 RAG 系统、本地部署（on-premise）的模型，以及在一线开展的引导式推广应用。" }]
+    [{ t: "我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。" }]
   ],
   home_adoption_k: "推广应用：",
   home_adoption_v: "我帮助了 35 多位同事和一家外部公司的 CEO 选择并使用 AI。",
   home_contact_text: "请把背景、目标和时间安排发给我，我会亲自回复。",
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | 日常工作中的 AI",
-  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我把人工智能带入真实的业务流程：已投入生产的 RAG 系统、本地部署（on-premise）的模型，以及在一线开展的引导式推广应用。",
+  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。",
   rag_step1_kicker: "最初的来源",
   rag_step1_title: "文档与事件历史",
   rag_step1_desc: "两个相互独立的知识库。",
@@ -206,7 +206,7 @@ window.NF_I18N.zh = {
   case_fact_users: "使用者",
   case_fact_users_v: "13 人：一个运营单元及其负责人",
   c1_problem: "缩短还原一个问题背景所需的时间：有用的信息分散在不同工具中，同时要控制成本。",
-  c1_impact: "一个 AI 助手（RAG）：根据公司自己的文档回答团队的问题，并附上来源。从服务台到中层管理人员，查找信息和处理问题所需的时间都更短。",
+  c1_impact: "一个 AI 助手（RAG）：根据公司自己的文档回答团队的问题，并附上来源。运营问题的处理和中层管理人员的分析都更快。",
   c1_learning: "上线之后，一些用户仍然手动查找。出现了速度变慢和数据缺口：工具能运行并不够。我着手完善使用手册，并直接与用户交流。在扩展这类助手之前，需要可靠的来源和清晰的使用说明。",
   case2_title: "本地 AI 实验",
   c2_status: "实验已于 2026 年完成",
@@ -238,7 +238,7 @@ window.NF_I18N.zh = {
   next_label: "继续阅读",
   close: "关闭",
   page_title_rag: "RAG | Nicolò Forcolin",
-  page_description_rag: "一个根据公司文档作答并注明来源的 AI 助手：自 2026 年投入生产，整个运营单元都在使用。",
+  page_description_rag: "一个根据公司文档作答并注明来源的 AI 助手，让运营问题的处理和中层管理人员的分析都更快。自 2026 年投入生产。",
   page_title_local: "本地 AI 实验 | Nicolò Forcolin",
   page_description_local: "一项测试：用针对特定问题训练的开源 AI 模型（Qwen、Gemma、Llama），通过 Ollama 在本地运行，不向外部发送数据。",
   page_title_initiatives: "资质 | Nicolò Forcolin",
@@ -246,7 +246,7 @@ window.NF_I18N.zh = {
   page_title_projects: "项目与活动 | Nicolò Forcolin",
   page_description_projects: "Nicolò Forcolin 的 AI 项目，以及咨询、培训和社区活动。",
   projects_lead: "我负责的 AI 项目，以及与之配套的咨询、培训和社区活动。",
-  c1_lead: "一个根据公司文档作答并注明来源的 AI 助手，让运营问题处理得更快。",
+  c1_lead: "一个根据公司文档作答并注明来源的 AI 助手，让运营问题的处理和中层管理人员的分析都更快。",
   project_read: "阅读项目",
   page_title_privacy: "隐私声明 | Nicolò Forcolin",
   page_description_privacy: "Nicolò Forcolin 个人网站的隐私声明：没有 Cookie，没有追踪，不通过表单收集数据。"
