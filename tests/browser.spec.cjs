@@ -191,11 +191,18 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
   if(viewport.width<=700){
-   test('on mobile the portrait precedes the signature without a fixed link bar',async({page})=>{
+   test('on mobile the first screen is only the portrait, the orange name and the entry mark; entering shows the introduction',async({page})=>{
+    await page.emulateMedia({reducedMotion:'reduce'});
     await page.goto('/');
     await expect(page.locator('.topbar')).toBeVisible();
     await expect(page.locator('.menu-toggle')).toBeInViewport();
-    await expect(page.locator('.hero-portrait')).toBeVisible();
+    await expect(page.locator('.m-entry-photo')).toBeInViewport();
+    await expect(page.locator('.m-entry-name')).toBeInViewport();
+    await expect(page.locator('.entry-dot')).toBeInViewport();
+    await expect(page.locator('#hero-name')).not.toBeInViewport();
+    await page.locator('.m-entry-link').click();
+    await expect(page.locator('#hero-name')).toBeInViewport();
+    await expect(page.locator('.topbar')).toBeInViewport();
     const photo=await page.locator('.hero-portrait').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
@@ -204,8 +211,6 @@ for(const viewport of sizes){
     const intro=await page.locator('#heroIntro').boundingBox();
     expect(intro.y+intro.height).toBeLessThanOrEqual(812);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
-    await expect(page.locator('#hero-name')).toBeInViewport();
-    expect(await page.locator('.home-stats').evaluate(el=>el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(810);
    });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
     await page.goto('/percorso.html');

@@ -142,6 +142,8 @@
         [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
       ],
       stats_label:"In numeri",
+      scroll_btn:"Entra nel sito",
+      entry_label:"Ingresso",
       stat1_v:"35+",
       stat1_k:"colleghi affiancati nell’uso dell’AI",
       stat2_v:"14",
@@ -425,6 +427,8 @@
         [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
       ],
       stats_label:"In numbers",
+      scroll_btn:"Enter the site",
+      entry_label:"Entry",
       stat1_v:"35+",
       stat1_k:"colleagues supported in using AI",
       stat2_v:"14",
