@@ -178,7 +178,7 @@ for(const viewport of sizes){
   });
   test('home hero uses the approved greeting and keeps the real introduction',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('#hero-name')).toHaveText('Ciao.Sono Nicolò.');
+   await expect(page.locator('#hero-name')).toHaveText('Ciao, sono Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
    await expect(page.locator('#heroIntro')).toContainText('assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');

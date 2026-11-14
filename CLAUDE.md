@@ -29,8 +29,7 @@ tool di terze parti: basta leggere il codice):
   maiuscolo con tracking. Paragrafi max ~62ch, interlinea 1.45-1.6,
   mai giustificati né centrati oltre le tre righe. Titoli su max due
   righe a ogni larghezza, `text-wrap:balance`. Nessuna parola del
-  titolo stilata a parte (corsivo, colore, sottolineatura), salvo il nome
-  arancione nel saluto della home, approvato nel mockup del 14 novembre 2026.
+  titolo stilata a parte (corsivo, colore, sottolineatura).
 - **Layout**: niente badge "pill" sopra il titolo, niente grid di
   card identiche, niente card dentro card, niente numeretti
   decorativi (01/02/03) su sezioni che non sono una vera sequenza.

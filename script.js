@@ -1,7 +1,6 @@
 (function(){
   var i18n = {
     it: {
-      hero_am:"Sono",
       home_ceo_note:"Poi esperto AI nel suo team per Sprint Forward in Cina.",
       home_rag_title:"RAG aziendale",
       home_rag_desc:"Assistenti AI sui documenti e sulla conoscenza aziendale, in produzione.",
@@ -138,7 +137,7 @@
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
-      hero_hi:"Ciao.",
+      hero_hi:"Ciao, sono",
       hero_intro:[
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
         [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
@@ -288,7 +287,6 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie, nessun tracciamento, nessun dato raccolto tramite modulo.",
     },
     en: {
-      hero_am:"I’m",
       home_ceo_note:"Then AI expert in the CEO’s team for Sprint Forward in China.",
       home_rag_title:"Enterprise RAG",
       home_rag_desc:"AI assistants for company documents and knowledge, in production.",
@@ -425,7 +423,7 @@
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
-      hero_hi:"Hi.",
+      hero_hi:"Hi, I’m",
       hero_intro:[
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
         [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
