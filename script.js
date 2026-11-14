@@ -139,6 +139,7 @@
       hero_hi:"Ciao, sono",
       hero_intro:[
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
+        [{t:"Nel "},{t:"2026",b:true},{t:" esperto AI al concorso cinese Sprint Forward, fino alla tappa di Singapore."}],
         [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
       ],
       stats_label:"In numeri",
@@ -422,6 +423,7 @@
       hero_hi:"Hi, I’m",
       hero_intro:[
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
+        [{t:"In "},{t:"2026",b:true},{t:", AI expert at the Chinese Sprint Forward competition, up to the Singapore stage."}],
         [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
       ],
       stats_label:"In numbers",
