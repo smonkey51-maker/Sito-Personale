@@ -93,11 +93,17 @@
               </figcaption>
             </figure>
   </div>
-  <div class="page-body page-grid">
+  <div class="page-body page-grid page-grid-cols">
     <section class="page-block">
       <h2 class="page-block-label" data-i18n="case_problem_label">Obiettivo</h2>
       <div class="page-block-body">
         <p data-i18n="c1_problem">Ridurre il tempo per ricostruire il contesto di un problema, partendo da informazioni sparse tra strumenti diversi e con costi contenuti.</p>
+      </div>
+    </section>
+    <section class="page-block">
+      <h2 class="page-block-label" data-i18n="case_solution_label">Cosa ho fatto</h2>
+      <div class="page-block-body">
+        <p data-i18n="c1_summary">Ho unificato due sistemi RAG già funzionanti in un unico punto di accesso, con più fonti aziendali collegate. Gli utenti scrivono la domanda come la direbbero a un collega: la risposta mette prima ciò che serve subito, poi possibili cause, procedure, casi simili e i link alle fonti.</p>
       </div>
     </section>
     <section class="page-block">
@@ -112,13 +118,7 @@
         </ul>
       </div>
     </section>
-    <section class="page-block">
-      <h2 class="page-block-label" data-i18n="case_solution_label">Cosa ho fatto</h2>
-      <div class="page-block-body">
-        <p data-i18n="c1_summary">Ho unificato due sistemi RAG già funzionanti in un unico punto di accesso, con più fonti aziendali collegate. Gli utenti scrivono la domanda come la direbbero a un collega: la risposta mette prima ciò che serve subito, poi possibili cause, procedure, casi simili e i link alle fonti.</p>
-      </div>
-    </section>
-    <section class="page-block page-block-row" id="risultati">
+    <section class="page-block" id="risultati">
       <h2 class="page-block-label" data-i18n="case_impact_label">Risultati</h2>
       <div class="page-block-body">
         <ul class="role-list">
@@ -130,7 +130,7 @@
         </ul>
       </div>
     </section>
-    <section class="page-block page-block-wide">
+    <section class="page-block">
       <h2 class="page-block-label" data-i18n="case_flow_label">Come si è evoluto</h2>
       <div class="page-block-body">
         <ol class="flow">
@@ -152,7 +152,7 @@
         </ol>
       </div>
     </section>
-    <section class="page-block page-block-row">
+    <section class="page-block">
       <h2 class="page-block-label" data-i18n="case_issues_label">Dopo il lancio</h2>
       <div class="page-block-body">
         <p data-i18n="c1_learning">Dopo il lancio, alcuni utenti continuavano a cercare a mano. Sono emersi rallentamenti e lacune nei dati: uno strumento che funziona non basta. Ho lavorato sul manuale d’uso e parlando direttamente con gli utenti. Prima di estendere un assistente così servono fonti affidabili e istruzioni chiare su come usarlo.</p>

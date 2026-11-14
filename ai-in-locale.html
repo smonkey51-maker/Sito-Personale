@@ -72,13 +72,18 @@
     <p class="page-lead" data-i18n="c2_lead">Un test su modelli AI aperti, addestrati su domande specifiche e usati in locale, senza inviare dati all’esterno.</p>
   </header>
   <div class="page-body">
-    <section class="lab-section lab-how" aria-labelledby="labHowTitle">
-      <div class="lab-how-text">
+    <div class="lab-section lab-pair">
+      <section aria-labelledby="labWhyTitle">
+        <h2 class="lab-heading" id="labWhyTitle" data-i18n="local_why_label">Perché farlo</h2>
+        <p data-i18n="c2_problem">Un test interno e informale per valutare modelli specializzati su domande relative a InfoCamere. Gli obiettivi: più controllo sui dati, costi potenzialmente più bassi e meno dipendenza da fornitori esterni.</p>
+      </section>
+      <section aria-labelledby="labHowTitle">
         <h2 class="lab-heading" id="labHowTitle" data-i18n="case_how_label">Come funziona</h2>
         <p data-i18n="c2_solution">Ho scelto i modelli Qwen, Gemma e Llama su Hugging Face. Con dataset specifici preparati insieme al middle management li ho addestrati ulteriormente (fine-tuning con Unsloth) in un ambiente aziendale, poi li ho fatti girare in locale con Ollama.</p>
         <p data-i18n="local_how_privacy">Le richieste vengono elaborate in locale, senza inviare dati all’esterno.</p>
-        <p class="lab-note" data-i18n="local_how_note">Lo schema riassume le fasi della sperimentazione, senza riferimenti a configurazioni interne.</p>
-      </div>
+      </section>
+    </div>
+    <section class="lab-section lab-schema">
       <ol class="lab-flow" aria-label="Fasi della sperimentazione" data-i18n-aria="local_flow_aria">
           <li class="lab-stage">
             <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" focusable="false"><path class="o s" d="M56 6h26l8 8v50H56z"/><path class="s" d="M82 6v8h8"/><path class="o" d="M44 14h26l8 8v50H44z"/><path d="M70 14v8h8"/><path class="o" d="M32 24h30l8 8v56H32z"/><path d="M62 24v8h8"/><path class="s" d="M40 44h22M40 52h18M40 60h22M40 68h14"/></svg>
@@ -93,21 +98,18 @@
             <p class="lab-caption"><span data-i18n="local_step3_title">Ollama e demo locali</span> <span class="lab-caption-desc" data-i18n="local_step3_desc">Inferenza e dimostrazioni in locale.</span></p>
           </li>
       </ol>
+      <p class="lab-note" data-i18n="local_how_note">Lo schema riassume le fasi della sperimentazione, senza riferimenti a configurazioni interne.</p>
     </section>
     <div class="lab-section lab-pair">
-      <section aria-labelledby="labWhyTitle">
-        <h2 class="lab-heading" id="labWhyTitle" data-i18n="local_why_label">Perché farlo</h2>
-        <p data-i18n="c2_problem">Un test interno e informale per valutare modelli specializzati su domande relative a InfoCamere. Gli obiettivi: più controllo sui dati, costi potenzialmente più bassi e meno dipendenza da fornitori esterni.</p>
-      </section>
       <section aria-labelledby="labResultsTitle">
         <h2 class="lab-heading" id="labResultsTitle" data-i18n="case_results_label">Risultati e limiti</h2>
         <p data-i18n="c2_summary">Nelle prove le risposte miglioravano rispetto ai modelli di partenza ed erano corrette nella maggior parte dei casi osservati. Restavano però informazioni inventate, meno frequenti nei modelli più performanti. Sono osservazioni, non una misura di accuratezza valida in generale. Era un test e per ora si è scelto di non portarlo avanti.</p>
       </section>
-    </div>
-    <section class="lab-section" aria-labelledby="labLearnTitle">
+      <section aria-labelledby="labLearnTitle">
       <h2 class="lab-heading" id="labLearnTitle" data-i18n="case_learning_label">Cosa ho imparato</h2>
       <p data-i18n="c2_learning">L’addestramento ha migliorato le risposte sui temi provati, ma non ha eliminato le informazioni inventate. Il limite emerso: distinguere una risposta plausibile da una corretta. Per portarlo in uso servirebbero prove ripetibili, criteri di accettazione stabiliti prima e una verifica delle risposte sulle fonti.</p>
-    </section>
+      </section>
+    </div>
   </div>
   <section class="page-cta">
     <p><span data-i18n="cta_before">Per parlare di un progetto, </span><button type="button" class="contact-trigger cta-inline" aria-haspopup="dialog" aria-controls="contactDialog" data-i18n="cta_link">contattami</button><span data-i18n="cta_after">.</span></p>
