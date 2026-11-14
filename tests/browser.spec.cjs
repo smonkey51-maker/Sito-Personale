@@ -211,7 +211,7 @@ for(const viewport of sizes){
     await expect(page.locator('#hero-name')).toBeInViewport();
     await expect(page.locator('.topbar')).toBeVisible();
     await expect(page.locator('.menu-toggle')).toBeInViewport();
-    const photo=await page.locator('.hero-portrait').boundingBox();
+    const photo=await page.locator('.hero-photo-frame').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
     expect(heading.y-photo.y-photo.height).toBeLessThanOrEqual(40);
