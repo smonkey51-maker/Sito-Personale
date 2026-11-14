@@ -33,30 +33,6 @@ for(const viewport of sizes){
    }
    expect(errors).toEqual([]);
   });
-  test('the search lens finds a page by its text',async({page})=>{
-   await page.goto('/progetti.html');
-   await page.locator('.search-btn').click();
-   await page.locator('#siteSearch').fill('sperimentazione');
-   await expect(page.locator('.search-results a').first()).toBeVisible();
-   await expect(page.locator('.search-results a').first()).toHaveAttribute('href',/\.html$/);
-   await page.keyboard.press('Escape');
-   await expect(page.locator('.search-panel')).toBeHidden();
-  });
-  test('the search closes and clears itself after a result is chosen or the page is restored',async({page})=>{
-   await page.goto('/progetti.html');
-   await page.locator('.search-btn').click();
-   await page.locator('.search-panel input').fill('rag');
-   await expect(page.locator('.search-results a').first()).toBeVisible();
-   await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));
-   await expect(page.locator('.search-panel')).toBeHidden();
-   await expect(page.locator('.search-panel input')).toHaveValue('');
-   await expect(page.locator('.search-results a')).toHaveCount(0);
-   await page.locator('.search-btn').click();
-   await page.locator('.search-panel input').fill('rag');
-   await page.locator('.search-results a').first().click();
-   await page.goBack();
-   await expect(page.locator('.search-panel')).toBeHidden();
-  });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
    await revealBar(page);
@@ -119,7 +95,7 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Adwuma mu suahu');
    await pickLang(page,'it');
    await expect(page.locator('h1')).toHaveText('Percorso');
-   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .search-btn,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
+   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(fits).toBe(true);
    await page.locator('.lang-toggle').click();
    await page.waitForTimeout(250);
@@ -186,16 +162,25 @@ for(const viewport of sizes){
    await page.keyboard.press('Escape');
    await expect(page.locator('#contactDialog')).not.toBeVisible();
   });
+  test('home results list three results and the contact block reveals the email',async({page})=>{
+   await page.goto('/');
+   await expect(page.locator('.home-proof-item')).toHaveCount(3);
+   await expect(page.locator('.home-proof')).toContainText('più di 35 colleghi');
+   await expect(page.locator('.search-btn')).toHaveCount(0);
+   await page.locator('#homeEmail .reveal-btn').click();
+   await expect(page.locator('#homeEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
+  });
   test('home hero names me, introduces me and has no menu',async({page})=>{
    await page.goto('/');
    await expect(page.locator('#hero-name')).toContainText('Nicolò Forcolin');
-   await expect(page.locator('#heroIntro')).toContainText('Porto l’AI nel lavoro quotidiano');
+   await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
+   await expect(page.locator('#heroIntro')).toContainText('sistemi RAG in produzione, modelli locali on-premise');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.desktop-nav')).toHaveCount(0);
    await expect(page.locator('.site-name')).toHaveText('NForcolin');
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
-   await expect(page.locator('#heroIntro')).toContainText('I bring AI into everyday work');
+   await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
   if(viewport.width<=700){
    test('mobile landing shows only the portrait and an enter button until the page scrolls',async({page})=>{

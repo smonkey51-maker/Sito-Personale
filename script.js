@@ -120,13 +120,15 @@
       credentials_note:"Questi riferimenti distinguono le credenziali dai programmi di community e dallo stato di iscrizione. Il lavoro applicato è documentato nelle pagine dei progetti.",
       hero_hi:"Ciao, sono",
       hero_intro:[
-        [{t:"Porto l’AI nel lavoro quotidiano."}],
-        [{t:"Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usano un’intera Unità Operativa e il relativo Responsabile."}],
-        [{t:"Ho affiancato più di 35 colleghi e il CEO di un’azienda esterna nel percorso di scelta, training e adozione dell’AI in azienda e nei progetti. Questa consulenza mi è valsa l’ingresso come esperto AI nel team SCWL, candidato a Sprint Forward, iniziativa internazionale a Shangcheng, in Cina."}]
+        [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
+        [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: sistemi RAG in produzione, modelli locali on-premise e adozione guidata sul campo."}]
       ],
+      home_adoption_k:"Adozione:",
+      home_adoption_v:"più di 35 colleghi e il CEO di un’azienda esterna affiancati nella scelta e nell’uso dell’AI.",
+      home_contact_text:"Mandami contesto, obiettivo e tempi, e ti rispondo io.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
-      page_description:"Porto l’AI nel lavoro quotidiano. Ho guidato la progettazione e la messa in produzione dell’assistente AI che oggi usano un’intera Unità Operativa e il relativo Responsabile.",
+      page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali: sistemi RAG in produzione, modelli locali on-premise e adozione guidata sul campo.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -368,13 +370,15 @@
       credentials_note:"These references distinguish credentials from community programmes and membership status. Applied work is documented on the project pages.",
       hero_hi:"Hi, I’m",
       hero_intro:[
-        [{t:"I bring AI into everyday work."}],
-        [{t:"I led the design and rollout of the AI assistant now used by an entire Operating Unit and its Manager."}],
-        [{t:"I supported more than 35 colleagues and the CEO of an external company in choosing, training on and adopting AI in the company and in projects. This consulting work led me to join the SCWL team as an AI expert, a candidate for Sprint Forward, an international initiative in Shangcheng, China."}]
+        [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
+        [{t:"I bring artificial intelligence into real operational workflows: RAG systems in production, local on-premise models and guided adoption in the field."}]
       ],
+      home_adoption_k:"Adoption:",
+      home_adoption_v:"more than 35 colleagues and the CEO of an external company supported in choosing and using AI.",
+      home_contact_text:"Send me the context, the goal and the timing, and I will reply myself.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
-      page_description:"I bring AI into everyday work. I led the design and rollout of the AI assistant now used by an entire Operating Unit and its Manager.",
+      page_description:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows: RAG systems in production, local on-premise models and guided adoption in the field.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
@@ -534,9 +538,11 @@
       return '<a href="' + phoneHref + '">' + phoneDisplay + "</a>" + copyBtn(phoneDisplay, "copy_phone");
     });
     var em = ["nic.forcolin", "gmail.com"].join("@");
-    revealRow("cmEmail", "reveal_email", "Mostra email", function(){
+    function emailLink(){
       return '<a href="mailto:' + em + '">' + em + "</a>" + copyBtn(em, "copy_email");
-    });
+    }
+    revealRow("cmEmail", "reveal_email", "Mostra email", emailLink);
+    revealRow("homeEmail", "reveal_email", "Mostra email", emailLink);
   })();
 
   /* One permanent visual theme; disregard preferences saved by older releases. */
@@ -618,6 +624,10 @@
           a.rel = "noopener noreferrer";
           a.textContent = seg.t;
           para.appendChild(a);
+        }else if(seg.b){
+          var strong = document.createElement("strong");
+          strong.textContent = seg.t;
+          para.appendChild(strong);
         }else{
           para.appendChild(document.createTextNode(seg.t));
         }

@@ -119,14 +119,16 @@ window.NF_I18N.tw = {
   credentials_note: "Nkyerɛkyerɛ yi ma wohu nsonsonoe a ɛda adansedi, mpɔtam nhyehyɛe ne akuwakuw ahorow mu. Adwuma a wɔayɛ no wɔ adwuma no nwoma ahorow so.",
   hero_hi: "Me din ne",
   hero_intro: [
-    [{ t: "Mede AI hyɛ da biara adwuma mu." }],
-    [{ t: "Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa ne ne Manager no de di dwuma seesei no nhyehyɛe ne ne siesie anim." }],
-    [{ t: "Meboaa adwumayɛ nnamfo a wɔboro 35 ne adwumakuo foforo bi CEO wɔ AI a wɔbɛpaw, wɔn nkyerɛkyerɛ ne ɔkwan a wɔfa so de di dwuma wɔ adwumakuo ne nhyehyɛe mu. Afotuo adwuma yi maa meko SCWL kuw no mu sɛ AI nimdefo, ɔbarima a wɔapaw no ma Sprint Forward, ɛyɛ amanaman nsɛm bi a ɛwɔ Shangcheng, China." }]
+    [{ t: "IT ma aban adwuma firi " }, { t: "2022", b: true }, { t: ", Tech Lover firi " }, { t: "1992", b: true }, { t: "." }],
+    [{ t: "Mede Artificial Intelligence hyɛ adwumayɛ ankasa mu: RAG nhyehyɛe a ɛwɔ adwuma mu, nhwɛso a ɛwɔ ha ara (on-premise) ne ɔkwan a wɔfa so boa ma wɔde di dwuma wɔ adwuma mu." }]
   ],
+  home_adoption_k: "Nkɔso:",
+  home_adoption_v: "Meboaa adwumayɛ nnamfo a wɔboro 35 ne adwumakuo foforo bi CEO wɔ AI a wɔbɛpaw ne ne dwumadie mu.",
+  home_contact_text: "Fa tebea, botae ne bere ma me, na mankasa mɛbua wo.",
 
   skip_to_content: "Kɔ nsɛm no so tẽẽ",
   page_title: "Nicolò Forcolin | AI wɔ da biara adwuma mu",
-  page_description: "Mede AI hyɛ da biara adwuma mu. Mekyerɛɛ AI boafo a Operating Unit a ɛyɛ nyinaa ne ne Manager no de di dwuma seesei no nhyehyɛe ne ne siesie anim.",
+  page_description: "IT ma aban adwuma firi 2022, Tech Lover firi 1992. Mede Artificial Intelligence hyɛ adwumayɛ ankasa mu: RAG nhyehyɛe a ɛwɔ adwuma mu, nhwɛso a ɛwɔ ha ara (on-premise) ne ɔkwan a wɔfa so boa ma wɔde di dwuma wɔ adwuma mu.",
   rag_step1_kicker: "Nsɛm fibea a edi kan",
   rag_step1_title: "Nwoma ne asɛm ahorow a atwam",
   rag_step1_desc: "Nimdeɛ boaboa abien a ɛda nsam.",
