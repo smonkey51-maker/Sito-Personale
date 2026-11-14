@@ -27,7 +27,7 @@ for(const viewport of sizes){
   });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
-   await page.locator('.hero-link').first().click();
+   await page.locator('.home-projects > .wrap > a[href="progetti.html"]').click();
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
