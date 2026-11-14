@@ -112,8 +112,11 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 .m-entry{display:none}
 @media(max-width:700px){
  body[data-page="home"] .topbar{position:sticky;top:0;z-index:30;background:var(--bg)}
- html{scroll-padding-top:68px}
- .m-entry{display:block;position:relative;height:calc(100svh - 68px);min-height:420px;overflow:hidden;margin-inline:-20px;background:var(--bg)}
+ html{scroll-padding-top:68px;scroll-snap-type:y proximity}
+ .m-entry,#profilo{scroll-snap-align:start}
+ .m-entry{display:block;position:relative;height:100svh;min-height:480px;overflow:hidden;margin:-68px -20px 0;background:var(--bg)}
+ body[data-page="home"] .topbar{transition:transform 160ms ease-out,visibility 0s linear 0s}
+ body.at-entry[data-page="home"] .topbar{transform:translateY(-100%);visibility:hidden;transition:transform 160ms ease-out,visibility 0s linear 160ms}
  .m-entry-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
  .m-entry::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to bottom,transparent,var(--bg) 94%)}
  .m-entry-link{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;padding:0 20px calc(24px + env(safe-area-inset-bottom));text-decoration:none}

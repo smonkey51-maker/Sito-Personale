@@ -840,5 +840,13 @@
     });
   }
 
+  /* Su mobile la prima schermata è solo ritratto, nome e segno d'ingresso: la barra compare quando si entra. */
+  var entryScreen = document.querySelector(".m-entry");
+  if(entryScreen && "IntersectionObserver" in window){
+    new IntersectionObserver(function(entries){
+      document.body.classList.toggle("at-entry", entries[0].intersectionRatio > 0.5);
+    }, { threshold: [0, 0.5, 1] }).observe(entryScreen);
+  }
+
   setLang(lang);
 })();

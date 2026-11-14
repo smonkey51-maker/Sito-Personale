@@ -6,7 +6,13 @@ for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
   // La lingua si sceglie dal menu a bandiera: lo si apre e si tocca la voce.
+  // Su mobile la home si apre con la sola schermata d'ingresso: prima si entra, poi compare la barra.
+  const enterHome=async(page)=>{
+   const entry=page.locator('.m-entry-link');
+   if(await entry.isVisible()){await page.emulateMedia({reducedMotion:'reduce'});await entry.click();await expect(page.locator('.topbar')).toBeVisible();}
+  };
   const pickLang=async(page,code)=>{
+   await enterHome(page);
    await page.locator('.lang-toggle').click();
    await page.locator('[data-lang="'+code+'"]').click();
   };
@@ -35,6 +41,7 @@ for(const viewport of sizes){
   });
   test('menu contacts opens the contact dialog',async({page})=>{
    await page.goto('/');
+   await enterHome(page);
    await page.locator('.menu-toggle').click();
    await page.locator('#siteMenu .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
@@ -136,6 +143,7 @@ for(const viewport of sizes){
   test('contacts open in a dialog with phone, email and LinkedIn',async({page})=>{
    await page.goto('/');
    await expect(page.locator('.topbar-contact')).toHaveCount(0);
+   await enterHome(page);
    await page.locator('.menu-toggle').click();
    await expect(page.locator('#siteMenu')).toBeVisible();
    await page.locator('#siteMenu .contact-trigger').click();
@@ -194,15 +202,15 @@ for(const viewport of sizes){
    test('on mobile the first screen is only the portrait, the orange name and the entry mark; entering shows the introduction',async({page})=>{
     await page.emulateMedia({reducedMotion:'reduce'});
     await page.goto('/');
-    await expect(page.locator('.topbar')).toBeVisible();
-    await expect(page.locator('.menu-toggle')).toBeInViewport();
+    await expect(page.locator('.topbar')).toBeHidden();
     await expect(page.locator('.m-entry-photo')).toBeInViewport();
     await expect(page.locator('.m-entry-name')).toBeInViewport();
     await expect(page.locator('.entry-dot')).toBeInViewport();
     await expect(page.locator('#hero-name')).not.toBeInViewport();
     await page.locator('.m-entry-link').click();
     await expect(page.locator('#hero-name')).toBeInViewport();
-    await expect(page.locator('.topbar')).toBeInViewport();
+    await expect(page.locator('.topbar')).toBeVisible();
+    await expect(page.locator('.menu-toggle')).toBeInViewport();
     const photo=await page.locator('.hero-portrait').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
