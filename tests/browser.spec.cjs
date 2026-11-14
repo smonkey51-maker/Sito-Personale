@@ -5,16 +5,8 @@ const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/iniziative.html','
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
-  // Su mobile la home si apre con la sola foto: la barra compare dopo un piccolo scroll.
-  const revealBar=async page=>{
-   if(viewport.width<=700){
-    await page.evaluate(()=>window.scrollTo(0,200));
-    await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
-   }
-  };
   // La lingua si sceglie dal menu a bandiera: lo si apre e si tocca la voce.
   const pickLang=async(page,code)=>{
-   await revealBar(page);
    await page.locator('.lang-toggle').click();
    await page.locator('[data-lang="'+code+'"]').click();
   };
@@ -35,7 +27,6 @@ for(const viewport of sizes){
   });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
-   await revealBar(page);
    await page.locator('.hero-link').first().click();
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
@@ -44,7 +35,6 @@ for(const viewport of sizes){
   });
   test('hero Contattami opens the contact dialog',async({page})=>{
    await page.goto('/');
-   await revealBar(page);
    await page.locator('.hero-cta-row .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
@@ -144,7 +134,6 @@ for(const viewport of sizes){
   });
   test('contacts open in a dialog with phone, email and LinkedIn',async({page})=>{
    await page.goto('/');
-   await revealBar(page);
    await expect(page.locator('.topbar-contact')).toHaveCount(0);
    await page.locator('.menu-toggle').click();
    await expect(page.locator('#siteMenu')).toBeVisible();
@@ -180,21 +169,14 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
   if(viewport.width<=700){
-   test('mobile landing shows only the portrait and an enter button until the page scrolls',async({page})=>{
+   test('on mobile the bar is always visible and the portrait sits above the greeting',async({page})=>{
     await page.goto('/');
-    await expect(page.locator('.menu-toggle')).not.toBeInViewport();
-    await expect(page.locator('.topbar')).toHaveCSS('opacity','0');
-    await expect(page.locator('.scroll-btn')).toBeVisible();
+    await expect(page.locator('.topbar')).toBeVisible();
+    await expect(page.locator('.menu-toggle')).toBeInViewport();
+    await expect(page.locator('.hero-portrait')).toBeVisible();
+    const photo=await page.locator('.hero-portrait').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
-    expect(heading.y).toBeGreaterThanOrEqual(page.viewportSize().height-2);
-    await page.evaluate(()=>window.scrollTo(0,200));
-    await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
-    await expect(page.locator('.hero-portrait')).toBeHidden();
-   });
-   test('on mobile a tap anywhere on the landing enters the site',async({page})=>{
-    await page.goto('/');
-    await page.mouse.click(page.viewportSize().width/2,80);
-    await expect(page.locator('.topbar')).toHaveCSS('opacity','1');
+    expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
     await expect(page.locator('#hero-name')).toBeInViewport();
    });
    test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
@@ -213,10 +195,9 @@ for(const viewport of sizes){
 }
 test.describe('browser language',()=>{
  test.use({locale:'en-US',viewport:{width:375,height:812}});
- test('a non-Italian browser opens the site in English with the enter button translated',async({page})=>{
+ test('a non-Italian browser opens the site in English',async({page})=>{
   await page.goto('/');
-  await expect(page.locator('.scroll-btn')).toHaveText('Enter the site');
-  await expect(page.locator('.hero-entry-name')).toHaveText('Nicolò Forcolin');
+  await expect(page.locator('#heroIntro')).toContainText('IT for public administration');
   await expect(page.locator('html')).toHaveAttribute('lang','en');
  });
 });

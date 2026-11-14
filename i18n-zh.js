@@ -227,7 +227,6 @@ window.NF_I18N.zh = {
   badge3_meta: "项目状态，2026 年",
   nav_main_label: "主导航",
   nav_toggle_label: "菜单",
-  scroll_btn: "进入网站",
   c2_lead: "一项测试：用针对特定问题训练的开源 AI 模型，在本地运行，不向外部发送数据。",
   initiatives_lead: "我参与的 Google 资质和计划，以及各自的状态。",
   advisory_label: "外部咨询",
