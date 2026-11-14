@@ -107,3 +107,24 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .home-collab{padding-bottom:36px}
 }
 @media(prefers-reduced-motion:reduce){.hero-portrait{animation:none}}
+
+/* Mobile: prima schermata con il solo ritratto, il nome in arancione e il segno d'ingresso (riga e pallino); un tocco porta alla presentazione. La barra resta sempre visibile. */
+.m-entry{display:none}
+@media(max-width:700px){
+ body[data-page="home"] .topbar{position:sticky;top:0;z-index:30;background:var(--bg)}
+ html{scroll-padding-top:68px}
+ .m-entry{display:block;position:relative;height:calc(100svh - 68px);min-height:420px;overflow:hidden;margin-inline:-20px;background:var(--bg)}
+ .m-entry-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+ .m-entry::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to bottom,transparent,var(--bg) 94%)}
+ .m-entry-link{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;padding:0 20px calc(24px + env(safe-area-inset-bottom));text-decoration:none}
+ .m-entry-name{font-family:var(--signature);font-size:min(3.25rem,12.5vw);line-height:1.25;color:var(--accent);white-space:nowrap;transform:translateX(.12em)}
+ .entry-mark{display:flex;flex-direction:column;align-items:center;justify-content:center;width:48px;height:48px;color:var(--accent);transition:transform 120ms ease-out}
+ .entry-line{width:1.5px;height:18px;border-radius:1px;background:currentColor;animation:entry-line 280ms ease-out both}
+ .entry-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:entry-dot 160ms ease-out 240ms both}
+ .m-entry-link:active .entry-mark{transform:scale(.97)}
+ .m-entry-link:focus-visible{outline:2px solid var(--ink);outline-offset:-4px}
+}
+@keyframes entry-line{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+@keyframes entry-dot{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media(prefers-reduced-motion:reduce){.entry-line,.entry-dot{animation:none}}
