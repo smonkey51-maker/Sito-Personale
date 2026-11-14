@@ -45,3 +45,10 @@
   .scroll-hint{color:var(--ink);font-size:1rem;line-height:1.45}
   .home-proof{scroll-margin-top:72px;padding-top:44px}
 }
+
+/* Keep the mobile landing minimal; the text label is available on desktop. */
+@media(min-width:701px){.home-for-whom-link{display:none}}
+@media(max-width:700px){
+  .home-results-link{display:none}
+  .home-for-whom-link{display:inline-flex}
+}
