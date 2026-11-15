@@ -7,9 +7,9 @@ html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact
 }
 body{font-size:1.03rem;line-height:1.6}
 h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
+h2{font-family:var(--display);font-weight:500;letter-spacing:-.01em}
 .topbar-inner{gap:32px}
 .site-name{font-family:var(--signature);font-weight:400;font-size:1.75rem}
-.desktop-nav a{font-size:1rem;font-weight:400;letter-spacing:.01em}
 @media(max-width:820px){
  .topbar-inner{min-height:68px}
 }
@@ -33,7 +33,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 .contact-dialog::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:url("padova-skyline.webp") center bottom 20px/min(92%,860px) auto no-repeat;mix-blend-mode:lighten;opacity:.12;pointer-events:none;z-index:-1}
 .contact-dialog::backdrop{background:rgba(0,0,0,.78)}
 .contact-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.contact-dialog-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.01em;color:var(--accent);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0}
+.contact-dialog-head h2{font-family:var(--display);font-weight:500;letter-spacing:-.01em;color:var(--accent);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0}
 /* Close button: a bare × in the dialog's top-right corner, 44px to tap. */
 .contact-close{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:transparent;font-size:1.75rem;line-height:1;cursor:pointer;transition:transform var(--dur) var(--ease),color var(--dur) var(--ease)}
 .contact-close:active{transform:scale(.97);color:var(--accent-hover)}
@@ -52,7 +52,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 @media(max-width:520px){
  .topbar-inner{justify-content:space-between}
  .site-name{display:inline-flex}
- .desktop-nav a{font-size:.875rem}
 }
 
 /* Minimal two-language header without redundant projects navigation. */
@@ -68,9 +67,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 
 /* Vignelli-concept hero: full-bleed portrait, nav restored, project filmstrip. */
 .topbar-inner{justify-content:flex-start}
-.desktop-nav{margin-left:32px;margin-right:0}
 .utilbar{margin-left:auto}
-@media(max-width:700px){.desktop-nav{margin-left:0}}
 
 /* Floating over the hero photo instead of sitting in normal flow, so the
    portrait bleeds up behind the nav — matching the reference, where the
@@ -181,7 +178,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 
 
 /* Case study readability and keyboard accessibility */
-.desktop-nav a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 
 
 
@@ -226,7 +222,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
  :root{--u:.0520833vw;--editorial-gutter:calc(80*var(--u))}
  .editorial-shell{max-width:calc(1280*var(--u));padding:0 calc(64*var(--u))}
  .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u))}
- .desktop-nav a{font-size:calc(16*var(--u))}
   body .site-name{font-size:calc(28*var(--u))}
  .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
  .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
@@ -258,7 +253,6 @@ main.editorial-content{padding-bottom:0}
 }
 
 /* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
-@media(max-width:1099px){.desktop-nav{display:none}}
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
 .contact-trigger.cta-inline{display:inline;padding:10px 0;margin:-10px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px;cursor:pointer}

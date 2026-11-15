@@ -38,7 +38,7 @@ for (const file of pages) {
   assert((html.match(/<main[\s>]/g) || []).length === 1, file + ': exactly one <main> landmark');
   assert(!html.includes('class="work-meta'), file + ': no eyebrow label above the title');
   assert(!html.replace(/<script[\s\S]*?<\/script>/g, '').includes('·'), file + ': no middle-dot joined strings');
-  if (file !== 'index.html') assert(html.includes('class="desktop-nav"'), file + ': navigation missing');
+  if (file !== 'index.html') assert(html.includes('class="site-menu"'), file + ': navigation missing');
   assert(/<body[^>]+data-page="[a-z]+"/.test(html), file + ': body needs data-page');
   for (const [, target] of html.matchAll(/href="([a-z-]+\.html)"/g)) {
     assert(fs.existsSync(path.join(root, target)), file + ' links to missing page ' + target);
