@@ -64,7 +64,7 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 | `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati |
 | `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
 
-Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio e dei pannelli che si aprono dalla barra (menu, lingue, ricerca), con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0E0E0F` anche come `theme-color` delle pagine e nel manifest dell'app.
+Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio e dei pannelli che si aprono (finestra contatti), con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0E0E0F` anche come `theme-color` delle pagine e nel manifest dell'app.
 
 ### Tipografia e comportamento
 
@@ -75,7 +75,7 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 - "Contattami" a fine pagina: testo nel carattere dei titoli, chiaro, con sottolineatura arancione; un solo invito per schermata.
 - Pagina Hobby: musica, audiofilia, fotografia, orologi, libri e animali, con i link ai profili personali; testi solo con ciò che l'autore ha detto, nessun anno o dato non fornito.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
-- Navigazione unica, senza indici duplicati. Lingua (sigla attiva con freccia) e tre lineette sono icone semplici senza riquadro; la ricerca nel sito è stata tolta; i pannelli che aprono hanno tutti lo stesso aspetto e le voci dei menu sono centrate.
+- Navigazione unica, senza indici duplicati: le lingue stanno affiancate in barra e non ci sono menu a tendina né tre lineette; la ricerca nel sito è stata tolta.
 - I dettagli espandibili devono funzionare anche da tastiera.
 - Layout fluido per desktop e mobile, con rispetto per `prefers-reduced-motion`.
 - Non inventare metriche, impatti o caratteristiche tecniche.
@@ -88,4 +88,4 @@ LinkedIn va allineato al positioning statement v2.
 - **Foto profilo:** resta quella attuale.
 - Non ci sono altri profili pubblici attivi da allineare. Instagram e Spotify sono profili personali e hanno un link nella pagina Hobby.
 - Colonna: contenuto largo circa 990 px (contenitore da 1100 px con margini da 56), come nel sito di Otto Climan. Sopra i 1920 px il sito non si ingrandisce più, così lo zoom del browser funziona. "Cosa faccio" è su due colonne.
-- Barra in alto: da 701 px in su il nome è scritto per intero ("Nicolò Forcolin"), le lingue si leggono per esteso ("Italiano", "English", "中文") e la barra non ha voci né menu a tre lineette (si arriva alle pagine dai link della home); sotto i 701 px resta "NForcolin" con il menu a tre lineette. "Risposte rapide" è una riga a tutta larghezza, senza linee, con titolo arancione in 24 px e il più a destra; le domande aperte stanno una sotto l’altra, separate solo dallo spazio. Su desktop le lingue IT, EN e 中文 stanno affiancate nella barra, quella attiva in grassetto; su mobile resta il menu a tendina.
+- Barra in alto: il nome è scritto per intero da 701 px in su ("Nicolò Forcolin") e come "NForcolin" sotto; le tre lingue stanno sempre affiancate (per esteso da 901 px in su: "Italiano", "English", "中文"; sotto, le sigle IT, EN, 中文). Non ci sono voci né menu a tre lineette su nessuna larghezza: alle pagine si arriva dai link della home.

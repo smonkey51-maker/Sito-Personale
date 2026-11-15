@@ -31,7 +31,6 @@ window.NF_I18N.zh = {
   how_s2_title: "处理",
   how_s1_desc: "来自不同领域的、经过授权的内容。",
   how_s1_title: "来源",
-  menu_label: "网站菜单",
   how_flow_aria: "工作原理示意图",
   how_c4: "回答并附上来源引用",
   how_c3: "在已索引的内容中搜索",
@@ -137,8 +136,8 @@ window.NF_I18N.zh = {
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
   hero_hi: "你好，我是",
   hero_intro: [
-    [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }, { t: "" }, { t: "2026", b: true }, { t: " 年，作为 AI 专家加入 DABO CEO 的团队，参与 Saichuang Weilai Southeast Asia InnoTech Center（中国）的“Sprint Forward in Golden Boots”。" }],
-    [{ t: "我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。" }]
+    [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
+    [{ t: "我每天都在把不简单的事情变简单。" }]
   ],
   stats_label: "数据一览",
   scroll_btn: "进入网站",
@@ -163,7 +162,7 @@ window.NF_I18N.zh = {
   faq3_a:"请把行业和问题发给我。我可提供 AI 咨询和项目合作。",
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | 日常工作中的 AI",
-  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我把人工智能带入真实的业务流程：根据公司文档作答的 AI 助手、在公司内部运行的模型，以及在一线接受培训的团队。",
+  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我每天都在把不简单的事情变简单。",
   rag_step1_kicker: "最初的来源",
   rag_step1_title: "文档与事件历史",
   rag_step1_desc: "两个相互独立的知识库。",
@@ -253,7 +252,6 @@ window.NF_I18N.zh = {
   dabo_title: "DABO，咨询与国际申请",
   dabo_desc: "我还为 DABO 的 CEO 提供了咨询，这促使我加入团队，参与在 Saichuang Weilai（SCWL）Southeast Asia InnoTech Center 的 2026 “Sprint Forward in Golden Boots Innovation & Entrepreneurship Competition” 申请。征集公告于 2026 年 6 月初发布，报名于 7 月 15 日截止。团队的历程止步于 2026 年 9 月 12 日在新加坡举行的国际赛段，该赛段旨在联动东南亚生态。Saichuang Weilai（中文：赛创未来，Zhejiang Saichuang Weilai Venture Capital Management Co., Ltd.）是一家中国机构，成立于 2015 年，主要总部位于杭州（浙江省）。它是全球性的孵化、风险投资和科技人才招聘平台。",
   nav_main_label: "主导航",
-  nav_toggle_label: "菜单",
   c2_lead: "一项测试：用针对特定问题训练的开源 AI 模型，在本地运行，不向外部发送数据。",
   advisory_label: "外部咨询",
   community_label: "社区",

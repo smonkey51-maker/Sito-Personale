@@ -32,7 +32,6 @@
       how_s2_title:"Elaborazione",
       how_s1_desc:"Contenuti autorizzati provenienti da diverse aree.",
       how_s1_title:"Fonti",
-      menu_label:"Menu del sito",
       how_flow_aria:"Schema del funzionamento",
       how_c4:"Risposta con riferimenti alle fonti",
       how_c3:"Ricerca nei contenuti indicizzati",
@@ -138,8 +137,8 @@
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       hero_hi:"Ciao, sono",
       hero_intro:[
-        [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:". Nel "},{t:"2026",b:true},{t:", esperto AI nel team del CEO di DABO per “Sprint Forward in Golden Boots” al Saichuang Weilai Southeast Asia InnoTech Center, Cina."}],
-        [{t:"Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo."}]
+        [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
+        [{t:"Passo le giornate a rendere semplice quello che semplice non è."}]
       ],
       stats_label:"In numeri",
       scroll_btn:"Entra nel sito",
@@ -164,7 +163,7 @@
       faq3_a:"Scrivimi settore e problema. Sono disponibile per consulenze e progetti sull’AI.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
-      page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Porto l’Intelligenza Artificiale nei flussi operativi reali: assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa e team formati sul campo.",
+      page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Passo le giornate a rendere semplice quello che semplice non è.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -254,7 +253,6 @@
       dabo_title:"DABO, consulenza e candidatura internazionale",
       dabo_desc:"Ho anche offerto consulenza al CEO di DABO, che mi ha portato a entrare nel team per la candidatura a 2026 “Sprint Forward in Golden Boots Innovation & Entrepreneurship Competition” al Saichuang Weilai (SCWL) Southeast Asia InnoTech Center. Il bando è stato lanciato a inizio giugno 2026, con iscrizioni chiuse il 15 luglio. Il percorso del team si è fermato alla tappa internazionale di Singapore del 12 settembre 2026, organizzata per coinvolgere l’ecosistema del Sud-est asiatico. Saichuang Weilai (in cinese: 赛创未来, Zhejiang Saichuang Weilai Venture Capital Management Co., Ltd.) è un’organizzazione cinese fondata nel 2015 con sede principale a Hangzhou (provincia dello Zhejiang). Opera come piattaforma globale di incubazione, capitale di rischio (venture capital) e reclutamento di talenti tecnologici.",
       nav_main_label:"Navigazione principale",
-      nav_toggle_label:"Menu",
       c2_lead:"Un test su modelli AI aperti, addestrati su domande specifiche e usati in locale, senza inviare dati all’esterno.",
       advisory_label:"Advisory esterna",
       community_label:"Community",
@@ -305,7 +303,6 @@
       how_s2_title:"Processing",
       how_s1_desc:"Authorised content from different areas.",
       how_s1_title:"Sources",
-      menu_label:"Site menu",
       how_flow_aria:"How-it-works diagram",
       how_c4:"Answer with references to the sources",
       how_c3:"Search across indexed content",
@@ -411,8 +408,8 @@
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       hero_hi:"Hi, I’m",
       hero_intro:[
-        [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:". In "},{t:"2026",b:true},{t:", AI expert in the team of the CEO of DABO for “Sprint Forward in Golden Boots” at the Saichuang Weilai Southeast Asia InnoTech Center, China."}],
-        [{t:"I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field."}]
+        [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
+        [{t:"I spend my days making simple what isn’t."}]
       ],
       stats_label:"In numbers",
       scroll_btn:"Enter the site",
@@ -437,7 +434,7 @@
       faq3_a:"Write to me with your sector and your problem. I am available for AI consulting and projects.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
-      page_description:"IT for public administration since 2022, tech lover since 1992. I bring artificial intelligence into real operational workflows: AI assistants that answer from company documents, models that run in-house and teams trained in the field.",
+      page_description:"IT for public administration since 2022, tech lover since 1992. I spend my days making simple what isn’t.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
@@ -527,7 +524,6 @@
       dabo_title:"DABO, advisory and international bid",
       dabo_desc:"I also offered consulting to the CEO of DABO, which led me to join the team for the application to the 2026 “Sprint Forward in Golden Boots Innovation & Entrepreneurship Competition” at the Saichuang Weilai (SCWL) Southeast Asia InnoTech Center. The call was launched in early June 2026, with registration closing on 15 July. The team’s journey ended at the international stage in Singapore on 12 September 2026, organized to involve the Southeast Asian ecosystem. Saichuang Weilai (in Chinese: 赛创未来, Zhejiang Saichuang Weilai Venture Capital Management Co., Ltd.) is a Chinese organization founded in 2015 and headquartered in Hangzhou (Zhejiang province). It operates as a global platform for incubation, venture capital and recruiting technology talent.",
       nav_main_label:"Main navigation",
-      nav_toggle_label:"Menu",
       c2_lead:"A test of open AI models trained on specific questions and run locally, without sending data outside.",
       advisory_label:"External advisory",
       community_label:"Community",
@@ -608,13 +604,6 @@
       });
     });
     contactDialog.querySelector(".contact-close").addEventListener("click", function(){ contactDialog.close(); });
-    /* Contatti sta nel menu, che si chiude all'apertura della finestra: alla
-       chiusura il focus torna al pulsante del menu. */
-    contactDialog.addEventListener("close", function(){
-      var toggle = document.querySelector(".menu-toggle");
-      if(toggle && toggle.offsetParent !== null) toggle.focus();
-      else { var opener = document.querySelector(".site-menu .contact-trigger"); if(opener) opener.focus(); }
-    });
     contactDialog.addEventListener("click", function(event){ if (event.target === contactDialog) contactDialog.close(); });
   }
 
@@ -707,9 +696,6 @@
       b.classList.toggle("on", selected);
       b.setAttribute("aria-pressed", String(selected));
       if(selected){
-        var shown = document.querySelector(".lang-current"), opener = document.querySelector(".lang-toggle");
-        if(shown) shown.textContent = b.getAttribute("data-code") || b.textContent;
-        if(opener) opener.setAttribute("aria-label", "Lingua / Language: " + b.getAttribute("aria-label"));
       }
     });
     renderIntro();
@@ -721,101 +707,6 @@
       setLang(b.getAttribute("data-lang"));
     });
   });
-
-  /* Menu della lingua: la bandiera apre l'elenco; si chiude con Esc, con un clic fuori o scegliendo una lingua. */
-  var langToggle = document.querySelector(".lang-toggle");
-  var langList = document.getElementById("langList");
-  if(langToggle && langList){
-    var langItems = langList.querySelectorAll(".lang-btn");
-    var langHoverOpened = false, langHoverTimer = 0;
-    var setLangOpen = function(open, back, quiet){
-      langList.hidden = !open;
-      langToggle.setAttribute("aria-expanded", String(open));
-      if(!open) langHoverOpened = false;
-      if(open && !quiet) langList.querySelector(".lang-btn:not(.on)").focus();
-      else if(!open && back) langToggle.focus();
-    };
-    langToggle.addEventListener("click", function(){
-      /* Aperto dal passaggio del mouse: il clic lo lascia aperto invece di chiuderlo. */
-      if(langHoverOpened){ langHoverOpened = false; langList.querySelector(".lang-btn:not(.on)").focus(); return; }
-      setLangOpen(langList.hidden);
-    });
-    /* Con il mouse l'elenco si apre passando sulla lingua e si chiude quando il puntatore esce. */
-    if(matchMedia("(hover:hover) and (pointer:fine)").matches){
-      var langIn = function(e){
-        if(e.pointerType && e.pointerType !== "mouse") return;
-        clearTimeout(langHoverTimer);
-        if(langList.hidden){ langHoverOpened = true; setLangOpen(true, false, true); }
-      };
-      var langOut = function(){
-        clearTimeout(langHoverTimer);
-        if(langHoverOpened) langHoverTimer = setTimeout(function(){ setLangOpen(false); }, 250);
-      };
-      [langToggle, langList].forEach(function(el){ el.addEventListener("pointerenter", langIn); el.addEventListener("pointerleave", langOut); });
-    }
-    langList.addEventListener("click", function(e){ if(e.target.closest(".lang-btn")) setLangOpen(false, true); });
-    document.addEventListener("click", function(e){
-      if(!langList.hidden && !langList.contains(e.target) && !langToggle.contains(e.target)) setLangOpen(false);
-    });
-    document.addEventListener("keydown", function(e){
-      if(langList.hidden) return;
-      if(e.key === "Escape"){ setLangOpen(false, true); return; }
-      var step = {ArrowDown:1, ArrowUp:-1}[e.key];
-      if(!step) return;
-      e.preventDefault();
-      var shown = Array.prototype.filter.call(langItems, function(b){ return !b.classList.contains("on"); });
-      var at = shown.indexOf(document.activeElement);
-      shown[(at + step + shown.length) % shown.length].focus();
-    });
-  }
-
-  /* Menu a tre lineette: si apre sotto la barra; si chiude con Esc, con un
-     clic fuori o scegliendo una voce (Contatti apre la sua finestra). */
-  var menuToggle = document.querySelector(".menu-toggle");
-  var siteMenu = document.getElementById("siteMenu");
-  if(menuToggle && siteMenu){
-    var hoverOpened = false, hoverTimer = 0;
-    var setMenuOpen = function(open, quiet){
-      siteMenu.hidden = !open;
-      menuToggle.setAttribute("aria-expanded", String(open));
-      if(!open) hoverOpened = false;
-      if(open && !quiet) siteMenu.querySelector("a, button").focus();
-    };
-    menuToggle.addEventListener("click", function(){
-      /* Aperto dal passaggio del mouse: il clic lo lascia aperto invece di chiuderlo. */
-      if(hoverOpened){ hoverOpened = false; siteMenu.querySelector("a, button").focus(); return; }
-      setMenuOpen(siteMenu.hidden);
-    });
-    /* Con il mouse il menu si apre passando sulle tre lineette e si chiude
-       quando il puntatore esce dal pulsante e dal menu. */
-    if(matchMedia("(hover:hover) and (pointer:fine)").matches){
-      var hoverIn = function(e){
-        if(e.pointerType && e.pointerType !== "mouse") return;
-        clearTimeout(hoverTimer);
-        if(siteMenu.hidden){ hoverOpened = true; setMenuOpen(true, true); }
-      };
-      var hoverOut = function(){
-        clearTimeout(hoverTimer);
-        if(hoverOpened) hoverTimer = setTimeout(function(){ setMenuOpen(false); }, 250);
-      };
-      menuToggle.addEventListener("pointerenter", hoverIn);
-      siteMenu.addEventListener("pointerenter", hoverIn);
-      menuToggle.addEventListener("pointerleave", hoverOut);
-      siteMenu.addEventListener("pointerleave", hoverOut);
-    }
-    siteMenu.addEventListener("click", function(e){
-      if(e.target.closest("a, button")) setMenuOpen(false);
-    });
-    document.addEventListener("click", function(e){
-      if(!siteMenu.hidden && !siteMenu.contains(e.target) && !menuToggle.contains(e.target)) setMenuOpen(false);
-    });
-    document.addEventListener("keydown", function(e){
-      if(e.key === "Escape" && !siteMenu.hidden){
-        setMenuOpen(false);
-        menuToggle.focus();
-      }
-    });
-  }
 
   /* Su mobile la prima schermata è solo ritratto, nome e segno d'ingresso: la barra compare quando si entra. */
   var entryScreen = document.querySelector(".m-entry");

@@ -11,17 +11,8 @@ for(const viewport of sizes){
    const entry=page.locator('.m-entry-link');
    if(await entry.isVisible()){await page.emulateMedia({reducedMotion:'reduce'});await entry.click();await expect(page.locator('.topbar')).toBeVisible();}
   };
-  const openMenu=async(page)=>{
-   const toggle=page.locator('.menu-toggle');
-   if(await toggle.isVisible()) await toggle.click();
-  };
-  const openLang=async(page)=>{
-   const toggle=page.locator('.lang-toggle');
-   if(await toggle.isVisible()) await toggle.click();
-  };
   const pickLang=async(page,code)=>{
    await enterHome(page);
-   await openLang(page);
    await page.locator('[data-lang="'+code+'"]').click();
   };
   test('layout and hero essentials',async({page})=>{
@@ -47,14 +38,6 @@ for(const viewport of sizes){
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
    await expect(page.locator('h1')).toHaveText('RAG');
   });
-  test('menu contacts opens the contact dialog',async({page,viewport})=>{
-   test.skip(viewport.width>700,'on desktop the bar has no links');
-   await page.goto('/');
-   await enterHome(page);
-   await openMenu(page);
-   await page.locator('#siteMenu .contact-trigger').click();
-   await expect(page.locator('#contactDialog')).toBeVisible();
-  });
   test('language switching keeps per-page titles',async({page})=>{
    await page.goto('/ai-in-locale.html');
    await pickLang(page,'en');
@@ -64,31 +47,6 @@ for(const viewport of sizes){
    await expect(page.locator('#homeProjectsTitle')).toHaveText('Projects');
    await pickLang(page,'it');
    await expect(page.locator('#homeProjectsTitle')).toHaveText('Progetti');
-  });
-  test('language menu opens from the flag, lists the other two languages and closes with Esc or a choice',async({page})=>{
-   test.skip(viewport.width>700,'on desktop the three languages sit side by side');
-   await page.goto('/progetti.html');
-   await expect(page.locator('#langList')).toBeHidden();
-   await page.locator('.lang-toggle').click();
-   await expect(page.locator('#langList')).toBeVisible();
-   await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(2);
-   await expect(page.locator('.lang-current')).toHaveText('IT');
-   await page.keyboard.press('Escape');
-   await expect(page.locator('#langList')).toBeHidden();
-   await expect(page.locator('.lang-toggle')).toBeFocused();
-   await page.locator('.lang-toggle').click();
-   await page.locator('[data-lang="en"]').click();
-   await expect(page.locator('#langList')).toBeHidden();
-   await expect(page.locator('h1')).toHaveText('Projects and Initiatives');
-  });
-  test('with a mouse the language list opens on hover and the flag arrow invites to change language',async({page})=>{
-   test.skip(viewport.width>700,'on desktop the three languages sit side by side');
-   await page.goto('/progetti.html');
-   await expect(page.locator('.lang-toggle .lang-chevron')).toBeVisible();
-   await page.locator('.lang-toggle').hover();
-   await expect(page.locator('#langList')).toBeVisible();
-   await page.mouse.move(5,300);
-   await expect(page.locator('#langList')).toBeHidden();
   });
   test('Chinese is selectable, translate the page and fit the header',async({page})=>{
    const errors=[];
@@ -101,12 +59,8 @@ for(const viewport of sizes){
    await expect(page).toHaveTitle('经历 | Nicolò Forcolin');
    await pickLang(page,'it');
    await expect(page.locator('h1')).toHaveText('Percorso');
-   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .menu-toggle')].filter(e=>e.offsetParent!==null).every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
+   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-btn')].filter(e=>e.offsetParent!==null).every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(fits).toBe(true);
-   await openLang(page);
-   await page.waitForTimeout(250);
-   const listFits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('#langList .lang-btn:not(.on)')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
-   expect(listFits).toBe(true);
    expect(errors).toEqual([]);
   });
   test('RAG how-it-works: four-stage diagram on desktop, five stages on mobile',async({page})=>{
@@ -151,16 +105,11 @@ for(const viewport of sizes){
    await page.locator('.page-cta .cta-inline').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
-  test('contacts open in a dialog with phone, email and LinkedIn',async({page,viewport})=>{
-   test.skip(viewport.width>700,'on desktop the bar has no links');
-   await page.goto('/');
+  test('contacts open in a dialog with phone, email and LinkedIn',async({page})=>{
+   await page.goto('/progetti.html');
    await expect(page.locator('.topbar-contact')).toHaveCount(0);
-   await enterHome(page);
-   await openMenu(page);
-   await expect(page.locator('#siteMenu')).toBeVisible();
-   await page.locator('#siteMenu .contact-trigger').click();
+   await page.locator('.page-cta .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
-   if(viewport.width<=700) await expect(page.locator('#siteMenu')).toBeHidden();
    await page.locator('#cmEmail .reveal-btn').click();
    await expect(page.locator('#cmEmail a')).toHaveText('nic.forcolin@gmail.com');
    await expect(page.locator('#cmEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
@@ -202,17 +151,16 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toHaveText('Ciao, sono Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
-   await expect(page.locator('#heroIntro')).toContainText('assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa');
+   await expect(page.locator('#heroIntro')).toContainText('Passo le giornate a rendere semplice quello che semplice non è.');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.site-name .sn-short')).toHaveText('NForcolin');
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
-  if(viewport.width>700){
-   test('on desktop the three languages sit side by side, the current one is marked, and a click switches',async({page})=>{
+  {
+   test('the three languages sit side by side in the bar, the current one is marked, and a click switches',async({page})=>{
     await page.goto('/progetti.html');
-    await expect(page.locator('.lang-toggle')).toBeHidden();
     await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
     await expect(page.locator('#langList .lang-btn.on')).toHaveText('Italiano');
     await page.locator('[data-lang="en"]').click();
@@ -220,10 +168,17 @@ for(const viewport of sizes){
     await expect(page.locator('#langList .lang-btn.on')).toHaveText('English');
     await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
    });
-   test('on desktop the bar has no page links and no three-line menu, and the name is written in full',async({page})=>{
+   test('the bar has no page links and no three-line menu',async({page})=>{
     await page.goto('/');
-    await expect(page.locator('.menu-toggle')).toBeHidden();
-    await expect(page.locator('#siteMenu')).toBeHidden();
+    await enterHome(page);
+    await expect(page.locator('.menu-toggle')).toHaveCount(0);
+    await expect(page.locator('#siteMenu')).toHaveCount(0);
+    await expect(page.locator('.lang-toggle')).toHaveCount(0);
+   });
+  }
+  if(viewport.width>700){
+   test('on desktop the name is written in full',async({page})=>{
+    await page.goto('/');
     await expect(page.locator('.site-name .sn-full')).toBeVisible();
     await expect(page.locator('.site-name .sn-full')).toHaveText('Nicolò Forcolin');
     await expect(page.locator('.site-name .sn-short')).toBeHidden();
@@ -241,7 +196,7 @@ for(const viewport of sizes){
     await page.locator('.m-entry-link').click();
     await expect(page.locator('#hero-name')).toBeInViewport();
     await expect(page.locator('.topbar')).toBeVisible();
-    await expect(page.locator('.menu-toggle')).toBeInViewport();
+    await expect(page.locator('#langList')).toBeInViewport();
     const photo=await page.locator('.hero-photo-frame').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
@@ -250,17 +205,6 @@ for(const viewport of sizes){
     const intro=await page.locator('#heroIntro').boundingBox();
     expect(intro.y+intro.height).toBeLessThanOrEqual(812);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
-   });
-   test('on mobile the menu lists the pages',async({page})=>{
-    await page.goto('/percorso.html');
-    await page.locator('.menu-toggle').click();
-    await expect(page.locator('#siteMenu a[href="progetti.html"]')).toBeVisible();
-    await expect(page.locator('#siteMenu a')).toHaveCount(2);
-    await expect(page.locator('#siteMenu a[href="ai-in-locale.html"]')).toHaveCount(0);
-    await expect(page.locator('#siteMenu a[aria-current="page"]')).toHaveAttribute('href','percorso.html');
-    await page.keyboard.press('Escape');
-    await expect(page.locator('#siteMenu')).toBeHidden();
-    await expect(page.locator('.menu-toggle')).toBeFocused();
    });
   }
  });
