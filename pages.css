@@ -217,32 +217,6 @@
 .item-title a:active { color: var(--accent); text-decoration-color: var(--accent); }
 @media(hover:hover) and (pointer:fine){ .item-title a:hover { color: var(--accent); text-decoration-color: var(--accent); } }
 
-/* Credenziali: elenco semplice, una riga per credenziale */
-.badge-list { list-style: none; margin: 0 0 20px; padding: 0; }
-.badge { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 10px 0; }
-.badge-title { font-family: var(--sans); font-size: 1.375rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
-.badge-meta { font-family: var(--sans); font-size: 1rem; color: var(--ink-soft); }
-.badge a.badge-title { display: inline-block; padding-block: 8px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-soft); text-underline-offset: 4px; }
-.badge a.badge-title:active { color: var(--accent); text-decoration-color: var(--accent); }
-@media(hover:hover) and (pointer:fine){ .badge a.badge-title:hover { color: var(--accent); text-decoration-color: var(--accent); } }
-.badge-link a { font-family: var(--sans); font-size: 1.125rem; color: var(--accent); text-decoration: none; }
-.badge-link a:active { text-decoration: underline; }
-@media(hover:hover) and (pointer:fine){ .badge-link a:hover { text-decoration: underline; } }
-
-/* Continua a leggere: elenco di righe, non una griglia di card */
-.page-next { margin-top: clamp(56px, 8vw, 104px); }
-.page-next-grid { display: flex; flex-direction: column; gap: 4px; margin-inline: -16px; }
-.page-next-tile {
-  display: flex; flex-direction: column; gap: 8px;
-  padding: 20px 16px; min-height: 88px; justify-content: center;
-  text-decoration: none; color: var(--ink);
-  transition: background var(--dur) var(--ease);
-}
-.page-next-tile:focus-visible, .page-next-tile:active { background: var(--bg-2); }
-@media(hover:hover) and (pointer:fine){ .page-next-tile:hover { background: var(--bg-2); } }
-.page-next-tile .filmstrip-meta { color: var(--accent); font-size: 1rem; }
-.page-next-tile .filmstrip-title { font-family: var(--sans); font-size: 1.375rem; font-weight: 600; letter-spacing: 0; }
-
 .inner .colophon { margin-top: 80px; }
 /* Padova skyline above the footer of inner pages, where the footer names the
    city. Lighten drops the drawing's near-black background into the page's. */
@@ -279,7 +253,7 @@
   .flow { grid-template-columns: 1fr; }
 }
 @media print {
-  .page-next, .page-back { display: none; }
+  .page-back { display: none; }
 }
 
 /* Pagina 404 */
