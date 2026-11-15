@@ -10,7 +10,7 @@ window.NF_I18N.zh = {
   home_service_local:"本地模型",
   home_service_local_desc:"实际实验与评估。",
   home_service_training:"培训",
-  home_service_training_desc:"在日常工作中为团队提供指导。",
+  home_service_training_desc:"应同事要求，以小组和一对一的方式指导 35 多位同事：我展示了如何使用 AI 和自己的工作工具，让生产环境中的工具更高效。",
   home_service_intl:"国际项目",
   home_service_intl_desc:"DABO CEO 团队成员，参与在中国 Saichuang Weilai Southeast Asia InnoTech Center 举办的“Sprint Forward in Golden Boots”。",
   home_audience_desc:"公共行政部门、公共机构和受监管组织，也适合中小企业和专业人士。",
