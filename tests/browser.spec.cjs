@@ -89,34 +89,28 @@ for(const viewport of sizes){
    await expect(image).toHaveJSProperty('complete',true);
    expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
   });
-  test('the invitation to get in touch is one sentence with a clickable link that opens the contacts',async({page})=>{
+  test('the invitation to get in touch is one sentence with a link to the email on the home',async({page})=>{
    await page.goto('/progetti.html');
    await expect(page.locator('.page-cta p')).toHaveText('Per parlare di un progetto, contattami.');
-   await expect(page.locator('.page-cta .contact-trigger')).toHaveText('contattami');
+   await expect(page.locator('.page-cta .cta-inline')).toHaveText('contattami');
    await expect(page.locator('.page-cta .cta-primary')).toHaveCount(0);
-   await page.locator('.page-cta .contact-trigger').click();
-   await expect(page.locator('#contactDialog')).toBeVisible();
+   await page.locator('.page-cta .cta-inline').click();
+   await expect(page).toHaveURL(/index\.html#collabTitle|\/#collabTitle/);
+   await expect(page.locator('#homeEmail a')).toHaveText('nic.forcolin@gmail.com');
+   await expect(page.locator('#homeEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
   });
   test('in Per chi the last invitation is a plain Contattami link next to the other two',async({page})=>{
    await page.goto('/progetti.html#per-chi');
    await expect(page.locator('.page-cta .cta-inline')).toHaveText('contattami');
    await expect(page.locator('.page-cta [data-i18n="cta_before"]')).toBeHidden();
    await expect(page.locator('.page-cta .cta-inline')).toBeVisible();
-   await page.locator('.page-cta .cta-inline').click();
-   await expect(page.locator('#contactDialog')).toBeVisible();
   });
-  test('contacts open in a dialog with phone, email and LinkedIn',async({page})=>{
-   await page.goto('/progetti.html');
-   await expect(page.locator('.topbar-contact')).toHaveCount(0);
-   await page.locator('.page-cta .contact-trigger').click();
-   await expect(page.locator('#contactDialog')).toBeVisible();
-   await page.locator('#cmEmail .reveal-btn').click();
-   await expect(page.locator('#cmEmail a')).toHaveText('nic.forcolin@gmail.com');
-   await expect(page.locator('#cmEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
-   await page.locator('#cmPhone .reveal-btn').click();
-   await expect(page.locator('#cmPhone a')).toHaveText('+39 347 908 1966');
-   await page.keyboard.press('Escape');
-   await expect(page.locator('#contactDialog')).not.toBeVisible();
+  test('there is no contact dialog and no phone number on any page',async({page})=>{
+   for(const u of pages){
+    await page.goto(u);
+    await expect(page.locator('#contactDialog')).toHaveCount(0);
+    await expect(page.locator('body')).not.toContainText('347 908');
+   }
   });
   test('home exposes the two projects without redundant hero links',async({page})=>{
    await page.goto('/');

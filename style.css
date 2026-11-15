@@ -66,18 +66,6 @@ p{text-wrap:pretty}
 
 /* ============ Hero ============ */
 
-/* ============ Link ============ */
-
-.lnk{
-  display:inline-block;font-family:var(--sans);font-size:.875rem;font-weight:600;
-  color:var(--accent);background:none;border:0;padding:0;cursor:pointer;
-  text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 35%,transparent);
-  text-underline-offset:4px;
-  transition:text-decoration-color var(--dur) var(--ease),color var(--dur) var(--ease);
-}
-@media(hover:hover) and (pointer:fine){
-  .lnk:hover{text-decoration-color:var(--accent)}
-}
 
 /* ============ Sezioni ============ */
 main{padding-bottom:40px}
@@ -86,19 +74,13 @@ main{padding-bottom:40px}
 
 /* ---- Colophon ---- */
 .colophon-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
-.colophon-links{min-width:0}
-.cm-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:12px 0}
-.cm-k{font-size:.875rem;font-weight:600;color:var(--ink-soft)}
-.cm-v{overflow-wrap:anywhere}
-.cm-v a{color:var(--accent);text-underline-offset:3px}
-@media(hover:hover) and (pointer:fine){.cm-v a:hover{text-decoration:underline}}
 .copy-btn{background:none;border:0;cursor:pointer;color:var(--ink-soft);display:inline-flex;vertical-align:middle;margin-left:8px;padding:2px}
 .copy-btn:active{color:var(--accent)}
 @media(hover:hover) and (pointer:fine){.copy-btn:hover{color:var(--accent)}}
 .footer-note{grid-column:1/-1;color:var(--ink-soft)}
 .footer-note a{color:var(--ink-soft);text-underline-offset:3px}
 @media(hover:hover) and (pointer:fine){.footer-note a:hover{color:var(--accent);text-decoration:underline}}
-@media(max-width:700px){.colophon-inner{grid-template-columns:1fr;gap:24px}.cm-row{grid-template-columns:1fr;gap:4px}}
+@media(max-width:700px){.colophon-inner{grid-template-columns:1fr;gap:24px}}
 
 /* ============ Riduzione movimento / stampa ============ */
 @media(prefers-reduced-motion:reduce){
@@ -117,9 +99,7 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 [id]{scroll-margin-top:0}
 .colophon{scroll-margin-top:0}
 .copy-btn{min-height:44px;min-width:44px}
-.reveal-btn{min-height:44px}
-.footer-note,.cm-k{font-size:1rem}
-.cm-v{font-size:1rem}
+.footer-note{font-size:1rem}
 @media(max-width:700px){
   .topbar-inner{min-height:64px;justify-content:space-between}
   .utilbar{order:0;gap:4px}
