@@ -51,7 +51,7 @@ function drawList(listId,emptyId,counts,label){
   li.append(name,count,track);return li;
  }));
 }
-function drawPages(){drawList('pages','pages-empty',data.totals.pages,path=>path==='/'?'Home':path.replace(/^\//,''));}
+function drawPages(){drawList('pages','pages-empty',data.totals.pages,path=>{if(path==='/')return 'Home';const n=path.replace(/^\//,'');return n.charAt(0).toUpperCase()+n.slice(1);});}
 function drawSources(){
  const counts={...(data.totals.sources||{})},known=Object.values(counts).reduce((s,n)=>s+n,0);
  /* Visits recorded before sources existed have no source: show them as direct. */
