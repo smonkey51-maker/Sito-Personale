@@ -70,8 +70,8 @@ assert(home.includes('id="heroIntro"'), 'Hero intro paragraph missing');
 for (const language of ['it', 'en']) assert(dictionaries[language].includes('hero_intro:'), language + ': hero intro missing');
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 assert(!home.includes('hero-cta-row'), 'The redundant hero links were removed');
-assert(home.includes('src="photo.webp?v=38"'), 'New portrait must be displayed');
-assert(home.includes('src="photo-entry-mobile.webp?v=5"') && fs.existsSync(path.join(root, 'photo-entry-mobile.webp')), 'The mobile entry screen uses the mobile portrait');
+assert(home.includes('src="photo.webp?v=39"'), 'New portrait must be displayed');
+assert(home.includes('src="photo-entry-mobile.webp?v=6"') && fs.existsSync(path.join(root, 'photo-entry-mobile.webp')), 'The mobile entry screen uses the mobile portrait');
 assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by pages');
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');
