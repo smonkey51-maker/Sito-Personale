@@ -24,7 +24,9 @@ tool di terze parti: basta leggere il codice):
   hero e il segno d'ingresso su mobile.
 - **Tipografia**: niente Inter/Roboto/Geist su tutto senza un titolo
   con carattere distintivo; corpo testo leggibile ≥16px, nessun testo
-  sotto i 13px. Massimo due famiglie e cinque dimensioni. Niente
+  sotto i 13px. Massimo due famiglie e cinque dimensioni. Eccezione
+  voluta da Nicolò: Roboto per tutto il sito, titoli compresi, con la
+  firma in Destiny Signature (dopo aver provato Inter e Bodoni Moda). Niente
   monospace fuori dai blocchi di codice. Niente etichette piccole in
   maiuscolo con tracking. Paragrafi max ~62ch, interlinea 1.45-1.6,
   mai giustificati né centrati oltre le tre righe. Titoli su max due

@@ -5,8 +5,7 @@
 
 /* Font serviti dal sito stesso (file variabili, solo alfabeto latino):
    niente connessioni a Google Fonts prima di mostrare i testi. */
-@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/inter-latin-wght.woff2") format("woff2")}
-@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/bodoni-moda-latin.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-latin-wght.woff2") format("woff2")}
 @font-face{font-family:"Destiny Signature";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/destiny-signature-latin.woff2") format("woff2")}
 
 :root{
@@ -21,7 +20,6 @@
   --on-accent:#FFFFFF;
   --dur:160ms;
   --ease:cubic-bezier(0.2,0,0,1);
-  --display:"Bodoni Moda","Times New Roman",serif;
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
@@ -165,6 +163,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 }
 
 /* Cinese (semplificato): caratteri di sistema, perché i font del sito coprono solo il latino di base. */
-html:lang(zh){--display:"Bodoni Moda","Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;--sans:"Inter","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
+html:lang(zh){--sans:"Roboto","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
 html:lang(zh) body *{letter-spacing:normal}
 html:lang(zh) body{line-height:1.75}
