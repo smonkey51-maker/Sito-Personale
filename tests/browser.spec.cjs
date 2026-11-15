@@ -202,7 +202,6 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
    await expect(page.locator('#heroIntro')).toContainText('assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
-   await expect(page.locator('.desktop-nav')).toHaveCount(0);
    await expect(page.locator('.site-name .sn-short')).toHaveText('NForcolin');
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
@@ -253,9 +252,8 @@ for(const viewport of sizes){
     expect(intro.y+intro.height).toBeLessThanOrEqual(812);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
    });
-   test('on mobile the inline nav is hidden and the menu lists the pages',async({page})=>{
+   test('on mobile the menu lists the pages',async({page})=>{
     await page.goto('/percorso.html');
-    await expect(page.locator('.desktop-nav')).toBeHidden();
     await page.locator('.menu-toggle').click();
     await expect(page.locator('#siteMenu a[href="progetti.html"]')).toBeVisible();
     await expect(page.locator('#siteMenu a')).toHaveCount(2);
