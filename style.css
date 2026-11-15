@@ -154,7 +154,7 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 @media(max-width:700px){.topbar-inner{flex-wrap:wrap}}
 
 /* Project-first redesign: restrained product UI, no decorative section counters. */
-.editorial-shell{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,64px)}
+.editorial-shell{max-width:1100px;margin:0 auto;padding:0 clamp(20px,4vw,64px)}
 .hero{padding:clamp(44px,7vw,104px) 0 clamp(48px,7vw,88px)}
 
 @media(max-width:700px){

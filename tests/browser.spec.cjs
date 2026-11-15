@@ -212,10 +212,10 @@ for(const viewport of sizes){
     await page.goto('/progetti.html');
     await expect(page.locator('.lang-toggle')).toBeHidden();
     await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
-    await expect(page.locator('#langList .lang-btn.on')).toHaveText('IT');
+    await expect(page.locator('#langList .lang-btn.on')).toHaveText('Italiano');
     await page.locator('[data-lang="en"]').click();
     await expect(page.locator('h1')).toHaveText('Projects and Initiatives');
-    await expect(page.locator('#langList .lang-btn.on')).toHaveText('EN');
+    await expect(page.locator('#langList .lang-btn.on')).toHaveText('English');
     await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
    });
    test('on desktop the page links sit in the bar, there is no three-line menu and the name is written in full',async({page})=>{

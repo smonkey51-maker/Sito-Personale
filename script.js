@@ -732,7 +732,7 @@
       b.setAttribute("aria-pressed", String(selected));
       if(selected){
         var shown = document.querySelector(".lang-current"), opener = document.querySelector(".lang-toggle");
-        if(shown) shown.textContent = b.textContent;
+        if(shown) shown.textContent = b.getAttribute("data-code") || b.textContent;
         if(opener) opener.setAttribute("aria-label", "Lingua / Language: " + b.getAttribute("aria-label"));
       }
     });
