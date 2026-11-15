@@ -138,7 +138,7 @@
       hero_hi:"Ciao, sono",
       hero_intro:[
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
-        [{t:"Passo le giornate a rendere semplice quello che semplice non è."}]
+        [{t:"Ho il vizio di complicarmi la vita per semplificarla agli altri."}]
       ],
       stats_label:"In numeri",
       scroll_btn:"Entra nel sito",
@@ -163,7 +163,7 @@
       faq3_a:"Scrivimi settore e problema. Sono disponibile per consulenze e progetti sull’AI.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
-      page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Passo le giornate a rendere semplice quello che semplice non è.",
+      page_description:"IT per le PA dal 2022, Tech Lover dal 1992. Ho il vizio di complicarmi la vita per semplificarla agli altri.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -409,7 +409,7 @@
       hero_hi:"Hi, I’m",
       hero_intro:[
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
-        [{t:"I spend my days making simple what isn’t."}]
+        [{t:"I have a habit of complicating my own life to make it simpler for others."}]
       ],
       stats_label:"In numbers",
       scroll_btn:"Enter the site",
@@ -434,7 +434,7 @@
       faq3_a:"Write to me with your sector and your problem. I am available for AI consulting and projects.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
-      page_description:"IT for public administration since 2022, tech lover since 1992. I spend my days making simple what isn’t.",
+      page_description:"IT for public administration since 2022, tech lover since 1992. I have a habit of complicating my own life to make it simpler for others.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",

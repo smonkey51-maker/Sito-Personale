@@ -151,7 +151,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('#hero-name')).toHaveText('Ciao, sono Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
-   await expect(page.locator('#heroIntro')).toContainText('Passo le giornate a rendere semplice quello che semplice non è.');
+   await expect(page.locator('#heroIntro')).toContainText('Ho il vizio di complicarmi la vita per semplificarla agli altri.');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.site-name .sn-short')).toHaveText('NForcolin');
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
