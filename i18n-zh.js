@@ -12,7 +12,7 @@ window.NF_I18N.zh = {
   home_service_training:"培训",
   home_service_training_desc:"在日常工作中为团队提供指导。",
   home_service_intl:"国际项目",
-  home_service_intl_desc:"2026 年，作为 AI 专家加入 DABO CEO 的团队，参与在中国 Saichuang Weilai Southeast Asia InnoTech Center 举办的“Sprint Forward in Golden Boots”竞赛。",
+  home_service_intl_desc:"DABO CEO 团队成员，参与在中国 Saichuang Weilai Southeast Asia InnoTech Center 举办的“Sprint Forward in Golden Boots”。",
   home_audience_desc:"公共行政部门、公共机构和受监管组织，也适合中小企业和专业人士。",
   home_career_title:"我的经历",
   home_career_link:"了解我的经历",
