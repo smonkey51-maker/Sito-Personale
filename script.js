@@ -141,8 +141,6 @@
         [{t:"Ho il vizio di complicarmi la vita per semplificarla agli altri."}]
       ],
       stats_label:"In numeri",
-      scroll_btn:"Entra nel sito",
-      entry_label:"Ingresso",
       stat1_v:"35+",
       stat1_k:"colleghi affiancati e formati",
       stat2_v:"14",
@@ -405,8 +403,6 @@
         [{t:"I have a habit of complicating my own life to make it simpler for others."}]
       ],
       stats_label:"In numbers",
-      scroll_btn:"Enter the site",
-      entry_label:"Entry",
       stat1_v:"35+",
       stat1_k:"colleagues supported and trained",
       stat2_v:"14",
@@ -663,14 +659,6 @@
       setLang(b.getAttribute("data-lang"));
     });
   });
-
-  /* Su mobile la prima schermata è solo ritratto, nome e segno d'ingresso: la barra compare quando si entra. */
-  var entryScreen = document.querySelector(".m-entry");
-  if(entryScreen && "IntersectionObserver" in window){
-    new IntersectionObserver(function(entries){
-      document.body.classList.toggle("at-entry", entries[0].intersectionRatio > 0.5);
-    }, { threshold: [0, 0.5, 1] }).observe(entryScreen);
-  }
 
   setLang(lang);
 })();
