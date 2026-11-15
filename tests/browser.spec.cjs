@@ -11,6 +11,10 @@ for(const viewport of sizes){
    const entry=page.locator('.m-entry-link');
    if(await entry.isVisible()){await page.emulateMedia({reducedMotion:'reduce'});await entry.click();await expect(page.locator('.topbar')).toBeVisible();}
   };
+  const openMenu=async(page)=>{
+   const toggle=page.locator('.menu-toggle');
+   if(await toggle.isVisible()) await toggle.click();
+  };
   const pickLang=async(page,code)=>{
    await enterHome(page);
    await page.locator('.lang-toggle').click();
@@ -42,7 +46,7 @@ for(const viewport of sizes){
   test('menu contacts opens the contact dialog',async({page})=>{
    await page.goto('/');
    await enterHome(page);
-   await page.locator('.menu-toggle').click();
+   await openMenu(page);
    await page.locator('#siteMenu .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
@@ -90,7 +94,7 @@ for(const viewport of sizes){
    await expect(page).toHaveTitle('经历 | Nicolò Forcolin');
    await pickLang(page,'it');
    await expect(page.locator('h1')).toHaveText('Percorso');
-   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .menu-toggle')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
+   const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .menu-toggle')].filter(e=>e.offsetParent!==null).every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(fits).toBe(true);
    await page.locator('.lang-toggle').click();
    await page.waitForTimeout(250);
@@ -144,11 +148,11 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('.topbar-contact')).toHaveCount(0);
    await enterHome(page);
-   await page.locator('.menu-toggle').click();
+   await openMenu(page);
    await expect(page.locator('#siteMenu')).toBeVisible();
    await page.locator('#siteMenu .contact-trigger').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
-   await expect(page.locator('#siteMenu')).toBeHidden();
+   if(viewport.width<=700) await expect(page.locator('#siteMenu')).toBeHidden();
    await page.locator('#cmEmail .reveal-btn').click();
    await expect(page.locator('#cmEmail a')).toHaveText('nic.forcolin@gmail.com');
    await expect(page.locator('#cmEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
@@ -193,11 +197,24 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('assistenti AI che rispondono dai documenti aziendali, modelli che girano in casa');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.desktop-nav')).toHaveCount(0);
-   await expect(page.locator('.site-name')).toHaveText('NForcolin');
+   await expect(page.locator('.site-name .sn-short')).toHaveText('NForcolin');
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
+  if(viewport.width>700){
+   test('on desktop the page links sit in the bar, there is no three-line menu and the name is written in full',async({page})=>{
+    await page.goto('/');
+    await expect(page.locator('.menu-toggle')).toBeHidden();
+    for(const href of ['progetti.html','ai-in-locale.html','percorso.html']) await expect(page.locator('#siteMenu a[href="'+href+'"]')).toBeVisible();
+    await expect(page.locator('#siteMenu .contact-trigger')).toBeVisible();
+    await expect(page.locator('.site-name .sn-full')).toBeVisible();
+    await expect(page.locator('.site-name .sn-full')).toHaveText('Nicolò Forcolin');
+    await expect(page.locator('.site-name .sn-short')).toBeHidden();
+    const over=await page.evaluate(()=>{const a=document.querySelector('.site-name').getBoundingClientRect(),b=document.querySelector('#siteMenu').getBoundingClientRect(),c=document.querySelector('.lang-menu').getBoundingClientRect();return a.right<b.left&&b.right<c.left});
+    expect(over).toBe(true);
+   });
+  }
   if(viewport.width<=700){
    test('on mobile the first screen is only the portrait, the orange name and the entry mark; entering shows the introduction',async({page})=>{
     await page.emulateMedia({reducedMotion:'reduce'});

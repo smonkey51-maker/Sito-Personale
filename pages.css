@@ -340,3 +340,28 @@
   .case-hero { grid-template-columns: 1fr; grid-template-areas: "text" "art"; row-gap: 40px; }
   .case-facts { grid-template-columns: 1fr; margin-top: 0; }
 }
+
+/* Desktop (da 701 px): le voci stanno in barra al centro, senza le tre lineette; il nome è scritto per intero. */
+.sn-full{display:none}
+@media (min-width: 701px) {
+  .sn-short{display:none}
+  .sn-full{display:inline}
+  .menu-toggle { display: none; }
+  .topbar .site-menu, .topbar .site-menu[hidden] { display: block; position: absolute; left: 50%; top: 50%; right: auto; transform: translate(-50%, -50%); width: max-content; min-width: 0; max-width: none; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; animation: none; }
+  .topbar .site-menu ul { display: flex; align-items: center; gap: 0 clamp(20px, 3.4vw, 52px); }
+  .topbar .site-menu a, .topbar .site-menu button { width: auto; min-height: 44px; padding: 0 2px; border-radius: 0; justify-content: flex-start; font-size: 1.0625rem; font-weight: 500; color: var(--ink-soft); white-space: nowrap; }
+  .topbar .site-menu a[aria-current="page"] { background: none; color: var(--ink); font-weight: 700; }
+  .topbar .site-menu a:active, .topbar .site-menu button:active { background: none; color: var(--ink); }
+}
+@media (min-width: 701px) and (hover: hover) and (pointer: fine) {
+  .topbar .site-menu a:hover, .topbar .site-menu button:hover { background: none; color: var(--ink); }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .topbar .site-menu, .topbar .site-menu[hidden] { left: auto; right: calc(clamp(20px, 4vw, 56px) + 76px); transform: translateY(-50%); }
+  .topbar .site-menu ul { gap: 0 14px; }
+  .topbar .site-menu a, .topbar .site-menu button { font-size: 1rem; }
+  body .site-name { font-size: 1.5rem; }
+}
+@media (min-width: 1921px) {
+  .topbar .site-menu a, .topbar .site-menu button { font-size: calc(17*var(--u)); min-height: calc(44*var(--u)); }
+}
