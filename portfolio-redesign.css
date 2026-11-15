@@ -212,25 +212,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
  ::view-transition-new(root){animation-duration:200ms;animation-timing-function:ease-out}
 }
 
-/* Large screens (wider than 1920px): the layout of a 1920px window, scaled up
-   with the width, so a big monitor shows the same composition larger instead
-   of a small block in the middle. Each fixed pixel value below is the value it
-   has at 1920px, multiplied by the factor --u (one 1920px pixel). Nothing
-   changes up to 1920px. */
-@media(min-width:1921px){
- :root{--u:.0520833vw;--editorial-gutter:calc(80*var(--u))}
- .editorial-shell{max-width:calc(1280*var(--u));padding:0 calc(64*var(--u))}
- .topbar-inner{max-width:calc(1440*var(--u));min-height:calc(72*var(--u));padding-left:calc(64*var(--u))}
-  body .site-name{font-size:calc(28*var(--u))}
- .hero-inner{max-width:none;width:min(100% - 2*var(--editorial-gutter),calc(1280*var(--u)));min-height:min(calc(800*var(--u)),80vh);padding-top:calc(132*var(--u));padding-bottom:calc(72*var(--u))}
- .hero-overlay{max-width:min(56vw,calc(800*var(--u)));width:min(100%,calc(800*var(--u)));padding-block:calc(28*var(--u))}
- .hero-intro{font-size:calc(18*var(--u));margin-bottom:calc(36*var(--u))}
- .filmstrip-meta{font-size:calc(15*var(--u))}
- .filmstrip-title{font-size:calc(22*var(--u))}
- body .footer-note{padding-top:calc(12*var(--u))}
- .colophon{padding-bottom:calc(16*var(--u))}
-}
-
 /* Home: <main> is the editorial column, without the extra bottom space
    inner pages use. */
 main.editorial-content{padding-bottom:0}
@@ -241,10 +222,6 @@ main.editorial-content{padding-bottom:0}
 
 
 /* Very large screens: the header, hero and footer share the scaled column. */
-@media(min-width:1921px){
- .topbar-inner,.colophon-inner{max-width:calc(1280*var(--u));padding-inline:calc(64*var(--u))}
- .hero-inner{width:100%}
-}
 
 /* Mobile: the four links form a bar fixed to the bottom once the landing is left. */
 @media(max-width:700px){
@@ -266,7 +243,6 @@ main.editorial-content{padding-bottom:0}
 
 /* Schermi medi e grandi: saluto grande su due righe (nome sotto "Ciao, sono"); meno spazio sopra, perché Contattami resti raggiungibile. */
 @media(min-width:701px){.hero-name{font-size:min(7.7vw,4.5rem,8.5vh);line-height:1.12;max-width:none;margin-bottom:36px}.hero-inner{padding-top:clamp(56px,7vh,132px)}}
-@media(min-width:1921px){.hero-name{font-size:calc(72*var(--u));margin-bottom:calc(36*var(--u))}.hero-inner{padding-top:clamp(calc(56*var(--u)),7vh,calc(132*var(--u)))}}
 /* "Ciao, sono" più piccolo del nome, sempre su due righe. */
 .hero-hi,.hero-fn{display:block}
 .hero-hi{font-size:.78em;line-height:1.25}
@@ -293,4 +269,3 @@ main.editorial-content{padding-bottom:0}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
 @media(min-width:1200px){body .footer-note{font-size:1.0625rem}}
-@media(min-width:1921px){body .footer-note{font-size:calc(18*var(--u))}}

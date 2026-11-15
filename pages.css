@@ -325,7 +325,6 @@
 @media (prefers-reduced-motion: reduce) { .menu-toggle .bar, .menu-toggle[aria-expanded="true"] .bar { transition: none; } }
 
 /* Very large screens: the page column scales with the header and the footer. */
-@media (min-width: 1921px) { .page { max-width: calc(1280 * var(--u)); padding-inline: calc(64 * var(--u)); } }
 
 /* RAG page: text and facts on the left, the interactive figure on the right; below 821px they stack. */
 .case-hero { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-areas: "text art"; column-gap: 48px; align-items: start; margin-bottom: clamp(48px, 7vw, 88px); }
@@ -368,7 +367,4 @@
   .topbar .site-menu a, .topbar .site-menu button { font-size: 1rem; }
   body[data-page] .topbar .site-name, body .topbar .site-name { font-size: 1.5rem; }
   .topbar .lang-list .lang-btn, .topbar .lang-list .lang-btn.on { padding: 0 8px; font-size: 1rem; }
-}
-@media (min-width: 1921px) {
-  .topbar .site-menu a, .topbar .site-menu button { font-size: calc(17*var(--u)); min-height: calc(44*var(--u)); }
 }
