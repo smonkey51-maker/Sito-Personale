@@ -140,8 +140,6 @@ window.NF_I18N.zh = {
     [{ t: "我习惯让自己的生活复杂一点，好让别人的生活更简单。" }]
   ],
   stats_label: "数据一览",
-  scroll_btn: "进入网站",
-  entry_label: "入口",
   stat1_v: "35+",
   stat1_k: "位同事获得帮助与培训",
   stat2_v: "14",

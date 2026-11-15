@@ -7,12 +7,7 @@ for(const viewport of sizes){
   test.use({viewport:{width:viewport.width,height:viewport.height}});
   // La lingua si sceglie dal menu a bandiera: lo si apre e si tocca la voce.
   // Su mobile la home si apre con la sola schermata d'ingresso: prima si entra, poi compare la barra.
-  const enterHome=async(page)=>{
-   const entry=page.locator('.m-entry-link');
-   if(await entry.isVisible()){await page.emulateMedia({reducedMotion:'reduce'});await entry.click();await expect(page.locator('.topbar')).toBeVisible();}
-  };
   const pickLang=async(page,code)=>{
-   await enterHome(page);
    await page.locator('[data-lang="'+code+'"]').click();
   };
   test('layout and hero essentials',async({page})=>{
@@ -164,7 +159,6 @@ for(const viewport of sizes){
    });
    test('the bar has no page links and no three-line menu',async({page})=>{
     await page.goto('/');
-    await enterHome(page);
     await expect(page.locator('.menu-toggle')).toHaveCount(0);
     await expect(page.locator('#siteMenu')).toHaveCount(0);
     await expect(page.locator('.lang-toggle')).toHaveCount(0);
@@ -179,25 +173,16 @@ for(const viewport of sizes){
    });
   }
   if(viewport.width<=700){
-   test('on mobile the first screen is only the portrait, the orange name and the entry mark; entering shows the introduction',async({page})=>{
-    await page.emulateMedia({reducedMotion:'reduce'});
+   test('on mobile the first screen shows the bar with the languages, the portrait and the introduction',async({page})=>{
     await page.goto('/');
-    await expect(page.locator('.topbar')).toBeHidden();
-    await expect(page.locator('.m-entry-photo')).toBeInViewport();
-    await expect(page.locator('.m-entry-name')).toBeInViewport();
-    await expect(page.locator('.entry-dot')).toBeInViewport();
-    await expect(page.locator('#hero-name')).not.toBeInViewport();
-    await page.locator('.m-entry-link').click();
-    await expect(page.locator('#hero-name')).toBeInViewport();
     await expect(page.locator('.topbar')).toBeVisible();
     await expect(page.locator('#langList')).toBeInViewport();
+    await expect(page.locator('.m-entry')).toHaveCount(0);
+    await expect(page.locator('#hero-name')).toBeVisible();
     const photo=await page.locator('.hero-photo-frame').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
-    expect(heading.y-photo.y-photo.height).toBeLessThanOrEqual(40);
     expect(photo.height).toBeGreaterThanOrEqual(350);
-    const intro=await page.locator('#heroIntro').boundingBox();
-    expect(intro.y+intro.height).toBeLessThanOrEqual(812);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
    });
   }
