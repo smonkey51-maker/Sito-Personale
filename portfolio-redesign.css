@@ -96,8 +96,6 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
    .editorial-shell's centred, padded 1280px container, so without this
    the filmstrip stops at that container's edges instead of reaching the
    true viewport edges. */
-.filmstrip-meta{font-size:1rem;color:var(--accent)}
-.filmstrip-title{color:var(--ink)}
 @media(max-width:820px){
  .hero-inner{padding:96px 0 48px;min-height:70vh}
 }
@@ -113,15 +111,12 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 
 /* Handwritten signature, only for my name in the top bar and the home greeting. */
 :root{--signature:"Destiny Signature",var(--sans)}
-.filmstrip-title{letter-spacing:-.01em}
 
 
 /* Editorial alignment and responsive polish. */
 :root{--editorial-gutter:clamp(24px,5vw,80px)}
 .hero-inner{width:100%;margin-inline:auto}
 .hero-overlay{width:min(100%,800px)}
-.filmstrip-title{font-size:1.375rem;font-weight:600;line-height:1.2}
-.filmstrip-meta{line-height:1.45}
 @media(min-width:701px){.hero-inner{min-height:min(800px,80vh)}.hero-overlay{padding-block:28px}}
 @media(max-width:700px){
  .hero-inner{padding:0 0 36px;gap:0}
