@@ -144,7 +144,7 @@ window.NF_I18N.zh = {
   scroll_btn: "进入网站",
   entry_label: "入口",
   stat1_v: "35+",
-  stat1_k: "位同事获得 AI 使用方面的帮助",
+  stat1_k: "位同事获得帮助与培训",
   stat2_v: "14",
   stat2_k: "位企业 RAG 用户",
   stat3_v: "1",

@@ -15,9 +15,13 @@ for(const viewport of sizes){
    const toggle=page.locator('.menu-toggle');
    if(await toggle.isVisible()) await toggle.click();
   };
+  const openLang=async(page)=>{
+   const toggle=page.locator('.lang-toggle');
+   if(await toggle.isVisible()) await toggle.click();
+  };
   const pickLang=async(page,code)=>{
    await enterHome(page);
-   await page.locator('.lang-toggle').click();
+   await openLang(page);
    await page.locator('[data-lang="'+code+'"]').click();
   };
   test('layout and hero essentials',async({page})=>{
@@ -61,6 +65,7 @@ for(const viewport of sizes){
    await expect(page.locator('#homeProjectsTitle')).toHaveText('Progetti');
   });
   test('language menu opens from the flag, lists the other two languages and closes with Esc or a choice',async({page})=>{
+   test.skip(viewport.width>700,'on desktop the three languages sit side by side');
    await page.goto('/progetti.html');
    await expect(page.locator('#langList')).toBeHidden();
    await page.locator('.lang-toggle').click();
@@ -76,6 +81,7 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Projects and Initiatives');
   });
   test('with a mouse the language list opens on hover and the flag arrow invites to change language',async({page})=>{
+   test.skip(viewport.width>700,'on desktop the three languages sit side by side');
    await page.goto('/progetti.html');
    await expect(page.locator('.lang-toggle .lang-chevron')).toBeVisible();
    await page.locator('.lang-toggle').hover();
@@ -96,7 +102,7 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Percorso');
    const fits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('.topbar .lang-toggle,.topbar .menu-toggle')].filter(e=>e.offsetParent!==null).every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(fits).toBe(true);
-   await page.locator('.lang-toggle').click();
+   await openLang(page);
    await page.waitForTimeout(250);
    const listFits=await page.evaluate(()=>{const w=document.documentElement.clientWidth;return [...document.querySelectorAll('#langList .lang-btn:not(.on)')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=w&&r.height>=44})});
    expect(listFits).toBe(true);
@@ -203,6 +209,16 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
   });
   if(viewport.width>700){
+   test('on desktop the three languages sit side by side, the current one is marked, and a click switches',async({page})=>{
+    await page.goto('/progetti.html');
+    await expect(page.locator('.lang-toggle')).toBeHidden();
+    await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
+    await expect(page.locator('#langList .lang-btn.on')).toHaveText('IT');
+    await page.locator('[data-lang="en"]').click();
+    await expect(page.locator('h1')).toHaveText('Projects and Initiatives');
+    await expect(page.locator('#langList .lang-btn.on')).toHaveText('EN');
+    await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
+   });
    test('on desktop the page links sit in the bar, there is no three-line menu and the name is written in full',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.menu-toggle')).toBeHidden();
