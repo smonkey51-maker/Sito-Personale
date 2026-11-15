@@ -222,7 +222,7 @@ for(const viewport of sizes){
    test('on desktop the page links sit in the bar, there is no three-line menu and the name is written in full',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.menu-toggle')).toBeHidden();
-    for(const href of ['progetti.html','ai-in-locale.html','percorso.html']) await expect(page.locator('#siteMenu a[href="'+href+'"]')).toBeVisible();
+    for(const href of ['progetti.html','percorso.html']) await expect(page.locator('#siteMenu a[href="'+href+'"]')).toBeVisible();
     await expect(page.locator('#siteMenu .contact-trigger')).toBeVisible();
     await expect(page.locator('.site-name .sn-full')).toBeVisible();
     await expect(page.locator('.site-name .sn-full')).toHaveText('Nicolò Forcolin');
@@ -258,7 +258,8 @@ for(const viewport of sizes){
     await expect(page.locator('.desktop-nav')).toBeHidden();
     await page.locator('.menu-toggle').click();
     await expect(page.locator('#siteMenu a[href="progetti.html"]')).toBeVisible();
-    await expect(page.locator('#siteMenu a')).toHaveCount(3);
+    await expect(page.locator('#siteMenu a')).toHaveCount(2);
+    await expect(page.locator('#siteMenu a[href="ai-in-locale.html"]')).toHaveCount(0);
     await expect(page.locator('#siteMenu a[aria-current="page"]')).toHaveAttribute('href','percorso.html');
     await page.keyboard.press('Escape');
     await expect(page.locator('#siteMenu')).toBeHidden();
