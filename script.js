@@ -12,7 +12,7 @@
       home_service_local_desc:"Sperimentazione e valutazione sul campo.",
       home_service_training:"Formazione",
       home_service_training_desc:"Affiancamento dei team nel lavoro quotidiano.",
-      home_audience_desc:"Pubbliche amministrazioni, enti parastatali e organizzazioni regolate.",
+      home_audience_desc:"Pubbliche amministrazioni, enti parastatali e organizzazioni regolate, ma anche PMI e professionisti.",
       home_career_title:"Il mio percorso",
       home_career_link:"Leggi il percorso",
       local_how_privacy:"Le richieste vengono elaborate in locale, senza inviare dati all’esterno.",
@@ -220,7 +220,7 @@
       hero_cta2:"Progetti ed Iniziative",
       sec_localai_title:"AI in locale",
       for_whom_label:"Per chi",
-      for_whom_text:"Aziende, PMI e pubbliche amministrazioni che vogliono tenere i dati sotto controllo: ho testato modelli AI in locale su domande specifiche e dataset dedicati, e ne racconto risultati e limiti.",
+      for_whom_text:"Aziende, PMI, professionisti e pubbliche amministrazioni che vogliono tenere i dati sotto controllo: ho testato modelli AI in locale su domande specifiche e dataset dedicati, e ne racconto risultati e limiti.",
       for_whom_text2:"Chi guida la trasformazione digitale: in InfoCamere sono partito dalle esigenze operative, ho lanciato un assistente AI che risponde dai documenti aziendali e lo miglioro con i riscontri degli utenti. Ho affiancato anche colleghi di altre Unità.",
       for_whom_text3:"Startup e progetti internazionali: consulenza AI al CEO di DABO, poi nel team per la candidatura alla 2026 “Sprint Forward in Golden Boots Innovation & Entrepreneurship Competition” al Saichuang Weilai (SCWL) Southeast Asia InnoTech Center. Il percorso si è fermato alla tappa di Singapore, a settembre 2026.",
       for_whom_link:"AI in locale",
@@ -297,7 +297,7 @@
       home_service_local_desc:"Hands-on experimentation and evaluation.",
       home_service_training:"Training",
       home_service_training_desc:"Supporting teams in their everyday work.",
-      home_audience_desc:"Public administrations, public-sector bodies and regulated organizations.",
+      home_audience_desc:"Public administrations, public-sector bodies and regulated organizations, but also SMEs and professionals.",
       home_career_title:"My experience",
       home_career_link:"Read about my experience",
       local_how_privacy:"Requests are processed locally, without sending data outside.",
@@ -505,7 +505,7 @@
       hero_cta2:"Projects and Initiatives",
       sec_localai_title:"Local AI",
       for_whom_label:"For whom",
-      for_whom_text:"Companies, SMEs and public administrations that want to keep their data under control: I tested local AI models on specific questions and dedicated datasets, and I describe the results and limits.",
+      for_whom_text:"Companies, SMEs, professionals and public administrations that want to keep their data under control: I tested local AI models on specific questions and dedicated datasets, and I describe the results and limits.",
       for_whom_text2:"Those leading digital transformation: at InfoCamere I started from operational needs, launched an AI assistant that answers from company documents and improve it with user feedback. I have also supported colleagues from other units.",
       for_whom_text3:"Startups and international projects: AI consulting for the CEO of DABO, then in the team for the application to the 2026 “Sprint Forward in Golden Boots Innovation & Entrepreneurship Competition” at the Saichuang Weilai (SCWL) Southeast Asia InnoTech Center. The journey ended at the Singapore stage, in September 2026.",
       for_whom_link:"Local AI",
@@ -636,7 +636,8 @@
        chiusura il focus torna al pulsante del menu. */
     contactDialog.addEventListener("close", function(){
       var toggle = document.querySelector(".menu-toggle");
-      if(toggle) toggle.focus();
+      if(toggle && toggle.offsetParent !== null) toggle.focus();
+      else { var opener = document.querySelector(".site-menu .contact-trigger"); if(opener) opener.focus(); }
     });
     contactDialog.addEventListener("click", function(event){ if (event.target === contactDialog) contactDialog.close(); });
   }
