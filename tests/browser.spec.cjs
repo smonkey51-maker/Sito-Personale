@@ -47,7 +47,8 @@ for(const viewport of sizes){
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
    await expect(page.locator('h1')).toHaveText('RAG');
   });
-  test('menu contacts opens the contact dialog',async({page})=>{
+  test('menu contacts opens the contact dialog',async({page,viewport})=>{
+   test.skip(viewport.width>700,'on desktop the bar has no links');
    await page.goto('/');
    await enterHome(page);
    await openMenu(page);
@@ -150,7 +151,8 @@ for(const viewport of sizes){
    await page.locator('.page-cta .cta-inline').click();
    await expect(page.locator('#contactDialog')).toBeVisible();
   });
-  test('contacts open in a dialog with phone, email and LinkedIn',async({page})=>{
+  test('contacts open in a dialog with phone, email and LinkedIn',async({page,viewport})=>{
+   test.skip(viewport.width>700,'on desktop the bar has no links');
    await page.goto('/');
    await expect(page.locator('.topbar-contact')).toHaveCount(0);
    await enterHome(page);
@@ -218,16 +220,13 @@ for(const viewport of sizes){
     await expect(page.locator('#langList .lang-btn.on')).toHaveText('English');
     await expect(page.locator('#langList .lang-btn:visible')).toHaveCount(3);
    });
-   test('on desktop the page links sit in the bar, there is no three-line menu and the name is written in full',async({page})=>{
+   test('on desktop the bar has no page links and no three-line menu, and the name is written in full',async({page})=>{
     await page.goto('/');
     await expect(page.locator('.menu-toggle')).toBeHidden();
-    for(const href of ['progetti.html','percorso.html']) await expect(page.locator('#siteMenu a[href="'+href+'"]')).toBeVisible();
-    await expect(page.locator('#siteMenu .contact-trigger')).toBeVisible();
+    await expect(page.locator('#siteMenu')).toBeHidden();
     await expect(page.locator('.site-name .sn-full')).toBeVisible();
     await expect(page.locator('.site-name .sn-full')).toHaveText('Nicolò Forcolin');
     await expect(page.locator('.site-name .sn-short')).toBeHidden();
-    const over=await page.evaluate(()=>{const a=document.querySelector('.site-name').getBoundingClientRect(),b=document.querySelector('#siteMenu').getBoundingClientRect(),c=document.querySelector('.lang-menu').getBoundingClientRect();return a.right<b.left&&b.right<c.left});
-    expect(over).toBe(true);
    });
   }
   if(viewport.width<=700){
