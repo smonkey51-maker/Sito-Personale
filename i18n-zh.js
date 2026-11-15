@@ -137,7 +137,7 @@ window.NF_I18N.zh = {
   hero_hi: "你好，我是",
   hero_intro: [
     [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
-    [{ t: "我每天都在把不简单的事情变简单。" }]
+    [{ t: "我习惯让自己的生活复杂一点，好让别人的生活更简单。" }]
   ],
   stats_label: "数据一览",
   scroll_btn: "进入网站",
@@ -162,7 +162,7 @@ window.NF_I18N.zh = {
   faq3_a:"请把行业和问题发给我。我可提供 AI 咨询和项目合作。",
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | 日常工作中的 AI",
-  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我每天都在把不简单的事情变简单。",
+  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我习惯让自己的生活复杂一点，好让别人的生活更简单。",
   rag_step1_kicker: "最初的来源",
   rag_step1_title: "文档与事件历史",
   rag_step1_desc: "两个相互独立的知识库。",
