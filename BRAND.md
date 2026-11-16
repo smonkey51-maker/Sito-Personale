@@ -46,51 +46,51 @@ La v1 metteva al centro "il lavoro al Service Desk di InfoCamere"; è superata.
 
 ## 3. Sistema visivo
 
-Il sito usa una direzione scura e sobria, con un solo accento arancione e priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. Il ritratto in home è a colori, scontornato sul nero del sito; tono e luminosità sono già nell'immagine, senza filtri CSS. Evitare effetti decorativi gratuiti e slogan.
+Il sito usa una direzione scura e sobria, con un solo accento (Warm Sand nello scuro, Crimson nel chiaro) e priorità ai progetti concreti. Gli schemi nei casi studio sono concettuali, non rappresentazioni dell'infrastruttura reale. Il ritratto in home è a colori, scontornato sul nero del sito; tono e luminosità sono già nell'immagine, senza filtri CSS. Evitare effetti decorativi gratuiti e slogan.
 
 Palette valutata e scartata: sfondo "Gunmetal Night" (`#161A1F`), testi "Fog Silver" (`#D9DEE3`), accento "Molten Orange" (`#FF5A1F`). Più fredda e più tecnica, ma con meno impatto sul ritratto; resta il nero attuale.
 
 ### Palette
 
-Due temi, scelti in automatico dalle preferenze del browser (`prefers-color-scheme`), senza interruttore. Quello scuro è la base; quello chiaro (richiesto da Nicolò il 16 novembre 2026) usa i colori della copertina LinkedIn crema.
+Due temi, scelti in automatico dalle preferenze del browser (`prefers-color-scheme`), senza interruttore. Palette in uso dal 16 novembre 2026: Obsidian Black `#161616`, Soft Pearl `#F2F1ED`, Warm Sand `#B38F6F`, Crimson Depth `#710014`, più un colore vivo per i pulsanti. Prima si usava il nero `#0E0E0F` con arancione `#FF4A11` (scuro) e crema `#FDF5EA` con arancione `#E85A0C` (chiaro): per tornare indietro c'è il ramo `backup/palette-arancione`.
 
 **Tema scuro**
 
 | Token | Valore | Uso |
 |---|---|---|
-| `--bg` | `#0E0E0F` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto (provato Abyss Black `#101820` il 16 novembre 2026 e ripristinato il nero) |
-| `--bg-2` | `#0E0E0F` | Superficie secondaria (uguale allo sfondo) |
-| `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
-| `--ink-soft` | `#D2CED6` | Testo secondario |
-| `--line` | `#262628` | Separazioni |
-| `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati |
-| `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
-
-Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio , con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0E0E0F` anche come `theme-color` delle pagine e nel manifest dell'app.
+| `--bg`, `--bg-2` | `#161616` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto; `theme-color` del browser |
+| `--ink` | `#F2F1ED` | Testo principale (16:1) |
+| `--ink-soft` | `#BDB9B2` | Testo secondario (9,3:1) |
+| `--line` | `#2B2B2B` | Separazioni |
+| `--accent` | `#B38F6F` | Warm Sand: titoli, firma, sottolineature dei link (6,1:1) |
+| `--accent-hover` | `#C9A88B` | Warm Sand al passaggio |
+| `--cta` | `#FF5E36` | Fondo dei pulsanti, corallo (testo `--on-cta` `#161616`, 5,95:1) |
+| `--cta-hover` | `#FF7A57` | Pulsante al passaggio |
 
 **Tema chiaro**
 
 | Token | Valore | Uso |
 |---|---|---|
-| `--bg`, `--bg-2` | `#FDF5EA` | Sfondo di tutte le pagine, crema; `theme-color` del browser |
-| `--ink` | `#1B2330` | Testo principale, blu scuro (contrasto 14,6:1) |
-| `--ink-soft` | `#4A5260` | Testo secondario (7,3:1) |
-| `--line` | `#E4D8C6` | Separazioni |
-| `--accent` | `#E85A0C` | Arancione per titoli, firma e sottolineature (3,3:1: solo testo grande e segni, mai testo piccolo) |
-| `--accent-hover` | `#C94A06` | Arancione al passaggio e alla pressione |
-| `--on-accent` | `#0E0E0F` | Testo sul bottone arancione (in entrambi i temi) |
+| `--bg`, `--bg-2` | `#F2F1ED` | Sfondo di tutte le pagine; `theme-color` del browser |
+| `--ink` | `#161616` | Testo principale (16:1) |
+| `--ink-soft` | `#4F4A45` | Testo secondario (7,8:1) |
+| `--line` | `#D9CFC4` | Separazioni |
+| `--accent` | `#710014` | Crimson Depth: titoli, firma, sottolineature (10,9:1) |
+| `--accent-hover` | `#8F1A2C` | Crimson al passaggio |
+| `--cta` | `#D61C22` | Fondo dei pulsanti, vermiglio (testo `--on-cta` `#F2F1ED`, 4,6:1) |
+| `--cta-hover` | `#BF181E` | Pulsante al passaggio |
 
-Anche il diagramma RAG ha una palette crema (`figure.css`) e il profilo di Padova in fondo alle pagine interne ha una versione a tratto scuro (`padova-skyline-light.webp`). La pagina admin resta scura. Nel tema chiaro il ritratto in home è a colori (`photo-color.webp`, scontornato, servito con `<picture>` e `prefers-color-scheme`); nel tema scuro resta in bianco e nero (`photo.webp`).
+Anche il diagramma RAG ha una palette chiara (`figure.css`) e il profilo di Padova in fondo alle pagine interne ha una versione a tratto scuro (`padova-skyline-light.webp`). La pagina admin resta scura con i colori precedenti. Nel tema chiaro il ritratto in home è a colori (`photo-color.webp`, servito con `<picture>` e `prefers-color-scheme`); nel tema scuro resta in bianco e nero (`photo.webp`).
 
 ### Tipografia e comportamento
 
 - Tre famiglie, scelta voluta da Nicolò il 16 novembre 2026: Bodoni Moda (fonts/bodoni-moda-latin-opsz.woff2, alternativa web a Didot, peso 500) per titoli di pagina, di sezione e delle voci; Montserrat (fonts/montserrat-latin-wght.woff2, pesi 400 e 500, con fallback di sistema) per tutto il resto; Destiny Signature solo per la firma e il saluto in home. Roboto, usato in precedenza, è stato rimosso. Provati e scartati: Inter, Bodoni Moda sul testo corrente (poco leggibile), Forcolin Hand (font ricavato dalla scrittura a pennarello) e la sua unione con Destiny Signature.
 - Cinque dimensioni: 16px (menu, etichette, date, note), 18px (testo), 22px (titoli delle voci), 24px (sottotitolo di pagina), 40px (titoli di sezione); il titolo di pagina scala fino a 76px.
-- Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco). Il saluto della home conserva la firma originale: "Ciao, sono Nicolò Forcolin", in Destiny Signature e arancione.
-- Home (mockup approvato il 14 novembre 2026): pagina continua nella colonna editoriale. Hero compatta con "Ciao, sono Nicolò Forcolin" su due righe nel carattere della firma, arancione, centrata in verticale rispetto al ritratto (su mobile testo centrato), introduzione esistente e ritratto originale a colori. Su desktop la foto sta a destra, su mobile la presentazione parte subito, con il ritratto in giacca e dolcevita (photo.webp, lo stesso su tutti gli schermi) sopra il saluto, e la barra in alto resta sempre visibile. I tre link sotto la presentazione sono rimossi: le pagine restano accessibili dalle sezioni, i contatti da Collaboriamo. Niente barra fissa in basso. Su mobile la presentazione occupa almeno la prima schermata: numeri e sezioni seguono con lo scorrimento. Seguono i numeri 35+, 14 e 1 CEO affiancato (DABO); il contributo a Sprint Forward in Golden Boots fa parte della stessa voce del CEO. Poi Progetti (RAG in produzione e AI in locale come sperimentazione), Cosa faccio, Per chi, Il mio percorso e Collaboriamo. Riferimenti testuali a InfoCamere, DABO, IdeaGrip e Assicurazioni Generali, senza loghi. L’email, il pulsante copia, il Q&A (un solo comando apre tutte le domande e risposte), i social e le tre lingue restano funzionanti. Nessuna immagine o metrica inventata.
-- I titoli di sezione della home e il titolo Q&A sono in Bodoni Moda (40px), arancione. Il tratto a mano sotto i titoli è stato provato e tolto.
-- Invito a fine pagina: "Per parlare di un progetto" e un bottone arancione "Scrivimi" (testo scuro, angoli da 8px) che porta all'email nella sezione "Collaboriamo" della home. Un solo bottone per pagina.
-- Link nel testo: sempre testo chiaro con sottolineatura arancione sottile; niente frecce. Le pagine RAG e AI in locale hanno un glossario ("Parole tecniche") prima dell'invito finale. Porta all'email nella sezione "Collaboriamo" della home. La finestra contatti non esiste più e il numero di telefono non è più sul sito; il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale." Porta all'email nella sezione "Collaboriamo" della home. Non esiste più la finestra contatti (e il numero di telefono non è più sul sito); il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale."
+- Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (colore dell'accento). Il saluto della home conserva la firma originale: "Ciao, sono Nicolò Forcolin", in Destiny Signature e arancione.
+- Home (mockup approvato il 14 novembre 2026): pagina continua nella colonna editoriale. Hero compatta con "Ciao, sono Nicolò Forcolin" su due righe nel carattere della firma, nel colore dell'accento, centrata in verticale rispetto al ritratto (su mobile testo centrato), introduzione esistente e ritratto originale a colori. Su desktop la foto sta a destra, su mobile la presentazione parte subito, con il ritratto in giacca e dolcevita (photo.webp, lo stesso su tutti gli schermi) sopra il saluto, e la barra in alto resta sempre visibile. I tre link sotto la presentazione sono rimossi: le pagine restano accessibili dalle sezioni, i contatti da Collaboriamo. Niente barra fissa in basso. Su mobile la presentazione occupa almeno la prima schermata: numeri e sezioni seguono con lo scorrimento. Seguono i numeri 35+, 14 e 1 CEO affiancato (DABO); il contributo a Sprint Forward in Golden Boots fa parte della stessa voce del CEO. Poi Progetti (RAG in produzione e AI in locale come sperimentazione), Cosa faccio, Per chi, Il mio percorso e Collaboriamo. Riferimenti testuali a InfoCamere, DABO, IdeaGrip e Assicurazioni Generali, senza loghi. L’email, il pulsante copia, il Q&A (un solo comando apre tutte le domande e risposte), i social e le tre lingue restano funzionanti. Nessuna immagine o metrica inventata.
+- I titoli di sezione della home e il titolo Q&A sono in Bodoni Moda (40px), nel colore dell'accento. Il tratto a mano sotto i titoli è stato provato e tolto.
+- Invito a fine pagina: "Per parlare di un progetto" e un bottone "Scrivimi" (corallo nello scuro, vermiglio nel chiaro, angoli da 8px) che porta all'email nella sezione "Collaboriamo" della home. Un solo bottone per pagina.
+- Link nel testo: sempre testo del colore principale con sottolineatura sottile nel colore dell'accento; niente frecce. Le pagine RAG e AI in locale hanno un glossario ("Parole tecniche") prima dell'invito finale. Porta all'email nella sezione "Collaboriamo" della home. La finestra contatti non esiste più e il numero di telefono non è più sul sito; il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale." Porta all'email nella sezione "Collaboriamo" della home. Non esiste più la finestra contatti (e il numero di telefono non è più sul sito); il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale."
 - Risultati dei progetti (16 novembre 2026): ogni risultato dichiara come è stato misurato e quali dati non sono pubblicabili. RAG: feedback quantitativi interni, 5 mesi, costo evitato di un modello su misura (nessuna cifra pubblicata). AI in locale: circa 100 domande di prova, circa 80 risposte corrette, con fine-tuning e quantizzazione su Google Colab e uso in locale su portatile aziendale. Le cifre sono arrotondate come le ha fornite Nicolò.
 - Pagina Hobby: musica, audiofilia, fotografia, orologi, libri e animali, con i link ai profili personali; testi solo con ciò che l'autore ha detto, nessun anno o dato non fornito.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.

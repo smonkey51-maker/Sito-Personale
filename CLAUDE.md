@@ -19,12 +19,14 @@ tool di terze parti: basta leggere il codice):
   di una schermata e non su titoli, icone, puntini o bordi. Contrasto
   ≥4.5:1 per il corpo, ≥3:1 per il testo grande; il testo secondario
   non scende sotto questi valori. Superfici distinte da un passo di
-  tono, non da linee o ombre. Eccezione voluta da Nicolò: l'arancione
+  tono, non da linee o ombre. Eccezione voluta da Nicolò: l'accento
   colora anche i titoli di pagina e di sezione, la firma, i link della
-  hero e il segno d'ingresso su mobile. Eccezione voluta da Nicolò: il
-  tema chiaro, che segue in automatico il browser, è crema `#FDF5EA` con
-  arancione `#E85A0C`; l'arancione chiaro (3,3:1) vale solo per testo
-  grande e segni, mai per testo piccolo.
+  hero e il segno d'ingresso su mobile. Eccezione voluta da Nicolò: la
+  palette del 16 novembre 2026, scelta in automatico dal browser (tema
+  scuro e chiaro): Obsidian `#161616`, Soft Pearl `#F2F1ED`, Warm Sand
+  `#B38F6F` (accento nello scuro) e Crimson `#710014` (accento nel
+  chiaro); i pulsanti sono corallo `#FF5E36` nello scuro e vermiglio
+  `#D61C22` nel chiaro. Niente arancione e niente crema con terracotta.
 - **Tipografia**: niente Inter/Roboto/Geist su tutto senza un titolo
   con carattere distintivo; corpo testo leggibile ≥16px, nessun testo
   sotto i 13px. Massimo due famiglie e cinque dimensioni. Eccezione

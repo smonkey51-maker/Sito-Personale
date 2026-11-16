@@ -61,7 +61,7 @@ const manifest = JSON.parse(read('manifest.json'));
 for (const file of pages) {
   const themeColor = (read(file).match(/name="theme-color" content="([^"]+)"/) || [])[1];
   assert(themeColor === manifest.theme_color && themeColor === manifest.background_color, file + ': theme-color must match manifest colours');
-  assert(read(file).includes('content="#FDF5EA" media="(prefers-color-scheme: light)"'), file + ': light theme-color missing');
+  assert(read(file).includes('content="#F2F1ED" media="(prefers-color-scheme: light)"'), file + ': light theme-color missing');
 }
 for (const language of ['it', 'en']) assert(!dictionaries[language].includes('·'), language + ': no middle-dot joined strings');
 

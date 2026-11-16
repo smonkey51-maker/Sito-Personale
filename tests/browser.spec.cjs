@@ -79,9 +79,9 @@ for(const viewport of sizes){
   test('the theme follows the browser preference',async({page})=>{
    await page.emulateMedia({colorScheme:'dark'});
    await page.goto('/');
-   await expect(page.locator('body')).toHaveCSS('background-color','rgb(14, 14, 15)');
+   await expect(page.locator('body')).toHaveCSS('background-color','rgb(22, 22, 22)');
    await page.emulateMedia({colorScheme:'light'});
-   await expect(page.locator('body')).toHaveCSS('background-color','rgb(253, 245, 234)');
+   await expect(page.locator('body')).toHaveCSS('background-color','rgb(242, 241, 237)');
    await expect(page.locator('.theme-toggle')).toHaveCount(0);
   });
   test('portrait loading',async({page})=>{
