@@ -205,11 +205,13 @@ main.editorial-content{padding-bottom:0}
 /* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.cta-inline{display:inline;padding:10px 0;margin:-10px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px;cursor:pointer}
-.cta-inline:active{text-decoration-color:var(--accent-hover)}
-.cta-inline:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:2px}
-@media(hover:hover) and (pointer:fine){.cta-inline:hover{text-decoration-color:var(--accent-hover)}}
+.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:#0E0E0F;font-family:var(--sans);font-size:1.0625rem;font-weight:600;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
+.cta-button:active{transform:scale(.97)}
+.cta-button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media(hover:hover) and (pointer:fine){.cta-button:hover{background:var(--accent-hover)}}
+@media(prefers-reduced-motion:reduce){.cta-button{transition:background-color 120ms ease-out}.cta-button:active{transform:none}}
 .page-cta{margin-top:clamp(72px,9vw,120px)}
+.page-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
 .page-cta p{margin:0;max-width:30em;font-size:1.125rem;line-height:1.6;color:var(--ink)}
 
 /* Mobile: saluto su due righe; spazio sotto il testo per la barra fissa dei link. */
@@ -219,7 +221,7 @@ main.editorial-content{padding-bottom:0}
 @media(min-width:701px){.hero-name{font-size:min(7.7vw,4.5rem,8.5vh);line-height:1.12;max-width:none;margin-bottom:36px}.hero-inner{padding-top:clamp(56px,7vh,132px)}}
 /* "Ciao, sono" più piccolo del nome, sempre su due righe. */
 .hero-hi,.hero-fn{display:block}
-.hero-hi{font-size:.78em;line-height:1.25}
+.hero-hi{font-size:.9em;line-height:1.25}
 
 /* Progetti, Per chi, Contattami: stessa misura del testo (18px), distanza dal testo e tra le voci ampie; su mobile la barra le centra con poco spazio tra le voci. */
 

@@ -64,8 +64,9 @@
       </section>
       <section aria-labelledby="labHowTitle">
         <h2 class="lab-heading" id="labHowTitle" data-i18n="case_how_label">Come funziona</h2>
-        <p data-i18n="c2_solution">Ho scelto i modelli Qwen, Gemma e Llama su Hugging Face. Con dataset specifici preparati insieme al middle management li ho addestrati ulteriormente (fine-tuning con Unsloth) in un ambiente aziendale, poi li ho fatti girare in locale con Ollama.</p>
+        <p data-i18n="c2_solution">Ho scelto i modelli Qwen, Gemma e Llama su Hugging Face, di dimensioni diverse (alcuni sopra i 10 miliardi di parametri). Con dataset specifici preparati insieme al middle management li ho addestrati ulteriormente (fine-tuning con Unsloth) in un ambiente aziendale, poi li ho fatti girare in locale con Ollama.</p>
         <p data-i18n="local_how_privacy">Le richieste vengono elaborate in locale, senza inviare dati all’esterno.</p>
+        <p data-i18n="local_hw">I modelli giravano su un portatile aziendale, senza scheda grafica dedicata.</p>
       </section>
     </div>
     <section class="lab-section lab-schema">
@@ -83,12 +84,12 @@
             <p class="lab-caption"><span data-i18n="local_step3_title">Ollama e demo locali</span> <span class="lab-caption-desc" data-i18n="local_step3_desc">Inferenza e dimostrazioni in locale.</span></p>
           </li>
       </ol>
-      <p class="lab-note" data-i18n="local_how_note">Lo schema riassume le fasi della sperimentazione, senza riferimenti a configurazioni interne.</p>
+      <p class="lab-note" data-i18n="local_how_note">Le tre fasi: dati, modelli, esecuzione in locale. Nessun riferimento a configurazioni interne.</p>
     </section>
     <div class="lab-section lab-pair">
       <section aria-labelledby="labResultsTitle">
         <h2 class="lab-heading" id="labResultsTitle" data-i18n="case_results_label">Risultati e limiti</h2>
-        <p data-i18n="c2_summary">Nelle prove le risposte miglioravano rispetto ai modelli di partenza ed erano corrette nella maggior parte dei casi osservati. Restavano però informazioni inventate, meno frequenti nei modelli più performanti. Sono osservazioni, non una misura di accuratezza valida in generale. Era un test e per ora si è scelto di non portarlo avanti.</p>
+        <p data-i18n="c2_summary">Su qualche decina di domande di prova le risposte miglioravano rispetto ai modelli di partenza ed erano corrette nella maggior parte dei casi osservati. Restavano però informazioni inventate, meno frequenti nei modelli più performanti. Sono osservazioni su un campione piccolo, non una misura di accuratezza valida in generale. Era un test e per ora si è scelto di non portarlo avanti.</p>
       </section>
       <section aria-labelledby="labLearnTitle">
       <h2 class="lab-heading" id="labLearnTitle" data-i18n="case_learning_label">Cosa ho imparato</h2>
@@ -96,8 +97,21 @@
       </section>
     </div>
   </div>
+  <section class="glossary" aria-labelledby="glossaryTitle">
+    <h2 class="lab-heading" id="glossaryTitle" data-i18n="gl_title">Parole tecniche</h2>
+    <dl class="glossary-list">
+      <div><dt data-i18n="gl_open_t">Modello aperto</dt><dd data-i18n="gl_open_d">Modello AI i cui file si possono scaricare e far girare sul proprio computer, senza passare da un servizio esterno.</dd></div>
+      <div><dt data-i18n="gl_ft_t">Fine-tuning</dt><dd data-i18n="gl_ft_d">Ulteriore addestramento di un modello già pronto, su esempi specifici, per specializzarlo su un tema.</dd></div>
+      <div><dt data-i18n="gl_inf_t">Inferenza</dt><dd data-i18n="gl_inf_d">L’uso del modello per produrre una risposta, che è cosa diversa dall’addestrarlo.</dd></div>
+      <div><dt data-i18n="gl_par_t">Miliardi di parametri</dt><dd data-i18n="gl_par_d">Misura la dimensione di un modello: più parametri di solito significano più capacità, ma anche più memoria e tempo per rispondere.</dd></div>
+      <div><dt data-i18n="gl_hal_t">Informazioni inventate</dt><dd data-i18n="gl_hal_d">Risposte che suonano plausibili ma non corrispondono ai fatti o alle fonti. Si chiamano anche «allucinazioni».</dd></div>
+      <div><dt data-i18n="gl_loc_t">In locale</dt><dd data-i18n="gl_loc_d">Il modello gira su computer controllati dall’organizzazione, senza inviare dati a servizi esterni.</dd></div>
+      <div><dt data-i18n="gl_tools_t">Hugging Face, Ollama, Unsloth</dt><dd data-i18n="gl_tools_d">Strumenti: Hugging Face è il sito da cui si scaricano i modelli aperti, Ollama è il programma che li fa girare sul proprio computer, Unsloth serve a fare il fine-tuning più velocemente.</dd></div>
+    </dl>
+  </section>
   <section class="page-cta">
-    <p><span data-i18n="cta_before">Per parlare di un progetto, </span><a class="cta-inline" href="index.html#collabTitle" data-i18n="cta_link">contattami</a><span data-i18n="cta_after">.</span></p>
+    <p data-i18n="cta_title">Per parlare di un progetto</p>
+    <a class="cta-button" href="index.html#collabTitle" data-i18n="cta_button">Scrivimi</a>
   </section>
 </main>
 
