@@ -69,6 +69,7 @@
         <p data-i18n="c2_solution">Ho scelto su Hugging Face Llama 3.1 8B, Gemma 2B, Gemma 4 E2B e Gemma 4 31B, di dimensioni diverse (da 2 a 31 miliardi di parametri). Con dataset specifici preparati insieme a un top manager li ho addestrati ulteriormente (fine-tuning con Unsloth e LoRA) su Google Colab, con PC, account e dati aziendali, poi li ho fatti girare in locale con Ollama.</p>
         <p data-i18n="local_how_privacy">Le richieste vengono elaborate in locale, senza inviare dati all’esterno.</p>
         <p data-i18n="local_hw">I modelli giravano su un portatile aziendale, senza scheda grafica dedicata.</p>
+        <p data-i18n="local_colab">Il fine-tuning e la quantizzazione, con Unsloth, sono avvenuti su Google Colab: un servizio che presta in cloud RAM, GPU, TPU e vCPU, su hardware fisico di proprietà di Google e condiviso con altri utenti.</p>
       </section>
     </div>
     <section class="lab-section lab-schema">
@@ -91,7 +92,8 @@
     <div class="lab-section lab-pair">
       <section aria-labelledby="labResultsTitle">
         <h2 class="lab-heading" id="labResultsTitle" data-i18n="case_results_label">Risultati e limiti</h2>
-        <p data-i18n="c2_summary">Su qualche decina di domande di prova le risposte miglioravano rispetto ai modelli di partenza ed erano corrette nella maggior parte dei casi osservati. Restavano però informazioni inventate, meno frequenti nei modelli più performanti. Sono osservazioni su un campione piccolo, non una misura di accuratezza valida in generale. Era un test e per ora si è scelto di non portarlo avanti.</p>
+        <p data-i18n="c2_summary">Su circa 100 domande di prova, circa 80 risposte erano corrette e le risposte miglioravano rispetto ai modelli di partenza. Restavano però informazioni inventate, meno frequenti nei modelli più performanti. Sono osservazioni su un campione piccolo, non una misura di accuratezza valida in generale. Era un test e per ora si è scelto di non portarlo avanti.</p>
+        <p data-i18n="c2_unpub">Alcuni dati del test non sono pubblicabili e non compaiono qui.</p>
       </section>
       <section aria-labelledby="labLearnTitle">
       <h2 class="lab-heading" id="labLearnTitle" data-i18n="case_learning_label">Cosa ho imparato</h2>
@@ -108,7 +110,8 @@
       <div><dt data-i18n="gl_par_t">Miliardi di parametri</dt><dd data-i18n="gl_par_d">Misura la dimensione di un modello: più parametri di solito significano più capacità, ma anche più memoria e tempo per rispondere.</dd></div>
       <div><dt data-i18n="gl_hal_t">Informazioni inventate</dt><dd data-i18n="gl_hal_d">Risposte che suonano plausibili ma non corrispondono ai fatti o alle fonti. Si chiamano anche «allucinazioni».</dd></div>
       <div><dt data-i18n="gl_loc_t">In locale</dt><dd data-i18n="gl_loc_d">Il modello gira su computer controllati dall’organizzazione, senza inviare dati a servizi esterni.</dd></div>
-      <div><dt data-i18n="gl_tools_t">Hugging Face, Ollama, Unsloth</dt><dd data-i18n="gl_tools_d">Strumenti: Hugging Face è il sito da cui si scaricano i modelli aperti, Ollama è il programma che li fa girare sul proprio computer, Unsloth serve a fare il fine-tuning più velocemente.</dd></div>
+      <div><dt data-i18n="gl_tools_t">Hugging Face, Ollama, Unsloth, Google Colab</dt><dd data-i18n="gl_tools_d">Strumenti: Hugging Face è il sito da cui si scaricano i modelli aperti, Ollama è il programma che li fa girare sul proprio computer, Unsloth serve a fare il fine-tuning più velocemente, Google Colab è il servizio che presta in cloud la potenza di calcolo.</dd></div>
+      <div><dt data-i18n="gl_quant_t">Quantizzazione</dt><dd data-i18n="gl_quant_d">Ridurre la precisione dei numeri con cui un modello è scritto, così occupa meno memoria e gira su computer comuni, di solito con una lieve perdita di qualità.</dd></div>
     </dl>
   </section>
   <section class="page-cta">
