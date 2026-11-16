@@ -112,7 +112,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 
 
 /* Figma editorial layout: one reading column, persistent contents rail. */
-:root{--space-24:24px;--space-48:48px}
 .site-name{min-height:44px;align-items:center}
 .topbar-inner{max-width:1440px;padding:12px 64px}
 .editorial-content{min-width:0}

@@ -4,7 +4,7 @@ html{color-scheme:light dark;-webkit-print-color-adjust:exact;print-color-adjust
 :root{
  --sans:"Montserrat","Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
- --wide-w:1240px;--content-w:900px;
+ --wide-w:1240px;
 }
 body{font-size:1.03rem;line-height:1.6}
 h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:0}
