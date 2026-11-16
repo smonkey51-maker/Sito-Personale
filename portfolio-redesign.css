@@ -2,11 +2,12 @@
 html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Figma-inspired portfolio treatment — keeps existing content and functionality. */
 :root{
- --sans:"Roboto","Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
+ --sans:"Montserrat","Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
+ --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
  --wide-w:1240px;--content-w:900px;
 }
 body{font-size:1.03rem;line-height:1.6}
-h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
+h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:0}
 .topbar-inner{gap:32px}
 .site-name{font-family:var(--signature);font-weight:400;font-size:1.75rem}
 @media(max-width:820px){
@@ -205,7 +206,7 @@ main.editorial-content{padding-bottom:0}
 /* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:#0E0E0F;font-family:var(--sans);font-size:1.0625rem;font-weight:600;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
+.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:#0E0E0F;font-family:var(--sans);font-size:1.0625rem;font-weight:500;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
 .cta-button:active{transform:scale(.97)}
 .cta-button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(hover:hover) and (pointer:fine){.cta-button:hover{background:var(--accent-hover)}}
@@ -231,7 +232,7 @@ main.editorial-content{padding-bottom:0}
 .lang-list:has(.lang-btn[data-lang="zh"].on)::before{transform:translateX(200%)}
 .lang-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:0;font-weight:500;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
 .lang-btn::after{content:attr(data-code);font-size:1rem}
-.lang-btn.on{color:var(--ink);font-weight:700}
+.lang-btn.on{color:var(--ink);font-weight:500}
 .lang-btn:active{color:var(--ink)}
 .lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:-2px;border-radius:8px}
 @media(hover:hover) and (pointer:fine){.lang-btn:hover{color:var(--ink)}}
