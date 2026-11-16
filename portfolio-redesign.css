@@ -129,7 +129,7 @@ h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:0}
 
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
-:root[data-theme="dark"]{--bg:#0E0E0F;--bg-2:#0E0E0F;--line:#262628;--surface:#18181A;--surface-2:#2A2A2D}
+:root[data-theme="dark"]{--bg:#0E0E0F;--bg-2:#0E0E0F;--line:#262628}
 :root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon{background:var(--bg)}
 :root[data-theme="dark"] .footer-note{border-color:var(--line)}
 
@@ -226,18 +226,14 @@ main.editorial-content{padding-bottom:0}
 
 /* Lingua: la sigla della lingua attiva con una freccia che invita a cambiarla; l'elenco sotto mostra le altre. */
 .lang-menu{position:relative}
-.lang-list{position:relative;display:grid;grid-template-columns:repeat(3,48px);border-radius:12px;background:var(--surface)}
-.lang-list::before{content:"";position:absolute;inset:4px auto 4px 4px;width:calc((100% - 8px)/3);border-radius:8px;background:var(--surface-2);transform:translateX(0);transition:transform 160ms ease-out}
-.lang-list:has(.lang-btn[data-lang="en"].on)::before{transform:translateX(100%)}
-.lang-list:has(.lang-btn[data-lang="zh"].on)::before{transform:translateX(200%)}
-.lang-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:0;font-weight:500;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
-.lang-btn::after{content:attr(data-code);font-size:1rem}
+.lang-list{display:flex;gap:2px}
+.lang-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 10px;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:1.0625rem;font-weight:400;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
 .lang-btn.on{color:var(--ink);font-weight:500}
 .lang-btn:active{color:var(--ink)}
-.lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:-2px;border-radius:8px}
+.lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 @media(hover:hover) and (pointer:fine){.lang-btn:hover{color:var(--ink)}}
-@supports not selector(:has(*)){.lang-btn.on{background:var(--surface-2);border-radius:8px}}
-@media(prefers-reduced-motion:reduce){.lang-list::before,.lang-btn{transition:none}}
+@media(max-width:900px){.lang-btn{padding:0 8px;font-size:0}.lang-btn::after{content:attr(data-code);font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.lang-btn{transition:none}}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
 @media(min-width:1200px){body .footer-note{font-size:1.0625rem}}

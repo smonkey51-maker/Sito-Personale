@@ -58,8 +58,6 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 |---|---|---|
 | `--bg` | `#0E0E0F` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto (provato Abyss Black `#101820` il 16 novembre 2026 e ripristinato il nero) |
 | `--bg-2` | `#0E0E0F` | Superficie secondaria (uguale allo sfondo) |
-| `--surface` | `#18181A` | Fondo del selettore lingue |
-| `--surface-2` | `#2A2A2D` | Lingua attiva nel selettore |
 | `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
 | `--ink-soft` | `#D2CED6` | Testo secondario |
 | `--line` | `#262628` | Separazioni |
@@ -79,7 +77,7 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 - Link nel testo: sempre testo chiaro con sottolineatura arancione sottile; niente frecce. Le pagine RAG e AI in locale hanno un glossario ("Parole tecniche") prima dell'invito finale. Porta all'email nella sezione "Collaboriamo" della home. La finestra contatti non esiste più e il numero di telefono non è più sul sito; il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale." Porta all'email nella sezione "Collaboriamo" della home. Non esiste più la finestra contatti (e il numero di telefono non è più sul sito); il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale."
 - Pagina Hobby: musica, audiofilia, fotografia, orologi, libri e animali, con i link ai profili personali; testi solo con ciò che l'autore ha detto, nessun anno o dato non fornito.
 - Prima i casi studio RAG e Local AI, poi bio e percorso.
-- Navigazione unica, senza indici duplicati: le lingue sono un toggle a tre posizioni in barra (IT, EN, 中文, con indicatore che scorre) e non ci sono menu a tendina né tre lineette; la ricerca nel sito è stata tolta.
+- Navigazione unica, senza indici duplicati: le lingue stanno affiancate in barra e non ci sono menu a tendina né tre lineette; la ricerca nel sito è stata tolta.
 - I dettagli espandibili devono funzionare anche da tastiera.
 - Layout fluido per desktop e mobile, con rispetto per `prefers-reduced-motion`.
 - Non inventare metriche, impatti o caratteristiche tecniche.
