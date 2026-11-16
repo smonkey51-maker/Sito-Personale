@@ -80,7 +80,7 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 | `--accent-hover` | `#C94A06` | Arancione al passaggio e alla pressione |
 | `--on-accent` | `#0E0E0F` | Testo sul bottone arancione (in entrambi i temi) |
 
-Anche il diagramma RAG ha una palette crema (`figure.css`) e il profilo di Padova in fondo alle pagine interne ha una versione a tratto scuro (`padova-skyline-light.webp`). La pagina admin resta scura.
+Anche il diagramma RAG ha una palette crema (`figure.css`) e il profilo di Padova in fondo alle pagine interne ha una versione a tratto scuro (`padova-skyline-light.webp`). La pagina admin resta scura. Nel tema chiaro il ritratto in home è a colori (`photo-color.webp`, scontornato, servito con `<picture>` e `prefers-color-scheme`); nel tema scuro resta in bianco e nero (`photo.webp`).
 
 ### Tipografia e comportamento
 
