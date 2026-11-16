@@ -8,7 +8,7 @@
 <meta name="supported-color-schemes" content="dark">
 <meta name="darkreader-lock">
 <title>Sperimentazione AI in locale | Nicolò Forcolin</title>
-<meta name="description" content="Un test su modelli AI aperti (Qwen, Gemma, Llama), addestrati su domande specifiche e usati in locale con Ollama, senza inviare dati all’esterno.">
+<meta name="description" content="Un test su modelli AI aperti (Llama, Gemma), addestrati su domande specifiche e usati in locale con Ollama, senza inviare dati all’esterno.">
 <link rel="canonical" href="https://nforcolin.eu/ai-in-locale.html">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -22,13 +22,13 @@
 <meta property="og:site_name" content="Nicolò Forcolin">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Sperimentazione AI in locale | Nicolò Forcolin">
-<meta property="og:description" content="Un test su modelli AI aperti (Qwen, Gemma, Llama), addestrati su domande specifiche e usati in locale con Ollama, senza inviare dati all’esterno.">
+<meta property="og:description" content="Un test su modelli AI aperti (Llama, Gemma), addestrati su domande specifiche e usati in locale con Ollama, senza inviare dati all’esterno.">
 <meta property="og:image" content="https://nforcolin.eu/og-ai-in-locale.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sperimentazione AI in locale | Nicolò Forcolin">
-<meta name="twitter:description" content="Un test su modelli AI aperti (Qwen, Gemma, Llama), addestrati su domande specifiche e usati in locale con Ollama, senza inviare dati all’esterno.">
+<meta name="twitter:description" content="Un test su modelli AI aperti (Llama, Gemma), addestrati su domande specifiche e usati in locale con Ollama, senza inviare dati all’esterno.">
 <meta name="twitter:image" content="https://nforcolin.eu/og-ai-in-locale.jpg">
 
 
@@ -64,7 +64,7 @@
       </section>
       <section aria-labelledby="labHowTitle">
         <h2 class="lab-heading" id="labHowTitle" data-i18n="case_how_label">Come funziona</h2>
-        <p data-i18n="c2_solution">Ho scelto i modelli Qwen, Gemma e Llama su Hugging Face, di dimensioni diverse (alcuni sopra i 10 miliardi di parametri). Con dataset specifici preparati insieme al middle management li ho addestrati ulteriormente (fine-tuning con Unsloth) in un ambiente aziendale, poi li ho fatti girare in locale con Ollama.</p>
+        <p data-i18n="c2_solution">Ho scelto su Hugging Face Llama 3.1 8B, Gemma 2B, Gemma 4 E2B e Gemma 4 31B, di dimensioni diverse (da 2 a 31 miliardi di parametri). Con dataset specifici preparati insieme al middle management li ho addestrati ulteriormente (fine-tuning con Unsloth e LoRA) su Google Colab, con PC, account e dati aziendali, poi li ho fatti girare in locale con Ollama.</p>
         <p data-i18n="local_how_privacy">Le richieste vengono elaborate in locale, senza inviare dati all’esterno.</p>
         <p data-i18n="local_hw">I modelli giravano su un portatile aziendale, senza scheda grafica dedicata.</p>
       </section>
@@ -77,7 +77,7 @@
           </li>
           <li class="lab-stage">
             <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" focusable="false"><rect class="o" x="40" y="6" width="40" height="88" rx="2"/><path class="s" d="M50 22h20M50 32h20M50 52h20M50 62h20M50 72h14"/><path class="h" d="M50 42h20"/></svg>
-            <p class="lab-caption"><span data-i18n="local_step2_title">Qwen, Gemma e Llama</span> <span class="lab-caption-desc" data-i18n="local_step2_desc">Fine-tuning con Unsloth in un ambiente aziendale.</span></p>
+            <p class="lab-caption"><span data-i18n="local_step2_title">Llama e Gemma</span> <span class="lab-caption-desc" data-i18n="local_step2_desc">Fine-tuning con Unsloth su Google Colab, con PC, account e dati aziendali.</span></p>
           </li>
           <li class="lab-stage">
             <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" focusable="false"><rect class="o" x="22" y="14" width="76" height="52" rx="2"/><path d="M12 76h96l-6 8H18z"/><path class="s" d="M34 30h40M34 50h28"/><path class="h" d="M34 40h52"/></svg>
