@@ -31,7 +31,7 @@ for(const viewport of sizes){
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
-   await expect(page.locator('h1')).toHaveText('RAG');
+   await expect(page.locator('h1')).toHaveText('RAG aziendale');
   });
   test('language switching keeps per-page titles',async({page})=>{
    await page.goto('/ai-in-locale.html');
@@ -74,7 +74,7 @@ for(const viewport of sizes){
    await page.goto('/ai-in-locale.html');
    await expect(page.locator('.lab-flow .lab-stage')).toHaveCount(3);
    for(const key of ['c2_solution','c2_problem','c2_summary','c2_learning']) await expect(page.locator('[data-i18n="'+key+'"]')).toBeVisible();
-   await expect(page.locator('.lab-heading')).toHaveCount(4);
+   await expect(page.locator('.lab-heading')).toHaveCount(5);
   });
   test('dark theme and portrait loading',async({page})=>{
    await page.goto('/');
@@ -84,28 +84,25 @@ for(const viewport of sizes){
    await expect(image).toHaveJSProperty('complete',true);
    expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
   });
-  test('the invitation to get in touch is one sentence with a link to the email on the home',async({page})=>{
+  test('the closing invitation is a visible button that leads to the email on the home',async({page})=>{
    await page.goto('/progetti.html');
-   await expect(page.locator('.page-cta p')).toHaveText('Per parlare di un progetto, contattami.');
-   await expect(page.locator('.page-cta .cta-inline')).toHaveText('contattami');
-   await expect(page.locator('.page-cta .cta-primary')).toHaveCount(0);
-   await page.locator('.page-cta .cta-inline').click();
+   await expect(page.locator('.page-cta p')).toHaveText('Per parlare di un progetto');
+   await expect(page.locator('.page-cta .cta-button')).toHaveText('Scrivimi');
+   await page.locator('.page-cta .cta-button').click();
    await expect(page).toHaveURL(/index\.html#collabTitle|\/#collabTitle/);
    await expect(page.locator('#homeEmail a')).toHaveText('nic.forcolin@gmail.com');
    await expect(page.locator('#homeEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
   });
-  test('in Per chi the last invitation is a plain Contattami link next to the other two',async({page})=>{
-   await page.goto('/progetti.html#per-chi');
-   await expect(page.locator('.page-cta .cta-inline')).toHaveText('contattami');
-   await expect(page.locator('.page-cta [data-i18n="cta_before"]')).toBeHidden();
-   await expect(page.locator('.page-cta .cta-inline')).toBeVisible();
-  });
-  test('there is no contact dialog and no phone number on any page',async({page})=>{
-   for(const u of pages){
+  test('the technical pages have a glossary and the career page keeps roles out of an ordered list',async({page})=>{
+   for(const u of ['/rag-aziendale.html','/ai-in-locale.html']){
     await page.goto(u);
-    await expect(page.locator('#contactDialog')).toHaveCount(0);
-    await expect(page.locator('body')).not.toContainText('347 908');
+    await expect(page.locator('.glossary dt').first()).toBeVisible();
+    await expect(page.locator('.glossary dd').first()).toBeVisible();
    }
+   await page.goto('/percorso.html');
+   await expect(page.locator('ol')).toHaveCount(0);
+   await expect(page.locator('.career article')).toHaveCount(5);
+   await expect(page.locator('.career .page-block-label').first()).toHaveText('2026 – oggi');
   });
   test('home exposes the two projects without redundant hero links',async({page})=>{
    await page.goto('/');
