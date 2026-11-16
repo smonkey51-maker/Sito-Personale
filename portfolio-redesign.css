@@ -2,7 +2,7 @@
 html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Figma-inspired portfolio treatment — keeps existing content and functionality. */
 :root{
- --sans:"Roboto","Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
+ --sans:"Orange Avenue","Roboto","Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
  --wide-w:1240px;--content-w:900px;
 }
 body{font-size:1.03rem;line-height:1.6}
