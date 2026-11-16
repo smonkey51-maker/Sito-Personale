@@ -7,7 +7,6 @@
    niente connessioni a Google Fonts prima di mostrare i testi. */
 @font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-latin-wght.woff2") format("woff2")}
 @font-face{font-family:"Destiny Signature";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/destiny-signature-latin.woff2") format("woff2")}
-@font-face{font-family:"Orange Avenue";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/orange-avenue.otf") format("opentype")}
 
 :root{
   color-scheme:light;
