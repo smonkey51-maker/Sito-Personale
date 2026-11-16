@@ -151,7 +151,7 @@ window.NF_I18N.zh = {
   collab_title:"一起合作",
   collab_ask:"把你的行业和问题发给我。",
   collab_reply:"我回复真人，讲求常识与实际。",
-  faq_title:"快速解答",
+  faq_title:"问答",
   collab_mail:"邮件",
   faq1_q:"Nicolò Forcolin 是谁？",
   faq1_a:"前 Generali 员工，自 2022 年起为公共管理部门从事 IT。发烧级音响爱好者，热爱艺术，也钟爱美观又实用的事物。",
