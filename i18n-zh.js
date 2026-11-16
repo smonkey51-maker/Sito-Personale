@@ -193,7 +193,7 @@ window.NF_I18N.zh = {
   privacy_s1_pre: "Nicolò Forcolin，意大利帕多瓦。如对本声明有任何疑问，可以在以下平台联系我：",
   privacy_s1_post: "。",
   privacy_s2_h: "汇总统计",
-  privacy_s2_p: "本网站统计页面浏览量，并估算每天的独立访客数。估算使用每天更换的假名标识符，该标识符由 IP 地址和用户代理生成，这两项信息本身不会被保存。网站还会以汇总形式记录你来自哪个网站（例如 LinkedIn），只使用来源网站的名称或链接中的 utm_source 参数，绝不记录完整地址。网站不使用追踪 Cookie，也不会跨天追踪访客，因此浏览器发出的“请勿跟踪”或 Global Privacy Control 信号不会改变任何结果。管理员登录使用必要的身份验证 Cookie。汇总数据存放在 Upstash Redis 上。",
+  privacy_s2_p: "本网站统计页面浏览量，并估算每天的独立访客数。估算使用每天更换的假名标识符，该标识符由 IP 地址和用户代理生成，本网站不会保存这两项信息（Vercel 记录的服务器技术日志见下文）。网站还会以汇总形式记录你来自哪个网站（例如 LinkedIn），只使用来源网站的名称或链接中的 utm_source 参数，绝不记录完整地址。网站不使用追踪 Cookie，也不会跨天追踪访客，因此浏览器发出的“请勿跟踪”或 Global Privacy Control 信号不会改变任何结果。管理员登录使用必要的身份验证 Cookie。汇总数据存放在 Upstash Redis 上。",
   privacy_s3_h: "服务器技术日志",
   privacy_s3_pre: "本网站托管在 ",
   privacy_s3_post: "，出于安全和网络运行的目的，它会自动记录每个 HTTP 请求的标准技术日志（例如 IP 地址、用户代理、请求的页面、日期和时间）。这些日志由 Vercel 按其自身的隐私政策直接管理，本网站不会将其用于用户画像。",
@@ -259,5 +259,5 @@ window.NF_I18N.zh = {
   c1_lead: "一个根据公司文档作答并注明来源的 AI 助手，让运营问题的处理和中层管理人员的分析都更快。",
   project_read: "阅读项目",
   page_title_privacy: "隐私声明 | Nicolò Forcolin",
-  page_description_privacy: "Nicolò Forcolin 个人网站的隐私声明：没有 Cookie，没有追踪，不通过表单收集数据。"
+  page_description_privacy: "Nicolò Forcolin 个人网站的隐私声明：没有追踪类 Cookie，不通过表单收集数据。"
 };
