@@ -31,7 +31,7 @@ for (const file of pages) {
   assert(!html.includes('data-lang="fr"'), file + ': French selector must be removed');
   for (const code of ['it', 'en', 'zh']) assert(html.includes('data-lang="' + code + '"'), file + ': language button ' + code + ' missing');
   assert(html.includes('href="pages.css"'), file + ': pages.css missing');
-  assert(html.includes('name="color-scheme" content="dark"') && html.includes('name="darkreader-lock"'), file + ': dark colour scheme must be declared so browsers do not recolour the site');
+  assert(html.includes('name="color-scheme" content="light dark"') && html.includes('name="darkreader-lock"'), file + ': colour schemes must be declared so browsers do not recolour the site');
   assert(html.includes('<script src="script.js"></script>'), file + ': script.js missing');
   assert(!/fonts\.googleapis|fonts\.gstatic/.test(html), file + ': fonts must be served from the site, not Google Fonts');
   assert(!/\b(Jira|UCMDB|Confluence|wiki)\b/i.test(html), file + ': internal source tools must not be named');
@@ -61,6 +61,7 @@ const manifest = JSON.parse(read('manifest.json'));
 for (const file of pages) {
   const themeColor = (read(file).match(/name="theme-color" content="([^"]+)"/) || [])[1];
   assert(themeColor === manifest.theme_color && themeColor === manifest.background_color, file + ': theme-color must match manifest colours');
+  assert(read(file).includes('content="#FDF5EA" media="(prefers-color-scheme: light)"'), file + ': light theme-color missing');
 }
 for (const language of ['it', 'en']) assert(!dictionaries[language].includes('·'), language + ': no middle-dot joined strings');
 
@@ -71,6 +72,7 @@ for (const language of ['it', 'en']) assert(dictionaries[language].includes('her
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 assert(!home.includes('hero-cta-row'), 'The redundant hero links were removed');
 assert(home.includes('src="photo.webp?v=43"'), 'New portrait must be displayed');
+assert(home.includes('media="(prefers-color-scheme: light)" srcset="photo-color.webp'), 'Light theme must show the colour portrait');
 assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by pages');
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');

@@ -607,8 +607,7 @@
     if(homeMailLink) homeMailLink.setAttribute("href", "mailto:" + em);
   })();
 
-  /* One permanent visual theme; disregard preferences saved by older releases. */
-  document.documentElement.setAttribute("data-theme", "dark");
+  /* Il tema segue le preferenze del browser (CSS); si ignorano quelle salvate da versioni precedenti. */
   try { localStorage.removeItem("nfTheme"); } catch(e) {}
 
   var root = document.documentElement;
