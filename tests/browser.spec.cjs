@@ -133,9 +133,9 @@ for(const viewport of sizes){
    await page.locator('.home-collab-faq > summary').click();
    await expect(page.locator('.faq-list')).toBeHidden();
   });
-  test('home hero uses the approved greeting and keeps the real introduction',async({page})=>{
+  test('home hero shows only the name and keeps the real introduction',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('#hero-name')).toHaveText('Ciao, sono Nicolò Forcolin');
+   await expect(page.locator('#hero-name')).toHaveText('Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
    await expect(page.locator('#heroIntro')).toContainText('Ho il vizio di complicarmi la vita per semplificarla agli altri.');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');

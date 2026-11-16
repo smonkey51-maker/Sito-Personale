@@ -128,7 +128,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
-:root[data-theme="dark"]{--bg:#0E0E0F;--bg-2:#0E0E0F;--line:#262628}
+:root[data-theme="dark"]{--bg:#101820;--bg-2:#101820;--line:#232E3A;--surface:#1A2530;--surface-2:#2A3846}
 :root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon{background:var(--bg)}
 :root[data-theme="dark"] .footer-note{border-color:var(--line)}
 
@@ -205,7 +205,7 @@ main.editorial-content{padding-bottom:0}
 /* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:#0E0E0F;font-family:var(--sans);font-size:1.0625rem;font-weight:600;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
+.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:#101820;font-family:var(--sans);font-size:1.0625rem;font-weight:600;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
 .cta-button:active{transform:scale(.97)}
 .cta-button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(hover:hover) and (pointer:fine){.cta-button:hover{background:var(--accent-hover)}}
@@ -219,23 +219,24 @@ main.editorial-content{padding-bottom:0}
 
 /* Schermi medi e grandi: saluto grande su due righe (nome sotto "Ciao, sono"); meno spazio sopra, perché Contattami resti raggiungibile. */
 @media(min-width:701px){.hero-name{font-size:min(7.7vw,4.5rem,8.5vh);line-height:1.12;max-width:none;margin-bottom:36px}.hero-inner{padding-top:clamp(56px,7vh,132px)}}
-/* "Ciao, sono" più piccolo del nome, sempre su due righe. */
-.hero-hi,.hero-fn{display:block}
-.hero-hi{font-size:.9em;line-height:1.25}
 
 /* Progetti, Per chi, Contattami: stessa misura del testo (18px), distanza dal testo e tra le voci ampie; su mobile la barra le centra con poco spazio tra le voci. */
 
 
 /* Lingua: la sigla della lingua attiva con una freccia che invita a cambiarla; l'elenco sotto mostra le altre. */
 .lang-menu{position:relative}
-.lang-list{display:flex;gap:2px}
-.lang-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 10px;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:1.0625rem;font-weight:500;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
+.lang-list{position:relative;display:grid;grid-template-columns:repeat(3,48px);border-radius:12px;background:var(--surface)}
+.lang-list::before{content:"";position:absolute;inset:4px auto 4px 4px;width:calc((100% - 8px)/3);border-radius:8px;background:var(--surface-2);transform:translateX(0);transition:transform 160ms ease-out}
+.lang-list:has(.lang-btn[data-lang="en"].on)::before{transform:translateX(100%)}
+.lang-list:has(.lang-btn[data-lang="zh"].on)::before{transform:translateX(200%)}
+.lang-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:0;font-weight:500;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
+.lang-btn::after{content:attr(data-code);font-size:1rem}
 .lang-btn.on{color:var(--ink);font-weight:700}
 .lang-btn:active{color:var(--ink)}
-.lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:-2px;border-radius:8px}
 @media(hover:hover) and (pointer:fine){.lang-btn:hover{color:var(--ink)}}
-@media(max-width:900px){.lang-btn{padding:0 8px;font-size:0}.lang-btn::after{content:attr(data-code);font-size:1rem}}
-@media(prefers-reduced-motion:reduce){.lang-btn{transition:none}}
+@supports not selector(:has(*)){.lang-btn.on{background:var(--surface-2);border-radius:8px}}
+@media(prefers-reduced-motion:reduce){.lang-list::before,.lang-btn{transition:none}}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
 @media(min-width:1200px){body .footer-note{font-size:1.0625rem}}

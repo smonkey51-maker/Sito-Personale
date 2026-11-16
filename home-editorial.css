@@ -12,10 +12,8 @@ body[data-page="home"] .site-name{font-size:2rem}
 /* Hero: saluto originale nel carattere della firma; foto originale. */
 .hero{padding:0;background:transparent}
 .hero-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:16px;min-height:0;padding-block:48px 0}
-.hero-overlay{width:auto;max-width:none;padding-block:0 40px}
+.hero-overlay{width:auto;max-width:none;padding-block:0 40px;display:flex;flex-direction:column;justify-content:center;align-self:center}
 .hero-name{font-family:var(--signature);font-size:clamp(3.25rem,6vw,5rem);font-weight:400;letter-spacing:normal;line-height:1.12;max-width:none;margin:0 0 28px;color:var(--accent);text-wrap:balance}
-.hero-hi{display:block;font-size:.9em;line-height:1.25}
-.hero-fn{display:block;color:inherit}
 .hero-intro{font-size:1.125rem;line-height:1.55;max-width:44ch;margin:0}
 .hero-intro p{font-size:1.375rem;line-height:1.45;margin:0 0 8px;color:var(--ink)}
 .hero-intro p:last-child{margin:0}
@@ -83,8 +81,8 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  body[data-page="home"] .site-name{font-size:1.75rem}
  .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(200px,1fr) auto auto;align-content:stretch;gap:0;padding-block:4px 20px;min-height:calc(100svh - 68px)}
  .hero-overlay{display:contents}
- .hero-name{grid-row:2;font-size:clamp(2.5rem,10.6vw,4rem);margin:0 0 24px}
- .hero-intro{grid-row:3;max-width:38ch}
+ .hero-name{grid-row:2;font-size:clamp(2.5rem,10.6vw,4rem);margin:0 0 24px;text-align:center}
+ .hero-intro{grid-row:3;max-width:38ch;margin-inline:auto;text-align:center}
  .hero-intro p{font-size:1.125rem;line-height:1.5;margin-bottom:6px}
  .hero-intro p:last-child{margin-bottom:0}
  .hero-photo-frame{grid-row:1;align-self:stretch;width:100%;height:auto;min-height:0;max-height:none;margin:0 0 16px;overflow:hidden;position:relative;order:0}

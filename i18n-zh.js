@@ -136,7 +136,6 @@ window.NF_I18N.zh = {
   enablement_label: "培训与推广",
   enablement_title: "分享实践经验",
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
-  hero_hi: "你好，我是",
   hero_intro: [
     [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
     [{ t: "我习惯让自己的生活复杂一点，好让别人的生活更简单。" }]
