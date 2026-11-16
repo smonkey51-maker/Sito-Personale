@@ -76,10 +76,16 @@ for(const viewport of sizes){
    for(const key of ['c2_solution','c2_problem','c2_summary','c2_learning']) await expect(page.locator('[data-i18n="'+key+'"]')).toBeVisible();
    await expect(page.locator('.lab-heading')).toHaveCount(5);
   });
-  test('dark theme and portrait loading',async({page})=>{
+  test('the theme follows the browser preference',async({page})=>{
+   await page.emulateMedia({colorScheme:'dark'});
    await page.goto('/');
-   await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
+   await expect(page.locator('body')).toHaveCSS('background-color','rgb(14, 14, 15)');
+   await page.emulateMedia({colorScheme:'light'});
+   await expect(page.locator('body')).toHaveCSS('background-color','rgb(253, 245, 234)');
    await expect(page.locator('.theme-toggle')).toHaveCount(0);
+  });
+  test('portrait loading',async({page})=>{
+   await page.goto('/');
    const image=page.locator('#avatarPhoto');
    await expect(image).toHaveJSProperty('complete',true);
    expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);

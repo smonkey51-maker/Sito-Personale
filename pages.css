@@ -198,6 +198,7 @@
 /* Padova skyline above the footer of inner pages, where the footer names the
    city. Lighten drops the drawing's near-black background into the page's. */
 .inner .colophon::before { content: ""; display: block; width: min(100%, 1100px); margin: 0 auto; aspect-ratio: 1482 / 355; background: url("padova-skyline.webp") center bottom / contain no-repeat; mix-blend-mode: lighten; opacity: .75; }
+@media(prefers-color-scheme:light){ .inner .colophon::before { background-image: url("padova-skyline-light.webp"); mix-blend-mode: normal; opacity: .9; } }
 .footer-note { font-size: 1rem; }
 
 /* Griglia a due colonne (solo desktop): il primo blocco e un eventuale ultimo blocco solitario occupano

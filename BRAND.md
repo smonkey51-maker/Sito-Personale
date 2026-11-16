@@ -52,7 +52,9 @@ Palette valutata e scartata: sfondo "Gunmetal Night" (`#161A1F`), testi "Fog Sil
 
 ### Palette
 
-Un solo tema, scuro: il sito non cambia colori in base alle preferenze del sistema.
+Due temi, scelti in automatico dalle preferenze del browser (`prefers-color-scheme`), senza interruttore. Quello scuro è la base; quello chiaro (richiesto da Nicolò il 16 novembre 2026) usa i colori della copertina LinkedIn crema.
+
+**Tema scuro**
 
 | Token | Valore | Uso |
 |---|---|---|
@@ -65,6 +67,20 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 | `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
 
 Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio , con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0E0E0F` anche come `theme-color` delle pagine e nel manifest dell'app.
+
+**Tema chiaro**
+
+| Token | Valore | Uso |
+|---|---|---|
+| `--bg`, `--bg-2` | `#FDF5EA` | Sfondo di tutte le pagine, crema; `theme-color` del browser |
+| `--ink` | `#1B2330` | Testo principale, blu scuro (contrasto 14,6:1) |
+| `--ink-soft` | `#4A5260` | Testo secondario (7,3:1) |
+| `--line` | `#E4D8C6` | Separazioni |
+| `--accent` | `#E85A0C` | Arancione per titoli, firma e sottolineature (3,3:1: solo testo grande e segni, mai testo piccolo) |
+| `--accent-hover` | `#C94A06` | Arancione al passaggio e alla pressione |
+| `--on-accent` | `#0E0E0F` | Testo sul bottone arancione (in entrambi i temi) |
+
+Anche il diagramma RAG ha una palette crema (`figure.css`) e il profilo di Padova in fondo alle pagine interne ha una versione a tratto scuro (`padova-skyline-light.webp`). La pagina admin resta scura.
 
 ### Tipografia e comportamento
 
