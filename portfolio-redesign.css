@@ -128,7 +128,7 @@ h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.015em}
 
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
-:root[data-theme="dark"]{--bg:#101820;--bg-2:#101820;--line:#232E3A;--surface:#1A2530;--surface-2:#2A3846}
+:root[data-theme="dark"]{--bg:#0E0E0F;--bg-2:#0E0E0F;--line:#262628;--surface:#18181A;--surface-2:#2A2A2D}
 :root[data-theme="dark"] body,:root[data-theme="dark"] .hero,:root[data-theme="dark"] .colophon{background:var(--bg)}
 :root[data-theme="dark"] .footer-note{border-color:var(--line)}
 
@@ -205,7 +205,7 @@ main.editorial-content{padding-bottom:0}
 /* Con cinque voci la barra non sta su una riga sotto i 1100px: resta il menu a tendina. */
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:#101820;font-family:var(--sans);font-size:1.0625rem;font-weight:600;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
+.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:#0E0E0F;font-family:var(--sans);font-size:1.0625rem;font-weight:600;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
 .cta-button:active{transform:scale(.97)}
 .cta-button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(hover:hover) and (pointer:fine){.cta-button:hover{background:var(--accent-hover)}}

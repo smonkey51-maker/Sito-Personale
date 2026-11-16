@@ -56,24 +56,24 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 
 | Token | Valore | Uso |
 |---|---|---|
-| `--bg` | `#101820` | Sfondo di tutte le pagine (Abyss Black, scelto il 16 novembre 2026 per distinguersi da altri siti con lo stesso nero), barra in alto, fondo del ritratto |
-| `--bg-2` | `#101820` | Superficie secondaria (uguale allo sfondo) |
-| `--surface` | `#1A2530` | Fondo del selettore lingue |
-| `--surface-2` | `#2A3846` | Lingua attiva nel selettore |
+| `--bg` | `#0E0E0F` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto (provato Abyss Black `#101820` il 16 novembre 2026 e ripristinato il nero) |
+| `--bg-2` | `#0E0E0F` | Superficie secondaria (uguale allo sfondo) |
+| `--surface` | `#18181A` | Fondo del selettore lingue |
+| `--surface-2` | `#2A2A2D` | Lingua attiva nel selettore |
 | `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
 | `--ink-soft` | `#D2CED6` | Testo secondario |
-| `--line` | `#232E3A` | Separazioni |
+| `--line` | `#262628` | Separazioni |
 | `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati |
 | `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
 
-Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio , con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#101820` anche come `theme-color` delle pagine e nel manifest dell'app.
+Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio , con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0E0E0F` anche come `theme-color` delle pagine e nel manifest dell'app.
 
 ### Tipografia e comportamento
 
 - Due famiglie: Roboto (fonts/roboto-latin-wght.woff2, con fallback di sistema) per tutto il sito, titoli compresi (pesi 600 e 700), e Destiny Signature solo per la firma e il saluto in home. Scelta voluta da Nicolò dopo aver provato Inter e Bodoni Moda (poco leggibili).
 - Cinque dimensioni: 16px (menu, etichette, date, note), 18px (testo), 22px (titoli delle voci), 24px (sottotitolo di pagina), 40px (titoli di sezione); il titolo di pagina scala fino a 76px.
-- Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco). Il nome in home usa la firma originale, in Destiny Signature e arancione, senza saluto.
-- Home (mockup approvato il 14 novembre 2026): pagina continua nella colonna editoriale. Hero compatta con il solo nome "Nicolò Forcolin" nel carattere della firma, arancione, centrato in verticale rispetto al ritratto (su mobile testo centrato), senza saluto, introduzione esistente e ritratto originale a colori. Su desktop la foto sta a destra, su mobile la presentazione parte subito, con il ritratto in giacca e dolcevita (photo.webp, lo stesso su tutti gli schermi) sopra il saluto, e la barra in alto resta sempre visibile. I tre link sotto la presentazione sono rimossi: le pagine restano accessibili dalle sezioni, i contatti da Collaboriamo. Niente barra fissa in basso. Su mobile la presentazione occupa almeno la prima schermata: numeri e sezioni seguono con lo scorrimento. Seguono i numeri 35+, 14 e 1 CEO affiancato (DABO); il contributo a Sprint Forward in Golden Boots fa parte della stessa voce del CEO. Poi Progetti (RAG in produzione e AI in locale come sperimentazione), Cosa faccio, Per chi, Il mio percorso e Collaboriamo. Riferimenti testuali a InfoCamere, DABO, IdeaGrip e Assicurazioni Generali, senza loghi. L’email, il pulsante copia, il Q&A (un solo comando apre tutte le domande e risposte), i social e le tre lingue restano funzionanti. Nessuna immagine o metrica inventata.
+- Destiny Signature (licenza demo, uso non commerciale) solo come firma: "NForcolin" nella barra in alto (bianco). Il saluto della home conserva la firma originale: "Ciao, sono Nicolò Forcolin", in Destiny Signature e arancione.
+- Home (mockup approvato il 14 novembre 2026): pagina continua nella colonna editoriale. Hero compatta con "Ciao, sono Nicolò Forcolin" su due righe nel carattere della firma, arancione, centrata in verticale rispetto al ritratto (su mobile testo centrato), introduzione esistente e ritratto originale a colori. Su desktop la foto sta a destra, su mobile la presentazione parte subito, con il ritratto in giacca e dolcevita (photo.webp, lo stesso su tutti gli schermi) sopra il saluto, e la barra in alto resta sempre visibile. I tre link sotto la presentazione sono rimossi: le pagine restano accessibili dalle sezioni, i contatti da Collaboriamo. Niente barra fissa in basso. Su mobile la presentazione occupa almeno la prima schermata: numeri e sezioni seguono con lo scorrimento. Seguono i numeri 35+, 14 e 1 CEO affiancato (DABO); il contributo a Sprint Forward in Golden Boots fa parte della stessa voce del CEO. Poi Progetti (RAG in produzione e AI in locale come sperimentazione), Cosa faccio, Per chi, Il mio percorso e Collaboriamo. Riferimenti testuali a InfoCamere, DABO, IdeaGrip e Assicurazioni Generali, senza loghi. L’email, il pulsante copia, il Q&A (un solo comando apre tutte le domande e risposte), i social e le tre lingue restano funzionanti. Nessuna immagine o metrica inventata.
 - I titoli di sezione della home sono in Destiny Signature (40px), arancione. Il tratto a mano sotto i titoli è stato provato e tolto.
 - Invito a fine pagina: "Per parlare di un progetto" e un bottone arancione "Scrivimi" (testo scuro, angoli da 8px) che porta all'email nella sezione "Collaboriamo" della home. Un solo bottone per pagina.
 - Link nel testo: sempre testo chiaro con sottolineatura arancione sottile; niente frecce. Le pagine RAG e AI in locale hanno un glossario ("Parole tecniche") prima dell'invito finale. Porta all'email nella sezione "Collaboriamo" della home. La finestra contatti non esiste più e il numero di telefono non è più sul sito; il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale." Porta all'email nella sezione "Collaboriamo" della home. Non esiste più la finestra contatti (e il numero di telefono non è più sul sito); il piè di pagina riporta "Sito personale. Le attività descritte sono presentate a titolo personale."

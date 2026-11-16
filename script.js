@@ -137,6 +137,7 @@
       enablement_label:"Formazione e adozione",
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
+      hero_hi:"Ciao, sono",
       hero_intro:[
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
         [{t:"Ho il vizio di complicarmi la vita per semplificarla agli altri."}]
@@ -424,6 +425,7 @@
       enablement_label:"Training and adoption",
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
+      hero_hi:"Hi, I’m",
       hero_intro:[
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
         [{t:"I have a habit of complicating my own life to make it simpler for others."}]
