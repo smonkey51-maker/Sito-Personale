@@ -52,9 +52,9 @@ body[data-page="home"] .site-name{font-size:2rem}
 .home-email a{max-width:100%;color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:8px}
 .home-collab-text{font-size:1.125rem;line-height:1.55;max-width:52ch;margin:0 0 36px;color:var(--ink-soft)}
 .home-collab-faq{max-width:760px}
-.home-collab-faq summary{display:flex;align-items:center;justify-content:flex-start;gap:20px;min-height:68px;font-size:1.5rem;font-weight:700;letter-spacing:-.015em;line-height:1.3;color:var(--accent);cursor:pointer;list-style:none}
+.home-collab-faq summary{display:flex;align-items:center;justify-content:flex-start;gap:20px;min-height:68px;font-family:var(--signature);font-size:2.5rem;font-weight:400;letter-spacing:normal;line-height:1.3;color:var(--accent);cursor:pointer;list-style:none}
 .home-collab-faq summary::-webkit-details-marker{display:none}
-.home-collab-faq summary::after{content:"+";flex:none;font-size:2rem;font-weight:400;line-height:1;color:var(--ink)}
+.home-collab-faq summary::after{content:"+";flex:none;font-family:var(--sans);font-size:2rem;font-weight:400;line-height:1;color:var(--ink)}
 .home-collab-faq[open] > summary::after{content:"\2212"}
 .home-collab-faq summary:active{color:var(--accent-hover,var(--accent))}
 .faq-list{margin-top:0}
