@@ -8,8 +8,8 @@ const root = __dirname;
 const dist = path.join(root, "dist");
 
 const skip = new Set([
-  "node_modules", ".git", ".github", "tests", "dist", "package.json", "package-lock.json", "playwright.config.cjs",
-  "build.js", "README.md", "CLAUDE.md", "BRAND.md", "api", "ANALYTICS_SETUP.md", "docs",
+  "node_modules", ".git", ".github", ".claude", ".gitignore", "tests", "dist", "package.json", "package-lock.json", "playwright.config.cjs",
+  "build.js", "README.md", "CLAUDE.md", "BRAND.md", "api", "ANALYTICS_SETUP.md",
 ]);
 
 fs.rmSync(dist, { recursive: true, force: true });
@@ -37,6 +37,16 @@ execSync(
 
 execSync(
   `npx cleancss -o dist/portfolio-redesign.css portfolio-redesign.css`,
+  { cwd: root, stdio: "inherit" }
+);
+
+execSync(
+  `npx cleancss -o dist/home-editorial.css home-editorial.css`,
+  { cwd: root, stdio: "inherit" }
+);
+
+execSync(
+  `npx cleancss -o dist/figure.css figure.css`,
   { cwd: root, stdio: "inherit" }
 );
 
