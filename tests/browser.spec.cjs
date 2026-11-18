@@ -110,14 +110,18 @@ for(const viewport of sizes){
    await expect(page.locator('.career article')).toHaveCount(5);
    await expect(page.locator('.career .page-block-label').first()).toHaveText('2026 – oggi');
   });
-  test('home exposes the two projects without redundant hero links',async({page})=>{
+  test('home lists the three projects, each with its own link, and no redundant sections',async({page})=>{
    await page.goto('/');
    await expect(page.locator('.home-proof')).toHaveCount(0);
    await expect(page.locator('.home-projects')).toHaveCount(1);
-   await expect(page.locator('.home-project-grid h3 a')).toHaveCount(2);
-   await expect(page.locator('.home-services')).toBeVisible();
+   await expect(page.locator('.home-project')).toHaveCount(3);
+   await expect(page.locator('.home-project a[href="rag-aziendale.html"]')).toBeVisible();
+   await expect(page.locator('.home-project a[href="ai-in-locale.html"]')).toBeVisible();
+   await expect(page.locator('.home-project a[href="ai-delegation-loop.html"]')).toBeVisible();
+   await expect(page.locator('.home-services')).toHaveCount(0);
+   await expect(page.locator('.home-audience')).toHaveCount(0);
+   await expect(page.locator('.hero-audience')).toBeVisible();
    await expect(page.locator('.hero-cta-row')).toHaveCount(0);
-   await expect(page.locator('.home-project-grid a[href="rag-aziendale.html"]')).toBeVisible();
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await expect(page.locator('.home-contact')).toHaveCount(0);
   });
