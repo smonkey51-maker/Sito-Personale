@@ -65,13 +65,8 @@ p{text-wrap:pretty}
   .topbar-inner{height:auto}
 }
 
-/* ============ Hero ============ */
-
-
 /* ============ Sezioni ============ */
 main{padding-bottom:40px}
-
-/* ---- Progetti ---- */
 
 /* ---- Colophon ---- */
 .colophon-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
@@ -107,11 +102,7 @@ html{scroll-padding-top:var(--nav-offset,80px)}
   .wrap{padding:0 20px}
 }
 
-
-/* Project overviews use the same reading measure as their detailed text. */
-
-
-/* Figma editorial layout: one reading column, persistent contents rail. */
+/* Layout editoriale: una colonna di lettura. */
 .site-name{min-height:44px;align-items:center}
 .topbar-inner{max-width:1440px;padding:12px 64px}
 .editorial-content{min-width:0}
