@@ -21,10 +21,7 @@ tool di terze parti: basta leggere il codice):
   non scende sotto questi valori. Superfici distinte da un passo di
   tono, non da linee o ombre. Eccezione voluta da Nicolò: l'arancione
   colora anche i titoli di pagina e di sezione, la firma, i link della
-  hero e il segno d'ingresso su mobile. Eccezione voluta da Nicolò: il
-  tema chiaro, che segue in automatico il browser, è crema `#FDF5EA` con
-  arancione `#E85A0C`; l'arancione chiaro (3,3:1) vale solo per testo
-  grande e segni, mai per testo piccolo.
+  hero e il segno d'ingresso su mobile.
 - **Tipografia**: niente Inter/Roboto/Geist su tutto senza un titolo
   con carattere distintivo; corpo testo leggibile ≥16px, nessun testo
   sotto i 13px. Massimo due famiglie e cinque dimensioni. Eccezione

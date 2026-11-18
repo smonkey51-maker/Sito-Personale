@@ -41,15 +41,3 @@
  .rag-figure-pick{width:100%}
 }
 @media(max-width:820px){.rag-figure .iso-svg{margin-inline:auto}}
-
-/* Tema chiaro del diagramma: stessi ruoli, toni crema con linee scure. */
-@media(prefers-color-scheme:light){
- .rag-figure{
-  --vn-top:#FFFBF3;--vn-face:#F3E7D6;--vn-side:#E8D9C4;--vn-floor:#F1E3D0;--vn-disc:#DCCBB3;
-  --vn-hi:#1B2330;--vn-mid:#5F6675;--vn-lo:#A89C8A;--vn-faint:#CDBFA9;--vn-shadow:#8A7A66;--vn-bg:#FDF5EA;
- }
- .vn-side.vn-tone0{fill:#EADBC6}
- .vn-side.vn-tone1{fill:#E6D7C1}
- .vn-side.vn-tone2{fill:#EFE1CD}
- .vn-side.vn-tone3{fill:#E2D3BE}
-}
