@@ -65,7 +65,7 @@ for (const file of pages) {
 for (const language of ['it', 'en']) assert(!dictionaries[language].includes('·'), language + ': no middle-dot joined strings');
 
 const home = read('index.html');
-assert(home.includes('data-i18n="hero_hi"'), 'Hero greeting must be translated');
+assert(!home.includes('hero_hi'), 'Hero opens with the intro, no greeting');
 assert(home.includes('id="heroIntro"'), 'Hero intro paragraph missing');
 for (const language of ['it', 'en']) assert(dictionaries[language].includes('hero_intro:'), language + ': hero intro missing');
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');

@@ -138,7 +138,6 @@
       enablement_label:"Formazione e adozione",
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
-      hero_hi:"Ciao, sono",
       hero_intro:[
         [{t:"IT per le PA dal "},{t:"2022",b:true},{t:", Tech Lover dal "},{t:"1992",b:true},{t:"."}],
         [{t:"Ho il vizio di complicarmi la vita per semplificarla agli altri."}]
@@ -151,11 +150,10 @@
       stat3_v:"1",
       stat3_k:"CEO affiancato (DABO)",
       home_clients:"Ho lavorato con InfoCamere, DABO, IdeaGrip e Assicurazioni Generali.",
-      collab_title:"Collaboriamo",
+      collab_title:"Disponibile per progetti AI con PA e PMI.",
       collab_ask:"Mandami settore e problema.",
       collab_reply:"Rispondo ad esseri umani, buon senso e concretezza.",
       faq_title:"Q&A",
-      collab_mail:"Mail",
       faq1_q:"Chi è Nicolò Forcolin?",
       faq1_a:"Ex dipendente Generali, dal 2022 informatico per le PA. Audiofilo, appassionato d’arte e del bello e funzionale.",
       faq2_q:"Di cosa parla?",
@@ -472,7 +470,6 @@
       enablement_label:"Training and adoption",
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
-      hero_hi:"Hi, I’m",
       hero_intro:[
         [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
         [{t:"I have a habit of complicating my own life to make it simpler for others."}]
@@ -485,11 +482,10 @@
       stat3_v:"1",
       stat3_k:"CEO advised (DABO)",
       home_clients:"I have worked with InfoCamere, DABO, IdeaGrip and Assicurazioni Generali.",
-      collab_title:"Let’s work together",
+      collab_title:"Open to AI projects with government and SMEs.",
       collab_ask:"Send me your sector and your problem.",
       collab_reply:"I reply to human beings, with common sense and concrete answers.",
       faq_title:"Q&A",
-      collab_mail:"Mail",
       faq1_q:"Who is Nicolò Forcolin?",
       faq1_a:"Former Generali employee, in IT for public administration since 2022. Audiophile, passionate about art and about things that are beautiful and functional.",
       faq2_q:"What does he talk about?",
@@ -695,8 +691,6 @@
     }
     var homeEmail = document.getElementById("homeEmail");
     if(homeEmail){ homeEmail.innerHTML = emailLink(); bindCopyButtons(homeEmail); }
-    var homeMailLink = document.getElementById("homeMailLink");
-    if(homeMailLink) homeMailLink.setAttribute("href", "mailto:" + em);
   })();
 
   /* Il tema segue le preferenze del browser (CSS); si ignorano quelle salvate da versioni precedenti. */

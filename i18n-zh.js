@@ -137,7 +137,6 @@ window.NF_I18N.zh = {
   enablement_label: "培训与推广",
   enablement_title: "分享实践经验",
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
-  hero_hi: "你好，我是",
   hero_intro: [
     [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
     [{ t: "我习惯让自己的生活复杂一点，好让别人的生活更简单。" }]
@@ -150,11 +149,10 @@ window.NF_I18N.zh = {
   stat3_v: "1",
   stat3_k: "位 CEO 获得咨询（DABO）",
   home_clients: "我曾与 InfoCamere、DABO、IdeaGrip 和 Assicurazioni Generali 合作。",
-  collab_title:"一起合作",
+  collab_title:"可承接与公共机构和中小企业的 AI 项目。",
   collab_ask:"把你的行业和问题发给我。",
   collab_reply:"我回复真人，讲求常识与实际。",
   faq_title:"问答",
-  collab_mail:"邮件",
   faq1_q:"Nicolò Forcolin 是谁？",
   faq1_a:"前 Generali 员工，自 2022 年起为公共管理部门从事 IT。发烧级音响爱好者，热爱艺术，也钟爱美观又实用的事物。",
   faq2_q:"他谈些什么？",

@@ -27,7 +27,7 @@ tool di terze parti: basta leggere il codice):
   sotto i 13px. Massimo due famiglie e cinque dimensioni. Eccezione
   voluta da Nicolò: tre famiglie. Bodoni Moda (alternativa web a Didot)
   per i titoli, Montserrat (medium o regular) per il resto, Destiny
-  Signature solo per la firma e il saluto in hero. Niente
+  Signature solo per la firma (il nome nella barra in alto). Niente
   monospace fuori dai blocchi di codice. Niente etichette piccole in
   maiuscolo con tracking. Paragrafi max ~62ch, interlinea 1.45-1.6,
   mai giustificati né centrati oltre le tre righe. Titoli su max due

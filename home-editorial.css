@@ -13,9 +13,6 @@ body[data-page="home"] .site-name{font-size:2rem}
 .hero{padding:0;background:transparent}
 .hero-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:16px;min-height:0;padding-block:48px 0}
 .hero-overlay{width:auto;max-width:none;padding-block:0 40px;display:flex;flex-direction:column;justify-content:center;align-self:center}
-.hero-name{font-family:var(--signature);font-size:clamp(3.25rem,6vw,5rem);font-weight:400;letter-spacing:normal;line-height:1.12;max-width:none;margin:0 0 28px;color:var(--accent);text-wrap:balance}
-.hero-hi{display:block;font-size:.9em;line-height:1.25}
-.hero-fn{display:block;color:inherit}
 .hero-intro{font-size:1.125rem;line-height:1.55;max-width:44ch;margin:0}
 .hero-intro p{font-size:1.375rem;line-height:1.45;margin:0 0 8px;color:var(--ink)}
 .hero-intro p:last-child{margin:0}
@@ -57,18 +54,14 @@ body[data-page="home"] .site-name{font-size:2rem}
 .faq-item{padding:14px 0}
 .faq-item h3{margin:0 0 10px;font-family:var(--sans);font-size:1rem;font-weight:500;line-height:1.45;color:var(--ink)}
 .faq-item p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink-soft);max-width:56ch}
-.home-collab-links{display:flex;flex-wrap:wrap;gap:0 28px;margin:28px 0 0;padding:0;list-style:none}
-.home-collab-links a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;font-size:1rem;color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:5px}
-.home-collab-links a:active{color:var(--accent)}
 body[data-page="home"] .colophon-inner{display:block}
 body[data-page="home"] .footer-note{font-size:1rem;padding-top:20px;line-height:1.5}
 body[data-page="home"] .colophon{padding-bottom:24px}
 @media(hover:hover) and (pointer:fine){
- .home-text-link:hover,.home-collab-links a:hover,.home-collab-faq summary:hover{color:var(--accent)}
+ .home-text-link:hover,.home-collab-faq summary:hover{color:var(--accent)}
 }
 @media(min-width:701px) and (max-width:1000px){
  .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);padding-top:32px}
- .hero-name{font-size:clamp(2.6rem,6vw,3.5rem)}
  .hero-intro p{font-size:1.125rem}
  .home-stats-list li{display:block}
  .home-stats-list strong{display:block;margin-bottom:6px}
@@ -78,9 +71,8 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  body[data-page="home"] .site-name{font-size:1.75rem}
  .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(200px,1fr) auto auto;align-content:stretch;gap:0;padding-block:4px 20px;min-height:calc(100svh - 68px)}
  .hero-overlay{display:contents}
- .hero-name{grid-row:2;font-size:clamp(2.5rem,10.6vw,4rem);margin:0 0 24px;text-align:center}
- .hero-intro{grid-row:3;max-width:38ch;margin-inline:auto;text-align:center}
- .hero-audience{grid-row:4;max-width:38ch;margin:10px auto 0;text-align:center}
+ .hero-intro{grid-row:2;max-width:38ch;margin-inline:auto;text-align:center}
+ .hero-audience{grid-row:3;max-width:38ch;margin:10px auto 0;text-align:center}
  .hero-intro p{font-size:1.125rem;line-height:1.5;margin-bottom:6px}
  .hero-intro p:last-child{margin-bottom:0}
  .hero-photo-frame{grid-row:1;align-self:stretch;width:100%;height:auto;min-height:0;max-height:none;margin:0 0 16px;overflow:hidden;position:relative;order:0}
@@ -91,6 +83,7 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .home-stats-list span{font-size:1rem}
  .home-section,.home-collab{padding-top:72px}
  .home-section h2,.home-collab h2{margin-bottom:20px}
+ .home-collab h2{font-size:clamp(1.5rem,7.4vw,2.25rem)}
  .home-section h3{font-size:1.375rem;margin-bottom:6px}
  .home-section p{font-size:1rem}
  .home-text-link{margin-top:14px}
@@ -130,3 +123,6 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 .home-section p.home-career-lead{font-size:1.375rem;line-height:1.45;color:var(--ink);margin:0 0 12px}
 .home-reach p+p{max-width:46ch}
 @media(max-width:820px){.home-project{grid-template-columns:1fr;gap:12px}.home-project-list{gap:36px}}
+@media(max-width:360px){
+ body[data-page="home"] .site-name{font-size:1.4rem}
+}

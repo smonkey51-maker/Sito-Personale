@@ -271,8 +271,6 @@
 }
 
 /* Il nome è scritto per intero da 701 px in su. */
-.sn-full{display:none}
-@media (min-width: 701px) { .sn-short{display:none} .sn-full{display:inline} }
 @media (min-width: 701px) and (max-width: 900px) { body[data-page] .topbar .site-name, body .topbar .site-name { font-size: 1.5rem; } }
 
 /* Glossario: una riga per termine, in fondo alle pagine tecniche. */
