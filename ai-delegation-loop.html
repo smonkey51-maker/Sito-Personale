@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0E0E0F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FDF5EA" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<meta name="darkreader-lock">
+<title>AI delegation loop | Nicolò Forcolin</title>
+<meta name="description" content="Un metodo per affidare attività ricorrenti a un agente IA generale, con una cartella di lavoro che si aggiorna dopo ogni errore. Un concetto che sto esplorando.">
+<link rel="canonical" href="https://nforcolin.eu/ai-delegation-loop.html">
+
+<link rel="icon" href="favicon.svg?v=7" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png?v=7" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png?v=7" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=7">
+<link rel="manifest" href="manifest.json">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nforcolin.eu/ai-delegation-loop.html">
+<meta property="og:site_name" content="Nicolò Forcolin">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="AI delegation loop | Nicolò Forcolin">
+<meta property="og:description" content="Un metodo per affidare attività ricorrenti a un agente IA generale, con una cartella di lavoro che si aggiorna dopo ogni errore. Un concetto che sto esplorando.">
+<meta property="og:image" content="https://nforcolin.eu/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI delegation loop | Nicolò Forcolin">
+<meta name="twitter:description" content="Un metodo per affidare attività ricorrenti a un agente IA generale, con una cartella di lavoro che si aggiorna dopo ogni errore. Un concetto che sto esplorando.">
+<meta name="twitter:image" content="https://nforcolin.eu/og-home.jpg">
+
+
+<link rel="preload" href="fonts/destiny-signature-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bodoni-moda-latin-opsz.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="portfolio-redesign.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="inner" data-page="loop">
+
+<a class="skip-link" href="#contenuto" data-i18n="skip_to_content">Vai al contenuto</a>
+<div class="visually-hidden" id="themeAnnouncer" role="status" aria-live="polite"></div>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner"><a class="site-name" href="index.html" aria-label="Nicolò Forcolin, home"><span class="sn-short">NForcolin</span><span class="sn-full">Nicolò Forcolin</span></a>
+    <div class="utilbar">
+        <div class="lang-menu"><div class="lang-list" id="langList"><button class="lang-btn on" type="button" data-lang="it" data-code="IT" aria-label="Italiano">Italiano</button><button class="lang-btn" type="button" data-lang="en" data-code="EN" aria-label="English">English</button><button class="lang-btn" type="button" data-lang="zh" lang="zh-Hans" data-code="中文" aria-label="中文（简体）">中文</button></div></div>
+    </div>
+  </div>
+</header>
+<main class="page" id="contenuto">
+  <header class="page-head">
+    <a class="page-back" href="index.html"><span aria-hidden="true">←</span> <span data-i18n="back_to_site">Torna alla home</span></a>
+    <h1 class="page-title" data-i18n="home_loop_title">AI delegation loop</h1>
+    <p class="loop-status" data-i18n="loop_status">Concetto in esplorazione, non ancora implementato.</p>
+    <p class="page-lead" data-i18n="loop_lead">Un metodo per affidare attività ricorrenti a un agente IA generale, salvando il lavoro in una cartella dedicata e aggiornando le regole lì dopo ogni errore, invece di ripetere le correzioni in una chat temporanea.</p>
+  </header>
+  <div class="page-body">
+    <section class="page-block" aria-labelledby="loopHowTitle">
+      <h2 class="page-block-label" id="loopHowTitle" data-i18n="loop_how_label">Come funziona</h2>
+      <div class="page-block-body">
+        <p data-i18n="loop_how_p">Invece di creare un agente specializzato per ogni compito, che rischia di rompersi quando il processo cambia, si usa un agente generale che legge una cartella per ciascun lavoro. La cartella ha tre livelli.</p>
+        <dl class="loop-levels">
+          <div><dt data-i18n="loop_l1_t">Processo</dt><dd data-i18n="loop_l1_d">Le regole, il giudizio e l’ordine reale con cui si svolge l’attività.</dd></div>
+          <div><dt data-i18n="loop_l2_t">Strumenti</dt><dd data-i18n="loop_l2_d">Script, modelli, dati e risorse riutilizzabili, richiamati dal processo.</dd></div>
+          <div><dt data-i18n="loop_l3_t">Verifica</dt><dd data-i18n="loop_l3_d">I criteri di controllo e le prove che dimostrano che il risultato è completo e corretto.</dd></div>
+        </dl>
+      </div>
+    </section>
+    <section class="page-block" aria-labelledby="loopCycleTitle">
+      <h2 class="page-block-label" id="loopCycleTitle" data-i18n="loop_cycle_label">Il ciclo</h2>
+      <div class="page-block-body">
+        <div class="loop-fig"><svg class="loop-svg" viewBox="0 0 340 340" role="img" aria-label="Il ciclo di delega in cinque passaggi: esegui, osserva l’errore, diagnostica il livello, aggiorna la cartella, riesegui" data-i18n-aria="loop_aria"><defs><marker id="loopHead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="loop-head" d="M0 0L10 5L0 10z"/></marker></defs><path class="loop-arc" d="M206.2 57.7 A118 118 0 0 1 265.6 100.8" marker-end="url(#loopHead)"/><path class="loop-arc" d="M288.0 169.8 A118 118 0 0 1 265.3 239.5" marker-end="url(#loopHead)"/><path class="loop-arc" d="M206.7 282.2 A118 118 0 0 1 133.3 282.2" marker-end="url(#loopHead)"/><path class="loop-arc" d="M74.7 239.5 A118 118 0 0 1 52.0 169.8" marker-end="url(#loopHead)"/><path class="loop-arc" d="M74.4 100.8 A118 118 0 0 1 133.8 57.7" marker-end="url(#loopHead)"/><circle class="loop-node" cx="170.0" cy="52.0" r="26"/><text class="loop-num" x="170.0" y="59.0">1</text><circle class="loop-node" cx="282.2" cy="133.5" r="26"/><text class="loop-num" x="282.2" y="140.5">2</text><circle class="loop-node" cx="239.4" cy="265.5" r="26"/><text class="loop-num" x="239.4" y="272.5">3</text><circle class="loop-node" cx="100.6" cy="265.5" r="26"/><text class="loop-num" x="100.6" y="272.5">4</text><circle class="loop-node" cx="57.8" cy="133.5" r="26"/><text class="loop-num" x="57.8" y="140.5">5</text><text class="loop-center" x="170" y="164" data-i18n="loop_c1">Ciclo di</text><text class="loop-center" x="170" y="196" data-i18n="loop_c2">delega</text></svg><ol class="loop-steps"><li data-i18n="loop_s1">Esegui</li><li data-i18n="loop_s2">Osserva l’errore</li><li data-i18n="loop_s3">Diagnostica il livello</li><li data-i18n="loop_s4">Aggiorna la cartella</li><li data-i18n="loop_s5">Riesegui</li></ol></div>
+        <p data-i18n="loop_cycle_p">L’agente esegue il compito seguendo la cartella. Si osserva cosa manca o cosa non torna rispetto al risultato atteso, si capisce se il problema nasce dal processo, dagli strumenti o dalla verifica, e si scrive la correzione nei file del playbook, non solo nella chat. Poi si rilancia l’agente, così la conoscenza si accumula nel tempo.</p>
+      </div>
+    </section>
+    <section class="page-block" aria-labelledby="loopWideTitle">
+      <h2 class="page-block-label" id="loopWideTitle" data-i18n="loop_wide_label">Nei flussi più ampi</h2>
+      <div class="page-block-body"><p data-i18n="loop_wide_p">Il ciclo comprende anche la definizione chiara dell’obiettivo, la revisione dell’output, l’accettazione o la riassegnazione. La responsabilità finale resta all’umano.</p></div>
+    </section>
+    <section class="page-block" aria-labelledby="loopRisksTitle">
+      <h2 class="page-block-label" id="loopRisksTitle" data-i18n="loop_risks_label">Rischi e cautele</h2>
+      <div class="page-block-body">
+        <ul class="loop-risks">
+          <li><strong data-i18n="loop_r1_k">Troppe regole.</strong> <span data-i18n="loop_r1_v">Se le eccezioni si accumulano senza pulizia, le istruzioni diventano lunghe e contraddittorie e confondono l’agente.</span></li>
+          <li><strong data-i18n="loop_r2_k">Competenze che si perdono.</strong> <span data-i18n="loop_r2_v">Delegare sempre esecuzione e ragionamento riduce la dimestichezza con il processo e rende più difficile accorgersi degli errori sottili.</span></li>
+          <li><strong data-i18n="loop_r3_k">Avvio lento.</strong> <span data-i18n="loop_r3_v">I primi cicli richiedono più tempo che fare il lavoro da soli, perché si diagnostica e si documenta invece di correggere l’output.</span></li>
+          <li><strong data-i18n="loop_r4_k">Permessi.</strong> <span data-i18n="loop_r4_v">Se l’agente può leggere, scrivere ed eseguire script nella cartella, un’istruzione ambigua può portarlo a sovrascrivere file importanti.</span></li>
+          <li><strong data-i18n="loop_r5_k">Affidabilità.</strong> <span data-i18n="loop_r5_v">I modelli sono probabilistici e possono sbagliare anche con un buon playbook e buone verifiche.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section class="page-cta">
+      <p data-i18n="cta_title">Per parlare di un progetto</p>
+      <a class="cta-button" href="index.html#collabTitle" data-i18n="cta_button">Scrivimi</a>
+    </section>
+  </div>
+</main>
+
+<footer class="colophon"><div class="wrap colophon-inner"><p class="footer-note"><span data-i18n="footer_place">© 2026 Nicolò Forcolin, Padova, Italia.</span> <span data-i18n="colophon_note">Sito personale. Le attività descritte sono presentate a titolo personale.</span> <a href="privacy.html" data-i18n="footer_privacy_link">Informativa privacy</a></p></div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
