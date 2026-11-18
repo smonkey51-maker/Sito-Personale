@@ -76,12 +76,12 @@ for(const viewport of sizes){
    for(const key of ['c2_solution','c2_problem','c2_summary','c2_learning']) await expect(page.locator('[data-i18n="'+key+'"]')).toBeVisible();
    await expect(page.locator('.lab-heading')).toHaveCount(5);
   });
-  test('the theme follows the browser preference',async({page})=>{
-   await page.emulateMedia({colorScheme:'dark'});
-   await page.goto('/');
-   await expect(page.locator('body')).toHaveCSS('background-color','rgb(14, 14, 15)');
-   await page.emulateMedia({colorScheme:'light'});
-   await expect(page.locator('body')).toHaveCSS('background-color','rgb(253, 245, 234)');
+  test('the site stays dark whatever the browser preference',async({page})=>{
+   for(const scheme of ['dark','light']){
+    await page.emulateMedia({colorScheme:scheme});
+    await page.goto('/');
+    await expect(page.locator('body')).toHaveCSS('background-color','rgb(14, 14, 15)');
+   }
    await expect(page.locator('.theme-toggle')).toHaveCount(0);
   });
   test('portrait loading',async({page})=>{

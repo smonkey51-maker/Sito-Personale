@@ -1,5 +1,5 @@
 /* Il sito è scuro per scelta: i browser non devono ricolorarlo. */
-html{color-scheme:light dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Variabili comuni e base tipografica. */
 :root{
  --sans:"Montserrat","Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
@@ -124,14 +124,3 @@ main.editorial-content{padding-bottom:0}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
 @media(min-width:1200px){body .footer-note{font-size:1.0625rem}}
-
-/* Tema chiaro: segue in automatico le preferenze del browser. Crema, arancione e inchiostro blu scuro. */
-@media(prefers-color-scheme:light){
- :root{
-  --bg:#FDF5EA;--bg-2:#FDF5EA;--ink:#1B2330;--ink-soft:#4A5260;
-  --line:#E4D8C6;--accent:#E85A0C;--accent-hover:#C94A06;
-  --on-accent:#0E0E0F;
-  color-scheme:light;
- }
- .topbar{background:linear-gradient(to bottom,rgba(253,245,234,.7) 0%,transparent 100%)}
-}
