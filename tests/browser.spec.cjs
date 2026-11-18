@@ -12,7 +12,7 @@ for(const viewport of sizes){
   };
   test('layout and hero essentials',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('#hero-name')).toBeVisible();
+   await expect(page.locator('#heroIntro')).toBeVisible();
    await expect(page.locator('#avatarPhoto')).toBeVisible();
    await expect(page.locator('.hero-cta-row')).toHaveCount(0);
   });
@@ -143,13 +143,15 @@ for(const viewport of sizes){
    await page.locator('.home-collab-faq > summary').click();
    await expect(page.locator('.faq-list')).toBeHidden();
   });
-  test('home hero uses the approved greeting and keeps the real introduction',async({page})=>{
+  test('home hero opens with the real introduction',async({page})=>{
    await page.goto('/');
-   await expect(page.locator('#hero-name')).toHaveText('Ciao, sono Nicolò Forcolin');
+   await expect(page.locator('h1#hero-name')).toHaveText('Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
    await expect(page.locator('#heroIntro')).toContainText('Ho il vizio di complicarmi la vita per semplificarla agli altri.');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
-   await expect(page.locator('.site-name .sn-short')).toHaveText('NForcolin');
+   await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
+   await expect(page.locator('#collabTitle')).toHaveText('Disponibile per progetti AI con PA e PMI.');
+   await expect(page.locator('.colophon a[href*="linkedin"]')).toHaveCount(1);
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
    await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
@@ -171,14 +173,11 @@ for(const viewport of sizes){
     await expect(page.locator('.lang-toggle')).toHaveCount(0);
    });
   }
-  if(viewport.width>700){
-   test('on desktop the name is written in full',async({page})=>{
-    await page.goto('/');
-    await expect(page.locator('.site-name .sn-full')).toBeVisible();
-    await expect(page.locator('.site-name .sn-full')).toHaveText('Ciao, sono Nicolò Forcolin');
-    await expect(page.locator('.site-name .sn-short')).toBeHidden();
-   });
-  }
+  test('the name in the bar is written in full at every width',async({page})=>{
+   await page.goto('/');
+   await expect(page.locator('.site-name')).toBeVisible();
+   await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
+  });
   if(viewport.width<=700){
    test('on mobile the first screen shows the bar with the languages, the portrait and the introduction',async({page})=>{
     await page.goto('/');
