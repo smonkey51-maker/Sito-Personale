@@ -83,6 +83,7 @@
     <div class="hero-overlay">
       <h1 class="hero-name" id="hero-name"><span class="hero-hi" data-i18n="hero_hi">Ciao, sono</span> <span class="hero-fn">Nicolò Forcolin</span></h1>
       <div class="hero-intro" id="heroIntro"><p>IT per le PA dal <strong>2022</strong>, Tech Lover dal <strong>1992</strong>.</p><p>Ho il vizio di complicarmi la vita per semplificarla agli altri.</p></div>
+      <p class="hero-audience" data-i18n="home_audience_desc">Pubbliche amministrazioni, enti parastatali e organizzazioni regolate, ma anche PMI e professionisti.</p>
 
     </div>
     <div class="hero-photo-frame">
@@ -102,54 +103,40 @@
 <section class="home-projects home-section" aria-labelledby="homeProjectsTitle">
   <div class="wrap">
     <h2 id="homeProjectsTitle" data-i18n="sec_lavori">Progetti</h2>
-    <div class="home-project-grid">
-      <article>
-        <h3><a href="rag-aziendale.html"><span data-i18n="home_rag_title">RAG aziendale</span></a></h3>
-        <p data-i18n="home_rag_desc">Assistenti AI sui documenti e sulla conoscenza aziendale, in produzione. Gestire un problema richiede meno di 15 minuti, prima circa un’ora.</p>
+    <div class="home-project-list">
+      <article class="home-project">
+        <h3 data-i18n="home_rag_title">RAG aziendale</h3>
+        <div>
+          <p data-i18n="home_rag_desc">Assistenti AI sui documenti e sulla conoscenza aziendale, in produzione.</p>
+          <p class="home-project-res"><b data-i18n="home_rag_res_k">Meno di 15 minuti</b> <span data-i18n="home_rag_res_v">per gestire un problema, prima circa un’ora.</span></p>
+          <a class="home-text-link" href="rag-aziendale.html" data-i18n="project_read">Leggi il progetto</a>
+        </div>
       </article>
-      <article>
-        <h3><a href="ai-in-locale.html"><span data-i18n="sec_localai_title">AI in locale</span></a></h3>
-        <p data-i18n="home_local_desc">Sperimentazione di modelli eseguiti nell’infrastruttura dell’organizzazione. Su circa 100 domande di prova, circa 80 risposte corrette.</p>
+      <article class="home-project">
+        <h3 data-i18n="sec_localai_title">AI in locale</h3>
+        <div>
+          <p data-i18n="home_local_desc">Sperimentazione di modelli eseguiti nell’infrastruttura dell’organizzazione.</p>
+          <p class="home-project-res"><b data-i18n="home_local_res_k">Circa 80 risposte corrette</b> <span data-i18n="home_local_res_v">su circa 100 domande di prova.</span></p>
+          <a class="home-text-link" href="ai-in-locale.html" data-i18n="project_read">Leggi il progetto</a>
+        </div>
+      </article>
+      <article class="home-project">
+        <h3 data-i18n="home_loop_title">AI delegation loop</h3>
+        <div>
+          <p data-i18n="home_loop_desc">Un metodo per affidare attività ricorrenti a un agente IA, con una cartella che si aggiorna dopo ogni errore.</p>
+          <p class="home-project-res" data-i18n="loop_status">Concetto in esplorazione, non ancora implementato.</p>
+          <a class="home-text-link" href="ai-delegation-loop.html" data-i18n="home_loop_link">Leggi il metodo</a>
+        </div>
       </article>
     </div>
     <a class="home-text-link" href="progetti.html" data-i18n="home_all_projects">Tutti i progetti</a>
   </div>
 </section>
-<section class="home-services home-section" aria-labelledby="homeServicesTitle">
-  <div class="wrap">
-    <h2 id="homeServicesTitle" data-i18n="home_services_title">Cosa faccio</h2>
-    <div class="home-service-grid">
-      <div><h3 data-i18n="home_service_ai">Assistenti AI</h3><p data-i18n="home_service_ai_desc">Risposte dai documenti aziendali, con riferimenti alle fonti.</p></div>
-      <div><h3 data-i18n="home_service_local">Modelli in locale</h3><p data-i18n="home_service_local_desc">Sperimentazione e valutazione sul campo.</p></div>
-      <div><h3 data-i18n="home_service_training">Formazione</h3><p data-i18n="home_service_training_desc">Più di 35 colleghi affiancati su loro richiesta, in gruppo e uno a uno: ho mostrato come usare l’AI e i propri strumenti di lavoro per rendere più efficaci i tool in produzione.</p></div>
-      <div><h3 data-i18n="home_service_intl">Iniziative internazionali</h3><p data-i18n="home_service_intl_desc">Membro del team del CEO di DABO per “Sprint Forward in Golden Boots” al Saichuang Weilai Southeast Asia InnoTech Center, in Cina.</p></div>
-    </div>
-  </div>
-</section>
-<section class="home-loop home-section" aria-labelledby="homeLoopTitle">
-  <div class="wrap">
-    <div class="home-loop-grid">
-      <div>
-        <h2 id="homeLoopTitle" data-i18n="home_loop_title">AI delegation loop</h2>
-        <p class="loop-status" data-i18n="loop_status">Concetto in esplorazione, non ancora implementato.</p>
-        <p data-i18n="home_loop_desc">Un metodo per affidare attività ricorrenti a un agente IA generale. Il lavoro vive in una cartella dedicata, il playbook, e dopo ogni errore le regole si aggiornano lì, non in una chat che si perde.</p>
-        <ol class="loop-steps loop-steps-home"><li data-i18n="loop_s1">Esegui</li><li data-i18n="loop_s2">Osserva l’errore</li><li data-i18n="loop_s3">Diagnostica il livello</li><li data-i18n="loop_s4">Aggiorna la cartella</li><li data-i18n="loop_s5">Riesegui</li></ol>
-        <a class="home-text-link" href="ai-delegation-loop.html" data-i18n="home_loop_link">Leggi il metodo</a>
-      </div>
-      <svg class="loop-svg" focusable="false" viewBox="0 0 340 340" role="img" aria-label="Il ciclo di delega in cinque passaggi: esegui, osserva l’errore, diagnostica il livello, aggiorna la cartella, riesegui" data-i18n-aria="loop_aria"><defs><marker id="loopHead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="loop-head" d="M0 0L10 5L0 10z"/></marker></defs><path class="loop-arc" d="M206.2 57.7 A118 118 0 0 1 265.6 100.8" marker-end="url(#loopHead)"/><path class="loop-arc" d="M288.0 169.8 A118 118 0 0 1 265.3 239.5" marker-end="url(#loopHead)"/><path class="loop-arc" d="M206.7 282.2 A118 118 0 0 1 133.3 282.2" marker-end="url(#loopHead)"/><path class="loop-arc" d="M74.7 239.5 A118 118 0 0 1 52.0 169.8" marker-end="url(#loopHead)"/><path class="loop-arc" d="M74.4 100.8 A118 118 0 0 1 133.8 57.7" marker-end="url(#loopHead)"/><circle class="loop-node" cx="170.0" cy="52.0" r="26"/><text class="loop-num" x="170.0" y="59.0">1</text><circle class="loop-node" cx="282.2" cy="133.5" r="26"/><text class="loop-num" x="282.2" y="140.5">2</text><circle class="loop-node" cx="239.4" cy="265.5" r="26"/><text class="loop-num" x="239.4" y="272.5">3</text><circle class="loop-node" cx="100.6" cy="265.5" r="26"/><text class="loop-num" x="100.6" y="272.5">4</text><circle class="loop-node" cx="57.8" cy="133.5" r="26"/><text class="loop-num" x="57.8" y="140.5">5</text><text class="loop-center" x="170" y="164" data-i18n="loop_c1">Ciclo di</text><text class="loop-center" x="170" y="196" data-i18n="loop_c2">delega</text></svg>
-    </div>
-  </div>
-</section>
-<section class="home-audience home-section" aria-labelledby="homeAudienceTitle">
-  <div class="wrap">
-    <h2 id="homeAudienceTitle" data-i18n="for_whom_label">Per chi</h2>
-    <p data-i18n="home_audience_desc">Pubbliche amministrazioni, enti parastatali e organizzazioni regolate, ma anche PMI e professionisti.</p>
-  </div>
-</section>
 <section class="home-reach home-section" aria-labelledby="homeCareerTitle">
   <div class="wrap">
     <h2 id="homeCareerTitle" data-i18n="home_career_title">Il mio percorso</h2>
-    <p data-i18n="home_clients">Ho lavorato con InfoCamere, DABO, IdeaGrip e Assicurazioni Generali.</p>
+    <p class="home-career-lead" data-i18n="home_clients">Ho lavorato con InfoCamere, DABO, IdeaGrip e Assicurazioni Generali.</p>
+    <p data-i18n="home_career_more">Più di 35 colleghi affiancati su loro richiesta. Membro del team del CEO di DABO per “Sprint Forward in Golden Boots”.</p>
     <a class="home-text-link" href="percorso.html" data-i18n="home_career_link">Leggi il percorso</a>
   </div>
 </section>
@@ -157,11 +144,9 @@
   <div class="wrap">
     <h2 id="homeIgTitle" data-i18n="home_ig_title">Su Instagram</h2>
     <div class="home-ig-grid">
-      <a class="home-ig-tile home-ig-big" href="https://www.instagram.com/p/DfjfEy-jvCq/" target="_blank" rel="noopener noreferrer"><img src="instagram/bruxelles-800.webp" srcset="instagram/bruxelles-800.webp 800w, instagram/bruxelles-1200.webp 1200w" sizes="(max-width:820px) 92vw, 560px" width="800" height="800" alt="Una strada di Bruxelles vista dall’alto, con una chiesa sullo sfondo e un cielo nuvoloso." data-i18n-alt="ig_alt1" loading="lazy" decoding="async"><span class="home-ig-views"><b>239</b> <span data-i18n="ig_views">visualizzazioni</span></span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
-      <div class="home-ig-side">
-        <a class="home-ig-tile " href="https://www.instagram.com/p/DfmM1fNsJMt/" target="_blank" rel="noopener noreferrer"><img src="instagram/ritratto-600.webp" srcset="instagram/ritratto-600.webp 600w, instagram/ritratto-1000.webp 1000w" sizes="(max-width:820px) 92vw, 380px" width="600" height="375" alt="Ritratto di Nicolò Forcolin su fondo arancione, con giacca di pelle e dolcevita nero." data-i18n-alt="ig_alt2" loading="lazy" decoding="async"><span class="home-ig-views"><b>353</b> <span data-i18n="ig_views">visualizzazioni</span></span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
-        <a class="home-ig-tile " href="https://www.instagram.com/p/DfcLyDUjqau/" target="_blank" rel="noopener noreferrer"><img src="instagram/palazzo-600.webp" srcset="instagram/palazzo-600.webp 600w, instagram/palazzo-1000.webp 1000w" sizes="(max-width:820px) 92vw, 380px" width="600" height="375" alt="La facciata decorata di un palazzo d’angolo, con finestre e balconi, in luce calda." data-i18n-alt="ig_alt3" loading="lazy" decoding="async"><span class="home-ig-views"><b>230</b> <span data-i18n="ig_views">visualizzazioni</span></span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
-      </div>
+      <a class="home-ig-tile home-ig-big" href="https://www.instagram.com/p/DfjfEy-jvCq/" target="_blank" rel="noopener noreferrer"><img src="instagram/bruxelles-800.webp" srcset="instagram/bruxelles-800.webp 800w, instagram/bruxelles-1200.webp 1200w" sizes="(max-width:820px) 92vw, 440px" width="800" height="800" alt="Una strada di Bruxelles vista dall’alto, con una chiesa sullo sfondo e un cielo nuvoloso." data-i18n-alt="ig_alt1" loading="lazy" decoding="async"><span class="home-ig-views"><b>239</b> <span data-i18n="ig_views">visualizzazioni</span></span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
+      <a class="home-ig-tile" href="https://www.instagram.com/p/DfmM1fNsJMt/" target="_blank" rel="noopener noreferrer"><img src="instagram/ritratto-400.webp" srcset="instagram/ritratto-400.webp 400w, instagram/ritratto-700.webp 700w" sizes="(max-width:820px) 46vw, 280px" width="400" height="500" alt="Ritratto di Nicolò Forcolin su fondo arancione, con giacca di pelle e dolcevita nero." data-i18n-alt="ig_alt2" loading="lazy" decoding="async"><span class="home-ig-views"><b>353</b> <span data-i18n="ig_views">visualizzazioni</span></span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
+      <a class="home-ig-tile" href="https://www.instagram.com/p/DfcLyDUjqau/" target="_blank" rel="noopener noreferrer"><img src="instagram/palazzo-400.webp" srcset="instagram/palazzo-400.webp 400w, instagram/palazzo-700.webp 700w" sizes="(max-width:820px) 46vw, 280px" width="400" height="500" alt="La facciata decorata di un palazzo d’angolo, con finestre e balconi, in luce calda." data-i18n-alt="ig_alt3" loading="lazy" decoding="async"><span class="home-ig-views"><b>230</b> <span data-i18n="ig_views">visualizzazioni</span></span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
     </div>
     <p class="home-ig-note" data-i18n="home_ig_note">Tre foto dal mio account Instagram, una per ogni gruppo di foto, con le visualizzazioni di novembre 2026. Sono copie ospitate su questo sito: aprendo la pagina non si contatta Instagram.</p>
     <a class="home-text-link" href="https://www.instagram.com/parti_nico/" target="_blank" rel="noopener noreferrer"><span data-i18n="out_photo_link">Vedi il profilo Instagram</span><span class="visually-hidden" data-i18n="new_tab_hint"> (si apre in una nuova scheda)</span></a>
