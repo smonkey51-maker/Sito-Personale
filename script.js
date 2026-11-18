@@ -234,7 +234,7 @@
       privacy_s3b_h:"Base giuridica e conservazione",
       privacy_s3b_p:"Tratto questi dati in base al legittimo interesse a sapere quante persone visitano il sito e a tenerlo sicuro (art. 6, par. 1, lett. f, GDPR). Le statistiche aggregate sono conservate per 90 giorni e poi cancellate automaticamente. I log tecnici sono conservati da Vercel secondo la sua informativa. Vercel e Upstash possono trattare i dati anche fuori dallo Spazio economico europeo: le garanzie che adottano sono descritte nelle loro informative.",
       privacy_s4_h:"Dati mostrati sul sito",
-      privacy_s4_p:"I recapiti (email, Instagram, LinkedIn) pubblicati nella home sono dati personali dell’autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina.",
+      privacy_s4_p:"I recapiti (email, Instagram, LinkedIn) pubblicati nella home sono dati personali dell’autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina. Le foto della sezione Instagram sono copie ospitate su questo sito: aprendo la pagina il sito non contatta Instagram. Seguire un link verso Instagram porta sul loro servizio, che ha una propria informativa.",
       privacy_s5_h:"I tuoi diritti",
       privacy_s5_p:"Puoi chiedermi accesso, cancellazione, rettifica e opposizione scrivendomi via email o su LinkedIn, nei limiti in cui si applicano a dati pseudonimi che non posso ricollegare a una persona. Hai anche il diritto di presentare reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).",
       privacy_s6_h:"Modifiche a questa informativa",
@@ -324,6 +324,12 @@
       loop_r5_v:"I modelli sono probabilistici e possono sbagliare anche con un buon playbook e buone verifiche.",
       page_title_loop:"AI delegation loop | Nicolò Forcolin",
       page_description_loop:"Un metodo per affidare attività ricorrenti a un agente IA generale, con una cartella di lavoro che si aggiorna dopo ogni errore. Un concetto che sto esplorando.",
+      home_ig_title:"Su Instagram",
+      home_ig_note:"Tre foto dal mio account Instagram, una per ogni gruppo di foto, con le visualizzazioni di novembre 2026. Sono copie ospitate su questo sito: aprendo la pagina non si contatta Instagram.",
+      ig_views:"visualizzazioni",
+      ig_alt1:"Una strada di Bruxelles vista dall’alto, con una chiesa sullo sfondo e un cielo nuvoloso.",
+      ig_alt2:"Ritratto di Nicolò Forcolin su fondo arancione, con giacca di pelle e dolcevita nero.",
+      ig_alt3:"La facciata decorata di un palazzo d’angolo, con finestre e balconi, in luce calda.",
       page_title_projects:"Progetti ed Iniziative | Nicolò Forcolin",
       page_description_projects:"I progetti AI e le iniziative di consulenza, formazione e community di Nicolò Forcolin.",
       projects_lead:"I progetti AI che seguo e le iniziative di consulenza, formazione e community che li accompagnano.",
@@ -566,7 +572,7 @@
       privacy_s3b_h:"Legal basis and retention",
       privacy_s3b_p:"I process this data on the basis of my legitimate interest in knowing how many people visit the site and keeping it secure (Art. 6(1)(f) GDPR). Aggregate statistics are kept for 90 days and then deleted automatically. Technical logs are kept by Vercel under its own policy. Vercel and Upstash may process data outside the European Economic Area: the safeguards they use are described in their privacy policies.",
       privacy_s4_h:"Data shown on the site",
-      privacy_s4_p:"The contact details (email, Instagram, LinkedIn) published on the home page are the site author’s own personal data, shown voluntarily so people can get in touch. The site doesn’t collect or process them: they’re simply printed on the page.",
+      privacy_s4_p:"The contact details (email, Instagram, LinkedIn) published on the home page are the site author’s own personal data, shown voluntarily so people can get in touch. The site doesn’t collect or process them: they’re simply printed on the page. The photos in the Instagram section are copies hosted on this site: opening the page does not contact Instagram. Following a link to Instagram takes you to their service, which has its own privacy policy.",
       privacy_s5_h:"Your rights",
       privacy_s5_p:"You can ask me for access, deletion, correction or to object by email or by messaging me on LinkedIn, to the extent these apply to pseudonymous data I cannot link back to a person. You also have the right to complain to the Italian data protection authority, the Garante (garanteprivacy.it).",
       privacy_s6_h:"Changes to this notice",
@@ -656,6 +662,12 @@
       loop_r5_v:"Language models are probabilistic and can still be wrong, even with a good playbook and good checks.",
       page_title_loop:"AI delegation loop | Nicolò Forcolin",
       page_description_loop:"A method for handing recurring tasks to a general AI agent, with a working folder that is updated after every mistake. A concept I am exploring.",
+      home_ig_title:"On Instagram",
+      home_ig_note:"Three photos from my Instagram account, one for each group of photos, with the views as of November 2026. They are copies hosted on this site: opening the page does not contact Instagram.",
+      ig_views:"views",
+      ig_alt1:"A street in Brussels seen from above, with a church in the background and a cloudy sky.",
+      ig_alt2:"Portrait of Nicolò Forcolin on an orange background, wearing a leather jacket and a black turtleneck.",
+      ig_alt3:"The decorated facade of a corner building, with windows and balconies, in warm light.",
       page_title_projects:"Projects and Initiatives | Nicolò Forcolin",
       page_description_projects:"Nicolò Forcolin’s AI projects and consulting, training and community initiatives.",
       projects_lead:"The AI projects I follow and the consulting, training and community initiatives that go with them.",
@@ -781,6 +793,10 @@
     document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
       var k = el.getAttribute("data-i18n-aria");
       if(dict[k] !== undefined){ el.setAttribute("aria-label", dict[k]); }
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-alt");
+      if(dict[k] !== undefined){ el.setAttribute("alt", dict[k]); }
     });
     document.querySelectorAll(".lang-btn").forEach(function(b){
       var selected = b.getAttribute("data-lang") === lang;
