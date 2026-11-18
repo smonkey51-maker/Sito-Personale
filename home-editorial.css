@@ -100,7 +100,7 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 
 /* Anteprima Instagram: tre foto copiate sul sito, una per gruppo. */
-.home-ig-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:end}
+.home-ig-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
 .home-ig-tile{display:block;color:var(--ink);text-decoration:none}
 .home-ig-tile img{display:block;width:100%;height:auto;background:var(--line)}
 .home-ig-views{display:block;margin-top:10px;font-size:1rem;line-height:1.4;color:var(--ink-soft)}
