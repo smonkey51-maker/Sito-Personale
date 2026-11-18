@@ -9,7 +9,6 @@
   border-bottom: 1px solid var(--line);
 }
 
-
 /* Barra in alto: lingue e menu a tre lineette su ogni larghezza. La lingua
    attiva è sottolineata nel colore del testo; il menu si apre sotto la barra
    con le pagine e Contatti. */
@@ -182,7 +181,6 @@
   .flow-kicker, .flow-title, .flow-desc { grid-column: 1; grid-row: auto; padding-top: 0; }
 }
 
-/* Voci (iniziative) */
 /* Le voci si separano solo con lo spazio: niente blocchi, linee né ombre. */
 .page-block-body .item + .item { margin-top: 40px; }
 .page-block-body .item + p { margin-top: 32px; }
@@ -259,8 +257,6 @@
   .page:has(#per-chi:target) .for-whom-block .item-link a { display: inline-flex; align-items: center; min-height: 44px; }
   .page:has(#per-chi:target) + .colophon { margin-top: 6px; padding: 0 0 6px; }
 }
-
-/* Very large screens: the page column scales with the header and the footer. */
 
 /* RAG page: text and facts on the left, the interactive figure on the right; below 821px they stack. */
 .case-hero { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-areas: "text art"; column-gap: 48px; align-items: start; margin-bottom: clamp(48px, 7vw, 88px); }
