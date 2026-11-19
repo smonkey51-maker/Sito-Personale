@@ -58,7 +58,7 @@ h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:0}
 .footer-note{padding:18px 0 0}
 
 .colophon{padding-bottom:16px}
-.footer-note{line-height:1.4}
+.footer-note{line-height:1.5}
 @media(max-width:700px){.colophon{padding:12px 0 18px}.footer-note{padding-top:12px}}
 
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
@@ -102,7 +102,7 @@ main.editorial-content{padding-bottom:0}
 }
 
 /* Invito a contattarmi: un solo invito per schermata, nel carattere dei titoli con sottolineatura arancione. */
-.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:1.0625rem;font-weight:500;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
+.cta-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:8px;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:1rem;font-weight:500;text-decoration:none;transition:transform 120ms ease-out,background-color 120ms ease-out}
 .cta-button:active{transform:scale(.97)}
 .cta-button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(hover:hover) and (pointer:fine){.cta-button:hover{background:var(--accent-hover)}}
@@ -114,7 +114,7 @@ main.editorial-content{padding-bottom:0}
 /* Lingua: la sigla della lingua attiva con una freccia che invita a cambiarla; l'elenco sotto mostra le altre. */
 .lang-menu{position:relative}
 .lang-list{display:flex;gap:2px}
-.lang-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 10px;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:1.0625rem;font-weight:400;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
+.lang-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 10px;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:1rem;font-weight:400;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
 .lang-btn.on{color:var(--ink);font-weight:500}
 .lang-btn:active{color:var(--ink)}
 .lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -123,4 +123,3 @@ main.editorial-content{padding-bottom:0}
 @media(prefers-reduced-motion:reduce){.lang-btn{transition:none}}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
-@media(min-width:1200px){body .footer-note{font-size:1.0625rem}}
