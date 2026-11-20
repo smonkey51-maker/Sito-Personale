@@ -215,6 +215,7 @@
       footer_place:"© 2026 Nicolò Forcolin, Padova, Italia.",
       colophon_note:"Sito personale. Le attività descritte sono presentate a titolo personale.",
       footer_privacy_link:"Informativa privacy",
+      photo_credit:"Foto di Prato della Valle:",
       privacy_title:"Informativa sulla privacy",
       privacy_intro:"Questo sito utilizza statistiche aggregate delle visite, senza cookie di tracciamento. Non raccoglie dati tramite moduli.",
       privacy_s1_h:"Titolare del trattamento",
@@ -472,7 +473,7 @@
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       hero_intro:[
-        [{t:"IT for public administration since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
+        [{t:"Public-sector IT since "},{t:"2022",b:true},{t:", tech lover since "},{t:"1992",b:true},{t:"."}],
         [{t:"I have a habit of complicating my own life to make it simpler for others."}]
       ],
       stats_label:"In numbers",
@@ -548,6 +549,7 @@
       footer_place:"© 2026 Nicolò Forcolin, Padua, Italy.",
       colophon_note:"Personal website. The activities described here are presented in a personal capacity.",
       footer_privacy_link:"Privacy notice",
+      photo_credit:"Photo of Prato della Valle:",
       privacy_title:"Privacy notice",
       privacy_intro:"This site uses aggregated visit analytics without tracking cookies and does not collect data through forms.",
       privacy_s1_h:"Data controller",
