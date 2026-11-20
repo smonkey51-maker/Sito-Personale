@@ -154,7 +154,7 @@ for(const viewport of sizes){
    await expect(page.locator('.colophon a[href*="linkedin"]')).toHaveCount(1);
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
-   await expect(page.locator('#heroIntro')).toContainText('IT for public administration since 2022, tech lover since 1992.');
+   await expect(page.locator('#heroIntro')).toContainText('Public-sector IT since 2022, tech lover since 1992.');
   });
   {
    test('the three languages sit side by side in the bar, the current one is marked, and a click switches',async({page})=>{
