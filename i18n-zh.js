@@ -9,7 +9,7 @@ window.NF_I18N.zh = {
   home_local_res_v:"来自约 100 个测试问题。",
   home_career_more:"应同事要求，已辅导 35 位以上同事。作为 DABO CEO 团队成员，参与在中国举办的“Sprint Forward in Golden Boots”。",
   home_all_projects:"所有项目",
-  home_audience_desc:"我讲解 AI，整合技术，改进业务流程。始终只有一个目标：让它们在日常工作中真正有用。",
+  home_audience_desc:"我与公共行政部门、公共机构、中小企业和专业人士合作。我开发的方案，离开 PowerPoint 演示也一样管用。",
   home_career_title:"我的经历",
   home_career_link:"了解我的经历",
   local_how_privacy: "请求在本地处理，不会向外部发送数据。",
@@ -138,7 +138,8 @@ window.NF_I18N.zh = {
   enablement_title: "分享实践经验",
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
   hero_intro: [
-    [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }]
+    [{ t: "自 " }, { t: "2022", b: true }, { t: " 年起从事公共行政领域的 IT，自 " }, { t: "1992", b: true }, { t: " 年起热爱科技。" }],
+    [{ t: "我讲解 AI，把技术带进业务流程。真实的流程，由人和日常问题组成。" }]
   ],
   stats_label: "数据一览",
   stat1_v: "35+",
@@ -160,7 +161,7 @@ window.NF_I18N.zh = {
   faq3_a:"从每周都让你们浪费时间的问题开始。企业 RAG 就是这样诞生的：现在处理一个问题不到 15 分钟，过去约需一小时；问题之后的分析不到 2 小时，过去需要一整天。",
   skip_to_content: "跳到正文",
   page_title: "Nicolò Forcolin | 日常工作中的 AI",
-  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我讲解 AI，整合技术，改进业务流程。始终只有一个目标：让它们在日常工作中真正有用。",
+  page_description: "自 2022 年起从事公共行政领域的 IT，自 1992 年起热爱科技。我讲解 AI，把技术带进业务流程。真实的流程，由人和日常问题组成。",
   rag_step1_kicker: "最初的来源",
   rag_step1_title: "文档与事件历史",
   rag_step1_desc: "两个相互独立的知识库。",
