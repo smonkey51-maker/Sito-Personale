@@ -116,7 +116,7 @@ main.editorial-content{padding-bottom:0}
 .lang-list{display:flex;gap:2px}
 .lang-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 10px;border:0;background:none;color:var(--ink-soft);font-family:var(--sans);font-size:1rem;font-weight:400;white-space:nowrap;cursor:pointer;transition:color 120ms ease-out}
 .lang-btn.on{color:var(--ink);font-weight:500}
-.lang-btn[data-lang="zh"]{font-size:.88rem;line-height:1;vertical-align:middle}
+.lang-btn[data-lang="zh"]{line-height:1;vertical-align:middle}
 .lang-btn:active{color:var(--ink)}
 .lang-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 @media(hover:hover) and (pointer:fine){.lang-btn:hover{color:var(--ink)}}
