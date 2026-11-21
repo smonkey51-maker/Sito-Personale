@@ -7,7 +7,7 @@ window.NF_I18N.zh = {
   home_rag_res_v:"即可处理一个问题，此前约需一小时。",
   home_local_res_k:"约 80 个正确回答",
   home_local_res_v:"来自约 100 个测试问题。",
-  home_career_more:"应同事要求，已辅导 35 位以上同事。作为 DABO CEO 团队成员，参与“Sprint Forward in Golden Boots”。",
+  home_career_more:"应同事要求，已辅导 35 位以上同事。作为 DABO CEO 团队成员，参与在中国举办的“Sprint Forward in Golden Boots”。",
   home_all_projects:"所有项目",
   home_audience_desc:"公共行政部门、公共机构和受监管组织，也适合中小企业和专业人士。",
   home_career_title:"我的经历",
