@@ -6,6 +6,7 @@
 /* Font serviti dal sito stesso (file variabili, solo alfabeto latino):
    niente connessioni a Google Fonts prima di mostrare i testi. */
 @font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/montserrat-latin-wght.woff2") format("woff2")}
+@font-face{font-family:"Special Elite";font-style:normal;font-weight:400 900;font-display:swap;src:url("fonts/special-elite-latin.woff2") format("woff2")}
 @font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url("fonts/bodoni-moda-latin-opsz.woff2") format("woff2")}
 @font-face{font-family:"Destiny Signature";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/destiny-signature-latin.woff2") format("woff2")}
 
@@ -134,6 +135,6 @@ html{scroll-padding-top:var(--nav-offset,80px)}
 }
 
 /* Cinese (semplificato): caratteri di sistema, perché i font del sito coprono solo il latino di base. */
-html:lang(zh){--serif:"Bodoni Moda","Songti SC","Noto Serif SC","SimSun",serif;--sans:"Montserrat","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
+html:lang(zh){--serif:"Bodoni Moda","Songti SC","Noto Serif SC","SimSun",serif;--sans:"Special Elite","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
 html:lang(zh) body *{letter-spacing:normal}
 html:lang(zh) body{line-height:1.75}

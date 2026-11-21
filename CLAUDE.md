@@ -26,9 +26,12 @@ tool di terze parti: basta leggere il codice):
   con carattere distintivo; corpo testo leggibile ≥16px, nessun testo
   sotto i 13px. Massimo due famiglie e cinque dimensioni. Eccezione
   voluta da Nicolò: tre famiglie. Bodoni Moda (alternativa web a Didot)
-  per i titoli, Montserrat (medium o regular) per il resto, Destiny
-  Signature solo per la firma (il nome nella barra in alto). Niente
-  monospace fuori dai blocchi di codice. Niente etichette piccole in
+  per i titoli, Special Elite (carattere da macchina da scrivere,
+  scelto da Nicolò il 21 novembre 2026) per tutto il resto, Destiny
+  Signature solo per la firma (il nome nella barra in alto). Special
+  Elite è l'unico carattere a spaziatura fissa ammesso fuori dai
+  blocchi di codice. Montserrat resta solo nella pagina privata delle
+  statistiche. Punk Typewriter è stato provato e scartato. Niente etichette piccole in
   maiuscolo con tracking. Paragrafi max ~62ch, interlinea 1.45-1.6,
   mai giustificati né centrati oltre le tre righe. Titoli su max due
   righe a ogni larghezza, `text-wrap:balance`. Nessuna parola del

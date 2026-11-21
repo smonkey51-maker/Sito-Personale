@@ -2,7 +2,7 @@
 html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Variabili comuni e base tipografica. */
 :root{
- --sans:"Montserrat","Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
+ --sans:"Special Elite","Courier New",Courier,monospace;
  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
  --wide-w:1240px;
 }
