@@ -83,7 +83,7 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .hero-intro p:first-child{font-size:1.5rem;line-height:1.15;margin:0 0 14px}
  :lang(zh-Hans) .hero-intro p:first-child{font-size:1.25rem}
  .hero-intro p:last-child{margin-bottom:0}
- .hero-photo-frame{grid-row:1;align-self:stretch;width:100%;height:clamp(200px,calc(100svh - 360px),560px);min-height:0;max-height:none;margin:0 0 16px;overflow:hidden;position:relative;order:0}
+ .hero-photo-frame{grid-row:1;align-self:stretch;width:100%;height:clamp(180px,calc(100svh - 480px),560px);min-height:0;max-height:none;margin:0 0 16px;overflow:hidden;position:relative;order:0}
  .hero-portrait{position:absolute;top:0;left:0;width:100%;max-width:none;height:100%;max-height:none;object-fit:contain;object-position:center bottom;mask-image:none;-webkit-mask-image:none}
  .home-stats-list{grid-template-columns:1fr;gap:0;padding:10px 0}
  .home-stats-list li{display:flex;align-items:baseline;gap:16px;padding:10px 0}
@@ -141,3 +141,5 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 :lang(en) .hero-intro p:first-child{font-size:1.75rem}
 @media(max-width:1000px){:lang(en) .hero-intro p:first-child{font-size:1.375rem;letter-spacing:-0.045em}}
 @media(max-width:360px){.hero-intro p:first-child{letter-spacing:-0.045em}:lang(en) .hero-intro p:first-child,:lang(zh-Hans) .hero-intro p:first-child{font-size:1.125rem}}
+@media(max-width:400px){:lang(en) .hero-intro p:first-child{font-size:1.25rem}}
+@media(max-width:340px){:lang(en) .hero-intro p:first-child{font-size:1.125rem}}
