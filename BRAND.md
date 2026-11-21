@@ -85,6 +85,26 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 - Layout fluido per desktop e mobile, con rispetto per `prefers-reduced-motion`.
 - Non inventare metriche, impatti o caratteristiche tecniche.
 
+### Logo: firma e monogramma (21 novembre 2026)
+
+Due segni, un ruolo ciascuno, mai insieme nello stesso spazio:
+- **Firma** "Nicolò Forcolin" in Destiny Signature, arancione `#FF4A11`: è il logo quando c'è spazio per il nome. Barra in alto di ogni pagina, anteprime social, copertina LinkedIn, documenti e presentazioni. Sempre su fondo scuro, mai sotto 22 px di corpo, mai in maiuscolo né deformata.
+- **Monogramma NF** (ovale avorio con la N la cui ultima asta sale nella F, e il punto come stanghetta): è il simbolo quando il nome non entra o non si legge. Favicon, icona dell’app sul telefono, avatar degli account tecnici (GitHub, Vercel), timbro su immagini e allegati. Sui social personali resta il ritratto. Ovale avorio `#F5F1EC` su nero `#0E0E0F`, tratto nero; sotto i 24 px il punto si perde ed è accettato.
+- Non si affiancano firma e monogramma, non si ricolora il monogramma (niente versione arancione), non si mette il monogramma dentro le pagine al posto della firma.
+- File: `favicon.svg` (vettoriale), `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png`, `icon-192-v8.png`, `icon-512-v8.png` e le versioni maskable.
+
+### Grafica: disegni, schemi e immagini (21 novembre 2026)
+
+- **Disegni al tratto** (icone delle pagine progetto, schemi): solo linee, senza riempimenti, colore del testo (`currentColor`, avorio); tratto da 1,25 su una tavola larga 120 unità (circa 1,5 px a schermo), estremità e giunzioni arrotondate. L'arancione segna al massimo un elemento per disegno: quello attivo o il punto d'arrivo.
+- **Schemi grandi** (la testina del RAG, il ciclo del delegation loop): stessa logica, tratto proporzionato alla tavola (0,6 sulla figura isometrica, 2–3 sul ciclo da 340), un solo elemento arancione.
+- **Serigrafia di Padova** (`padova-skyline.webp`): disegno a linee chiare, in fondo alle pagine interne e nelle anteprime social, in trasparenza. Non compare mai insieme alla foto di Prato della Valle.
+- **Foto**: il ritratto è sempre in bianco e nero e scontornato; le foto di luoghi stanno solo come sfondo scurito (al 92% di nero) e con il credito dell'autore se non sono mie.
+- Niente icone sopra i titoli, niente forme decorative, niente illustrazioni a colori o generate.
+
+### Anteprime social (21 novembre 2026)
+
+Un'immagine 1200×630 per pagina, sotto i 300 KB, rigenerate con lo stile attuale: fondo nero, firma arancione in alto a sinistra, titolo della pagina in Bodoni Moda arancione, una riga in Montserrat avorio, "nforcolin.eu" in basso, serigrafia di Padova in trasparenza in basso a destra. La home usa il titolo della hero in Bodoni avorio e il ritratto al posto della serigrafia. File: `og-home.jpg`, `og-rag.jpg`, `og-ai-in-locale.jpg`, `og-loop.jpg`, `og-progetti.jpg`, `og-percorso.jpg`, `og-hobby.jpg`, `og-padova.jpg` (informativa privacy). Se cambia il titolo o la frase di una pagina, va rifatta anche la sua anteprima.
+
 ## 4. Profili social
 
 LinkedIn va allineato al positioning statement v2.
