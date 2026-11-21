@@ -25,13 +25,10 @@ tool di terze parti: basta leggere il codice):
 - **Tipografia**: niente Inter/Roboto/Geist su tutto senza un titolo
   con carattere distintivo; corpo testo leggibile ≥16px, nessun testo
   sotto i 13px. Massimo due famiglie e cinque dimensioni. Eccezione
-  voluta da Nicolò: tre famiglie. Special Elite (carattere da macchina
-  da scrivere, scelto da Nicolò il 21 novembre 2026) solo per titoli,
-  titoletti, email grande e numeri degli schemi, Montserrat (medium o
-  regular) per tutto il testo, Destiny Signature solo per la firma (il
-  nome nella barra in alto). Special Elite è l'unico carattere a
-  spaziatura fissa ammesso fuori dai blocchi di codice, e mai sul testo
-  corrente. Punk Typewriter è stato provato e scartato. Niente etichette piccole in
+  voluta da Nicolò: tre famiglie. Bodoni Moda (alternativa web a Didot)
+  per i titoli, Montserrat (medium o regular) per il resto, Destiny
+  Signature solo per la firma (il nome nella barra in alto). Niente
+  monospace fuori dai blocchi di codice. Niente etichette piccole in
   maiuscolo con tracking. Paragrafi max ~62ch, interlinea 1.45-1.6,
   mai giustificati né centrati oltre le tre righe. Titoli su max due
   righe a ogni larghezza, `text-wrap:balance`. Nessuna parola del
