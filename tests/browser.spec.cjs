@@ -147,7 +147,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('h1#hero-name')).toHaveText('Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022, Tech Lover dal 1992.');
-   await expect(page.locator('#heroIntro')).toContainText('Ho il vizio di complicarmi la vita per semplificarla agli altri.');
+   await expect(page.locator('#heroIntro')).not.toContainText('Ho il vizio');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
    await expect(page.locator('#collabTitle')).toHaveText('Disponibile per progetti AI con PA e PMI.');
