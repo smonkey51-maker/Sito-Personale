@@ -10,7 +10,7 @@ window.NF_I18N.zh = {
   home_career_more:"应同事要求，已辅导 35 位以上同事。作为 DABO CEO 团队成员，参与在中国举办的“Sprint Forward in Golden Boots”。",
   home_all_projects:"所有项目",
   home_audience_desc:"我与公共行政部门和公共机构合作，也与中小企业和专业人士合作。",
-  home_tagline:"当你不再想到技术时，它才真正发挥作用",
+  home_tagline:"当你不再想到技术时，它才真正发挥作用。",
   home_career_title:"我的经历",
   home_career_link:"了解我的经历",
   local_how_privacy: "请求在本地处理，不会向外部发送数据。",
