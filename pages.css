@@ -32,11 +32,11 @@
 .page-title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
   line-height: 1.15;
   text-wrap: balance;
   letter-spacing: 0;
-  margin: 0 0 28px;
+  margin: 0 0 28px -0.08em; /* allineamento ottico: il Bodoni grande ha spazio a sinistra della lettera */
   color: var(--accent);
 }
 /* Narrow phones: long titles ("Enterprise Knowledge Retrieval") stay on two lines. */
@@ -63,7 +63,7 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   line-height: 1.15;
   color: var(--accent);
-  margin: 0;
+  margin: 0 0 0 -0.05em;
 }
 .page-body > :first-child { padding-top: 0; }
 .page-block-body { max-width: 29em; }
@@ -75,7 +75,7 @@
 /* Come funziona (RAG): intestazione, primo paragrafo accanto allo schema
    fisso in quattro fasi, poi il resto del testo (desktop). */
 .how-section { padding: 72px 0 0; }
-.how-heading { font-family: var(--serif); font-weight: 500; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; margin: 0 0 20px; color: var(--accent); }
+.how-heading { font-family: var(--serif); font-weight: 500; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; margin: 0 0 20px -0.05em; color: var(--accent); }
 .how-lead { font-size: clamp(1.125rem, 1.8vw, 1.375rem); line-height: 1.5; color: var(--ink); margin: 0 0 16px; max-width: 52ch; }
 .how-note { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 46ch; }
 .how-body { margin-top: 40px; }
@@ -122,7 +122,7 @@
    poi "Perché farlo" e "Risultati e limiti" affiancati e "Cosa ho imparato".
    Su mobile tutto in colonna, schema con freccia verso il basso. */
 .lab-section { padding: 72px 0 0; }
-.lab-heading { font-family: var(--serif); font-weight: 500; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; margin: 0 0 16px; color: var(--accent); }
+.lab-heading { font-family: var(--serif); font-weight: 500; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; margin: 0 0 16px -0.05em; color: var(--accent); }
 .lab-section p { font-size: 1.125rem; line-height: 1.6; color: var(--ink); margin: 0 0 14px; max-width: 29em; }
 .lab-section p:last-child { margin-bottom: 0; }
 .lab-section .lab-note { font-size: 1rem; color: var(--ink-soft); }
@@ -300,4 +300,3 @@
 .loop-risks li { font-size: 1.125rem; line-height: 1.6; color: var(--ink); margin: 0 0 16px; }
 .loop-risks li:last-child { margin-bottom: 0; }
 .loop-risks strong { font-weight: 500; }
-@media (max-width: 360px) { .item-title { font-size: 1.125rem; } }
