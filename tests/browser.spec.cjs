@@ -145,7 +145,7 @@ for(const viewport of sizes){
   test('home hero opens with the real introduction',async({page})=>{
    await page.goto('/');
    await expect(page.locator('h1#hero-name')).toHaveText('Nicolò Forcolin');
-   await expect(page.locator('#heroIntro')).toContainText('IT per le PA dal 2022. Tech Lover dal 1992.');
+   await expect(page.locator('#heroIntro')).toContainText('Informatico per le PA');
    await expect(page.locator('#heroIntro')).not.toContainText('Ho il vizio');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
@@ -153,7 +153,7 @@ for(const viewport of sizes){
    await expect(page.locator('.colophon a[href*="linkedin"]')).toHaveCount(1);
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
-   await expect(page.locator('#heroIntro')).toContainText('Public-sector IT since 2022. Tech lover since 1992.');
+   await expect(page.locator('#heroIntro')).toContainText('Public-sector IT specialist');
   });
   {
    test('the three languages sit side by side in the bar, the current one is marked, and a click switches',async({page})=>{
@@ -197,7 +197,7 @@ test.describe('browser language',()=>{
  test.use({locale:'en-US',viewport:{width:375,height:812}});
  test('a non-Italian browser opens the site in English',async({page})=>{
   await page.goto('/');
-  await expect(page.locator('#heroIntro')).toContainText('IT for public administration');
+  await expect(page.locator('#heroIntro')).toContainText('Public-sector IT specialist');
   await expect(page.locator('html')).toHaveAttribute('lang','en');
  });
 });

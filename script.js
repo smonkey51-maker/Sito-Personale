@@ -139,8 +139,8 @@
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       hero_intro:[
-        [{t:"IT per le PA dal "},{t:"2022",b:true},{t:". Tech Lover dal "},{t:"1992",b:true},{t:"."}],
-        [{t:"Racconto l’AI e porto la tecnologia nei processi aziendali. Quelli veri, fatti di persone e problemi quotidiani."}]
+        [{t:"Informatico per le PA, racconto l’AI e la porto nei processi aziendali."}],
+        [{t:"Esempio concreto: un assistente AI da me creato ed in produzione porta l’analisi post evento da una giornata a poche ore."}]
       ],
       stats_label:"In numeri",
       stat1_v:"35+",
@@ -162,7 +162,7 @@
       faq3_a:"Da un problema che vi fa perdere tempo ogni settimana. Il RAG aziendale è nato così: oggi un problema si gestisce in meno di 15 minuti invece di circa un’ora, e l’analisi dopo un problema richiede meno di 2 ore invece di una giornata.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
-      page_description:"IT per le PA dal 2022. Tech Lover dal 1992. Racconto l’AI e porto la tecnologia nei processi aziendali. Quelli veri, fatti di persone e problemi quotidiani.",
+      page_description:"Informatico per le PA, racconto l’AI e la porto nei processi aziendali. Esempio concreto: un assistente AI da me creato ed in produzione porta l’analisi post evento da una giornata a poche ore.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -435,8 +435,8 @@
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       hero_intro:[
-        [{t:"Public-sector IT since "},{t:"2022",b:true},{t:". Tech lover since "},{t:"1992",b:true},{t:"."}],
-        [{t:"I talk about AI and bring technology into business processes. The real ones, made of people and everyday problems."}]
+        [{t:"Public-sector IT specialist: I talk about AI and bring it into business processes."}],
+        [{t:"A concrete example: an AI assistant I built, now in production, cuts post-incident analysis from a full day to a few hours."}]
       ],
       stats_label:"In numbers",
       stat1_v:"35+",
@@ -458,7 +458,7 @@
       faq3_a:"With a problem that costs you time every week. The enterprise RAG started that way: an issue now takes under 15 minutes instead of about an hour, and the analysis after an issue takes under 2 hours instead of a full day.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
-      page_description:"Public-sector IT since 2022. Tech lover since 1992. I talk about AI and bring technology into business processes. The real ones, made of people and everyday problems.",
+      page_description:"Public-sector IT specialist: I talk about AI and bring it into business processes. A concrete example: an AI assistant I built, now in production, cuts post-incident analysis from a full day to a few hours.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
