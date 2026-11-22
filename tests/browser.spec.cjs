@@ -148,7 +148,7 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).toContainText('Informatico per le PA');
    await expect(page.locator('#heroIntro')).not.toContainText('Ho il vizio');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
-   await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
+   await expect(page.locator('.site-name')).toHaveText('NForcolin');
    await expect(page.locator('#collabTitle')).toHaveText('Disponibile per progetti AI con PA e PMI.');
    await expect(page.locator('.colophon a[href*="linkedin"]')).toHaveCount(1);
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
@@ -172,10 +172,10 @@ for(const viewport of sizes){
     await expect(page.locator('.lang-toggle')).toHaveCount(0);
    });
   }
-  test('the name in the bar is written in full at every width',async({page})=>{
+  test('the signature in the bar reads NForcolin at every width',async({page})=>{
    await page.goto('/');
    await expect(page.locator('.site-name')).toBeVisible();
-   await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
+   await expect(page.locator('.site-name')).toHaveText('NForcolin');
   });
   if(viewport.width<=700){
    test('on mobile the first screen shows the bar with the languages, the portrait and the introduction',async({page})=>{
