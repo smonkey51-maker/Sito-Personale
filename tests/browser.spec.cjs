@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 const sizes=[{name:'mobile',width:375,height:812},{name:'tablet',width:768,height:1024},{name:'desktop',width:1440,height:900}];
-const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/ai-delegation-loop.html','/progetti.html','/percorso.html','/privacy.html','/404.html'];
+const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/progetti.html','/percorso.html','/privacy.html','/404.html'];
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
@@ -114,10 +114,9 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('.home-proof')).toHaveCount(0);
    await expect(page.locator('.home-projects')).toHaveCount(1);
-   await expect(page.locator('.home-project')).toHaveCount(3);
+   await expect(page.locator('.home-project')).toHaveCount(2);
    await expect(page.locator('.home-project a[href="rag-aziendale.html"]')).toBeVisible();
    await expect(page.locator('.home-project a[href="ai-in-locale.html"]')).toBeVisible();
-   await expect(page.locator('.home-project a[href="ai-delegation-loop.html"]')).toBeVisible();
    await expect(page.locator('.home-services')).toHaveCount(0);
    await expect(page.locator('.home-audience')).toHaveCount(0);
    await expect(page.locator('.hero-audience')).toBeVisible();
