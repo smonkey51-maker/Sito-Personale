@@ -75,6 +75,11 @@
       ],
       "destination": "https://nforcolin.eu/:path",
       "permanent": true
+    },
+    {
+      "source": "/ai-delegation-loop.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

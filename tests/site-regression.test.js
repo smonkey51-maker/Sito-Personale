@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
-const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'ai-delegation-loop.html', 'progetti.html', 'percorso.html', 'fuori-dal-lavoro.html', 'privacy.html', '404.html'];
+const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'progetti.html', 'percorso.html', 'fuori-dal-lavoro.html', 'privacy.html', '404.html'];
 const js = read('script.js');
 const config = JSON.parse(read('vercel.json'));
 assert(config.headers.some(group => group.headers.some(h => h.key === 'Content-Security-Policy')), 'Missing CSP');
