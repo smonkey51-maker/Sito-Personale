@@ -139,3 +139,5 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 @media(max-width:700px){.hero-audience{max-width:none;font-size:1rem}}
 @media(max-width:379px){.hero-photo-frame{height:clamp(160px,calc(100svh - 520px),560px)}}
 @media(max-width:340px){.hero-intro p:first-child{font-size:1.125rem;letter-spacing:-0.04em}.hero-intro p{font-size:1rem}}
+.home-collab + .home-ig{padding-bottom:56px}
+@media(max-width:700px){.home-collab + .home-ig{padding-bottom:36px}}

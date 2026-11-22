@@ -5,6 +5,8 @@ window.NF_I18N.zh = {
   home_local_desc:"在组织内部基础设施上运行模型的实验。",
   home_rag_res_k:"不到 15 分钟",
   home_rag_res_v:"即可处理一个问题，此前约需一小时。",
+  home_rag_res2_k:"不到 2 小时",
+  home_rag_res2_v:"完成事件后的分析，此前最多需要一整天。",
   home_local_res_k:"约 80 个正确回答",
   home_local_res_v:"来自约 100 个测试问题。",
   home_career_more:"应同事要求，已辅导 35 位以上同事。作为 DABO CEO 团队成员，参与在中国举办的“Sprint Forward in Golden Boots”。",
