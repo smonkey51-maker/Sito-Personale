@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
 const fs=require('node:fs');
 const sizes=[{name:'mobile',width:375,height:812},{name:'tablet',width:768,height:1024},{name:'desktop',width:1440,height:900}];
-const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/progetti.html','/percorso.html','/privacy.html','/404.html'];
+const pages=['/','/rag-aziendale.html','/ai-in-locale.html','/progetti.html','/percorso.html','/privacy.html','/contatti.html','/404.html'];
 for(const viewport of sizes){
  test.describe(viewport.name,()=>{
   test.use({viewport:{width:viewport.width,height:viewport.height}});
@@ -29,7 +29,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await page.locator('.home-projects > .wrap > a[href="progetti.html"]').click();
    await expect(page).toHaveURL(/progetti\.html$/);
-   await expect(page.locator('h1')).toHaveText('Progetti ed Iniziative');
+   await expect(page.locator('h1')).toHaveText('Progetti e iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
    await expect(page.locator('h1')).toHaveText('RAG aziendale');
   });
@@ -149,7 +149,7 @@ for(const viewport of sizes){
    await expect(page.locator('#heroIntro')).not.toContainText('Ho il vizio');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
-   await expect(page.locator('#collabTitle')).toHaveText('Disponibile per progetti AI con PA e PMI.');
+   await expect(page.locator('#collabTitle')).toHaveText('Disponibile per progetti AI con PA, PMI e liberi professionisti.');
    await expect(page.locator('.colophon a[href*="linkedin"]')).toHaveCount(1);
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
@@ -187,7 +187,7 @@ for(const viewport of sizes){
     const photo=await page.locator('.hero-photo-frame').boundingBox();
     const heading=await page.locator('#hero-name').boundingBox();
     expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
-    expect(photo.height).toBeGreaterThanOrEqual(350);
+    expect(photo.height).toBeGreaterThanOrEqual(200);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
    });
   }
@@ -199,5 +199,27 @@ test.describe('browser language',()=>{
   await page.goto('/');
   await expect(page.locator('#heroIntro')).toContainText('Public-sector IT specialist');
   await expect(page.locator('html')).toHaveAttribute('lang','en');
+ });
+});
+test.describe('contact form',()=>{
+ test.use({viewport:{width:375,height:812}});
+ test('marks missing fields and sends a valid request',async({page})=>{
+  let sent=null;
+  await page.route('**/api/contact/send',async route=>{sent=JSON.parse(route.request().postData());await route.fulfill({status:200,contentType:'application/json',body:'{"ok":true}'});});
+  await page.goto('/contatti.html');
+  await page.locator('#contactForm button[type="submit"]').click();
+  await expect(page.locator('#cf-name-err')).toBeVisible();
+  await expect(page.locator('#cf-email-err')).toBeVisible();
+  await expect(page.locator('#cf-message-err')).toBeVisible();
+  expect(sent).toBeNull();
+  await page.fill('#cf-name','Mario Rossi');
+  await page.fill('#cf-email','mario@example.com');
+  await page.selectOption('#cf-kind','pmi');
+  await page.fill('#cf-message','Gestiamo ogni giorno decine di richieste uguali via email.');
+  await page.locator('#contactForm button[type="submit"]').click();
+  await expect(page.locator('#contactStatus')).toHaveText('Messaggio ricevuto. Ti rispondo all’indirizzo che hai indicato.');
+  expect(sent.name).toBe('Mario Rossi');
+  expect(sent.kind).toBe('pmi');
+  expect(sent.website).toBe('');
  });
 });

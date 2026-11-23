@@ -142,7 +142,7 @@
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       hero_intro:[
         [{t:"Informatico per le PA, racconto l’AI e la porto nei processi aziendali."}],
-        [{t:"Esempio concreto: un assistente AI da me creato ed in produzione porta l’analisi post evento da una giornata a poche ore."}]
+        [{t:"Esempio concreto: un assistente AI che ho creato, oggi in produzione, porta l’analisi post evento da una giornata a poche ore."}]
       ],
       stats_label:"In numeri",
       stat1_v:"35+",
@@ -154,7 +154,6 @@
       home_clients:"Ho lavorato con InfoCamere, DABO, IdeaGrip e Assicurazioni Generali.",
       collab_title:"Disponibile per progetti AI con PA, PMI e liberi professionisti.",
       collab_ask:"Raccontami che lavoro fate e dove perdete tempo ogni giorno.",
-      collab_reply:"Prendiamoci un caffè e parliamone. L’AI può aspettare il secondo giro.",
       faq_title:"Domande frequenti",
       faq1_q:"Lavori solo con la PA?",
       faq1_a:"No. Il mio lavoro nasce nella PA, ma gli stessi problemi li hanno PMI e professionisti: documenti sparsi, domande che tornano ogni giorno, risposte che dipendono da chi è in ufficio.",
@@ -164,7 +163,7 @@
       faq3_a:"Da un problema che vi fa perdere tempo ogni settimana. Il RAG aziendale è nato così: oggi un problema si gestisce in meno di 15 minuti invece di circa un’ora, e l’analisi dopo un problema richiede meno di 2 ore invece di una giornata.",
       skip_to_content:"Vai al contenuto",
       page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
-      page_description:"Informatico per le PA, racconto l’AI e la porto nei processi aziendali. Esempio concreto: un assistente AI da me creato ed in produzione porta l’analisi post evento da una giornata a poche ore.",
+      page_description:"Informatico per le PA, racconto l’AI e la porto nei processi aziendali. Un assistente AI che ho creato porta l’analisi post evento da una giornata a poche ore.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -219,7 +218,7 @@
       footer_privacy_link:"Informativa privacy",
       photo_credit:"Foto di Prato della Valle:",
       privacy_title:"Informativa sulla privacy",
-      privacy_intro:"Questo sito utilizza statistiche aggregate delle visite, senza cookie di tracciamento. Non raccoglie dati tramite moduli.",
+      privacy_intro:"Questo sito utilizza statistiche aggregate delle visite, senza cookie di tracciamento. Raccoglie dati personali solo se mi scrivi dal modulo di contatto.",
       privacy_s1_h:"Titolare del trattamento",
       privacy_s1_pre:"Nicolò Forcolin, Padova, Italia. Per qualsiasi richiesta relativa a questa informativa puoi scrivermi su ",
       privacy_s1_post:".",
@@ -233,11 +232,45 @@
       privacy_s4_h:"Dati mostrati sul sito",
       privacy_s4_p:"I recapiti (email, Instagram, LinkedIn) pubblicati nella home sono dati personali dell’autore del sito, mostrati volontariamente per essere contattato. Il sito non li raccoglie né li elabora: sono semplicemente stampati nella pagina. Le foto della sezione Instagram sono copie ospitate su questo sito: aprendo la pagina il sito non contatta Instagram. Seguire un link verso Instagram porta sul loro servizio, che ha una propria informativa.",
       privacy_s5_h:"I tuoi diritti",
-      privacy_s5_p:"Puoi chiedermi accesso, cancellazione, rettifica e opposizione scrivendomi via email o su LinkedIn, nei limiti in cui si applicano a dati pseudonimi che non posso ricollegare a una persona. Hai anche il diritto di presentare reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).",
+      privacy_s5_p:"Puoi chiedermi accesso, cancellazione, rettifica e opposizione scrivendomi via email o su LinkedIn. Per i messaggi del modulo di contatto questi diritti valgono per intero; per le statistiche valgono nei limiti in cui si applicano a dati pseudonimi che non posso ricollegare a una persona. Hai anche il diritto di presentare reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).",
       privacy_s6_h:"Modifiche a questa informativa",
       privacy_s6_p:"Questa informativa viene aggiornata se cambiano gli strumenti usati dal sito. La versione in vigore è sempre quella pubblicata su questa pagina.",
       privacy_updated:"Ultimo aggiornamento: novembre 2026.",
-      hero_cta2:"Progetti ed Iniziative",
+      page_title_contact:"Contatti | Nicolò Forcolin",
+      page_description_contact:"Raccontami che lavoro fate e dove perdete tempo: un modulo per scrivere a Nicolò Forcolin e fissare una chiamata o un caffè.",
+      contact_title:"Prendiamoci un caffè",
+      contact_lead:"Raccontami che lavoro fate e dove perdete tempo ogni giorno. Leggo io ogni messaggio e ti rispondo per fissare una chiamata o un caffè. Se l’AI non serve, te lo dico.",
+      contact_name:"Nome e cognome",
+      contact_email:"Email",
+      contact_org:"Azienda o ente",
+      contact_kind:"Tipo di organizzazione",
+      contact_kind_none:"Scegli",
+      contact_kind_pa:"Pubblica amministrazione",
+      contact_kind_pmi:"PMI",
+      contact_kind_pro:"Libero professionista",
+      contact_kind_other:"Altro",
+      contact_phone:"Telefono, se preferisci una chiamata",
+      contact_message:"Che lavoro fate e dove perdete tempo",
+      contact_message_hint:"Bastano poche righe: cosa fate, quale attività porta via più tempo, quali strumenti usate oggi.",
+      contact_err_name:"Scrivi il tuo nome.",
+      contact_err_email:"Serve un indirizzo email valido.",
+      contact_err_phone:"Controlla il numero di telefono.",
+      contact_err_message:"Scrivi almeno qualche riga.",
+      contact_privacy_pre:"Uso questi dati solo per risponderti e li cancello dopo 12 mesi. I dettagli sono nell’",
+      contact_privacy_link:"informativa privacy",
+      contact_privacy_post:".",
+      contact_send:"Invia la richiesta",
+      contact_status_sending:"Invio in corso…",
+      contact_status_ok:"Messaggio ricevuto. Ti rispondo all’indirizzo che hai indicato.",
+      contact_status_invalid:"Controlla i campi segnati.",
+      contact_status_rate:"Oggi da questa rete sono già arrivati diversi messaggi. Riprova domani o scrivimi via email.",
+      contact_status_error:"Il messaggio non è partito. Riprova tra poco o scrivimi via email.",
+      contact_alt:"Puoi anche scrivermi via email:",
+      collab_coffee:"Prendiamoci un caffè e parliamone.",
+      collab_wait:"L’AI può aspettare il secondo giro.",
+      privacy_form_h:"Modulo di contatto",
+      privacy_form_p:"Se mi scrivi dalla pagina Contatti, salvo nome, email, azienda o ente, tipo di organizzazione, telefono (se lo indichi) e il testo del messaggio, insieme alla data e alla lingua della pagina. Li uso solo per risponderti e capire se posso aiutarti, su tua richiesta (art. 6, par. 1, lett. b, GDPR). Sono conservati su Upstash Redis, li leggo solo io e non li cedo a nessuno. Vengono cancellati dopo 12 mesi, o prima se me lo chiedi. Per limitare lo spam il sito conta i messaggi inviati in un giorno con un identificativo pseudonimo ricavato dall’indirizzo IP, che si cancella dopo 24 ore.",
+      hero_cta2:"Progetti e iniziative",
       sec_localai_title:"AI in locale",
       for_whom_label:"Per chi",
       for_whom_text:"Aziende, PMI, professionisti e pubbliche amministrazioni che vogliono tenere i dati sotto controllo: ho testato modelli AI in locale su domande specifiche e dataset dedicati, e ne racconto risultati e limiti.",
@@ -290,13 +323,13 @@
       ig_alt1:"Una strada di Bruxelles vista dall’alto, con una chiesa sullo sfondo e un cielo nuvoloso.",
       ig_alt2:"Ritratto di Nicolò Forcolin su fondo arancione, con giacca di pelle e dolcevita nero.",
       ig_alt3:"Una terrazza di sera con tavoli bianchi, lanterne accese e cuscini blu.",
-      page_title_projects:"Progetti ed Iniziative | Nicolò Forcolin",
+      page_title_projects:"Progetti e iniziative | Nicolò Forcolin",
       page_description_projects:"I progetti AI e le iniziative di consulenza, formazione e community di Nicolò Forcolin.",
       projects_lead:"I progetti AI che seguo e le iniziative di consulenza, formazione e community che li accompagnano.",
       c1_lead:"Un assistente AI che risponde dai documenti dell’azienda e cita le fonti, per gestire più in fretta i problemi operativi e le analisi del middle management.",
       project_read:"Leggi il progetto",
       page_title_privacy:"Informativa sulla privacy | Nicolò Forcolin",
-      page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: nessun cookie di tracciamento, nessun dato raccolto tramite modulo.",
+      page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: statistiche aggregate senza cookie di tracciamento e dati raccolti solo dal modulo di contatto.",
     },
     en: {
       home_rag_title:"Enterprise RAG",
@@ -452,7 +485,6 @@
       home_clients:"I have worked with InfoCamere, DABO, IdeaGrip and Assicurazioni Generali.",
       collab_title:"Available for AI projects with public administrations, SMEs and independent professionals.",
       collab_ask:"Tell me what your team does and where it loses time every day.",
-      collab_reply:"Let’s grab a coffee and talk it over. AI can wait for the second round.",
       faq_title:"FAQ",
       faq1_q:"Do you only work with the public sector?",
       faq1_a:"No. My work started in the public sector, but SMEs and professionals face the same problems: scattered documents, questions that come back every day, answers that depend on who is in the office.",
@@ -462,7 +494,7 @@
       faq3_a:"With a problem that costs you time every week. The enterprise RAG started that way: an issue now takes under 15 minutes instead of about an hour, and the analysis after an issue takes under 2 hours instead of a full day.",
       skip_to_content:"Skip to content",
       page_title:"Nicolò Forcolin | AI in everyday work",
-      page_description:"Public-sector IT specialist: I talk about AI and bring it into business processes. A concrete example: an AI assistant I built, now in production, cuts post-incident analysis from a full day to a few hours.",
+      page_description:"Public-sector IT specialist bringing AI into business processes. An AI assistant I built cuts post-incident analysis from a full day to a few hours.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
@@ -517,7 +549,7 @@
       footer_privacy_link:"Privacy notice",
       photo_credit:"Photo of Prato della Valle:",
       privacy_title:"Privacy notice",
-      privacy_intro:"This site uses aggregated visit analytics without tracking cookies and does not collect data through forms.",
+      privacy_intro:"This site uses aggregated visit analytics without tracking cookies. It collects personal data only if you write to me through the contact form.",
       privacy_s1_h:"Data controller",
       privacy_s1_pre:"Nicolò Forcolin, Padua, Italy. For any request about this notice, message me on ",
       privacy_s1_post:".",
@@ -531,10 +563,44 @@
       privacy_s4_h:"Data shown on the site",
       privacy_s4_p:"The contact details (email, Instagram, LinkedIn) published on the home page are the site author’s own personal data, shown voluntarily so people can get in touch. The site doesn’t collect or process them: they’re simply printed on the page. The photos in the Instagram section are copies hosted on this site: opening the page does not contact Instagram. Following a link to Instagram takes you to their service, which has its own privacy policy.",
       privacy_s5_h:"Your rights",
-      privacy_s5_p:"You can ask me for access, deletion, correction or to object by email or by messaging me on LinkedIn, to the extent these apply to pseudonymous data I cannot link back to a person. You also have the right to complain to the Italian data protection authority, the Garante (garanteprivacy.it).",
+      privacy_s5_p:"You can ask me for access, deletion, correction or to object by email or by messaging me on LinkedIn. For messages sent through the contact form these rights apply in full; for the analytics they apply to the extent they cover pseudonymous data I cannot link back to a person. You also have the right to complain to the Italian data protection authority, the Garante (garanteprivacy.it).",
       privacy_s6_h:"Changes to this notice",
       privacy_s6_p:"This notice is updated if the tools used by the site change. The version in force is always the one published on this page.",
       privacy_updated:"Last updated: November 2026.",
+      page_title_contact:"Contact | Nicolò Forcolin",
+      page_description_contact:"Tell me what your team does and where it loses time: a form to write to Nicolò Forcolin and set up a call or a coffee.",
+      contact_title:"Let’s grab a coffee",
+      contact_lead:"Tell me what your team does and where it loses time every day. I read every message myself and reply to set up a call or a coffee. If AI isn’t the answer, I’ll tell you.",
+      contact_name:"Full name",
+      contact_email:"Email",
+      contact_org:"Company or organisation",
+      contact_kind:"Type of organisation",
+      contact_kind_none:"Choose",
+      contact_kind_pa:"Public administration",
+      contact_kind_pmi:"Small or medium business",
+      contact_kind_pro:"Independent professional",
+      contact_kind_other:"Other",
+      contact_phone:"Phone, if you prefer a call",
+      contact_message:"What your team does and where it loses time",
+      contact_message_hint:"A few lines are enough: what you do, which task takes up the most time, which tools you use today.",
+      contact_err_name:"Please enter your name.",
+      contact_err_email:"Please enter a valid email address.",
+      contact_err_phone:"Please check the phone number.",
+      contact_err_message:"Please write at least a few lines.",
+      contact_privacy_pre:"I use this data only to reply to you and delete it after 12 months. Details are in the ",
+      contact_privacy_link:"privacy notice",
+      contact_privacy_post:".",
+      contact_send:"Send the request",
+      contact_status_sending:"Sending…",
+      contact_status_ok:"Message received. I’ll reply to the address you gave.",
+      contact_status_invalid:"Please check the marked fields.",
+      contact_status_rate:"Several messages have already come from this network today. Try again tomorrow or email me.",
+      contact_status_error:"The message didn’t go through. Try again shortly or email me.",
+      contact_alt:"You can also email me:",
+      collab_coffee:"Let’s grab a coffee and talk it over.",
+      collab_wait:"AI can wait for the second round.",
+      privacy_form_h:"Contact form",
+      privacy_form_p:"If you write to me from the Contact page, I store your name, email, company or organisation, type of organisation, phone number (if you give one) and the text of your message, together with the date and the page language. I use them only to reply and to see whether I can help, at your request (Art. 6(1)(b) GDPR). They are stored on Upstash Redis, only I read them and I don’t pass them on to anyone. They are deleted after 12 months, or earlier if you ask. To limit spam, the site counts the messages sent in a day using a pseudonymous identifier derived from the IP address, which is deleted after 24 hours.",
       hero_cta2:"Projects and Initiatives",
       sec_localai_title:"Local AI",
       for_whom_label:"For whom",
@@ -594,7 +660,7 @@
       c1_lead:"An AI assistant that answers from the company’s documents and cites its sources, to handle operational issues and middle-management analyses faster.",
       project_read:"Read the project",
       page_title_privacy:"Privacy notice | Nicolò Forcolin",
-      page_description_privacy:"Privacy notice for Nicolò Forcolin’s personal website: no tracking cookies, no data collected through forms.",
+      page_description_privacy:"Privacy notice for Nicolò Forcolin’s personal website: aggregated analytics without tracking cookies, and personal data only from the contact form.",
     }
   };
 
@@ -621,8 +687,56 @@
     function emailLink(){
       return '<a href="mailto:' + em + '">' + em + "</a>" + copyBtn(em, "copy_email");
     }
-    var homeEmail = document.getElementById("homeEmail");
-    if(homeEmail){ homeEmail.innerHTML = emailLink(); bindCopyButtons(homeEmail); }
+    ["homeEmail", "contactEmail"].forEach(function(id){
+      var box = document.getElementById(id);
+      if(box){ box.innerHTML = emailLink(); bindCopyButtons(box); }
+    });
+  })();
+
+  /* Modulo della pagina contatti: controlli nel browser, invio a /api/contact/send, esito in una riga di stato. */
+  (function(){
+    var form = document.getElementById("contactForm");
+    if(!form) return;
+    var status = document.getElementById("contactStatus");
+    var button = form.querySelector('button[type="submit"]');
+    var FIELDS = ["name", "email", "phone", "message"];
+    function say(key){ status.textContent = activeDict()[key] || ""; }
+    function value(name){ return (form.elements[name].value || "").trim(); }
+    function mark(name, bad){
+      var input = form.elements[name], error = document.getElementById("cf-" + name + "-err");
+      if(input) input.setAttribute("aria-invalid", bad ? "true" : "false");
+      if(error) error.hidden = !bad;
+    }
+    function check(){
+      var bad = [];
+      if(value("name").length < 2) bad.push("name");
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value("email"))) bad.push("email");
+      if(value("phone") && !/^[+0-9 ()./-]{6,40}$/.test(value("phone"))) bad.push("phone");
+      if(value("message").length < 20) bad.push("message");
+      FIELDS.forEach(function(name){ mark(name, bad.indexOf(name) >= 0); });
+      return bad;
+    }
+    form.addEventListener("input", function(e){
+      if(e.target.getAttribute("aria-invalid") === "true") mark(e.target.name, false);
+    });
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var bad = check();
+      if(bad.length){ say("contact_status_invalid"); form.elements[bad[0]].focus(); return; }
+      button.disabled = true;
+      say("contact_status_sending");
+      var body = { name: value("name"), email: value("email"), org: value("org"), kind: form.elements.kind.value, phone: value("phone"), message: value("message"), website: form.elements.website.value, lang: lang };
+      fetch("/api/contact/send", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(data){ return { code: r.status, data: data }; }); })
+        .then(function(res){
+          if(res.code === 200 && res.data.ok){ form.reset(); say("contact_status_ok"); }
+          else if(res.code === 429) say("contact_status_rate");
+          else if(res.code === 400 && res.data.errors){ res.data.errors.forEach(function(name){ mark(name, true); }); say("contact_status_invalid"); }
+          else say("contact_status_error");
+        })
+        .catch(function(){ say("contact_status_error"); })
+        .then(function(){ button.disabled = false; });
+    });
   })();
 
   /* Il tema segue le preferenze del browser (CSS); si ignorano quelle salvate da versioni precedenti. */

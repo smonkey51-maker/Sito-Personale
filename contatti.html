@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0E0E0F">
+<meta name="color-scheme" content="dark">
+<meta name="supported-color-schemes" content="dark">
+<meta name="darkreader-lock">
+<title>Contatti | Nicolò Forcolin</title>
+<meta name="description" content="Raccontami che lavoro fate e dove perdete tempo: un modulo per scrivere a Nicolò Forcolin e fissare una chiamata o un caffè.">
+<link rel="canonical" href="https://nforcolin.eu/contatti.html">
+
+<link rel="icon" href="favicon.svg?v=8" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png?v=8" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png?v=8" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=8">
+<link rel="manifest" href="manifest.json">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nforcolin.eu/contatti.html">
+<meta property="og:site_name" content="Nicolò Forcolin">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Contatti | Nicolò Forcolin">
+<meta property="og:description" content="Raccontami che lavoro fate e dove perdete tempo: un modulo per scrivere a Nicolò Forcolin e fissare una chiamata o un caffè.">
+<meta property="og:image" content="https://nforcolin.eu/og-padova.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contatti | Nicolò Forcolin">
+<meta name="twitter:description" content="Raccontami che lavoro fate e dove perdete tempo: un modulo per scrivere a Nicolò Forcolin e fissare una chiamata o un caffè.">
+<meta name="twitter:image" content="https://nforcolin.eu/og-padova.jpg">
+
+
+<link rel="preload" href="fonts/destiny-signature-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/courier-prime-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-mono-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="portfolio-redesign.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="inner" data-page="contact">
+
+<a class="skip-link" href="#contenuto" data-i18n="skip_to_content">Vai al contenuto</a>
+<div class="visually-hidden" id="themeAnnouncer" role="status" aria-live="polite"></div>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner"><a class="site-name" href="index.html" aria-label="Nicolò Forcolin, home">Nicolò Forcolin</a>
+    <div class="utilbar">
+        <div class="lang-menu"><div class="lang-list" id="langList"><button class="lang-btn on" type="button" data-lang="it" data-code="IT" aria-label="Italiano">Italiano</button><button class="lang-btn" type="button" data-lang="en" data-code="EN" aria-label="English">English</button><button class="lang-btn" type="button" data-lang="zh" lang="zh-Hans" data-code="中文" aria-label="中文（简体）">中文</button></div></div>
+    </div>
+  </div>
+</header>
+<main class="page" id="contenuto">
+  <header class="page-head">
+    <a class="page-back" href="index.html"><span aria-hidden="true">←</span> <span data-i18n="back_to_site">Torna alla home</span></a>
+    <h1 class="page-title" data-i18n="contact_title">Prendiamoci un caffè</h1>
+    <p class="page-lead" data-i18n="contact_lead">Raccontami che lavoro fate e dove perdete tempo ogni giorno. Leggo io ogni messaggio e ti rispondo per fissare una chiamata o un caffè. Se l’AI non serve, te lo dico.</p>
+  </header>
+  <div class="page-body">
+    <form class="contact-form" id="contactForm" action="/api/contact/send" method="post" novalidate>
+      <div class="field">
+        <label for="cf-name" data-i18n="contact_name">Nome e cognome</label>
+        <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="cf-name-err">
+        <p class="field-error" id="cf-name-err" data-i18n="contact_err_name" hidden>Scrivi il tuo nome.</p>
+      </div>
+      <div class="field">
+        <label for="cf-email" data-i18n="contact_email">Email</label>
+        <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="cf-email-err">
+        <p class="field-error" id="cf-email-err" data-i18n="contact_err_email" hidden>Serve un indirizzo email valido.</p>
+      </div>
+      <div class="field">
+        <label for="cf-org" data-i18n="contact_org">Azienda o ente</label>
+        <input id="cf-org" name="org" type="text" autocomplete="organization" maxlength="160">
+      </div>
+      <div class="field">
+        <label for="cf-kind" data-i18n="contact_kind">Tipo di organizzazione</label>
+        <select id="cf-kind" name="kind">
+          <option value="" data-i18n="contact_kind_none">Scegli</option>
+          <option value="pa" data-i18n="contact_kind_pa">Pubblica amministrazione</option>
+          <option value="pmi" data-i18n="contact_kind_pmi">PMI</option>
+          <option value="pro" data-i18n="contact_kind_pro">Libero professionista</option>
+          <option value="altro" data-i18n="contact_kind_other">Altro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cf-phone" data-i18n="contact_phone">Telefono, se preferisci una chiamata</label>
+        <input id="cf-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" aria-describedby="cf-phone-err">
+        <p class="field-error" id="cf-phone-err" data-i18n="contact_err_phone" hidden>Controlla il numero di telefono.</p>
+      </div>
+      <div class="field field-wide">
+        <label for="cf-message" data-i18n="contact_message">Che lavoro fate e dove perdete tempo</label>
+        <p class="field-hint" id="cf-message-hint" data-i18n="contact_message_hint">Bastano poche righe: cosa fate, quale attività porta via più tempo, quali strumenti usate oggi.</p>
+        <textarea id="cf-message" name="message" rows="7" required minlength="20" maxlength="4000" aria-describedby="cf-message-hint cf-message-err"></textarea>
+        <p class="field-error" id="cf-message-err" data-i18n="contact_err_message" hidden>Scrivi almeno qualche riga.</p>
+      </div>
+      <div class="field-trap" aria-hidden="true">
+        <label for="cf-website">Sito web</label>
+        <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="contact-note"><span data-i18n="contact_privacy_pre">Uso questi dati solo per risponderti e li cancello dopo 12 mesi. I dettagli sono nell’</span><a href="privacy.html#modulo" data-i18n="contact_privacy_link">informativa privacy</a><span data-i18n="contact_privacy_post">.</span></p>
+      <button class="cta-button" type="submit" data-i18n="contact_send">Invia la richiesta</button>
+      <p class="contact-status" id="contactStatus" role="status" aria-live="polite"></p>
+    </form>
+    <p class="contact-alt"><span data-i18n="contact_alt">Puoi anche scrivermi via email:</span> <span id="contactEmail"></span></p>
+  </div>
+</main>
+
+<footer class="colophon"><div class="wrap colophon-inner"><p class="footer-note"><span data-i18n="footer_place">© 2026 Nicolò Forcolin, Padova, Italia.</span> <span data-i18n="colophon_note">Sito personale. Le attività descritte sono presentate a titolo personale.</span> <a href="privacy.html" data-i18n="footer_privacy_link">Informativa privacy</a></p></div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>

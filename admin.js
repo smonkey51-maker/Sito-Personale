@@ -109,7 +109,7 @@ async function load(){
   const raw=await r.json(),all=raw.days,cur=all.slice(-days),prev=all.length>days?all.slice(0,all.length-days):null;
   data={days:cur,totals:totalsOf(cur),prev:prev&&totalsOf(prev)};
   $('login').hidden=true;$('dashboard').hidden=false;$('period').hidden=false;$('logout').hidden=false;$('error').textContent='';
-  render();
+  render();loadMessages();
  }catch(e){$('error').textContent=e.message;}
 }
 
@@ -121,6 +121,31 @@ $('period').addEventListener('click',e=>{
  load();
 });
 for(const x of $('period').querySelectorAll('button'))x.setAttribute('aria-pressed',String(Number(x.dataset.days)===days));
+// Richieste arrivate dal modulo della pagina contatti. Tutto il testo passa da textContent.
+const KIND={pa:'Pubblica amministrazione',pmi:'PMI',pro:'Libero professionista',altro:'Altro'};
+function msgRow(m){
+ const li=document.createElement('li');li.className='admin-msg';
+ const head=document.createElement('div');head.className='admin-msg-head';
+ const who=document.createElement('strong');who.textContent=m.name;
+ const when=document.createElement('span');when.className='admin-sub';when.textContent=new Date(m.at).toLocaleString('it-IT',{dateStyle:'medium',timeStyle:'short'});
+ head.append(who,when);
+ const meta=document.createElement('p');meta.className='admin-msg-meta';
+ const mail=document.createElement('a');mail.href='mailto:'+m.email;mail.textContent=m.email;meta.append(mail);
+ for(const part of [m.org,KIND[m.kind],m.phone,m.lang&&m.lang.toUpperCase()])if(part){meta.append(document.createTextNode(' | '+part));}
+ const text=document.createElement('p');text.className='admin-msg-text';text.textContent=m.message;
+ const del=document.createElement('button');del.type='button';del.className='admin-quiet';del.textContent='Elimina';
+ del.addEventListener('click',async()=>{if(!confirm('Eliminare il messaggio di '+m.name+'?'))return;const r=await fetch('/api/contact/delete',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:m.id})});if(r.ok)loadMessages();});
+ li.append(head,meta,text,del);return li;
+}
+async function loadMessages(){
+ try{
+  const r=await fetch('/api/contact/list',{cache:'no-store'});if(!r.ok)return;
+  const {messages}=await r.json();
+  $('messages').replaceChildren(...messages.map(msgRow));
+  $('messages-empty').hidden=messages.length>0;
+  $('msg-count').textContent=messages.length===1?'1 messaggio':messages.length+' messaggi';
+ }catch(e){}
+}
 $('logout').addEventListener('click',async()=>{await fetch('/api/auth/logout',{method:'POST'});location.reload();});
 let resize;addEventListener('resize',()=>{clearTimeout(resize);resize=setTimeout(()=>{if(data){drawTrend();drawWeek();}},120);});
 load();

@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
-const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'progetti.html', 'percorso.html', 'fuori-dal-lavoro.html', 'privacy.html', '404.html'];
+const pages = ['index.html', 'rag-aziendale.html', 'ai-in-locale.html', 'progetti.html', 'percorso.html', 'fuori-dal-lavoro.html', 'privacy.html', 'contatti.html', '404.html'];
 const js = read('script.js');
 const config = JSON.parse(read('vercel.json'));
 assert(config.headers.some(group => group.headers.some(h => h.key === 'Content-Security-Policy')), 'Missing CSP');
@@ -75,7 +75,7 @@ assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by 
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');
 assert(read('ai-in-locale.html').includes('data-i18n="c2_summary"'), 'Local AI summary must remain');
-for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'percorso.html', 'progetti.html', 'fuori-dal-lavoro.html']) {
+for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'percorso.html', 'progetti.html', 'fuori-dal-lavoro.html', 'contatti.html']) {
   assert(read('sitemap.xml').includes('https://nforcolin.eu/' + file), 'Sitemap missing ' + file);
 }
 const redesign = read('portfolio-redesign.css');
@@ -96,6 +96,16 @@ assert((vercel.redirects || []).some(r => r.has?.some(h => h.type === 'host' && 
 // (14 users of the RAG, the Manager and 13 collaborators; one of 6 InfoCamere employees in an AI solutions project run by 1 director and 1 deputy director; incidents in under 15 minutes, analysis in under 2 hours, up to 15 questions a day).
 const internalData = /\b25 (persone|people|colleghi|colleagues)\b|\b13 (colleghi|colleagues)\b|\b35 (persone|people)\b|\b([34](\.5)?|2\.5) (ore|hours)\b|ore\s+e\s+mezza|mezz.ora|half\s+an\s+hour|\b30 (minuti|minutes)\b|costo\s+nullo|at\s+no\s+cost|esos[ei]|more\s+expensive/;
 for (const file of [...pages, 'script.js']) assert(!internalData.test(read(file)), file + ': contains unapproved internal metrics');
+// Pagina contatti: il modulo invia a /api/contact/send, ha il campo trappola e rimanda all'informativa.
+const contact = read('contatti.html');
+assert(contact.includes('id="contactForm"') && contact.includes('action="/api/contact/send"'), 'Contact form missing');
+assert(contact.includes('name="website"') && contact.includes('class="field-trap"'), 'Contact form honeypot missing');
+assert(contact.includes('href="privacy.html#modulo"') && read('privacy.html').includes('id="modulo"'), 'Contact form must link to its privacy section');
+for (const f of ['send', 'list', 'delete']) assert(fs.existsSync(path.join(root, 'api/contact/' + f + '.js')), 'api/contact/' + f + '.js missing');
+assert(read('index.html').includes('<a href="contatti.html" data-i18n="collab_coffee">'), 'The coffee line must link to the contact page');
+for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'percorso.html', 'progetti.html', 'fuori-dal-lavoro.html']) {
+  assert(read(file).includes('class="cta-button" href="contatti.html"'), file + ': the closing button must open the contact page');
+}
 console.log('Site regression checks passed');
 
 /* Cinese: stesse chiavi dell'inglese, stessi segnaposto, nessuno strumento interno. */

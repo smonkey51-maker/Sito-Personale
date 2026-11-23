@@ -16,3 +16,7 @@ Open https://nforcolin.eu/admin.html and sign in on each browser/device you own 
 Analytics are daily aggregates using HMAC-derived daily visitor identifiers (IP + user-agent) and Redis HyperLogLog. No raw IP or user agent is persisted by the analytics code. Visitors with blockers or JavaScript disabled may not be counted. Totals of daily unique visitors are not cross-day unique people.
 
 Review privacy notices and legal requirements before enabling production tracking. The private page HTML is publicly downloadable, but its data API requires an authenticated session. Do not place sensitive information in the HTML.
+
+## Contact form
+
+The contact page (contatti.html) posts to /api/contact/send and uses the same Upstash Redis variables (UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN) and ANALYTICS_SECRET: no new variable is needed. Messages are kept in the list `nf:contact:messages` (at most 500) and removed after 12 months when the private page loads them. They are listed at the bottom of admin.html after login, where each one can be deleted. There is no email notification: check the private page.
