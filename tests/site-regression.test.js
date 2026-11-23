@@ -109,7 +109,8 @@ for (const file of ['rag-aziendale.html', 'ai-in-locale.html', 'percorso.html', 
 // Il token del bot Telegram vive solo nelle variabili d'ambiente di Vercel.
 const send = read('api/contact/send.js');
 assert(send.includes('process.env.TELEGRAM_BOT_TOKEN') && !/\d{8,10}:[A-Za-z0-9_-]{30,}/.test(send), 'Telegram token must come from the environment');
-assert(!/text=.*(name|email|message)/.test(send.match(/const text=[^\n]*/)[0]), 'The Telegram alert must not carry the sender data');
+assert(!send.includes('parse_mode'), 'Telegram messages are plain text, so the sender cannot inject formatting');
+assert(read('privacy.html').includes('Telegram'), 'The privacy notice must mention the Telegram forwarding');
 console.log('Site regression checks passed');
 
 /* Cinese: stesse chiavi dell'inglese, stessi segnaposto, nessuno strumento interno. */

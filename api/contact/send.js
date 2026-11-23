@@ -3,15 +3,25 @@ const {redis,noStore}=require('../_lib');
 /* Richieste dal modulo di contatti.html. Restano su Redis per 12 mesi (vedi list.js). */
 const KINDS=['pa','pmi','pro','altro'];
 const KIND_LABEL={pa:'pubblica amministrazione',pmi:'PMI',pro:'libero professionista',altro:'altro'};
-/* Avviso su Telegram: solo che è arrivata una richiesta, senza dati di chi scrive.
-   Token e chat stanno nelle variabili d'ambiente di Vercel, mai nel codice.
-   Se Telegram non risponde entro 4 secondi la richiesta resta salvata comunque. */
-async function notify(kind){
+/* Inoltro su Telegram di tutta la richiesta, come testo semplice (niente formattazione,
+   così il testo di chi scrive non può alterare il messaggio). Token e chat stanno nelle
+   variabili d'ambiente di Vercel, mai nel codice. Telegram accetta al massimo 4096
+   caratteri: il testo del messaggio si accorcia se serve. Se Telegram non risponde entro
+   4 secondi la richiesta resta salvata comunque e si legge nella pagina privata. */
+function telegramText(e){
+ const lines=['Nuova richiesta dal modulo contatti','','Nome: '+e.name,'Email: '+e.email];
+ if(e.org)lines.push('Azienda o ente: '+e.org);
+ if(KIND_LABEL[e.kind])lines.push('Tipo: '+KIND_LABEL[e.kind]);
+ if(e.phone)lines.push('Telefono: '+e.phone);
+ lines.push('Lingua della pagina: '+e.lang.toUpperCase(),'');
+ const head=lines.join('\n')+'\n',room=4000-head.length;
+ return head+(e.message.length>room?e.message.slice(0,room-1)+'…':e.message);
+}
+async function notify(entry){
  const token=process.env.TELEGRAM_BOT_TOKEN,chat=process.env.TELEGRAM_CHAT_ID;
  if(!token||!chat)return;
- const text='Nuova richiesta dal modulo contatti'+(KIND_LABEL[kind]?' ('+KIND_LABEL[kind]+')':'')+'. Leggila su https://nforcolin.eu/admin';
  try{
-  await fetch('https://api.telegram.org/bot'+token+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:chat,text,disable_web_page_preview:true}),signal:AbortSignal.timeout(4000)});
+  await fetch('https://api.telegram.org/bot'+token+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:chat,text:telegramText(entry),disable_web_page_preview:true}),signal:AbortSignal.timeout(4000)});
  }catch(e){}
 }
 const clean=(v,max)=>typeof v==='string'?v.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'').trim().slice(0,max):'';
@@ -43,7 +53,7 @@ module.exports=async(req,res)=>{
   const entry={id:crypto.randomBytes(8).toString('hex'),at:new Date().toISOString(),name,email,org,kind,phone,message,lang};
   await redis(['LPUSH','nf:contact:messages',JSON.stringify(entry)]);
   await redis(['LTRIM','nf:contact:messages',0,499]);
-  await notify(kind);
+  await notify(entry);
   return res.status(200).json({ok:true});
  }catch(e){return res.status(503).json({ok:false,errors:['storage']});}
 };
