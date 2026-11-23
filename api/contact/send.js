@@ -1,5 +1,6 @@
 const crypto=require('node:crypto');
-const {redis,noStore}=require('../_lib');
+const {redis,redisPipeline,noStore}=require('../_lib');
+const {waitUntil}=require('@vercel/functions');
 /* Richieste dal modulo di contatti.html. Restano su Redis per 12 mesi (vedi list.js). */
 const KINDS=['pa','pmi','pro','altro'];
 const KIND_LABEL={pa:'pubblica amministrazione',pmi:'PMI',pro:'libero professionista',altro:'altro'};
@@ -7,7 +8,8 @@ const KIND_LABEL={pa:'pubblica amministrazione',pmi:'PMI',pro:'libero profession
    così il testo di chi scrive non può alterare il messaggio). Token e chat stanno nelle
    variabili d'ambiente di Vercel, mai nel codice. Telegram accetta al massimo 4096
    caratteri: il testo del messaggio si accorcia se serve. Se Telegram non risponde entro
-   4 secondi la richiesta resta salvata comunque e si legge nella pagina privata. */
+   8 secondi la richiesta resta salvata comunque e si legge nella pagina privata.
+   L'invio a Telegram avviene dopo la risposta al browser (waitUntil). */
 function telegramText(e){
  const lines=['Nuova richiesta dal modulo contatti','','Nome: '+e.name,'Email: '+e.email];
  if(e.org)lines.push('Azienda o ente: '+e.org);
@@ -19,10 +21,12 @@ function telegramText(e){
 }
 async function notify(entry){
  const token=process.env.TELEGRAM_BOT_TOKEN,chat=process.env.TELEGRAM_CHAT_ID;
- if(!token||!chat)return;
+ if(!token||!chat){console.error('contact: Telegram non configurato (manca TELEGRAM_BOT_TOKEN o TELEGRAM_CHAT_ID)');return;}
  try{
-  await fetch('https://api.telegram.org/bot'+token+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:chat,text:telegramText(entry),disable_web_page_preview:true}),signal:AbortSignal.timeout(4000)});
- }catch(e){}
+  const r=await fetch('https://api.telegram.org/bot'+token+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:chat,text:telegramText(entry),disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
+  // Nei log finisce solo l'esito di Telegram, mai il token né i dati di chi scrive.
+  if(!r.ok){const d=await r.json().catch(()=>({}));console.error('contact: Telegram ha risposto',r.status,d.description||'');}
+ }catch(e){console.error('contact: Telegram non raggiungibile',e.name);}
 }
 const clean=(v,max)=>typeof v==='string'?v.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'').trim().slice(0,max):'';
 module.exports=async(req,res)=>{
@@ -46,14 +50,14 @@ module.exports=async(req,res)=>{
  const day=new Date().toISOString().slice(0,10);
  const who=crypto.createHmac('sha256',process.env.ANALYTICS_SECRET||'nf-contact').update(day+'|'+ip).digest('hex').slice(0,32);
  try{
-  // Al massimo 5 messaggi al giorno dallo stesso indirizzo.
-  const count=await redis(['INCR','nf:contact:rate:'+who]);
-  if(count===1)await redis(['EXPIRE','nf:contact:rate:'+who,86400]);
-  if(count>5)return res.status(429).json({ok:false,errors:['rate']});
+  // Un solo viaggio verso Redis: conta gli invii di oggi da questa rete e salva il messaggio.
+  // Se il limite di 5 al giorno è superato, il messaggio appena salvato si toglie subito.
   const entry={id:crypto.randomBytes(8).toString('hex'),at:new Date().toISOString(),name,email,org,kind,phone,message,lang};
-  await redis(['LPUSH','nf:contact:messages',JSON.stringify(entry)]);
-  await redis(['LTRIM','nf:contact:messages',0,499]);
-  await notify(entry);
+  const item=JSON.stringify(entry),rate='nf:contact:rate:'+who;
+  const [count]=await redisPipeline([['INCR',rate],['EXPIRE',rate,86400],['LPUSH','nf:contact:messages',item],['LTRIM','nf:contact:messages',0,499]]);
+  if(count>5){await redis(['LREM','nf:contact:messages',1,item]);return res.status(429).json({ok:false,errors:['rate']});}
+  // La risposta parte subito; l'inoltro su Telegram continua dopo, senza far aspettare chi scrive.
+  waitUntil(notify(entry));
   return res.status(200).json({ok:true});
  }catch(e){return res.status(503).json({ok:false,errors:['storage']});}
 };
