@@ -17,6 +17,12 @@ function redis(command) {
   if(!url||!token) throw Error('Redis not configured');
   return fetch(url,{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(command)}).then(async r=>{if(!r.ok)throw Error('Redis unavailable');const data=await r.json();if(data.error)throw Error('Redis error');return data.result});
 }
+/* Più comandi in una sola richiesta HTTP (pipeline di Upstash): un solo viaggio di rete invece di uno per comando. */
+function redisPipeline(commands) {
+  const url=process.env.UPSTASH_REDIS_REST_URL,token=process.env.UPSTASH_REDIS_REST_TOKEN;
+  if(!url||!token) throw Error('Redis not configured');
+  return fetch(url.replace(/\/$/,'')+'/pipeline',{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(commands)}).then(async r=>{if(!r.ok)throw Error('Redis unavailable');const data=await r.json();if(!Array.isArray(data)||data.some(x=>x.error))throw Error('Redis error');return data.map(x=>x.result)});
+}
 function noStore(res){res.setHeader('Cache-Control','private, no-store');res.setHeader('X-Robots-Tag','noindex, nofollow');}
 /* One name per page: "/", "/index", "/index.html" are the home; ".html" and a trailing slash are dropped. */
 function normalizePath(path){
@@ -31,4 +37,4 @@ function sourceName(src,ref){
   const known=SOURCES.find(([re])=>re.test(raw));
   return known?known[1]:raw;
 }
-module.exports={cookie,sign,session,setCookie,redis,noStore,normalizePath,sourceName};
+module.exports={cookie,sign,session,setCookie,redis,redisPipeline,noStore,normalizePath,sourceName};
