@@ -1,4 +1,5 @@
 const crypto=require('node:crypto');
+const https=require('node:https');
 const {redis,redisPipeline,noStore}=require('../_lib');
 const {waitUntil}=require('@vercel/functions');
 /* Richieste dal modulo di contatti.html. Restano su Redis per 12 mesi (vedi list.js). */
@@ -19,14 +20,29 @@ function telegramText(e){
  const head=lines.join('\n')+'\n',room=4000-head.length;
  return head+(e.message.length>room?e.message.slice(0,room-1)+'…':e.message);
 }
+/* Chiamata a Telegram con node:https forzando IPv4: con fetch la connessione restava appesa
+   fino al timeout (log "TimeoutError" del 23 novembre 2026), tipico di un tentativo IPv6 senza via d'uscita. */
+function telegramPost(token,payload){
+ return new Promise((resolve,reject)=>{
+  const body=JSON.stringify(payload);
+  const req=https.request({host:'api.telegram.org',path:'/bot'+token+'/sendMessage',method:'POST',family:4,timeout:8000,headers:{'Content-Type':'application/json','Content-Length':Buffer.byteLength(body)}},res=>{
+   let data='';res.setEncoding('utf8');res.on('data',c=>data+=c);res.on('end',()=>{let j={};try{j=JSON.parse(data);}catch(e){}resolve({status:res.statusCode,description:j.description||''});});
+  });
+  req.on('timeout',()=>req.destroy(Object.assign(Error('timeout'),{code:'ETIMEDOUT'})));
+  req.on('error',reject);
+  req.end(body);
+ });
+}
 async function notify(entry){
  const token=process.env.TELEGRAM_BOT_TOKEN,chat=process.env.TELEGRAM_CHAT_ID;
  if(!token||!chat){console.error('contact: Telegram non configurato (manca TELEGRAM_BOT_TOKEN o TELEGRAM_CHAT_ID)');return;}
+ const started=Date.now();
  try{
-  const r=await fetch('https://api.telegram.org/bot'+token+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:chat,text:telegramText(entry),disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
+  const r=await telegramPost(token,{chat_id:chat,text:telegramText(entry),disable_web_page_preview:true});
   // Nei log finisce solo l'esito di Telegram, mai il token né i dati di chi scrive.
-  if(!r.ok){const d=await r.json().catch(()=>({}));console.error('contact: Telegram ha risposto',r.status,d.description||'');}
- }catch(e){console.error('contact: Telegram non raggiungibile',e.name);}
+  if(r.status!==200)console.error('contact: Telegram ha risposto',r.status,r.description);
+  else console.log('contact: inoltrato su Telegram in',Date.now()-started,'ms');
+ }catch(e){console.error('contact: Telegram non raggiungibile',e.code||e.name,'dopo',Date.now()-started,'ms');}
 }
 const clean=(v,max)=>typeof v==='string'?v.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'').trim().slice(0,max):'';
 module.exports=async(req,res)=>{
