@@ -281,3 +281,37 @@
 @media (max-width: 820px) { .glossary-list { grid-template-columns: 1fr; } }
 
 @media (max-width: 360px) { .item-title { font-size: 1.125rem; } .page-block-label { font-size: 1.375rem; } }
+
+/* Su schermi touch i link isolati (piè di pagina, link sotto le voci, email, 404)
+   hanno un'area da toccare di almeno 44 px: il padding verticale di un elemento
+   inline allarga l'area senza spostare il testo. */
+@media (pointer: coarse), (max-width: 820px) {
+  .footer-note a, .footer-credit a, .item-link a, .nf-contact { padding-block: 13px; }
+  .home-email a { padding-block: 9px; }
+}
+
+/* Pagina contatti: modulo a una colonna, campi distinti dal fondo con un passo di tono. */
+.contact-form { --field: #1B1B1D; display: grid; gap: 28px; max-width: 40rem; padding-top: 56px; }
+.field { display: grid; gap: 8px; }
+.field label { font-family: var(--sans); font-size: 1rem; color: var(--ink); }
+.field-hint { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); max-width: 62ch; }
+.field input, .field select, .field textarea {
+  width: 100%; min-height: 48px; padding: 12px 14px; border: 0; border-radius: 8px;
+  background: var(--field); color: var(--ink); font: 1.125rem/1.5 var(--sans);
+  transition: background-color .15s ease-out;
+}
+.field textarea { min-height: 180px; resize: vertical; }
+.field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%), linear-gradient(135deg, var(--ink-soft) 50%, transparent 50%); background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 44px; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; background-color: #222225; }
+.field [aria-invalid="true"] { outline: 2px solid var(--ink-soft); outline-offset: 2px; }
+.field-error { margin: 0; font-size: 1rem; color: var(--ink); }
+.field-error::before { content: "× "; color: var(--accent); }
+.field-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contact-note { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); max-width: 62ch; }
+.contact-note a, .contact-alt a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.contact-form .cta-button { justify-self: start; border: 0; cursor: pointer; }
+.contact-form .cta-button[disabled] { opacity: .6; cursor: progress; }
+.contact-status { margin: 0; min-height: 1.5em; font-size: 1.125rem; line-height: 1.5; color: var(--ink); max-width: 62ch; }
+.contact-alt { margin: 56px 0 0; font-size: 1rem; color: var(--ink-soft); }
+.contact-alt .copy-btn { vertical-align: middle; }
+@media (pointer: coarse), (max-width: 820px) { .contact-note a, .contact-alt a { padding-block: 13px; } }

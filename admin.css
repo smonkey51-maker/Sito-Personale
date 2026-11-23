@@ -96,3 +96,11 @@
   .admin button,.admin-primary,.admin-pages .fill,.admin-chart .bar,.admin-kpi{transition-property:background-color,color,border-color,fill}
   .admin button:active,.admin-primary:active{transform:none}
 }
+.admin-messages{margin-top:12px}
+.admin-msgs{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.admin-msg{padding:12px 0;border-top:1px solid var(--line);display:grid;gap:6px}
+.admin-msg-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.admin-msg-meta{margin:0;color:var(--ink-soft)}
+.admin-msg-meta a{color:var(--ink)}
+.admin-msg-text{margin:0;white-space:pre-wrap;max-width:62ch;line-height:1.5}
+.admin-msg .admin-quiet{justify-self:start}
