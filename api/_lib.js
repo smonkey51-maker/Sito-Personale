@@ -1,4 +1,7 @@
 const crypto = require('node:crypto');
+/* Le funzioni su Vercel (fra1) restavano appese verso servizi con indirizzo IPv6 (Telegram, Google):
+   si prova prima l'IPv4. */
+require('node:dns').setDefaultResultOrder('ipv4first');
 const secret = () => process.env.ANALYTICS_SECRET;
 const cookie = (req,name) => (req.headers.cookie||'').split(';').map(x=>x.trim()).find(x=>x.startsWith(name+'='))?.slice(name.length+1);
 const sign = value => crypto.createHmac('sha256',secret()).update(value).digest('hex');
