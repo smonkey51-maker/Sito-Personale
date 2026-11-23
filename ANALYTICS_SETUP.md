@@ -2,7 +2,7 @@
 
 Configure these Vercel Production environment variables (never commit values):
 - GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET: Google OAuth web application credentials.
-- ADMIN_GOOGLE_EMAIL: exact Google email allowed to log in.
+- ADMIN_GOOGLE_EMAIL: Google email allowed to log in (several are allowed, separated by commas; case and spaces do not matter).
 - ANALYTICS_SECRET: random secret (at least 32 bytes, e.g. generated with openssl rand -hex 32).
 - UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN: Upstash Redis REST credentials.
 
