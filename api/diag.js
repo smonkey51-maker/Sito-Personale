@@ -9,5 +9,6 @@ module.exports=async(req,res)=>{
  res.setHeader('Cache-Control','no-store');
  const token=process.env.TELEGRAM_BOT_TOKEN||'';
  res.status(200).json({region:process.env.VERCEL_REGION||null,vercelId:req.headers['x-vercel-id']||null,hasToken:!!token,hasChat:!!process.env.TELEGRAM_CHAT_ID,
-  root4:await call('/',4),getMe4:await call('/bot'+token+'/getMe',4),getMeAny:await call('/bot'+token+'/getMe',0)});
+  tokenShape:{length:token.length,trimmedLength:token.trim().length,format:/^\d{6,12}:[A-Za-z0-9_-]{30,40}$/.test(token)},
+  root4:await call('/',4),fakeToken4:await call('/bot123456789:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/getMe',4),getMe4:await call('/bot'+token.trim()+'/getMe',4)});
 };
