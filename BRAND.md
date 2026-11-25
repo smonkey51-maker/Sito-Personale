@@ -58,11 +58,11 @@ Un solo tema, scuro: il sito non cambia colori in base alle preferenze del siste
 |---|---|---|
 | `--bg` | `#0E0E0F` | Sfondo di tutte le pagine, barra in alto, fondo del ritratto (provato Abyss Black `#101820` il 16 novembre 2026 e ripristinato il nero) |
 | `--bg-2` | `#0E0E0F` | Superficie secondaria (uguale allo sfondo) |
-| `--ink` | `#F5F1EC` | Testo principale, bianco caldo |
+| `--ink` | `#FBF7FD` | Testo principale, bianco (dal 25 novembre 2026; prima `#F5F1EC`) |
 | `--ink-soft` | `#D2CED6` | Testo secondario |
 | `--line` | `#262628` | Separazioni |
-| `--accent` | `#FF4A11` | Arancione: titoli di pagina e di sezione, firma, link, date e stati |
-| `--accent-hover` | `#FF6B3D` | Arancione al passaggio e alla pressione |
+| `--accent` | `#F9311C` | Arancione: titoli di pagina e di sezione, firma, link, date e stati (dal 25 novembre 2026; prima `#FF4A11`). Contrasto 5,0:1 sul fondo `#0E0E0F` |
+| `--accent-hover` | `#FF5C4A` | Arancione al passaggio e alla pressione |
 
 Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passaggio , con bordo `#262628`, angoli da 16px (righe e campo da 12px) e voce evidenziata `#242427`; `#0E0E0F` anche come `theme-color` delle pagine e nel manifest dell'app.
 
@@ -88,7 +88,7 @@ Altri valori fissi: `#18181A` per lo sfondo della striscia dei progetti al passa
 ### Logo: firma e monogramma (21 novembre 2026)
 
 Due segni, un ruolo ciascuno, mai insieme nello stesso spazio:
-- **Firma** "Nicolò Forcolin" in Destiny Signature, arancione `#FF4A11`: è il logo quando c'è spazio per il nome. Barra in alto di ogni pagina, anteprime social, copertina LinkedIn, documenti e presentazioni. Sempre su fondo scuro, mai sotto 22 px di corpo, mai in maiuscolo né deformata.
+- **Firma** "Nicolò Forcolin" in Destiny Signature, arancione `#F9311C`: è il logo quando c'è spazio per il nome. Barra in alto di ogni pagina, anteprime social, copertina LinkedIn, documenti e presentazioni. Sempre su fondo scuro, mai sotto 22 px di corpo, mai in maiuscolo né deformata.
 - **Monogramma NF** (ovale avorio con la N la cui ultima asta sale nella F, e il punto come stanghetta): è il simbolo quando il nome non entra o non si legge. Favicon, icona dell’app sul telefono, avatar degli account tecnici (GitHub, Vercel), timbro su immagini e allegati. Sui social personali resta il ritratto. Ovale avorio `#F5F1EC` su nero `#0E0E0F`, tratto nero; sotto i 24 px il punto si perde ed è accettato.
 - Non si affiancano firma e monogramma, non si ricolora il monogramma (niente versione arancione), non si mette il monogramma dentro le pagine al posto della firma.
 - File: `favicon.svg` (vettoriale), `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png`, `icon-192-v8.png`, `icon-512-v8.png` e le versioni maskable.
@@ -138,3 +138,4 @@ Fino al 15 novembre 2026 la home su mobile si apriva con una prima schermata a t
 - Avviso del modulo (23 novembre 2026, scelta di Nicolò): a ogni richiesta arriva un messaggio Telegram con solo l’avviso e il tipo di organizzazione, senza nome, email o testo; i dati restano nella pagina privata. Token e chat stanno nelle variabili d’ambiente di Vercel.
 - Avviso del modulo, aggiornato lo stesso giorno (scelta di Nicolò): su Telegram arriva tutta la richiesta (nome, email, azienda, tipo, telefono, lingua e testo), così non serve aprire la pagina privata. I messaggi restano anche su Redis come copia. L’informativa privacy cita Telegram; i messaggi inoltrati vanno cancellati dalla chat entro 12 mesi.
 - Home (25 novembre 2026, scelta di Nicolò): dopo i numeri una frase sul problema in IBM Plex Mono bianco ("Documenti sparsi, domande che tornano ogni giorno, risposte che dipendono da chi è in ufficio. È lì che l’AI aiuta davvero, se parte dal lavoro di tutti i giorni e non da una presentazione."); prima dei contatti la sezione "Come lavoro" con tre passi numerati (un caffè o una chiamata, un’analisi onesta, un primo strumento piccolo), su tre colonne da desktop e in colonna su mobile. La FAQ "Lavori solo con la PA?" si ferma a "…PMI e professionisti." per non ripetere la frase sul problema.
+- Colori (25 novembre 2026, scelta di Nicolò): bianco del testo `#FBF7FD` e arancione `#F9311C` su sito e pagina privata. Favicon, icone dell’app e immagini di anteprima (og-*.jpg) hanno ancora i colori precedenti: vanno rigenerate se si vuole la stessa tinta ovunque.
