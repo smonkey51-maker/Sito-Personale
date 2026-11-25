@@ -88,7 +88,8 @@ assert(ragPage.includes('data-figure') && ragPage.includes('src="figure.js"') &&
 assert(!/<svg[^>]*\sstyle=/.test(ragPage), 'RAG figure must not use style attributes');
 const ogMatch = read('index.html').match(/property="og:image" content="https:\/\/nforcolin\.eu\/([^"]+)"/);
 assert(ogMatch && !/%20|\s/.test(ogMatch[1]), 'og:image must point to a file without spaces');
-assert(fs.statSync(path.join(root, ogMatch[1])).size < 300 * 1024, 'og:image must stay under 300 KB for social previews');
+// Il ?v=N serve solo a far rileggere l'immagine ai social: il file è quello senza parametro.
+assert(fs.statSync(path.join(root, ogMatch[1].split('?')[0])).size < 300 * 1024, 'og:image must stay under 300 KB for social previews');
 const vercel = JSON.parse(read('vercel.json'));
 assert((vercel.redirects || []).some(r => r.has?.some(h => h.type === 'host' && h.value === 'www.nforcolin.eu') && r.destination.startsWith('https://nforcolin.eu/') && r.permanent), 'www must redirect permanently to the apex domain');
 // Internal InfoCamere metrics are not approved for publication. Approved by Nicolò in
