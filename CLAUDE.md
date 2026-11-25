@@ -26,12 +26,13 @@ tool di terze parti: basta leggere il codice):
   con carattere distintivo; corpo testo leggibile ≥16px, nessun testo
   sotto i 13px. Massimo due famiglie e cinque dimensioni. Eccezione
   voluta da Nicolò: tre famiglie. IBM Plex Mono (medium) per i
-  titoli, Courier Prime (regular e bold) per tutto il resto, Destiny
+  titoli, IBM Plex Sans (regular e semibold) per tutto il resto, Destiny
   Signature solo per la firma (il nome nella barra in alto). Scelta del
-  21 novembre 2026: due caratteri a spaziatura fissa, ammessi fuori dai
-  blocchi di codice solo in questi due ruoli. Montserrat resta solo
-  nella pagina privata delle statistiche. Bodoni Moda, Special Elite e
-  Punk Typewriter sono stati usati o provati e tolti. Niente etichette piccole in
+  25 novembre 2026: Plex Sans sostituisce Courier Prime per leggibilità;
+  il carattere a spaziatura fissa resta solo nei titoli. Montserrat resta
+  solo nella pagina privata delle statistiche. Bodoni Moda, Special Elite,
+  Punk Typewriter e Courier Prime sono stati usati o provati e tolti.
+  Niente etichette piccole in
   maiuscolo con tracking. Paragrafi max ~62ch, interlinea 1.45-1.6,
   mai giustificati né centrati oltre le tre righe. Titoli su max due
   righe a ogni larghezza, `text-wrap:balance`. Nessuna parola del

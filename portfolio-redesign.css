@@ -2,7 +2,7 @@
 html{color-scheme:dark;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 /* Variabili comuni e base tipografica. */
 :root{
- --sans:"Courier Prime","Courier New",Courier,monospace;
+ --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
  --serif:"IBM Plex Mono","Courier New",monospace;
  --wide-w:1240px;
 }
@@ -43,7 +43,7 @@ h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-0.02em}
 .topbar{top:0;left:0;right:0;z-index:5;background:linear-gradient(to bottom,rgba(10,9,8,.5) 0%,transparent 100%);border-bottom:0}
 
 @media(max-width:700px){
- .topbar{position:relative;background:var(--bg);border-bottom:1px solid var(--line)}
+ .topbar{position:relative;background:var(--bg)}
 }
 
 /* Handwritten signature, only for my name in the top bar and the home greeting. */
@@ -64,12 +64,11 @@ h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-0.02em}
 /* Unified dark surfaces: hero, project strip and footer share one ground. */
 :root{--bg:#0E0E0F;--bg-2:#0E0E0F;--line:#262628}
 body,.hero,.colophon{background:var(--bg)}
-.footer-note{border-color:var(--line)}
 
 /* The footer rule is the bottom closing line of the project strip. */
 .colophon{padding-top:0}
 .colophon-inner{padding-top:0}
-.footer-note{margin:0;border-top:1px solid var(--line);padding-top:12px}
+.footer-note{margin:0;padding-top:12px}
 @media(max-width:700px){.colophon{padding-top:0}}
 
 /* The full-bleed rows (hero photo, project strip) are 100vw wide, and 100vw
