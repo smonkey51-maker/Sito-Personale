@@ -145,3 +145,13 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 @media(max-width:340px){.hero-intro p:first-child{font-size:1.125rem;letter-spacing:-0.04em}.hero-intro p{font-size:1rem}}
 .home-collab + .home-ig{padding-bottom:56px}
 @media(max-width:700px){.home-collab + .home-ig{padding-bottom:36px}}
+
+/* Frase sul problema (dopo i numeri) e "Come lavoro" (prima dei contatti), 25 novembre 2026. */
+.home-problem{padding:110px 0 0}
+.home-problem p{margin:0;max-width:34ch;font-family:var(--serif);font-size:1.75rem;line-height:1.35;color:var(--ink);text-wrap:pretty}
+.home-how-steps{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.home-how-steps li{display:grid;gap:10px;align-content:start}
+.home-how-n{font-family:var(--serif);font-size:1.375rem;line-height:1;color:var(--ink-soft)}
+.home-how-steps h3{margin:0}
+@media(max-width:820px){.home-how-steps{grid-template-columns:1fr;gap:32px}}
+@media(max-width:700px){.home-problem{padding-top:72px}.home-problem p{font-size:1.375rem}}
