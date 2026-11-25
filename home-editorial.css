@@ -137,3 +137,6 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 .home-how-steps h3{margin:0}
 @media(max-width:820px){.home-how-steps{grid-template-columns:1fr;gap:32px}}
 @media(max-width:700px){.home-problem{padding-top:72px}.home-problem p{font-size:1.25rem;line-height:1.4}.home-section p.home-career-lead{font-size:1.125rem;line-height:1.5}}
+
+/* Firma da desktop come nelle altre pagine (vedi portfolio-redesign.css). */
+@media(min-width:901px){body[data-page="home"] .site-name{font-size:2.75rem}}

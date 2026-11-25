@@ -123,3 +123,9 @@ main.editorial-content{padding-bottom:0}
 @media(prefers-reduced-motion:reduce){.lang-btn{transition:none}}
 
 /* Riga del copyright: leggibile anche su schermi grandi (17px da 1200px, 18px scalati oltre i 1920px). */
+
+/* Firma più grande e un filo più spessa da desktop: a 28-32 px il tratto sottile di
+   Destiny Signature si leggeva poco (25 novembre 2026). */
+@media(min-width:901px){
+ .site-name{font-size:2.75rem;line-height:1.25;-webkit-text-stroke:.35px currentColor}
+}
