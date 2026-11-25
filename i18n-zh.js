@@ -223,7 +223,6 @@ window.NF_I18N.zh = {
   footer_place: "© 2026 Nicolò Forcolin，意大利帕多瓦。",
   colophon_note: "个人网站。这里介绍的活动均以个人身份呈现。",
   footer_privacy_link: "隐私声明",
-  photo_credit: "Prato della Valle 照片：",
   privacy_title: "隐私声明",
   privacy_intro: "本网站使用不含追踪 Cookie 的汇总访问统计。只有当你通过联系表单给我写信时，才会收集个人数据。",
   privacy_s1_h: "数据控制者",
