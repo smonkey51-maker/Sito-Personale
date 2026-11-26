@@ -64,6 +64,10 @@
       "destination": "/admin.html"
     },
     {
+      "source": "/brain/",
+      "destination": "https://nicbrain.vercel.app/"
+    },
+    {
       "source": "/brain/:path*",
       "destination": "https://nicbrain.vercel.app/:path*"
     }
