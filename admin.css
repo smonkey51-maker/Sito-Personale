@@ -104,3 +104,5 @@
 .admin-msg-meta a{color:var(--ink)}
 .admin-msg-text{margin:0;white-space:pre-wrap;max-width:62ch;line-height:1.5}
 .admin-msg .admin-quiet{justify-self:start}
+.admin-actions{display:flex;align-items:center;gap:20px}
+a.admin-quiet{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}

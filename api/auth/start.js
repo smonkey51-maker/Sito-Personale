@@ -6,6 +6,8 @@ module.exports=async(req,res)=>{
  if(!process.env.GOOGLE_CLIENT_ID||!process.env.ANALYTICS_SECRET)return res.status(503).send('Authentication not configured');
  const state=crypto.randomBytes(24).toString('hex');
  setCookie(res,'nf_oauth_state',state,600);
+ /* Dopo il login si torna a Nicolò brain se l'accesso è partito da lì. */
+ if(req.query.next==='brain')res.appendHeader('Set-Cookie','nf_oauth_next=brain; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=600');
  const redirect='https://nforcolin.eu/api/auth/callback';
  const url=new URL('https://accounts.google.com/o/oauth2/v2/auth');
  url.searchParams.set('client_id',process.env.GOOGLE_CLIENT_ID);
