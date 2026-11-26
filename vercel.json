@@ -62,6 +62,10 @@
     {
       "source": "/admin",
       "destination": "/admin.html"
+    },
+    {
+      "source": "/brain/:path*",
+      "destination": "https://nicbrain.vercel.app/:path*"
     }
   ],
   "redirects": [
@@ -80,6 +84,11 @@
       "source": "/ai-delegation-loop.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/brain",
+      "destination": "/brain/",
+      "permanent": false
     }
   ]
 }
