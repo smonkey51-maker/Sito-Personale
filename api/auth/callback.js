@@ -1,14 +1,23 @@
 const crypto=require('node:crypto');
-const {cookie,sign,noStore}=require('../_lib');
+const {cookie,sign,session,noStore}=require('../_lib');
 module.exports=async(req,res)=>{
  noStore(res);
  if(req.method!=='GET')return res.status(405).end();
  const state=cookie(req,'nf_oauth_state'),next=cookie(req,'nf_oauth_next')==='brain'?'/brain/':'/admin.html';
  res.setHeader('Set-Cookie',['nf_oauth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0','nf_oauth_next=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0']);
- if(!state||typeof req.query.state!=='string'||state.length!==req.query.state.length||!crypto.timingSafeEqual(Buffer.from(state),Buffer.from(req.query.state))||!req.query.code)return res.status(403).send('Invalid login state');
+ if(!state||typeof req.query.state!=='string'||state.length!==req.query.state.length||!crypto.timingSafeEqual(Buffer.from(state),Buffer.from(req.query.state))||!req.query.code){
+  /* Pagina ricaricata o tornata indietro dopo un accesso riuscito: il codice è già stato usato, ma l'accesso c'è. */
+  if(session(req))return res.redirect(302,next);
+  return res.status(403).send('Invalid login state');
+ }
  try {
   const token=await fetch('https://oauth2.googleapis.com/token',{signal:AbortSignal.timeout(8000),method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({code:req.query.code,client_id:process.env.GOOGLE_CLIENT_ID,client_secret:process.env.GOOGLE_CLIENT_SECRET,redirect_uri:'https://nforcolin.eu/api/auth/callback',grant_type:'authorization_code'})});
-  if(!token.ok){const d=await token.json().catch(()=>({}));throw Error('scambio del codice rifiutato da Google: '+token.status+' '+(d.error||''));}
+  if(!token.ok){
+   const d=await token.json().catch(()=>({}));
+   /* Il browser a volte apre l'indirizzo di ritorno due volte: la seconda trova il codice già usato. Si va avanti: se la prima ha avuto successo l'accesso c'è, altrimenti la pagina mostra di nuovo il bottone. */
+   if(d.error==='invalid_grant'){console.error('auth: codice Google già usato, si prosegue');return res.redirect(302,next);}
+   throw Error('scambio del codice rifiutato da Google: '+token.status+' '+(d.error||''));
+  }
   const json=await token.json();
   const profile=await fetch('https://openidconnect.googleapis.com/v1/userinfo',{signal:AbortSignal.timeout(8000),headers:{Authorization:'Bearer '+json.access_token}});
   if(!profile.ok)throw Error('profilo Google non disponibile: '+profile.status);
