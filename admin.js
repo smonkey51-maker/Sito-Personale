@@ -108,7 +108,7 @@ async function load(){
   if(!r.ok)throw Error('Statistiche non disponibili: controlla la configurazione.');
   const raw=await r.json(),all=raw.days,cur=all.slice(-days),prev=all.length>days?all.slice(0,all.length-days):null;
   data={days:cur,totals:totalsOf(cur),prev:prev&&totalsOf(prev)};
-  $('login').hidden=true;$('dashboard').hidden=false;$('period').hidden=false;$('logout').hidden=false;$('error').textContent='';
+  $('login').hidden=true;$('dashboard').hidden=false;$('period').hidden=false;$('logout').hidden=false;$('brain-link').hidden=false;$('error').textContent='';
   render();loadMessages();
  }catch(e){$('error').textContent=e.message;}
 }
