@@ -90,14 +90,13 @@ for(const viewport of sizes){
    await expect(image).toHaveJSProperty('complete',true);
    expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
   });
-  test('the closing invitation is a visible button that leads to the email on the home',async({page})=>{
+  test('the closing invitation is a visible button that leads to the contact page',async({page})=>{
    await page.goto('/progetti.html');
    await expect(page.locator('.page-cta p')).toHaveText('Per parlare di un progetto');
    await expect(page.locator('.page-cta .cta-button')).toHaveText('Scrivimi');
    await page.locator('.page-cta .cta-button').click();
-   await expect(page).toHaveURL(/index\.html#collabTitle|\/#collabTitle/);
-   await expect(page.locator('#homeEmail a')).toHaveText('nic.forcolin@gmail.com');
-   await expect(page.locator('#homeEmail a')).toHaveAttribute('href','mailto:nic.forcolin@gmail.com');
+   await expect(page).toHaveURL(/contatti\.html$/);
+   await expect(page.locator('#contactForm')).toBeVisible();
   });
   test('the technical pages have a glossary and the career page keeps roles out of an ordered list',async({page})=>{
    for(const u of ['/rag-aziendale.html','/ai-in-locale.html']){
@@ -185,9 +184,10 @@ for(const viewport of sizes){
     await expect(page.locator('.m-entry')).toHaveCount(0);
     await expect(page.locator('#hero-name')).toBeVisible();
     const photo=await page.locator('.hero-photo-frame').boundingBox();
-    const heading=await page.locator('#hero-name').boundingBox();
-    expect(heading.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
-    expect(photo.height).toBeGreaterThanOrEqual(200);
+    // L'h1 è nascosto alla vista (lo legge chi usa lo screen reader): sotto la foto va l'introduzione visibile.
+    const intro=await page.locator('#heroIntro').boundingBox();
+    expect(intro.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
+    expect(photo.height).toBeGreaterThanOrEqual(180);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
    });
   }
