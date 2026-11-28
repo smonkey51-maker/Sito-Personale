@@ -146,7 +146,7 @@ for(const viewport of sizes){
    await page.goto('/');
    await expect(page.locator('h1#hero-name')).toHaveText('Nicolò Forcolin');
    await expect(page.locator('#heroIntro')).toContainText('Informatico per PA e imprese');
-   await expect(page.locator('#heroIntro')).toContainText('Parlo di cose, conosco persone.');
+   await expect(page.locator('#heroIntro')).toContainText('Conosco persone, parlo di cose, le faccio.');
    await expect(page.locator('#heroIntro a')).toHaveText('Conosciamoci con un caffè.');
    await expect(page.locator('#heroIntro a')).toHaveAttribute('href','contatti.html');
    await expect(page.locator('#heroIntro a')).not.toHaveAttribute('target','_blank');

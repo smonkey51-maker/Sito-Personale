@@ -16,8 +16,8 @@
       area3_res_v:"affiancati, in incontri di gruppo e individuali.",
       area4_t:"Governance",
       area4_d:"Decidere cosa resta in casa e cosa si può affidare a un servizio esterno.",
-      home_local_res_k:"Circa 80 risposte corrette",
-      area4_res_v:"su circa 100 domande di prova, con modelli che girano nell’infrastruttura dell’organizzazione.",
+      home_local_res_k:"80 risposte corrette",
+      area4_res_v:"su 100 domande di prova, con modelli che girano nell’infrastruttura dell’organizzazione.",
       home_all_projects:"Tutti i progetti",
       home_career_title:"Il mio percorso",
       home_career_link:"Leggi il percorso",
@@ -148,7 +148,7 @@
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       hero_intro:[
         [{t:"Informatico per PA e imprese, racconto l’AI e la porto nei processi aziendali."}],
-        [{t:"Parlo di cose, conosco persone."}],
+        [{t:"Conosco persone, parlo di cose, le faccio."}],
         [{t:"Conosciamoci con un caffè.",href:"contatti.html"}]
       ],
       stats_label:"In numeri",
@@ -362,8 +362,8 @@
       area3_res_v:"supported, in group and one-to-one sessions.",
       area4_t:"Governance",
       area4_d:"Deciding what stays in-house and what can go to an outside service.",
-      home_local_res_k:"About 80 correct answers",
-      area4_res_v:"out of about 100 test questions, with models running within the organization’s infrastructure.",
+      home_local_res_k:"80 correct answers",
+      area4_res_v:"out of 100 test questions, with models running within the organization’s infrastructure.",
       home_all_projects:"All projects",
       home_career_title:"My experience",
       home_career_link:"Read about my experience",
@@ -494,7 +494,7 @@
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       hero_intro:[
         [{t:"IT specialist for public administrations and companies, I talk about AI and bring it into business processes."}],
-        [{t:"I talk about things, I know people."}],
+        [{t:"I know people, I talk about things, I get them done."}],
         [{t:"Let’s get to know each other over a coffee.",href:"contatti.html"}]
       ],
       stats_label:"In numbers",
