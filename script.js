@@ -1,17 +1,24 @@
 (function(){
   var i18n = {
     it: {
-      home_rag_title:"RAG aziendale",
-      home_rag_desc:"Assistenti AI sui documenti e sulla conoscenza aziendale, in produzione.",
-      home_local_desc:"Sperimentazione di modelli eseguiti nell’infrastruttura dell’organizzazione.",
+      areas_title:"Dove lavoriamo insieme",
+      area1_t:"Consulenza AI",
+      area1_d:"Capire dove l’AI aiuta e dove non serve, prima di comprare qualcosa.",
+      area1_res_k:"DABO",
+      area1_res_v:"consulenza al CEO, poi nel team della candidatura internazionale.",
+      area2_t:"Sistemi AI",
+      area2_d:"Assistenti che rispondono dai documenti dell’organizzazione e citano le fonti.",
       home_rag_res_k:"Meno di 15 minuti",
       home_rag_res_v:"per gestire un problema, prima circa un’ora.",
-      home_rag_res2_k:"Meno di 2 ore",
-      home_rag_res2_v:"per l’analisi post evento, prima fino a una giornata.",
+      area3_t:"Formazione",
+      area3_d:"Affiancare le persone a usare l’AI nel proprio lavoro.",
+      area3_res_k:"Più di 35 colleghi",
+      area3_res_v:"affiancati, in incontri di gruppo e individuali.",
+      area4_t:"Governance",
+      area4_d:"Decidere cosa resta in casa e cosa si può affidare a un servizio esterno.",
       home_local_res_k:"Circa 80 risposte corrette",
-      home_local_res_v:"su circa 100 domande di prova.",
+      area4_res_v:"su circa 100 domande di prova, con modelli che girano nell’infrastruttura dell’organizzazione.",
       home_all_projects:"Tutti i progetti",
-      home_audience_desc:"Lavoro con PA, enti parastatali, PMI e professionisti. Sviluppo soluzioni che funzionano anche fuori dalle presentazioni PowerPoint.",
       home_career_title:"Il mio percorso",
       home_career_link:"Leggi il percorso",
       local_how_privacy:"Le richieste vengono elaborate in locale, senza inviare dati all’esterno.",
@@ -140,8 +147,9 @@
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       hero_intro:[
-        [{t:"Informatico per le PA, racconto l’AI e la porto nei processi aziendali."}],
-        [{t:"Esempio concreto: un assistente AI che ho creato, oggi in produzione, porta l’analisi post evento da una giornata a poche ore."}]
+        [{t:"Informatico per PA e imprese, racconto l’AI e la porto nei processi aziendali."}],
+        [{t:"Parlo di cose, conosco persone."}],
+        [{t:"Conosciamoci con un caffè.",href:"contatti.html"}]
       ],
       stats_label:"In numeri",
       stat1_v:"35+",
@@ -170,8 +178,8 @@
       faq3_q:"Da dove si parte?",
       faq3_a:"Da un problema che vi fa perdere tempo ogni settimana. Il RAG aziendale è nato così: oggi un problema si gestisce in meno di 15 minuti invece di circa un’ora, e l’analisi dopo un problema richiede meno di 2 ore invece di una giornata.",
       skip_to_content:"Vai al contenuto",
-      page_title:"Nicolò Forcolin | AI nel lavoro quotidiano",
-      page_description:"Informatico per le PA, racconto l’AI e la porto nei processi aziendali. Un assistente AI che ho creato porta l’analisi post evento da una giornata a poche ore.",
+      page_title:"Nicolò Forcolin | AI nei processi aziendali, per PA e imprese",
+      page_description:"Informatico per PA e imprese, racconto l’AI e la porto nei processi aziendali. Un assistente AI che ho creato porta l’analisi post evento da una giornata a poche ore.",
       rag_step1_kicker:"Fonti iniziali",
       rag_step1_title:"Documentazione e storico delle criticità",
       rag_step1_desc:"Due raccolte di conoscenza consultate separatamente.",
@@ -286,8 +294,9 @@
       for_whom_link:"AI in locale",
       for_whom_profile:"Google Developer",
       sec_lavori:"Progetti",
-      sec_at_infocamere:"In InfoCamere",
-      sec_outside_infocamere:"Fuori da InfoCamere",
+      sec_other:"Altre iniziative",
+      c1_status_ic:"InfoCamere, in produzione dal 2026",
+      c2_status_ic:"InfoCamere, sperimentazione conclusa nel 2026",
       club_desc:"Community professionale dedicata a relazioni rispettose e a una leadership gentile.",
       c1_summary:"Ho unificato due sistemi RAG già funzionanti in un unico punto di accesso, con più fonti aziendali collegate. Gli utenti scrivono la domanda come la direbbero a un collega: la risposta mette prima ciò che serve subito, poi possibili cause, procedure, casi simili e i link alle fonti.",
       c2_summary:"Su circa 100 domande di prova, circa 80 risposte erano corrette e le risposte miglioravano rispetto ai modelli di partenza. Restavano però informazioni inventate, meno frequenti nei modelli più performanti. Sono osservazioni su un campione piccolo, non una misura di accuratezza valida in generale. Era un test e per ora si è scelto di non portarlo avanti.",
@@ -338,17 +347,24 @@
       page_description_privacy:"Informativa sulla privacy del sito personale di Nicolò Forcolin: statistiche aggregate senza cookie di tracciamento e dati raccolti solo dal modulo di contatto.",
     },
     en: {
-      home_rag_title:"Enterprise RAG",
-      home_rag_desc:"AI assistants on company documents and knowledge, in production.",
-      home_local_desc:"Experiments with models running within the organization’s infrastructure.",
+      areas_title:"Where we work together",
+      area1_t:"AI advisory",
+      area1_d:"Working out where AI helps and where it does not, before buying anything.",
+      area1_res_k:"DABO",
+      area1_res_v:"advice to the CEO, then on the team for the international application.",
+      area2_t:"AI systems",
+      area2_d:"Assistants that answer from the organization’s documents and cite their sources.",
       home_rag_res_k:"Under 15 minutes",
       home_rag_res_v:"to handle an issue, down from about an hour.",
-      home_rag_res2_k:"Under 2 hours",
-      home_rag_res2_v:"for post-incident analysis, down from up to a full day.",
+      area3_t:"Training",
+      area3_d:"Helping people use AI in their own work.",
+      area3_res_k:"More than 35 colleagues",
+      area3_res_v:"supported, in group and one-to-one sessions.",
+      area4_t:"Governance",
+      area4_d:"Deciding what stays in-house and what can go to an outside service.",
       home_local_res_k:"About 80 correct answers",
-      home_local_res_v:"out of about 100 test questions.",
+      area4_res_v:"out of about 100 test questions, with models running within the organization’s infrastructure.",
       home_all_projects:"All projects",
-      home_audience_desc:"I work with public administrations, public-sector bodies, SMEs and professionals. I build solutions that work outside PowerPoint presentations too.",
       home_career_title:"My experience",
       home_career_link:"Read about my experience",
       local_how_privacy:"Requests are processed locally, without sending data outside.",
@@ -477,8 +493,9 @@
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       hero_intro:[
-        [{t:"Public-sector IT specialist: I talk about AI and bring it into business processes."}],
-        [{t:"A concrete example: an AI assistant I built, now in production, cuts post-incident analysis from a full day to a few hours."}]
+        [{t:"IT specialist for public administrations and companies, I talk about AI and bring it into business processes."}],
+        [{t:"I talk about things, I know people."}],
+        [{t:"Let’s get to know each other over a coffee.",href:"contatti.html"}]
       ],
       stats_label:"In numbers",
       stat1_v:"35+",
@@ -507,8 +524,8 @@
       faq3_q:"Where do we start?",
       faq3_a:"With a problem that costs you time every week. The enterprise RAG started that way: an issue now takes under 15 minutes instead of about an hour, and the analysis after an issue takes under 2 hours instead of a full day.",
       skip_to_content:"Skip to content",
-      page_title:"Nicolò Forcolin | AI in everyday work",
-      page_description:"Public-sector IT specialist bringing AI into business processes. An AI assistant I built cuts post-incident analysis from a full day to a few hours.",
+      page_title:"Nicolò Forcolin | AI in business processes, for public administrations and companies",
+      page_description:"IT specialist for public administrations and companies, bringing AI into business processes. An AI assistant I built cuts post-incident analysis from a full day to a few hours.",
       rag_step1_kicker:"Initial sources",
       rag_step1_title:"Documentation and incident history",
       rag_step1_desc:"Two separate knowledge collections.",
@@ -623,8 +640,9 @@
       for_whom_link:"Local AI",
       for_whom_profile:"Google Developer",
       sec_lavori:"Projects",
-      sec_at_infocamere:"At InfoCamere",
-      sec_outside_infocamere:"Outside InfoCamere",
+      sec_other:"Other initiatives",
+      c1_status_ic:"InfoCamere, in production since 2026",
+      c2_status_ic:"InfoCamere, experiment completed in 2026",
       club_desc:"A professional community dedicated to respectful relationships and kind leadership.",
       c1_summary:"I unified two working RAG systems into a single access point, with more company sources connected. Users write the question the way they would ask a colleague: the answer puts what is needed right now first, then possible causes, procedures, similar cases and links to the sources.",
       c2_summary:"On about 100 test questions, about 80 answers were correct and answers improved on the starting models. Invented information remained, less often in the better-performing models. These are observations on a small sample, not a measure of accuracy that holds in general. It was a test, and for now it was decided not to take it further.",
@@ -805,8 +823,13 @@
         if(seg.href){
           var a = document.createElement("a");
           a.href = seg.href;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
+          /* Link esterni in una nuova scheda; quelli interni restano nella stessa e prendono lo stile dei link della home. */
+          if(/^https?:/.test(seg.href)){
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+          }else{
+            a.className = "home-text-link";
+          }
           a.textContent = seg.t;
           para.appendChild(a);
         }else if(seg.b){

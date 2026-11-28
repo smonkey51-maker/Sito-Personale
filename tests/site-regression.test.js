@@ -71,6 +71,13 @@ for (const language of ['it', 'en']) assert(dictionaries[language].includes('her
 assert(home.includes('data-i18n="skip_to_content"'), 'Skip link must be translated');
 assert(!home.includes('hero-cta-row'), 'The redundant hero links were removed');
 assert(home.includes('src="photo.webp?v=43"'), 'New portrait must be displayed');
+// Home attorno a quattro ambiti (28 novembre 2026): apertura di tre righe con l'invito al caffè, quattro ambiti, niente riga sul pubblico.
+for (const area of ['area1_t', 'area2_t', 'area3_t', 'area4_t']) assert(home.includes('data-i18n="' + area + '"'), 'Home must list the area ' + area);
+assert(home.includes('id="homeAreasTitle"') && !home.includes('hero-audience') && !home.includes('home_audience_desc'), 'Home areas section replaces the projects list and the audience line');
+assert(home.includes('<a class="home-text-link" href="contatti.html">Conosciamoci con un caffè.</a>'), 'The hero must end with the coffee link to the contact page');
+for (const language of ['it', 'en']) assert(dictionaries[language].includes('href:"contatti.html"'), language + ': hero coffee link missing');
+assert(read('progetti.html').includes('data-i18n="area4_t"'), 'Progetti must group the projects by area');
+
 assert(!home.includes('class="info-dialog"'), 'Project dialogs were replaced by pages');
 
 assert(read('rag-aziendale.html').includes('data-i18n="c1_summary"'), 'RAG summary must remain');

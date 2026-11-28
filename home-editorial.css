@@ -19,6 +19,7 @@ body[data-page="home"] .site-name{font-size:2rem}
 .hero-intro p:last-child{margin:0}
 :lang(zh-Hans) .hero-intro p:first-child{font-size:clamp(1.375rem,2.6vw,2rem)}
 .hero-intro strong{font-weight:500;color:inherit}
+.hero-intro .home-text-link{margin-top:6px}
 .hero-photo-frame{position:static;inset:auto;order:0;align-self:end;width:100%;min-height:0;max-height:none;margin:0;pointer-events:none}
 .hero-portrait{display:block;width:100%;height:auto;max-height:500px;object-fit:contain;object-position:center bottom;mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
 
@@ -74,10 +75,9 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 @media(max-width:700px){
  body[data-page="home"] .topbar-inner{padding-block:8px;min-height:68px}
  body[data-page="home"] .site-name{font-size:1.75rem}
- .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(180px,1fr) auto auto;align-content:stretch;gap:0;padding-block:4px 24px;min-height:calc(100svh - 68px)}
+ .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(180px,1fr) auto;align-content:stretch;gap:0;padding-block:4px 24px;min-height:calc(100svh - 68px)}
  .hero-overlay{display:contents}
  .hero-intro{grid-row:2;max-width:none;margin-inline:0;text-align:left}
- .hero-audience{grid-row:3;margin:10px 0 0;text-align:left}
  .hero-intro p{font-size:1.125rem;line-height:1.5;margin-bottom:6px}
  .hero-intro p:first-child{font-size:1.25rem;line-height:1.25;margin:0 0 14px}
  :lang(zh-Hans) .hero-intro p:first-child{font-size:1.25rem}
@@ -110,7 +110,6 @@ body[data-page="home"] .colophon{padding-bottom:24px}
 /* Anteprima Instagram: tre foto copiate sul sito, una per gruppo. */
 
 /* Presentazione, progetti e percorso nella versione essenziale. */
-.hero-audience{font-size:1.125rem;line-height:1.5;color:var(--ink-soft);max-width:44ch;margin:14px 0 0}
 .home-project-list{display:grid;gap:44px;margin-bottom:12px}
 .home-project{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;align-items:start}
 .home-section .home-project h3{font-family:var(--serif);font-size:1.375rem;line-height:1.3;margin:0}
@@ -125,7 +124,6 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  body[data-page="home"] .site-name{font-size:1.4rem}
  .home-collab h2{font-size:1.125rem}
 }
-@media(max-width:700px){.hero-audience{max-width:none;font-size:1rem}}
 @media(max-width:340px){.hero-intro p:first-child{font-size:1.125rem;letter-spacing:-0.04em}.hero-intro p{font-size:1rem}}
 
 /* Frase sul problema (dopo i numeri) e "Come lavoro" (prima dei contatti), 25 novembre 2026. */

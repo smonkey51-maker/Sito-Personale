@@ -27,7 +27,7 @@ for(const viewport of sizes){
   });
   test('hero link opens the projects and initiatives page',async({page})=>{
    await page.goto('/');
-   await page.locator('.home-projects > .wrap > a[href="progetti.html"]').click();
+   await page.locator('.home-areas > .wrap > a[href="progetti.html"]').click();
    await expect(page).toHaveURL(/progetti\.html$/);
    await expect(page.locator('h1')).toHaveText('Progetti e iniziative');
    await page.locator('.item-title a[href="rag-aziendale.html"]').click();
@@ -39,9 +39,9 @@ for(const viewport of sizes){
    await expect(page.locator('h1')).toHaveText('Local AI Experiment');
    await expect(page).toHaveTitle('Local AI Experiment | Nicolò Forcolin');
    await page.goto('/');
-   await expect(page.locator('#homeProjectsTitle')).toHaveText('Projects');
+   await expect(page.locator('#homeAreasTitle')).toHaveText('Where we work together');
    await pickLang(page,'it');
-   await expect(page.locator('#homeProjectsTitle')).toHaveText('Progetti');
+   await expect(page.locator('#homeAreasTitle')).toHaveText('Dove lavoriamo insieme');
   });
   test('Chinese is selectable, translate the page and fit the header',async({page})=>{
    const errors=[];
@@ -109,16 +109,17 @@ for(const viewport of sizes){
    await expect(page.locator('.career article')).toHaveCount(5);
    await expect(page.locator('.career .page-block-label').first()).toHaveText('2026 – oggi');
   });
-  test('home lists the three projects, each with its own link, and no redundant sections',async({page})=>{
+  test('home lists the four areas, with a link to the two projects, and no redundant sections',async({page})=>{
    await page.goto('/');
    await expect(page.locator('.home-proof')).toHaveCount(0);
-   await expect(page.locator('.home-projects')).toHaveCount(1);
-   await expect(page.locator('.home-project')).toHaveCount(2);
+   await expect(page.locator('.home-areas')).toHaveCount(1);
+   await expect(page.locator('.home-project')).toHaveCount(4);
+   await expect(page.locator('.home-project h3')).toHaveText(['Consulenza AI','Sistemi AI','Formazione','Governance']);
    await expect(page.locator('.home-project a[href="rag-aziendale.html"]')).toBeVisible();
    await expect(page.locator('.home-project a[href="ai-in-locale.html"]')).toBeVisible();
    await expect(page.locator('.home-services')).toHaveCount(0);
    await expect(page.locator('.home-audience')).toHaveCount(0);
-   await expect(page.locator('.hero-audience')).toBeVisible();
+   await expect(page.locator('.hero-audience')).toHaveCount(0);
    await expect(page.locator('.hero-cta-row')).toHaveCount(0);
    await expect(page.locator('.search-btn')).toHaveCount(0);
    await expect(page.locator('.home-contact')).toHaveCount(0);
@@ -144,7 +145,11 @@ for(const viewport of sizes){
   test('home hero opens with the real introduction',async({page})=>{
    await page.goto('/');
    await expect(page.locator('h1#hero-name')).toHaveText('Nicolò Forcolin');
-   await expect(page.locator('#heroIntro')).toContainText('Informatico per le PA');
+   await expect(page.locator('#heroIntro')).toContainText('Informatico per PA e imprese');
+   await expect(page.locator('#heroIntro')).toContainText('Parlo di cose, conosco persone.');
+   await expect(page.locator('#heroIntro a')).toHaveText('Conosciamoci con un caffè.');
+   await expect(page.locator('#heroIntro a')).toHaveAttribute('href','contatti.html');
+   await expect(page.locator('#heroIntro a')).not.toHaveAttribute('target','_blank');
    await expect(page.locator('#heroIntro')).not.toContainText('Ho il vizio');
    await expect(page.locator('#heroIntro')).not.toContainText('InfoCamere');
    await expect(page.locator('.site-name')).toHaveText('Nicolò Forcolin');
@@ -152,7 +157,7 @@ for(const viewport of sizes){
    await expect(page.locator('.colophon a[href*="linkedin"]')).toHaveCount(1);
    await expect(page.locator('.site-name')).toHaveAttribute('aria-label','Nicolò Forcolin, home');
    await pickLang(page,'en');
-   await expect(page.locator('#heroIntro')).toContainText('Public-sector IT specialist');
+   await expect(page.locator('#heroIntro')).toContainText('IT specialist for public administrations and companies');
   });
   {
    test('the three languages sit side by side in the bar, the current one is marked, and a click switches',async({page})=>{
@@ -197,7 +202,7 @@ test.describe('browser language',()=>{
  test.use({locale:'en-US',viewport:{width:375,height:812}});
  test('a non-Italian browser opens the site in English',async({page})=>{
   await page.goto('/');
-  await expect(page.locator('#heroIntro')).toContainText('Public-sector IT specialist');
+  await expect(page.locator('#heroIntro')).toContainText('IT specialist for public administrations and companies');
   await expect(page.locator('html')).toHaveAttribute('lang','en');
  });
 });
