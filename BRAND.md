@@ -19,8 +19,8 @@ La v1 metteva al centro "il lavoro al Service Desk di InfoCamere"; è superata.
 
 **Dove InfoCamere compare e dove no:**
 
-- Compare dove è un dato, un ruolo o un progetto: ruoli nel Percorso ("Service Desk, InfoCamere", "Referente del RAG aziendale, InfoCamere"), pagine dei progetti (RAG, AI in locale), ruolo di Social Ambassador, dati strutturati (`worksFor`), sezioni "In InfoCamere" e "Fuori da InfoCamere" in Progetti.
-- Non compare nel titolo della scheda del browser ("Nicolò Forcolin | AI nel lavoro quotidiano"), nella prima frase della bio ("Porto l'AI nel lavoro quotidiano."), nelle introduzioni e descrizioni di Percorso e Progetti, nella descrizione del manifest, nella copertina LinkedIn.
+- Compare dove è un dato, un ruolo o un progetto: ruoli nel Percorso ("Service Desk, InfoCamere", "Referente del RAG aziendale, InfoCamere"), pagine dei progetti (RAG, AI in locale), ruolo di Social Ambassador, dati strutturati (`worksFor`), etichette delle voci in Progetti (per esempio "InfoCamere, in produzione dal 2026" e "Advisory esterna"), che dal 28 novembre 2026 sostituiscono le sezioni "In InfoCamere" e "Fuori da InfoCamere".
+- Non compare nel titolo della scheda del browser ("Nicolò Forcolin | AI nei processi aziendali, per PA e imprese"), nella prima frase della bio ("Porto l'AI nel lavoro quotidiano."), nelle introduzioni e descrizioni di Percorso e Progetti, nella descrizione del manifest, nella copertina LinkedIn.
 - Nelle frasi l'ordine è prima l'autore, poi il luogo: "In InfoCamere sono partito dalle esigenze operative", non "InfoCamere ha…".
 - Non usare "AI generativa" come titolo.
 
@@ -29,6 +29,27 @@ La v1 metteva al centro "il lavoro al Service Desk di InfoCamere"; è superata.
 1. **Affidabilità infrastrutturale applicata all'AI.** Prova: un sistema RAG in produzione, non una demo.
 2. **Ascolto trasversale.** Prova: confronto continuo con altri uffici sull'adozione dell'AI (sezione "AI in produzione e adozione"). Il lavoro non si ferma al rilascio.
 3. **Precisione anche quando scomoda.** Prova: il progetto DABO è raccontato con l'esito reale, incluso il mancato accesso alla finale.
+
+### Piattaforma di marca (28 novembre 2026, scelta di Nicolò)
+
+| Elemento | Definizione |
+|---|---|
+| Brand | Nicolò Forcolin, dominio nforcolin.eu |
+| Territorio | Umanesimo tecnologico applicato. Bussola interna, non titolo del sito: per chi lavora in una PA è un'espressione astratta |
+| Posizionamento | AI nei processi aziendali, per PA e imprese |
+| Pubblico | PA, enti a partecipazione pubblica, PMI e professionisti |
+| Promessa | Rendere la tecnologia concretamente utile |
+| Firma personale | Parlo di cose, conosco persone. |
+| Personalità | Competente, curiosa, elegante, pragmatica, ironica |
+
+Decisioni:
+
+- L'AI è la porta d'ingresso (ciò per cui si viene cercati); la relazione tra tecnologia, persone e organizzazioni è il modo di lavorare. Il sito mostra l'umanesimo con i fatti ("Parlo di cose, conosco persone", il caffè), non lo dichiara con "sono un umanista".
+- Quattro ambiti di lavoro, non un catalogo di servizi: Consulenza AI (Advisory), Sistemi AI (Systems), Formazione (Enablement), Governance. Ognuno ha accanto una prova che esiste già: DABO, RAG aziendale, più di 35 colleghi affiancati, test dei modelli in locale. Governance è l'ambito con la prova più debole: la frase resta prudente finché non c'è un progetto di governance vero. Se un giorno diventano un'offerta a pagamento, dipende da ciò che consente il rapporto di lavoro con InfoCamere.
+- Metodo: resta "Come lavoro" (un caffè o una chiamata, un'analisi onesta, un primo strumento piccolo). Non si aggiunge un secondo metodo.
+- Formato editoriale "AI al secondo caffè": in pausa finché non è chiaro l'uso del profilo Instagram e dei reel. Nessuna sezione di puntate sul sito. Le tre idee valutate per partire: la domanda che il documento non si aspettava (RAG visto da chi lo usa), chi risponde dei dati (AI in locale con un responsabile IT o un DPO), fermarsi a Singapore (DABO con il suo CEO). Servono il consenso degli ospiti e, per le prime due, l'ok di InfoCamere.
+- Sui social le schede possono essere più espressive del sito, con la stessa palette. Etichette in maiuscolo con numero ("NFORCOLIN.EU / 001") restano fuori dal sito.
+- Documento di strategia ricevuto da Nicolò (28 novembre 2026): palette vincolante, il resto proposte da validare. I voti qualitativi (da 4 a 9) servono come ordine di priorità, non come misura.
 
 ## 2. Tono
 
@@ -144,3 +165,4 @@ Fino al 15 novembre 2026 la home su mobile si apriva con una prima schermata a t
 - Titoli maggiori di nuovo arancioni (25 novembre 2026, scelta di Nicolò): titolo di ogni pagina e titoli di sezione della home (compreso "Domande frequenti") in `#F9311C`; restano bianchi i titoli dei blocchi delle pagine interne e delle voci.
 - Titoli dei blocchi delle pagine interne di nuovo arancioni (25 novembre 2026): bianchi restano solo i titoli delle voci (h3). Home su mobile riequilibrata: il ritratto occupa lo spazio libero della prima schermata (minimo 180 px, massimo 560 px), così sotto il testo della hero non resta una fascia vuota.
 - Firma da desktop (25 novembre 2026): sopra i 900 px di larghezza la firma passa a 44 px (2,75rem) con un contorno di 0,35 px nello stesso colore, che ispessisce il tratto sottile di Destiny Signature; su tablet e mobile restano le misure di prima.
+- Home e Progetti attorno a quattro ambiti (28 novembre 2026, scelta di Nicolò): apertura "Informatico per PA e imprese, racconto l’AI e la porto nei processi aziendali." / "Parlo di cose, conosco persone." / "Conosciamoci con un caffè." (l’ultima riga è un link ai contatti, sottolineato in arancione, senza bottone: la hero resta senza pulsanti). Tolti l’esempio dell’assistente, la riga sul pubblico (con la frase sulle presentazioni PowerPoint) e i testi di home_audience_desc. La sezione "Progetti" della home diventa "Dove lavoriamo insieme", con Consulenza AI, Sistemi AI, Formazione e Governance (nomi inglesi sul sito in inglese: AI advisory, AI systems, Training, Governance). Progetti raggruppa le voci per ambito e tiene l’attribuzione nelle etichette ("InfoCamere, in produzione dal 2026"); "Altre iniziative" raccoglie Club degli Uomini Gentili e Questo sito. Titolo e descrizione della home, anteprima og-home.jpg (ora ?v=3) e testi in italiano, inglese e cinese aggiornati. Il titolo della hero resta su 3 righe, come già deciso il 22 novembre.
