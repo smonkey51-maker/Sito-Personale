@@ -146,8 +146,8 @@ window.NF_I18N.zh = {
   enablement_title: "分享实践经验",
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
   hero_intro: [
-    [{ t: "面向公共机构和企业的 IT 人员，我讲解 AI，并把它带进业务流程。" }],
     [{ t: "我认识不少人，谈具体的事，也把事做成。" }],
+    [{ t: "面向公共机构和企业的 IT 人员，我讲解 AI，并把它带进业务流程。" }],
     [{ t: "我们喝杯咖啡，彼此认识一下吧。", href: "contatti.html" }]
   ],
   stats_label: "数据一览",

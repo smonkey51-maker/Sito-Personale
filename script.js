@@ -147,8 +147,8 @@
       enablement_title:"Condividere l’esperienza sul campo",
       enablement_desc:"Ho partecipato come relatore a incontri interni sull’AI. Dal 2025 sono anche Social Ambassador di InfoCamere: promuovo la cultura digitale e condivido l’esperienza maturata nel lavoro.",
       hero_intro:[
-        [{t:"Informatico per PA e imprese, racconto l’AI e la porto nei processi aziendali."}],
         [{t:"Conosco persone, parlo di cose, le faccio."}],
+        [{t:"Informatico per PA e imprese, racconto l’AI e la porto nei processi aziendali."}],
         [{t:"Conosciamoci con un caffè.",href:"contatti.html"}]
       ],
       stats_label:"In numeri",
@@ -493,8 +493,8 @@
       enablement_title:"Sharing practical experience",
       enablement_desc:"I have spoken at internal AI sessions. Since 2025, I have also been an InfoCamere Social Ambassador, promoting digital culture and sharing experience from my work.",
       hero_intro:[
-        [{t:"IT specialist for public administrations and companies, I talk about AI and bring it into business processes."}],
         [{t:"I know people, I talk about things, I get them done."}],
+        [{t:"IT specialist for public administrations and companies, I talk about AI and bring it into business processes."}],
         [{t:"Let’s get to know each other over a coffee.",href:"contatti.html"}]
       ],
       stats_label:"In numbers",
