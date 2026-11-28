@@ -1,29 +1,28 @@
 /* Homepage editoriale: layout continuo ispirato al mockup approvato.
    Questi stili sono caricati solo in home; le pagine interne restano autonome. */
-body[data-page="home"]{padding-bottom:0}
+body[data-page="home"]{padding-bottom:0;--shell-pad:clamp(20px,4vw,56px)}
 body[data-page="home"] .topbar{position:relative;background:var(--bg);border:0}
 body[data-page="home"] .topbar-inner,
 body[data-page="home"] .colophon-inner,
-.editorial-shell{width:100%;max-width:1100px;margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
+.editorial-shell{width:100%;max-width:1100px;margin-inline:auto;padding-inline:var(--shell-pad)}
 .editorial-content > section > .wrap{width:100%;max-width:none;padding-inline:0;margin-inline:0}
 .editorial-content{padding:0}
 body[data-page="home"] .site-name{font-size:2rem}
 
-/* Hero: la prima riga dell'intro fa da titolo, su fondo pieno accanto al ritratto. */
+/* Hero "campagna" (28 novembre 2026, scelta di Nicolò): il ritratto sta a tutta altezza sul lato destro e sfuma verso il testo,
+   il titolo è grande. Sotto i 900 px il ritratto passa sopra e il titolo scende sulla parte sfumata. */
 .hero{position:relative;padding:0;background:transparent}
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:16px;min-height:0;padding-block:48px 0}
-.hero-overlay{width:auto;max-width:none;padding-block:0 40px;display:flex;flex-direction:column;justify-content:center;align-self:center}
+.hero-inner{position:static;display:flex;align-items:center;min-height:min(88vh,780px);padding-block:0}
+.hero-overlay{position:relative;z-index:2;width:100%;max-width:560px;padding-block:48px}
 .hero-intro{font-size:1.125rem;line-height:1.55;max-width:none;margin:0}
-.hero-intro p{font-size:1.125rem;line-height:1.55;margin:0 0 8px;color:var(--ink)}
-.hero-intro p:first-child{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,2.4vw,1.875rem);line-height:1.25;letter-spacing:-0.03em;margin:0 0 20px -0.06em;text-wrap:balance}
+.hero-intro p{font-size:1.125rem;line-height:1.55;margin:0 0 8px;color:var(--ink);max-width:34ch}
+.hero-intro p:first-child{font-family:var(--serif);font-weight:500;font-size:clamp(2.25rem,3.6vw,3.25rem);line-height:1.06;letter-spacing:-0.045em;margin:0 0 28px -0.06em;max-width:11em;text-wrap:balance}
 .hero-intro p:last-child{margin:0}
-:lang(zh-Hans) .hero-intro p:first-child{font-size:clamp(1.375rem,2.6vw,2rem)}
+:lang(zh-Hans) .hero-intro p:first-child{font-size:clamp(2rem,3.2vw,2.75rem)}
 .hero-intro strong{font-weight:500;color:inherit}
 .hero-intro .home-text-link{margin-top:6px}
-.hero-photo-frame{position:static;inset:auto;order:0;align-self:end;width:100%;min-height:0;max-height:none;margin:0;pointer-events:none}
-.hero-portrait{display:block;width:100%;height:auto;max-height:500px;object-fit:contain;object-position:center bottom;mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
-
-@media(min-width:1280px){.hero-portrait{max-height:560px}}
+.hero-photo-frame{position:absolute;top:0;right:0;bottom:0;z-index:1;width:min(47vw,640px);overflow:hidden;pointer-events:none}
+.hero-portrait{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 10%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 28%);mask-image:linear-gradient(to right,transparent 0,#000 28%)}
 
 /* Tre dati, separati dalla bio; la nota DABO resta accanto ai numeri. */
 .home-stats{padding:0}
@@ -68,22 +67,12 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .home-text-link:hover,.home-collab-faq summary:hover{color:var(--accent)}
 }
 @media(min-width:701px) and (max-width:1000px){
- .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);padding-top:32px}
  .home-stats-list li{display:block}
  .home-stats-list strong{display:block;margin-bottom:6px}
 }
 @media(max-width:700px){
  body[data-page="home"] .topbar-inner{padding-block:8px;min-height:68px}
  body[data-page="home"] .site-name{font-size:1.75rem}
- .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(180px,1fr) auto;align-content:stretch;gap:0;padding-block:4px 24px;min-height:calc(100svh - 68px)}
- .hero-overlay{display:contents}
- .hero-intro{grid-row:2;max-width:none;margin-inline:0;text-align:left}
- .hero-intro p{font-size:1.125rem;line-height:1.5;margin-bottom:6px}
- .hero-intro p:first-child{font-size:1.25rem;line-height:1.25;margin:0 0 14px}
- :lang(zh-Hans) .hero-intro p:first-child{font-size:1.25rem}
- .hero-intro p:last-child{margin-bottom:0}
- .hero-photo-frame{grid-row:1;align-self:end;width:100%;height:100%;min-height:180px;max-height:560px;margin:0 0 20px;overflow:hidden;position:relative;order:0}
- .hero-portrait{position:absolute;top:0;left:0;width:100%;max-width:none;height:100%;max-height:none;object-fit:contain;object-position:center bottom;mask-image:none;-webkit-mask-image:none}
  .home-stats-list{grid-template-columns:1fr;gap:0;padding:10px 0}
  .home-stats-list li{display:flex;align-items:baseline;gap:16px;padding:10px 0}
  .home-stats-list strong{min-width:64px;font-size:1.75rem;margin:0}
@@ -99,6 +88,20 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  .home-collab-text{font-size:1rem}
  .home-collab{padding-bottom:36px}
 }
+
+/* Ritratto sopra e titolo sulla parte sfumata, da tablet a telefono. */
+@media(max-width:900px){
+ .hero-inner{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(180px,1fr) auto;align-content:stretch;gap:0;padding-block:4px 24px;min-height:calc(100svh - 68px)}
+ .hero-overlay{display:contents}
+ .hero-photo-frame{position:relative;top:auto;right:auto;bottom:auto;grid-row:1;width:auto;height:100%;min-height:180px;max-height:560px;margin-inline:calc(var(--shell-pad) * -1)}
+ .hero-portrait{position:absolute;top:0;left:0;object-position:58% 8%;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}
+ .hero-intro{grid-row:2;position:relative;z-index:2;max-width:none;margin:-5rem 0 0;text-align:left}
+ .hero-intro p{font-size:1.125rem;line-height:1.5;margin-bottom:6px;max-width:none}
+ .hero-intro p:first-child{font-size:2.125rem;line-height:1.08;margin:0 0 16px -0.04em;max-width:none}
+ :lang(zh-Hans) .hero-intro p:first-child{font-size:1.875rem}
+ .hero-intro p:last-child{margin-bottom:0}
+}
+@media(min-width:701px) and (max-width:900px){.hero-photo-frame{width:100%;max-width:520px;margin-inline:auto}}
 
 /* Mobile: la barra resta sempre visibile. */
 @media(max-width:700px){
@@ -124,7 +127,7 @@ body[data-page="home"] .colophon{padding-bottom:24px}
  body[data-page="home"] .site-name{font-size:1.4rem}
  .home-collab h2{font-size:1.125rem}
 }
-@media(max-width:340px){.hero-intro p:first-child{font-size:1.125rem;letter-spacing:-0.04em}.hero-intro p{font-size:1rem}}
+@media(max-width:340px){.hero-intro p:first-child{font-size:1.75rem}.hero-intro p{font-size:1rem}}
 
 /* Frase sul problema (dopo i numeri) e "Come lavoro" (prima dei contatti), 25 novembre 2026. */
 .home-problem{padding:110px 0 0}

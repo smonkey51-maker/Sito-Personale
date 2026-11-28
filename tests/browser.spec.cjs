@@ -189,9 +189,11 @@ for(const viewport of sizes){
     await expect(page.locator('.m-entry')).toHaveCount(0);
     await expect(page.locator('#hero-name')).toBeVisible();
     const photo=await page.locator('.hero-photo-frame').boundingBox();
-    // L'h1 è nascosto alla vista (lo legge chi usa lo screen reader): sotto la foto va l'introduzione visibile.
+    // L'h1 è nascosto alla vista (lo legge chi usa lo screen reader). Il titolo sale sulla parte sfumata in basso del ritratto,
+    // senza coprire il volto, e tutta l'introduzione sta nella prima schermata.
     const intro=await page.locator('#heroIntro').boundingBox();
-    expect(intro.y).toBeGreaterThanOrEqual(photo.y+photo.height-2);
+    expect(intro.y).toBeGreaterThanOrEqual(photo.y+photo.height*0.6);
+    expect(intro.y+intro.height).toBeLessThanOrEqual(page.viewportSize().height);
     expect(photo.height).toBeGreaterThanOrEqual(180);
     await expect(page.locator('.hero-cta-row')).toHaveCount(0);
    });
