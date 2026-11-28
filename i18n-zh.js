@@ -15,8 +15,8 @@ window.NF_I18N.zh = {
   area3_res_v: "获得陪伴，形式包括小组和一对一交流。",
   area4_t: "治理",
   area4_d: "决定哪些留在内部，哪些可以交给外部服务。",
-  home_local_res_k: "约 80 个正确回答",
-  area4_res_v: "来自约 100 个测试问题，模型在组织内部基础设施上运行。",
+  home_local_res_k: "80 个正确回答",
+  area4_res_v: "来自 100 个测试问题，模型在组织内部基础设施上运行。",
   home_all_projects: "所有项目",
   home_career_title:"我的经历",
   home_career_link:"了解我的经历",
@@ -147,7 +147,7 @@ window.NF_I18N.zh = {
   enablement_desc: "我曾在内部的 AI 分享会上发言。自 2025 年起，我还担任 InfoCamere 社交大使，推广数字文化，分享工作中的经验。",
   hero_intro: [
     [{ t: "面向公共机构和企业的 IT 人员，我讲解 AI，并把它带进业务流程。" }],
-    [{ t: "我谈具体的事，也认识不少人。" }],
+    [{ t: "我认识不少人，谈具体的事，也把事做成。" }],
     [{ t: "我们喝杯咖啡，彼此认识一下吧。", href: "contatti.html" }]
   ],
   stats_label: "数据一览",
